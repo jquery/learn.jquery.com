@@ -1,7 +1,8 @@
 ---
-chapter : "jqfundamentals"
-section : "2"
-title   : "Selecting Elements"
+chapter : jquery-basics
+section : 2
+title   : Selecting Elements
+attribution:  jQuery Fundamentals
 ---
 ## Selecting Elements
 

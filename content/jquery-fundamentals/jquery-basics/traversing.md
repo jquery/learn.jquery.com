@@ -1,5 +1,5 @@
 ---
-chapter : "qfundamentals
+chapter : jquery-basics
 section : 5
 title   : Traversing
 attribution:  jQuery Fundamentals

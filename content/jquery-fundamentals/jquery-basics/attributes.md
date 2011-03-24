@@ -1,5 +1,5 @@
 ---
-chapter : jqfundamentals
+chapter : jquery-basics
 section : 4
 title   : Attributes
 attribution:  jQuery Fundamentals
