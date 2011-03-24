@@ -1,14 +1,20 @@
 ---
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> adding attribution
 chapter :     js10
 section:      4
 title:        Loops
 attribution:  jQuery Fundamentals
+<<<<<<< HEAD
 =======
 chapter : "js10"
 section:  "4"
 title:    "Loops"
 >>>>>>> loops md file
+=======
+>>>>>>> adding attribution
 ---
 Loops let you run a block of code a certain number of times.
 
