@@ -201,6 +201,10 @@
     <h2 class="title"><%= @item[:title] %></h2>
     
     <div class="col2-1">
+      <%= yield %>
+    </div>
+
+    <div class="col2-1">
     <ul>
     <% @items.each do |item| %>
       <li><a href="<%= item.path %>"><%= item[:title] || 'Untitled' %></a></li>
@@ -208,9 +212,6 @@
     </ul>
     </div>
 
-    <div class="col2-1">
-      <%= yield %>
-    </div>
     
   </div>
   <!-- /body -->
