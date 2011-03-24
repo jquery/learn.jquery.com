@@ -51,7 +51,7 @@ Pseudo-selectors
 When you use the :visible and :hidden pseudo-selectors, jQuery tests the actual 
 visibility of the element, not its CSS visibility or display — that is, it looks 
 to see if the element's physical height and width on the page are both greater than zero. 
-However, this test doesn't work with <tr> elements; in this case, jQuery does check 
+However, this test doesn't work with &lt;tr> elements; in this case, jQuery does check 
 the CSS display property, and considers an element hidden if its display property 
 is set to none. Elements that have not been added to the DOM will always be 
 considered hidden, even if the CSS that would affect them would render them 
@@ -66,21 +66,21 @@ For reference, here is the code jQuery uses to determine whether an element is v
     	skip = elem.nodeName.toLowerCase() === "tr";
 
     	// does the element have 0 height, 0 width,
-    	// and it's not a <tr>?
+    	// and it's not a &lt;tr>?
     	return width === 0 && height === 0 && !skip ?
 
         	// then it must be hidden
         	true :
 
         	// but if it has width and height
-        	// and it's not a <tr>
+        	// and it's not a &lt;tr>
         	width > 0 && height > 0 && !skip ?
 
             	// then it must be visible
             	false :
 
             	// if we get here, the element has width
-            	// and height, but it's also a <tr>,
+            	// and height, but it's also a &lt;tr>,
             	// so check its display property to
             	// decide whether it's hidden
             	jQuery.curCSS(elem, "display") === "none";
@@ -105,7 +105,7 @@ jQuery offers many attribute-based selectors, allowing you to make selections
 based on the content of arbitrary attributes using simplified regular expressions.
 
 <div class="example" markdown="1">
-    // find all <a>s whose rel attribute
+    // find all &lt;a>s whose rel attribute
     // ends with "thinger"
     $("a[rel$='thinger']");
 </div>
@@ -180,7 +180,7 @@ Sometimes you have a selection that contains more than what you're after; in thi
 <div class="example" markdown="1">
 Refining selections
 
-    $('div.foo').has('p');          // div.foo elements that contain <p>'s
+    $('div.foo').has('p');          // div.foo elements that contain &lt;p>'s
     $('h1').not('.bar');            // h1 elements that don't have a class of bar
     $('ul li').filter('.current');  // unordered list items with class of current
     $('ul li').first();             // just the first unordered list item
