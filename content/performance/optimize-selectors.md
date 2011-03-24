@@ -3,6 +3,7 @@ chapter :     performance
 section:      0
 title:        Optimize Selectors
 attribution:  jQuery Fundamentals
+tags:         performance
 ---
 
 Selector optimization is less important than it used to be, as more browsers implement document.querySelectorAll() and the burden of selection shifts from jQuery to the browser. However, there are still some tips to keep in mind.

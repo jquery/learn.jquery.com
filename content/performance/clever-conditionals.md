@@ -3,6 +3,7 @@ chapter :     performance
 section:      0
 title:        Clever Conditionals
 attribution:  jQuery Fundamentals
+tags:         performance
 ---
 
     // old way

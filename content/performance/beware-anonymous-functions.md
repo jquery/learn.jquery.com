@@ -3,6 +3,7 @@ chapter :     performance
 section:      0
 title:        Beware Anonymous Functions
 attribution:  jQuery Fundamentals
+tags:         performance
 ---
 
 Anonymous functions bound everywhere are a pain. They're difficult to debug,

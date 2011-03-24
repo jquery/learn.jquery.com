@@ -3,6 +3,7 @@ chapter :     performance
 section:      0
 title:        Cache Length During Loops
 attribution:  jQuery Fundamentals
+tags:         performance
 ---
 
 Touching the DOM comes at a cost; if you're adding a lot of elements to the

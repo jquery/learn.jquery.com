@@ -3,6 +3,7 @@ chapter :     performance
 section:      0
 title:        Don't Act on Absent Elements
 attribution:  jQuery Fundamentals
+tags:         performance
 ---
 
 jQuery won't tell you if you're trying to run a whole lot of code on an empty

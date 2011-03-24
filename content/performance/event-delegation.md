@@ -3,6 +3,7 @@ chapter :     performance
 section:      0
 title:        Use Event Delegation
 attribution:  jQuery Fundamentals
+tags:         performance
 ---
 
 Event delegation allows you to bind an event handler to one container element
