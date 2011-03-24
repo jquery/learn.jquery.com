@@ -1,5 +1,5 @@
 ---
-chapter : jqfundamentals
+chapter : jquery-basics
 section : 6
 title   : Manipulating Elements
 attribution:  jQuery Fundamentals

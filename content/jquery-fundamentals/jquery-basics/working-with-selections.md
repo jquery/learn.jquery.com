@@ -1,5 +1,5 @@
 ---
-chapter : jqfundamentals
+chapter : jquery-basics
 section : 3
 title   : Working with Selections
 attribution:  jQuery Fundamentals

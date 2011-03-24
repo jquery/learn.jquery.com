@@ -1,5 +1,5 @@
 ---
-chapter : jqfundamentals
+chapter : jquery-basics
 section : 1
 title   : $(document).ready()
 attribution:  jQuery Fundamentals

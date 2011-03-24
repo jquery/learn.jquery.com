@@ -1,5 +1,5 @@
 ---
-chapter : jqfundamentals
+chapter : jquery-basics
 section : 3
 title   : CSS, Styling, & Dimensions
 attribution:  jQuery Fundamentals
