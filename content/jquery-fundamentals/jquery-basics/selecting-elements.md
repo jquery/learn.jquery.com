@@ -5,6 +5,8 @@ title   : Selecting Elements
 attribution:  jQuery Fundamentals
 ---
 ## Selecting Elements
+Selecting Elements
+>>>>>>> moved selecting-elements and doc-ready into jquery-basics folder try 2
 
 The most basic concept of jQuery is to “select some elements and do something with them.” 
 jQuery supports most CSS3 selectors, as well as some non-standard selectors. 
@@ -51,7 +53,11 @@ Pseudo-selectors
 When you use the :visible and :hidden pseudo-selectors, jQuery tests the actual 
 visibility of the element, not its CSS visibility or display — that is, it looks 
 to see if the element's physical height and width on the page are both greater than zero. 
+<<<<<<< HEAD
 However, this test doesn't work with &lt;tr> elements; in this case, jQuery does check 
+=======
+However, this test doesn't work with <tr> elements; in this case, jQuery does check 
+>>>>>>> moved selecting-elements and doc-ready into jquery-basics folder try 2
 the CSS display property, and considers an element hidden if its display property 
 is set to none. Elements that have not been added to the DOM will always be 
 considered hidden, even if the CSS that would affect them would render them 
@@ -66,21 +72,33 @@ For reference, here is the code jQuery uses to determine whether an element is v
     	skip = elem.nodeName.toLowerCase() === "tr";
 
     	// does the element have 0 height, 0 width,
+<<<<<<< HEAD
     	// and it's not a &lt;tr>?
+=======
+    	// and it's not a <tr>?
+>>>>>>> moved selecting-elements and doc-ready into jquery-basics folder try 2
     	return width === 0 && height === 0 && !skip ?
 
         	// then it must be hidden
         	true :
 
         	// but if it has width and height
+<<<<<<< HEAD
         	// and it's not a &lt;tr>
+=======
+        	// and it's not a <tr>
+>>>>>>> moved selecting-elements and doc-ready into jquery-basics folder try 2
         	width > 0 && height > 0 && !skip ?
 
             	// then it must be visible
             	false :
 
             	// if we get here, the element has width
+<<<<<<< HEAD
             	// and height, but it's also a &lt;tr>,
+=======
+            	// and height, but it's also a <tr>,
+>>>>>>> moved selecting-elements and doc-ready into jquery-basics folder try 2
             	// so check its display property to
             	// decide whether it's hidden
             	jQuery.curCSS(elem, "display") === "none";
@@ -105,7 +123,11 @@ jQuery offers many attribute-based selectors, allowing you to make selections
 based on the content of arbitrary attributes using simplified regular expressions.
 
 <div class="example" markdown="1">
+<<<<<<< HEAD
     // find all &lt;a>s whose rel attribute
+=======
+    // find all <a>s whose rel attribute
+>>>>>>> moved selecting-elements and doc-ready into jquery-basics folder try 2
     // ends with "thinger"
     $("a[rel$='thinger']");
 </div>
@@ -180,7 +202,11 @@ Sometimes you have a selection that contains more than what you're after; in thi
 <div class="example" markdown="1">
 Refining selections
 
+<<<<<<< HEAD
     $('div.foo').has('p');          // div.foo elements that contain &lt;p>'s
+=======
+    $('div.foo').has('p');          // div.foo elements that contain <p>'s
+>>>>>>> moved selecting-elements and doc-ready into jquery-basics folder try 2
     $('h1').not('.bar');            // h1 elements that don't have a class of bar
     $('ul li').filter('.current');  // unordered list items with class of current
     $('ul li').first();             // just the first unordered list item
