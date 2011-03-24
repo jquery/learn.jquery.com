@@ -1,8 +1,7 @@
 ---
-chapter : jquery-basics
-section : 3
-title   : CSS, Styling, & Dimensions
-attribution:  jQuery Fundamentals
+chapter : "jqfundamentals"
+section : "3"
+title   : "CSS, Styling, & Dimensions"
 ---
 ## CSS, Styling, &amp; Dimensions
 
