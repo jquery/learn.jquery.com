@@ -5,7 +5,9 @@ title :		"$(document).ready()"
 ---
 ## $(document).ready()
 
-You cannot safely manipulate a page until the document is “ready.” jQuery detects this state of readiness for you; code included inside `$(document).ready()` will only run once the page is ready for JavaScript code to execute.
+You cannot safely manipulate a page until the document is “ready.” 
+jQuery detects this state of readiness for you; code included inside 
+`$(document).ready()` will only run once the page is ready for JavaScript code to execute.
 
 <div class="example" markdown="1">
 A $(document).ready() block
@@ -15,7 +17,9 @@ A $(document).ready() block
     });
 </div>
 
-There is a shorthand for `$(document).ready()` that you will sometimes see; however, I recommend against using it if you are writing code that people who aren't experienced with jQuery may see.
+There is a shorthand for `$(document).ready()` that you will sometimes see; however, 
+I recommend against using it if you are writing code that people who aren't experienced 
+with jQuery may see.
 
 <div class="example" markdown="1">
 Shorthand for $(document).ready()
