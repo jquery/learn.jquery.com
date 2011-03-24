@@ -98,15 +98,13 @@ details on which values evaluate to true and which evaluate to false.
 You'll sometimes see developers use these logical operators for flow control
 instead of using if statements. For example:
 
-<div class="example" markdown="1">
-// do something with foo if foo is truthy
-foo && doSomething(foo);
+    // do something with foo if foo is truthy
+    foo && doSomething(foo);
 
-// set bar to baz if baz is truthy;
-// otherwise, set it to the return
-// value of createBar()
-var bar = baz || createBar();
-</div>
+    // set bar to baz if baz is truthy;
+    // otherwise, set it to the return
+    // value of createBar()
+    var bar = baz || createBar();
 
 This style is quite elegant and pleasantly terse; that said, it can be really
 hard to read, especially for beginners. I bring it up here so you'll recognize
