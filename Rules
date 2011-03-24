@@ -10,16 +10,13 @@
 #   item, use the pattern “/about/*/”; “/about/*” will also select the parent,
 #   because “*” matches zero or more characters.
 
-# compile '/assets/*/' do
-#   nil
-# end
-
-compile '/assets/*/' do
-  nil
-end
-
 route '/assets/*/' do
   item.identifier.chop + '.' + item[:extension]
+end
+
+# compile is what to do with the source files
+compile '/assets/*/' do
+  nil
 end
 
 compile '*' do
