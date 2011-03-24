@@ -1,8 +1,14 @@
 ---
+<<<<<<< HEAD
 chapter :     js101
 section:      3
 title:        Conditional Code
 attribution:  jQuery Fundamentals
+=======
+chapter : "js101"
+section:  "3"
+title:    "Conditional Code"
+>>>>>>> conditional code md file
 ---
 
 Sometimes you only want to run a block of code under certain conditions. Flow control — via if and else blocks — lets you run code only under certain conditions.
