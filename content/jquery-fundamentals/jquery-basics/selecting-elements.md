@@ -1,10 +1,9 @@
 ---
-chapter : "js101"
-section:  "2"
-title:    "Operators"
+chapter : "jqfundamentals"
+section : "2"
+title   : "Selecting Elements"
 ---
-## Basic Operators
-Selecting Elements
+## Selecting Elements
 
 The most basic concept of jQuery is to “select some elements and do something with them.” 
 jQuery supports most CSS3 selectors, as well as some non-standard selectors. 
