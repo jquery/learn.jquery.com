@@ -1,7 +1,8 @@
 ---
-chapter : "jqfundamentals"
-section : "1"
-title   : "$(document).ready()"
+chapter : jqfundamentals
+section : 1
+title   : $(document).ready()
+attribution:  jQuery Fundamentals
 ---
 ## $(document).ready()
 
