@@ -6,7 +6,7 @@
 
 * Clone/fork this repo
 * Install our lovely friends "The Dependencies"<br/>
-`> gem install nanoc kramdown`
+`> gem install nanoc kramdown adsf`
 * Change to the newly cloned repository's directory
 * Run nanoc<br/>
 `> nanoc autocompile`
