@@ -40,4 +40,10 @@ key-value pair can be written as any valid JavaScript identifier, a string
       'some string' : 456,
       99999 : 789
     };
+<<<<<<< HEAD
+=======
+
+Object literals can be extremely useful for code organization; for more
+information, read Using Objects to Organize Your Code by Rebecca Murphey.
+>>>>>>> objects md file
 </div>
