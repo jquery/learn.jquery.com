@@ -1,7 +1,8 @@
 ---
-chapter : "js101"
-section:  "3"
-title:    "Conditional Code"
+chapter :     js101
+section:      3
+title:        Conditional Code
+attribution:  jQuery Fundamentals
 ---
 
 Sometimes you only want to run a block of code under certain conditions. Flow control — via if and else blocks — lets you run code only under certain conditions.

@@ -1,7 +1,8 @@
 ---
-chapter : "js101"
-section:  "5"
-title:    "Reserved Words"
+chapter :     js101
+section:      5
+title:        Reserved Words
+attribution:  jQuery Fundamentals
 ---
 JavaScript has a number of “reserved words,” or words that have special meaning in the language. You should avoid using these words in your code except when using them with their intended meaning.
 

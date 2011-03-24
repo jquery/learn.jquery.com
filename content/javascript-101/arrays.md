@@ -1,7 +1,8 @@
 ---
-chapter : "js101"
-section:  6
-title:    "Arrays"
+chapter :     js101
+section:      6
+title:        Arrays
+attribution:  jQuery Fundamentals
 ---
 Arrays are zero-indexed lists of values. They are a handy way to store a set of
 related items of the same type (such as strings), though in reality, an array

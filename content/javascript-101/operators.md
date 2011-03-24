@@ -1,7 +1,8 @@
 ---
-chapter : "js101"
-section:  "2"
-title:    "Operators"
+chapter :     js101
+section:      2
+title:        Operators
+attribution:  jQuery Fundamentals
 ---
 ## Basic Operators
 

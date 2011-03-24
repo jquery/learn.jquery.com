@@ -1,7 +1,8 @@
 ---
-chapter:  "js101"
-section:  1
-title:    "Syntax Basics"
+chapter:      js101
+section:      1
+title:        Syntax Basics
+attribution:  jQuery Fundamentals
 ---
 Understanding statements, variable naming, whitespace, and other basic JavaScript syntax.
 
