@@ -5,8 +5,6 @@ title:    "Operators"
 ---
 ## Basic Operators
 
-## Basic Operators
-
 Basic operators allow you to manipulate values.
 
 <div class="example" markdown="1">
