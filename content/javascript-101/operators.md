@@ -33,7 +33,8 @@ Incrementing and decrementing
 
 ## Operations on Numbers & Strings
 
-In JavaScript, numbers and strings will occasionally behave in ways you might not expect.
+In JavaScript, numbers and strings will occasionally behave in ways you might
+not expect.
 
 <div class="example" markdown="1">
 Addition vs. concatenation
@@ -53,7 +54,6 @@ Forcing a string to act as a number
   console.log(foo + Number(bar));
 </div>
 
-
 The Number constructor, when called as a function (like above) will have the
 effect of casting its argument into a number. You could also use the unary plus
 operator, which does the same thing:
@@ -65,7 +65,8 @@ console.log(foo + +bar);
 
 ## Logical Operators
 
-Logical operators allow you to evaluate a series of operands using AND and OR operations.
+Logical operators allow you to evaluate a series of operands using AND and OR
+operations.
 
 <div class="example" markdown="1">
 Logical AND and OR operators
@@ -82,13 +83,13 @@ Logical AND and OR operators
     baz && foo;   // returns 1, which is true
 </div>
 
-Though it may not be clear from the example, the || operator returns the value
+Though it may not be clear from the example, the `||` operator returns the value
 of the first truthy operand, or, in cases where neither operand is truthy,
-it'll return the last of both operands. The && operator returns the value of
+it'll return the last operand. The `&&` operator returns the value of
 the first false operand, or the value of the last operand if both operands are
 truthy.
 
-Be sure to consult the section called “Truthy and Falsy Things” for more
+Be sure to see the section called “Truthy and Falsy Things” for more
 details on which values evaluate to true and which evaluate to false.
 
 <div class="note">
