@@ -1,7 +1,7 @@
 ---
-chapter : 	"jqfundamentals"
-section :  	"1"
-title :		"$(document).ready()"
+chapter : "jqfundamentals"
+section : "1"
+title   : "$(document).ready()"
 ---
 ## $(document).ready()
 
