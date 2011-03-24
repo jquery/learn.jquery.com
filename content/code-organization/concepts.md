@@ -174,7 +174,7 @@ Using an object literal for a jQuery feature
 </div>
 
 The first thing you'll notice is that this approach is obviously far longer
-than the original — again, if this were the extent of our application, using an
+than the original -- again, if this were the extent of our application, using an
 object literal would likely be overkill. Assuming it's not the extent of our
 application, though, we've gained several things:
 
@@ -188,10 +188,10 @@ application, though, we've gained several things:
   refactor, remix, and rearrange.
 
 For non-trivial features, object literals are a clear improvement over a long
-stretch of code stuffed in a $(document).ready() block, as they get us thinking
-about the pieces of our functionality. However, they aren't a whole lot more
-advanced than simply having a bunch of function declarations inside of that
-$(document).ready() block.
+stretch of code stuffed in a `$(document).ready()` block, as they get us
+thinking about the pieces of our functionality. However, they aren't a whole
+lot more advanced than simply having a bunch of function declarations inside of
+that `$(document).ready()` block.
 
 ### The Module Pattern
 
