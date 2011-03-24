@@ -1,6 +1,6 @@
 ---
 chapter : "js101"
-section:  "javascript-basics"
+section:  "2"
 title:    "Operators"
 ---
 ## Basic Operators
@@ -30,7 +30,7 @@ Incrementing and decrementing
     var k = i++;  // post-increment: k equals 2; i equals 3
 </div>
 
-### Operations on Numbers & Strings
+## Operations on Numbers & Strings
 
 In JavaScript, numbers and strings will occasionally behave in ways you might not expect.
 
@@ -62,7 +62,7 @@ Forcing a string to act as a number (using the unary-plus operator)
 console.log(foo + +bar);
 </div>
 
-### Logical Operators
+## Logical Operators
 
 Logical operators allow you to evaluate a series of operands using AND and OR operations.
 
@@ -111,7 +111,7 @@ hard to read, especially for beginners. I bring it up here so you'll recognize
 it in code you read, but I don't recommend using it until you're extremely
 comfortable with what it means and how you can expect it to behave.
 
-### Comparison Operators
+## Comparison Operators
 
 Comparison operators allow you to test whether values are equivalent or whether
 values are identical.
