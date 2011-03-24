@@ -2,7 +2,7 @@
 chapter :     js101
 section:      10
 title:        The "this" Keyword
-attribution:
+attribution:  jQuery Fundamentals
 ---
 
 In JavaScript, as in most object-oriented programming languages, `this` is a
