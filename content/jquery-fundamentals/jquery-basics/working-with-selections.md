@@ -1,8 +1,7 @@
 ---
-chapter : jquery-basics
-section : 3
-title   : Working with Selections
-attribution:  jQuery Fundamentals
+chapter : "jqfundamentals"
+section : "3"
+title   : "Working with Selections"
 ---
 ## Working with Selections
 
