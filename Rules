@@ -15,7 +15,7 @@ compile '/stylesheet/' do
 end
 
 compile '*' do
-  filter :erb
+  filter :kramdown
   layout 'default'
 end
 
