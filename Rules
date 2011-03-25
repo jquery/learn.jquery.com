@@ -9,22 +9,37 @@
 #   “content/about.html”). To select all children, grandchildren, … of an
 #   item, use the pattern “/about/*/”; “/about/*” will also select the parent,
 #   because “*” matches zero or more characters.
+#
+#   routes define what file should be served for a certain request
+#
+#   compiles define how the content for a given route should be prepared
 
 route '/assets/*/' do
+  # when the request is for /assets/*
+  # (e.g. '/assets/css/style.css') ...
+  # this is the file to return, so we
+  # return the item's identifier (e.g. '/assets/css/style/')
+  # but chop off its last character ('/assets/css/style')
+  # and then append the item's extension ('css')
   item.identifier.chop + '.' + item[:extension]
 end
 
-# compile is what to do with the source files
 compile '/assets/*/' do
+  # for assets, we don't want to do anything
   nil
 end
 
+# these rules only apply if none of the rules above apply
+
 compile '*' do
+  # for most things, we want to run them through kramdown
   filter :kramdown
   layout 'default'
 end
 
 route '*' do
+  # for most things, we want to return the index.html
+  # that corresponds with the identifier
   item.identifier + 'index.html'
 end
 
