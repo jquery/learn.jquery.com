@@ -10,7 +10,10 @@ jQuery offers two event-related helper functions that save you a few keystrokes.
 
 ### `$.fn.hover`
 
-The `$.fn.hover` method lets you pass one or two functions to be run when the `mouseenter` and `mouseleave` events occur on an element. If you pass one function, it will be run for both events; if you pass two functions, the first will run for `mouseenter`, and the second will run for `mouseleave`.
+The `$.fn.hover` method lets you pass one or two functions to be run when the
+`mouseenter` and `mouseleave` events occur on an element. If you pass one
+function, it will be run for both events; if you pass two functions, the first
+will run for `mouseenter`, and the second will run for `mouseleave`.
 
 <div class="example" markdown="1">
 ### Note
@@ -28,10 +31,11 @@ The hover helper function
 
 ### `$.fn.toggle`
 
-The `$.fn.toggle` method is triggered by the "click" event and accepts two or more functions. 
-Each time the click event occurs, the next function in the list is called. 
-Generally, `$.fn.toggle` is used with just two functions; however, it will accept an unlimited number of functions. 
-Be careful, though: providing a long list of functions can be difficult to debug.
+The `$.fn.toggle` method is triggered by the "click" event and accepts two or
+more functions.  Each time the click event occurs, the next function in the
+list is called.  Generally, `$.fn.toggle` is used with just two functions;
+however, it will accept an unlimited number of functions.  Be careful, though:
+providing a long list of functions can be difficult to debug.
 
 <div class="example" markdown="1">
 The toggle helper function

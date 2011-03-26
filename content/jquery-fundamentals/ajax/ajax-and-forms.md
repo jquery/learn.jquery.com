@@ -6,9 +6,13 @@ attribution:  jQuery Fundamentals
 ---
 ## Ajax and Forms
 
-jQuery’s ajax capabilities can be especially useful when dealing with forms. 
-The [jQuery Form Plugin](http://jquery.malsup.com/form/) is a well-tested tool for adding Ajax capabilities to forms, and you should generally use it for handling forms with Ajax rather than trying to roll your own solution for anything remotely complex. 
-That said, there are a two jQuery methods you should know that relate to form processing in jQuery: `$.fn.serialize` and `$.fn.serializeArray`.
+jQuery’s ajax capabilities can be especially useful when dealing with forms.
+The [jQuery Form Plugin](http://jquery.malsup.com/form/) is a well-tested tool
+for adding Ajax capabilities to forms, and you should generally use it for
+handling forms with Ajax rather than trying to roll your own solution for
+anything remotely complex.  That said, there are a two jQuery methods you
+should know that relate to form processing in jQuery: `$.fn.serialize` and
+`$.fn.serializeArray`.
 
 <div class="example" markdown="1">
 Turning form data into a query string
@@ -20,7 +24,7 @@ Turning form data into a query string
 Creating an array of objects containing form data
 
     $('#myForm').serializeArray();
-    
+
     // creates a structure like this:
     [
         { name : 'field1', value : 123 },
