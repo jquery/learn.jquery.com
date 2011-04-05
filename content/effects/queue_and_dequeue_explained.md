@@ -1,6 +1,7 @@
 ---
 title:        Queue & Dequeue Explained
 attribution:  Remy Sharp
+editrequired: 2
 source:       http://jqueryfordesigners.com/api-queue-dequeue/
 ---
 
