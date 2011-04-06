@@ -100,13 +100,13 @@ A bad implementation:
 
 <div class="example" markdown="1">
 // Plugin code
-$('&gt;div id="the_gallery_Wrapper" /&lt;').appendTo('body');
+$('&lt;div id="the_gallery_Wrapper" /&gt;').appendTo('body');
 $('#the_gallery_wrapper').append('...');
 </div>
 
 <div class="example" markdown="1">
 // Retain an internal reference:
-var $wrapper = $('&gt;div /&gt;')
+var $wrapper = $('&lt;div /&gt;')
                  .attr(settings.wrapperAttrs)
                  .appendTo(settings.container);
 $wrapper.append('...'); // Easy to reference later...
