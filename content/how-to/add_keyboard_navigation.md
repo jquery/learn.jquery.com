@@ -18,7 +18,7 @@ The task is to slide the panels left or right, depending on which cursor key is 
 
 As Mathieu’s slider is the primary focus of the page, we want the keyboard support to apply from anywhere on the page. And we’re only navigating left and right, which won’t interfere with scrolling up and down the page.
 
-We need a keyboard event listener on the document.documentElement element as this is the best point for a catch all element (to work in all browsers). If an input element is focused, and you press a key, it fires the keypress event on the input element, then on all the parent elements, which eventually hits the body element, then thedocumentElement then the the window.
+We need a keyboard event listener on the document.documentElement element as this is the best point for a catch all element (to work in all browsers). If an input element is focused, and you press a key, it fires the keypress event on the input element, then on all the parent elements, which eventually hits the body element, then the documentElement then the the window.
 
 Once we have our keyboard event listener, we need to determine whether the user pressed the left or right cursor key, and if they did trigger the effect.
 
@@ -27,6 +27,7 @@ Triggering the effect is the trick. We’re doing this by triggering a click on 
 ##Capturing key events
 
 Then a keyboard key is pressed the event break into three separate events, which fire in the following order:
+
 - keydown
 - keypress
 - keyup
