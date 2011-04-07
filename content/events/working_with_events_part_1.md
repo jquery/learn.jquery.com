@@ -43,8 +43,6 @@ Now, let's create a new button (if we don't already have a second one) using jQu
     });
 </div>
 
-[create the button](http://www.learningjquery.com/2008/03/working-with-events-part-1#)
-
 Have you clicked the link to create the second button? Great. Now click that button. It does nothing. Just as expected.
 
 ##CSS Continues to "Work" with Newly Created Elements
@@ -143,7 +141,11 @@ Event delegation is also a great way to avoid crippling the user's browser when 
     });
 </div>
 
-Note that I had to account for the possibility of clicking in a child/descendant of a table cell, but this seems a small inconvenience for the great performance increase that event delegation affords.
+<div class="note" markdown="1">
+###Note
+
+I had to account for the possibility of clicking in a child/descendant of a table cell, but this seems a small inconvenience for the great performance increase that event delegation affords.
+</div>
 
 ##Coming Up Next
 
