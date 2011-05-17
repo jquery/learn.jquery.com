@@ -70,4 +70,70 @@ Using a closure to access inner and outer object instances simultaneously
 
 This mechanism can be particularly useful when dealing with callbacks, though
 in those cases, it is often better to use `Function.bind`, which will avoid any
-overhead associated with scope traversal.
+overhead associated with scope traversal. In case you haven't used this before, let
+us now explore a brief introduction.
+
+`Function.bind` is used to create a new function, which when called, itself then
+calls this function in the context of the supplied 'this' value, using a given set
+of arguments which will precede any arguments provided when the new function was 
+initially called.
+
+As `bind` is a recent addition to ECMAScript 5, it may not be present in all browsers,
+which is something to be wary of when deciding whether to use it or not. It is however
+possible to work around support by using the following shim, which whilst a partial 
+implementation only, may be sufficient as a temporary bridge until `bind` is widely 
+adopted according to the specification.
+
+<div class="example" markdown="1">
+if ( !Function.prototype.bind ) {
+  Function.prototype.bind = function( obj ) {
+    var slice = [].slice,
+        args = slice.call(arguments, 1), 
+        self = this, 
+        nop = function () {}, 
+        bound = function () {
+          return self.apply( this instanceof nop ? this : ( obj || {} ), 
+                              args.concat( slice.call(arguments) ) );    
+        };
+
+    nop.prototype = self.prototype;
+    bound.prototype = new nop();
+    return bound;
+  };
+}
+</div>
+
+One of the simplest uses of `bind` is making a function, which regardless of how it's 
+called, is called with a particular value for `this`. A common mistake made is 
+attempting to extract a method from an object, then later calling that function and 
+expecting it to the use the origin object as it's `this`. This however can be solved 
+by creating a bound function using the original object as demonstrated below.
+
+<div class="example" markdown="1">
+//lets manipulate "this" with a basic example
+var user = "johnsmith",
+    module = {
+        getUser: function(){
+            return this.user;
+        },
+        user: "janedoe"
+    };
+
+//module.getUser() is called where "module" is "this" and "module.user" is returned.
+module.getUser();
+//janedoe
+
+//let's now store a reference in the global version of "this"
+var getUser = module.getUser;
+
+//getUser() called, "this" is global, "user" is returned
+getUser();
+//johnsmith
+
+//store a ref with "module" bound as "this"
+var boundGetUser = getUser.bind(module);  
+
+//boundGetUser() called, "module" is "this" again, "module.user" returned.
+boundGetUser();
+//janedoe
+</div>
