@@ -210,7 +210,7 @@
           <h3><%= section.capitalize %></h3>
           <% items.sort_by {|item| item[:title] || "" }.each do |item| %>
             <% if item[:title] %>
-              <li><a href="<%= item[:path] %>"><%= item[:title] %></a></li>
+              <li><a href="<%= item.path %>"><%= item[:title] %></a></li>
             <% end %>
           <% end %>
         <% end %>
