@@ -13,30 +13,32 @@ example.
 In the functions section, we saw how functions have access to changing
 variable values. The same sort of behavior exists with functions defined within
 loops -- the function "sees" the change in the variable's value even after the
-function is defined, resulting in all clicks alerting 5.
+function is defined, resulting in each function referencing the last value stored 
+in the variable.
 
 <div class="example" markdown="1">
-How to lock in the value of i?
+Each function executed within the loop will reference the last value stored in i (5)
 
     /* this won't behave as we want it to; */
-    /* every click will alert 5 */
+    /* every 100 milliseconds, 5 will alert */
     for (var i=0; i<5; i++) {
-      $('<p>click me</p>').appendTo('body').click(function() {
-        alert(i);
-      });
+	    setTimeout(function() {
+      	alert(i);
+	    }, i*100);
     }
 </div>
 
-<div class="example" markdown="1">
-Locking in the value of i with a closure
+Closures can be used to prevent this by creating a unique scope for
+each iteration -- storing each unique value of the variable within it's scope.
 
+<div class="example" markdown="1">
     /* fix: “close” the value of i inside createFunction, so it won't change */
     var createFunction = function(i) {
       return function() { alert(i); };
     };
 
     for (var i=0; i<5; i++) {
-      $('<p>click me</p>').appendTo('body').click(createFunction(i));
+      setTimeout( createFunction(i), i*100 );
     }
 </div>
 
@@ -85,22 +87,22 @@ implementation only, may be sufficient as a temporary bridge until `bind` is wid
 adopted according to the specification.
 
 <div class="example" markdown="1">
-if ( !Function.prototype.bind ) {
-  Function.prototype.bind = function( obj ) {
-    var slice = [].slice,
-        args = slice.call(arguments, 1), 
-        self = this, 
-        nop = function () {}, 
-        bound = function () {
-          return self.apply( this instanceof nop ? this : ( obj || {} ), 
-                              args.concat( slice.call(arguments) ) );    
-        };
+	if ( !Function.prototype.bind ) {
+	  Function.prototype.bind = function( obj ) {
+	    var slice = [].slice,
+	        args = slice.call(arguments, 1), 
+	        self = this, 
+	        nop = function () {}, 
+	        bound = function () {
+	          return self.apply( this instanceof nop ? this : ( obj || {} ), 
+	          	args.concat( slice.call(arguments) ) );    
+	        };
 
-    nop.prototype = self.prototype;
-    bound.prototype = new nop();
-    return bound;
-  };
-}
+	    nop.prototype = self.prototype;
+	    bound.prototype = new nop();
+	    return bound;
+	  };
+	}
 </div>
 
 One of the simplest uses of `bind` is making a function, which regardless of how it's 
@@ -110,30 +112,30 @@ expecting it to the use the origin object as it's `this`. This however can be so
 by creating a bound function using the original object as demonstrated below.
 
 <div class="example" markdown="1">
-//lets manipulate "this" with a basic example
-var user = "johnsmith",
-    module = {
-        getUser: function(){
-            return this.user;
-        },
-        user: "janedoe"
-    };
+	//lets manipulate "this" with a basic example
+	var user = "johnsmith",
+	    module = {
+	        getUser: function(){
+	            return this.user;
+	        },
+	        user: "janedoe"
+	    };
 
-//module.getUser() is called where "module" is "this" and "module.user" is returned.
-module.getUser();
-//janedoe
+	//module.getUser() is called where "module" is "this" and "module.user" is returned.
+	module.getUser();
+	//janedoe
 
-//let's now store a reference in the global version of "this"
-var getUser = module.getUser;
+	//let's now store a reference in the global version of "this"
+	var getUser = module.getUser;
 
-//getUser() called, "this" is global, "user" is returned
-getUser();
-//johnsmith
+	//getUser() called, "this" is global, "user" is returned
+	getUser();
+	//johnsmith
 
-//store a ref with "module" bound as "this"
-var boundGetUser = getUser.bind(module);  
+	//store a ref with "module" bound as "this"
+	var boundGetUser = getUser.bind(module);  
 
-//boundGetUser() called, "module" is "this" again, "module.user" returned.
-boundGetUser();
-//janedoe
+	//boundGetUser() called, "module" is "this" again, "module.user" returned.
+	boundGetUser();
+	//janedoe
 </div>
