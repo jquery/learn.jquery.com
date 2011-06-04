@@ -19,11 +19,11 @@ function is defined, resulting in all clicks alerting 5.
 How to lock in the value of i?
 
     /* this won't behave as we want it to; */
-    /* every click will alert 5 */
+    /* every 100 milliseconds, 5 will alert */
     for (var i=0; i<5; i++) {
-      $('<p>click me</p>').appendTo('body').click(function() {
-        alert(i);
-      });
+	    setTimeout(function() {
+				alert(i);
+	    }, i*100);
     }
 </div>
 
@@ -36,7 +36,7 @@ Locking in the value of i with a closure
     };
 
     for (var i=0; i<5; i++) {
-      $('<p>click me</p>').appendTo('body').click(createFunction(i));
+      setTimeout( createFunction(i), i*100 );
     }
 </div>
 
