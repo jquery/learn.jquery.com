@@ -83,7 +83,7 @@ A self-executing anonymous function
 
 ## Functions as Arguments
 
-In JavaScript, functions are "first-class citizens" &mdash they can be assigned
+In JavaScript, functions are "first-class citizens" &mdash; they can be assigned
 to variables or passed to other functions as arguments. Passing functions as
 arguments is an extremely common idiom in jQuery.
 
