@@ -1,4 +1,4 @@
-# Learn.jQuery
+# Learn.jQuery.com
 
 * Primary Domain: [http://learn.jquery.com](http://learn.jquery.com)
 
