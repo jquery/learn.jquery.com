@@ -15,23 +15,23 @@ There are four methods for finding the parents from a selection: `$.fn.parent`, 
 <div class="example" markdown="1">
 Selecting an element's direct parent
 
-	$('#myList').parent();
+    $('#myList').parent();
 </div>
 <div class="example" markdown="1">
 Selecting all the parents of an element that match a given selector
 
-	$('#myList').parents('div.section');
+    $('#myList').parents('div.section');
 </div>
 <div class="example" markdown="1">
 Selecting all the parents of an element up to, but *not including* the selector
 
-	var section = $('div.section');
-	$('#myList').parentsUntil(section);
+    var section = $('div.section');
+    $('#myList').parentsUntil(section);
 </div>
 <div class="example" markdown="1">
 Selecting the closest parent, note that only one parent will be selected.
 
-	$('#myList').closest('#navigation');
+    $('#myList').closest('#navigation');
 </div>
 ### Children
 
@@ -40,12 +40,12 @@ There are only 2 methods for finding child elements from a selection: `$.fn.chil
 <div class="example" markdown="1">
 Selecting an element's direct children
 
-	$('#myList').children('li');
+    $('#myList').children('li');
 </div>
 <div class="example" markdown="1">
 Finding all the links within a selection that match the selector
 
-	$('#myList').find('a.external');
+    $('#myList').find('a.external');
 </div>
 
 ### Sibilings
@@ -55,17 +55,17 @@ The rest of the traversal methods within jQuery all deal with finding sibiling s
 <div class="example" markdown="1">
 Selecting an element's next sibiling that matches the given selector
 
-	$('#myList').next('div.section');
+    $('#myList').next('div.section');
 </div>
 <div class="example" markdown="1">
 Selecting an element's previous sibiling that matches the given selector
 
-	$('#myList').prev('div.section');
+    $('#myList').prev('div.section');
 </div>
 <div class="example" markdown="1">
 Selecting an element's sibilings in both directions that matches the given selector
 
-	$('#myList').sibilings('div.section');
+    $('#myList').sibilings('div.section');
 </div>
 
 You can see all these methods metioned and more at the docs [http://api.jquery.com/category/traversing/tree-traversal/](http://api.jquery.com/category/traversing/tree-traversal/ "Traversal documentation on api.jquery.com")
