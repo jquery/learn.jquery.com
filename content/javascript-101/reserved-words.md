@@ -1,0 +1,64 @@
+---
+chapter :     js101
+section:      5
+title:        Reserved Words
+attribution:  jQuery Fundamentals
+---
+JavaScript has a number of “reserved words,” or words that have special meaning in the language. You should avoid using these words in your code except when using them with their intended meaning.
+
+- abstract
+- boolean
+- break
+- byte
+- case
+- catch
+- char
+- class
+- const
+- continue
+- debugger
+- default
+- delete
+- do
+- double
+- else
+- enum
+- export
+- extends
+- final
+- finally
+- float
+- for
+- function
+- goto
+- if
+- implements
+- import
+- in
+- instanceof
+- int
+- interface
+- long
+- native
+- new
+- package
+- private
+- protected
+- public
+- return
+- short
+- static
+- super
+- switch
+- synchronized
+- this
+- throw
+- throws
+- transient
+- try
+- typeof
+- var
+- void
+- volatile
+- while
+- with
