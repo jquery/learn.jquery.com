@@ -961,7 +961,7 @@ footer .cdn ~ .cdn strong {
     background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #7a7a7a),color-stop(1, #5e5e5e)); /* Saf4+, Chrome */
     background-image: -webkit-linear-gradient(#7a7a7a, #5e5e5e); /* Chrome 10+, Saf6 */
     background-image: linear-gradient(top, #7a7a7a, #5e5e5e);
-              filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#7a7a7a', EndColorStr='#5e5e5e'); /* IE6�IE9 */
+              filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#7a7a7a', EndColorStr='#5e5e5e'); /* IE6–IE9 */
   }
   
     footer .cdn strong:after {
