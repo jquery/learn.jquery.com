@@ -13,10 +13,10 @@ just like you'd bind other events.  For a complete list of Ajax events, visit
 [http://docs.jquery.com/Ajax_Events](http://docs.jquery.com/Ajax_Events "Ajax
 Events documentation on docs.jquery.com").
 
-<div class="example" markdown="1">
 Setting up a loading indicator using Ajax Events
 
-    $('#loading_indicator')
-        .ajaxStart(function() { $(this).show(); })
-        .ajaxStop(function() { $(this).hide(); });
-</div>
+<javascript>
+$('#loading_indicator')
+    .ajaxStart(function() { $(this).show(); })
+    .ajaxStop(function() { $(this).hide(); });
+</javascript>

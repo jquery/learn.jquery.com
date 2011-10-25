@@ -9,38 +9,97 @@
 #   “content/about.html”). To select all children, grandchildren, … of an
 #   item, use the pattern “/about/*/”; “/about/*” will also select the parent,
 #   because “*” matches zero or more characters.
-#
-#   routes define what file should be served for a certain request
-#
-#   compiles define how the content for a given route should be prepared
 
-route '/assets/*/' do
-  # when the request is for /assets/*
-  # (e.g. '/assets/css/style.css') ...
-  # this is the file to return, so we
-  # return the item's identifier (e.g. '/assets/css/style/')
-  # but chop off its last character ('/assets/css/style')
-  # and then append the item's extension ('css')
-  item.identifier.chop + '.' + item[:extension]
+require "cgi"
+
+class Nanoc3::Filter
+  class CodeBlocks < Nanoc3::Filter
+    LANGUAGES = { "ruby" => "ruby", "sql" => "sql", "javascript" => "javascript",
+                  "css" => "css", "plain" => "plain", "erb" => "ruby; html-script: true",
+                  "html" => "xml", "xml" => "xml", "shell" => "plain", "yaml" => "yaml" }
+
+    def run(content, params={})
+      @string = content.dup
+
+      @output = ""
+      @pending = ""
+
+      languages = LANGUAGES.keys.join("|")
+
+      until @string.empty?
+        match = scan_until /(\+(\S.*?\S?)\+|<(#{languages})(?: filename=["']([^"']*)["'])?>|\z)/m
+
+        @pending << match.pre_match
+
+        if match[2]    # +foo+
+          @pending << "<notextile><tt>#{CGI.escapeHTML(match[2])}</tt></notextile>" if match[2]
+        elsif match[3] # <language>
+          flush
+          generate_brushes match[3], LANGUAGES[match[3]], match[4]
+        end
+      end
+
+      flush
+
+      @output
+    end
+
+    def scan_until(regex)
+      match = @string.match(regex)
+      return unless match
+      @string = match.post_match
+      match
+    end
+
+    def generate_brushes(tag, replace, filename)
+      match = scan_until %r{</#{tag}>}
+      @output << %{<div class="code_container">\n}
+      @output << %{<div class="filename">#{filename}</div>\n} if filename
+      @output << %{<pre class="brush: #{replace}; gutter: false; toolbar: false">\n} <<
+                 CGI.escapeHTML(match.pre_match) << %{</pre></div>}
+    end
+
+    def flush
+      @output << @pending
+      @pending = ""
+    end
+  end
 end
 
-compile '/assets/*/' do
-  # for assets, we don't want to do anything
-  nil
+Nanoc3::Filter.register 'CodeBlocks',        :code_blocks
+
+
+
+compile '/assets/*' do
+  # don’t filter or layout
 end
 
-# these rules only apply if none of the rules above apply
+compile '/images/*' do
+end
+
+filters = {
+  :markdown => :kramdown,
+  :md => :kramdown,
+  :html => :erb
+}
 
 compile '*' do
-  # for most things, we want to run them through kramdown
-  filter :kramdown
+  filter :code_blocks
+  filter filters[item[:extension].to_sym] || item[:extension].to_sym
   layout 'default'
 end
 
 route '*' do
-  # for most things, we want to return the index.html
-  # that corresponds with the identifier
-  item.identifier + 'index.html'
+  p [item.identifier, item[:extension], item.binary?]
+  if item.binary? || item[:extension] == 'css' || item[:extension] =~ /\.js$/
+    # /foo/ -> /foo.ext
+    p item.identifier.chop + '.' + item[:extension]
+    item.identifier.chop + '.' + item[:extension]
+  else
+    # /foo/ -> /foo/index.html
+    item.identifier + 'index.html'
+  end
 end
 
 layout '*', :erb
+
