@@ -83,17 +83,35 @@ filters = {
   :html => :erb
 }
 
+# Index files in each content directory
+route "/*/dex" do
+  item.identifier.sub("dex/", "") + 'index.html'
+end
+
+# Just the homepage
+route "/dex" do
+  item.identifier.sub("dex/", "") + 'index.html'
+end
+
 compile '*' do
   filter :code_blocks
   filter filters[item[:extension].to_sym] || item[:extension].to_sym
-  layout 'default'
+  p item.identifier
+  if item[:homepage]
+    layout 'home'
+  elsif item.identifier.match /\/dex\/$/
+    layout 'dex'
+  else
+    layout 'default'
+  end
 end
 
+
 route '*' do
-  p [item.identifier, item[:extension], item.binary?]
-  if item.binary? || item[:extension] == 'css' || item[:extension] =~ /\.js$/
+  #p [item.identifier, item[:extension], item.binary?]
+  if item.binary? || item[:extension] == 'css' || item[:extension] == 'js'
     # /foo/ -> /foo.ext
-    p item.identifier.chop + '.' + item[:extension]
+    #p item.identifier.chop + '.' + item[:extension]
     item.identifier.chop + '.' + item[:extension]
   else
     # /foo/ -> /foo/index.html
