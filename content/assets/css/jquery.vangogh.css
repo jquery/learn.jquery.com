@@ -1,0 +1,206 @@
+/*
+obsidian style (c) Vasily Polovnyov <vast@whiteants.net>
+extended and modified for vanGogh by Marcus Ekwall <marcus@writeless.se>
+*/
+
+.vg-container {
+    font-family: 'Bitstream Vera Sans Mono', 'Courier New', monospace;
+    font-size: 12px;
+    border: 1px solid #ddd;
+}
+
+
+.vg-gutter {
+    background-color: #ececec;
+    border-right: 1px solid #ddd;
+    text-align: right;
+    padding: 1em .5em;
+    margin-right: .5em;
+}
+
+.vg-gutter a {
+    color: #aaa;
+}
+
+.vg-code *::-moz-selection,
+.vg-code *::-webkit-selection,
+.vg-code *::selection {
+    background-color: #ffc;
+}
+
+.vg-line.vg-highlight {
+    background-color: #ffc;
+}
+ 
+.vg-line span.vg-highlight {
+    color: blue;
+    font-weight: bold;
+    text-decoration: underline;
+}
+ 
+.vg-container .vg-code {
+    display: block;
+    padding: 1em .5em;
+	background-color: #fff;
+}
+ 
+.vg-code {
+    color: #000;
+    background: #f8f8ff;
+    border: 0;
+    padding: .4em;
+}
+ 
+.vg-code .comment,
+.vg-code .template_comment,
+.vg-code .diff .header,
+.vg-code .javadoc {
+    color: #998;
+    font-style: italic
+}
+ 
+.vg-code .keyword,
+.vg-code .css .rule .keyword,
+.vg-code .winutils,
+.vg-code .javascript .title,
+.vg-code .lisp .title,
+.vg-code .subst {
+    color: #000;
+    font-weight: bold
+}
+ 
+.vg-code .number,
+.vg-code .hexcolor {
+    color: #40a070
+}
+ 
+.vg-code .string,
+.vg-code .tag .value,
+.vg-code .phpdoc,
+.vg-code .tex .formula {
+    color: #d14
+}
+ 
+.vg-code .title,
+.vg-code .id {
+    color: #900;
+    font-weight: bold
+}
+ 
+.vg-code .javascript .title,
+.vg-code .lisp .title,
+.vg-code .subst {
+    font-weight: normal
+}
+ 
+.vg-code .class .title,
+.vg-code .haskell .label,
+.vg-code .tex .command {
+    color: #458;
+    font-weight: bold
+}
+ 
+.vg-code .tag,
+.vg-code .tag .title,
+.vg-code .rules .property,
+.vg-code .django .tag .keyword {
+    color: #000080;
+    font-weight: normal
+}
+ 
+.vg-code .attribute,
+.vg-code .variable,
+.vg-code .instancevar,
+.vg-code .lisp .body {
+    color: #008080
+}
+ 
+ 
+.vg-code .regexp {
+    color: #009926
+}
+ 
+.vg-code .class {
+    color: #458;
+    font-weight: bold
+}
+ 
+.vg-code .symbol,
+.vg-code .ruby .symbol .string,
+.vg-code .ruby .symbol .keyword,
+.vg-code .ruby .symbol .keymethods,
+.vg-code .lisp .keyword,
+.vg-code .tex .special,
+.vg-code .input_number {
+    color: #990073
+}
+ 
+.vg-code .builtin,
+.vg-code .built_in,
+.vg-code .lisp .title {
+    color: #0086b3
+}
+ 
+.vg-code .codeprocessor,
+.vg-code .pi,
+.vg-code .doctype,
+.vg-code .shebang,
+.vg-code .cdata {
+    color: #999;
+    font-weight: bold
+}
+ 
+.vg-code .deletion {
+    background: #fdd
+}
+ 
+.vg-code .addition {
+    background: #dfd
+}
+ 
+.vg-code .diff .change {
+    background: #0086b3
+}
+ 
+.vg-code .chunk {
+    color: #aaa
+}
+ 
+.vg-code .tex .formula {
+    opacity: 0.5;
+}
+
+/* here thy artist beginst hast work */
+.vg-container {
+    position: relative;
+    overflow: auto;
+}
+ 
+.vg-container,
+.vg-code {
+    border: 0;
+    margin: 0;
+}
+ 
+.vg-code .vg-line,
+.vg-gutter .vg-number {
+    display: block;
+    height: 1.5em;
+    line-height: 1.5em !important;
+}
+ 
+.vg-gutter {
+    float: left;
+    min-width: 20px;
+    width: auto;
+    -o-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+ 
+.vg-number {
+    cursor: pointer;
+}

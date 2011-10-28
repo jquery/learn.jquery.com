@@ -1,11 +1,15 @@
 <!-- sidebar -->
-<div class="col2-1" id="sidebar">
-	<ul>
+<aside id="sidebar" class="clearfix autoHeight">
+
+	<h2>Categories</h2>
+	<hr>
+	
+	<ul class="nav">
 	<% @items.group_by {|item| item[:filename].split('/')[1] }.each do |section, items| %>
 		<% if section != "assets" && section != "dex.html" %>
 			<li><a href="/<%= section %>"><%= section.gsub(/-/, " ").upcase %></a></li>
 		<% end %>
 	<% end %>
 	</ul>
-</div>
+</aside>
 <!-- sidebar -->

@@ -1,14 +1,16 @@
 <%= render 'header' %>
 
 	<!-- body -->
-	<div id="body" class="clearfix">
+	<div id="body" class="clearfix sidebar-right">
 		
-		<% if @item[:title] %>
-			<h2 class="title"><%= @item[:title] %></h2>
-		<% end %>
+		<div class="inner">
 		
-		<div class="col2-1">
+			<% if @item[:title] %>
+				<h2 class="title"><%= @item[:title] %></h2>
+			<% end %>
+			
 			<%= yield %>
+		
 		</div>
 		
 		<%= render 'sidebar' %>
