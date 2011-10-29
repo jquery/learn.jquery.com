@@ -73,7 +73,9 @@ App.subscribe("init", function(){
 	//
 	// Run Van Gogh - Syntax Highlighting
 	//
-	$("pre").vanGogh();
+	$("pre").children("code").text(function(i, t) {
+		return $.trim( t );
+	}).parent().vanGogh();
 	
 	
 });

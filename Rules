@@ -27,7 +27,7 @@ class Nanoc3::Filter
       languages = LANGUAGES.keys.join("|")
 
       until @string.empty?
-        match = scan_until /(\+(\S.*?\S?)\+|<(#{languages})(?: filename=["']([^"']*)["'])?>|\z)/m
+        match = scan_until /(\+(\S.*?\S?)\+|<(#{languages})(?: filename=["']([^"']*)["'])?(?: caption=["']([^"']*)["'])?>|\z)/m
 
         @pending << match.pre_match
 
@@ -35,7 +35,7 @@ class Nanoc3::Filter
           @pending << "<notextile><tt>#{CGI.escapeHTML(match[2])}</tt></notextile>" if match[2]
         elsif match[3] # <language>
           flush
-          generate_brushes match[3], LANGUAGES[match[3]], match[4]
+          generate_brushes match[3], LANGUAGES[match[3]], match[4], match[5]
         end
       end
 
@@ -51,12 +51,14 @@ class Nanoc3::Filter
       match
     end
 
-    def generate_brushes(tag, replace, filename)
+    def generate_brushes(tag, replace, filename, caption)
       match = scan_until %r{</#{tag}>}
-      @output << %{<div class="code_container">\n}
+      @output << %{<div class="example">\n}
       @output << %{<div class="filename">#{filename}</div>\n} if filename
-      @output << %{<pre class="brush: #{replace}; gutter: false; toolbar: false">\n} <<
-                 CGI.escapeHTML(match.pre_match) << %{</pre></div>}
+      @output << %{<pre class="brush: #{replace}; gutter: false; toolbar: false"><code>} <<
+                 CGI.escapeHTML(match.pre_match) << %{</code></pre>}
+      @output << %{<div class="caption">#{caption}</div>\n} if caption
+      @output << %{</div>\n}
     end
 
     def flush
@@ -96,7 +98,6 @@ end
 compile '*' do
   filter :code_blocks
   filter filters[item[:extension].to_sym] || item[:extension].to_sym
-  p item.identifier
   if item[:homepage]
     layout 'home'
   elsif item.identifier.match /\/dex\/$/

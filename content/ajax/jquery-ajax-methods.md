@@ -4,8 +4,6 @@ section : 3
 title   : jQuery's Ajax-Related Methods
 attribution:  jQuery Fundamentals
 ---
-## jQuery's Ajax-Related Methods
-
 While jQuery does offer many Ajax-related convenience methods, the core
 `$.ajax` method is at the heart of all of them, and understanding it is
 imperative.  We'll review it first, and then touch briefly on the convenience
@@ -27,44 +25,42 @@ documentation of the configuration options, visit
 [http://api.jquery.com/jQuery.ajax/](http://api.jquery.com/jQuery.ajax/ "$.ajax
 documentation on api.jquery.com").
 
-<div class="example" markdown="1">
-Using the core `$.ajax` method
+<javascript caption="Using the core `$.ajax` method">
+$.ajax({
+    // the URL for the request
+    url : 'post.php',
 
-    $.ajax({
-        // the URL for the request
-        url : 'post.php',
+    // the data to send
+    // (will be converted to a query string)
+    data : { id : 123 },
 
-        // the data to send
-        // (will be converted to a query string)
-        data : { id : 123 },
+    // whether this is a POST or GET request
+    type : 'GET',
 
-        // whether this is a POST or GET request
-        type : 'GET',
+    // the type of data we expect back
+    dataType : 'json',
 
-        // the type of data we expect back
-        dataType : 'json',
+    // code to run if the request succeeds;
+    // the response is passed to the function
+    success : function(json) {
+        $('&lt;h1/>').text(json.title).appendTo('body');
+        $('&lt;div class="content"/>')
+            .html(json.html).appendTo('body');
+    },
 
-        // code to run if the request succeeds;
-        // the response is passed to the function
-        success : function(json) {
-            $('&lt;h1/>').text(json.title).appendTo('body');
-            $('&lt;div class="content"/>')
-                .html(json.html).appendTo('body');
-        },
+    // code to run if the request fails;
+    // the raw request and status codes are
+    // passed to the function
+    error : function(xhr, status) {
+        alert('Sorry, there was a problem!');
+    },
 
-        // code to run if the request fails;
-        // the raw request and status codes are
-        // passed to the function
-        error : function(xhr, status) {
-            alert('Sorry, there was a problem!');
-        },
-
-        // code to run regardless of success or failure
-        complete : function(xhr, status) {
-            alert('The request is complete!');
-        }
-    });
-</div>
+    // code to run regardless of success or failure
+    complete : function(xhr, status) {
+        alert('The request is complete!');
+    }
+});
+</javascript>
 
 <div class="note" markdown="1">
 ### Note
@@ -220,26 +216,24 @@ The type of data you expect back from the server. Optional.
 This option is only applicable for methods that don't already specify the data
 type in their name.  </div>
 
-<div class="example" markdown="1">
-Using jQuery's Ajax convenience methods
+<javascript caption="Using jQuery's Ajax convenience methods">
+// get plain text or html
+$.get('/users.php', { userId : 1234 }, function(resp) {
+  console.log(resp);
+});
 
-    // get plain text or html
-    $.get('/users.php', { userId : 1234 }, function(resp) {
-        console.log(resp);
-    });
+// add a script to the page, then run a function defined in it
+$.getScript('/static/js/myScript.js', function() {
+  functionFromMyScript();
+});
 
-    // add a script to the page, then run a function defined in it
-    $.getScript('/static/js/myScript.js', function() {
-        functionFromMyScript();
-    });
-
-    // get JSON-formatted data from the server
-    $.getJSON('/details.php', function(resp) {
-        $.each(resp, function(k, v) {
-            console.log(k + ' : ' + v);
-        });
-    });
-</div>
+// get JSON-formatted data from the server
+$.getJSON('/details.php', function(resp) {
+  $.each(resp, function(k, v) {
+    console.log(k + ' : ' + v);
+  });
+});
+</javascript>
 
 ### `$.fn.load`
 
@@ -249,16 +243,12 @@ uses the returned HTML to populate the selected element(s).  In addition to
 providing a URL to the method, you can optionally provide a selector; jQuery
 will fetch only the matching content from the returned HTML.
 
-<div class="example" markdown="1">
-Using `$.fn.load` to populate an element
+<javascript caption="Using `$.fn.load` to populate an element">
+$('#newContent').load('/foo.html');
+</javascript>
 
-    $('#newContent').load('/foo.html');
-</div>
-
-<div class="example" markdown="1">
-Using `$.fn.load` to populate an element based on a selector
-
-    $('#newContent').load('/foo.html #myDiv h1:first', function(html) {
-      alert('Content updated!');
-    });
-</div>
+<javascript caption="Using `$.fn.load` to populate an element based on a selector">
+$('#newContent').load('/foo.html #myDiv h1:first', function(html) {
+  alert('Content updated!');
+});
+</javascript>

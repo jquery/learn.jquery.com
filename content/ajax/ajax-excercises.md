@@ -4,8 +4,6 @@ section : 7
 title   : Exercises
 attribution:  jQuery Fundamentals
 ---
-## Exercises
-
 ### Load External Content
 
 Open the file `/exercises/index.html` in your browser. Use the file
@@ -24,11 +22,11 @@ need to leverage the href of that link to get the proper content from
 blog.html.  Once you have the href, here's one way to process it into an ID
 that you can use as a selector in `$.fn.load`:
 
-<div class="example" markdown="1">
-    var href = 'blog.html#post1';
-    var tempArray = href.split('#');
-    var id = '#' + tempArray[1];
-</div>
+<javascript>
+  var href = 'blog.html#post1';
+  var tempArray = href.split('#');
+  var id = '#' + tempArray[1];
+</javascript>
 
 Remember to make liberal use of `console.log` to make sure you're on the right
 path!

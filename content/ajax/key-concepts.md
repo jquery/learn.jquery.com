@@ -4,8 +4,6 @@ section : 2
 title   : Key Concepts
 attribution:  jQuery Fundamentals
 ---
-## Key Concepts
-
 Proper use of Ajax-related jQuery methods requires understanding some key
 concepts first.
 
@@ -78,19 +76,19 @@ Ajax calls are asynchronous by default, the response is not immediately
 available.  Responses can only be handled using a callback.  So, for example,
 the following code will not work:
 
-<div class="example" markdown="1">
+<javascript>
     var response;
     $.get('foo.php', function(r) { response = r; });
     console.log(response); // undefined!
-</div>
+</javascript>
 
 Instead, we need to pass a callback function to our request; this callback will
 run when the request succeeds, at which point we can access the data that it
 returned, if any.
 
-<div class="example" markdown="1">
+<javascript>
     $.get('foo.php', function(response) { console.log(response); });
-</div>
+</javascript>
 
 ### Same-Origin Policy and JSONP
 

@@ -4,8 +4,6 @@ section : 5
 title   : Working with JSONP
 attribution:  jQuery Fundamentals
 ---
-## Working with JSONP
-
 The advent of JSONP — essentially a consensual cross-site scripting hack — has
 opened the door to powerful mashups of content.  Many prominent sites provide
 JSONP services, allowing you access to their content via a predefined API.  A
@@ -13,31 +11,29 @@ particularly great source of JSONP-formatted data is the [Yahoo! Query
 Language](http://developer.yahoo.com/yql/console/), which we'll use in the
 following example to fetch news about cats.
 
-<div class="example" markdown="1">
-Using YQL and JSONP
+<javscript caption="Using YQL and JSONP">
+$.ajax({
+  url : 'http://query.yahooapis.com/v1/public/yql',
 
-    $.ajax({
-        url : 'http://query.yahooapis.com/v1/public/yql',
+  // the name of the callback parameter,
+  // as specified by the YQL service
+  jsonp : 'callback',
 
-        // the name of the callback parameter,
-        // as specified by the YQL service
-        jsonp : 'callback',
+  // tell jQuery we're expecting JSONP
+  dataType : 'jsonp',
 
-        // tell jQuery we're expecting JSONP
-        dataType : 'jsonp',
+  // tell YQL what we want and that we want JSON
+  data : {
+    q : 'select title,abstract,url from search.news where query="cat"',
+    format : 'json'
+  },
 
-        // tell YQL what we want and that we want JSON
-        data : {
-            q : 'select title,abstract,url from search.news where query="cat"',
-            format : 'json'
-        },
-
-        // work with the response
-        success : function(response) {
-            console.log(response);
-        }
-    });
-</div>
+  // work with the response
+  success : function(response) {
+    console.log(response);
+  }
+});
+</javscript>
 
 jQuery handles all the complex aspects of JSONP behind-the-scenes — all we have
 to do is tell jQuery the name of the JSONP callback parameter specified by YQL

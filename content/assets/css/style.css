@@ -179,9 +179,24 @@
 {	zoom: 1 }
 	
 	/*******************************************************************************/
+	/* Article content
+	/*******************************************************************************/
+  .example 
+{ margin-bottom: 15px; 
+	background: #eee; }
+
+  .example .caption
+{ padding: .5em 0 .5em 33px;
+  font-style: italic;
+  color: #666;
+}
+	/*******************************************************************************/
 	/* Syntax */
 	/*******************************************************************************/
-	
+.vg-code,
+.vg-container .vg-code {
+  background-color: transparent;
+}
 /*
 	code 
 {	background: #EEE;
@@ -192,8 +207,7 @@
 	border-radius: 5px; }
 */
 	pre 
-{	border: 1px solid #ccc !important;
-	margin-bottom: 20px !important; }
+{	border: 1px solid #ccc !important; }
 	
 	iframe 
 {	border: 1px solid #bfbfbf;
@@ -209,7 +223,7 @@
 	/* Titles */
 	/*******************************************************************************/
 	
-	.title 
+	h2.title 
 {	background: #f7b535;
 	width: 100%;
 	text-shadow: 0 1px 1px #fff;
