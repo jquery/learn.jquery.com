@@ -1,28 +1,30 @@
 <%= render 'header' %>
 
 <!-- body -->
-<div id="body" class="clearfix">
+	<div id="body" class="clearfix sidebar-right">
 
-	<% if @item[:title] %>
-	<h2 class="title"><%= @item[:title] %></h2>
-	<% end %>
+		<div class="inner">
 
-	<div class="col2-1">
-		<%= yield %>
-		<% myFolder = @item[:filename].split('/')[1] %>
-		<% folderItems = @items.group_by {|item| item[:filename].split('/')[1] } %>
-		<ul>
-			<% folderItems[ myFolder ].sort_by {|item| item[:title] || "" }. each do |item| %>
-			<% if item[:title] %>
-			<li><a href="<%= item.path %>"><%= item[:title] %></a></li>
+			<% if @item[:title] %>
+			<h2 class="title"><%= @item[:title] %></h2>
 			<% end %>
-			<% end %>
-		</ul>
+
+			<%= yield %>
+
+			<% myFolder = @item[:filename].split('/')[1] %>
+			<% folderItems = @items.group_by {|item| item[:filename].split('/')[1] } %>
+			<ul>
+				<% folderItems[ myFolder ].sort_by {|item| item[:title] || "" }. each do |item| %>
+					<% if item[:title] %>
+					<li><a href="<%= item.path %>"><%= item[:title] %></a></li>
+					<% end %>
+				<% end %>
+			</ul>
+		</div>
+
+		<%= render 'sidebar' %>
+
 	</div>
-
-	<%= render 'sidebar' %>
-
-</div>
 <!-- /body -->
 
 <%= render 'footer' %>
