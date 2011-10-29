@@ -40,6 +40,10 @@ data_sources:
     # same as the items root, but applies to layouts rather than items.
     layouts_root: /
 
+    # This flag allows for files like jquery.plugin.js or foo.bar.css to compile properly
+    config:
+      allow_periods_in_identifiers: true
+
 # Configuration for the “watch” command, which watches a site for changes and
 # recompiles if necessary.
 watcher:
