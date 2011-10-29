@@ -6,7 +6,7 @@
 	
 	<ul class="nav">
 	<% @items.group_by {|item| item[:filename].split('/')[1] }.each do |section, items| %>
-		<% if section != "assets" && section != "dex.html" %>
+		<% if section != "assets" && section != "dex.md" %>
 			<li><a href="/<%= section %>"><%= section.gsub(/-/, " ").upcase %></a></li>
 		<% end %>
 	<% end %>
