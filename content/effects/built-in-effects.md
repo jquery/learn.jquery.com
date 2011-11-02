@@ -4,8 +4,6 @@ section : 2
 title   : Built-in Effects
 attribution:  jQuery Fundamentals
 ---
-## Built-in Effects
-
 Frequently used effects are built into jQuery as methods:
 
 #### $.fn.show
@@ -37,11 +35,9 @@ Hide the selected elements with a vertical sliding motion.
 Show or hide the selected elements with a vertical sliding motion, depending on
 whether the elements are currently visible.
 
-<div class="example" markdown="1">
-A basic use of a built-in effect
-
+<javascript caption="A basic use of a built-in effect">
     $('h1').show();
-</div>
+</javascript>
 
 ### Changing the Duration of Built-in Effects
 
@@ -49,37 +45,33 @@ With the exception of `$.fn.show` and `$.fn.hide`, all of the built-in methods
 are animated over the course of 400ms by default. Changing the duration of an
 effect is simple.
 
-<div class="example" markdown="1">
-Setting the duration of an effect
-
+<javascript caption="Setting the duration of an effect">
     $('h1').fadeIn(300);      // fade in over 300ms
     $('h1').fadeOut('slow');  // using a built-in speed definition
-<div class="example" markdown="1">
+</javascript>
 
 ### jQuery.fx.speeds
 
 jQuery has an object at `jQuery.fx.speeds` that contains the default speed, as
 well as settings for "`slow`" and "`fast`".
 
-<div class="example" markdown="1">
-    speeds: {
-        slow: 600,
-        fast: 200,
-        // Default speed
-        _default: 400
-    }
-</div>
+<javascript>
+speeds: {
+    slow: 600,
+    fast: 200,
+    // Default speed
+    _default: 400
+}
+</javascript>
 
 It is possible to override or add to this object.  For example, you may want to
 change the default duration of effects, or you may want to create your own
 effects speed.
 
-<div class="example" markdown="1">
-Augmenting `jQuery.fx.speeds` with custom speed definitions
-
+<javascript caption="Augmenting `jQuery.fx.speeds` with custom speed definitions">
     jQuery.fx.speeds.blazing = 100;
     jQuery.fx.speeds.turtle = 2000;
-</div>
+</javascript>
 
 ### Doing Something when an Effect is Done
 
@@ -92,19 +84,15 @@ conclusion of the animation.  Inside of the callback function, the keyword this
 refers to the element that the effect was called on; as we did inside of event
 handler functions, we can turn it into a jQuery object via $(this).
 
-<div class="example" markdown="1">
-Running code when an animation is complete
-
+<javascript caption="Running code when an animation is complete">
     $('div.old').fadeOut(300, function() { $(this).remove(); });
-</div>
+</javascript>
 
 Note that if your selection doesn't return any elements, your callback will
 never run!  You can solve this problem by testing whether your selection
 returned any elements; if not, you can just run the callback immediately.
 
-<div class="example" markdown="1">
-Run a callback even if there were no elements to animate
-
+<javascript caption="Run a callback even if there were no elements to animate">
     var $thing = $('#nonexistent');
 
     var cb = function() {
@@ -116,4 +104,4 @@ Run a callback even if there were no elements to animate
     } else {
         cb();
     }
-</div>
+</javascript>

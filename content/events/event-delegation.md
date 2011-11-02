@@ -1,11 +1,9 @@
 ---
 chapter : events
 section : 4
-title   : Triggering Event Handlers
+title   : Increasing Performance with Event Delegation
 attribution:  jQuery Fundamentals
 ---
-## Increasing Performance with Event Delegation
-
 You'll frequently use jQuery to add new elements to the page, and when you do,
 you may need to bind events to those new elements — events you already bound to
 similar elements that were on the page originally.  Instead of repeating your
@@ -38,25 +36,20 @@ Event delegation using `$.fn.delegate`
     });
 </div>
 
-<div class="example" markdown="1">
-Event delegation using `$.fn.live`
-
+<javascript caption="Event delegation using `$.fn.live`">
     $('#myUnorderedList li').live('click', function(e) {
         var $myListItem = $(this);
         // ...
     });
-</div>
+</javascript>
 
 ### Unbinding Delegated Events
 
 If you need to remove delegated events, you can't simply unbind them.  Instead,
 use `$.fn.undelegate` for events connected with `$.fn.delegate`, and `$.fn.die`
 for events connected with `$.fn.live`.  As with bind, you can optionally pass
-in the name of the bound function.
-
-<div class="example" markdown="1">
-Unbinding delegated events
-
+in the name of the bound function.<javascript caption="Unbinding delegated events">
     $('#myUnorderedList').undelegate('li', 'click');
-    $('#myUnorderedList li').die('click');
+    $('#myUnorderedList li').die('click');</javascript>
+<div class="example" markdown="1">
 </div>

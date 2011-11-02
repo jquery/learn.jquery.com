@@ -4,8 +4,6 @@ section : 6
 title   : Excercises
 attribution:  jQuery Fundamentals
 ---
-## Excercises
-
 ###Create an Input Hint
 
 Open the file `/exercises/index.html` in your browser. Use the file

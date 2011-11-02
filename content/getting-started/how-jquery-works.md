@@ -95,7 +95,7 @@ element's src attribute
 
 ### Adding and Removing an HTML Class
 
-**Important:** *The remaining jQuery examples will need to be placed inside the ready event so that they are executed when the document is ready to be worked on. See [[#Launching_Code_on_Document_Ready|Launching Code on Document Ready]] above for details.*
+**Important:** *The remaining jQuery examples will need to be placed inside the ready event so that they are executed when the document is ready to be worked on.*
 
 Another common task is adding (or removing) a `class`.
 

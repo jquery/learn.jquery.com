@@ -4,15 +4,11 @@ section : 3
 title   : Custom Effects with $.fn.animate
 attribution:  jQuery Fundamentals
 ---
-## Custom Effects with `$.fn.animate`
-
 jQuery makes it possible to animate arbitrary CSS properties via the
 `$.fn.animate` method.  The `$.fn.animate` method lets you animate to a set
 value, or to a value relative to the current value.
 
-<div class="example" markdown="1">
-Custom effects with `$.fn.animate`
-
+<javascript caption="Custom effects with `$.fn.animate`">
     $('div.funtimes').animate(
         {
             left : "+=50",
@@ -21,15 +17,14 @@ Custom effects with `$.fn.animate`
         300, // duration
         function() { console.log('done!'); // calback
     });
-</div>
+</javascript>
 
-<div class="example" markdown="1">
-### Note
-
+<div class="note" markdown="1">
 Color-related properties cannot be animated with `$.fn.animate` using jQuery
 out of the box.  Color animations can easily be accomplished by including the
 [color plugin](http://github.com/jquery/jquery-color).  We'll discuss using
-plugins later in the book.  </div>
+plugins later in the book.
+</div>
 
 ### Easing
 
@@ -41,9 +36,7 @@ natural transitions in your animations, various easing plugins are available.
 As of jQuery 1.4, it is possible to do per-property easing when using the
 `$.fn.animate` method.
 
-<div class="example" markdown="1">
-Per-property easing
-
+<javascript caption="Per-property easing">
     $('div.funtimes').animate(
         {
             left : [ "+=50", "swing" ],
@@ -51,8 +44,7 @@ Per-property easing
         },
         300
     );
-</div>
+</javascript>
 
 For more details on easing options, see
-[http://api.jquery.com/animate/](http://api.jquery.com/animate/ "Animation
-documentation on api.jquery.com").
+[Animation documentation on api.jquery.com](http://api.jquery.com/animate/).

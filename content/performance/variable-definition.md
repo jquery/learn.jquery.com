@@ -8,16 +8,20 @@ tags:         performance
 
 Variables can be defined in one statement instead of several.
 
-    // old & busted
-    var test = 1;
-    var test2 = function() { ... };
-    var test3 = test2(test);
+<javascript>
+// old & busted
+var test = 1;
+var test2 = function() { ... };
+var test3 = test2(test);
 
-    // new hotness
-    var test = 1,
-        test2 = function() { ... },
-        test3 = test2(test);
+// new hotness
+var test = 1,
+    test2 = function() { ... },
+    test3 = test2(test);
+</javascript>
 
 In self-executing functions, variable definition can be skipped all together.
 
-    (function(foo, bar) { ... })(1, 2);
+<javascript>
+(function(foo, bar) { ... })(1, 2);
+</javascript>

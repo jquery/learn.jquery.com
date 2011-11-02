@@ -4,8 +4,6 @@ section : 5
 title   : Effect Exercises
 attribution:  jQuery Fundamentals
 ---
-## Exercises
-
 ### Reveal Hidden Text
 
 Open the file `/exercises/index.html` in your browser.  Use the file

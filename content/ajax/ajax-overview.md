@@ -1,8 +1,5 @@
 ---
 chapter : ajax
-section : 1
-title   : Overview
-attribution:  jQuery Fundamentals
 ---
 ## Overview
 
@@ -18,7 +15,7 @@ code continues to execute while the request is being processed, so it’s
 imperative that a callback be used to handle the response.
 
 jQuery provides Ajax support that abstracts away painful browser differences.
-It offers both a full-featured $.ajax() method, and simple convenience methods
+It offers both a full-featured `$.ajax()` method, and simple convenience methods
 such as `$.get()`, `$.getScript()`, `$.getJSON()`, `$.post()`, and
 `$().load()`.
 

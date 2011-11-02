@@ -1,52 +1,44 @@
 ---
-chapter : "jqfundamentals"
-section : "2"
-title   : "Selecting Elements"
+chapter : jquery-basics
+section : 2
+title   : Selecting Elements
 ---
-## Selecting Elements
 
-The most basic concept of jQuery is to “select some elements and do something with them.” 
-jQuery supports most CSS3 selectors, as well as some non-standard selectors. 
-For a complete selector reference, visit [http://api.jquery.com/category/selectors/](http://api.jquery.com/category/selectors/ "Selectors documentation on api.jquery.com").
+The most basic concept of jQuery is to “select some elements and do something with
+them.” jQuery supports most CSS3 selectors, as well as some non-standard
+selectors.  For a complete selector reference, visit the
+[Selectors documentation on api.jquery.com](http://api.jquery.com/category/selectors/).
 
 Following are a few examples of common selection techniques.
 
-<div class="example" markdown="1">
-Selecting elements by ID
+<javascript caption="Selecting elements by ID">
+$('#myId'); // note IDs must be unique per page
+</javascript>
 
-    $('#myId'); // note IDs must be unique per page
-</div>
+<javascript caption="Selecting elements by class name">
+$('div.myClass'); // performance improves if you specify element type
+</javascript>
 
-<div class="example" markdown="1">
-Selecting elements by class name
-
-    $('div.myClass'); // performance improves if you specify element type
-</div>
-
-<div class="example" markdown="1">
-Selecting elements by attribute
-
-    $('input[name=first_name]'); // beware, this can be very slow
+<javascript caption="Selecting elements by attribute">
+$('input[name=first_name]'); // beware, this can be very slow in older browsers
+</javascript>
 
 
-<div class="example" markdown="1">
-Selecting elements by compound CSS selector
+<javascript caption="Selecting elements by compound CSS selector">
+$('#contents ul.people li');
+</javascript>
 
-    $('#contents ul.people li');
+<javascript caption="Pseudo-selectors">
+$('a.external:first');
+$('tr:odd');
+$('#myForm :input');   // select all input-like elements in a form
+$('div:visible');
+$('div:gt(2)');        // all except the first three divs
+$('div:animated');     // all currently animated divs
+</javascript>
 
-<div class="example" markdown="1">
-Pseudo-selectors
 
-    $('a.external:first');
-    $('tr:odd');
-    $('#myForm :input');   // select all input-like elements in a form
-    $('div:visible');
-    $('div:gt(2)');        // all except the first three divs
-    $('div:animated');     // all currently animated divs
-</div>
-
-### Note
-
+<div class="note" markdown="1">
 When you use the :visible and :hidden pseudo-selectors, jQuery tests the actual 
 visibility of the element, not its CSS visibility or display — that is, it looks 
 to see if the element's physical height and width on the page are both greater than zero. 
@@ -59,36 +51,37 @@ create and add elements to the DOM.)
 
 For reference, here is the code jQuery uses to determine whether an element is visible or hidden, with comments added for clarity:
 
-<div class="example" markdown="1">
+</div>
+<javascript>
     jQuery.expr.filters.hidden = function( elem ) {
-    	var width = elem.offsetWidth, height = elem.offsetHeight,
-    	skip = elem.nodeName.toLowerCase() === "tr";
+      var width = elem.offsetWidth, height = elem.offsetHeight,
+      skip = elem.nodeName.toLowerCase() === "tr";
 
-    	// does the element have 0 height, 0 width,
-    	// and it's not a &lt;tr>?
-    	return width === 0 && height === 0 && !skip ?
+      // does the element have 0 height, 0 width,
+      // and it's not a &lt;tr>?
+      return width === 0 && height === 0 && !skip ?
 
-        	// then it must be hidden
-        	true :
+          // then it must be hidden
+          true :
 
-        	// but if it has width and height
-        	// and it's not a &lt;tr>
-        	width > 0 && height > 0 && !skip ?
+          // but if it has width and height
+          // and it's not a &lt;tr>
+          width > 0 && height > 0 && !skip ?
 
-            	// then it must be visible
-            	false :
+              // then it must be visible
+              false :
 
-            	// if we get here, the element has width
-            	// and height, but it's also a &lt;tr>,
-            	// so check its display property to
-            	// decide whether it's hidden
-            	jQuery.curCSS(elem, "display") === "none";
+              // if we get here, the element has width
+              // and height, but it's also a &lt;tr>,
+              // so check its display property to
+              // decide whether it's hidden
+              jQuery.curCSS(elem, "display") === "none";
     };
 
     jQuery.expr.filters.visible = function( elem ) {
-    	return !jQuery.expr.filters.hidden( elem );
+      return !jQuery.expr.filters.hidden( elem );
     };
-</div>
+</javascript>
 
 ### Choosing Selectors
 
@@ -97,32 +90,29 @@ A little specificity — for example, including an element type such as div when
  selecting elements by class name — can go a long way. Generally, any time you 
 can give jQuery a hint about where it might expect to find what you're looking for, 
 you should. On the other hand, too much specificity can be a bad thing. 
-A selector such as #myTable thead tr th.special is overkill if a selector 
-such as #myTable th.special will get you what you want.
+A selector such as `#myTable thead tr th.special` is overkill if a selector 
+such as `#myTable th.special` will get you what you want.
 
 jQuery offers many attribute-based selectors, allowing you to make selections 
 based on the content of arbitrary attributes using simplified regular expressions.
 
-<div class="example" markdown="1">
-    // find all &lt;a>s whose rel attribute
-    // ends with "thinger"
-    $("a[rel$='thinger']");
-</div>
+<javascript>
+// find all <a>s whose rel attribute
+// ends with "thinger"
+$("a[rel$='thinger']");
+</javascript>
 
-While these can be useful in a pinch, they can also be extremely slow — I once wrote an attribute-based selector that locked up my page for multiple seconds. Wherever possible, 
-make your selections using IDs, class names, and tag names.
-
-Want to know more? Paul Irish has a great presentation about improving performance in 
-JavaScript, with several slides focused specifically on selector performance.
+While these can be useful in a pinch, they can also be extremely slow in older browsers.
+Wherever possible, make your selections using IDs, class names, and tag names.
 
 ### Does My Selection Contain Any Elements?
 
 Once you've made a selection, you'll often want to know whether you have anything to work with.
  You may be inclined to try something like:
 
-<div class="example" markdown="1">
+<javascript>
 if ($('div.foo')) { ... }
-</div>
+</javascript>
 
 This won't work. When you make a selection using `$()`, an object is always returned, 
 and objects always evaluate to true. Even if your selection doesn't contain any elements, 
@@ -132,11 +122,9 @@ Instead, you need to test the selection's length property, which tells you how m
 elements were selected. If the answer is 0, the length property will evaluate to false 
 when used as a boolean value.
 
-<div class="example" markdown="1">
-Testing whether a selection contains elements
-
+<javascript caption="Testing whether a selection contains elements">
     if ($('div.foo').length) { ... }
-</div>
+</javascript>
 
 ### Saving Selections
 
@@ -144,15 +132,11 @@ Every time you make a selection, a lot of code runs, and jQuery doesn't do cachi
 selections for you. If you've made a selection that you might need to make again, you 
 should save the selection in a variable rather than making the selection repeatedly.
 
-<div class="example" markdown="1">
-Storing selections in a variable
-
-    var $divs = $('div');
-</div>
+<javascript>
+var $divs = $('div');
+</javascript>
 
 <div class="note" markdown="1">
-### Note
-
 In “Storing selections in a variable”, the variable name begins with a dollar sign. 
 Unlike in other languages, there's nothing special about the dollar sign in JavaScript — 
 it's just another character. We use it here to indicate that the variable contains a 
@@ -164,8 +148,6 @@ Once you've stored your selection, you can call jQuery methods on the variable y
 stored it in just like you would have called them on the original selection.
 
 <div class="note" markdown="1">
-### Note
-
 A selection only fetches the elements that are on the page when you make the selection. 
 If you add elements to the page later, you'll have to repeat the selection or otherwise 
 add them to the selection stored in the variable. Stored selections don't magically 
@@ -176,15 +158,13 @@ update when the DOM changes.
 
 Sometimes you have a selection that contains more than what you're after; in this case, you may want to refine your selection. jQuery offers several methods for zeroing in on exactly what you're after.
 
-<div class="example" markdown="1">
-Refining selections
-
-    $('div.foo').has('p');          // div.foo elements that contain &lt;p>'s
-    $('h1').not('.bar');            // h1 elements that don't have a class of bar
-    $('ul li').filter('.current');  // unordered list items with class of current
-    $('ul li').first();             // just the first unordered list item
-    $('ul li').eq(5);               // the sixth
-</div>
+<javascript caption="Refining selections">
+$('div.foo').has('p');          // div.foo elements that contain &lt;p>'s
+$('h1').not('.bar');            // h1 elements that don't have a class of bar
+$('ul li').filter('.current');  // unordered list items with class of current
+$('ul li').first();             // just the first unordered list item
+$('ul li').eq(5);               // the sixth
+</javascript>
 
 ### Selecting Form Elements
 
@@ -193,7 +173,7 @@ these are especially helpful because it can be difficult to distinguish between
 form elements based on their state or type using standard CSS selectors.
 
 ### :button
-Selects &lt;button> elements and elements with type="button"
+Selects <button> elements and elements with type="button"
 
 #### :checkbox
 Selects inputs with type="checkbox"
@@ -214,7 +194,7 @@ Selects inputs with type="file"
 Selects inputs with type="image"
 
 #### :input
-Selects &lt;input>, &lt;textarea>, and &lt;select> elements
+Selects <input>, <textarea>, and <select> elements
 
 #### :password
 Selects inputs with type="password"
@@ -234,8 +214,6 @@ Selects inputs with type="submit"
 #### :text
 Selects inputs with type="text"
 
-<div class="example" markdown="1">
-Using form-related pseduo-selectors
-
+<javascript caption="Using form-related pseduo-selectors">
     $('#myForm :input'); // get all elements that accept input
-</div>
+</javascript>

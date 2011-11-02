@@ -16,7 +16,7 @@ class Nanoc3::Filter
   class CodeBlocks < Nanoc3::Filter
     LANGUAGES = { "ruby" => "ruby", "sql" => "sql", "javascript" => "javascript",
                   "css" => "css", "plain" => "plain", "erb" => "ruby; html-script: true",
-                  "html" => "xml", "xml" => "xml", "shell" => "plain", "yaml" => "yaml" }
+                  "markup" => "xml", "xml" => "xml", "shell" => "plain", "yaml" => "yaml" }
 
     def run(content, params={})
       @string = content.dup

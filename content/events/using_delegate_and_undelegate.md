@@ -6,20 +6,20 @@ editrequired: 2
 source:       http://www.learningjquery.com/2010/03/using-delegate-and-undelegate-in-jquery-1-4-2
 ---
 
-As some of you have heard, there have been two new methods added in jQuery 1.4.2, [.delegate()](http://api.jquery.com/delegate/) and [.undelegate()](http://api.jquery.com/undelegate/). These methods achieve the same thing as the [.live()](http://api.jquery.com/live/) and [.die()](http://api.jquery.com/die/) methods, they just use a different syntax. For those new to *.live()*, it's a method in jQuery that allows you to attach events to elements that appear in the document as well as elements that will appear in the future. An example would be if you attached a click event via *.live()*:
+As some of you have heard, there have been two new methods added in jQuery 1.4.2, [.delegate()](http://api.jquery.com/delegate/) and [.undelegate()](http://api.jquery.com/undelegate/). These methods achieve the same thing as the [.live()](http://api.jquery.com/live/) and [.die()](http://api.jquery.com/die/) methods, they just use a different syntax. For those new to *.live()*, it's a method in jQuery that allows you to attach events to elements that appear in the document as well as elements that will appear in the future. An example would be if you attached a click event via `.live()*`
 
-<div class="example" markdown="1">
+<javascript>
     $('img.photo').live('click', function(){
       lightboxify(this);
     });
-</div>
+</javascript>
 
 Then appended some photos via ajax later on:
 
-<div class="example" markdown="1">
+<javascript caption="Appends an image">
     // append an image
     $('body').append('<img src="face.jpg" alt="silly face" class="photo"/>');
-</div>
+</javascript>
 
 The click event would still apply to that new image without having to re-bind the event. Handy, isn't it?
 

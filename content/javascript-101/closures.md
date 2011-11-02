@@ -16,22 +16,20 @@ loops -- the function "sees" the change in the variable's value even after the
 function is defined, resulting in each function referencing the last value stored 
 in the variable.
 
-<div class="example" markdown="1">
-Each function executed within the loop will reference the last value stored in i (5)
-
-    /* this won't behave as we want it to; */
-    /* every 100 milliseconds, 5 will alert */
+<javascript caption="Each function executed within the loop will reference the last value stored in i (5)">
+    // this won't behave as we want it to;
+    // every 100 milliseconds, 5 will alert
     for (var i=0; i<5; i++) {
-	    setTimeout(function() {
-      	alert(i);
-	    }, i*100);
+      setTimeout(function() {
+        alert(i);
+      }, i*100);
     }
-</div>
+</javascript>
 
 Closures can be used to prevent this by creating a unique scope for
 each iteration -- storing each unique value of the variable within it's scope.
 
-<div class="example" markdown="1">
+<javascript caption="Using a closure to create a new private scope">
     /* fix: “close” the value of i inside createFunction, so it won't change */
     var createFunction = function(i) {
       return function() { alert(i); };
@@ -40,14 +38,12 @@ each iteration -- storing each unique value of the variable within it's scope.
     for (var i=0; i<5; i++) {
       setTimeout( createFunction(i), i*100 );
     }
-</div>
+</javascript>
 
 Closures can also be used to resolve issues with the this keyword, which is
 unique to each scope:
 
-<div class="example" markdown="1">
-Using a closure to access inner and outer object instances simultaneously
-
+<javascript caption="Using a closure to access inner and outer object instances simultaneously">
     var outerObj = {
         myName : 'outer',
         outerFunction : function () {
@@ -68,7 +64,7 @@ Using a closure to access inner and outer object instances simultaneously
     };
 
     outerObj.outerFunction();
-</div>
+</javascript>
 
 This mechanism can be particularly useful when dealing with callbacks, though
 in those cases, it is often better to use `Function.bind`, which will avoid any
@@ -86,24 +82,32 @@ possible to work around support by using the following shim, which whilst a part
 implementation only, may be sufficient as a temporary bridge until `bind` is widely 
 adopted according to the specification.
 
-<div class="example" markdown="1">
-	if ( !Function.prototype.bind ) {
-	  Function.prototype.bind = function( obj ) {
-	    var slice = [].slice,
-	        args = slice.call(arguments, 1), 
-	        self = this, 
-	        nop = function () {}, 
-	        bound = function () {
-	          return self.apply( this instanceof nop ? this : ( obj || {} ), 
-	          	args.concat( slice.call(arguments) ) );    
-	        };
+<javascript>
+// Shim from https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function/bind
+if (!Function.prototype.bind) {
+  Function.prototype.bind = function (oThis) {
+    if (typeof this !== "function") {
+      // closest thing possible to the ECMAScript 5 internal IsCallable function
+      throw new TypeError("Function.prototype.bind - what is trying to be bound is not callable");
+    }
 
-	    nop.prototype = self.prototype;
-	    bound.prototype = new nop();
-	    return bound;
-	  };
-	}
-</div>
+    var fSlice = Array.prototype.slice,
+        aArgs = fSlice.call(arguments, 1), 
+        fToBind = this, 
+        fNOP = function () {},
+        fBound = function () {
+          return fToBind.apply(this instanceof fNOP
+                                 ? this
+                                 : oThis || window,
+                               aArgs.concat(fSlice.call(arguments)));
+        };
+
+    fNOP.prototype = this.prototype;
+    fBound.prototype = new fNOP();
+
+    return fBound;
+  };
+}</javascript>
 
 One of the simplest uses of `bind` is making a function, which regardless of how it's 
 called, is called with a particular value for `this`. A common mistake made is 
@@ -111,31 +115,31 @@ attempting to extract a method from an object, then later calling that function 
 expecting it to the use the origin object as it's `this`. This however can be solved 
 by creating a bound function using the original object as demonstrated below.
 
-<div class="example" markdown="1">
-	//lets manipulate "this" with a basic example
-	var user = "johnsmith",
-	    module = {
-	        getUser: function(){
-	            return this.user;
-	        },
-	        user: "janedoe"
-	    };
+<javascript>
+  //lets manipulate "this" with a basic example
+  var user = "johnsmith",
+      module = {
+          getUser: function(){
+              return this.user;
+          },
+          user: "janedoe"
+      };
 
-	//module.getUser() is called where "module" is "this" and "module.user" is returned.
-	module.getUser();
-	//janedoe
+  //module.getUser() is called where "module" is "this" and "module.user" is returned.
+  module.getUser();
+  //janedoe
 
-	//let's now store a reference in the global version of "this"
-	var getUser = module.getUser;
+  //let's now store a reference in the global version of "this"
+  var getUser = module.getUser;
 
-	//getUser() called, "this" is global, "user" is returned
-	getUser();
-	//johnsmith
+  //getUser() called, "this" is global, "user" is returned
+  getUser();
+  //johnsmith
 
-	//store a ref with "module" bound as "this"
-	var boundGetUser = getUser.bind(module);  
+  //store a ref with "module" bound as "this"
+  var boundGetUser = getUser.bind(module);  
 
-	//boundGetUser() called, "module" is "this" again, "module.user" returned.
-	boundGetUser();
-	//janedoe
-</div>
+  //boundGetUser() called, "module" is "this" again, "module.user" returned.
+  boundGetUser();
+  //janedoe
+</javascript>

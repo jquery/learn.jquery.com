@@ -6,18 +6,18 @@ attribution:  jQuery Fundamentals
 ---
 Loops let you run a block of code a certain number of times.
 
-<div class="example" markdown="1">
-Loops
-
+<javascript caption="A for loop">
     // logs 'try 0', 'try 1', ..., 'try 4'
     for (var i=0; i<5; i++) {
         console.log('try ' + i);
     }
-</div>
+</javascript>
 
-<p class="note">Note that in Loops even though we use the keyword var before
+<div class="note" markdown="1">
+Note that in Loops even though we use the keyword var before
 the variable name i, this does not "scope" the variable i to the loop block.
-We'll discuss scope in depth later in this chapter.</p>
+We'll discuss scope in depth later in this chapter.
+</div>
 
 ## The `for` loop
 
@@ -45,15 +45,13 @@ and so will wrap them in a block ( {...}).
 
 Here's a typical for loop:
 
-<div class="example" markdown="1">
-A typical for loop
-
+<javascript caption="A typical for loop">
     for (var i = 0, limit = 100; i < limit; i++) {
       // This block will be executed 100 times
       console.log('Currently at ' + i);
       // Note: the last log will be "Currently at 99"
     }
-</div>
+</javascript>
 
 ## The `while` loop
 
@@ -66,9 +64,7 @@ executing until the condition evaluates to false.
 
 Here's a typical while loop:
 
-<div class="example" markdown="1">
-A typical `while` loop
-
+<javascript caption="A typical while loop">
     var i = 0;
     while (i < 100) {
       // This block will be executed 100 times
@@ -76,20 +72,18 @@ A typical `while` loop
 
       i++; // increment i
     }
-</div>
+</javascript>
 
 You'll notice that we're having to increment the counter within the loop's
 body. It is possible to combine the conditional and incrementer, like so:
 
-<div class="example" markdown="1">
-A while loop with a combined conditional and incrementer
-
+<javascript caption="A while loop with a combined conditional and incrementer">
     var i = -1;
     while (++i < 100) {
       // This block will be executed 100 times
       console.log('Currently at ' + i);
     }
-</div>
+</javascript>
 
 Notice that we're starting at -1 and using the prefix incrementer (++i).
 
@@ -104,9 +98,7 @@ loop's body is executed at least once before the condition is tested.
 
 Here's a do-while loop:
 
-<div class="example" markdown="1">
-A do-while loop
-
+<javascript caption="A do-while loop">
     do {
       // Even though the condition evaluates to false
       // this loop's body will still execute once.
@@ -114,7 +106,7 @@ A do-while loop
       alert('Hi there!');
 
     } while (false);
-</div>
+</javascript>
 
 These types of loops are quite rare since only few situations require a loop
 that blindly executes at least once. Regardless, it's good to be aware of it.
@@ -125,22 +117,18 @@ Usually, a loop's termination will result from the conditional statement not
 evaluating to true, but it is possible to stop a loop in its tracks from within
 the loop's body with the break statement.
 
-<div class="example" markdown="1">
-Stopping a loop
-
+<javascript caption="Stopping a loop">
     for (var i = 0; i < 10; i++) {
       if (something) {
         break;
       }
     }
-</div>
+</javascript>
 
 You may also want to continue the loop without executing more of the loop's
 body. This is done using the continue statement.
 
-<div class="example" markdown="1">
-Skipping to the next iteration of a loop
-
+<javascript caption="Skipping to the next iteration of a loop">
     for (var i = 0; i < 10; i++) {
       if (something) {
           continue;
@@ -150,4 +138,4 @@ Skipping to the next iteration of a loop
       // if the conditional 'something' has not been met
       console.log('I have been reached');
     }
-</div>
+</javascript>

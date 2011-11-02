@@ -1,7 +1,7 @@
 ---
-chapter : "jqfundamentals"
-section : "1"
-title   : "$(document).ready()"
+chapter : jquery-basics
+section : 1
+title   : $(document).ready()
 ---
 You cannot safely manipulate a page until the document is “ready.” 
 jQuery detects this state of readiness for you; code included inside 
