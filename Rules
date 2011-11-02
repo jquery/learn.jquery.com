@@ -55,9 +55,9 @@ class Nanoc3::Filter
       match = scan_until %r{</#{tag}>}
       @output << %{<div class="example">\n}
       @output << %{<div class="filename">#{filename}</div>\n} if filename
+      @output << %{<div class="caption">#{caption}</div>\n} if caption
       @output << %{<pre class="brush: #{replace}; gutter: false; toolbar: false"><code>} <<
                  CGI.escapeHTML(match.pre_match) << %{</code></pre>}
-      @output << %{<div class="caption">#{caption}</div>\n} if caption
       @output << %{</div>\n}
     end
 
