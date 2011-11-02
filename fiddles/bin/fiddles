@@ -1,0 +1,379 @@
+#!/usr/bin/env node
+
+
+var fs = require('fs'),
+  path = require('path'),
+  util = require('util'),
+  exec = require('child_process').exec,
+  findit = require('findit'),
+  mime = require('mime'),
+  ngist = require('ngist');
+
+
+
+// very simple options parsing for exercises/solutions switch (may opt
+// for a real options parser if the config gets bigger).
+
+var argv = process.argv.slice(2),
+  solution = !!~['s', 'sol', 'solution'].indexOf(argv[0]);
+
+var config = {
+  code: path.join(__dirname, '..', '..', 'code'),
+  fiddles: path.join(__dirname, '..', '..', 'code', 'fiddles'),
+  content: path.join(__dirname, '..', '..', 'content'),
+  output: path.join(__dirname, '..', '..', 'output'),
+  manifest: fs.readFileSync(path.join(__dirname, '..', 'lib', 'fiddles', 'fiddle.manifest'), 'utf8'),
+
+  // http://doc.jsfiddle.net/use/gist_read.html?highlight=github#run-in-jsfiddle
+  fiddle: 'http://jsfiddle.net/gh/gist/{framework}/{version}/{gistid}',
+
+  // used during generation of gists files where relative references
+  // of images in HTML files gets replaced by host/assets/imgpath
+  // (defaults http://learning.jquery.com/images/imgpath)
+  host: 'http://learning.jquery.com',
+  assets: '/assets/i/'
+};
+
+console.log('About to generate or update code/fiddles folders. Configuration:');
+inspect(config);
+
+if(solution) console.log('\nGeneration using solution mode, demo.js files will include solutions to exercises.\n');
+
+
+// get the list of files to process, include an array of fiddles to create. Each of these
+// including a hash object with usefull meta info (title, html, js, etc.)
+
+var files = parse(config);
+
+// holder for git config stuff
+var gh = {}, cleaned = false;
+
+// get github info, for posting gists, from the git global config
+exec('git config --get github.user', function(err, stdout, stderr) {
+  if(err) return error(new Error(ghHint('user')));
+  gh.user = stdout.trim();
+  next();
+});
+
+exec('git config --get github.token', function(err, stdout, stderr) {
+  if(err) return error(new Error(ghHint('token')));
+  gh.token = stdout.trim();
+  next();
+});
+
+exec('rm -r ' + config.fiddles, function(err, stdout, stderr) {
+  if(err) return error(err);
+  cleaned = true;
+  next();
+});
+
+function next() {
+  if(!gh.user || !gh.token || !cleaned) return;
+
+  // second step: generate fiddles from meta info
+  generate(files, config, function(err) {
+    if(err) return error(err);
+    console.log('Done');
+    // Third one: replace and edit html files in output/
+    replace(files, config, function() {
+      if(err) return error(err);
+      console.log('All Done');
+    });
+  });
+}
+
+
+// ## steps
+// 
+// Eventually, they'll end in lib/tasks folder.
+//
+// * parse
+// * generate
+// * replace
+
+// ### parse
+// Synchronous call, returns an array of exercises files to process.
+// Each of these include a list of fiddles to create, parsed from markdown
+// content. Includes information about:
+//
+// * file: filepath
+// * title: parsed from h3 element
+// * details: long description about the exercises, the content of the whole
+// exercises paragraph.
+// * html: relative (from config.code) path to the html
+// file (match fiddle.html in fiddles).
+// * js: relative (from config.code) path to the js
+// file (match fiddle.js in fiddles).
+//
+// first step: build meta from markdown content
+// todo: move regex creation outside of iteration
+function parse(config) {
+  return findit.findSync(config.content)
+    .filter(function(file) {
+      // are you a file?
+      if(!fs.statSync(file).isFile()) return false;
+
+      // if that so, are you ending with `/exercises\.md$/`
+      return /event-exercises.md$/.test(file);
+    })
+    .map(function(file) {
+      var content = fs.readFileSync(path.join(file), 'utf8'),
+        titles = content.match(/###\s?.+/gm),
+        exercises = content.split(/###\s?.+/gm).slice(1);
+
+      titles = titles.map(function(title) {
+        return title.replace(/###/, '').trim();
+      });
+
+      return exercises.map(function(part, i) {
+        var html = part.match(/Open the file\s?\n?`([^`]+)`/).slice(1),
+          js = part.match(/Use the file\s?\n?`([^`]+)`/).slice(1);
+
+        return {
+          file: file,
+          title: titles[i],
+          gistTitle: titles[i].toLowerCase().replace(/\s/g, '-'),
+          details: part,
+          html: html[0],
+          js: js[0]
+        };
+      });
+    });
+}
+
+// ### generate
+// second step: fir each markdown exercises files, and each fiddles
+// parsed from their markdown content, generates jsfiddle-gist ready folder.
+// It'll generate a `fiddle.js`, `fiddle.css`, `fiddle.html` and `fiddle.manifest` file.
+//
+// * The html file is matching the fiddle.html property (default to `Use the file path/to/file.html`).
+// * The css file is generated based on the link import of html files. Their content is concatenated and used as
+// `fiddle.css` file content.
+// matching the fiddle.html property (default to `Use the file path/to/file.html`).
+// * The js file is matching the fiddle.js property (default to `Open the file path/to/file.js`).
+// * The manifest file is the result of running lib/fiddles/fiddle.manifest
+// against few sensitive values (name, description, details)
+//
+function generate(files, config, cb) {
+  var remaining = 0;
+  mkdirp(config.fiddles, function(err) {
+    if(err) return error(err);
+
+    // For each markdown exercises files
+    files.forEach(function(file) {
+
+      // and each fiddles parsed from the markdown content
+      file.forEach(function(fiddle) {
+
+        remaining++;
+
+        console.log('\nCreating fiddle from file: ', fiddle.file);
+        console.log('  » with fiddle.js: ', fiddle.js);
+        console.log('  » with fiddle.html: ', fiddle.html);
+
+        // depending on the solution flag (via cli usage), lookup js files in either exercises/solutions
+        // folder.
+        fiddle.js = solution ? fiddle.js.replace(/exercises\/js/, 'solutions') : fiddle.js;
+
+        // files path are relative to code/ folder
+        var js = fs.readFileSync(path.join(config.code, fiddle.js), 'utf8'),
+          html = fs.readFileSync(path.join(config.code, fiddle.html), 'utf8'),
+          title = fiddle.gistTitle,
+          fiddlePath = path.join(config.fiddles, title),
+          details = tmpl(config.manifest, {
+            name: fiddle.file.split('/').slice(-1),
+            description: fiddle.title,
+            details: fiddle.details
+          });
+
+        // handle CSS references, concat them to create the demo.css files,
+        // and remove CSS link tags from the demo.html
+        var css = [];
+        html = html.replace(/<link\shref="([^"]+)".+>/gm, function(w, href) {
+          var cssPath = path.join(config.code, path.dirname(fiddle.html), href);
+          css.push(fs.readFileSync(cssPath, 'utf8'));
+          return '';
+        });
+
+        // remove script import of jquery, will use jsFiddles fwk
+        html = html.replace(/<script src="libs\/jquery-1.5.0.js.+/gm, '');
+
+        // finally, deal with inline img references
+        // todo: replace in CSS files too (though there's no img references in styles for now)
+        html = html.replace(/<img\s*src="([^"]+)"/gm, function(m, src) {
+          return '<img src="' + config.host + path.join(config.assets, src) + '"';
+        });
+
+        mkdirp(fiddlePath, function() {
+          if(err) return error(err);
+
+          // Create demo.* files
+          fs.writeFileSync(path.join(fiddlePath, 'fiddle.js'), js);
+          fs.writeFileSync(path.join(fiddlePath, 'fiddle.html'), html);
+          fs.writeFileSync(path.join(fiddlePath, 'fiddle.details'), details);
+          fs.writeFileSync(path.join(fiddlePath, 'fiddle.css'), css.join('\n\n'));
+          console.log('Files generated at', fiddlePath);
+
+          console.log('Now creating gist for', fiddlePath);
+
+
+          gist(fiddlePath, function(err, id) {
+            if(err) return error(err);
+
+            var pkg = {
+              name: fiddle.title,
+              version: '0.0.1',
+              config: {
+                id: id
+              }
+            };
+
+            fs.writeFile(path.join(fiddlePath, 'package.json'), JSON.stringify(pkg, null, 2), function(err) {
+              if(err) return error(err);
+              if(--remaining) return;
+              cb();
+            });
+          });
+        });
+      });
+    });
+  });
+}
+
+// ### replace
+//
+// third step: go back in output folder and append the corresponding
+// jsFiddle link. These should match the gists prepared folders in
+// code/fiddles.
+//
+// Most likely, the nanoc build should have been run before.
+//
+
+function replace(files, config, cb) {
+
+  var remaining = 0;
+  files.forEach(function(fiddles) {
+    fiddles.forEach(function (fiddle) {
+
+      remaining++;
+
+      // fiddle.file match the path of the markdown file
+      var folder = fiddle.file.replace(path.extname(fiddle.file), '')
+        .replace(config.content, config.output);
+
+      var content = fs.readFileSync(path.join(folder, 'index.html'), 'utf8'),
+        pkg = JSON.parse(fs.readFileSync(path.join(config.fiddles, fiddle.gistTitle, 'package.json'), 'utf8'));
+
+
+
+      var id = fiddle.title.toLowerCase().replace(/\s/g, '-'),
+        fragment = '<h3 id="' + id + '">' + fiddle.title + '</h3>',
+        match = content.match(new RegExp(fragment, 'i'));
+
+      if(!match) return --remaining;
+
+      console.log('\nUpdate', fiddle.title, 'with the jsFiddle urls', fragment);
+
+      content = content.replace(fragment, function(match, title) {
+
+        var url = tmpl(config.fiddle, {
+          framework: 'jquery',
+          version: 'edge',
+          // todo, create gists, grab gists id from ngist callback
+          gistid: pkg.config.id
+        });
+
+        console.log('  » ', url);
+        return match + '\n\n<p><a href=":url">:content</a></p> \n\n<script src="https://gist.github.com/:gistid.js"> </script>'
+          .replace(':url', url)
+          .replace(':content', 'http://gist.github.com/' + pkg.config.id)
+          .replace(':gistid', pkg.config.id);
+      });
+
+      fs.writeFile(path.join(folder, 'index.html'), content, function(err) {
+        if(err) return error(err);
+        if(--remaining) return;
+
+        console.log('Replaced ', path.join(folder, 'index.html'));
+        cb();
+      });
+    });
+  });
+}
+
+// ### gist
+//
+// Use the [ngist](https://github.com/chapel/ngist) module to create new
+// gist from the dirname provided.
+function gist(dirname, cb) {
+
+  var files = fs.readdirSync(dirname).filter(function(file) {
+    console.log(file);
+    return /^fiddle\./.test(path.basename(file))
+  }).map(path.join.bind({}, dirname));
+
+  var options = {
+    user: gh.user,
+    token: gh.token,
+    description: 'This is an example gist',
+    private: true
+  };
+
+
+  ngist.files(files, function(err, processed_files) {
+    if(err) return cb(err);
+    ngist.send(processed_files, options, function(err, url) {
+      if(err) return cb(err);
+      console.log('Gist:', url);
+      return cb(null, url.match(/gist.github.com\/(.+)/)[1]);
+    });
+  });
+}
+
+
+
+
+// #### helpers
+function inspect(data) {
+  process.stdout.write(util.inspect(data, false, 4, true) + '\n');
+}
+
+function mkdirp(path, cb) {
+  exec('mkdir -p ' + path, cb);
+}
+
+function error(err) {
+  console.error(err);
+  process.exit(1);
+}
+
+function tmpl(s,d) {
+  return s.replace(/\{([a-z]+)\}/g, function(w,m) {
+    return d[m] || '';
+  });
+}
+
+function b64(path) {
+  return tmpl('data:{mediatype};base64,{hash}', {
+    mediatype: mime.lookup(path),
+    hash: fs.readFileSync(path, 'base64')
+  });
+}
+
+function ghHint(config) {
+  return [
+    'Failed to load github ' + config + ' from git config.',
+    '',
+    'Run these two commands:',
+    '',
+    'git config --global github.user "your-github-username"',
+    'git config --global github.token "your-github-token"',
+    '',
+    '',
+    'To verify that they have been set, use:',
+    '',
+    'git config --get github.user',
+    'git config --get github.token',
+    ''
+  ].join('\n');
+}
