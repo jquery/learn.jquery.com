@@ -1,7 +1,7 @@
 ---
 chapter : plugins
 section : 3
-title   : Finding &amp; Evaluating Plugins
+title   : Finding & Evaluating Plugins
 attribution:  jQuery Fundamentals
 ---
 ## Finding &amp; Evaluating Plugins
