@@ -5,10 +5,23 @@
 	<hr>
 	
 	<ul class="nav">
-	<% @items.group_by {|item| item[:filename].split('/')[1] }.each do |section, items| %>
-		<% if section != "assets" && section != "dex.md" %>
-			<li><a href="/<%= section %>"><%= section.gsub(/-/, " ").upcase %></a></li>
-		<% end %>
+          <% chapters = [ 
+            "getting-started",
+            "javascript-101",
+            "jquery-basics",
+            "using-jquery-core",
+            "events",
+            "effects",
+            "ajax",
+            "plugins",
+            "performance",
+            "code-organization",
+            "custom-events",
+            "how-to"
+          ] %>
+	<% folders = @items.group_by {|item| item[:filename].split('/')[1] } %>
+	<% chapters.each do |section| %>
+            <li><a href="/<%= section %>"><%= section.gsub(/-/, " ").upcase %></a></li>
 	<% end %>
 	</ul>
 </aside>
