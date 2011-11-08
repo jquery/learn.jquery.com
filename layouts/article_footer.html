@@ -1,0 +1,21 @@
+<div class="clearfix">
+	<div class="github">
+		<%if @item[:github] %>
+		<% github_user = @item[:github] || "jquery" %>
+		<% user_request = Curl::Easy.http_get("https://api.github.com/users/"+github_user) %>
+		<% user_request.perform %>
+		<% user_obj = JSON.parse(user_request.body_str) %>
+		<h3>By <%= user_obj["name"] %></h3>
+		<img src="<%= user_obj["avatar_url"] %>" />
+		<% else %>
+		<h3>By <%= @item[:attribution] %></h3>
+		<% end %>
+	</div>
+
+	<h4>Suggestions? Problems? Feedback?</h4>
+	You can open an issue or submit a pull request for
+	<a target="_blank" href="https://github.com/jquery/web-learn-jquery-com/blob/master/content/<%= @item.identifier.slice(1..-2) %>.md">
+		this article on GitHub
+	</a>
+	<a href="#">(Help!)</a>
+</div>

@@ -11,6 +11,8 @@
 #   because “*” matches zero or more characters.
 
 require "cgi"
+require "curb"
+require "json"
 
 class Nanoc3::Filter
   class CodeBlocks < Nanoc3::Filter
