@@ -34,8 +34,8 @@ var config = {
   solution: !!['s', 'sol', 'solution'].indexOf(process.argv.slice(2)[0]),
 
   // should create gists files during generation, if false the links added to
-  // page will default to a dummy id.
-  gists: false
+  // page will default to a dummy id. (Gists are created privately)
+  gists: true
 };
 
 console.info('About to generate or update code/fiddles folders. Configuration:', config);
@@ -95,7 +95,7 @@ function next() {
   if(!gh.user || !gh.token || !cleaned) return;
 
   // second step: generate fiddles from meta info
-  steps.generate(files, config, function(err) {
+  steps.generate(files, config, gh, function(err) {
     if(err) return error(err);
     console.info('Done');
     // Third one: replace and edit html files in output/

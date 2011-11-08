@@ -81,7 +81,7 @@ var parse = exports.parse = function parse(config) {
 // result of running lib/fiddles/fiddle.manifest against few sensitive values
 // (name, description, details)
 //
-var generate = exports.generate = function generate(files, config, cb) {
+var generate = exports.generate = function generate(files, config, gh, cb) {
   var remaining = 0;
   mkdirp(config.fiddles, function(err) {
     if(err) return error(err);
@@ -141,7 +141,7 @@ var generate = exports.generate = function generate(files, config, cb) {
 
           // `config.gists` is set to true, generate new gists and writes a package.json
           // file within each of gists' folder, with the gist id in `config.id`
-          if(config.gists) return gist(fiddlePath, function(err, id) {
+          if(config.gists) return gist(fiddlePath, gh, function(err, id) {
             if(err) return error(err);
 
             pkg.config = {id: id};
@@ -227,7 +227,7 @@ var replace = exports.replace = function replace(files, config, cb) {
 //
 // Use the [ngist](https://github.com/chapel/ngist) module to create new
 // gist from the dirname provided.
-var gist = exports.gist = function gist(dirname, cb) {
+var gist = exports.gist = function gist(dirname, gh, cb) {
 
   var files = fs.readdirSync(dirname).filter(function(file) {
     console.log(file);
