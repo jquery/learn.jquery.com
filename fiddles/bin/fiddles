@@ -7,9 +7,9 @@ var fs = require('fs'),
   path = require('path'),
   exec = require('child_process').exec,
   helpers = require('../lib/fiddles/helpers'),
+  console = require('../lib/fiddles/logger'),
   steps = require('../lib/fiddles'),
   error = helpers.error,
-  inspect = helpers.inspect,
   mkdirp = helpers.mkdirp,
   ghHint = helpers.ghHint;
 
@@ -38,10 +38,9 @@ var config = {
   gists: false
 };
 
-console.log('About to generate or update code/fiddles folders. Configuration:');
-helpers.inspect(config);
+console.info('About to generate or update code/fiddles folders. Configuration:', config);
 
-if(config.solution) console.log('\nGeneration using solution mode, demo.js files will include solutions to exercises.\n');
+if(config.solution) console.debug('Generation using solution mode, demo.js files will include solutions to exercises.\n');
 
 
 // get the list of files to process, include an array of fiddles to create. Each of these
@@ -98,11 +97,11 @@ function next() {
   // second step: generate fiddles from meta info
   steps.generate(files, config, function(err) {
     if(err) return error(err);
-    console.log('Done');
+    console.info('Done');
     // Third one: replace and edit html files in output/
     steps.replace(files, config, function() {
       if(err) return error(err);
-      console.log('All Done');
+      console.info('All Done');
     });
   });
 }

@@ -6,10 +6,6 @@ var util = require('util'),
   fs = require('fs');
 
 // #### helpers
-var inspect = exports.inspect = function inspect(data) {
-  process.stdout.write(util.inspect(data, false, 4, true) + '\n');
-};
-
 var mkdirp = exports.mkdirp = function mkdirp(path, cb) {
   exec('mkdir -p ' + path, cb);
 };

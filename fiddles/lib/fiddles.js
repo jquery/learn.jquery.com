@@ -4,6 +4,7 @@ var path = require('path'),
   findit = require('findit'),
   ngist = require('ngist'),
   helpers = require('./fiddles/helpers'),
+  console = require('./fiddles/logger'),
   error = helpers.error,
   tmpl = helpers.tmpl,
   mkdirp = helpers.mkdirp;
@@ -91,9 +92,7 @@ var generate = exports.generate = function generate(files, config, cb) {
 
         remaining++;
 
-        console.log('\nCreating fiddle from file: ', fiddle.file);
-        console.log('  » with fiddle.js: ', fiddle.js);
-        console.log('  » with fiddle.html: ', fiddle.html);
+        console.info('Creating fiddle from file: ', fiddle);
 
         fiddle.js = config.solution ? fiddle.js.replace(/exercises\/js/, 'solutions') : fiddle.js;
 
@@ -137,9 +136,8 @@ var generate = exports.generate = function generate(files, config, cb) {
           fs.writeFileSync(path.join(fiddlePath, 'fiddle.html'), html);
           fs.writeFileSync(path.join(fiddlePath, 'fiddle.details'), details);
           fs.writeFileSync(path.join(fiddlePath, 'fiddle.css'), css.join('\n\n'));
-          console.log('Files generated at', fiddlePath);
-
-          console.log('Now creating gist for', fiddlePath);
+          console.debug('Files generated at', fiddlePath);
+          console.debug('Now creating gist for', fiddlePath);
 
           // `config.gists` is set to true, generate new gists and writes a package.json
           // file within each of gists' folder, with the gist id in `config.id`
@@ -195,7 +193,7 @@ var replace = exports.replace = function replace(files, config, cb) {
 
       if(!match) return --remaining;
 
-      console.log('\nUpdate', fiddle.title, 'with the jsFiddle urls', fragment);
+      console.debug('Update', fiddle.title, 'with the jsFiddle urls', fragment);
 
       content = content.replace(fragment, function(match, title) {
         var url = tmpl(config.fiddle, {
@@ -205,14 +203,14 @@ var replace = exports.replace = function replace(files, config, cb) {
           gistid: pkg.config.id
         });
 
-        console.log('  » ', url);
+        console.debug('» ', url);
         return match + '\n\n<p><a href=":url">:content</a></p> \n\n<script src="https://gist.github.com/:gistid.js"> </script>'
           .replace(':url', url)
           .replace(':content', 'http://gist.github.com/' + pkg.config.id)
           .replace(':gistid', pkg.config.id);
       });
 
-      console.log('Replacing ', path.join(folder, 'index.html'));
+      console.info('Replacing ', path.join(folder, 'index.html'), '\n');
       return content;
     }, '');
 
