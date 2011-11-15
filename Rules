@@ -72,7 +72,41 @@ end
 
 Nanoc3::Filter.register 'CodeBlocks',        :code_blocks
 
+preprocess do
+  @chapterOrder = [
+    "getting-started",
+    "javascript-101",
+    "jquery-basics",
+    "using-jquery-core",
+    "events",
+    "effects",
+    "ajax",
+    "plugins",
+    "performance",
+    "code-organization",
+    "custom-events",
+    "how-to"
+  ]
 
+  @chapters = {}
+  @items.each do |item|
+    item[:chapter] = item[:filename].split('/')[1] 
+    item[:chapter_title] = item[:chapter].gsub(/-/, " ").upcase
+  end
+
+  @groupedItems = @items.group_by {|item| item[:chapter]}
+
+  @chapterOrder.each do |folder|
+    myitems = @groupedItems[ folder ]
+    @chapters [ folder] = {}
+    @chapters[ folder ][ :items ] = @groupedItems[folder].sort_by {|i| i[:section] || 0 }
+    @chapters[ folder ][ :title ] = folder.gsub(/-/, " ").upcase
+    @chapters[ folder ][ :folder ] = folder
+  end
+  
+  @site.config[:chapterOrder] = @chapterOrder
+  @site.config[:chapters] = @chapters
+end
 
 compile '/assets/*' do
   # don’t filter or layout
