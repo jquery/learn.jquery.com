@@ -11,8 +11,7 @@ App.subscribe("init", function(){
 	//
 	// Set Auto Height
 	//
-	App.autoHeight();
-	$(window).resize(function(){
+	$(window).bind("load resize", function(){
 		App.autoHeight();
 	});
 	
@@ -24,14 +23,12 @@ App.subscribe("init", function(){
 		var el = $(this);
 		if(el.hasClass('active')){
 			el.removeClass('active');
-			$("body").animate({"marginTop":"0"}, 300, function(){
+			$("body").css({"marginTop":"0"});
 			el.removeClass('down');
-		});
 		} else {
 			el.addClass('active');
-			$("body").animate({"marginTop":"150px"}, 300, function(){
+			$("body").css({"marginTop":"150px"});
 			el.addClass('down');
-		});
 		}
 	});
 
@@ -76,6 +73,20 @@ App.subscribe("init", function(){
 	$("pre").children("code").text(function(i, t) {
 		return $.trim( t );
 	}).parent().vanGogh();
+	
+	//
+	// Learning Site Specific
+	//
+	$("#sidebar .paper_edges").bind("click", function(e){
+		e.preventDefault();
+		var el = $(this),
+			container = el.parents(".paper");
+		if(container.hasClass("open")){
+			container.addClass("open").animate({"width":"24%","margin-left":"-30.5%"}, 500, function(){});
+		} else {
+			container.addClass("open").animate({"width":"120%","margin-left":"-126.5%"}, 500, function(){});
+		}
+	});
 	
 	
 });
