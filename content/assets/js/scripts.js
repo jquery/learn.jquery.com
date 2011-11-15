@@ -16,6 +16,21 @@ App.subscribe("init", function(){
 	});
 	
 	//
+	// Add Search Interactions
+	//
+	$("#search").bind('focus', function(){
+		$(this).parent().find("label").animate({opacity:'0.5'}, 200);
+	}).bind('blur', function(){
+		$(this).parent().find("label").animate({opacity:'1'}, 200);
+	}).bind('keypress', function(){
+		$(this).parent().find('label').hide();
+	}).bind('keyup', function(){
+		if($(this).val() == ''){
+			$(this).parent().find('label').show();
+		}
+	});
+
+	//
 	// Project Select Show/Hide
 	//
 	$(".toggle-projects").bind("click", function(e){
@@ -77,14 +92,19 @@ App.subscribe("init", function(){
 	//
 	// Learning Site Specific
 	//
-	$("#sidebar .paper_edges").bind("click", function(e){
+	$("#sidebar .paper").bind("click", function(e){
 		e.preventDefault();
-		var el = $(this),
-			container = el.parents(".paper");
-		if(container.hasClass("open")){
-			container.addClass("open").animate({"width":"24%","margin-left":"-30.5%"}, 500, function(){});
+		var el = $(this);
+		if(el.hasClass("open")){
+			el.removeClass("open").addClass("closed").animate({"width":"24%","margin-left":"-30.5%"}, 500);
 		} else {
-			container.addClass("open").animate({"width":"120%","margin-left":"-126.5%"}, 500, function(){});
+			el.removeClass("closed").addClass("open").animate({"width":"120%","margin-left":"-126.5%"}, 500);
+		}
+	});
+	$("#sidebar").bind("clickoutside", function(e){
+		var el = $(".paper",this);
+		if(el.hasClass("open")){
+			el.removeClass("open").addClass("closed").animate({"width":"24%","margin-left":"-30.5%"}, 500);
 		}
 	});
 	

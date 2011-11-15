@@ -199,7 +199,7 @@
 	/*******************************************************************************/
 .vg-code,
 .vg-container .vg-code {
-  background-color: transparent;
+  background-color: #fff;
 }
 /*
 	code 
@@ -1662,12 +1662,12 @@
 	    -ms-transition: all 500ms ease-in-out;
 	    transition: all 500ms ease-in-out; }
 		
-		.jquery-learning #sidebar .paper.subnav:hover .paper_edges
+		.jquery-learning #sidebar .paper.subnav.closed:hover .paper_edges
 	{	-webkit-transform: rotate(0deg);
 		-moz-transform: rotate(0deg);
 		transform: rotate(0deg); }
 		
-		.jquery-learning #sidebar .paper.subnav:hover 
+		.jquery-learning #sidebar .paper.subnav.closed:hover 
 	{	width: 30%;
 		margin-left: -36.5%; }
 		
@@ -1679,13 +1679,19 @@
 		height: 100%;
 		margin: -120px 0 0 59px; }
 		
-		.jquery-learning #sidebar .paper.subnav .inner ul
-	{	margin-top: -110px;
-		position: absolute;
-		width: 90%;
+		.jquery-learning #sidebar .paper.subnav .inner .white_bg
+	{	background: #fff;
+		margin-top: -110px;
+		width: 100%;
 		height: 100%;
-		background: white url(../i/learning_paper_line_bg.png) repeat-y 0 0;
-		margin-left: -2%;
+		position: absolute;
+		margin-left: -2%; }
+		
+		.jquery-learning #sidebar .paper.subnav .inner .white_bg ul
+	{	width: 90%;
+		height: 100%;
+		background: #fff url(../i/learning_paper_line_bg.png) repeat-y 0 0;
+		position: absolute;
 		opacity: 0;
 		-webkit-transition: all 500ms ease-in-out;
 	    -moz-transition: all 500ms ease-in-out;
@@ -1693,9 +1699,80 @@
 	    -ms-transition: all 500ms ease-in-out;
 	    transition: all 500ms ease-in-out; }
 	    
-	    .jquery-learning #sidebar .paper.subnav.open .inner ul
+	    .jquery-learning #sidebar .paper.subnav.open .inner .white_bg ul
 	{	opacity: 1; }
+	
+	    .jquery-learning #sidebar .paper.subnav .inner ul li a
+	{	font-family: 'Gloria Hallelujah', cursive;
+	    font-size: 16px;
+	    font-weight: normal;
+		text-decoration: none; }
 		
+		.jquery-learning #sidebar .paper.subnav .inner ul li a:hover
+	{	border-bottom: 1px dashed #999; }
+		
+		.jquery-learning #sidebar .paper.subnav .inner ul li 
+	{	margin: 0 0 11px 44px; 
+		list-style: none; }
+		
+		.jquery-learning #sidebar .paper.subnav .inner ul li:first-child
+	{	padding-top: 38px; }
+	
+	    
+	
+	/*******************************************************************************/
+	/* Author Meta
+	/*******************************************************************************/
+	
+		#body .inner .meta
+	{	background: #e8e8e8 url(../i/github.png) no-repeat 102% 50%;
+		border: 1px solid #b7b7b7;
+		padding: 10px;
+		text-shadow: 0 1px 1px #fff;
+		color: #5d5d5d; }
+
+		#body .inner .meta .github
+	{	float: left;
+		display: block;
+		width: 35%;
+		border-right: 1px solid #fff;
+		-webkit-box-shadow: 1px 0 0 #b7b7b7; }
+	
+		#body .inner .meta .github .avatar
+	{	border: 5px solid #fff;
+		width: auto;
+		height: 40px;
+		-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.25);
+		-moz-box-shadow: 0 0 5px rgba(0,0,0,0.25);
+		box-shadow: 0 0 5px rgba(0,0,0,0.25);
+		display: block;
+		float: left; }
+	
+		#body .inner .meta .github .author
+	{	font-size: 12px;
+		font-weight: normal;
+		letter-spacing: normal;
+		float: left;
+		display: block;
+		margin: 10px 0 0 20px; }
+		
+		#body .inner .meta .github .author a
+	{	font-weight: bold; }
+		
+		#body .inner .meta .feedback
+	{	float: left;
+		display: block;
+		width: 62%;
+		padding: 0 0 0 3%; }
+		
+		#body .inner .meta .feedback h4
+	{	font-size: 18px;
+		font-family: 'Myriad Pro', Arial, Helvetica, sans-serif;
+		letter-spacing: 0;
+		margin: 4px 0 0 0; }
+	
+
+						
 	
 	/*******************************************************************************/
 	/* Media Queries
@@ -1775,7 +1852,7 @@
 		
 	}
 
-	@media all and (max-width: 600px){
+	@media all and (max-width: 660px){
 			 
 			h1 a 
 		{	margin: 20px auto;
