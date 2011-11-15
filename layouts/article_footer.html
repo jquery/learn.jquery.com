@@ -1,15 +1,7 @@
 <div class="clearfix meta">
 	<div class="github">
-		<%if @item[:github] %>
-		<% github_user = @item[:github] || "jquery" %>
-		<% user_request = Curl::Easy.http_get("https://api.github.com/users/"+github_user) %>
-		<% user_request.perform %>
-		<% user_obj = JSON.parse(user_request.body_str) %>
-		<img src="<%= user_obj["avatar_url"] %>" class="avatar" />
-		<h3 class="author">By <a href="<%= user_obj["html_url"] %>"><%= user_obj["name"] %></a></h3>
-		<% else %>
-		<h3 class="author">By <%= @item[:attribution] %></h3>
-		<% end %>
+		<img src="<%= @item[:github_user]["avatar_url"] %>" class="avatar" />
+		<h3 class="author">By <a href="<%= @item[:github_user]["html_url"] %>"><%= @item[:github_user]["name"] %></a></h3>
 	</div>
 	<div class="feedback">
 		<h4>Suggestions? Problems? Feedback?</h4>
@@ -22,6 +14,12 @@
 </div>
 
 <div class="clearfix pagination">
-	<a href="#" class="previous"><span class="article">jQuery for Designers</span> <span class="direction">Previous</span></a>
-	<a href="#" class="next"><span class="article">$(document).ready()</span> <span class="direction">Next</span></a>
+
+  <% if @item[:previous_item] %>
+  <a href="<%= @item[:previous_item].path %>" class="previous"><span class="article"><%= @item[:previous_item][:title] %></span> <span class="direction">Previous</span></a>
+  <% end %>
+  <% if @item[:next_item] %>
+  <a href="<%= @item[:next_item].path %>" class="next"><span class="article"><%= @item[:next_item][:title] %></span> <span class="direction">Next</span></a>
+  <% end %>
+
 </div>

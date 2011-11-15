@@ -89,23 +89,52 @@ preprocess do
   ]
 
   @chapters = {}
+
+  @github_users = {
+    "jquery" =>  nil
+  }
+
   @items.each do |item|
     item[:chapter] = item[:filename].split('/')[1] 
     item[:chapter_title] = item[:chapter].gsub(/-/, " ").upcase
+    if item[:github]
+      @github_users[ item[:github] ] = nil
+    else
+      item[:github] = "jquery"
+    end
   end
 
+  @github_users.each do |username, wat|
+    request = Curl::Easy.http_get("https://api.github.com/users/"+username) 
+    request.perform
+    @github_users[ username ] = JSON.parse request.body_str
+  end
+
+
   @groupedItems = @items.group_by {|item| item[:chapter]}
+
+  @orderedItems = []
 
   @chapterOrder.each do |folder|
     myitems = @groupedItems[ folder ]
     @chapters [ folder] = {}
     @chapters[ folder ][ :items ] = @groupedItems[folder].sort_by {|i| i[:section] || 0 }
+    @orderedItems = @orderedItems + @chapters[ folder ][ :items ]
     @chapters[ folder ][ :title ] = folder.gsub(/-/, " ").upcase
     @chapters[ folder ][ :folder ] = folder
   end
   
-  @site.config[:chapterOrder] = @chapterOrder
+  @items.each do |item|
+    i = item[:ordinal_index] = @orderedItems.index(item)
+    if i
+      item[:next_item] = @orderedItems[ i+1 ]
+      item[:previous_item] = @orderedItems[ i-1 ]
+    end
+    item[:github_user] = @github_users[ item[:github] ]
+  end
+
   @site.config[:chapters] = @chapters
+  @site.config[:orderedItems] = @orderedItems
 end
 
 compile '/assets/*' do
