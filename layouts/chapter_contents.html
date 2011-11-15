@@ -1,0 +1,9 @@
+<% myFolder = @item[:filename].split('/')[1] %>
+<% folderItems = @items.group_by {|item| item[:filename].split('/')[1] } %>
+<ul>
+  <% folderItems[ myFolder ].sort_by {|i| i[:section] || 0 }. each do |i| %>
+    <% if i[:title] && !(i[:filename] =~ /\/dex\.md$/) %>
+    <li <% if item[:filename] == i[:filename] %>class="active"<% end %>><a href="<%= i.path %>"><%= i[:title] %></a></li>
+    <% end %>
+  <% end %>
+</ul>

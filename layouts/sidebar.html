@@ -1,10 +1,10 @@
 <!-- sidebar -->
 <aside id="sidebar" class="clearfix autoHeight">
-	
-	<h2>Categories</h2>
-	<hr>
-	
-	<ul class="nav">
+        
+        <h2>Categories</h2>
+        <hr>
+        
+        <ul class="nav">
           <% chapters = [ 
             "getting-started",
             "javascript-101",
@@ -19,21 +19,20 @@
             "custom-events",
             "how-to"
           ] %>
-	<% folders = @items.group_by {|item| item[:filename].split('/')[1] } %>
-	<% chapters.each do |section| %>
-            <li><a href="/<%= section %>"><%= section.gsub(/-/, " ").upcase %></a></li>
-	<% end %>
-	</ul>
-	
-	<div class="paper subnav">
-		<div class="shadow"></div>
-		<a href="#" class="paper_edges">Open</a>
-		<div class="inner">
-			<ul>
-			<li></li>
-			</ul>
-		</div>
-	</div>
-	
+        <% currentChapter = @item[:filename].split('/')[1] %>
+        <% folders = @items.group_by {|item| item[:filename].split('/')[1] } %>
+        <% chapters.each do |chapter| %>
+          <li <% if chapter == currentChapter %>class="active"<% end %>><a href="/<%= chapter %>"><%= chapter.gsub(/-/, " ").upcase %></a></li>
+        <% end %>
+        </ul>
+        
+        <div class="paper subnav">
+                <div class="shadow"></div>
+                <a href="#" class="paper_edges">Open</a>
+                <div class="inner">
+                  <%= render 'chapter_contents' %>
+                </div>
+        </div>
+        
 </aside>
 <!-- sidebar -->
