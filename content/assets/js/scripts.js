@@ -93,6 +93,10 @@ App.subscribe("init", function(){
 	// Learning Site Specific
 	//
 	$("#sidebar .paper").bind("click", function(e){
+		// Allow the actual links inside to take the normal link behaviour
+		if ($(e.target).is("li a")) {
+			return;
+		}
 		e.preventDefault();
 		var el = $(this);
 		if(el.hasClass("open")){
