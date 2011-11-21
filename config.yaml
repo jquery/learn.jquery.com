@@ -43,6 +43,8 @@ data_sources:
     # This flag allows for files like jquery.plugin.js or foo.bar.css to compile properly
     config:
       allow_periods_in_identifiers: true
+      # force encoding for non-shell (php-exec, etc)
+      encoding: utf-8
 
 # Configuration for the “watch” command, which watches a site for changes and
 # recompiles if necessary.
