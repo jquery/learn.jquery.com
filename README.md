@@ -1,7 +1,7 @@
 # The jQuery Learning Site
 
 * Primary Domain: [http://learn.jquery.com](http://learn.jquery.com)
-* Staging Domain: [http://learn.jquery.com](http://stage.learn.jquery.com)
+* Staging Domain: [http://stage.learn.jquery.com](http://stage.learn.jquery.com)
 
 ## Temporary Breaking News Section
 We just changed this repository's name (and consequently its URL) from `web-learn-jquery-com` to `learn.jquery.com`.  If you already forked the project before this happened and created a remote to track this repo, you'll have to update that reference.  Assuming that `upstream` is what you named your remote, simply use the following command from inside your repo:
