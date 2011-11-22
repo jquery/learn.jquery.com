@@ -15,13 +15,13 @@ Spread across the internet is lot of information about how to learn and use jQue
 1. To serve as a central, trustworthy, narrative compendium of information about how to use jQuery and JavaScript
 2. To remain an timely, vibrant, and community-driven reference with a low barrier to contribution
 
-Much of the initial content - and spirit - is from [jQuery Fundamentals](https://github.com/rmurphey/jqfundamentals), an open-source book about jQuery, originally released in 2010 by [Rebecca Murphe](http://www.rebeccamurphey.com/) and bequeathed unto the jQuery Project to serve as the foundation for this site.
+Much of the initial content - and spirit - is from [jQuery Fundamentals](https://github.com/rmurphey/jqfundamentals), an open-source book about jQuery, originally released in 2010 by [Rebecca Murphey](http://www.rebeccamurphey.com/) and bequeathed unto the jQuery Project to serve as the foundation for this site.
 
 This site consists of content maintained in [Markdown](http://daringfireball.net/projects/markdown/) files, powered by [nanoc](http://nanoc.stoneship.org/), a Ruby-based [static site generator](http://www.mickgardner.com/2011/04/27/An-Introduction-To-Static-Site-Generators.html).
 
-## How Can I Get Involved?
+## How Can I Help?
 
-The entire site is managed via this Git repository.  If you'd like to contribute new articles, make edits to existing content, or work on the site's frontend or backend code, the first thing you'll need is a [fork](http://help.github.com/fork-a-repo/). When you have changes you'd like to have reviewed and integrated into the site, submit a [pull request](http://help.github.com/send-pull-requests/).
+The entire site is managed via [this Git repository](https://github.com/jquery/learn.jquery.com).  If you'd like to contribute new articles, make edits to existing content, or work on the site itself, the first thing you'll need is a [fork](http://help.github.com/fork-a-repo/). When you have changes you'd like to have reviewed and integrated into the site, submit a [pull request](http://help.github.com/send-pull-requests/).
 
 If you aren't already familiar with Git, you'll still need a fork and a GitHub account, but you can can edit files directly via [GitHub's in-browser editor](https://github.com/blog/905-edit-like-an-ace), but you won't be able to create new content. We encourage you to [learn how to use Git andGitHub](http://help.github.com/), it'll probably pretty useful no matter what.
 
@@ -64,5 +64,5 @@ Then, you can follow the instructions above, starting at "Install the dependenci
 
 * Grab the latest Ruby package from the Windows-only [rubyinstaller.org](http://rubyinstaller.org/)
 * Install it
-* [Meta-bullet point: This section probably lacks detail. If a Windows-Ruby developer wants to help us flesh this section out, that would be great!]
+* [Meta-bullet point: This section probably lacks detail. If a Windows-Ruby developer wants to help us flesh this section out, **please do**!]
 * Follow the instructions above, starting at "Install the dependencies"
