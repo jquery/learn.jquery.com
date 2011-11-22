@@ -3,6 +3,11 @@
 * Primary Domain: [http://learn.jquery.com](http://learn.jquery.com)
 * Staging Domain: [http://learn.jquery.com](http://stage.learn.jquery.com)
 
+## Temporary Breaking News Section
+We just changed this repository's name (and consequently its URL) from `web-learn-jquery-com` to `learn.jquery.com`.  If you already forked the project before this happened and created a remote to track this repo, you'll have to update that reference.  Assuming that `upstream` is what you named your remote, simply use the following command from inside your repo:
+
+`git remote set-url upstream https://github.com/jquery/learn.jquery.com`
+
 ## About
 
 Spread across the internet is lot of information about how to learn and use jQuery. This content ranges in quality from excellent to terrible, and is often stuck inside CMSes where only the original author can ever update the content. The goal of this site is twofold
