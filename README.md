@@ -17,7 +17,7 @@ Spread across the internet is lot of information about how to learn and use jQue
 
 Much of the initial content - and spirit - is from [jQuery Fundamentals](https://github.com/rmurphey/jqfundamentals), an open-source book about jQuery, originally released in 2010 by [Rebecca Murphe](http://www.rebeccamurphey.com/) and bequeathed unto the jQuery Project to serve as the foundation for this site.
 
-This site consists of content maintained in [Markdown](http://daringfireball.net/projects/markdown/) files, powered by [nanoc](http://nanoc.stoneship.org/), a Ruby-based [static site generator](http://www.mickgardner.com/2011/04/27/An-Introduction-To-Static-Site-Generators.html)
+This site consists of content maintained in [Markdown](http://daringfireball.net/projects/markdown/) files, powered by [nanoc](http://nanoc.stoneship.org/), a Ruby-based [static site generator](http://www.mickgardner.com/2011/04/27/An-Introduction-To-Static-Site-Generators.html).
 
 ## How Can I Get Involved?
 
@@ -47,7 +47,7 @@ If you aren't already familiar with Git, you'll still need a fork and a GitHub a
 
 #### Mac OS X/Linux:
 
-You actually probably already **do** have some of Ruby available, but it's probably not Ruby 1.9. We recommend setting up:
+You actually probably already **do** have some Ruby available, but it's probably not Ruby 1.9. We recommend setting up:
 * [rbenv](https://github.com/sstephenson/rbenv)
 * [ruby-build](https://github.com/sstephenson/ruby-build)
 * [rbenv-bundler](https://github.com/carsomyr/rbenv-bundler)
