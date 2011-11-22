@@ -105,9 +105,9 @@ preprocess do
   end
 
   @github_users.each do |username, wat|
-    request = Curl::Easy.http_get("https://api.github.com/users/"+username) 
+    request = Curl::Easy.http_get("https://api.github.com/users/"+username)
     request.perform
-    @github_users[ username ] = JSON.parse request.body_str
+    @github_users[ username ] = JSON.parse(request.body_str)
   end
 
 
@@ -134,7 +134,6 @@ preprocess do
   end
 
   @site.config[:chapters] = @chapters
-  @site.config[:orderedItems] = @orderedItems
 end
 
 compile '/assets/*' do
