@@ -13,7 +13,7 @@ We just changed this repository's name (and consequently its URL) from `web-lear
 Spread across the internet is lot of information about how to learn and use jQuery. This content ranges in quality from excellent to terrible, and is often stuck inside CMSes where only the original author can ever update the content. The goal of this site is twofold
 
 1. To serve as a central, trustworthy, narrative compendium of information about how to use jQuery and JavaScript
-2. To remain an timely, vibrant, and community-driven reference with a low barrier to contribution
+2. To remain a timely, vibrant, and community-driven reference with a low barrier to contribution
 
 Much of the initial content - and spirit - is from [jQuery Fundamentals](https://github.com/rmurphey/jqfundamentals), an open-source book about jQuery, originally released in 2010 by [Rebecca Murphey](http://www.rebeccamurphey.com/) and bequeathed unto the jQuery Project to serve as the foundation for this site.
 
@@ -56,7 +56,7 @@ You actually probably already **do** have some Ruby available, but it's probably
 
 Once you get that all squared away (and yes, we know that might be a big 'once'), you'll want to set your fork to use the Ruby > 1.9 you installed while you were setting up `rbenv`.
 
-`cd ~/myfiles/learn.jquery.com`
+`cd ~/THE_DIRECTORY_WHERE_YOU_CLONE_GIT_REPOS/learn.jquery.com`
 `rbenv local 1.9.3-p0`
 
 Then, you can follow the instructions above, starting at "Install the dependencies"
