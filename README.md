@@ -48,6 +48,7 @@ If you aren't already familiar with Git, you'll still need a fork and a GitHub a
 #### Mac OS X/Linux:
 
 You actually probably already **do** have some Ruby available, but it's probably not Ruby 1.9. We recommend setting up:
+
 * [rbenv](https://github.com/sstephenson/rbenv)
 * [ruby-build](https://github.com/sstephenson/ruby-build)
 * [rbenv-bundler](https://github.com/carsomyr/rbenv-bundler)
