@@ -11,6 +11,9 @@
 	font-size: 100%;
 	vertical-align: baseline;
 	background: transparent; }
+	
+	*:focus
+{	outline: none; }
 
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section 
 {	display: block; }
@@ -1431,7 +1434,8 @@
 	-moz-box-shadow: 0 2px 5px rgba(0,0,0,0.5);
 	box-shadow: 0 2px 5px rgba(0,0,0,0.5);
 	position: relative;
-	z-index: 20; }
+	z-index: 20;
+	overflow: hidden; }
 	
 	#container #body .inner 
 {	padding: 2%; }
@@ -1455,10 +1459,9 @@
 	
 	/* Sidebar Left */
 	
-	#container #body.sidebar-left .inner {
-	width: 72.25%;
-	float: right;
-	}
+	#container #body.sidebar-left .inner 
+{	width: 72.25%;
+	float: right; }
 	
 	#container #body.sidebar-left #sidebar 
 {	float: left;
@@ -1475,10 +1478,10 @@
 	#container #body #sidebar 
 {	width: 20.5%;
 	position: relative;
-	display: block;
 	background: #eeeeee;
-	float: left;
-	padding: 0 1.5% 25px; }
+	height: 100%;
+	padding: 0 1.5% 10000px;
+	margin-bottom: -10000px; }
 	
 	#container #body #sidebar ul 
 {	float: left;
@@ -1606,6 +1609,18 @@
 		padding: 0;
 		margin: 0;
 		width: 100%; }
+		
+		#sidebar .nav li.active
+	{	border: 0; }
+				
+		#sidebar .nav li.active a
+	{	color: #fff;
+		text-shadow: 0 -1px 1px #000;
+		background: #393939;
+		-webkit-box-shadow: inset 0 2px 2px rgba(0,0,0,0.25);
+		-moz-box-shadow: inset 0 2px 2px rgba(0,0,0,0.25);
+		box-shadow: inset 0 2px 2px rgba(0,0,0,0.25);
+		border-top: 1px solid #000; }
 	
 		#sidebar .nav li:last-child
 	{	border: none;
@@ -1621,13 +1636,17 @@
 		text-decoration: none;
 		width: 100%;
 		display: block;
-		width: 100%;
-		padding: 5% 6%; }
+		width: 96%;
+		padding: 5% 10%;
+		margin: -1px 0 0 -8%; }
 		
 		.jquery-learning #sidebar h2
 	{	background: url(../i/learning_category_icon.png) no-repeat 0 5px;
 		padding-left: 26px; }
 		
+		.jquery-learning #sidebar .paper
+	{	display: none; }
+	
 		.jquery-learning #sidebar .paper.subnav
 	{	position: absolute;
 		height: 100%;
@@ -1682,13 +1701,13 @@
 		.jquery-learning #sidebar .paper.subnav .inner .white_bg
 	{	background: #fff;
 		margin-top: -110px;
-		width: 100%;
+		width: 84%;
 		height: 100%;
 		position: absolute;
 		margin-left: -2%; }
 		
 		.jquery-learning #sidebar .paper.subnav .inner .white_bg ul
-	{	width: 90%;
+	{	padding: 0 6.5% 0 0;
 		height: 100%;
 		background: #fff url(../i/learning_paper_line_bg.png) repeat-y 0 0;
 		position: absolute;
@@ -1703,13 +1722,17 @@
 	{	opacity: 1; }
 	
 	    .jquery-learning #sidebar .paper.subnav .inner ul li a
-	{	font-family: 'Gloria Hallelujah', cursive;
-	    font-size: 16px;
+	{	/* font-family: 'Gloria Hallelujah', cursive; */
+	    font-size: 14px;
+	    line-height: 21px;
 	    font-weight: normal;
 		text-decoration: none; }
 		
+		.jquery-learning #sidebar .paper.subnav .inner ul li.active a
+	{	font-weight: bold; }
+		
 		.jquery-learning #sidebar .paper.subnav .inner ul li a:hover
-	{	border-bottom: 1px dashed #999; }
+	{	font-weight: bold; }
 		
 		.jquery-learning #sidebar .paper.subnav .inner ul li 
 	{	margin: 0 0 11px 44px; 
@@ -1735,6 +1758,7 @@
 	{	float: left;
 		display: block;
 		width: 35%;
+		min-height: 45px;
 		border-right: 1px solid #fff;
 		-webkit-box-shadow: 1px 0 0 #b7b7b7; }
 	
@@ -1771,7 +1795,33 @@
 		letter-spacing: 0;
 		margin: 4px 0 0 0; }
 	
-
+	/*******************************************************************************/
+	/* Pagination
+	/*******************************************************************************/
+		
+		#body .inner .meta .pagination
+	{	}
+		
+		#body .inner .meta .pagination .article
+	{	}
+		
+		#body .inner .meta .pagination .previous
+	{	}
+		
+		#body .inner .meta .pagination .previous .article
+	{	}
+	
+		#body .inner .meta .pagination .previous .direction
+	{	}
+		
+		#body .inner .meta .pagination .next
+	{	}
+	
+		#body .inner .meta .pagination .next .article
+	{	}
+	
+		#body .inner .meta .pagination .next .direction
+	{	}
 						
 	
 	/*******************************************************************************/
@@ -1929,6 +1979,10 @@
 		{	padding: 3%;
 			width: 94%; }
 			
+			#container #body #sidebar .nav li a
+		{	width: 87%;
+			margin-left: -3.5%; }
+			
 			footer ul.books
 		{	overflow: hidden; }
 		
@@ -1952,6 +2006,9 @@
 		{	text-align: center;
 			width: auto;
 			float: none; }
+			
+			.jquery-learning #sidebar .paper.subnav 
+		{	display: none; }
 	}
 	
 	@media all and (max-width: 400px){ 

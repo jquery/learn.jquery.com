@@ -43,16 +43,6 @@ App.unsubscribe = function(handle){
         }
     });
 };
-App.autoHeight = function(){
-	$(".autoHeight").each(function(){
-		var el = $(this), parent = el.parent();
-		if(parent.height() >= el.height("auto").height()){
-			el.css({"height":parent.height()});
-		} else {
-			el.css({"height":el.height("auto").height()});
-		}
-	});
-};
 
 jQuery(function($){
 	App.publish("init");

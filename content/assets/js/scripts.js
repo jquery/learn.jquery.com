@@ -12,7 +12,15 @@ App.subscribe("init", function(){
 	// Set Auto Height
 	//
 	$(window).bind("load resize", function(){
-		App.autoHeight();
+		$(".autoHeight").each(function(){
+			var el = $(this), parent = el.parent();
+			if(parent.height() >= el.height("auto").height()){
+				el.css({"margin-bottom":0,"padding-bottom":"25px","height":parent.height()});
+			} else {
+				el.css({"margin-bottom":0,"padding-bottom":"25px","height":el.height("auto").height()});
+			}
+		});
+		$("#container #body").css({"overflow":"visible"});
 	});
 	
 	//
@@ -50,11 +58,13 @@ App.subscribe("init", function(){
 	//
 	// Project Select Clickoutside
 	//
-	$(".project-select").bind("clickoutside", function(e){
-		var el = $(".toggle-projects");
-		if(el.hasClass('down')){
-			el.removeClass("active down");
-			$("body").animate({"marginTop":"0"}, 300);
+	$(".project-select").bind("clickoutside", function(e, el){
+		var target = $(".toggle-projects");
+		if($(el).parent(".toggle-projects").length != 1){
+			if(target.hasClass('down')){
+				target.removeClass("active down");
+				$("body").css({"marginTop":"0"}, 300);
+			}
 		}
 	});
 
