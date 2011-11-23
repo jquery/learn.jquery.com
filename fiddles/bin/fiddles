@@ -27,8 +27,8 @@ var config = {
   // used during generation of gists files where relative references
   // of images in HTML files gets replaced by host/assets/imgpath
   // (defaults `http://learning.jquery.com/images/imgpath`)
-  host: 'http://learning.jquery.com',
-  assets: '/assets/i/',
+  host: 'http://stage.learn.jquery.com',
+  assets: '/assets/',
 
   // solution mode: basic flag telling the scripts where to locate jsfiddles js file
   solution: !!['s', 'sol', 'solution'].indexOf(process.argv.slice(2)[0]),

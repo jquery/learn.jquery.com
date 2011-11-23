@@ -38,10 +38,10 @@ files to process.
 * output: location of the gist/jsfiddle generated folder, defaults to
   `content/fiddles`. This folder should be .gitignored since it'll be
 full of git repository.
-* host: default to `http://learn.jquery.com`. url of the live site, used
+* host: default to `http://stage.learn.jquery.com/`. url of the live site, used
   during generation process to replace relative img references to
 absolute ones.
-* assets: defaults to `/images/` related to host option above. Image
+* assets: defaults to `/assets/` related to host option above. Image
   assets assume host/assets is where they'll be hosted so gists
 generated try loading them from there.
 
