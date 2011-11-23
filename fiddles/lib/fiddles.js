@@ -101,7 +101,7 @@ var generate = exports.generate = function generate(files, config, gh, cb) {
           title = fiddle.gistTitle,
           fiddlePath = path.join(config.fiddles, title),
           details = tmpl(config.manifest, {
-            name: fiddle.file.split('/').slice(-1),
+            name: fiddle.title,
             description: fiddle.title,
             details: fiddle.details
           });
