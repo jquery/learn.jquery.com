@@ -40,7 +40,7 @@ App.subscribe("init", function(){
 	//
 	// Project Select Show/Hide
 	//
-	$(".toggle-projects").on( "click", function( e ) {
+	$(".toggle-projects").bind( "click", function( e ) {
 		e.preventDefault();
 	
 		var el = $( this ).toggleClass("active");
@@ -51,7 +51,7 @@ App.subscribe("init", function(){
 	});
 	
 	// Project Select Clickoutside
-	$(".project-select").on( "clickoutside", function( e ) {
+	$(".project-select").bind( "clickoutside", function( e ) {
 		var el = $(".toggle-projects");
 		
 		if ( e.target.parentNode === el[0] || e.target === el[0] ) {
