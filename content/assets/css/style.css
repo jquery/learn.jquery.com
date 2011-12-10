@@ -100,12 +100,16 @@
 	
 	h4 
 {	font-size: 14px; }
+
+	dt
+{ font-weight: bold;
+	margin-top: 15px; }
 	
-	p, ul, ol 
+	p, ul, ol, dl
 {	line-height: 18px;
 	margin: 0 0 15px 0; }
 	
-	ul li, ol li 
+	ul li, ol li, dl dd
 {	padding: 0 0 0 5px;
 	margin: 0 0 0 20px; }
 	
