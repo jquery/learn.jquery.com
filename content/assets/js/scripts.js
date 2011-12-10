@@ -1,4 +1,3 @@
-
 /*******************************************************************************/
 /*	Subscriptions */
 /*******************************************************************************/
@@ -41,30 +40,26 @@ App.subscribe("init", function(){
 	//
 	// Project Select Show/Hide
 	//
-	$(".toggle-projects").bind("click", function(e){
+	$(".toggle-projects").bind( "click", function( e ) {
 		e.preventDefault();
-		var el = $(this);
-		if(el.hasClass('active')){
-			el.removeClass('active');
-			$("body").css({"marginTop":"0"});
-			el.removeClass('down');
-		} else {
-			el.addClass('active');
-			$("body").css({"marginTop":"150px"});
-			el.addClass('down');
-		}
+	
+		var el = $( this ).toggleClass("active");
+	
+		$("body").animate({ "marginTop": ( el.hasClass("active") ? "150px" : "0" ) }, 300, function() {
+	  		el.toggleClass("down");
+		});
 	});
-
-	//
+	
 	// Project Select Clickoutside
-	//
-	$(".project-select").bind("clickoutside", function(e, el){
-		var target = $(".toggle-projects");
-		if($(el).parent(".toggle-projects").length != 1){
-			if(target.hasClass('down')){
-				target.removeClass("active down");
-				$("body").css({"marginTop":"0"}, 300);
-			}
+	$(".project-select").bind( "clickoutside", function( e ) {
+		var el = $(".toggle-projects");
+		
+		if ( e.target.parentNode === el[0] || e.target === el[0] ) {
+			return;
+		}
+		
+		if ( el.hasClass("down") ) {
+			el.click();
 		}
 	});
 
