@@ -107,7 +107,6 @@ preprocess do
   @items.each do |item|
     item[:chapter] = item[:filename].split('/')[1] 
     item[:chapter_title] = item[:chapter].gsub(/-/, " ").upcase
-    p item.to_json
     if item[:github]
       @github_users[ item[:github] ] = nil
     else

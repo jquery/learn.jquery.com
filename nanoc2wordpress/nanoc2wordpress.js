@@ -21,7 +21,7 @@ var config = require("./config"),
 
 Futures.sequence()
 //  .then( git_pull )
-//  .then( nanoc_compile );
+  .then( nanoc_compile )
   .then( find_files )
   .then( truncate_data )
   .then( process_categories )
