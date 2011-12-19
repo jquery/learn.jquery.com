@@ -70,6 +70,16 @@ class Nanoc3::Filter
   end
 end
 
+class Nanoc3::Item
+  def to_json(*a)
+    {
+      'title' => self[:title] || self.identifier,
+      'chapter' => self[:chapter],
+      'isCategory' => self[:filename].index('dex.md') != nil
+    }.to_json(*a)
+  end
+end
+
 Nanoc3::Filter.register 'CodeBlocks',        :code_blocks
 
 preprocess do
@@ -97,6 +107,7 @@ preprocess do
   @items.each do |item|
     item[:chapter] = item[:filename].split('/')[1] 
     item[:chapter_title] = item[:chapter].gsub(/-/, " ").upcase
+    p item.to_json
     if item[:github]
       @github_users[ item[:github] ] = nil
     else
@@ -165,9 +176,9 @@ compile '*' do
   if item[:homepage]
     layout 'home'
   elsif item.identifier.match /\/dex\/$/
-    layout 'dex'
+    layout 'wp_dex'
   else
-    layout 'default'
+    layout 'wp_stub'
   end
 end
 
