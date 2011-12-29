@@ -151,7 +151,7 @@ var wordpress = module.exports = {
     Step(
     function() {
       var parallel = this.parallel;
-      [postmetaTable, postsTable, termsTable, termRelationshipsTable, termTaxonomyTable].forEach(function(table) {
+      [postmetaTable, postsTable ].forEach(function(table) {
         db.query("TRUNCATE TABLE `" + table + "`", parallel());
       });
       wordpress.flush(parallel());
