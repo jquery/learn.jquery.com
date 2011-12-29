@@ -1,7 +1,7 @@
 {
-  "author": "adam j. sontag <ajpiano@gmail.com>",
-  "name": "learn.jquery.com",
-  "description": "Imports the content generated from markdown and nanoc into WordPress",
+  "name": "plugins.jquery.com",
+  "version": "0.0.1",
+  "author": "jQuery Project",
   "version": "0.0.1",
   "homepage": "http://github.com/jquery/learn.jquery.com",
   "repository": {
@@ -11,13 +11,15 @@
   "engines": {
     "node": ">=0.6.4"
   },
+  "main": "./main.js",
   "dependencies": {
-    "futures": "2.3.1",
     "findit": "0.1.2",
     "jsdom": "0.2.10",
     "underscore": "1.2.3",
     "underscore.string": "2.0.0",
-    "mysql": "0.9.5"
+    "mysql": "0.9.5",
+    "step": "0.0.5",
+    "optimist": "0.3.0"
   },
   "devDependencies": {}
 }
