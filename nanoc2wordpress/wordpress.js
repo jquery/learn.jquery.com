@@ -2,7 +2,7 @@ var mysql = require("mysql"),
 Step = require("step"),
 config = require("./config");
 
-var db, postIds = {}, categoryMap = {}, 
+var db, categoryMap = {}, 
 optionsTable = table("options"),
 postmetaTable = table("postmeta"),
 postsTable = table("posts"),
@@ -65,7 +65,11 @@ var wordpress = module.exports = {
         }
 
         page.id = info.insertId;
-        postIds[page.slug] = info.insertId;
+
+        if ( page.isCategory ) {
+          categoryMap[ page.chapter ] = page.id
+        }
+
         var guid = "http://" + config.host_name + "/?p=" + page.id;
         db.query(
          "UPDATE " + postsTable + " SET `guid`=? WHERE id=?",
@@ -74,16 +78,19 @@ var wordpress = module.exports = {
         );
 
     },
-    function setTerm(error, info) {
+    function (error, info) {
         if (error) {
           throw error;
         }
-
-        db.query(
-          "INSERT INTO `" + termRelationshipsTable + "` " + "SET `object_id` = ?, `term_taxonomy_id` = ?",
-          [ page.id, categoryMap[page.chapter] ],
-          this
-        );
+        if ( page.isCategory ) {
+          return this( null );
+        } else {
+          db.query(
+           "UPDATE " + postsTable + " SET `post_parent`=? WHERE id=?",
+            [ categoryMap[page.chapter], page.id ],
+            this
+          );
+        }
     },
     function(error) {
       if (error) {

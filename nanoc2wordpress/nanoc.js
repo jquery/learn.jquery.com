@@ -30,7 +30,8 @@ function compile( continuation ) {
 }
 
 function findFiles( continuation ) {
-  var finder = require( "findit" ).find( OUTPUT_DIR );
+  var finder = require( "findit" ).find( OUTPUT_DIR ),
+  ts = new Date();
 
   finder.on( "file", function( file ) {
     var locPath = file.replace( OUTPUT_DIR, "" ),
@@ -40,9 +41,9 @@ function findFiles( continuation ) {
     if ( isHome ) {
       // TODO: Deal with home page
     } else if ( isCategory ) {
-      site.categories.push({ path: file })
+      site.categories.push({ path: file, isCategory: true, date: ts })
     } else if ( locPath.indexOf("/assets/") !=0 ) {
-      site.articles.push({ path: file });
+      site.articles.push({ path: file, isCategory: false, date: ts });
     }
   });
 
@@ -66,6 +67,7 @@ function processCategories( continuation ) {
       if (meta) {
         _.extend( cat, JSON.parse(meta.textContent) )
         cat.contents = _.trim(cat.contents.replace( META_REGEX, ""));
+        cat.slug = cat.chapter;
       }
     });
     continuation();
@@ -86,7 +88,6 @@ function processArticles( continuation ) {
     });
   },
   function processMeta(err, windows) {
-    var ts = new Date();
     windows.forEach( function(win, index) {
       var meta = win.document.getElementById('nanoc_meta'),
       file = site.articles[ index ];
@@ -94,7 +95,6 @@ function processArticles( continuation ) {
         _.extend( file, JSON.parse(meta.textContent) )
         file.contents = _.trim(file.contents.replace( META_REGEX, ""));
         file.slug = file.filename.replace( "/"+file.chapter+ "/", "").replace("/index.html", "");
-        file.date = ts;
       }
     });
     continuation();

@@ -49,14 +49,14 @@ function processSite( finish ) {
     console.log( "Truncating wordpress tables" )
     wordpress.reset( this );
   },
-  // Step 5: Create Wordpress Taxonomy
+  // Step 5: Create Wordpress Parent Pages for categories
   function() {
-    console.log( "Creating WordPress Taxonomy" )
-    wordpress.createTerms( site.categories, this )
+    console.log( "Creating WordPress Parent Pages" )
+    wordpress.createPages( site.categories, this )
   },
   // Step 6: Create articles in WordPress
   function(){
-    console.log( "Creating WordPress Pages" );
+    console.log( "Creating WordPress Pages for Articles" );
     wordpress.createPages( site.articles, this )
   },
   // Step 7: Flush WordPress rewrite rules
