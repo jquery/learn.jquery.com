@@ -192,9 +192,7 @@ $('form :checkbox');               // selects elements with type="checkbox"
 
 Much like the `:button` pseudo-selector, in order to get the best performance using `:checkbox`, we recommend to
 first select elements with a standard jQuery selector, then to use
-`.filter(":button")`. More can be seen on the [jQuery :button
-documentation page](http://api.jquery.com/button-selector/). Or, precede
-the pseudo-selector with a tag name/some other selector.
+`.filter(":checkbox")`, or to precede the pseudo-selector with a tag name/some other selector.
 
 
 #### :checked
@@ -207,7 +205,16 @@ The `:checked` pseudo-selector works when used with **checkboxes** and
 **radio** buttons.
 
 #### :disabled
-Selects disabled form elements
+
+<javascript caption=":checkbox pseudo-selector">
+$('form :disabled');               // selects elements with the disabled attribute
+</javascript>
+
+Much like some other pseudo-selectors, in order to get the best performance using `:disabled`, we recommend to
+first select elements with a standard jQuery selector, then to use
+`.filter(":disabled")`, or to precede
+the pseudo-selector with a tag name/some other selector.
+
 
 #### :enabled
 Selects enabled form elements
