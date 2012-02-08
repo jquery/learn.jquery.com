@@ -272,8 +272,7 @@ $('form :input');               // selects <input>, <textarea>, <select>, and <b
 #### :password
 
 <javascript caption=":password pseudo-selector">
-$('form :password');               // selects all elements of type
-"password"
+$('form :password');               // selects all elements of type "password"
 </javascript>
 
 Much like some other pseudo-selectors, in order to get the best performance using `:password`, we recommend to
