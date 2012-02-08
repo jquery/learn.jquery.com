@@ -321,7 +321,16 @@ the pseudo-selector with a tag name/some other selector.
 
 
 #### :selected
-Selects options that are selected
+
+<javascript caption=":selected pseudo-selector">
+$('form :selected');               // selects all selected items in <option> elements
+</javascript>
+
+Much like some other pseudo-selectors, in order to get the best performance using `:selected`, we recommend to
+first select elements with a standard jQuery selector, then to use
+`.filter(":selected")`, or to precede
+the pseudo-selector with a tag name/some other selector.
+
 
 #### :submit
 Selects inputs with type="submit"
