@@ -197,9 +197,14 @@ documentation page](http://api.jquery.com/button-selector/). Or, precede
 the pseudo-selector with a tag name/some other selector.
 
 
-
 #### :checked
-Selects checked inputs
+
+<javascript caption=":checked pseudo-selector">
+$('form :checked');               // selects checked checkboxes and radio buttons
+</javascript>
+
+The `:checked` pseudo-selector works when used with **checkboxes** and
+**radio** buttons.
 
 #### :disabled
 Selects disabled form elements
