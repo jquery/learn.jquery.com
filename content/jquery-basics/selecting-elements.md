@@ -333,7 +333,18 @@ the pseudo-selector with a tag name/some other selector.
 
 
 #### :submit
-Selects inputs with type="submit"
+
+<javascript caption=":submit pseudo-selector">
+$('form :submit');               // selects all inputs with type='submit'
+</javascript>
+
+The `:submit` selector usually applies to `<button>` or `<input>`
+elements. Some browsers (such as Internet Explorer) do not automatically give the
+`<button>` element a *type="submit"* by default.
+
+**Note:** for better performance in modern browsers, we recommend using
+`[type="submit"]` instead of the `:submit` pseudo-selector.
+
 
 #### :text
 Selects inputs with type="text"
