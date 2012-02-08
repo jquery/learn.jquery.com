@@ -347,4 +347,14 @@ elements. Some browsers (such as Internet Explorer) do not automatically give th
 
 
 #### :text
-Selects inputs with type="text"
+<javascript caption=":text pseudo-selector">
+$('form :text');               // selects all inputs with type='text'
+</javascript>
+
+Much like some other pseudo-selectors, in order to get the best performance using `:selected`, we recommend to
+first select elements with a standard jQuery selector, then to use
+`.filter(":selected")`, or to precede
+the pseudo-selector with a tag name/some other selector.
+
+**Note:** As of jQuery 1.5.2, `:text` selects `<input>` elements that
+have no specified *type* attribute. So, `type="text"` is implied.
