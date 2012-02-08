@@ -246,7 +246,7 @@ the pseudo-selector with a tag name/some other selector.
 
 #### :image
 
-<javascript caption=":file pseudo-selector">
+<javascript caption=":image pseudo-selector">
 $('form :image');               // selects all input elements of type "image"
 </javascript>
 
@@ -260,7 +260,14 @@ the pseudo-selector with a tag name/some other selector.
 
 
 #### :input
-Selects <input>, <textarea>, and <select> elements
+
+Using the `:input` selector selects all `<input>`, `<textarea>`, `<select>`, and
+`<button>` elements.
+
+<javascript caption=":input pseudo-selector">
+$('form :input');               // selects <input>, <textarea>, <select>, and <button> elements
+</javascript>
+
 
 #### :password
 Selects inputs with type="password"
