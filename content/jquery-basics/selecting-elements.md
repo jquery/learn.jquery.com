@@ -230,7 +230,19 @@ the pseudo-selector with a tag name/some other selector.
 
 
 #### :file
-Selects inputs with type="file"
+
+<javascript caption=":file pseudo-selector">
+$('form :file');               // selects all elements of type "file"
+</javascript>
+
+Much like some other pseudo-selectors, in order to get the best performance using `:file`, we recommend to
+first select elements with a standard jQuery selector, then to use
+`.filter(":file")`, or to precede
+the pseudo-selector with a tag name/some other selector.
+
+**Note:** for better performance in modern browsers, we recommend using
+`[type="file"]` instead of the `:file` pseudo-selector.
+
 
 #### :image
 Selects inputs with type="image"
