@@ -181,10 +181,22 @@ $('form :button');               // selects <button> elements and elements with 
 In order to get the best performance using `:button`, we recommend to
 first select elements with a standard jQuery selector, then to use
 `.filter(":button")`. More can be seen on the [jQuery :button
-documentation page](http://api.jquery.com/button-selector/).
+documentation page](http://api.jquery.com/button-selector/). Or, precede
+the pseudo-selector with a tag name/some other selector.
 
 #### :checkbox
-Selects inputs with type="checkbox"
+
+<javascript caption=":checkbox pseudo-selector">
+$('form :checkbox');               // selects elements with type="checkbox"
+</javascript>
+
+Much like the `:button` pseudo-selector, in order to get the best performance using `:checkbox`, we recommend to
+first select elements with a standard jQuery selector, then to use
+`.filter(":button")`. More can be seen on the [jQuery :button
+documentation page](http://api.jquery.com/button-selector/). Or, precede
+the pseudo-selector with a tag name/some other selector.
+
+
 
 #### :checked
 Selects checked inputs
