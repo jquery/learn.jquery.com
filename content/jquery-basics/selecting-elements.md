@@ -245,7 +245,19 @@ the pseudo-selector with a tag name/some other selector.
 
 
 #### :image
-Selects inputs with type="image"
+
+<javascript caption=":file pseudo-selector">
+$('form :image');               // selects all input elements of type "image"
+</javascript>
+
+Much like some other pseudo-selectors, in order to get the best performance using `:image`, we recommend to
+first select elements with a standard jQuery selector, then to use
+`.filter(":image")`, or to precede
+the pseudo-selector with a tag name/some other selector.
+
+**Note:** for better performance in modern browsers, we recommend using
+`[type="image"]` instead of the `:image` pseudo-selector.
+
 
 #### :input
 Selects <input>, <textarea>, and <select> elements
@@ -267,7 +279,3 @@ Selects inputs with type="submit"
 
 #### :text
 Selects inputs with type="text"
-
-<javascript caption="Using form-related pseduo-selectors">
-    $('#myForm :input'); // get all elements that accept input
-</javascript>
