@@ -306,7 +306,19 @@ the pseudo-selector with a tag name/some other selector.
 
 
 #### :reset
-Selects inputs with type="reset"
+
+<javascript caption=":reset pseudo-selector">
+$('form :reset');               // selects all elements of type "reset"
+</javascript>
+
+Much like some other pseudo-selectors, in order to get the best performance using `:reset`, we recommend to
+first select elements with a standard jQuery selector, then to use
+`.filter(":reset")`, or to precede
+the pseudo-selector with a tag name/some other selector.
+
+**Note:** for better performance in modern browsers, we recommend using
+`[type="reset"]` instead of the `:reset` pseudo-selector.
+
 
 #### :selected
 Selects options that are selected
