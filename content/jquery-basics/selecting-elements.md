@@ -159,7 +159,7 @@ update when the DOM changes.
 Sometimes you have a selection that contains more than what you're after; in this case, you may want to refine your selection. jQuery offers several methods for zeroing in on exactly what you're after.
 
 <javascript caption="Refining selections">
-$('div.foo').has('p');          // div.foo elements that contain &lt;p>'s
+$('div.foo').has('p');          // div.foo elements that contain <p> tags
 $('h1').not('.bar');            // h1 elements that don't have a class of bar
 $('ul li').filter('.current');  // unordered list items with class of current
 $('ul li').first();             // just the first unordered list item
@@ -168,12 +168,20 @@ $('ul li').eq(5);               // the sixth
 
 ### Selecting Form Elements
 
-jQuery offers several pseudo-selectors that help you find elements in your forms; 
+jQuery offers several pseudo-selectors that help you find elements in your forms;
 these are especially helpful because it can be difficult to distinguish between 
 form elements based on their state or type using standard CSS selectors.
 
 ### :button
-Selects <button> elements and elements with type="button"
+
+<javascript caption=":button pseudo-selector">
+$('form :button');               // selects <button> elements and elements with type="button"
+</javascript>
+
+In order to get the best performance using `:button`, we recommend to
+first select elements with a standard jQuery selector, then to use
+`.filter(":button")`. More can be seen on the [jQuery :button
+documentation page](http://api.jquery.com/button-selector/).
 
 #### :checkbox
 Selects inputs with type="checkbox"
