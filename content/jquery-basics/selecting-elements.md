@@ -206,7 +206,7 @@ The `:checked` pseudo-selector works when used with **checkboxes** and
 
 #### :disabled
 
-<javascript caption=":checkbox pseudo-selector">
+<javascript caption=":disabled pseudo-selector">
 $('form :disabled');               // selects elements with the disabled attribute
 </javascript>
 
