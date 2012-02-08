@@ -172,6 +172,8 @@ jQuery offers several pseudo-selectors that help you find elements in your forms
 these are especially helpful because it can be difficult to distinguish between 
 form elements based on their state or type using standard CSS selectors.
 
+
+
 ### :button
 
 <javascript caption=":button pseudo-selector">
@@ -207,7 +209,7 @@ The `:checked` pseudo-selector works when used with **checkboxes** and
 #### :disabled
 
 <javascript caption=":disabled pseudo-selector">
-$('form :disabled');               // selects elements with the disabled attribute
+$('form :disabled');               // selects all input elements with the disabled attribute
 </javascript>
 
 Much like some other pseudo-selectors, in order to get the best performance using `:disabled`, we recommend to
@@ -215,9 +217,17 @@ first select elements with a standard jQuery selector, then to use
 `.filter(":disabled")`, or to precede
 the pseudo-selector with a tag name/some other selector.
 
-
 #### :enabled
-Selects enabled form elements
+
+<javascript caption=":enabled pseudo-selector">
+$('form :enabled');               // selects all input elements that do not have the disabled attribute
+</javascript>
+
+Much like some other pseudo-selectors, in order to get the best performance using `:enabled`, we recommend to
+first select elements with a standard jQuery selector, then to use
+`.filter(":enabled")`, or to precede
+the pseudo-selector with a tag name/some other selector.
+
 
 #### :file
 Selects inputs with type="file"
