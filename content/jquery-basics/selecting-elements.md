@@ -15,6 +15,8 @@ Following are a few examples of common selection techniques.
 $('#myId'); // note IDs must be unique per page
 </javascript>
 
+For performance, it's preferable try to anchor your selections to an id. JavaScript has a built-in function to get elements by id (called, not coincidentally, getElementById).
+
 <javascript caption="Selecting elements by class name">
 $('div.myClass'); // performance improves if you specify element type
 </javascript>
@@ -23,12 +25,27 @@ $('div.myClass'); // performance improves if you specify element type
 $('input[name=first_name]'); // beware, this can be very slow in older browsers
 </javascript>
 
+It's possible to select children of elements using compound selectors, just like with CSS.
 
 <javascript caption="Selecting elements by compound CSS selector">
 $('#contents ul.people li');
 </javascript>
 
-<javascript caption="Pseudo-selectors">
+[jQuery reads selectors from right to left]  (http://net.tutsplus.com/tutorials/javascript-ajax/quick-tip-think-right-to-left-with-jquery/), so in the above example, it starts by looking for every li on the page, then it narrows it down to just those list items inside ul's with the class of people. Then finally it returns only the ones that meet those conditions and are children of #contents.
+
+This is a very expensive operation to perform because we start with many elements and whittle them down. It would be a lot faster if we could start with that id, #content. And we can! You can select the parent by id then use find() to target the children like so.
+
+<javascript caption="Selecting the parent element and finding its children.">
+$('#contents').find('ul.people li');
+</javascript>
+
+You can learn more about find() and other traversal methods in [Traversing] (http://stage.learn.jquery.com/jquery-basics/traversing/).
+
+### Pseudo-selectors
+
+You can also select elements with pseudo-selectors, just like with CSS.
+
+<javascript>
 $('a.external:first');
 $('tr:odd');
 $('#myForm :input');   // select all input-like elements in a form
