@@ -88,7 +88,7 @@ The minified versions, while having a larger file size than the packed versions 
 ## jQuery Git - An Instant WIP Build For Testing
 
 This work-in-progress build (known as jQuery Git) is generated once a minute
-from the [ jQuery Git repository ]( http://github.com/jquery/jquery ). It is
+from the [jQuery Git repository]( http://github.com/jquery/jquery ). It is
 provided as a convenience for anyone that wants to help test changes in the
 next version of jQuery.
 
