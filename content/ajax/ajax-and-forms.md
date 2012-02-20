@@ -15,10 +15,7 @@ attribution:  jQuery Fundamentals
 
 ---
 
-jQuery’s ajax capabilities can be especially useful when dealing with forms. There are several advantages, which can range from simple client-side validation (e.g. "Sorry, that username is taken"), to serialization, to [prefilters](http://api.jquery.com/extending-ajax/#Prefilters) (explained below), and even more!
-
-### Client-side validation
-
+jQuery’s ajax capabilities can be especially useful when dealing with forms. There are several advantages, which can range from serialization, to simple client-side validation (e.g. "Sorry, that username is taken"), to [prefilters](http://api.jquery.com/extending-ajax/#Prefilters) (explained below), and even more!
 
 ### Serialization
 Serializing form inputs in jQuery is extremely easy. Two methods come supported natively - `$.fn.serialize` and `$.fn.serializeArray`. While the names are fairly self-explanatory, there are many advantages to using them.
@@ -43,8 +40,36 @@ $('#myForm').serializeArray();
 </javascript>
 
 
-### Prefiltering
+### Client-side validation
+Client-side validation is, much like many other things, extremely easy using jQuery. While there are several cases developers can test for, some of the most common ones are: presence of a required input, valid usernames/emails, or checking an "I agree..." box. 
 
-anything remotely complex.  That said, there are a two jQuery methods you
-should know that relate to form processing in jQuery: `$.fn.serialize` and
-`$.fn.serializeArray`.
+Please note that it is advisable that you also perform server-side validation for your inputs. However, it typically makes for a better user experience to be able to validate some things without submitting the form.
+
+With that being said, let's jump on in to some examples:
+
+
+
+
+### Prefiltering
+A prefilter is a way to modify the ajax options before each request is sent (hence, the name `prefilter`).
+
+For example, say we would like to modify all crossDomain requests through a proxy. To do so with a prefilter is quite simple:
+
+<javascript caption="Using a proxy with a prefilter">
+$.ajaxPrefilter(function( options, originalOptions, jqXHR ) {
+	if ( options.crossDomain ) {
+		options.url = "http://mydomain.net/proxy/" + encodeURIComponent(options.url );
+		options.crossDomain = false;
+	}
+});
+</javascript>
+
+You can pass in an optional argument before the callback function that specifies which `dataTypes` you'd like the prefilter to be applied to. For example, if we want our prefilter to only apply to `JSON` and `script` requests, we'd do:
+
+<javascript caption="using the optional dataTypes argument">
+$.ajaxPrefilter( "json script", function( options, originalOptions, jqXHR ) {
+	// do all of the prefiltering here, but only for requests that indicate a dataType of "JSON" or "script"
+})
+</javascript>
+
+As you can see, prefiltering with jQuery is a simple, yet quite under-utilized, way to modify your requests to your liking.
