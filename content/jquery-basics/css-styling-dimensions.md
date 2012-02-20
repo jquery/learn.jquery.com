@@ -31,6 +31,8 @@ contains multiple properties. This is a common way to pass multiple arguments
 to a function, and many jQuery setter methods accept objects to set mulitple
 values at once.
 
+**Note:** while we do not recommend using `$.fn.css` as a setter in production-ready code (see below), when passing in an object to set CSS, CSS properties will be camelCased, instead of using a hypen.
+
 ### Using CSS Classes for Styling
 
 As a getter, the `$.fn.css` method is valuable; however, it should generally be
