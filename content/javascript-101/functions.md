@@ -84,8 +84,7 @@ var myFn = function(fn) {
 myFn(function() { return 'hello world'; });   // logs 'hello world'
 </javascript>
 
-<div class="example" markdown="1">
-Passing a named function as an argument
+<javascript caption="Passing a named function as an argument">
 
     var myFn = function(fn) {
       var result = fn();
@@ -97,4 +96,4 @@ Passing a named function as an argument
     };
 
     myFn(myOtherFn);   // logs 'hello world'
-</div>
+</javascript>
