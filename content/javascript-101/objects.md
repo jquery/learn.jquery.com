@@ -13,14 +13,16 @@ As it turns out, nearly everything in JavaScript is an object -- arrays,
 functions, numbers, even strings -- and they all have properties and methods.
 
 
-<javascript caption="Creating an 'object literal'">
+<javascript caption="Creating an object literal">
     var myObject = {
       sayHello : function() {
           console.log('hello');
       },
       myName : 'Rebecca'
     };
+    
     myObject.sayHello();            // logs 'hello'
+    
     console.log(myObject.myName);   // logs 'Rebecca'
 </javascript>
 
