@@ -1,12 +1,3 @@
-- Right now we're really not covering the fundamentals of how Ajax works with forms. Traditional form handling vs the new. $.ajax has the power to greatly change everything from validation (e.g 'sorry, your username is taken') through to prefiltering but we've giving a very very minor summary of what is possible. I think we need to somehow address this. A first attempt might at least bring over more examples from the docs.
-- Locate articles that cover this well and see if we can borrow from them. As per the other sections, I do not think we want to end up in another situation (as with the old site) where we're linking to articles that end up outdated with time, so borrow or write this out ourselves.
-
-c: Addy, I'm planning on adjusting the ajax-and-forms section. One quick question, though - do we want to promote using the plugin, or teach how to go about doing the things we can with $.ajax sans-plugin?
-
-I think the best way to approach that section in particular is to explain what serialize and serializeArray do and why they're important/useful, and then go in to giving specific examples as to the things you mentioned above (validation, prefiltering, etc).
-
-a: @connormontgomery imo, we should approach it without using the plugin. I agree with serialize()/serializeArray() being explained first and then reviewing the other examples.
-
 ---
 chapter : ajax
 section : 4
@@ -33,20 +24,47 @@ While plain old serialization is great, sometimes your application would work be
 $('#myForm').serializeArray();
 
 // creates a structure like this:
-[
-  { name : 'field_1', value : 'something' },
-  { name : 'field_2', value : 'somethingElse' }
-]
+// [
+//   { name : 'field_1', value : 'something' },
+//   { name : 'field_2', value : 'somethingElse' }
+// ]
 </javascript>
 
-
 ### Client-side validation
-Client-side validation is, much like many other things, extremely easy using jQuery. While there are several cases developers can test for, some of the most common ones are: presence of a required input, valid usernames/emails, or checking an "I agree..." box. 
+Client-side validation is, much like many other things, extremely easy using jQuery. While there are several cases developers can test for, some of the most common ones are: presence of a required input, valid usernames/emails/phone numbers/etc..., or checking an "I agree..." box. 
 
 Please note that it is advisable that you also perform server-side validation for your inputs. However, it typically makes for a better user experience to be able to validate some things without submitting the form.
 
-With that being said, let's jump on in to some examples:
+With that being said, let's jump on in to some examples! First, we'll see how easy it is to check if a required field doesn't have anything in it. If it doesn't, then we'll `return false`, and prevent the form from processing.
 
+<javascript caption="Using validation to check for the presence of an input">
+$("#form").submit(function( e ) {
+	if ( $(".required").val().length === 0 ) { // if .required's value's length is zero
+		// usually show some kind of error message here
+		return false; // this prevents the form from submitting
+	}
+	else {
+		// run $.ajax here
+	}
+});
+</javascript>
+
+Let's see how easy it is to check for invalid characters in a username:
+
+<javascript caption="Validate a phone number field">
+$("#form").submit(function( e ) {
+	var inputtedPhoneNumber = $("#phone").val()
+		, phoneNumberRegex = ^\d*$/; // match only numbers
+	
+	if ( !phoneNumberRegex.test( inputtedPhoneNumber ) ) { // if the phone number doesn't match the regex
+		// usually show some kind of error message ere
+		return false; // prevent the form from submitting
+	}
+	else {
+		// run $.ajax here
+	}
+})
+</javascript>
 
 
 
@@ -71,5 +89,3 @@ $.ajaxPrefilter( "json script", function( options, originalOptions, jqXHR ) {
 	// do all of the prefiltering here, but only for requests that indicate a dataType of "JSON" or "script"
 })
 </javascript>
-
-As you can see, prefiltering with jQuery is a simple, yet quite under-utilized, way to modify your requests to your liking.
