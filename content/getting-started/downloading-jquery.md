@@ -135,7 +135,7 @@ jQuery currently requires the following components to be installed:
 ** ant: Available on any platform with JDK and ANT installed
 * java: A copy of Java, version 1.6.0 or later (required to build the minified version of jQuery).
 
-** Build Process **
+**Build Process**
 
 You will now need to use the build system that you chose previously - either <code>make</code> or <code>ant</code>.
 
