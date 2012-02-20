@@ -39,7 +39,7 @@ presentational information in your JavaScript. Instead, write CSS rules for
 classes that describe the various visual states, and then simply change the
 class on the element you want to affect.
 
-<javscript caption="Working with classes">
+<javascript caption="Working with classes">
 var $h1 = $('h1');
 
 $h1.addClass('big');
@@ -47,7 +47,7 @@ $h1.removeClass('big');
 $h1.toggleClass('big');
 
 if ($h1.hasClass('big')) { ... }
-</javscript>
+</javascript>
 
 Classes can also be useful for storing state information about an element, such as indicating that an element is selected.
 
