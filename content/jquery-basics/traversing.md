@@ -5,7 +5,7 @@ title   : Traversing
 ---
 ## Traversing
 
-Once you have made an intial selection with jQuery, you may want to traverse
+Once you have made an initial selection with jQuery, you may want to traverse
 deeper into what was just selected. Traversing can be broken down into three
 basic parts: parents, children and siblings. jQuery has an abundance of easy
 to use methods for all these parts. You will notice that each of these methods
@@ -19,20 +19,33 @@ available.
 
 The methods for finding the parents from a selection: `$.fn.parent`, `$.fn.parents`, `$.fn.parentsUntil` and `$.fn.closest`. 
 
-<javascript caption="Selecting an element's direct parent">
-$('#myList').parent();
-</javascript>
+<javascript>
 
-<javascript caption="Selecting all the parents of an element that match a given selector">
-$('#myList').parents('div.section');
-</javascript>
-
-<javascript caption="Selecting all the parents of an element up to, but *not including* the selector">
-var section = $('div.section');
-$('#myList').parentsUntil(section);
-</javascript>
-<javascript caption="Selecting the closest parent, note that only one parent will be selected and that the initial element itself is included in the search">
-  $('#myList').closest('#navigation');
+    <div class="grandparent">
+      <div class="parent">
+    		<div class="child">
+    			<span class="subchild"></span>
+    		</div>
+    	</div>
+      <div class="surrogateParent1"></div>
+      <div class="surrogateParent2"></div>
+    </div>
+    
+    //Selecting an element's direct parent    
+    $('span.subchild').parent(); // returns [div.child] 
+    
+    //Selecting all the parents of an element that match a given selector
+    $('span.subchild').parents('div.parent'); // returns [div.parent]
+    $('span.subchild').parents();             // returns [div.child, div.parent, div.grandparent]
+    
+    //Selecting all the parents of an element up to, but *not including* the selector
+    $("span.subchild").parentsUntil("div.grandparent"); // returns [div.child, div.parent]
+    
+    //Selecting the closest parent, note that only one parent will be selected 
+    //and that the initial element itself is included in the search
+    $('span.subchild').closest('div');  // returns [div.child]
+    $('div.child').closest('div');      // returns [div.child] as the selector is also included in the search
+  
 </javascript>
 
 ### Children
@@ -44,11 +57,13 @@ child nodes, while `$.fn.find` can traverse recursively into children, and
 children of those children, etc.
 
 <javascript caption="Selecting an element's direct children">
-$('#myList').children('li');
-</javascript>
 
-<javascript caption="Finding all the links within a selection that match the selector">
-$('#myList').find('a.external');
+    //Selecting an element's direct children
+    $('div.grandparent').children('div'); // returns [div.parent, div.surrogateParent1, div.surrogateParent2]
+    
+    //Finding all elements within a selection that match the selector
+    $('div.grandparent').find('div'); // returns [div.child, div.parent, div.surrogateParent1, div.surrogateParent2]
+    
 </javascript>
 
 ### Siblings
@@ -61,27 +76,32 @@ these basic methods, similar to how `$.fn.parentsUntil` works; `$.fn.nextAll`,
 `$.fn.nextUntil`, `$.fn.prevAll` and `$.fn.prevUntil`.
 
 <javascript caption="Selecting an element's next sibling, filtering it by a selector">
-// Note that this does not match the first next sibling with the class 'section'
-// jQuery gets the next sibling and returns it only if it matches the selector
-$('#myList').next('.section');
+
+    // Selecing a next sibling of the selectors
+    $("div.parent").next(); // returns [div.surrogateParent1]
+    
+    // Selecing a prev sibling of the selectors
+    $("div.parent").prev(); // returns [] as No sibling exists before div.parent
+    
+    //Selecting all the next siblings of the selector 
+    $("div.parent").nextAll();          // returns [div.surrogateParent1, div.surrogateParent2]
+    $("div.parent").nextAll().first();  // returns [div.surrogateParent1]
+    $("div.parent").nextAll().last();   // returns [div.surrogateParent2]
+    
+    //Selecting all the prev siblings of the selector 
+    $("div.pasurrogateParent2rent").prevAll();    // returns [div.surrogateParent1, div.parent]
+    $("div.surrogateParent2").prevAll().first();  // returns [div.surrogateParent1]
+    $("div.surrogateParent2").prevAll().last();   // returns [div.parent]
+    
 </javascript>
 
-<javascript caption="Selecting an element's next sibling that matches a selector">
-$('#myList').nextAll('.section').first();
-</javascript>
-
-<javascript caption="Selecting an element's previous sibling, filtering it by a selector">
-// Note that this does not match the first previous sibling with the class 'section'
-// jQuery gets the previous sibling and returns it only if it matches the selector
-$('#myList').prev('.section');
-</javascript>
-
-<javascript caption="Selecting an element's previous sibling that matches the given selector">
-$('#myList').prev('.section');
-</javascript>
+If you want to select all the siblings then `$.fn.siblings` comes handy. 
 
 <javascript caption="Selecting an element's siblings in both directions that matches the given selector">
-    $('#myList').siblings('div.section');
+    
+    $("div.parent").siblings();           // returns [div.surrogateParent1, div.surrogateParent2]
+    $("div.surrogateParent1").siblings(); // returns [div.parent, div.surrogateParent2]
+    
 </javascript>
 
 You can see all these methods metioned and more at the
