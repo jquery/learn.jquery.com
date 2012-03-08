@@ -1,0 +1,9 @@
+{ 
+  "host_name" : "learn.jquery.com",
+  "git_dir" : "/path/to/your/learn.jquery.com",
+  "db_name" : "yourWpDbName",
+  "db_user" : "yourDbUser",
+  "db_password" : "yourDbPassword",
+  "db_port" : 3306,
+  "site_id" : null
+}
