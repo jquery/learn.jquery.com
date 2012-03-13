@@ -3,25 +3,89 @@ chapter : ajax
 section : 4
 title   : Ajax and Forms
 attribution:  jQuery Fundamentals
+
 ---
-jQuery’s ajax capabilities can be especially useful when dealing with forms.
-The [jQuery Form Plugin](http://jquery.malsup.com/form/) is a well-tested tool
-for adding Ajax capabilities to forms, and you should generally use it for
-handling forms with Ajax rather than trying to roll your own solution for
-anything remotely complex.  That said, there are a two jQuery methods you
-should know that relate to form processing in jQuery: `$.fn.serialize` and
-`$.fn.serializeArray`.
+
+jQuery’s ajax capabilities can be especially useful when dealing with forms. There are several advantages, which can range from serialization, to simple client-side validation (e.g. "Sorry, that username is taken"), to [prefilters](http://api.jquery.com/extending-ajax/#Prefilters) (explained below), and even more!
+
+### Serialization
+Serializing form inputs in jQuery is extremely easy. Two methods come supported natively - `$.fn.serialize` and `$.fn.serializeArray`. While the names are fairly self-explanatory, there are many advantages to using them.
+
+The `serialize` method serializes a form's data into a query string. For the element's value to be serialized, it **must** have a `name` attribute. Please noted that values from inputs with a type of `checkbox` or `radio` are included only if they are checked.
+
 
 <javascript caption="Turning form data into a query string">
-$('#myForm').serialize();
+$('#myForm').serialize(); // creates a query string like this: field_1=something&field2=somethingElse
 </javascript>
+
+While plain old serialization is great, sometimes your application would work better if you sent over an array of objects, instead of just the query string. For that, jQuery has the `serializeArray` method. It's very similar to the `serialize` method listed above, except it produces an array of objects, instead of a string.
 
 <javascript caption="Creating an array of objects containing form data">
 $('#myForm').serializeArray();
 
 // creates a structure like this:
-[
-  { name : 'field1', value : 123 },
-  { name : 'field2', value : 'hello world' }
-]
+// [
+//   { name : 'field_1', value : 'something' },
+//   { name : 'field_2', value : 'somethingElse' }
+// ]
+</javascript>
+
+### Client-side validation
+Client-side validation is, much like many other things, extremely easy using jQuery. While there are several cases developers can test for, some of the most common ones are: presence of a required input, valid usernames/emails/phone numbers/etc..., or checking an "I agree..." box. 
+
+Please note that it is advisable that you also perform server-side validation for your inputs. However, it typically makes for a better user experience to be able to validate some things without submitting the form.
+
+With that being said, let's jump on in to some examples! First, we'll see how easy it is to check if a required field doesn't have anything in it. If it doesn't, then we'll `return false`, and prevent the form from processing.
+
+<javascript caption="Using validation to check for the presence of an input">
+$("#form").submit(function( e ) {
+	if ( $(".required").val().length === 0 ) { // if .required's value's length is zero
+		// usually show some kind of error message here
+		return false; // this prevents the form from submitting
+	}
+	else {
+		// run $.ajax here
+	}
+});
+</javascript>
+
+Let's see how easy it is to check for invalid characters in a username:
+
+<javascript caption="Validate a phone number field">
+$("#form").submit(function( e ) {
+	var inputtedPhoneNumber = $("#phone").val()
+		, phoneNumberRegex = ^\d*$/; // match only numbers
+	
+	if ( !phoneNumberRegex.test( inputtedPhoneNumber ) ) { // if the phone number doesn't match the regex
+		// usually show some kind of error message ere
+		return false; // prevent the form from submitting
+	}
+	else {
+		// run $.ajax here
+	}
+})
+</javascript>
+
+
+
+### Prefiltering
+A prefilter is a way to modify the ajax options before each request is sent (hence, the name `prefilter`).
+
+For example, say we would like to modify all crossDomain requests through a proxy. To do so with a prefilter is quite simple:
+
+<javascript caption="Using a proxy with a prefilter">
+$.ajaxPrefilter(function( options, originalOptions, jqXHR ) {
+	if ( options.crossDomain ) {
+		options.url = "http://mydomain.net/proxy/" + encodeURIComponent(options.url );
+		options.crossDomain = false;
+	}
+});
+</javascript>
+
+You can pass in an optional argument before the callback function that specifies which `dataTypes` you'd like the prefilter to be applied to. For example, if we want our prefilter to only apply to `JSON` and `script` requests, we'd do:
+
+<javascript caption="using the optional dataTypes argument">
+$.ajaxPrefilter( "json script", function( options, originalOptions, jqXHR ) {
+	// do all of the prefiltering here, but only for requests that indicate a dataType of "JSON" or "script"
+})
 </javascript>

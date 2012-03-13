@@ -29,7 +29,7 @@ class Nanoc3::Filter
       languages = LANGUAGES.keys.join("|")
 
       until @string.empty?
-        match = scan_until /(\+(\S.*?\S?)\+|<(#{languages})(?: filename=["']([^"']*)["'])?(?: caption=["']([^"']*)["'])?>|\z)/m
+        match = scan_until /(\+(\S.*?\S?)\+|<(#{languages})(?: filename=["']([^"']*)["'])?(?: caption=["]([^"]*)["])?>|\z)/m
 
         @pending << match.pre_match
 

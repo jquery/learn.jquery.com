@@ -17,7 +17,7 @@ var myFunction = function() {
 };
 
 var myObject = {
-foo : 'bar'
+	foo : 'bar'
 };
 
 var myArray = [ 'a', 'b', 'c' ];

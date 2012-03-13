@@ -88,7 +88,7 @@ The minified versions, while having a larger file size than the packed versions 
 ## jQuery Git - An Instant WIP Build For Testing
 
 This work-in-progress build (known as jQuery Git) is generated once a minute
-from the [ jQuery Git repository ]( http://github.com/jquery/jquery ). It is
+from the [jQuery Git repository]( http://github.com/jquery/jquery ). It is
 provided as a convenience for anyone that wants to help test changes in the
 next version of jQuery.
 
@@ -135,7 +135,7 @@ jQuery currently requires the following components to be installed:
 ** ant: Available on any platform with JDK and ANT installed
 * java: A copy of Java, version 1.6.0 or later (required to build the minified version of jQuery).
 
-** Build Process **
+**Build Process**
 
 You will now need to use the build system that you chose previously - either <code>make</code> or <code>ant</code>.
 

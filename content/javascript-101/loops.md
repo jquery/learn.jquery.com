@@ -128,6 +128,7 @@ the loop's body with the break statement.
 You may also want to continue the loop without executing more of the loop's
 body. This is done using the continue statement.
 
+
 <javascript caption="Skipping to the next iteration of a loop">
     for (var i = 0; i < 10; i++) {
       if (something) {

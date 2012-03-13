@@ -31,6 +31,8 @@ contains multiple properties. This is a common way to pass multiple arguments
 to a function, and many jQuery setter methods accept objects to set mulitple
 values at once.
 
+**Note:** while we do not recommend using `$.fn.css` as a setter in production-ready code (see below), when passing in an object to set CSS, CSS properties will be camelCased, instead of using a hypen.
+
 ### Using CSS Classes for Styling
 
 As a getter, the `$.fn.css` method is valuable; however, it should generally be
@@ -39,7 +41,7 @@ presentational information in your JavaScript. Instead, write CSS rules for
 classes that describe the various visual states, and then simply change the
 class on the element you want to affect.
 
-<javscript caption="Working with classes">
+<javascript caption="Working with classes">
 var $h1 = $('h1');
 
 $h1.addClass('big');
@@ -47,7 +49,7 @@ $h1.removeClass('big');
 $h1.toggleClass('big');
 
 if ($h1.hasClass('big')) { ... }
-</javscript>
+</javascript>
 
 Classes can also be useful for storing state information about an element, such as indicating that an element is selected.
 
