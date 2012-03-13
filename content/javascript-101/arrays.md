@@ -24,16 +24,16 @@ console.log(myArray.length);   // logs 2
 
 <javascript caption="Changing the value of an array item">
 var myArray = [ 'hello', 'world' ];
-myArray[1] = 'changed';
+myArray[1] = 'changed'; // myArray is now now ['hello', 'changed']
 </javascript>
 
 <javascript caption="Adding elements to an array">
 var myArray = [ 'hello', 'world' ];
-myArray.push('new');
+myArray.push('new'); // myArray is now ['hello', 'world', 'new']
 </javascript>
 
 <javascript caption="Working with arrays">
 var myArray = [ 'h', 'e', 'l', 'l', 'o' ];
-var myString = myArray.join('');   // 'hello'
-var mySplit = myString.split('');  // [ 'h', 'e', 'l', 'l', 'o' ]
+var myString = myArray.join(''); 	// myString = 'hello'
+var mySplit = myString.split('');	// mySPlit = [ 'h', 'e', 'l', 'l', 'o' ]
 </javascript>
