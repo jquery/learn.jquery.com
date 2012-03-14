@@ -5,11 +5,18 @@ title   : How to create a basic plugin
 attribution:  jQuery Fundamentals
 ---
 Sometimes you want to make a piece of functionality available throughout your code; 
-for example, perhaps you want a single method you can call on a jQuery selection that performs a series of operations on the selection. 
+for example, perhaps you want a single method you can call on a jQuery selection that performs a series of operations on the selection. Maybe you wrote a really useful utility function that you want to be able to move easily to other projects.
 In this case, you may want to write a plugin.
 
-Most plugins are simply methods created in the `$.fn` namespace. jQuery guarantees that a method called on a jQuery object will be able to access that jQuery object as this inside the method. 
-In return, your plugin needs to guarantee that it returns the same object it received, unless explicitly documented otherwise.
+##How jQuery works 101
+
+Before we write our own plugins, we must first understand a little about how jQuery works. Take a look at this code:
+
+<javascript>
+$('a').css('color','red');
+</javascript> 
+
+This is some pretty basic jQuery code, but do you know what's happening behind the scenes? Whenever you use the `$` function to select elements, it returns an object. This object contains all of the methods you've been using (`css()`, `click()`, etc.), and all of the elements that fit your selector. The `$` function gets the methods from the `$.fn` object. This object contains all of the jQuery methods, and If we want to write our own methods, it will need to contain those as well.
 
 ##Basic plugin authoring
 
