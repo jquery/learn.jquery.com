@@ -11,60 +11,60 @@ In this case, you may want to write a plugin.
 Most plugins are simply methods created in the `$.fn` namespace. jQuery guarantees that a method called on a jQuery object will be able to access that jQuery object as this inside the method. 
 In return, your plugin needs to guarantee that it returns the same object it received, unless explicitly documented otherwise.
 
-## How to create a basic plugin
+##Basic plugin authoring
 
-The notation for creating a typical plugin is as follows:
+Let's say we want to create a plugin that makes text green. All we have to do is add a function called `greenify` to `$.fn` and it will available just like any other method.
 
 <javascript>
-(function($){
-  $.fn.myNewPlugin = function() {
-    return this.each(function(){
-     // do something
-    });
-  };
+$.fn.greenify = function () {
+  this.css('color','green');
+}
+
+$('a').greenify();  // makes all the links green
+</javascript>
+
+Notice that to use `css()`, another method, we use `this`, not `$(this)`. This is because our `greenify` function is a part of the same object as `css()`.
+
+##Chaining
+
+This works, but there's a couple of things we need to do for our plugin to survive in the real world. One of jQuery's features is chaining, when you link five or six actions onto one selector. This is accomplished by having all jQuery methods return the original jQuery object again (there are a few exeptions: `width()` called without parameters returns the width of the selected element, and is not chainable). Making our plugin chainable takes one line of code:
+
+<javascript>
+$.fn.greenify = function () {
+  this.css('color','green');
+  return this;
+}
+
+$('a').greenify().addClass('greenified');
+</javascript>
+
+##Adding scope
+
+The `$` variable is very popular among javascript libraries, and if you're using one with jQuery, you will have to make jQuery not use the `$` with `jQuery.noConflict()`. However, this will break our plugin. To work well with other plugins, _and_ still use the jQuery `$` variable, we need to put all of our code inside of an [Immediately Invoked Function Expression](http://stage.learn.jquery.com/javascript-101/functions/#immediately-invoked-function-expression), and then pass the function `jQuery`, and name the parameter `$`:
+
+<javascript>
+(function ($) {
+  $.fn.greenify = function () {
+    this.css('color','green');
+    return this;
+  }
 }(jQuery));
 </javascript>
 
-Don't let that confuse you though. The point of a jQuery plugin is to extend
-jQuery's prototype object, and that's what's happening on this line:
+In addition, the primary purpose of an Immediately Invoked Function is to allow us to have our own private variables. Pretend we want a different color green, and we want to store it in a variable.
 
-<javascript>
-$.fn.myNewPlugin = function() { //...
-</javascript>
+<javascript> 
+(function ($) {
+  var shade = '#556B2F';
 
-We wrap this assignment in an immediately-invoked function:
-<javascript>
-(function($){
-  //...
+  $.fn.greenify = function () {
+    this.css('color',shade);
+    return this;
+  }
 }(jQuery));
 </javascript>
 
-This has the effect of creating a "private" scope that allows us to extend
-jQuery using the dollar symbol without having to risk the possibility that the
-dollar has been overwritten by another library.
-
-So our actual plugin, thus far, is this:
-
-<javascript>
-$.fn.myNewPlugin = function() {
-  return this.each(function(){
-    // do something
-  });
-};
-</javascript>
-
-The `this` keyword within the new plugin refers to the jQuery object on which
-the plugin is being called.
-
-<javascript>
-var somejQueryObject = $('#something');
-
-$.fn.myNewPlugin = function() {
-  alert(this === somejQueryObject);
-};
-
-somejQueryObject.myNewPlugin(); // alerts 'true'
-</javascript>
+##Using the each() method
 
 Your typical jQuery object will contain references to any number of DOM
 elements, and that's why jQuery objects are often referred to as collections.
@@ -84,7 +84,11 @@ jQuery's `each()` method, like most other jQuery methods, returns a jQuery
 object, thus enabling what we've all come to know and love as 'chaining'
 (`$(...).css().attr()...`).  We wouldn't want to break this convention so we
 return the this object.  Within this loop you can do whatever you want with
-each element.  Here's an example of a small plugin using some of the techniques
+each element.  
+
+##Putting it together
+
+Here's an example of a small plugin using some of the techniques
 we've discussed:
 
 <javascript>
@@ -129,7 +133,7 @@ in the collection.  Notice also that we're not using the `attr` method to
 retrieve the href attribute, because the native DOM API gives us easy access
 with the aptly named href property.
 
-Here's another example of a plugin.  This one doesn't require us to loop
+Here's another example of a plugin. This one doesn't require us to loop
 through every element with the `each()` method.  Instead, we're simply going to
 delegate to other jQuery methods directly:
 
