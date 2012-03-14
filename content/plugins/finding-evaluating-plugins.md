@@ -6,14 +6,16 @@ attribution:  jQuery Fundamentals
 ---
 ## Finding &amp; Evaluating Plugins
 
-Plugins extend the basic jQuery functionality, and one of the most celebrated
-aspects of the library is its extensive plugin ecosystem.  From table sorting
+One of the most celebrated
+aspects of jQuery is its extensive plugin ecosystem.  From table sorting
 to form validation to autocompletion ... if there’s a need for it, chances are
 good that someone has written a plugin for it.
 
 The quality of jQuery plugins varies widely.  Many plugins are extensively
 tested and well-maintained, but others are hastily created and then ignored.
-More than a few fail to follow best practices.
+More than a few fail to follow best practices. Some plugins, mainly 
+[jQuery UI](http://jqueryui.com/), are maintained by the jQuery team. The 
+quality of these plugins is as good as jQuery itself.
 
 Google is your best initial resource for locating plugins, though the jQuery
 team is working on an improved plugin repository.  Once you’ve identified some
