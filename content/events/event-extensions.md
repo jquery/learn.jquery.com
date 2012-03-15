@@ -3,6 +3,7 @@ chapter : events
 section : 7
 title   : jQuery Event Extensions
 attribution:  Dave Methvin
+github: dmethvin
 ---
 jQuery offers several ways to extend its event system to provide custom functionality when events are attached to elements. Internally in jQuery, these extensions are primarily used to ensure that standard events such as `submit` and `change` behave consistently across browsers. However, they can also be used to define new events with custom behavior.
 
@@ -43,10 +44,10 @@ To add a property name to this list, use `jQuery.event.props.push("newPropertyNa
 The fixHooks interface provides a per-event-type way to extend or normalize the event object that jQuery creates when it processes a *native* browser event. A fixHooks entry is an object that has two properties, each being optional:
 
 props: Array
-:		Strings representing properties that should be copied from the browser's event object to the jQuery event object. If omitted, no additional properties are copied beyond the standard ones that jQuery copies and normalizes (e.g., event.target and event.relatedTarget).
+:               Strings representing properties that should be copied from the browser's event object to the jQuery event object. If omitted, no additional properties are copied beyond the standard ones that jQuery copies and normalizes (e.g., event.target and event.relatedTarget).
 
 filter: Function( event, originalEvent )
-:		jQuery calls this function after it constructs the jQuery.Event object, copies standard properties from `jQuery.event.props`, and copies the fixHooks-specific props (if any) specified above. The function can create new properties on the event object or modify existing ones. The second argument is the browser's native event object, which is also availble in `event.originalEvent`.
+:               jQuery calls this function after it constructs the jQuery.Event object, copies standard properties from `jQuery.event.props`, and copies the fixHooks-specific props (if any) specified above. The function can create new properties on the event object or modify existing ones. The second argument is the browser's native event object, which is also availble in `event.originalEvent`.
 
 Note that for all events, the browser's native event object is available in `event.originalEvent`; if the jQuery event handler examines the properties there instead of jQuery's normalized `event` object, there is no need to create a fixHooks entry to copy or modify the properties.
 
@@ -58,7 +59,7 @@ For example, to set a hook for the "drop" event that copies the "dataTransfer" p
 Since fixHooks are an advanced feature and rarely used externally, we have not added extra code and interfaces to deal with conflict resolution. If there is a chance that some other code may be assigning fixHooks to the same events, the code should check for an existing hook and take appropriate measures. A simple solution might look like this:
 
 <javascript>if ( jQuery.event.fixHooks.drop ) {
-	 throw new Error("Someone else took the jQuery.event.fixHooks.drop hook!");
+  throw new Error("Someone else took the jQuery.event.fixHooks.drop hook!");
 }
 jQuery.event.fixHooks.drop = { props: [ "dataTransfer" ] };
 </javascript>
@@ -67,13 +68,13 @@ When there are known cases of different plugins wanting to attach to the drop ho
 
 <javascript>var existingHook = jQuery.event.fixHooks.drop;
 if ( !existingHook ) {
-	 jQuery.event.fixHooks.drop = { props: [ "dataTransfer" ] };
+  jQuery.event.fixHooks.drop = { props: [ "dataTransfer" ] };
 } else {
-	 if ( existingHook.props ) {
-			existingHook.props.push( "dataTransfer" );
-	 } else {
-			existingHook.props = [ "dataTransfer" ];
-	 }
+  if ( existingHook.props ) {
+    existingHook.props.push( "dataTransfer" );
+  } else {
+    existingHook.props = [ "dataTransfer" ];
+  }
 }
 </javascript>
 
@@ -93,30 +94,30 @@ When defined, these string properties specify that a special event should be han
 The behavior of these properties is easiest to see with an example. Assume a special event defined as follows:
 
 <javascript>jQuery.event.special.pushy = {
-		bindType: "click",
-		delegateType: "click"
+  bindType: "click",
+  delegateType: "click"
 };
 </javascript>
 
 When these properties are defined, the following behavior occurs in the jQuery event system:
 
-*		Event handlers for the "pushy" event are actually attached to "click" -- both directly bound and delegated events.
-*		Special event hooks for "click" are called if they exist, *except* the `handle` hook for "pushy" is called when an event is delivered if one exists.
-*		Event handlers for "pushy" must be removed using the "pushy" event name, and are unaffected if "click" events are removed from the same elements.
+*               Event handlers for the "pushy" event are actually attached to "click" -- both directly bound and delegated events.
+*               Special event hooks for "click" are called if they exist, *except* the `handle` hook for "pushy" is called when an event is delivered if one exists.
+*               Event handlers for "pushy" must be removed using the "pushy" event name, and are unaffected if "click" events are removed from the same elements.
 
 
 So given the special event above, this code shows that a pushy isn't removed by removing clicks. That might be an effective way to defend against an ill-behaved plugin that didn't namespace its removal of click events, for example:
 
 <javascript>var $p = $("p");
 $p.on("click", function( e ) {
-		$("body").append("I am a " + e.type + "!	"));
+    $("body").append("I am a " + e.type + "!"));
 });
 $p.on("pushy", function( e ) {
-		$("body").append("I am pushy but still a " + e.type + "!	");
+    $("body").append("I am pushy but still a " + e.type + "!");
 });
-$p.trigger("click");				// triggers both handlers
+$p.trigger("click"); // triggers both handlers
 $p.off("click");
-$p.trigger("click");				// still triggers "pushy"
+$p.trigger("click"); // still triggers "pushy"
 $p.off("pushy");
 </javascript>
 
@@ -130,22 +131,22 @@ Many of the special event hook functions below are passed a `handleObj` object t
 </javascript>
 
 type: String
-:		The type of event, such as `"click"`. When special event mapping is used via bindType or delegateType, this will be the mapped type.
+:               The type of event, such as `"click"`. When special event mapping is used via bindType or delegateType, this will be the mapped type.
 
 origType: String
-:		The original type name (in this case, `"click"`) regardless of whether it was mapped via bindType or delegateType. So when a "pushy" event is mapped to "click" its origType would be "pushy". See the examples in those special event properties above for more detail.
+:               The original type name (in this case, `"click"`) regardless of whether it was mapped via bindType or delegateType. So when a "pushy" event is mapped to "click" its origType would be "pushy". See the examples in those special event properties above for more detail.
 
 namespace: String
-:		Namespace(s), if any, provided when the event was attached, such as `"myPlugin"`. When multiple namespaces are given, they are separated by periods and sorted in ascending alphabetical order. If no namespaces are provided, this property is an empty string.
+:               Namespace(s), if any, provided when the event was attached, such as `"myPlugin"`. When multiple namespaces are given, they are separated by periods and sorted in ascending alphabetical order. If no namespaces are provided, this property is an empty string.
 
 selector: String
-:		For delegated events, this is the selector used to filter descendant elements and determine if the handler should be called. In the example it is `"button"`. For directly bound events, this property is `null`.
+:               For delegated events, this is the selector used to filter descendant elements and determine if the handler should be called. In the example it is `"button"`. For directly bound events, this property is `null`.
 
 data: Object
-:		The data, if any, passed to jQuery during event binding, e.g., `{myData: 42}`. If the data argument was omitted or `undefined`, this property is `undefined` as well.
+:               The data, if any, passed to jQuery during event binding, e.g., `{myData: 42}`. If the data argument was omitted or `undefined`, this property is `undefined` as well.
 
 handler: function( event: jQuery.Event )
-:		Event handler function passed to jQuery during event binding; in the example it is a reference to `myHandler`. If `false` was passed during event binding, the handler refers to a single shared function that simply returns `false`.
+:               Event handler function passed to jQuery during event binding; in the example it is a reference to `myHandler`. If `false` was passed during event binding, the handler refers to a single shared function that simply returns `false`.
 
 #### setup: function( data: Object, namespaces, eventHandle: function )
 
@@ -191,26 +192,26 @@ This `multiclick` special event maps itself into a standard click event, but use
 The hook stores the current click count in the data object, so multiclick handlers on different elements don't interfere with each other. It changes the event type to the original "multiclick" type before calling the handler and restores it to the mapped "click" type before returning:
 
 <javascript>jQuery.event.special.multiclick = {
-	delegateType: "click",
-	bindType: "click",
-	handle: function( event ) {
-			var handleObj = event.handleObj,
-					targetData = jQuery.data( event.target ),
-					ret;
+  delegateType: "click",
+  bindType: "click",
+  handle: function( event ) {
+    var handleObj = event.handleObj,
+    targetData = jQuery.data( event.target ),
+    ret;
 
-			// If a multiple of the click count, run the handler
-			targetData.clicks = ( targetData.clicks || 0 ) + 1;
-			if ( targetData.clicks % event.data === 0 ) {
-					event.type = handleObj.origType;
-					ret = handleObj.handler.apply( this, arguments );
-					event.type = handleObj.type;
-					return ret;
-			}
-	}
+    // If a multiple of the click count, run the handler
+    targetData.clicks = ( targetData.clicks || 0 ) + 1;
+    if ( targetData.clicks % event.data === 0 ) {
+      event.type = handleObj.origType;
+      ret = handleObj.handler.apply( this, arguments );
+      event.type = handleObj.type;
+      return ret;
+    }
+  }
 };
 
 // Sample usage
 $("p").on("multiclick", { clicks: 3 }, function(e){
-alert("clicked 3 times");
+  alert("clicked 3 times");
 });
 </javascript>
