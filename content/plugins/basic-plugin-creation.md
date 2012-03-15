@@ -91,6 +91,41 @@ Notice that we return the results of `each()` instead of returning `this`.
 Since `each()` is already chainable, it returns `this`, which we then return. 
 This is a better way to maintain chainability than what we've been doing so far.
 
+##Accepting options
+
+As your plugins get more and more complex, it's a good idea to make your plugin 
+customizable by accepting options. The easiest way do this, especially if there 
+are lots of options, is with an object literal. Let's change our greenify plugin to 
+accept some options.
+
+<javascript>
+(function ($) {
+  $.greenify = function (options) {
+    // This is the easiest way to have default options.
+    var settings = $.extend( {
+      'color'         : '#556B2F',  // These are the defaults
+      'background-color' : 'white'
+    }, options);
+
+    // Greenify the collection based on the settings variable
+    return this.css({
+      'color': settings['color'],
+      'background-color': settings['background-color']
+    });
+  };
+}(jQuery));
+</javascript>
+
+Example usage:
+
+<javascript>
+$('div').greenify({
+  'color': 'orange'
+});
+</javascript>
+
+The default value for `color` of `#556B2F` gets overriden by `$.extend` to be orange.
+
 ##Putting it together
 
 Here's an example of a small plugin using some of the techniques
