@@ -71,6 +71,38 @@ In addition, the primary purpose of an Immediately Invoked Function is to allow 
 }(jQuery));
 </javascript>
 
+##Minimizing Plugin Footprint
+
+It's good practice when writing plugins to only take up one slot within `$.fn`. This reduces both the chance that your plugin will be overriden, and the chance that your plugin will override other plugins. In other words, this is bad:
+
+<javascript>
+(function ($) {
+  $.fn.openPopup = function () {
+    // Open popup code
+  };
+
+  $.fn.closePopup = function () {
+    // Close popup code
+  };
+
+}(jQuery));
+</javascript>
+
+It would be much better to have one slot, and use parameters to control what action that one slot performs.
+
+<javascript>
+(function ($) {
+  $.fn.popup = function (action) {
+    if( action === 'open') {
+      // Open popup code
+    } if( action === 'close' ) {
+      // Close popup code
+    } 
+
+  };
+}(jQuery));
+</javascript>
+
 ##Using the each() method
 
 Your typical jQuery object will contain references to any number of DOM
