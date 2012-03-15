@@ -75,23 +75,21 @@ In addition, the primary purpose of an Immediately Invoked Function is to allow 
 
 Your typical jQuery object will contain references to any number of DOM
 elements, and that's why jQuery objects are often referred to as collections.
-
-So, to do something with a collection we need to loop through it, which is most
-easily achieved using jQuery's `each()` method:
+If you want to do any manipulating with specific elements (eg: getting an 
+attribute, individualy calculated positions) then you need to use `each()` to 
+loop through the elements.
 
 <javascript>
 $.fn.myNewPlugin = function() {
   return this.each(function(){
-
+    // do something to each element here
   });
 };
 </javascript>
 
-jQuery's `each()` method, like most other jQuery methods, returns a jQuery
-object, thus enabling what we've all come to know and love as 'chaining'
-(`$(...).css().attr()...`).  We wouldn't want to break this convention so we
-return the this object.  Within this loop you can do whatever you want with
-each element.  
+Notice that we return the results of `each()` instead of returning `this`. 
+Since `each()` is already chainable, it returns `this`, which we then return. 
+This is a better way to write plugins than what we've been doing so far.
 
 ##Putting it together
 
