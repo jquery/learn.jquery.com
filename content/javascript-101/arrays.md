@@ -2,27 +2,32 @@
 chapter :     js101
 section:      6
 title:        Arrays
-attribution:  jQuery Fundamentals, Stefan Baumgartner (@ddprrt)
+attribution:  
+- jQuery Fundamentals
+- Stefan Baumgartner
+github: ddprrt
 ---
-Arrays are zero-indexed lists of values. They are a handy way to store a set of
+Arrays are zero-indexed, ordered lists of values. They are a handy way to store a set of
 related items of the same type (such as strings), though in reality, an array
-can include multiple types of items, including other arrays. Arrays in Javascript
-work bascially like in most other programming or scripting languages, although there
-are some subtle differences.
+can include multiple types of items, including other arrays.
 
 To create an array you can either use the object constructor or the literal declaration,
-by assign your variable a list of values right after the declaration.
+by assigning your variable a list of values right after the declaration.
 
 <javascript caption="A simple array">
 var myArray1 = new Array( 'hello', 'world' ); // with constructor
-var myArray2 = [ 'hello', 'world' ]; // literal declaration, the prefered way
+var myArray2 = [ 'hello', 'world' ]; // literal declaration, the preferred way
 </javascript>
+
+The literal declaration is preferred, see the 
+[Google Coding Guidelines](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml#Array_and_Object_literals)
+for more information.
 
 If you don't know your values yet, it is also possible to declare an empty Array, and
 add elements either through functions or through accessing by index:
 
 <javascript caption="Creating empty arrays and adding values">
-var myArray = []; // var myArray = new Array(); would also work
+var myArray = [];
 
 myArray.push('hello'); // adds 'hello' on index 0
 myArray.push('world'); // adds 'world' on index 1
