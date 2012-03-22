@@ -86,7 +86,6 @@ preprocess do
   @chapterOrder = [
     "getting-started",
     "javascript-101",
-    "jquery-basics",
     "using-jquery-core",
     "events",
     "effects",
