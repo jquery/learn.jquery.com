@@ -1,7 +1,8 @@
 ---
-chapter : jquery-basics
+chapter : using-jquery-core
 section : 2
 title   : Selecting Elements
+level: beginner
 ---
 
 The most basic concept of jQuery is to “select some elements and do something with

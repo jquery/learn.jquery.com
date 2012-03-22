@@ -1,7 +1,8 @@
 ---
-chapter : jquery-basics
+chapter : using-jquery-core
 section : 3
 title   : Working with Selections
+level: beginner
 ---
 Once you have a selection, you can call methods on the selection. 
 Methods generally come in two different flavors: getters and setters. 
