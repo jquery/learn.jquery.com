@@ -93,7 +93,6 @@ preprocess do
     "plugins",
     "performance",
     "code-organization",
-    "custom-events",
     "how-to"
   ]
 
