@@ -93,7 +93,7 @@ preprocess do
     "plugins",
     "performance",
     "code-organization",
-    "how-to"
+    "faq"
   ]
 
   @chapters = {}
