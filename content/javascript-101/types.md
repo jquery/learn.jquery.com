@@ -161,7 +161,28 @@ alert(foo.length);
 
 There are many more methods for manipulating arrays, details can be found on the [MDN Document](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array "MDN - Array Reference")
 
+## Type Checking With jQuery
 
+jQuery offers a few basic utility methods for determining the type of a
+specific value.
+
+<javascript caption="Checking the type of an arbitrary value">
+var myValue = [1, 2, 3];
+
+// Using JavaScript's typeof operator to test for primative types
+typeof myValue == 'string'; // false
+typeof myValue == 'number'; // false
+typeof myValue == 'undefined'; // false
+typeof myValue == 'boolean'; // false
+
+// Using strict equality operator to check for null
+myValue === null; // false
+
+// Using jQuery's methods to check for non-primative types
+jQuery.isFunction(myValue); // false
+jQuery.isPlainObject(myValue); // false
+jQuery.isArray(myValue); // true
+</javascript>
 
 
 

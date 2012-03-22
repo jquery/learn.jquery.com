@@ -1,7 +1,8 @@
 ---
-chapter : jquery-core
+chapter : using-jquery-core
 section : 5
 title   : Feature & Browser Detection
+level: intermediate
 attribution:  jQuery Fundamentals
 ---
 ## Feature & Browser Detection

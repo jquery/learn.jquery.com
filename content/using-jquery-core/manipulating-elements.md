@@ -1,8 +1,9 @@
 ---
-chapter : jquery-basics
+chapter : using-jquery-core
 section : 6
 title   : Manipulating Elements
 attribution:  jQuery Fundamentals
+level: beginner
 ---
 Once you've made a selection, the fun begins. You can change, move, remove, and clone elements. 
 You can also create new elements via a simple syntax.

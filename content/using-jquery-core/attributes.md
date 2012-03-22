@@ -1,5 +1,6 @@
 ---
-chapter : jquery-basics
+chapter : using-jquery-core
+level   : beginner
 section : 4
 title   : Attributes
 ---

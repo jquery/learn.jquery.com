@@ -1,5 +1,6 @@
 ---
 chapter : jquery-basics
+level: beginner
 section : 1
 title   : $(document).ready()
 ---

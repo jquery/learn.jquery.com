@@ -1,5 +1,6 @@
 ---
-chapter : jquery-core
+chapter : using-jquery-core
+level: beginner
 section : 6
 title   : Avoiding Conflicts with Other Libraries
 attribution:  jQuery Fundamentals
