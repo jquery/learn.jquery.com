@@ -1,6 +1,5 @@
 --- 
-title: Getting Started
-index: true
+title: About jQuery
 ---
 
 Getting started with jQuery can be easy or challenging, depending on 
