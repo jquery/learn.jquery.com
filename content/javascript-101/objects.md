@@ -1,6 +1,4 @@
 ---
-chapter :     js101
-section:      7
 title:        Objects
 attribution:  jQuery Fundamentals
 ---

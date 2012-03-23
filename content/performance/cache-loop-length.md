@@ -1,6 +1,4 @@
 ---
-chapter :     performance
-section:      0
 title:        Cache Length During Loops
 attribution:  jQuery Fundamentals
 tags:         performance

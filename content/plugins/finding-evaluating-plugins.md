@@ -1,6 +1,4 @@
 ---
-chapter : plugins
-section : 3
 title   : Finding & Evaluating Plugins
 attribution:  jQuery Fundamentals
 ---

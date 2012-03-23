@@ -1,6 +1,4 @@
 ---
-chapter : plugins
-section : 5
 title   : Writing Stateful Plugins with the jQuery UI Widget Factory
 attribution:  jQuery Fundamentals
 ---

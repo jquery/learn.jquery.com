@@ -1,6 +1,4 @@
 ---
-chapter : events
-section : 6
 title   : Excercises
 attribution:  jQuery Fundamentals
 ---

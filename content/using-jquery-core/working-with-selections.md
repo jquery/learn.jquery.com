@@ -1,6 +1,4 @@
 ---
-chapter : using-jquery-core
-section : 3
 title   : Working with Selections
 level: beginner
 ---

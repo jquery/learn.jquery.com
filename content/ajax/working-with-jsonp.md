@@ -1,6 +1,4 @@
 ---
-chapter : ajax
-section : 5
 title   : Working with JSONP
 attribution:  jQuery Fundamentals
 ---

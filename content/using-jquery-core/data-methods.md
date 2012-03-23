@@ -1,6 +1,4 @@
 ---
-chapter : jquery-core
-section : 4
 title   : Data Methods
 attribution:  jQuery Fundamentals
 level: intermediate

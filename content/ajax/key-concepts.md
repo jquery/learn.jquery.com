@@ -1,6 +1,4 @@
 ---
-chapter : ajax
-section : 2
 title   : Key Concepts
 attribution:  jQuery Fundamentals
 ---

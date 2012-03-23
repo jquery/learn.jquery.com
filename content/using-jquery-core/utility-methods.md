@@ -1,6 +1,4 @@
 ---
-chapter : using-jquery-core
-section : 2
 title   : Utility Methods
 attribution:  jQuery Fundamentals
 level: beginner

@@ -1,6 +1,4 @@
 ---
-chapter : using-jquery-core
-section : 2
 title   : Selecting Elements
 level: beginner
 ---

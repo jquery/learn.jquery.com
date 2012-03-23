@@ -1,7 +1,5 @@
 ---
-chapter : using-jquery-core
 level   : beginner
-section : 4
 title   : Attributes
 ---
 An element's attributes can contain useful information for your application, so

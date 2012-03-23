@@ -1,6 +1,4 @@
 ---
-chapter : events
-section : 4
 title   : Increasing Performance with Event Delegation
 attribution:  jQuery Fundamentals
 ---

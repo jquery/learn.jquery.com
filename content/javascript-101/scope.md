@@ -1,6 +1,4 @@
 ---
-chapter :     js101
-section:      11
 title:        Scope
 attribution:  jQuery Fundamentals
 ---

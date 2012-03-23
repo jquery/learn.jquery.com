@@ -1,6 +1,4 @@
 ---
-chapter : effects
-section : 5
 title   : Effect Exercises
 attribution:  jQuery Fundamentals
 ---
