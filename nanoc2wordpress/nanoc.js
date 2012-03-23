@@ -6,6 +6,7 @@ fs = require("fs"),
 jsdom = require( "jsdom" ),
 _ = require( "underscore" ),
 config = require("./config"),
+order = require("../order"),
 
 OUTPUT_DIR = config.git_dir + "/output",
 META_REGEX = /<script id="nanoc_meta".*<\/script>(\\n)*/,
@@ -13,7 +14,15 @@ META_REGEX = /<script id="nanoc_meta".*<\/script>(\\n)*/,
 site = {
   articles: [],
   categories: []
-};
+},
+
+category_articles = {},
+category_order = order.map(function( articles ) {
+  for ( var a in articles ) {
+    category_articles[ a ] = articles[a];
+    return a;
+  }
+});
 
 _.mixin(require('underscore.string').exports());
 
@@ -68,6 +77,7 @@ function processCategories( continuation ) {
         _.extend( cat, JSON.parse(meta.textContent) )
         cat.contents = _.trim(cat.contents.replace( META_REGEX, ""));
         cat.slug = cat.chapter;
+        cat.menu_order = category_order.indexOf( cat.chapter );
       }
     });
     continuation();
@@ -95,6 +105,7 @@ function processArticles( continuation ) {
         _.extend( file, JSON.parse(meta.textContent) )
         file.contents = _.trim(file.contents.replace( META_REGEX, ""));
         file.slug = file.filename.replace( "/"+file.chapter+ "/", "").replace("/index.html", "");
+        file.menu_order = category_articles[ file.chapter ] ? category_articles[ file.chapter ].indexOf( file.slug ) : -1;
       }
     });
     continuation();

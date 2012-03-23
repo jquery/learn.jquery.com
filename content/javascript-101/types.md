@@ -1,6 +1,4 @@
 ---
-chapter:      javascript-101
-section:      2
 title:        Types
 attribution:  jQuery Fundamentals
 github: jquery

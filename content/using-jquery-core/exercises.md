@@ -1,6 +1,4 @@
 ---
-chapter : jquery-basics
-section : 7
 title   : Exercises
 attribution:  jQuery Fundamentals
 ---

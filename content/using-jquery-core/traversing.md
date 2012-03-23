@@ -1,6 +1,4 @@
 ---
-chapter : using-jquery-core
-section : 5
 title   : Traversing
 level: beginner
 ---

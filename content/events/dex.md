@@ -1,6 +1,5 @@
 ---
 title: Events
-section : 1
 attribution:  jQuery Fundamentals
 ---
 jQuery provides simple methods for attaching event handlers to selections.

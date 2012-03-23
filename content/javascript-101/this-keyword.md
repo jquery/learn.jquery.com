@@ -1,6 +1,4 @@
 ---
-chapter :     js101
-section:      10
 title:        The "this" Keyword
 attribution:  jQuery Fundamentals
 ---

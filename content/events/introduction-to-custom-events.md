@@ -1,6 +1,4 @@
 ---
-chapter :     Custom Events
-section:      0
 title:        Introducing Custom Events
 attribution:  $jQuery Fundamentals
 ---

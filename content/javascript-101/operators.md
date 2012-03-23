@@ -1,6 +1,4 @@
 ---
-chapter :     js101
-section:      2
 title:        Operators
 attribution:  jQuery Fundamentals
 ---

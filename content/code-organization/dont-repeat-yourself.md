@@ -1,6 +1,4 @@
 ---
-chapter :     code-organization
-section:      0
 title:        Keep Things DRY
 attribution:  jQuery Fundamentals
 ---

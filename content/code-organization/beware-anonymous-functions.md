@@ -1,6 +1,4 @@
 ---
-chapter :     code-organization
-section:      2
 title:        Beware Anonymous Functions
 attribution:  jQuery Fundamentals
 ---

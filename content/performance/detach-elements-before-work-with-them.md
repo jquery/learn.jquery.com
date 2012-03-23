@@ -1,6 +1,4 @@
 ---
-chapter :     performance
-section:      0
 title:        Detach Elements to Work with Them
 attribution:  jQuery Fundamentals
 tags:         performance

@@ -83,25 +83,18 @@ end
 Nanoc3::Filter.register 'CodeBlocks',        :code_blocks
 
 preprocess do
-  @chapterOrder = [
-    "getting-started",
-    "javascript-101",
-    "using-jquery-core",
-    "events",
-    "effects",
-    "ajax",
-    "plugins",
-    "performance",
-    "code-organization",
-    "how-to"
-  ]
-
+  @order = YAML.load(File.read("order.yaml"))
+  @chapter_articles = {}
+  @chapter_order = @order.map{ |chapter| 
+    @chapter_articles[ chapter.keys.first ] = chapter[ chapter.keys.first ]
+    chapter.keys.first
+  }
   @chapters = {}
-
   @github_users = {
     "jquery" =>  nil
   }
 
+  File.open("order.json", "w") {|f| f.write @order.to_json }
   @items.each do |item|
     item[:chapter] = item[:filename].split('/')[1] 
     item[:chapter_title] = item[:chapter].gsub(/-/, " ").upcase
@@ -118,25 +111,25 @@ preprocess do
     @github_users[ username ] = JSON.parse(request.body_str)
   end
 
+  @grouped_items = @items.group_by {|item| item[:chapter]}
 
-  @groupedItems = @items.group_by {|item| item[:chapter]}
+  @ordered_items = []
 
-  @orderedItems = []
-
-  @chapterOrder.each do |folder|
-    myitems = @groupedItems[ folder ]
+  @chapter_order.each do |folder|
     @chapters [ folder] = {}
-    @chapters[ folder ][ :items ] = @groupedItems[folder].sort_by {|i| i[:section] || 0 }
-    @orderedItems = @orderedItems + @chapters[ folder ][ :items ]
+    @chapters[ folder ][ :items ] = @grouped_items[folder].sort_by {|i| 
+      p @chapter_articles[ i[ :chapter ] ].index( p i.identifier.split('/')[2] ) || 0
+      @chapter_articles[ i[ :chapter ] ].index( p i.identifier.split('/')[2] ) || 0
+    }
+    @ordered_items = @ordered_items + @chapters[ folder ][ :items ]
     @chapters[ folder ][ :title ] = folder.gsub(/-/, " ").upcase
     @chapters[ folder ][ :folder ] = folder
   end
-  
   @items.each do |item|
-    i = item[:ordinal_index] = @orderedItems.index(item)
+    i = item[:ordinal_index] = @ordered_items.index(item)
     if i
-      item[:next_item] = @orderedItems[ i+1 ]
-      item[:previous_item] = @orderedItems[ i-1 ]
+      item[:next_item] = @ordered_items[ i+1 ]
+      item[:previous_item] = @ordered_items[ i-1 ]
     end
     item[:github_user] = @github_users[ item[:github] ]
   end

@@ -1,7 +1,5 @@
 ---
-chapter : jquery-basics
 level: beginner
-section : 1
 title   : $(document).ready()
 ---
 You cannot safely manipulate a page until the document is “ready.” 

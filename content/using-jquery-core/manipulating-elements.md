@@ -1,6 +1,4 @@
 ---
-chapter : using-jquery-core
-section : 6
 title   : Manipulating Elements
 attribution:  jQuery Fundamentals
 level: beginner

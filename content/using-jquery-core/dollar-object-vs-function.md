@@ -1,6 +1,4 @@
 ---
-chapter : using-jquery-core
-section : 1
 title   : $ vs $()
 attribution:  jQuery Fundamentals
 level: beginner

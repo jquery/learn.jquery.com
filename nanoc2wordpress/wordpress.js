@@ -40,7 +40,12 @@ var wordpress = module.exports = {
     function(){
       var group = this.group();
       pages.forEach(function( page, index ) {
-        wordpress.createPage( page, group() )
+        // Only allow pages that are in the order.yaml sitemap
+        if ( ~page.menu_order ) {
+          wordpress.createPage( page, group() )
+        } else {
+          group()(null);
+        }
       });
     },
     function(){
@@ -54,8 +59,9 @@ var wordpress = module.exports = {
       localDate = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds(),
       gmtDate = date.getUTCFullYear() + "-" + (date.getUTCMonth() + 1) + "-" + date.getUTCDate() + " " + date.getUTCHours() + ":" + date.getUTCMinutes() + ":" + date.getUTCSeconds();
       db.query(
-        "INSERT INTO `" + postsTable + "` " + "SET `post_type` = 'page', `post_author` = ?, `post_name` = ?, `post_title` = ?, `post_content` = ?, " + "`post_date` = ?, `post_date_gmt` = ?, `post_modified` = ?, `post_modified_gmt` = ?, `comment_status` = ?, `ping_status` = ?",
-        [1, page.slug, page.title, page.contents, localDate, gmtDate, localDate, gmtDate, "closed", "closed"],
+        "INSERT INTO `" + postsTable + "` " + "SET `post_type` = 'page', `post_author` = ?, `post_name` = ?, `post_title` = ?, `post_content` = ?, `menu_order` = ?, "
+        + "`post_date` = ?, `post_date_gmt` = ?, `post_modified` = ?, `post_modified_gmt` = ?, `comment_status` = ?, `ping_status` = ?",
+        [1, page.slug, page.title, page.contents, page.menu_order, localDate, gmtDate, localDate, gmtDate, "closed", "closed"],
         this
       );
     },

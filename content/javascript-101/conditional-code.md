@@ -1,6 +1,4 @@
 ---
-chapter :     js101
-section:      3
 title:        Conditional Code
 attribution:  jQuery Fundamentals
 ---

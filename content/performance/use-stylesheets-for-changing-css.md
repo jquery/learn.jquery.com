@@ -1,6 +1,4 @@
 ---
-chapter :     performance
-section:      0
 title:        Use Stylesheets for Changing CSS on Many Elements
 attribution:  jQuery Fundamentals
 tags:         performance

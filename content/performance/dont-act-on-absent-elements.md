@@ -1,6 +1,4 @@
 ---
-chapter :     performance
-section:      0
 title:        Don't Act on Absent Elements
 attribution:  jQuery Fundamentals
 tags:         performance

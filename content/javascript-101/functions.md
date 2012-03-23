@@ -1,6 +1,4 @@
 ---
-chapter :     js101
-section:      8
 title:        Functions
 attribution:  jQuery Fundamentals
 ---

@@ -1,7 +1,5 @@
 ---
 title : JavaScript 101
-chapter : javascript-101
-section : 1
 attribution: jQuery Fundamentals
 ---
 

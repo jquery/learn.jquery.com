@@ -1,6 +1,4 @@
 ---
-chapter : events
-section : 7
 title   : jQuery Event Extensions
 attribution:  Dave Methvin
 github: dmethvin

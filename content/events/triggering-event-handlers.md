@@ -1,6 +1,4 @@
 ---
-chapter : events
-section : 4
 title   : Triggering Event Handlers
 attribution:  jQuery Fundamentals
 ---
