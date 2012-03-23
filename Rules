@@ -83,7 +83,7 @@ end
 Nanoc3::Filter.register 'CodeBlocks',        :code_blocks
 
 preprocess do
-  @order = YAML.load(File.read("order.yaml"))
+  @order = YAML.load(File.read("order.yml"))
   @chapter_articles = {}
   @chapter_order = @order.map{ |chapter| 
     @chapter_articles[ chapter.keys.first ] = chapter[ chapter.keys.first ]
