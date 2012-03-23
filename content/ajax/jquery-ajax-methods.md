@@ -1,6 +1,4 @@
 ---
-chapter : ajax
-section : 3
 title   : jQuery's Ajax-Related Methods
 attribution:  jQuery Fundamentals
 ---

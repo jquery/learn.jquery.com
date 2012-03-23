@@ -1,6 +1,4 @@
 ---
-chapter :     js10
-section:      4
 title:        Loops
 attribution:  jQuery Fundamentals
 ---

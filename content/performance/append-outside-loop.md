@@ -1,6 +1,4 @@
 ---
-chapter :     performance
-section:      0
 title:        Append Outside of Loops
 attribution:  jQuery Fundamentals
 tags:         performance

@@ -1,6 +1,4 @@
 ---
-chapter :     js101
-section:      9
 title:        Testing Type
 attribution:  jQuery Fundamentals
 ---

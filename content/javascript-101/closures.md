@@ -1,6 +1,4 @@
 ---
-chapter :     js101
-section:      12
 title:        Closures
 attribution:  jQuery Fundamentals
 ---
