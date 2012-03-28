@@ -39,9 +39,9 @@ If you aren't already familiar with Git, you'll still need a fork and a GitHub a
 `> gem install bundler && bundle install`
 * Run the nanoc server<br/>
 `> nanoc view &`
-* The site should be running on http://localhost:3000. Use the `--port` option to specify a different port.
 * Set the site to watch for changes and re-compile<br/>
 `> nanoc watch`
+* The site should be running on http://localhost:3000. Use the `--port` option to specify a different port.
 
 ## I Don't (Know If I?) Already Have a Ruby Development Environment
 

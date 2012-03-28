@@ -1,6 +1,4 @@
 ---
-chapter : effects
-section : 3
 title   : Custom Effects with $.fn.animate
 attribution:  jQuery Fundamentals
 ---

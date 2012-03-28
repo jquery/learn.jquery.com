@@ -1,6 +1,4 @@
 ---
-chapter : events
-section : 2
 title   : Connecting Events to Elements
 attribution:  jQuery Fundamentals
 ---

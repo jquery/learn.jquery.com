@@ -1,8 +1,7 @@
 ---
-chapter : jquery-core
-section : 1
 title   : $ vs $()
 attribution:  jQuery Fundamentals
+level: beginner
 ---
 Until now, we’ve been dealing entirely with methods that are called on a jQuery
 object. For example:

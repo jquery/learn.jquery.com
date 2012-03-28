@@ -1,6 +1,4 @@
 ---
-chapter :     performance
-section:      0
 title:        Optimize Selectors
 attribution:  jQuery Fundamentals
 tags:         performance

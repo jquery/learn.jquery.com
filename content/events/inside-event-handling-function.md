@@ -1,6 +1,4 @@
 ---
-chapter : events
-section : 3
 title   : Inside the Event Handling Function
 attribution:  jQuery Fundamentals
 ---

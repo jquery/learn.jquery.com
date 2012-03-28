@@ -1,6 +1,4 @@
 ---
-chapter :     performance
-section:      0
 title:        Variable Definition
 attribution:  jQuery Fundamentals
 tags:         performance

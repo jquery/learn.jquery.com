@@ -1,8 +1,7 @@
 ---
-chapter : jquery-core
-section : 2
 title   : Utility Methods
 attribution:  jQuery Fundamentals
+level: beginner
 ---
 jQuery offers several utility methods in the $ namespace.  These methods are
 helpful for accomplishing routine programming tasks.  Below are examples of a

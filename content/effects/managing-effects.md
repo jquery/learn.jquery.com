@@ -1,6 +1,4 @@
 ---
-chapter : effects
-section : 4
 title   : Managing Effects
 attribution:  jQuery Fundamentals
 ---

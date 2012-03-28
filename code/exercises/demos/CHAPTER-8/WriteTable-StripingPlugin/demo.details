@@ -1,0 +1,6 @@
+---
+ name: jQuery Fundamentals Chapter 8 Write a Table-Striping Plugin
+ description: jQuery Fundamentals Chapter 8 Write a Table-Striping Plugin
+ authors: Rebecca Murphey
+ normalize_css: yes
+ ...

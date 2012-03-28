@@ -1,6 +1,4 @@
 ---
-chapter :     Code Organization
-section:      0
 title:        Code Organization Concepts
 attribution:  $jQuery Fundamentals
 ---

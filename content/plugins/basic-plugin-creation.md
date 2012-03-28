@@ -1,6 +1,4 @@
 ---
-chapter : plugins
-section : 2
 title   : How to create a basic plugin
 attribution:  jQuery Fundamentals
 ---

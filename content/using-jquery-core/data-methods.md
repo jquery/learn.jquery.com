@@ -1,8 +1,7 @@
 ---
-chapter : jquery-core
-section : 4
 title   : Data Methods
 attribution:  jQuery Fundamentals
+level: intermediate
 ---
 As your work with jQuery progresses, you'll find that there's often data about
 an element that you want to store with the element.  In plain JavaScript, you

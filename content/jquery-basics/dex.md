@@ -1,3 +1,0 @@
----
-title: jQuery Basics
----
