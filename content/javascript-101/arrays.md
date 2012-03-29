@@ -68,9 +68,20 @@ var myArray = [ 'hello', 'world', '!'];
 console.log(myArray.length);   // logs 3
 </javascript>
 
+You will need the length property for looping through an array:
+
 <javascript caption="For loops and arrays - a classic">
 var myArray = ['hello', 'world', '!'];
 for(var i = 0; i < myArray.length; i = i + 1) {
+	console.log(myArray[i]);
+}
+</javascript>
+
+Except when you are using for ... in loops:
+
+<javascript caption"For loops and arrays - alternate method">
+var myArray = ['hello', 'world', '!'];
+for(var i in myArray) {
 	console.log(myArray[i]);
 }
 </javascript>
@@ -198,4 +209,36 @@ var myArray = [];
 myArray.unshift(0); // [ 0 ]
 myArray.unshift(2); // [ 2 , 0 ]
 myArray.unshift(7); // [ 7 , 2 , 0 ]
+</javascript>
+
+## forEach
+
+In modern browsers, like Chrome, Firefox and Internet Explorer 9 it is possible to traverse 
+through arrays by a so called 'forEach' method, where you pass a function which is called
+for each element in your array.
+
+The function takes up to three arguments:
+* element - The element itself
+* index - The index of this element in the array
+* array - The array itself
+
+All of the are optional, but you will need at least the 'element' parameter in most cases.
+
+<javascript caption="native forEach">
+function printElement(elem) {
+	console.log(elem);
+}
+
+function printElementAndIndex(elem, index) {
+	console.log("Index " + index + ": " + elem);
+}
+
+function negateElement(elem, index, array) {
+	array[index] = -elem;
+}
+
+myArray = [1, 2, 3, 4, 5];
+myArray.forEach(printElement); //prints all elements to the console
+myArray.forEach(printElementAndIndex); //prints "Index 0: 1" "Index 1: 2" "Index 2: 3" ...
+myArray.forEach(negateElement); // myArray is now [-1, -2, -3, -4, -5]
 </javascript>
