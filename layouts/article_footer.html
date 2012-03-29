@@ -14,12 +14,6 @@
 </div>
 
 <div class="clearfix pagination">
-
-  <% if @item[:previous_item] %>
-  <a href="<%= @item[:previous_item].path %>" class="previous"><span class="article"><%= @item[:previous_item][:title] %></span> <span class="direction">Previous</span></a>
-  <% end %>
-  <% if @item[:next_item] %>
-  <a href="<%= @item[:next_item].path %>" class="next"><span class="article"><%= @item[:next_item][:title] %></span> <span class="direction">Next</span></a>
-  <% end %>
-
+  <% if @item[:previous_item] %><a href="<%= @item[:previous_item].path %>" class="previous"><span class="article"><%= @item[:previous_item][:title] %></span> <span class="direction">Previous</span></a><% end %>
+  <% if @item[:next_item] %><a href="<%= @item[:next_item].path %>" class="next"><span class="article"><%= @item[:next_item][:title] %></span> <span class="direction">Next</span></a><% end %>
 </div>

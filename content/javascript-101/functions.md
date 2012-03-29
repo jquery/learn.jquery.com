@@ -1,6 +1,4 @@
 ---
-chapter :     js101
-section:      8
 title:        Functions
 attribution:  jQuery Fundamentals
 ---
@@ -25,32 +23,32 @@ used in others' JavaScript code.
 ## Using Functions
 
 <javascript caption="A simple function">
-    var greet = function(person, greeting) {
-      var text = greeting + ', ' + person;
-      console.log(text);
-    };
+var greet = function(person, greeting) {
+  var text = greeting + ', ' + person;
+  console.log(text);
+};
 
-    greet('Rebecca', 'Hello');
+greet('Rebecca', 'Hello');
 </javascript>
 
 
 <javascript caption="A function that returns a value">
-    var greet = function(person, greeting) {
-      var text = greeting + ', ' + person;
-      return text;
-    };
+var greet = function(person, greeting) {
+  var text = greeting + ', ' + person;
+  return text;
+};
 
-    console.log(greet('Rebecca','hello'));
+console.log(greet('Rebecca','hello'));
 </javascript>
 
 <javascript caption="A function that returns another function">
-    var greet = function(person, greeting) {
-      var text = greeting + ', ' + person;
-      return function() { console.log(text); };
-    };
+var greet = function(person, greeting) {
+  var text = greeting + ', ' + person;
+  return function() { console.log(text); };
+};
 
-    var greeting = greet('Rebecca', 'Hello');
-    greeting();
+var greeting = greet('Rebecca', 'Hello');
+greeting();
 </javascript>
 
 ## Immediately-Invoked Function Expression
@@ -62,11 +60,11 @@ polluting the global namespace with your code — no variables declared inside o
 the function are visible outside of it.
 
 <javascript caption="An immediately-invoked function expression">
-    (function(){
-      var foo = 'Hello world';
-    })();
+(function(){
+  var foo = 'Hello world';
+})();
 
-    console.log(foo);   // undefined!
+console.log(foo);   // undefined!
 </javascript>
 
 ## Functions as Arguments
@@ -76,16 +74,15 @@ to variables or passed to other functions as arguments. Passing functions as
 arguments is an extremely common idiom in jQuery.
 
 <javascript caption="Passing an anonymous function as an argument">
-    var myFn = function(fn) {
-      var result = fn();
-      console.log(result);
-    };
+var myFn = function(fn) {
+  var result = fn();
+  console.log(result);
+};
 
-    myFn(function() { return 'hello world'; });   // logs 'hello world'
+myFn(function() { return 'hello world'; });   // logs 'hello world'
 </javascript>
 
-<div class="example" markdown="1">
-Passing a named function as an argument
+<javascript caption="Passing a named function as an argument">
 
     var myFn = function(fn) {
       var result = fn();
@@ -97,4 +94,4 @@ Passing a named function as an argument
     };
 
     myFn(myOtherFn);   // logs 'hello world'
-</div>
+</javascript>

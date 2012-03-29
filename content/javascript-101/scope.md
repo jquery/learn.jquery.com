@@ -1,6 +1,4 @@
 ---
-chapter :     js101
-section:      11
 title:        Scope
 attribution:  jQuery Fundamentals
 ---
@@ -53,7 +51,7 @@ sayHello();         // logs 'hello'
 console.log(foo);   // logs 'world'
 </javascript>
 
-<javascript caption="Functions can "see" changes in variable values after the function is defined">
+<javascript caption="Functions can see changes in variable values after the function is defined">
 var myFunction = function() {
     var foo = 'hello';
 

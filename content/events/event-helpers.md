@@ -1,6 +1,4 @@
 ---
-chapter : events
-section : 5
 title   : Event Helpers
 attribution:  jQuery Fundamentals
 ---

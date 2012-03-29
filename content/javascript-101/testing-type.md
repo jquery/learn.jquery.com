@@ -1,6 +1,4 @@
 ---
-chapter :     js101
-section:      9
 title:        Testing Type
 attribution:  jQuery Fundamentals
 ---
@@ -17,7 +15,7 @@ var myFunction = function() {
 };
 
 var myObject = {
-foo : 'bar'
+	foo : 'bar'
 };
 
 var myArray = [ 'a', 'b', 'c' ];

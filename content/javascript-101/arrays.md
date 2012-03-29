@@ -1,6 +1,4 @@
 ---
-chapter :     js101
-section:      6
 title:        Arrays
 attribution:  
 - jQuery Fundamentals

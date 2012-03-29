@@ -1,6 +1,4 @@
 ---
-chapter:      javascript-101
-section:      1
 title:        Running Code
 attribution:  jQuery Fundamentals
 github: jquery

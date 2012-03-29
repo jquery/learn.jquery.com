@@ -1,6 +1,4 @@
 ---
-chapter : ajax
-section : 2
 title   : Key Concepts
 attribution:  jQuery Fundamentals
 ---
@@ -98,7 +96,7 @@ does not apply to scripts that are loaded via jQuery's Ajax methods.
 
 The other exception is requests targeted at a JSONP service on another domain.
 In the case of JSONP, the provider of the service has agreed to respond to your
-request with a script that can be loaded into the page using a `&lt;script>`
+request with a script that can be loaded into the page using a `<script>`
 tag, thus avoiding the same-origin limitation; that script will include the
 data you requested, wrapped in a callback function you provide.
 

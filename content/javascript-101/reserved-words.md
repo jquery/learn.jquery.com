@@ -1,6 +1,4 @@
 ---
-chapter :     js101
-section:      5
 title:        Reserved Words
 attribution:  jQuery Fundamentals
 ---

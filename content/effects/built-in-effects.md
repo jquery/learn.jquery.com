@@ -1,6 +1,4 @@
 ---
-chapter : effects
-section : 2
 title   : Built-in Effects
 attribution:  jQuery Fundamentals
 ---

@@ -1,6 +1,4 @@
 ---
-chapter : ajax
-section : 6
 title   : Ajax Events
 attribution:  jQuery Fundamentals
 ---
