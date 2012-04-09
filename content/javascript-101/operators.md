@@ -16,9 +16,17 @@ console.log(foo + ' ' + bar); // 'hello world'
 </javascript>
 
 <javascript caption="Incrementing and decrementing">
+The pre-increment operator increments the operand before any further processing.
+// pre-increment
 var i = 1;
-var j = ++i;  // pre-increment:  j equals 2; i equals 2
-var k = i++;  // post-increment: k equals 2; i equals 3
+console.log(++i); // => 2
+console.log(i); // => 2
+
+The post-increment operator increments the operand after processing it.
+// post-increment
+var i = 1;
+console.log(i++); // => 1. This is because i was processed first
+console.log(i); // => 2. This is because the operand was incremented after processing in the previous step.
 </javascript>
 
 ## Operations on Numbers & Strings
