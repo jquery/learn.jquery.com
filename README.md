@@ -1,12 +1,7 @@
 # The jQuery Learning Site
 
 * Primary Domain: [http://learn.jquery.com](http://learn.jquery.com)
-* Staging Domain: [http://stage.learn.jquery.com](http://stage.learn.jquery.com)
-
-## Temporary Breaking News Section
-We just changed this repository's name (and consequently its URL) from `web-learn-jquery-com` to `learn.jquery.com`.  If you already forked the project before this happened and created a remote to track this repo, you'll have to update that reference.  Assuming that `upstream` is what you named your remote, simply use the following command from inside your repo:
-
-`git remote set-url upstream https://github.com/jquery/learn.jquery.com`
+* Staging Domain: [http://stage.learn.jquery.com](http://stage.learn.jquery.com) *(not currently up to date)*
 
 ## About
 
@@ -17,7 +12,43 @@ Spread across the internet is lot of information about how to learn and use jQue
 
 Much of the initial content - and spirit - is from [jQuery Fundamentals](https://github.com/rmurphey/jqfundamentals), an open-source book about jQuery, originally released in 2010 by [Rebecca Murphey](http://www.rebeccamurphey.com/) and bequeathed unto the jQuery Project to serve as the foundation for this site.
 
-This site consists of content maintained in [Markdown](http://daringfireball.net/projects/markdown/) files, powered by [nanoc](http://nanoc.stoneship.org/), a Ruby-based [static site generator](http://www.mickgardner.com/2011/04/27/An-Introduction-To-Static-Site-Generators.html).
+
+## How Does This Site Work
+
+This site consists of content maintained in [Markdown](http://daringfireball.net/projects/markdown/) files. For authoring and previewing content, these files are processed by [nanoc](http://nanoc.stoneship.org/), a Ruby-based [static site generator](http://www.mickgardner.com/2011/04/27/An-Introduction-To-Static-Site-Generators.html). For production on [learn.jquery.com](http://learn.jquery.com), the result of nanoc is post-processed by a node.js script that populates pages into the learning section of the jQuery Wordpress network. The template that controls the site's presentation is a [child theme](https://github.com/jquery/web-base-template/tree/master/themes/learn-jquery-com) of the jQuery [web base template](https://github.com/jquery/web-base-template), and any issues with the presentation should be directed to [that repository](https://github.com/jquery/web-base-template).
+
+### Site Organisation
+
+All of the content lives inside of the subdirectories of the `content` directory. Each of these subdirectories is considered a **category**, and contains one or more **articles** as well as a `dex.md` file that specifies the category's human-readable title, as well as an overview of the category for its landing page. The order that categories and articles appear in the site is controlled by the [`order.yml`](https://github.com/jquery/learn.jquery.com/blob/master/order.yml) file, which simply lists the folder names and file names in the order they should appear. Categories or articles that do not appear in this file will not be published in the production site.
+
+### YAML Conventions
+
+Each of the articles on the site has some [YAML "Front Matter"](https://github.com/mojombo/jekyll/wiki/YAML-Front-Matter) that contains metadata. All articles should include the following:
+
+* title - the title of the article as it will appear in the site. if it contains special characters, put the string in quotes
+
+`title: "jQuery Event Extensions"`
+
+* level - the approximate level of jQuery experience required to find the article useful. must be `beginner`, `intermediate`, or `advanced`
+
+`level: advanced`
+
+* github - the github username of the person to whom the article should be [publicly attributed in the footer](http://learn.jqnetwork.dev/using-jquery-core/feature-browser-detection/). defaults to `jquery`. **We will likely be improving this to use GitHub's API to figure out who's worked a given article**
+
+`github: dmethvin`
+
+In addition, there is an `attribution` property, which contains a list of names of people who have worked on the article. It is not used in the site rendering, but is there for what we'll refer to as "historical purposes," as it is most often used to refer to work originally from jQuery Fundamentals. It can be a simple
+
+`attribution: jQuery Fundamentals`
+
+or a YAML list
+
+```
+attribution:
+  - jQuery Fundamentals
+  - Johnny Appleseed
+```
+
 
 ## How Can I Help?
 
