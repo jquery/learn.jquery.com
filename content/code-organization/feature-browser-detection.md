@@ -89,7 +89,7 @@ Below is a list of commonly used tools that aid in the feature detection process
 
 - [modernizr](http://modernizr.com/) - conditionally check to see if a specific feature is available in a browser
 - [yepnope](http://yepnopejs.com/) - conditional polyfill loader
-- [html5please](http://html5please.com/) - use the new and shiny responsibly
+- [html5please](http://html5please.us/) - use the new and shiny responsibly
 	- [html5please api](http://api.html5please.com/) - an API you can query to see how good (or bad) support for a specific feature is.
 - [caniuse](http://caniuse.com/) - browser compatibility tables for HTML5, CSS3, SVG, etc…
 
