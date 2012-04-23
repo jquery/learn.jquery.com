@@ -13,9 +13,11 @@ The goal of this site is twofold:
 Much of the initial content - and spirit - is from [jQuery Fundamentals](https://github.com/rmurphey/jqfundamentals), an open-source book about jQuery. The book was originally released in 2010 by [Rebecca Murphey](http://www.rebeccamurphey.com/) and bequeathed unto the jQuery Project to serve as the foundation for this site.
 
 
-## How Does This Site Work
+## How This Site Works
 
-This site consists of content maintained in [Markdown](http://daringfireball.net/projects/markdown/) files. For authoring and previewing content, these files are processed by [nanoc](http://nanoc.stoneship.org/), a Ruby-based [static site generator](http://www.mickgardner.com/2011/04/27/An-Introduction-To-Static-Site-Generators.html). For production on [learn.jquery.com](http://learn.jquery.com), the result of nanoc is post-processed by a node.js script that populates pages into the learning section of the jQuery Wordpress network. The template that controls the site's presentation is a [child theme](https://github.com/jquery/web-base-template/tree/master/themes/learn-jquery-com) of the jQuery [web base template](https://github.com/jquery/web-base-template), and any issues with the presentation should be directed to [that repository](https://github.com/jquery/web-base-template).
+This site's core content consists of [Markdown](http://daringfireball.net/projects/markdown/) files. We use [nanoc](http://nanoc.stoneship.org/), a Ruby-based [static site generator](http://www.mickgardner.com/2011/04/27/An-Introduction-To-Static-Site-Generators.html), to process these files for previewing. For production on [learn.jquery.com](http://learn.jquery.com), a node.js script post-processes the nanoc results and puts them into the learning section of the jQuery Wordpress network. 
+
+The template that controls the site's appearance is a [child theme](https://github.com/jquery/web-base-template/tree/master/themes/learn-jquery-com) of the jQuery [web base template](https://github.com/jquery/web-base-template), and any issues with the presentation should be directed to [that repository](https://github.com/jquery/web-base-template).
 
 ### Site Organisation
 
