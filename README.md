@@ -5,12 +5,12 @@
 
 ## About
 
-Spread across the internet is lot of information about how to learn and use jQuery. This content ranges in quality from excellent to terrible, and is often stuck inside CMSes where only the original author can ever update the content. The goal of this site is twofold
+The goal of this site is twofold:
 
-1. To serve as a central, trustworthy, narrative compendium of information about how to use jQuery and JavaScript
-2. To remain a timely, vibrant, and community-driven reference with a low barrier to contribution
+1. To serve as a central, trustworthy, narrative compendium of information about how to use jQuery and JavaScript.
+2. To remain a timely, vibrant, and community-driven reference with a low barrier to contribution.
 
-Much of the initial content - and spirit - is from [jQuery Fundamentals](https://github.com/rmurphey/jqfundamentals), an open-source book about jQuery, originally released in 2010 by [Rebecca Murphey](http://www.rebeccamurphey.com/) and bequeathed unto the jQuery Project to serve as the foundation for this site.
+Much of the initial content - and spirit - is from [jQuery Fundamentals](https://github.com/rmurphey/jqfundamentals), an open-source book about jQuery. The book was originally released in 2010 by [Rebecca Murphey](http://www.rebeccamurphey.com/) and bequeathed unto the jQuery Project to serve as the foundation for this site.
 
 
 ## How Does This Site Work
