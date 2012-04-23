@@ -61,7 +61,7 @@ The entire site is managed via [this Git repository](https://github.com/jquery/l
 If you're unfamiliary with Git, you can still contribute by editing files directly via [GitHub's in-browser editor](https://github.com/blog/905-edit-like-an-ace). But you won't be able to create new content, and you'll still need a GitHub account and a fork of this repository. So we encourage you to [learn how to use Git and GitHub](http://help.github.com/); it'll probably pretty useful no matter what.
 
 
-## How Do I Get This Running Locally?
+## How Do I Preview This Project Locally?
 
 *This project requires Ruby >= 1.9 and [Bundler](http://gembundler.com/). If you don't already have a Ruby development environment, please see the corresponding section below.*
 
@@ -78,7 +78,7 @@ If you're unfamiliary with Git, you can still contribute by editing files direct
 `> nanoc watch`
 * The site should be running on http://localhost:3000. Use the `--port` option to specify a different port.
 
-## I Don't (Know If I?) Already Have a Ruby Development Environment
+## I Don't (Know If I) Already Have a Ruby Development Environment
 
 #### Mac OS X/Linux:
 
