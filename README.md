@@ -33,7 +33,7 @@ Each of the articles on the site has some [YAML "Front Matter"](https://github.c
 
 `title: "jQuery Event Extensions"`
 
-* level - the approximate level of jQuery experience required to find the article useful. must be `beginner`, `intermediate`, or `advanced`
+* level - the approximate level of jQuery experience required to find the article useful. Options: `beginner`, `intermediate`, or `advanced`
 
 `level: advanced`
 
