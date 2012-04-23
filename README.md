@@ -56,9 +56,9 @@ attribution:
 
 ## How Can I Help?
 
-The entire site is managed via [this Git repository](https://github.com/jquery/learn.jquery.com).  If you'd like to contribute new articles, make edits to existing content, or work on the site itself, the first thing you'll need is a [fork](http://help.github.com/fork-a-repo/). When you have changes you'd like to have reviewed and integrated into the site, submit a [pull request](http://help.github.com/send-pull-requests/).
+The entire site is managed via [this Git repository](https://github.com/jquery/learn.jquery.com).  If you'd like to contribute new articles, make edits to existing content, or work on the site itself, the first thing you'll need is a [fork](http://help.github.com/fork-a-repo/). When you have changes you'd like to have reviewed for integration into the site, submit a [pull request](http://help.github.com/send-pull-requests/).
 
-If you aren't already familiar with Git, you'll still need a fork and a GitHub account, but you can can edit files directly via [GitHub's in-browser editor](https://github.com/blog/905-edit-like-an-ace), but you won't be able to create new content. We encourage you to [learn how to use Git and GitHub](http://help.github.com/), it'll probably pretty useful no matter what.
+If you're unfamiliary with Git, you can still contribute by editing files directly via [GitHub's in-browser editor](https://github.com/blog/905-edit-like-an-ace). But you won't be able to create new content, and you'll still need a GitHub account and a fork of this repository. So we encourage you to [learn how to use Git and GitHub](http://help.github.com/); it'll probably pretty useful no matter what.
 
 
 ## How Do I Get This Running Locally?
