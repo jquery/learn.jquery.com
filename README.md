@@ -10,7 +10,7 @@ The goal of this site is twofold:
 1. To serve as a central, trustworthy, narrative compendium of information about how to use jQuery and JavaScript.
 2. To remain a timely, vibrant, and community-driven reference with a low barrier to contribution.
 
-Much of the initial content - and spirit - is from [jQuery Fundamentals](https://github.com/rmurphey/jqfundamentals), an open-source book about jQuery. The book was originally released in 2010 by [Rebecca Murphey](http://www.rebeccamurphey.com/) and bequeathed unto the jQuery Project to serve as the foundation for this site.
+Much of the initial content - and spirit - comes from [jQuery Fundamentals](https://github.com/rmurphey/jqfundamentals), an open-source book about jQuery, originally written by [Rebecca Murphey](http://www.rmurphey.com/) and released in 2010. In 2011, Murphey [bequeathed the book](http://rmurphey.com/blog/2011/03/17/the-future-of-jquery-fundamentals-and-a-confession/) unto the jQuery Project to serve as the foundation for this site.
 
 
 ## How This Site Works
