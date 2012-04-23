@@ -19,9 +19,11 @@ This site's core content consists of [Markdown](http://daringfireball.net/projec
 
 The template that controls the site's appearance is a [child theme](https://github.com/jquery/web-base-template/tree/master/themes/learn-jquery-com) of the jQuery [web base template](https://github.com/jquery/web-base-template), and any issues with the presentation should be directed to [that repository](https://github.com/jquery/web-base-template).
 
-### Site Organisation
+### Site Organization
 
-All of the content lives inside of the subdirectories of the `content` directory. Each of these subdirectories is considered a **category**, and contains one or more **articles** as well as a `dex.md` file that specifies the category's human-readable title, as well as an overview of the category for its landing page. The order that categories and articles appear in the site is controlled by the [`order.yml`](https://github.com/jquery/learn.jquery.com/blob/master/order.yml) file, which simply lists the folder names and file names in the order they should appear. Categories or articles that do not appear in this file will not be published in the production site.
+All of the content lives inside of the subdirectories of the `content` directory. Each of these subdirectories is considered a **category**, and contains one or more **articles**. Each category also contains a `dex.md` file that contains the category's human-readable title and an overview, which will appear on the category's landing page. 
+
+An [`order.yml`](https://github.com/jquery/learn.jquery.com/blob/master/order.yml) file controls the order that categories and articles appear in the site. Categories or articles that do not appear in this file will not be published in the production site.
 
 ### YAML Conventions
 
