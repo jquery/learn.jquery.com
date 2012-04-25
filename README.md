@@ -5,21 +5,25 @@
 
 ## About
 
-Spread across the internet is lot of information about how to learn and use jQuery. This content ranges in quality from excellent to terrible, and is often stuck inside CMSes where only the original author can ever update the content. The goal of this site is twofold
+The goal of this site is twofold:
 
-1. To serve as a central, trustworthy, narrative compendium of information about how to use jQuery and JavaScript
-2. To remain a timely, vibrant, and community-driven reference with a low barrier to contribution
+1. To serve as a central, trustworthy, narrative compendium of information about how to use jQuery and JavaScript.
+2. To remain a timely, vibrant, and community-driven reference with a low barrier to contribution.
 
-Much of the initial content - and spirit - is from [jQuery Fundamentals](https://github.com/rmurphey/jqfundamentals), an open-source book about jQuery, originally released in 2010 by [Rebecca Murphey](http://www.rebeccamurphey.com/) and bequeathed unto the jQuery Project to serve as the foundation for this site.
+Much of the initial content - and spirit - comes from [jQuery Fundamentals](https://github.com/rmurphey/jqfundamentals), an open-source book about jQuery, originally written by [Rebecca Murphey](http://www.rmurphey.com/) and released in 2010. In 2011, Murphey [bequeathed the book](http://rmurphey.com/blog/2011/03/17/the-future-of-jquery-fundamentals-and-a-confession/) unto the jQuery Project to serve as the foundation for this site.
 
 
-## How Does This Site Work
+## How This Site Works
 
-This site consists of content maintained in [Markdown](http://daringfireball.net/projects/markdown/) files. For authoring and previewing content, these files are processed by [nanoc](http://nanoc.stoneship.org/), a Ruby-based [static site generator](http://www.mickgardner.com/2011/04/27/An-Introduction-To-Static-Site-Generators.html). For production on [learn.jquery.com](http://learn.jquery.com), the result of nanoc is post-processed by a node.js script that populates pages into the learning section of the jQuery Wordpress network. The template that controls the site's presentation is a [child theme](https://github.com/jquery/web-base-template/tree/master/themes/learn-jquery-com) of the jQuery [web base template](https://github.com/jquery/web-base-template), and any issues with the presentation should be directed to [that repository](https://github.com/jquery/web-base-template).
+This site's core content consists of [Markdown](http://daringfireball.net/projects/markdown/) files. We use [nanoc](http://nanoc.stoneship.org/), a Ruby-based [static site generator](http://www.mickgardner.com/2011/04/27/An-Introduction-To-Static-Site-Generators.html), to process these files for previewing. For production on [learn.jquery.com](http://learn.jquery.com), a node.js script post-processes the nanoc results and puts them into the learning section of the jQuery Wordpress network. 
 
-### Site Organisation
+The template that controls the site's appearance is a [child theme](https://github.com/jquery/web-base-template/tree/master/themes/learn-jquery-com) of the jQuery [web base template](https://github.com/jquery/web-base-template), and any issues with the presentation should be directed to [that repository](https://github.com/jquery/web-base-template).
 
-All of the content lives inside of the subdirectories of the `content` directory. Each of these subdirectories is considered a **category**, and contains one or more **articles** as well as a `dex.md` file that specifies the category's human-readable title, as well as an overview of the category for its landing page. The order that categories and articles appear in the site is controlled by the [`order.yml`](https://github.com/jquery/learn.jquery.com/blob/master/order.yml) file, which simply lists the folder names and file names in the order they should appear. Categories or articles that do not appear in this file will not be published in the production site.
+### Site Organization
+
+All of the content lives inside of the subdirectories of the `content` directory. Each of these subdirectories is considered a **category**, and contains one or more **articles**. Each category also contains a `dex.md` file that contains the category's human-readable title and an overview, which will appear on the category's landing page. 
+
+An [`order.yml`](https://github.com/jquery/learn.jquery.com/blob/master/order.yml) file controls the order that categories and articles appear in the site. Categories or articles that do not appear in this file will not be published in the production site.
 
 ### YAML Conventions
 
@@ -29,7 +33,7 @@ Each of the articles on the site has some [YAML "Front Matter"](https://github.c
 
 `title: "jQuery Event Extensions"`
 
-* level - the approximate level of jQuery experience required to find the article useful. must be `beginner`, `intermediate`, or `advanced`
+* level - the approximate level of jQuery experience required to find the article useful. Options: `beginner`, `intermediate`, or `advanced`
 
 `level: advanced`
 
@@ -52,12 +56,12 @@ attribution:
 
 ## How Can I Help?
 
-The entire site is managed via [this Git repository](https://github.com/jquery/learn.jquery.com).  If you'd like to contribute new articles, make edits to existing content, or work on the site itself, the first thing you'll need is a [fork](http://help.github.com/fork-a-repo/). When you have changes you'd like to have reviewed and integrated into the site, submit a [pull request](http://help.github.com/send-pull-requests/).
+The entire site is managed via [this Git repository](https://github.com/jquery/learn.jquery.com).  If you'd like to contribute new articles, make edits to existing content, or work on the site itself, the first thing you'll need is a [fork](http://help.github.com/fork-a-repo/). When you have changes you'd like to have reviewed for integration into the site, submit a [pull request](http://help.github.com/send-pull-requests/).
 
-If you aren't already familiar with Git, you'll still need a fork and a GitHub account, but you can can edit files directly via [GitHub's in-browser editor](https://github.com/blog/905-edit-like-an-ace), but you won't be able to create new content. We encourage you to [learn how to use Git and GitHub](http://help.github.com/), it'll probably pretty useful no matter what.
+If you're unfamiliar with Git, you can still contribute by editing files directly via [GitHub's in-browser editor](https://github.com/blog/905-edit-like-an-ace). But you won't be able to create new content, and you'll still need a GitHub account and a fork of this repository. So we encourage you to [learn how to use Git and GitHub](http://help.github.com/); it'll probably pretty useful no matter what.
 
 
-## How Do I Get This Running Locally?
+## How Do I Set Up a Local Development and Preview Environment?
 
 *This project requires Ruby >= 1.9 and [Bundler](http://gembundler.com/). If you don't already have a Ruby development environment, please see the corresponding section below.*
 
@@ -74,7 +78,7 @@ If you aren't already familiar with Git, you'll still need a fork and a GitHub a
 `> nanoc watch`
 * The site should be running on http://localhost:3000. Use the `--port` option to specify a different port.
 
-## I Don't (Know If I?) Already Have a Ruby Development Environment
+## I Don't (Know If I) Already Have a Ruby Development Environment
 
 #### Mac OS X/Linux:
 
