@@ -5,16 +5,17 @@ attribution: Mike Pennisi
 github     : jugglinmike
 ---
 Presumably, if you're reading this, you are curious about the thing that jQuery returns when you create new elements (or select existing ones).
-This curiosity is a great first step, because a first glance, the jQuery object may seem to be an array of DOM elements.
+This curiosity is a great first step, because at first glance, the jQuery object may seem to be an array of DOM elements.
 It has a collection of DOM elements, some familiar array functions, and a `length` property, after all.
 Actually, the jQuery object is more complicated than that.
 
-### What is a DOM element, anyway?
+### What is a DOM element? What is the DOM, for that matter?
 
-A DOM element is a "piece" of a web page.
-It can contain text and/or other DOM elements.
+The DOM (short for Document Object Model) is a representation of an HTML document.
+It may contain any number of DOM elements.
+At a high level, you can think a DOM element as a "piece" of a web page. It can contain text and/or other DOM elements.
 It is described by a type (i.e. "div", "a", "p", etc.) and any number of attributes (i.e. "src", "href", "class", etc.).
-For a more thorough description, please refer to [the office specification from the W3C](http://www.w3.org/TR/DOM-Level-2-Core/core.html#ID-745549614).
+For a more thorough description, please refer to [the official specification from the W3C](http://www.w3.org/TR/DOM-Level-2-Core/core.html#ID-745549614).
 
 Elements have properties like any JavaScript object.
 Among these properties are attributes like `tagName` and methods like `appendChild`.
@@ -86,7 +87,7 @@ Likewise, if the page has no `<h1>` tags, the `length` property will be zero.
 Checking the `length` property is a common way to ensure that the selector described something on the page.
 
 To make sure we only have the first header element, we have to take one more step.
-There are a number of ways to accomplish that, the most straight-forward may be the `eq()` function.
+There are a number of ways to accomplish this, the most straight-forward may be the `eq()` function.
 
 <javascript caption="Selecting only the first 'h1' element on the page (in a jQuery object)">
 var headers = $("h1");
@@ -116,7 +117,7 @@ One such instance is making comparisons.
 ### Not all jQuery objects are created `===`
 
 An important detail regarding this "wrapping" behavior is that each wrapped object is unique.
-This is true *even if the object was created with the same selector*.
+This is true *even if the object was created with the same selector or contain references to the exact same DOM elements*.
 
 <javascript caption="Creating two jQuery objects for the same element">
 var logo1 = $("#logo");
@@ -148,7 +149,7 @@ There is nothing magic about this practice--it just helps some people to keep tr
 We could re-write the previous example to follow this convention:
 
 <javascript caption="Comparing DOM elements (with more readable variable names)">
-var $logo1 = $("$logo");
+var $logo1 = $("#logo");
 var logo1 = $logo1.get(0);
 
 var $logo2 = $("#logo");
@@ -159,6 +160,10 @@ alert( logo1 === logo2 ); // alerts 'true'
 
 This code functions identically to the example above, but it is a little more clear to read.
 
+However you choose to organize your code, it is very important to make the distinction between jQuery object and native DOM elements!
+You cannot access native DOM methods and properties directly from a jQuery object, and vice versa.
+**If you see error messages like, "event.target.closest is not a function"' or "TypeError: Object [object Object] has no method 'setAttribute'" you are likely making this common mistake and now have the knowledge to remedy it.**
+
 ### jQuery objects are not "live"
 
 Given a jQuery object with all the paragraph elements on the page:
@@ -168,7 +173,9 @@ var allParagraphs = $("p");
 </javascript>
 
 ...you might expect that the contents will grow and shrink over time as `<p>` elements are added and removed from the document.
-This is *not* actually the case.
+This is how "nodelists" returned by the `getElementsByTagName` method work, after all.
+
+jQuery objects do **not** behave in this manner.
 The set of elements contained within a jQuery object will not change unless you modify it in your code.
 This means that the collection is not "live"--it does not automatically update as the document changes.
 If you expect the document may have changed from when you created the jQuery object, then update your collection by creating a new one!
