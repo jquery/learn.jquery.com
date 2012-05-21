@@ -72,6 +72,8 @@
   - concepts
   - beware-anonymous-functions
   - dont-repeat-yourself
+- misc:
+  - understanding-index
 - faq:
   - add_keyboard_navigation
   - enable_the_back_button
