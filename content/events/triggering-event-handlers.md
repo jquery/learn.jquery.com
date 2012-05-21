@@ -47,13 +47,13 @@ There are four differences between <code>.trigger()</code> and <code>.triggerHan
 
 For more information see the [triggerHandler documentation](http://api.jquery.com/triggerHandler)
 
-#### Don't use <code>.trigger()</code> to control your application
+#### Don't use <code>.trigger()</code> simply to execute specific functions
 
 While this method has its uses, it should not be used simply to call a function that was bound as a click
 handler.  Instead, you should store the function you want to call in a
 variable, and pass the variable name when you do your binding.  Then, you can
 call the function itself whenever you want, without the need for
-`$.fn.trigger`.
+`$.fn.trigger`. 
 
 <javascript caption="Triggering an event handler the right way">
    var foo = function(e) {
@@ -68,4 +68,7 @@ call the function itself whenever you want, without the need for
 
     foo(); // instead of $('p').trigger('click')
 </javascript>
+
+A more complex architecture can built on top of trigger using the [publish-subscribe pattern](http://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) using [jQuery plugins](https://gist.github.com/661855).
+With this technique,  `$.fn.trigger` can be used to notify other sections of code that an application specific event has happenned.
 
