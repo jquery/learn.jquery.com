@@ -10,9 +10,29 @@ attribution:  John K. Paul
 
 ### <code>index()</code> with no arguments
 
-<iframe style="width: 40%; height: 300px;float:left;" src="http://jsfiddle.net/johnkpaul/SrHDh/embedded/html" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    <ul>
+      <div></div>
+      <li id="foo1">foo</li>
+      <li id="bar1">bar</li>
+      <li id="baz1">baz</li>
+      <div></div>
+    </ul>
 
-<iframe style="width: 60%; height: 300px;float:left;" src="http://jsfiddle.net/johnkpaul/SrHDh/embedded/js" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    var $foo = $('#foo1');
+    console.log('Index: ' + $foo.index()); // 1
+
+    var $listItem = $('li');
+    // this implicitly calls .last()
+    console.log('Index: ' + $listItem.index()); // 3
+    console.log('Index: ' + $listItem.last().index()); // 3
+
+    var $div = $('div');
+
+    // this implicitly calls .last()
+    console.log('Index: ' + $div.index());  // 4
+    console.log('Index: ' + $div.last().index()); // 4
+
+[jsFiddle demo](http://jsfiddle.net/johnkpaul/SrHDh)
 
 In the first example, <code>index()</code> gives the zero-based index of <code>#foo1</code> within it's parent. since <code>#foo1</code> is the second child of it's parent, <code>index()</code> returns 1. 
 
@@ -20,9 +40,31 @@ The first potential confusion comes from the other examples in this fiddle.  Whe
 
 ### <code>index()</code> with a string argument
 
-<iframe style="width: 40%; height: 300px;float:left;" src="http://jsfiddle.net/johnkpaul/D29cZ/embedded/html" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    <ul>
+      <div class="test"></div>
+      <li id="foo1">foo</li>
+      <li id="bar1" class="test">bar</li>
+      <li id="baz1">baz</li>
+      <div class="test"></div>
+    </ul>
+    <div id="last"></div>
 
-<iframe style="width: 60%; height: 300px;float:left;" src="http://jsfiddle.net/johnkpaul/D29cZ/embedded/js" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    var $foo = $('li');
+
+    // this implicitly calls .first()
+    console.log('Index: ' + $foo.index("li")); // 0
+    console.log('Index: ' + $foo.first().index("li")); // 0
+
+    var $baz = $('#baz1');
+    console.log('Index: ' + $baz.index("li")); // 2
+
+    var $listItem = $('#bar1');
+    console.log('Index: ' + $listItem.index(".test")); // 1
+
+    var $div = $('#last');
+    console.log('Index: ' + $div.index("div")); // 2
+
+[jsFiddle demo](http://jsfiddle.net/johnkpaul/D29cZ/)
 
 When <code>index()</code> is called with a string argument, there are two things to consider. The first is that jQuery will implicitly call <code>.first()</code> on the original jQuery object. It will be finding the index of the first element, not the last element in this case. This inconsistency always makes me stop and think, so be careful with this one. 
 
@@ -30,9 +72,30 @@ The second point is that jQuery is querying the entire dom using the passed in s
 
 ### <code>index()</code> with a jQuery object argument
 
-<iframe style="width: 40%; height: 300px;float:left;" src="http://jsfiddle.net/johnkpaul/QZv7y/embedded/html" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    <ul>
+      <div class="test"></div>
+      <li id="foo1">foo</li>
+      <li id="bar1" class="test">bar</li>
+      <li id="baz1">baz</li>
+      <div class="test"></div>
+    </ul>
+    <div id="last"></div>
 
-<iframe style="width: 60%; height: 300px;float:left;" src="http://jsfiddle.net/johnkpaul/QZv7y/embedded/js" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    var $foo = $('li');
+    var $baz = $('#baz1');
+
+    console.log('Index: ' + $foo.index($baz)); // 2
+
+    var $tests = $(".test");
+    var $bar = $("#bar1");
+
+    // implicitly calls .first() on the argument
+    console.log('Index: ' + $tests.index($bar)); // 1
+
+    console.log('Index: ' + $tests.index($bar.first())); // 1
+
+[jsFiddle demo](http://jsfiddle.net/johnkpaul/QZv7y/)
+
 
 In this case, the first element of the jQuery object that is passed into <code>.index()</code> is being checked against all of the elements in the original jQuery object.  The original jQuery object, on the left side of <code>.index()</code>, is array-like and is searched from index 0 through <code>length - 1</code> for the first element of the argument jQuery object.
 
