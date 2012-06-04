@@ -6,7 +6,7 @@ Developing against specific features, instead of developing against a specific b
 
 ### User-agent testing
 
-Without getting into too many specifics, there are two specific reasons why User-Agent testing (developing against a specific browser) is looked down upon, instead of checking to see if a specific feature is supported: they are inconvenient and unreliable.
+Without getting into too many specifics, there are two reasons why User-Agent testing (developing against a specific browser) is looked down upon, instead of checking to see if a specific feature is supported: they are inconvenient and unreliable.
 
 First, let's take a look at a User-Agent string (you can see yours by running `navigator.userAgent` in a JavaScript console). This is Chrome 18's User-Agent string on Mac OS X Lion:
 
