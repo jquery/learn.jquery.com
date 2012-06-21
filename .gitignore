@@ -1,6 +1,3 @@
-output/
-tmp/*
-tmp
-order.json
+node_modules
+dist
 config.json
-.DS_Store
