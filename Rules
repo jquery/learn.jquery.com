@@ -58,7 +58,7 @@ class Nanoc3::Filter
       @output << %{<div class="example">\n}
       @output << %{<div class="filename">#{filename}</div>\n} if filename
       @output << %{<div class="caption">#{caption}</div>\n} if caption
-      @output << %{<pre class="brush: #{replace}; gutter: false; toolbar: false"><code>} <<
+      @output << %{<pre><code data-lang="#{replace}">} <<
                  CGI.escapeHTML(match.pre_match) << %{</code></pre>}
       @output << %{</div>\n}
     end
@@ -75,7 +75,8 @@ class Nanoc3::Item
     {
       'title' => self[:title] || self.identifier,
       'chapter' => self[:chapter],
-      'isCategory' => self[:filename].index('dex.md') != nil
+      'menu_order' => self[:ordinal_index]
+#      'isCategory' => self[:filename].index('dex.md') != nil
     }.to_json(*a)
   end
 end
@@ -118,8 +119,8 @@ preprocess do
   @chapter_order.each do |folder|
     @chapters [ folder] = {}
     @chapters[ folder ][ :items ] = @grouped_items[folder].sort_by {|i| 
-      p @chapter_articles[ i[ :chapter ] ].index( p i.identifier.split('/')[2] ) || 0
-      @chapter_articles[ i[ :chapter ] ].index( p i.identifier.split('/')[2] ) || 0
+#      p @chapter_articles[ i[ :chapter ] ].index( i.identifier.split('/')[2] ) || 0
+      @chapter_articles[ i[ :chapter ] ].index( i.identifier.split('/')[2] ) || 0
     }
     @ordered_items = @ordered_items + @chapters[ folder ][ :items ]
     @chapters[ folder ][ :title ] = folder.gsub(/-/, " ").upcase
@@ -131,7 +132,7 @@ preprocess do
       item[:next_item] = @ordered_items[ i+1 ]
       item[:previous_item] = @ordered_items[ i-1 ]
     end
-    item[:github_user] = @github_users[ item[:github] ]
+    item[:github_user] = @github_users[ item[:github] ]#
   end
 
   @site.config[:chapters] = @chapters
@@ -152,7 +153,7 @@ filters = {
 
 # Index files in each content directory
 route "/*/dex" do
-  item.identifier.sub("dex/", "") + 'index.html'
+  "/" + item.identifier.split('/')[1] + ".html"
 end
 
 # Just the homepage
@@ -163,9 +164,7 @@ end
 compile '*' do
   filter :code_blocks
   filter filters[item[:extension].to_sym] || item[:extension].to_sym
-  if item[:homepage]
-    layout 'home'
-  elsif item.identifier.match /\/dex\/$/
+  if item.identifier.match /\/dex\/$/
     layout 'wp_dex'
   else
     layout 'wp_stub'
@@ -181,7 +180,8 @@ route '*' do
     item.identifier.chop + '.' + item[:extension]
   else
     # /foo/ -> /foo/index.html
-    item.identifier + 'index.html'
+    
+    item.identifier.chop + '.html'
   end
 end
 
