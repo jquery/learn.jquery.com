@@ -14,9 +14,9 @@ When an event handler is added using <code>.click(fn)</code> or <code>.on("click
 because jQuery stores a reference to that handler when it is originally added. Additionally, it will trigger the javascript inside the "onclick" attribute. The <code>.trigger()</code> function cannot be used to mimic native browser events, 
 such as clicking on a file input box or an anchor tag. This is because, there is no event handler attached using jQuery's event system that coorespond to these events. 
 
-<html caption="Anchor tag example">
+<markup caption="Anchor tag example">
     <a href="http://learn.jquery.com">Learn jQuery</a>
-</html>
+</markup>
 
 <javascript caption="This will not change the current page">
     $('a').trigger('click');
