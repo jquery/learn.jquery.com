@@ -75,7 +75,7 @@ class Nanoc3::Item
     {
       'title' => self[:title] || self.identifier,
       'chapter' => self[:chapter],
-      'menu_order' => self[:ordinal_index]
+      'menuOrder' => self[:ordinal_index]
 #      'isCategory' => self[:filename].index('dex.md') != nil
     }.to_json(*a)
   end
