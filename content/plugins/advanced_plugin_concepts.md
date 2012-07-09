@@ -315,7 +315,7 @@ Notice that we've created a reference to the injected wrapper and we're also cal
 
 The *$.extend()* method will now recurse through all nested objects to give us a merged version of both the defaults and the passed options, giving the passed options precedence.
 
-The plugin user now has the power to specify any attribute of that wrapper element — so if they require that there be a hook for any CSS styles then they can quite easily add a class or change the name of the ID without having to go digging around in plugin source.
+The plugin user now has the power to specify any attribute of that wrapper element so if they require that there be a hook for any CSS styles then they can quite easily add a class or change the name of the ID without having to go digging around in plugin source.
 
 The same model can be used to let the user define CSS styles:
 
