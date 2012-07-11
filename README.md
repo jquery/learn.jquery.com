@@ -102,3 +102,7 @@ Then, you can follow the instructions above, starting at "Install the dependenci
 * Install it
 * [Meta-bullet point: This section probably lacks detail. If a Windows-Ruby developer wants to help us flesh this section out, **please do**!]
 * Follow the instructions above, starting at "Install the dependencies"
+
+#jQuery Learning Site Style Guide
+
+The jQuery Learning Site uses the [same style guide as the jQuery Documentation team](https://github.com/jquery/api.jquery.com#style-guidelines). If you have questions which are not addressed by this style guide, please refer to the [Yahoo Style Guide](http://styleguide.yahoo.com/).
