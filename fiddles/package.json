@@ -1,0 +1,21 @@
+{
+  "author": "",
+  "name": "fiddles",
+  "description": "fiddles generation",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jquery/web-learn-jquery-com.git"
+  },
+  "bin": "./bin/fiddles",
+  "main": "./lib/fiddles",
+  "engines": {
+    "node": "> 0.4"
+  },
+  "dependencies": {
+    "findit": "~0.1.1",
+    "mime": "~1.2.4",
+    "ngist": "~0.2.0"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,107 @@
+#!/usr/bin/env node
+
+// This package exposes both a cli tool and an npm package to parse the
+// content of this website, and generates jsfiddle-ready gists.
+
+var fs = require('fs'),
+  path = require('path'),
+  exec = require('child_process').exec,
+  helpers = require('../lib/fiddles/helpers'),
+  console = require('../lib/fiddles/logger'),
+  steps = require('../lib/fiddles'),
+  error = helpers.error,
+  mkdirp = helpers.mkdirp,
+  ghHint = helpers.ghHint;
+
+// todo: better configuration management, add options parsing and cli overrides.
+var config = {
+  code: path.join(__dirname, '..', '..', 'code'),
+  fiddles: path.join(__dirname, '..', '..', 'code', 'fiddles'),
+  content: path.join(__dirname, '..', '..', 'content'),
+  output: path.join(__dirname, '..', '..', 'output'),
+  manifest: fs.readFileSync(path.join(__dirname, '..', 'lib', 'fiddles', 'fiddle.manifest'), 'utf8'),
+
+  // [jsfiddle: read from github](http://doc.jsfiddle.net/use/gist_read.html?highlight=github#run-in-jsfiddle)
+  fiddle: 'http://jsfiddle.net/gh/gist/{framework}/{version}/{gistid}',
+
+  // used during generation of gists files where relative references
+  // of images in HTML files gets replaced by host/assets/imgpath
+  // (defaults `http://learning.jquery.com/images/imgpath`)
+  host: 'http://stage.learn.jquery.com',
+  assets: '/assets/',
+
+  // solution mode: basic flag telling the scripts where to locate jsfiddles js file
+  solution: !!['s', 'sol', 'solution'].indexOf(process.argv.slice(2)[0]),
+
+  // should create gists files during generation, if false the links added to
+  // page will default to a dummy id. (Gists are created privately)
+  gists: true
+};
+
+console.info('About to generate or update code/fiddles folders. Configuration:', config);
+
+if(config.solution) console.debug('Generation using solution mode, demo.js files will include solutions to exercises.\n');
+
+
+// get the list of files to process, include an array of fiddles to create. Each of these
+// including a hash object with usefull meta info (title, html, js, etc.)
+
+var files = steps.parse(config);
+
+// holder for git config stuff
+var gh = {}, cleaned = false;
+
+// ensure config.fiddles dir is there
+mkdirp(config.fiddles, function(err) {
+  if(err) return error(err);
+
+  // remove any previously generated fiddles, walk the config.fiddles dir and remove any directory.
+  var prevs = fs.readdirSync(config.fiddles)
+    .filter(function(file) {
+      return fs.statSync(path.join(config.fiddles, file)).isDirectory();
+    })
+    .map(function(file) {
+      return path.join(config.fiddles, file);
+    });
+
+  if(!prevs.length) {
+    cleaned = true;
+    return;
+  }
+
+  exec('rm -r ' + prevs.join(' '), function(err, stdout, stderr) {
+    if(err) return error(err);
+    cleaned = true;
+    next();
+  });
+});
+
+
+// get github info, for posting gists, from the git global config
+exec('git config --get github.user', function(err, stdout, stderr) {
+  if(err) return error(new Error(ghHint('user')));
+  gh.user = stdout.trim();
+  next();
+});
+
+exec('git config --get github.token', function(err, stdout, stderr) {
+  if(err) return error(new Error(ghHint('token')));
+  gh.token = stdout.trim();
+  next();
+});
+
+
+function next() {
+  if(!gh.user || !gh.token || !cleaned) return;
+
+  // second step: generate fiddles from meta info
+  steps.generate(files, config, gh, function(err) {
+    if(err) return error(err);
+    console.info('Done');
+    // Third one: replace and edit html files in output/
+    steps.replace(files, config, function() {
+      if(err) return error(err);
+      console.info('All Done');
+    });
+  });
+}
