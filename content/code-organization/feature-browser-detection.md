@@ -1,3 +1,8 @@
+---
+title: What is Feature Detection
+attribution: Connor Montgomery
+---
+
 ### What is feature detection?
 
 Feature detection is the concept of detecting if a specific feature is available, instead of developing against a specific browser. This way, developers can write their code for two cases: the browser **does** support said feature, or the browser **does not** support said feature.

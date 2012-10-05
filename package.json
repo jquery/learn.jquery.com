@@ -25,6 +25,8 @@
 		"grunt-clean": "0.3.0",
 		"grunt-html": "0.1.1",
 		"grunt-wordpress": "1.0.3",
-		"grunt-jquery-content": "~0.4.0"
+		"grunt-jquery-content": "~0.5.2",
+                "grunt-wintersmith": "0.0.x",
+                "wintersmith-ordered-pages": "0.0.x"
 	}
 }

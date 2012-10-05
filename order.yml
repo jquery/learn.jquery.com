@@ -1,3 +1,4 @@
+- index
 - about-jquery:
   - downloading-jquery
   - how-jquery-works
@@ -24,6 +25,7 @@
   - selecting-elements
   - working-with-selections
   - manipulating-elements
+  - jquery-object
   - traversing
   - css-styling-dimensions
   - data-methods
@@ -72,6 +74,7 @@
   - concepts
   - beware-anonymous-functions
   - dont-repeat-yourself
+  - feature-browser-detection
 - misc:
   - understanding-index
 - faq:

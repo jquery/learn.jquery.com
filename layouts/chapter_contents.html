@@ -1,9 +1,0 @@
-<ul>
-  <% if @site.config[:chapters][item[:chapter]] %>
-    <% @site.config[:chapters][item[:chapter]][:items].each do|i| %>
-      <% if i[:title] && !(i[:filename] =~ /\/dex\.md$/) %>
-      <li <% if @item[:filename] == i[:filename] %>class="active"<% end %>><a href="<%= i.path %>"><%= i[:title] %></a></li>
-      <% end %>
-    <% end %>
-  <% end %>
-</ul>

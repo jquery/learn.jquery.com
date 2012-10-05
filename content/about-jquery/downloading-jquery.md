@@ -1,5 +1,5 @@
 ---
-title   : Downloading jQuery
+title: Downloading jQuery
 status: needswork
 editrequired: 2
 attribution:  jQuery Docs
