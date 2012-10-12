@@ -1,13 +1,4 @@
 {
-        "output": "./page",
-        "contents": "./content",
-        "templates": "./layouts",
-        "locals": {
-          "url": "http://learn.jquery.com",
-          "name": "jQuery Learning Site",
-          "owner": "jQuery Foundation"
-        },
-        "plugins": ["/node_modules/wintersmith-ordered-pages/plugin.coffee"],
 	"url": "dev.learn.jquery.com",
 	"username": "admin",
 	"password": "sample"
