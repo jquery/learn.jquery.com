@@ -1,9 +1,6 @@
-output/
-page
 vendor
 tmp/*
 tmp
-order.json
 config.json
 node_modules/
 dist/
