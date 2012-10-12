@@ -1,4 +1,4 @@
---- 
+---
 title: The jQuery Learning Site
 ---
 

@@ -1,7 +1,5 @@
 ---
-title:        Advanced Plugin Concepts
-status:       needswork
-editrequired: 2
+title: Advanced Plugin Concepts
 ---
 
 ### Provide public access to default plugin settings
@@ -299,15 +297,15 @@ Notice that we've created a reference to the injected wrapper and we're also cal
 
 <javscript>
     var defaults = {
-     
+
         wrapperAttrs : {
             id : 'gallery-wrapper'
         },
-       
+
         // ... rest of settings ...
-       
+
     };
-     
+
     // We can use the extend method to merge options/settings as usual:
     // But with the added first parameter of TRUE to signify a DEEP COPY:
     var settings = $.extend(true, {}, defaults, options);
@@ -321,13 +319,13 @@ The same model can be used to let the user define CSS styles:
 
 <javascript>
     var defaults = {
-     
+
         wrapperCSS : {},
-       
+
         // ... rest of settings ...
-       
+
     };
-     
+
     // Later on in the plugin where we define the wrapper:
     var $wrapper = $('<div />')
                      .attr(settings.wrapperAttrs)
@@ -345,19 +343,19 @@ If your plugin is driven by events then it might be a good idea to provide a cal
 
 <javascript>
     var defaults = {
-     
+
         onImageShow : function(){}, // we define an empty anonymous function
                                     // so that we don't need to check its
                                     // existence before calling it.
-       
+
         // ... rest of settings ...
-       
+
     };
-     
+
     // Later on in the plugin:
-     
+
     $nextButton.bind('click', showNextImage);
-     
+
     function showNextImage() {
         // DO stuff to show the image here...
         // ...
@@ -370,15 +368,15 @@ Instead of initiating the callback via traditional means (adding parenthesis) we
 
 <javascript>
     $('ul.imgs li').superGallery({
-     
+
         onImageShow : function() {
             $(this)
                 .after('<span>' + $(this).attr('longdesc') + '</span>');
         },
-       
+
         // ... other options ...
         // ...
-       
+
     });
 </javascript>
 
