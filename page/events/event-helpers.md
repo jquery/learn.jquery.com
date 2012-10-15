@@ -15,11 +15,12 @@ will run for `mouseenter`, and the second will run for `mouseleave`.
 Prior to jQuery 1.4, the `$.fn.hover` method required two functions.
 </div>
 
-<javascript caption="The hover helper function">
+```
+//The hover helper function
     $('#menu li').hover(function() {
         $(this).toggleClass('hover');
     });
-</javascript>
+```
 
 ### `$.fn.toggle`
 
@@ -29,8 +30,8 @@ list is called.  Generally, `$.fn.toggle` is used with just two functions;
 however, it will accept an unlimited number of functions.  Be careful, though:
 providing a long list of functions can be difficult to debug.
 
-<javascript caption="The toggle helper function">
-
+```
+//The toggle helper function
     $('p.expander').toggle(
         function() {
             $(this).prev().addClass('open');
@@ -39,4 +40,4 @@ providing a long list of functions can be difficult to debug.
             $(this).prev().removeClass('open');
         }
     );
-</javascript>
+```

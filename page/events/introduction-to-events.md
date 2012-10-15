@@ -21,11 +21,9 @@ To specify to the browser what to do when an event occurs, you provide a functio
 
 For instance, to alert a message whenever a user clicks on a button, you might write something like this:
 
-<markup>
-<div class="example" markdown="1">
+```
     <button onclick="alert('Hello')">Say hello</button>
-</div>
-</markup>
+```
 
 The event we want to listen to is specified by the button's `onclick` attribute, and the event handler is the `alert` function which alerts "Hello" to the user. While this works, it's an abysmal way to achieve this functionality for a couple of reasons:
 
@@ -36,34 +34,35 @@ Utilizing inline event handlers like this can be considered *obtrusive JavaScrip
 
 To accomplish the desired task unobtrusively, let's change our HTML a little bit by removing the `onclick` attribute and replacing it with an `id`, which we'll utilize to "hook onto" the button from within a script file.
 
-<markup>
-<div class="example" markdown="1">
+```
     <button id="helloBtn">Say hello</button>
-</div>
-</markup>
+```
 
 If we wanted to be informed when a user clicks on that button unobtrusively, we might do something like the following in a separate script file:
 
-<javascript markdown="1" caption="Event binding using addEventListener">
+```
+//Event binding using addEventListener
     var helloBtn = document.getElementById('helloBtn');
     helloBtn.addEventListener('click', function(event) {
         alert('Hello.');
     }, false);
-</javascript>
+```
 
 Here we're saving a reference to the button element by calling `getElementById` and assigning its return value to a variable. We then call `addEventListener` and provide an event handler function that will be called whenever that event occurs. While there's nothing wrong with this code as it will work fine in modern browsers, it won't fare well in versions of IE prior to IE9. This is because Microsoft chose to implement a different method, `attachEvent`, as opposed to the W3C standard `addEventListener`, and didn't get around to changing it until IE9 was released. For this reason, it's beneficial to utilize jQuery because it abstracts away browser inconsistencies, allowing developers to use a single API for these types of tasks, as seen below.
 
-<javascript markdown="1" caption="Event binding using a convenience method">
+```
+//Event binding using a convenience method
     $('#helloBtn').click(function(event) {
         alert('Hello.');
     });
-</javascript>
+```
 
 The `$('#helloBtn')` code selects the button element using the `$` (aka `jQuery`) function and returns a jQuery object. The jQuery object has a bunch of methods (functions) available to it, one of them named `click`, which resides in the jQuery object's prototype. We call the `click` method on the jQuery object and pass along an anonymous function event handler that's going to be executed when a user clicks the button, alerting "Hello." to the user.
 
 There are a number of ways that events can be listened for using jQuery:
 
-<javascript markdown="1" caption="The many ways to bind events with jQuery">
+```
+//The many ways to bind events with jQuery
     // Attach an event handler directly to the button using jQuery's
     // shorthand `click` method.
     $('#helloBtn').click(function(event) {
@@ -94,7 +93,7 @@ There are a number of ways that events can be listened for using jQuery:
     $('body').on('click', 'button', function(event) {
         alert('Hello.');
     });
-</javascript>
+```
 
 As of jQuery 1.7, all events are bound via the `on` method, whether you call it directly or whether you use an alias/shortcut method such as `bind` or `click`, which are mapped to the `on` method internally. With this in mind, it's beneficial to use the `on` method because the others are all just syntactic sugar, and utilizing the `on` method is going to result in faster and more consistent code.
 
@@ -113,13 +112,14 @@ The event bubbling that occurs affords us the ability to add cells via AJAX for 
 
 In all of the previous examples, we've been using anonymous functions and specifying an `event` argument within that function. Let's change it up a little bit.
 
-<javascript markdown="1" caption="Binding a named function">
+```
+//Binding a named function
     function sayHello(event) {
         alert('Hello.');
     }
 
     $('#helloBtn').on('click', sayHello);
-</javascript>
+```
 
 In this slightly different example, we're defining a function called `sayHello` and then passing that function into the `on` method instead of an anonymous function. So many online examples show anonymous functions used as event handlers, but it's important to realize that you can also pass defined functions as event handlers as well. This is important if different elements or different events should perform the same functionality. This helps to keep your code DRY.
 
@@ -127,13 +127,14 @@ But what about that `event` argument in the `sayHello` function—what is it and
 
 If the element has default functionality for a specific event (like a link opens a new page, a button in a form submits the form, etc), that default functionality can be cancelled. This is often useful for AJAX requests. When a user clicks on a button to submit a form via AJAX, we'd want to cancel the button/form's default action (to submit it to the form's `action` attribute), and we would instead do an AJAX request to accomplish the same task for a more seamless experience. To do this, we would utilize the event object and call its `preventDefault` method. We can also prevent the event from bubbling up the DOM tree using `stopPropagation` so that parent elements aren't notified of its occurrence (in the case that event delegation is being used).
 
-<javascript markdown="1" caption="Preventing a default action from occurring and stopping the event bubbling">
+```
+//Preventing a default action from occurring and stopping the event bubbling
     $('form').on('submit', function(event) {
         event.preventDefault(); // Prevent the form's default submission.
         event.stopPropagation(); // Prevent event from bubbling up DOM tree, prohibiting delegation
         // Make an AJAX request to submit the form data
     });
-</javascript>
+```
 
 When utilizing both `preventDefault` and `stopPropagation` simultaneously, you can instead `return false` to achieve both in a more concise manner, but it's advisable to only `return false` when both are actually necessary and not just for the sake of terseness. A final note on `stopPropagation` is that when using it in delegated events, the soonest that event bubbling can be stopped is when the event reaches the element that is delegating it.
 
@@ -141,10 +142,11 @@ It's also important to note that the event object contains a property called `or
 
 Finally, to inspect the event itself and see all of the data it contains, you should log the event in the browser's console using `console.log`. This will allow you to see all of an event's properties (including the `originalEvent`) which can be really helpful for debugging.
 
-<javascript markdown="1" caption="Logging an event's information">
+```
+//Logging an event's information
     $('form').on('submit', function(event) {
         event.preventDefault(); // Prevent the form's default submission.
         console.log(event); // Log the event object for inspectin'
         // Make an AJAX request to submit the form data
     });
-</javascript>
+```
