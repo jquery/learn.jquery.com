@@ -15,12 +15,12 @@ because jQuery stores a reference to that handler when it is originally added. A
 such as clicking on a file input box or an anchor tag. This is because, there is no event handler attached using jQuery's event system that coorespond to these events.
 
 ```
-    <a href="http://learn.jquery.com">Learn jQuery</a>
+<a href="http://learn.jquery.com">Learn jQuery</a>
 ```
 
 ```
 //This will not change the current page
-    $('a').trigger('click');
+$('a').trigger('click');
 ```
 
 #### How can I mimic a native browser event, if not <code>.trigger()</code>?
@@ -32,7 +32,7 @@ The jQuery UI Team created [jquery.simulate.js](https://github.com/eduardolundgr
 
 ```
 //Triggering a native browser event using the simulate plugin
-    $('a').simulate('click');
+$('a').simulate('click');
 ```
 
 This will not only trigger the jQuery event handlers, but also follow the link and change the current page.
@@ -59,17 +59,17 @@ call the function itself whenever you want, without the need for
 
 ```
 //Triggering an event handler the right way
-   var foo = function(e) {
-        if (e) {
-            console.log(e);
-        } else {
-            console.log('this didn\'t come from an event!');
-      }
-    };
+var foo = function(e) {
+  if (e) {
+    console.log(e);
+  } else {
+     console.log('this didn\'t come from an event!');
+  }
+};
 
-    $('p').click(foo);
+$('p').click(foo);
 
-    foo(); // instead of $('p').trigger('click')
+foo(); // instead of $('p').trigger('click')
 ```
 
 A more complex architecture can built on top of trigger using the [publish-subscribe pattern](http://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) using [jQuery plugins](https://gist.github.com/661855).
