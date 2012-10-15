@@ -94,7 +94,8 @@ When defined, these string properties specify that a special event should be han
 
 The behavior of these properties is easiest to see with an example. Assume a special event defined as follows:
 
-```jQuery.event.special.pushy = {
+```
+jQuery.event.special.pushy = {
   bindType: "click",
   delegateType: "click"
 };
@@ -112,10 +113,10 @@ So given the special event above, this code shows that a pushy isn't removed by 
 ```
 var $p = $("p");
 $p.on("click", function( e ) {
-    $("body").append("I am a " + e.type + "!"));
+  $("body").append("I am a " + e.type + "!"));
 });
 $p.on("pushy", function( e ) {
-    $("body").append("I am pushy but still a " + e.type + "!");
+  $("body").append("I am pushy but still a " + e.type + "!");
 });
 $p.trigger("click"); // triggers both handlers
 $p.off("click");

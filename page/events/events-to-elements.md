@@ -11,21 +11,21 @@ when you are working with custom events, or when you want to pass an object of
 multiple events and handlers.
 
 ```
-//Event binding using a convenience method
+// Event binding using a convenience method
 $('p').click(function() {
   console.log('click');
 });
 ```
 
 ```
-//Event biding using the `$.fn.bind` method
+// Event biding using the `$.fn.bind` method
 $('p').bind('click', function() {
   console.log('click');
 });
 ```
 
 ```
-//Event binding using the `$.fn.bind` method with data
+// Event binding using the `$.fn.bind` method with data
 $('input').bind(
   'click change',  // bind to multiple events
   { foo : 'bar' }, // pass in data
@@ -43,7 +43,7 @@ want no handler to run, or you may want a different handler to run.  jQuery
 provides the `$.fn.one` method for this purpose.
 
 ```
-//Switching handlers using the `$.fn.one` method
+// Switching handlers using the `$.fn.one` method
 $('p').one('click', function() {
   console.log('You just clicked this for the first time!');
   $(this).click(function() { console.log('You have clicked this before!'); });
@@ -61,12 +61,12 @@ you can isolate the unbinding to that named function by passing it as the
 second argument.
 
 ```
-//Unbinding all click handlers on a selection
+// Unbinding all click handlers on a selection
 $('p').unbind('click');
 ```
 
 ```
-//Unbinding a particular click handler, using a reference to the function
+// Unbinding a particular click handler, using a reference to the function
 var foo = function() { console.log('foo'); };
 var bar = function() { console.log('bar'); };
 
@@ -81,7 +81,7 @@ useful to namespace your events so you don't unintentionally disconnect events
 that you didn't or couldn't know about.
 
 ```
-//Namespacing events
+// Namespacing events
 $('p').bind('click.myNamespace', function() { /* ... */ });
 $('p').unbind('click.myNamespace');
 $('p').unbind('.myNamespace'); // unbind all events in the namespace
@@ -95,7 +95,7 @@ an object into `$.fn.bind` with one or more key/value pairs, with the key being
 the event name and the value being the function to handle the event.
 
 ```
-//Binding Multiple Events
+// Binding Multiple Events
 $('p').bind({
   'click': function() { console.log('clicked!'); },
   'mouseover': function() { console.log('hovered!'); }

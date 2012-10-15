@@ -38,11 +38,11 @@ a click handler to it that generates an alert message. In jQuery, we might do
 so with the following code:
 
 ```
-    $(document).ready(function() {
-      $('button.alert').click(function() {
-        alert('this is an alert message');
-      });
-    });
+$(document).ready(function() {
+  $('button.alert').click(function() {
+    alert('this is an alert message');
+  });
+});
 ```
 
 Here we are registering the click handler for the button with a class of
@@ -61,12 +61,12 @@ when clicked.
 Now, let's create a new button (if we don't already have a second one) using jQuery code like this:
 
 ```
-    $('#create-button').click(function() {
-      if ( $('button.alert').length <2) {
-        $('<button class="alert">Not another alert').insertAfter(this);
-      }
-      return false;
-    });
+$('#create-button').click(function() {
+  if ( $('button.alert').length <2) {
+    $('<button class="alert">Not another alert').insertAfter(this);
+  }
+  return false;
+});
 ```
 
 Have you clicked the link to create the second button? Great. Now click that button. It does nothing. Just as expected.
@@ -94,12 +94,12 @@ item with a class of "special" (which itself is inside an element with id of
 item in which the button was clicked:
 
 ```
-    $(document).ready(function() {
-      $('#list1 li.special button').click(function() {
-        var $newLi = $('<li class="special">special and new <button>I am new</button></li>');
-        $(this).parent().after($newLi);
-      });
-    });
+$(document).ready(function() {
+  $('#list1 li.special button').click(function() {
+    var $newLi = $('<li class="special">special and new <button>I am new</button></li>');
+    $(this).parent().after($newLi);
+  });
+});
 ```
 
 So, how can we get the events to carry over to the new elements? Two common
@@ -127,11 +127,11 @@ just like to use labels that are as obvious as possible because I have a hard
 time keeping track of things. Here is what we have so far:
 
 ```
-    $(document).ready(function() {
-      $('#list2').click(function(event) {
-        var $newLi = $('<li class="special">special and new <button>I am new</button></li>');
-      });
-    });
+$(document).ready(function() {
+  $('#list2').click(function(event) {
+    var $newLi = $('<li class="special">special and new <button>I am new</button></li>');
+  });
+});
 ```
 
 So far, the code is very similar to our first attempt, except for the selector
@@ -142,19 +142,19 @@ We check the clicked element by using the "target" property of the event
 argument:
 
 ```
-    $(document).ready(function() {
-      $('#list2').click(function(event) {
-        var $newLi = $('<li class="special">special and new <button>I am new</button></li>');
-        var $tgt = $(event.target);
-        if ($tgt.is('button')) {
-          $tgt.parent().after($newLi);
-        }
+$(document).ready(function() {
+  $('#list2').click(function(event) {
+    var $newLi = $('<li class="special">special and new <button>I am new</button></li>');
+    var $tgt = $(event.target);
+    if ($tgt.is('button')) {
+      $tgt.parent().after($newLi);
+    }
 
-        // next 2 lines show that you've clicked on the ul
-        var bgc = $(this).css('backgroundColor');
-        $(this).css({backgroundColor: bgc == '#ffcccc' || bgc == 'rgb(255, 204, 204)' ? '#ccccff' : '#ffcccc'});
-      });
-    });
+    // next 2 lines show that you've clicked on the ul
+    var bgc = $(this).css('backgroundColor');
+    $(this).css({backgroundColor: bgc == '#ffcccc' || bgc == 'rgb(255, 204, 204)' ? '#ccccff' : '#ffcccc'});
+  });
+});
 ```
 
 Line 4 above puts the target element in a jQuery wrapper and stores it in the
@@ -194,17 +194,17 @@ single table element and use event.target to pinpoint the cell that is being
 clicked:
 
 ```
-    $(document).ready(function() {
-      $('table').click(function(event) {
-        var $thisCell, $tgt = $(event.target);
-        if ($tgt.is('td')) {
-          $thisCell = $tgt;
-        } else if ($tgt.parents('td').length) {
-          $thisCell = $tgt.parents('td:first');
-        }
-        // now do something with $thisCell
-      });
-    });
+$(document).ready(function() {
+  $('table').click(function(event) {
+    var $thisCell, $tgt = $(event.target);
+    if ($tgt.is('td')) {
+      $thisCell = $tgt;
+    } else if ($tgt.parents('td').length) {
+      $thisCell = $tgt.parents('td:first');
+    }
+    // now do something with $thisCell
+  });
+});
 ```
 
 <div class="note" markdown="1"> I had to account for the possibility of
