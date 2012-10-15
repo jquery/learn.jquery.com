@@ -94,7 +94,8 @@ When defined, these string properties specify that a special event should be han
 
 The behavior of these properties is easiest to see with an example. Assume a special event defined as follows:
 
-```jQuery.event.special.pushy = {
+```
+jQuery.event.special.pushy = {
   bindType: "click",
   delegateType: "click"
 };
