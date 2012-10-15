@@ -51,20 +51,23 @@ Note that for all events, the browser's native event object is available in `eve
 
 For example, to set a hook for the "drop" event that copies the "dataTransfer" property, assign an object to jQuery.event.fixHooks.drop:
 
-<javascript>jQuery.event.fixHooks.drop = { props: [ "dataTransfer" ] };
-</javascript>
+```
+jQuery.event.fixHooks.drop = { props: [ "dataTransfer" ] };
+```
 
 Since fixHooks are an advanced feature and rarely used externally, we have not added extra code and interfaces to deal with conflict resolution. If there is a chance that some other code may be assigning fixHooks to the same events, the code should check for an existing hook and take appropriate measures. A simple solution might look like this:
 
-<javascript>if ( jQuery.event.fixHooks.drop ) {
+```
+if ( jQuery.event.fixHooks.drop ) {
   throw new Error("Someone else took the jQuery.event.fixHooks.drop hook!");
 }
 jQuery.event.fixHooks.drop = { props: [ "dataTransfer" ] };
-</javascript>
+```
 
 When there are known cases of different plugins wanting to attach to the drop hook, this solution might be more appropriate:
 
-<javascript>var existingHook = jQuery.event.fixHooks.drop;
+```
+var existingHook = jQuery.event.fixHooks.drop;
 if ( !existingHook ) {
   jQuery.event.fixHooks.drop = { props: [ "dataTransfer" ] };
 } else {
@@ -74,7 +77,7 @@ if ( !existingHook ) {
     existingHook.props = [ "dataTransfer" ];
   }
 }
-</javascript>
+```
 
 ### Special event hooks
 
@@ -91,11 +94,11 @@ When defined, these string properties specify that a special event should be han
 
 The behavior of these properties is easiest to see with an example. Assume a special event defined as follows:
 
-<javascript>jQuery.event.special.pushy = {
+```jQuery.event.special.pushy = {
   bindType: "click",
   delegateType: "click"
 };
-</javascript>
+```
 
 When these properties are defined, the following behavior occurs in the jQuery event system:
 
@@ -106,7 +109,8 @@ When these properties are defined, the following behavior occurs in the jQuery e
 
 So given the special event above, this code shows that a pushy isn't removed by removing clicks. That might be an effective way to defend against an ill-behaved plugin that didn't namespace its removal of click events, for example:
 
-<javascript>var $p = $("p");
+```
+var $p = $("p");
 $p.on("click", function( e ) {
     $("body").append("I am a " + e.type + "!"));
 });
@@ -117,7 +121,7 @@ $p.trigger("click"); // triggers both handlers
 $p.off("click");
 $p.trigger("click"); // still triggers "pushy"
 $p.off("pushy");
-</javascript>
+```
 
 These two properties are often used in conjunction with a `handle` hook function; the hook might, for example, change the event name from "click" to "pushy" before calling event handlers. See below for an example.
 
@@ -125,8 +129,9 @@ These two properties are often used in conjunction with a `handle` hook function
 
 Many of the special event hook functions below are passed a `handleObj` object that provides more information about the event, how it was attached, and its current state. This object and its contents should be treated as read-only data, and only the properties below are documented for use by special event handlers. For the discussion below, assume an event is attached with this code:
 
-<javascript>$(".dialog").on("click.myPlugin", "button", {mydata: 42}, myHandler);
-</javascript>
+```
+$(".dialog").on("click.myPlugin", "button", {mydata: 42}, myHandler);
+```
 
 type: String
 :               The type of event, such as `"click"`. When special event mapping is used via bindType or delegateType, this will be the mapped type.
@@ -189,7 +194,8 @@ This `multiclick` special event maps itself into a standard click event, but use
 
 The hook stores the current click count in the data object, so multiclick handlers on different elements don't interfere with each other. It changes the event type to the original "multiclick" type before calling the handler and restores it to the mapped "click" type before returning:
 
-<javascript>jQuery.event.special.multiclick = {
+```
+jQuery.event.special.multiclick = {
   delegateType: "click",
   bindType: "click",
   handle: function( event ) {
@@ -212,4 +218,4 @@ The hook stores the current click count in the data object, so multiclick handle
 $("p").on("multiclick", { clicks: 3 }, function(e){
   alert("clicked 3 times");
 });
-</javascript>
+```

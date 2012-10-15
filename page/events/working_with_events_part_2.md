@@ -1,6 +1,6 @@
 ---
 title:        Working with Events, part 2
-attribution:  Karl Swedberg 
+attribution:  Karl Swedberg
 status:       needswork
 editrequired: 3
 source:       http://www.learningjquery.com/2008/05/working-with-events-part-2
@@ -17,27 +17,27 @@ This time, we'll take a look at re-binding event handlers. But before we do, I
 should mention that, as of jQuery version 1.2, event handlers can be cloned
 along with elements. Consider this unordered list:
 
-<markup
+```
   <ul id="list3" class="eventlist">
     <li>plain</li>
     <li class="special">special <button>I am special</button></li>
     <li>plain</li>
   </ul>
-</markup>
+```
 
 We can make a copy of `<li class="special">` and insert it after the original,
 while at the same time retaining any event handlers that were attached within
 the original. The plain `.clone()` method doesn't work that way; instead, it just
 copies the element:
 
-<javascript>
+```
 $(document).ready(function() {
   $('#list3 li.special button').click(function() {
     var $parent = $(this).parent();
     $parent.clone().insertAfter($parent);
   });
 });
-</javascript>
+```
 
 Try it:
 
@@ -48,14 +48,14 @@ ones.
 To get the event handlers copied over as well, all we have to do is pass in
 true to the method's single argument:
 
-<javascript>
+```
 $(document).ready(function() {
   $('#list4 li.special button').click(function() {
     var $parent = $(this).parent();
     $parent.clone(true).append(' I\'m a clone!').insertAfter($parent);
   });
 });
-</javascript>
+```
 
 <div class="note" markdown="1">
 I've added `.append(' I\'m a clone!')` here only as visual reinforcement of what is going on.
@@ -75,22 +75,22 @@ introduced. For example, with our unordered list above, we first create a
 function called addItem that registers the click handler, which in turn will
 add a new item:
 
-<javascript>
+```
 function addItem() {
   $('#list5 li.special button').click(function() {
     var $newLi = $('<li class="special">special and new <button>I am new</button></li>');
     $(this).parent().after($newLi);
-  });  
+  });
 }
-</javascript>
+```
 
 Next, we call that function when the DOM initially loads:
 
-<javascript>
+```
 $(document).ready(function() {
   addItem();
 });
-</javascript>
+```
 
 Finally, we can call the function inside the click handler—and inside itself.
 That way, it will bind the event handlers to the new list item as well.
@@ -100,7 +100,7 @@ re-bound, so that we can see the difference.
 
 Here is what the code for buttons in `#list5` looks like, all together:
 
-<javascript>
+```
 function addItem() {
   $('#list5 li.special button').click(function() {
     var $newLi = $('&lt;li class="special"&gt;special and new &lt;button&gt;I am new&lt;/button&gt;&lt;/li&gt;');
@@ -111,13 +111,13 @@ function addItem() {
 
 $(document).ready(function() {
   addItem();
- 
+
   // non-rebinding click handler ...
   $('#list5 li.special button').click(function() {
     $(this).after(' pressed');
   });
 });
-</javascript>
+```
 
 Try this one out:
 
@@ -135,15 +135,15 @@ extra list item; the second creates two; the third, four; and so on.
 
 To avoid the multiple binding, we can unbind first and then re-bind. So in line 2, instead of this ...
 
-<javascript>
+```
 $('#list5 li.special button').click(function() {
-</javascript>
+```
 
 ... we'll have this ...
 
-<javascript>
+```
 $('#list6 li.special button').unbind('click').bind('click', function() {
-</javascript>
+```
 
 Note: The use of `.bind()` here. This is the universal event binder that jQuery
 uses. All the others, such as `.click()`, `.blur()`, `.resize()`, and so on, are
@@ -152,7 +152,7 @@ shorthand methods for their `.bind('event')` equivalent.
 The complete new code, again with the additional non-rebinding click handler
 for contrast, looks like this:
 
-<javascript>
+```
 function addItemUnbind() {
   $('#list6 li.special button')
     .unbind('click')
@@ -164,13 +164,13 @@ function addItemUnbind() {
 }
 $(document).ready(function() {
   addItemUnbind();
- 
+
   // non-rebinding click handler
   $('#list6 li.special button').click(function() {
     $(this).after(' pressed');
   });
 });
-</javascript>
+```
 
 See how this one works:
 
@@ -189,7 +189,7 @@ and `.unbind('click)`, we'll have, for example, `.bind('click.addit')` and
 the previous, except that it now has the namespaced event (and the list id is
 `list7`):
 
-<javascript>
+```
 function addItemNS() {
   $('#list7 li.special button')
     .unbind('click.addit')
@@ -201,13 +201,13 @@ function addItemNS() {
 }
 $(document).ready(function() {
   addItemNS();
- 
+
   // non-rebinding click handler
   $('#list7 li.special button').click(function() {
     $(this).after(' pressed');
   });
 });
-</javascript>
+```
 
 We should now — finally! — have a set of behaviors attached to these buttons that act the way we intend them to:
 
@@ -221,7 +221,7 @@ the events, we can reference the function in the second argument of the `.bind()
 and `.unbind()` methods. We have to shuffle things around a bit to avoid "too
 much recursion," but it'll do just fine like so:
 
-<javascript>
+```
 function addItemFinal() {
     var $newLi = $('&lt;li class="special"&gt;special and new &lt;button&gt;I am new&lt;/button&gt;&lt;/li&gt;');
     $(this).parent().after($newLi);
@@ -229,16 +229,16 @@ function addItemFinal() {
       .unbind('click', addItemFinal)
       .bind('click', addItemFinal);
 }
- 
+
 $(document).ready(function() {
 $('#list8 li.special button').bind('click', addItemFinal);
- 
+
   // non-rebinding click handler
   $('#list8 li.special button').click(function() {
     $(this).after(' pressed');
   });
 });
-</javascript>
+```
 
 Note here that there are no parentheses after `addItemFinal` when it appears
 inside the bind/unbind, because we are referencing the function, not calling
@@ -261,11 +261,10 @@ differently, but they're all super plugins.
 I'm providing an example that allows for both adding a row and removing a row.
 The code is based on the "Event Namespacing" example above:
 
-<javascript>
-
+```
 function addRemoveItemNS() {
   var $newLi = $('<li class="special">special and new <button class="addone">I am new</button> <button class="removeme">remove me</button></li>');
- 
+
 $('#list9 li.special')
   .find('button.addone')
     .unbind('click.addit')
@@ -280,11 +279,11 @@ $('#list9 li.special')
     $(this).parent().remove();
   });
 }
- 
+
 $(document).ready(function() {
   addRemoveItemNS();
 });
-</javascript>
+```
 
 I added an "addone" class to the initial button, but otherwise the list is the
 same as the others. You can try it out here:

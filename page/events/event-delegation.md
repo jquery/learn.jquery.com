@@ -25,29 +25,31 @@ certain event types were supported.  As of jQuery 1.4.2, the `$.fn.delegate`
 method is available, and is the preferred method.
 </div>
 
-<div class="example" markdown="1">
-Event delegation using `$.fn.delegate`
+```
+//Event delegation using `$.fn.delegate`
 
     $('#myUnorderedList').delegate('li', 'click', function(e) {
         var $myListItem = $(this);
         // ...
     });
-</div>
+```
 
-<javascript caption="Event delegation using `$.fn.live`">
+```
+//Event delegation using `$.fn.live`
     $('#myUnorderedList li').live('click', function(e) {
         var $myListItem = $(this);
         // ...
     });
-</javascript>
+```
 
 ### Unbinding Delegated Events
 
 If you need to remove delegated events, you can't simply unbind them.  Instead,
 use `$.fn.undelegate` for events connected with `$.fn.delegate`, and `$.fn.die`
 for events connected with `$.fn.live`.  As with bind, you can optionally pass
-in the name of the bound function.<javascript caption="Unbinding delegated events">
+in the name of the bound function.
+```
+//Unbinding delegated events
     $('#myUnorderedList').undelegate('li', 'click');
-    $('#myUnorderedList li').die('click');</javascript>
-<div class="example" markdown="1">
-</div>
+    $('#myUnorderedList li').die('click');
+```
