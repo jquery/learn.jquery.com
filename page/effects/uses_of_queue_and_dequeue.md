@@ -16,7 +16,7 @@ To understand the internal jQuery queue functions, reading the source and
 looking at examples helps me out tremendously. One of the best examples of a
 queue function I’ve seen is `.delay()`:
 
-<javascript>
+```
 $.fn.delay = function( time, type ) {
   time = jQuery.fx ? jQuery.fx.speeds[time] || time : time;
   type = type || "fx";
@@ -28,7 +28,7 @@ $.fn.delay = function( time, type ) {
     }, time );
   });
 };
-</javascript>
+```
 
 ## The default queue – fx
 
@@ -44,7 +44,7 @@ properties that are not shared with other queues.
 - It’s the default! The fx queue is used by `.animate()` and all functions that
   call it by default.
 
-<div class="note" markdown="1">
+<div class="note">
 If you are using a custom queue, you must manually `.dequeue()` the functions, they will not auto start!
 </div>
 
@@ -58,7 +58,7 @@ function.
 
 ## Quick Examples:
 
-<javascript>
+```
 // lets assume $elem is a jQuery object that points to some element we are animating.
 var queue = $elem.queue();
 // remove the last function from the animation queue.
@@ -67,11 +67,11 @@ var lastFunc = queue.pop();
 queue.unshift(lastFunc);
 // replace queue with the first three items in the queue
 $elem.queue(queue.slice(0,3));
-</javascript>
+```
 
 ### An animation (fx) queue example:
 
-<javascript>
+```
 $(function() {
     // lets do something with google maps:
     var $map = $("#map_canvas");
@@ -119,11 +119,11 @@ $(function() {
         marginTop: 0
     }, resized);
 });
-</javascript>
+```
 
 ### Queueing something like Ajax Calls:
 
-<javascript>
+```
   // jQuery on an empty object, we are going to use this as our Queue
   var ajaxQueue = $({});
 
@@ -161,11 +161,11 @@ $("#items li").each(function(idx) {
         }
     });
 });
-</javascript>
+```
 
 ### Another custom queue example
 
-<javascript>
+```
 var theQueue = $({}); // jQuery on an empty object - a perfect queue holder
 
 $.each([1,2,3],function(i, num) {
@@ -193,4 +193,4 @@ $("<button>", {
     alert(theQueue.queue('alerts').length);
   }
 }).appendTo('body');
-</javascript>
+```

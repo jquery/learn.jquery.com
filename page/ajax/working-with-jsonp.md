@@ -9,7 +9,8 @@ particularly great source of JSONP-formatted data is the [Yahoo! Query
 Language](http://developer.yahoo.com/yql/console/), which we'll use in the
 following example to fetch news about cats.
 
-<javscript caption="Using YQL and JSONP">
+```
+// Using YQL and JSONP
 $.ajax({
   url : 'http://query.yahooapis.com/v1/public/yql',
 
@@ -31,7 +32,7 @@ $.ajax({
     console.log(response);
   }
 });
-</javscript>
+```
 
 jQuery handles all the complex aspects of JSONP behind-the-scenes — all we have
 to do is tell jQuery the name of the JSONP callback parameter specified by YQL

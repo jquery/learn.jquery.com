@@ -20,11 +20,11 @@ need to leverage the href of that link to get the proper content from
 blog.html.  Once you have the href, here's one way to process it into an ID
 that you can use as a selector in `$.fn.load`:
 
-<javascript>
+```
   var href = 'blog.html#post1';
   var tempArray = href.split('#');
   var id = '#' + tempArray[1];
-</javascript>
+```
 
 Remember to make liberal use of `console.log` to make sure you're on the right
 path!

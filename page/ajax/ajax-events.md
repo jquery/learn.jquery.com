@@ -8,8 +8,9 @@ this behavior inside every Ajax request, you can bind Ajax events to elements
 just like you'd bind other events.  For a complete list of Ajax events, visit
 [ Ajax Events documentation on docs.jquery.com ]( http://docs.jquery.com/Ajax_Events ).
 
-<javascript caption="Setting up a loading indicator using Ajax Events">
+```
+// Setting up a loading indicator using Ajax Events
 $('#loading_indicator')
   .ajaxStart(function() { $(this).show(); })
   .ajaxStop(function() { $(this).hide(); });
-</javascript>
+```
