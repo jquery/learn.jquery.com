@@ -12,6 +12,7 @@ The first and recommended option is to write our code in an external file (with 
 // Saved in example.js.
 alert('Hello World!');
 ```
+
 ``` html
 <!--Code is then included via the script tag src attribute.-->
 <script src="/path/to/example.js"></script>
