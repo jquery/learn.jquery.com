@@ -6,5 +6,5 @@ attribution:  jQuery Fundamentals
 tags:         performance
 ---
 
-Use the source as your documentation — bookmark
+Use the source as your documentation. Bookmark
 [http://bit.ly/jqsource](http://bit.ly/jqsource) and refer to it often.

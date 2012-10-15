@@ -4,7 +4,7 @@ attribution:  jQuery Fundamentals
 ---
 Don't repeat yourself; if you're repeating yourself, you're doing it wrong.
 
-<javascript>
+```
 // BAD
 if ($eventfade.data('currently') != 'showing') {
   $eventfade.stop();
@@ -25,4 +25,4 @@ $.each($elems, function(i,elem) {
     elem.stop();
   }
 });
-</javascript>
+```

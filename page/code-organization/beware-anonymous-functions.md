@@ -6,7 +6,7 @@ attribution:  jQuery Fundamentals
 Anonymous functions bound everywhere are a pain. They're difficult to debug,
 maintain, test, or reuse. Instead, use an object literal to organize and name
 your handlers and callbacks.
-<javascript>
+```
 // BAD
 $(document).ready(function() {
   $('#magic').click(function(e) {
@@ -37,4 +37,4 @@ var PI = {
 };
 
 $(document).ready(PI.onReady);
-</javascript>
+```
