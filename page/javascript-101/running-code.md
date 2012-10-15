@@ -32,8 +32,8 @@ The second option is to inline the code directly on the web page. This is also a
 
 The last and strongly discouraged option, is to utilize the event handler attributes of HTML attributes.
 
-``` js
-Inline code directly on HTML elements being clicked.
+``` html
+<!--Inline code directly on HTML elements being clicked.-->
 <a href="javascript:alert('Hello World!');">Click Me!</a>
 <button onClick="alert('Good Bye World');">Click Me Too!</a>
 ```
