@@ -14,9 +14,9 @@ Stop currently running animations on the selected elements.
 
 Wait the specified number of milliseconds before running the next animation.
 
-<javascript>
+```
 $('h1').show(300).delay(1000).hide(300);
-</javascript>
+```
 
 ### `jQuery.fx.off`
 
