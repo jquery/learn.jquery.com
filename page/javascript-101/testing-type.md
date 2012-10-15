@@ -9,7 +9,8 @@ can be confusing -- for example, the type of an Array is "object".
 It's common practice to use the typeof operator when trying to determining the
 type of a specific value.
 
-<javascript caption="Testing the type of various variables">
+``` js 
+// Testing the type of various variables
 var myFunction = function() {
   console.log('hello');
 };
@@ -42,7 +43,7 @@ if (Object.prototype.toString.call(myArray) === '[object Array]') {
   // This is widely considered as the most robust way
   // to determine if a specific value is an Array.
 }
-</javascript>
+```
 
 jQuery offers utility methods to help you determine the type of an arbitrary
 value. These will be covered later.
