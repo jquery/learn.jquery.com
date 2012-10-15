@@ -12,13 +12,13 @@ jQuery to the browser. However, there are still some tips to keep in mind.
 
 Beginning your selector with an ID is always best.
 
-<javascript>
+```
 // fast
 $('#container div.robotarm');
 
 // super-fast
 $('#container').find('div.robotarm');
-</javascript>
+```
 
 The `$.fn.find` approach is faster because the first selection is handled
 without going through the Sizzle selector engine — ID-only selections are
@@ -30,26 +30,26 @@ native to the browser.
 Be specific on the right-hand side of your selector, and less specific on the
 left.
 
-<javascript>
+```
 // unoptimized
 $('div.data .gonzalez');
 
 // optimized
 $('.data td.gonzalez');
 
-</javascript>
+```
 
 Use `tag.class` if possible on your right-most selector, and just tag or just
 `.class` on the left.
 
 ## Avoid excessive specificity.
 
-<javascript>
+```
 $('.data table.attendees td.gonzalez');
 
 // better: drop the middle if possible
 $('.data td.gonzalez');
-</javascript>
+```
 
 A "flatter" DOM also helps improve selector performance, as the selector engine
 has fewer layers to traverse when looking for an element.
@@ -59,11 +59,11 @@ has fewer layers to traverse when looking for an element.
 Selections that specify or imply that a match could be found anywhere can be
 very slow.
 
-<javascript>
+```
 $('.buttons > *');  // extremely expensive
 $('.buttons').children();  // much better
 
 $('.gender :radio');  // implied universal selection
 $('.gender *:radio'); // same thing, explicit now
 $('.gender input:radio'); // much better
-</javascript>
+```

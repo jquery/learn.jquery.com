@@ -1,6 +1,6 @@
 ---
 title:        Adding Keyboard Navigation
-attribution:  Remy Sharp 
+attribution:  Remy Sharp
 status:       needswork
 editrequired: 2
 source:       http://jqueryfordesigners.com/adding-keyboard-navigation/
@@ -34,17 +34,17 @@ Then a keyboard key is pressed the event break into three separate events, which
 
 So I’m going to use the last phase of the events and use the keyup event.
 
-<div class="example" markdown="1">
+```
 	$(document.documentElement).keyup(function (event) {
 	  // handle cursor keys
 	});
-</div>
+```
 
 Note that all event handlers in jQuery, such as click, keyup, mouseover, etc receive an event [argument](http://en.wikipedia.org/wiki/Parameter_(computer_science)) - which I’ve captured under the variable name event.
 
 The left and right key codes are 37 and 39 respectively. So we only want to action the slide if these keys are pressed, so we’ll check the keyCode property on the event - this property is [very well supported in browsers](http://www.quirksmode.org/js/keys.html):
 
-<div class="example" markdown="1">
+```
 	$(document.documentElement).keyup(function (event) {
 	  // handle cursor keys
 	  if (event.keyCode == 37) {
@@ -53,7 +53,7 @@ The left and right key codes are 37 and 39 respectively. So we only want to acti
 	    // go right
 	  }
 	});
-</div>
+```
 
 ##Triggering the Click on the Right Link
 
@@ -61,7 +61,7 @@ Triggering a click event is easy, but the problem we have to solve is finding th
 
 In some cases the current class might be on list element, which would make the navigating slightly easier, but in this case the markup looks a bit like this:
 
-<div class="example" markdown="1">
+```
 	&lt;div class="coda-slider-wrapper"&gt;
 	  &lt;ul&gt;
 	    &lt;li&gt;&lt;a class="current" href="#1"&gt;1&lt;/a&gt;&lt;/li&gt;
@@ -71,31 +71,31 @@ In some cases the current class might be on list element, which would make the n
 	    &lt;li&gt;&lt;a href="#5"&gt;5&lt;/a&gt;&lt;/li&gt;
 	  &lt;/ul&gt;
 	&lt;/div&gt;
-</div>
+```
 
 In the case above, the “next” link is #2. Currently there’s no previous available, but we’ll let jQuery handle this for us.
 
 To find the next link, first we need to grab the link that’s currently selected:
 
-<div class="example" markdown="1">
+```
 	$('.coda-slider-wrapper ul a.current')
-</div>
+```
 
 Next we need to move up the tree (to the li element) and move to the next element and then back down to the a element to trigger a click.
 
-<div class="example" markdown="1">
+```
 	$('.coda-slider-wrapper ul a.current')
 	  .parent() // moves up to the li element
 	  .next() // moves to the adjacent li element
 	  .find('a') // moves down to the link
 	  .click(); // triggers a click on the next link
-</div>
+```
 
 Since jQuery continues to allow chained methods to work even if there’s no elements found, we can also use prev() in the place of next() when current is on the first element and the code will work just fine still.
 
 Let’s plug this code in to the keyboard event handler:
 
-<div class="example" markdown="1">
+```
 	$(document.documentElement).keyup(function (event) {
 	  // handle cursor keys
 	  if (event.keyCode == 37) {
@@ -111,11 +111,11 @@ Let’s plug this code in to the keyboard event handler:
 	    $('.coda-slider-wrapper ul a.current').parent().next().find('a').click();
 	  }
 	});
-</div>
+```
 
 This code can be simplified since a lot of it is repetitive aside from the ‘next’ and ‘prev’. If you’re happy for slightly more complicated code, then use the code below, otherwise stick with the code above.
 
-<div class="example" markdown="1">
+```
 	$(document.documentElement).keyup(function (event) {
 	  var direction = null;
 
@@ -132,7 +132,7 @@ This code can be simplified since a lot of it is repetitive aside from the ‘ne
 	    $('.coda-slider-wrapper ul a.current').parent()[direction]().find('a').click();
 	  }
 	});
-</div>
+```
 
 ##Where does this all go?
 
@@ -142,15 +142,15 @@ Since we’re going in after the slider plugin is run, so it should go *directly
 
 In Mathieu’s code, he had the following:
 
-<div class="example" markdown="1">
+```
 	$().ready(function() {
 	  $('#coda-slider-1').codaSlider();
 	});
-</div>
+```
 
 Note that $().ready is the same as $(document).ready (though it’s not a style I would personally use). *Directly* after the plugin (i.e. before the });) results in the following code:
 
-<div class="example" markdown="1">
+```
 $().ready(function() {
 	$().ready(function() {
 	  $('#coda-slider-1').codaSlider();
@@ -172,7 +172,7 @@ $().ready(function() {
 	    }
 	  });
 	});
-</div>
+```
 
 You can see this all [in action in the demo](http://static.jqueryfordesigners.com/demo/keyboard-nav.html), and be sure to use the left and right keyboard cursor keys to see the demo working.
 
