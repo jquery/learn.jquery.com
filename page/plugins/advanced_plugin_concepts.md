@@ -9,7 +9,7 @@ default plugin settings. This is important because it makes it very easy for
 plugin users to override/customize the plugin with minimal code. And this is
 where we begin to take advantage of the function object.
 
-<javascript>
+```
 // plugin definition
 $.fn.hilight = function(options) {
   // Extend our default options with those provided.
@@ -23,25 +23,25 @@ $.fn.hilight.defaults = {
   foreground: 'red',
   background: 'yellow'
 };
-</javascript>
+```
 
 Now users can include a line like this in their scripts:
 
-<javascript>
+```
 // this need only be called once and does not
 // have to be called from within a 'ready' block
 $.fn.hilight.defaults.foreground = 'blue';
-</javascript>
+```
 
 And now we can call the plugin method like this and it will use a blue foreground color:
 
-<javascript>
+```
 $('#myDiv').hilight();
-</javascript>
+```
 
 As you can see, we've allowed the user to write a single line of code to alter the default foreground color of the plugin. And users can still selectively override this new default value when they want:
 
-<javascript>
+```
 // override plugin default foreground color
 $.fn.hilight.defaults.foreground = 'blue';
 // ...
@@ -52,7 +52,7 @@ $('.hilightDiv').hilight();
 $('#green').hilight({
 foreground: 'green'
 });
-</javascript>
+```
 
 ### Provide public access to secondary functions as applicable
 
@@ -62,7 +62,7 @@ implementation of our plugin may define a function called "format" which
 formats the hilight text. Our plugin may now look like this, with the default
 implementation of the format method defined below the hilight function.
 
-<javascript>
+```
 
 // plugin definition
 $.fn.hilight = function(options) {
@@ -80,7 +80,7 @@ $.fn.hilight = function(options) {
 $.fn.hilight.format = function(txt) {'
   return '<strong>' + txt + '</strong>';
 };
-</javascript>
+```
 
 We could have just as easily supported another property on the options object
 that allowed a callback function to be provided to override the default
@@ -100,11 +100,11 @@ that's where this type of extensibility is useful. The Cycle Plugin exposes a
 "transitions" object to which users can add their own custom transition
 definitions. It's defined in the plugin like this:
 
-<javascript>
+```
     $.fn.cycle.transitions = {
      // ...
     };
-</javascript>
+```
 
 This technique makes it possible for others to define and ship transition definitions that plug-in to the Cycle Plugin.
 
@@ -124,7 +124,7 @@ function will log the number of selected elements to the Firebug console. To
 create a closure, we wrap the entire plugin definition in a function (as
 detailed in the jQuery Authoring Guidelines).
 
-<javascript>
+```
 // create closure
 (function($) {
   // plugin definition
@@ -140,7 +140,7 @@ detailed in the jQuery Authoring Guidelines).
  //  ...
 // end of closure
 })(jQuery);
-</javascript>
+```
 
 Our "debug" method cannot be accessed from outside of the closure and thus is private to our implementation.
 
@@ -152,7 +152,7 @@ even more powerful. Personally, I love the Metadata Plugin because it lets you
 use unobtrusive markup to override plugin options (which is particularly useful
 when creating demos and examples). And supporting it is very simple!
 
-<javascript>
+```
 // plugin definition
 $.fn.hilight = function(options) {
   // ...  build main options before element iteration
@@ -164,7 +164,7 @@ $.fn.hilight = function(options) {
     var o = $.meta ? $.extend({}, opts, $this.data()) : opts;
 
     //...
-</javascript>
+```
 
 <div class="note" markdown="1">
 This line is added as the last argument to *jQuery.extend* so it will override
@@ -172,7 +172,7 @@ any other option settings. Now we can drive behavior from the markup if we
 choose:
 </div>
 
-<markup>
+```
 <!--  markup  -->
 <div class="hilight { background: 'red', foreground: 'white' }">
   Have a nice day!
@@ -183,19 +183,19 @@ choose:
 <div class="hilight { background: 'green' }">
   Have a nice day!
 </div>
-</markup>
+```
 
 And now we can hilight each of these divs uniquely using a single line of script:
 
-<javascript>
+```
 $('.hilight').hilight();
-</javascript>
+```
 
 ###Bob and Sue
 
 Let's say Bob has created a wicked new gallery plugin (called "superGallery") which takes a list of images and makes them navigable. Bob's thrown in some animation to make it more interesting. He's tried to make the plugin as customizable as possible, and has ended up with something like this:
 
-<javascript>
+```
 jQuery.fn.superGallery = function(options) {
   // Bob's default settings:
   var defaults = {
@@ -226,7 +226,7 @@ jQuery.fn.superGallery = function(options) {
     // ----------------------------
   });
 };
-</javascript>
+```
 
 The first thing that probably comes to your mind (ok, maybe not the first) is the prospect of how huge this plugin must be to accommodate such a level of customization. The plugin, if it weren't fictional, would probably be a lot larger than necessary. There are only so many kilobytes people will be willing to spend!
 
@@ -254,7 +254,7 @@ Developers who use your plugin shouldn't have to learn a new language or termino
 
 Bob thought he was offering maximum customization with his *delay* option (look above). He made it so that with his plugin you can specify four different delays, "quite short," "very short," "quite long," or "very long":
 
-<javascript>
+```
 var delayDuration = 0;
 switch (settings.delay) {
   case 'very short' : delayDuration = 100;
@@ -267,7 +267,7 @@ switch (settings.delay) {
   break;
   default : delayDuration = 200
 }
-</javascript>
+```
 
 Not only does this limit the level of control people have, but it takes up quite a bit of space. Twelve lines of code just to define the delaying time is a bit much, don't you think? A better way to construct this option would be to let plugin users specify the amount of time (in milliseconds) as a number, so that no processing of the option needs to take place.
 
@@ -279,7 +279,7 @@ If your plugin creates elements to be used within the DOM, then it's a good idea
 
 A bad implementation:
 
-<javascript>
+```
 // Plugin code
 $('&lt;div id="the_gallery_Wrapper" /&gt;').appendTo('body');
 $('#the_gallery_wrapper').append('...');
@@ -291,7 +291,7 @@ var $wrapper = $('&lt;div /&gt;')
                  .attr(settings.wrapperAttrs)
                  .appendTo(settings.container);
 $wrapper.append('...'); // Easy to reference later...
-</javascript>
+```
 
 Notice that we've created a reference to the injected wrapper and we're also calling the 'attr' method to add any specified attributes to the element. So, in our settings it might be handled like this:
 
@@ -309,7 +309,7 @@ Notice that we've created a reference to the injected wrapper and we're also cal
     // We can use the extend method to merge options/settings as usual:
     // But with the added first parameter of TRUE to signify a DEEP COPY:
     var settings = $.extend(true, {}, defaults, options);
-</javascript>
+```
 
 The *$.extend()* method will now recurse through all nested objects to give us a merged version of both the defaults and the passed options, giving the passed options precedence.
 
@@ -317,7 +317,7 @@ The plugin user now has the power to specify any attribute of that wrapper eleme
 
 The same model can be used to let the user define CSS styles:
 
-<javascript>
+```
     var defaults = {
 
         wrapperCSS : {},
@@ -331,7 +331,7 @@ The same model can be used to let the user define CSS styles:
                      .attr(settings.wrapperAttrs)
                      .css(settings.wrapperCSS) // ** Set CSS!
                      .appendTo(settings.container);
-</javascript>
+```
 
 Your plugin may have an associated StyleSheet where developers can add CSS styles. Even in this situation it's a good idea to offer some convenient way of setting styles in JavaScript, without having to use a selector to get at the elements.
 
@@ -341,7 +341,7 @@ Your plugin may have an associated StyleSheet where developers can add CSS style
 
 If your plugin is driven by events then it might be a good idea to provide a callback capability for each event. Plus, you can create your own custom events and then provide callbacks for those. In this gallery plugin it might make sense to add an 'onImageShow' callback.
 
-<javascript>
+```
     var defaults = {
 
         onImageShow : function(){}, // we define an empty anonymous function
@@ -366,7 +366,7 @@ If your plugin is driven by events then it might be a good idea to provide a cal
 
 Instead of initiating the callback via traditional means (adding parenthesis) we're calling it in the context of 'this' which will be a reference to the image node. This means that you have access to the actual image node through the 'this' keyword within the callback:
 
-<javascript>
+```
     $('ul.imgs li').superGallery({
 
         onImageShow : function() {
@@ -378,7 +378,7 @@ Instead of initiating the callback via traditional means (adding parenthesis) we
         // ...
 
     });
-</javascript>
+```
 
 Similarly you could add an "onImageHide" callback and numerous other ones...
 
