@@ -34,15 +34,15 @@ This process was our original code, and most of it needs to stay in place. The c
 
 So we listen for the hashchange event, just like we might listen for a click event:
 
-<div class="example" markdown="1">
+```
 $(window).bind('hashchange', function(){
 	//do some magic
 });
-</div>
+```
 
 Now we move all of the original code from the click handler in to this new event listener. I’ve copied this code in, and marked in bold which lines we’ll need to change:
 
-<div class="example" markdown="1">
+```
 $(window).bind('hashchange', function(){
 	tabContainers.hide();
 	tabContainers.filter(this.hash).show();
@@ -50,7 +50,7 @@ $('div.tabs ul.tabNavigation a').removeClass('selected');
 	$(this).addClass('selected');
 	return false;
 });
-</div>
+```
 
 At this point all the references to this need to change, because in our original version this referred to the link that had be clicked. Now we need to determine the link based on the window URL. We can get the newly navigated URL using window.location. This is an object that represents part of the URL, and as such, gives as just the hash by itself:window.location.hash. This is good.
 
@@ -60,9 +60,9 @@ Next we need to address how we can target the appropriate tab to add the selecte
 
 Since we don’t have this to target the right tab, we need to find the element using jQuery. Since we have the hash, we can use this to find the tab link. We can use the “hash” attribute selector like this:
 
-<div class="example" markdown="1">
+```
 $('a[hash=#first]')
-</div>
+```
 
 Therefore we can substitute our hash variable in to the ‘#first’ part of the selector above, and now we’ll have the right element to add the selected class.
 
@@ -74,7 +74,7 @@ Then one last change to make to our code - we need to trigger the hashchange eve
 
 Our final code looks like this:
 
-<div class="example" markdown="1">
+```
 $(function() {
 var tabContainers = $('div.tabs > div');
 tabContainers.hide().filter(':first').show();
@@ -89,6 +89,6 @@ $(window).bind('hashchange', function(){
 
 	$(window).trigger("hashchange");
 });
-</div>
+```
 
 Once last note: if we trigger the hashchange event, and there’s no hash on the URL, then we need to give it a default. In this case I’ve given it #first as a default so that it always lands on the first tab if there’s nothing pre-selected.

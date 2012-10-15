@@ -23,7 +23,7 @@ some concepts that are common to all good code organization patterns.
 - Despite jQuery's DOM-centric nature, JavaScript applications are not all
   about the DOM. Remember that not all pieces of functionality need to — or
   should — have a DOM representation.
-- Units of functionality should be [loosely coupled](http://en.wikipedia.org/wiki/Loose_coupling), that is, 
+- Units of functionality should be [loosely coupled](http://en.wikipedia.org/wiki/Loose_coupling), that is,
   a unit of functionality should be able to exist on its own, and communication between
   units should be handled via a messaging system such as custom events or
   pub/sub. Stay away from direct communication between units of functionality
@@ -45,7 +45,8 @@ doesn't offer any privacy for properties or methods, but it's useful for
 eliminating anonymous functions from your code, centralizing configuration
 options, and easing the path to reuse and refactoring.
 
-<javascript caption="An object literal">
+```
+// An object literal
     var myFeature = {
       myProperty : 'hello',
 
@@ -66,7 +67,7 @@ options, and easing the path to reuse and refactoring.
     myFeature.myMethod(); // logs 'hello'
     myFeature.init({ foo : 'bar' });
     myFeature.readSettings(); // logs { foo : 'bar' }
-</javascript>
+```
 
 The object literal above is simply an object assigned to a variable. The object
 has one property and several methods. All of the properties and methods are
@@ -77,7 +78,7 @@ be called before the object is functional.
 How would we apply this pattern to jQuery code? Let's say that we had this code
 written in the traditional jQuery style:
 
-<javascript>
+```
     // clicking on a list item loads some content
     // using the list item's ID and hides content
     // in sibling list items
@@ -97,7 +98,7 @@ written in the traditional jQuery style:
         );
       });
     });
-</javascript>
+```
 
 If this were the extent of our application, leaving it as-is would be fine. On
 the other hand, if this was a piece of a larger application, we'd do well to
@@ -106,7 +107,8 @@ want to move the URL out of the code and into a configuration area. Finally, we
 might want to break up the chain to make it easier to modify pieces of the
 functionality later.
 
-<javascript caption="Using an object literal for a jQuery feature">
+```
+// Using an object literal for a jQuery feature
     var myFeature = {
       init : function(settings) {
         myFeature.config = {
@@ -166,7 +168,7 @@ functionality later.
     };
 
     $(document).ready(myFeature.init);
-</javascript>
+```
 
 The first thing you'll notice is that this approach is obviously far longer
 than the original -- again, if this were the extent of our application, using an
@@ -194,8 +196,8 @@ The module pattern overcomes some of the limitations of the object literal,
 offering privacy for variables and functions while exposing a public API if
 desired.
 
-<javascript caption="The module pattern">
-
+```
+// The module pattern
     var feature =(function() {
 
     // private variables and functions
@@ -224,7 +226,7 @@ desired.
     feature.sayPrivateThing();
     // logs 'secret' and changes the value
     // of privateThing
-</javascript>
+```
 
 In the example above, we self-execute an anonymous function that returns an
 object. Inside of the function, we define some variables. Because the variables
@@ -243,7 +245,8 @@ Below is a revised version of the previous example, showing how we could create
 the same feature using the module pattern while only exposing one public method
 of the module, `showItemByIndex()`.
 
-<javascript caption="Using the module pattern for a jQuery feature">
+```
+// Using the module pattern for a jQuery feature
     $(document).ready(function() {
       var feature = (function() {
         var $items = $('#myFeature li'),
@@ -297,4 +300,4 @@ of the module, `showItemByIndex()`.
 
       feature.showItemByIndex(0);
     });
-</javascript>
+```
