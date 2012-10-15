@@ -6,9 +6,9 @@ level: beginner
 Until now, we’ve been dealing entirely with methods that are called on a jQuery
 object. For example:
 
-<javascript>
+```
 $('h1').remove();
-</javascript>
+```
 
 Most jQuery methods are called on jQuery objects as shown above; these methods
 are said to be part of the `$.fn` namespace, or the “jQuery prototype,” and are

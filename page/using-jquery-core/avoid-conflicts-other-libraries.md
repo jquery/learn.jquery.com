@@ -11,18 +11,20 @@ before you attempt to use jQuery in your page.
 When you put jQuery into no-conflict mode, you have the option of assigning a
 variable name to replace `$`.
 
-<markup caption="Putting jQuery into no-conflict mode">
-    <script src="prototype.js"></script>
-    <script src="jquery.js"></script>
-    <script>var $j = jQuery.noConflict();</script>
-</markup>
+```
+<!-- Putting jQuery into no-conflict mode -->
+<script src="prototype.js"></script>
+<script src="jquery.js"></script>
+<script>var $j = jQuery.noConflict();</script>
+```
 
 You can continue to use the standard $ by wrapping your code in a
 self-executing anonymous function; this is a standard pattern for plugin
 authoring, where the author cannot know whether another library will have taken
 over the `$`.
 
-<markup caption="Using the $ inside an immediately-invoked function expression">
+```
+<!-- Using the $ inside an immediately-invoked function expression -->
 <script src="prototype.js"></script>
 <script src="jquery.js"></script>
 <script>
@@ -32,4 +34,4 @@ jQuery.noConflict();
    // your code here, using the $
 })(jQuery);
 </script>
-</markup>
+```
