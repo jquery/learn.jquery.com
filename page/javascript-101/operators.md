@@ -4,19 +4,22 @@ attribution:  jQuery Fundamentals
 ---
 Basic operators allow you to manipulate values.
 
-<javascript caption="Concatenation">
+``` js
+// Concatenation
 var foo = 'hello';
 var bar = 'world';
 console.log(foo + ' ' + bar); // 'hello world'
-</javascript>
+```
 
-<javascript caption="Multiplication and division">
+``` js
+// Multiplication and division
 2 * 3;
 2 / 3;
-</javascript>
+```
 
-<javascript caption="Incrementing and decrementing">
-The pre-increment operator increments the operand before any further processing.
+``` js
+// Incrementing and decrementing
+// The pre-increment operator increments the operand before any further processing.
 // pre-increment
 var i = 1;
 console.log(++i); // => 2
@@ -27,41 +30,45 @@ The post-increment operator increments the operand after processing it.
 var i = 1;
 console.log(i++); // => 1. This is because i was processed first
 console.log(i); // => 2. This is because the operand was incremented after processing in the previous step.
-</javascript>
+```
 
 ## Operations on Numbers & Strings
 
 In JavaScript, numbers and strings will occasionally behave in ways you might
 not expect.
 
-<javascript caption="Addition vs. Concatenation">
+``` js
+// Addition vs. Concatenation
 var foo = 1;
 var bar = '2';
 console.log(foo + bar);  // 12. uh oh
-</javascript>
+```
 
-<javascript caption="Forcing a string to act as a number">
+``` js
+// Forcing a string to act as a number
 var foo = 1;
 var bar = '2';
 
 // coerce the string to a number
 console.log(foo + Number(bar));
-</javascript>
+```
 
 The Number constructor, when called as a function (like above) will have the
 effect of casting its argument into a number. You could also use the unary plus
 operator, which does the same thing:
 
-<javascript caption="Forcing a string to act as a number (using the unary-plus operator)">
+``` js
+// Forcing a string to act as a number (using the unary-plus operator)
 console.log(foo + +bar);
-</javascript>
+```
 
 ## Logical Operators
 
 Logical operators allow you to evaluate a series of operands using AND and OR
 operations.
 
-<javascript caption="Logical AND and OR operators">
+``` js
+// Logical AND and OR operators
 var foo = 1;
 var bar = 0;
 var baz = 2;
@@ -72,7 +79,7 @@ bar || foo;   // returns 1, which is true
 foo && bar;   // returns 0, which is false
 foo && baz;   // returns 2, which is true
 baz && foo;   // returns 1, which is true
-</javascript>
+```
 
 Though it may not be clear from the example, the `||` operator returns the value
 of the first truthy operand, or, in cases where neither operand is truthy,
@@ -83,7 +90,7 @@ truthy.
 Be sure to see the section called “Truthy and Falsy Things” for more
 details on which values evaluate to true and which evaluate to false.
 
-<div class="note" markdown="1">
+<div class="note">
 You'll sometimes see developers use these logical operators for flow control
 instead of using if statements. For example:
 
@@ -106,7 +113,8 @@ comfortable with what it means and how you can expect it to behave.
 Comparison operators allow you to test whether values are equivalent or whether
 values are identical.
 
-<javascript caption="Comparison operators">
+``` js
+// Comparison operators
 var foo = 1;
 var bar = 0;
 var baz = '1';
@@ -123,4 +131,4 @@ foo === parseInt(baz);   // returns true
 foo > bim;    // returns false
 bim > baz;    // returns true
 foo <= baz;   // returns true
-</javascript>
+```

@@ -5,7 +5,7 @@ attribution:  jQuery Fundamentals
 
 Closures are an extension of the concept of scope -- functions have access to
 variables that were available in the scope where the function was created. If
-that’s confusing, don’t worry: closures are generally best understood by
+thats confusing, don’t worry: closures are generally best understood by
 example.
 
 In the functions section, we saw how functions have access to changing
@@ -14,55 +14,58 @@ loops -- the function "sees" the change in the variable's value even after the
 function is defined, resulting in each function referencing the last value stored 
 in the variable.
 
-<javascript caption="Each function executed within the loop will reference the last value stored in i (5)">
-    // this won't behave as we want it to;
-    // every 100 milliseconds, 5 will alert
-    for (var i=0; i<5; i++) {
-      setTimeout(function() {
-        alert(i);
-      }, i*100);
-    }
-</javascript>
+``` js
+// Each function executed within the loop will reference the last value stored in i (5)
+// this won't behave as we want it to;
+// every 100 milliseconds, 5 will alert
+for (var i=0; i<5; i++) {
+  setTimeout(function() {
+    alert(i);
+  }, i*100);
+}
+```
 
 Closures can be used to prevent this by creating a unique scope for
 each iteration -- storing each unique value of the variable within it's scope.
 
-<javascript caption="Using a closure to create a new private scope">
-    /* fix: “close” the value of i inside createFunction, so it won't change */
-    var createFunction = function(i) {
-      return function() { alert(i); };
-    };
+``` js
+// Using a closure to create a new private scope
+/* fix: “close” the value of i inside createFunction, so it won't change */
+var createFunction = function(i) {
+  return function() { alert(i); };
+};
 
-    for (var i=0; i<5; i++) {
-      setTimeout( createFunction(i), i*100 );
-    }
-</javascript>
+for (var i=0; i<5; i++) {
+  setTimeout( createFunction(i), i*100 );
+}
+```
 
 Closures can also be used to resolve issues with the this keyword, which is
 unique to each scope:
 
-<javascript caption="Using a closure to access inner and outer object instances simultaneously">
-    var outerObj = {
-        myName : 'outer',
-        outerFunction : function () {
-          // provide a reference to outerObj through innerFunction's closure
-          var self = this;
+``` js
+//Using a closure to access inner and outer object instances simultaneously">
+var outerObj = {
+    myName : 'outer',
+    outerFunction : function () {
+      // provide a reference to outerObj through innerFunction's closure
+      var self = this;
 
-          var innerObj = {
-            myName : 'inner',
-            innerFunction : function () {
-              console.log(self.myName, this.myName); // logs 'outer inner'
-            }
-          };
-
-          innerObj.innerFunction();
-
-          console.log(this.myName); // logs 'outer'
+      var innerObj = {
+        myName : 'inner',
+        innerFunction : function () {
+          console.log(self.myName, this.myName); // logs 'outer inner'
         }
-    };
+      };
 
-    outerObj.outerFunction();
-</javascript>
+      innerObj.innerFunction();
+
+      console.log(this.myName); // logs 'outer'
+    }
+};
+
+outerObj.outerFunction();
+```
 
 This mechanism can be particularly useful when dealing with callbacks, though
 in those cases, it is often better to use `Function.bind`, which will avoid any
@@ -80,7 +83,7 @@ possible to work around support by using the following shim, which whilst a part
 implementation only, may be sufficient as a temporary bridge until `bind` is widely 
 adopted according to the specification.
 
-<javascript>
+```
 // Shim from https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function/bind
 if (!Function.prototype.bind) {
   Function.prototype.bind = function (oThis) {
@@ -105,7 +108,8 @@ if (!Function.prototype.bind) {
 
     return fBound;
   };
-}</javascript>
+}
+```
 
 One of the simplest uses of `bind` is making a function, which regardless of how it's 
 called, is called with a particular value for `this`. A common mistake made is 
@@ -113,7 +117,7 @@ attempting to extract a method from an object, then later calling that function 
 expecting it to the use the origin object as it's `this`. This however can be solved 
 by creating a bound function using the original object as demonstrated below.
 
-<javascript>
+```
   //lets manipulate "this" with a basic example
   var user = "johnsmith",
       module = {
@@ -140,4 +144,4 @@ by creating a bound function using the original object as demonstrated below.
   //boundGetUser() called, "module" is "this" again, "module.user" returned.
   boundGetUser();
   //janedoe
-</javascript>
+```

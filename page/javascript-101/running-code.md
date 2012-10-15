@@ -12,6 +12,7 @@ The first and recommended option is to write our code in an external file (with 
 // Saved in example.js.
 alert('Hello World!');
 ```
+
 ``` html
 <!--Code is then included via the script tag src attribute.-->
 <script src="/path/to/example.js"></script>
@@ -31,8 +32,8 @@ The second option is to inline the code directly on the web page. This is also a
 
 The last and strongly discouraged option, is to utilize the event handler attributes of HTML attributes.
 
-``` js
-Inline code directly on HTML elements being clicked.
+``` html
+<!--Inline code directly on HTML elements being clicked.-->
 <a href="javascript:alert('Hello World!');">Click Me!</a>
 <button onClick="alert('Good Bye World');">Click Me Too!</a>
 ```

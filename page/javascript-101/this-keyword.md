@@ -20,7 +20,8 @@ of steps:
 - Otherwise, the function is being invoked as a standalone function not
   attached to any object, and `this` will refer to the global object.
 
-<javascript caption="A function invoked using Function.call">
+``` js
+// A function invoked using Function.call
 var myObject = {
   sayHello : function() {
     console.log('Hi! My name is ' + this.myName);
@@ -35,9 +36,10 @@ var secondObject = {
 
 myObject.sayHello();                  // logs 'Hi! My name is Rebecca'
 myObject.sayHello.call(secondObject); // logs 'Hi! My name is Colin'
-</javascript>
+```
 
-<javascript caption="A function created using Function.bind">
+``` js
+// A function created using Function.bind
 var myName = 'the global object',
 
     sayHello = function () {
@@ -52,9 +54,10 @@ var myObjectHello = sayHello.bind(myObject);
 
 sayHello();       // logs 'Hi! My name is the global object'
 myObjectHello();  // logs 'Hi! My name is Rebecca'
-</javascript>
+```
 
-<javascript caption="A function being attached to an object at runtime">
+``` js
+// A function being attached to an object at runtime
     var myName = 'the global object',
 
         sayHello = function() {
@@ -75,9 +78,9 @@ myObjectHello();  // logs 'Hi! My name is Rebecca'
     sayHello();               // logs 'Hi! My name is the global object'
     myObject.sayHello();      // logs 'Hi! My name is Rebecca'
     secondObject.sayHello();  // logs 'Hi! My name is Colin'
-</javascript>
+```
 
-<div class="note" markdown="1">
+<div class="note">
 When invoking a function deep within a long namespace, it is often tempting to
 reduce the amount of code you need to type by storing a reference to the actual
 function as a single, shorter variable. It is important not to do this with
@@ -85,7 +88,7 @@ instance methods as this will cause the value of `this` within the function to
 change, leading to incorrect code operation. For instance:
 </div>
 
-<javascript>
+``` js
 var myNamespace = {
     myObject : {
       sayHello : function() {
@@ -99,14 +102,14 @@ var myNamespace = {
 var hello = myNamespace.myObject.sayHello;
 
 hello();  // logs 'Hi! My name is undefined'
-</javascript>
+```
 
 
-<div class="note" markdown="1">
+<div class="note">
 You can, however, safely reduce everything up to the object on which the method is invoked:
 </div>
 
-<javascript>
+```
 var myNamespace = {
     myObject : {
       sayHello : function() {
@@ -120,4 +123,4 @@ var myNamespace = {
 var obj = myNamespace.myObject;
 
 obj.sayHello();  // logs 'Hi! My name is Rebecca'
-</javascript>
+```
