@@ -23,7 +23,8 @@ documentation of the configuration options, visit
 [http://api.jquery.com/jQuery.ajax/](http://api.jquery.com/jQuery.ajax/ "$.ajax
 documentation on api.jquery.com").
 
-<javascript caption="Using the core `$.ajax` method">
+```
+// Using the core `$.ajax` method
 $.ajax({
     // the URL for the request
     url : 'post.php',
@@ -58,9 +59,9 @@ $.ajax({
         alert('The request is complete!');
     }
 });
-</javascript>
+```
 
-<div class="note" markdown="1">
+<div class="note" >
 ### Note
 
 A note about the dataType setting: if the server sends back data that is in a
@@ -191,7 +192,7 @@ The URL for the request. Required.
 The data to be sent to the server. Optional. This can either be an object or a
 query string, such as `foo=bar&amp;baz=bim`.
 
-<div class="note" markdown="1">
+<div class="note">
 ### Note
 
 This option is not valid for `$.getScript`.
@@ -208,13 +209,14 @@ object.
 
 The type of data you expect back from the server. Optional.
 
-<div class="note" markdown="1">
+<div class="note">
 ### Note
 
 This option is only applicable for methods that don't already specify the data
 type in their name.  </div>
 
-<javascript caption="Using jQuery's Ajax convenience methods">
+```
+// Using jQuery's Ajax convenience methods
 // get plain text or html
 $.get('/users.php', { userId : 1234 }, function(resp) {
   console.log(resp);
@@ -231,7 +233,7 @@ $.getJSON('/details.php', function(resp) {
     console.log(k + ' : ' + v);
   });
 });
-</javascript>
+```
 
 ### `$.fn.load`
 
@@ -241,12 +243,14 @@ uses the returned HTML to populate the selected element(s).  In addition to
 providing a URL to the method, you can optionally provide a selector; jQuery
 will fetch only the matching content from the returned HTML.
 
-<javascript caption="Using `$.fn.load` to populate an element">
+```
+// Using `$.fn.load` to populate an element
 $('#newContent').load('/foo.html');
-</javascript>
+```
 
-<javascript caption="Using `$.fn.load` to populate an element based on a selector">
+```
+// Using `$.fn.load` to populate an element based on a selector
 $('#newContent').load('/foo.html #myDiv h1:first', function(html) {
   alert('Content updated!');
 });
-</javascript>
+```

@@ -46,7 +46,7 @@ For adding a new script to the page
 
 For transporting JSON-formatted data, which can include strings, arrays, and objects
 
-<div class="note" markdown="1">
+<div class="note">
 ### Note
 
 As of jQuery 1.4, if the JSON data sent by your server isn't properly
@@ -74,19 +74,19 @@ Ajax calls are asynchronous by default, the response is not immediately
 available.  Responses can only be handled using a callback.  So, for example,
 the following code will not work:
 
-<javascript>
+```
     var response;
     $.get('foo.php', function(r) { response = r; });
     console.log(response); // undefined!
-</javascript>
+```
 
 Instead, we need to pass a callback function to our request; this callback will
 run when the request succeeds, at which point we can access the data that it
 returned, if any.
 
-<javascript>
+```
     $.get('foo.php', function(response) { console.log(response); });
-</javascript>
+```
 
 ### Same-Origin Policy and JSONP
 
