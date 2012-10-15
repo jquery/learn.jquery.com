@@ -26,20 +26,19 @@ method is available, and is the preferred method.
 </div>
 
 ```
-//Event delegation using `$.fn.delegate`
-
-    $('#myUnorderedList').delegate('li', 'click', function(e) {
-        var $myListItem = $(this);
-        // ...
-    });
+// Event delegation using `$.fn.delegate`
+$('#myUnorderedList').delegate('li', 'click', function(e) {
+  var $myListItem = $(this);
+  // ...
+});
 ```
 
 ```
-//Event delegation using `$.fn.live`
-    $('#myUnorderedList li').live('click', function(e) {
-        var $myListItem = $(this);
-        // ...
-    });
+// Event delegation using `$.fn.live`
+$('#myUnorderedList li').live('click', function(e) {
+  var $myListItem = $(this);
+  // ...
+});
 ```
 
 ### Unbinding Delegated Events
@@ -49,7 +48,7 @@ use `$.fn.undelegate` for events connected with `$.fn.delegate`, and `$.fn.die`
 for events connected with `$.fn.live`.  As with bind, you can optionally pass
 in the name of the bound function.
 ```
-//Unbinding delegated events
-    $('#myUnorderedList').undelegate('li', 'click');
-    $('#myUnorderedList li').die('click');
+// Unbinding delegated events
+$('#myUnorderedList').undelegate('li', 'click');
+$('#myUnorderedList li').die('click');
 ```
