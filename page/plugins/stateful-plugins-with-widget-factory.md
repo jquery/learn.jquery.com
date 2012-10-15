@@ -25,7 +25,7 @@ This is different from a standard jQuery plugin in two important ways.
 First, the context is an object, not a DOM element. 
 Second, the context is always a single object, never a collection.
 
-<div class="example" markdown="1">
+```
 A simple, stateful plugin using the jQuery UI widget factory
 
     $.widget("nmk.progressbar", {
@@ -36,7 +36,7 @@ A simple, stateful plugin using the jQuery UI widget factory
                .text(progress);
         }
     });
-</div>
+```
 
 The name of the plugin must contain a namespace; in this case we’ve used the `nmk` namespace. 
 There is a limitation that namespaces be exactly one level deep — that is, we can't use a namespace like `nmk.foo`. 
@@ -52,13 +52,13 @@ In our example we use the `nmk` namespace. The `ui` namespace is reserved for of
 This makes it clear where the plugin came from and whether it is part of a larger collection.
 </div>
 
-<div class="example" markdown="1">
+```
 Passing options to a widget
 
     $("&lt;div>&lt;/div>")
         .appendTo( "body" )
         .progressbar({ value: 20 });
-</div>
+```
 
 When we call `jQuery.widget `it extends jQuery by adding a method to `jQuery.fn` (the same way we'd create a standard plugin). 
 The name of the function it adds is based on the name you pass to `jQuery.widget`, without the namespace; in our case it will create `jQuery.fn.progressbar`. 
@@ -66,7 +66,7 @@ The options passed to our plugin get set in `this.options` inside of our plugin 
 As shown below, we can specify default values for any of our options. 
 When designing your API, you should figure out the most common use case for your plugin so that you can set appropriate default values and make all options truly optional.
 
-<div class="example" markdown="1">
+```
 Setting default options for a widget
 
     $.widget("nmk.progressbar", {
@@ -82,7 +82,7 @@ Setting default options for a widget
                 .text( progress );
         }
     });
-</div>
+```
 
 ### Adding Methods to a Widget
 
@@ -90,7 +90,7 @@ Now that we can initialize our progress bar, we’ll add the ability to perform 
 To define a plugin method, we just include the function in the object literal that we pass to `jQuery.widget`. 
 We can also define “private” methods by prepending an underscore to the function name.
 
-<div class="example" markdown="1">
+```
 Creating widget methods
 
     $.widget("nmk.progressbar", {
@@ -129,11 +129,11 @@ Creating widget methods
             return value;
         }
     });
-</div>
+```
 
 To call a method on a plugin instance, you pass the name of the method to the jQuery plugin. If you are calling a method that accepts parameters, you simply pass those parameters after the method name.
 
-<div class="example" markdown="1">
+```
 Calling methods on a plugin instance
 
     var bar = $("&lt;div>&lt;/div>")
@@ -148,7 +148,7 @@ Calling methods on a plugin instance
     
     // get the current value again
     alert(bar.progressbar("value"));
-</div>
+```
 
 <div class="note" markdown="1">
 ### Note
@@ -165,7 +165,7 @@ When used as a getter, the plugin will return the current value of the option th
 When used as a setter, the plugin’s `_setOption` method will be called for each option that is being set. 
 We can specify a `_setOption` method in our plugin to react to option changes.
 
-<div class="example" markdown="1">
+```
 Responding when an option is set
 
     $.widget("nmk.progressbar", {
@@ -188,7 +188,7 @@ Responding when an option is set
             this.element.text(progress);
         }
     });
-</div>
+```
 
 ### Adding Callbacks
 
@@ -204,7 +204,7 @@ pass the native mousemove event when triggering a drag callback; this would
 allow users to react to the drag based on the x/y coordinates provided by the 
 event object.
 
-<div class="example" markdown="1">
+```
 Providing callbacks for user extension
 
     $.widget("nmk.progressbar", {
@@ -230,7 +230,7 @@ Providing callbacks for user extension
             }
         }
     });
-</div>
+```
 
 Callback functions are essentially just additional options, so you can get and 
 set them just like any other option. Whenever a callback is executed, a 
@@ -246,7 +246,7 @@ event: by calling `event.preventDefault()` or using `return false`. If the user
 cancels the callback, the `_trigger` method will return false so you can 
 implement the appropriate functionality within your plugin.
 
-<div class="example" markdown="1">
+```
 Binding to widget events
 
     var bar = $("<div></div>")
@@ -262,7 +262,7 @@ Binding to widget events
         });
     
     bar.progressbar("option", "value", 100);
-</div>
+```
 
 ### The Widget Factory: Under the Hood
 
@@ -270,7 +270,7 @@ When you call jQuery.widget, it creates a constructor function for your plugin a
 
 Because the plugin instance is directly linked to the DOM element, you can access the plugin instance directly instead of going through the exposed plugin method if you want. This will allow you to call methods directly on the plugin instance instead of passing method names as strings and will also give you direct access to the plugin’s properties.
 
-<div class="example" markdown="1">
+```
     var bar = $("<div></div>")
         .appendTo("body")
         .progressbar()
@@ -281,7 +281,7 @@ Because the plugin instance is directly linked to the DOM element, you can acces
     
     // access properties on the plugin instance
     alert(bar.options.value);
-</div>
+```
 
 One of the biggest benefits of having a constructor and prototype for a plugin 
 is the ease of extending the plugin. By adding or modifying methods on the 
@@ -290,11 +290,11 @@ For example, if we wanted to add a method to our progress bar to reset the
 progress to 0% we could add this method to the prototype and it would instantly 
 be available to be called on any plugin instance.
 
-<div class="example" markdown="1">
+```
     $.nmk.progressbar.prototype.reset = function() {
         this._setOption("value", 0);
     };
-</div>
+```
 
 ### Cleaning Up
 
@@ -307,7 +307,7 @@ can be used for garbage collection as well. The default `destroy` method removes
 the link between the DOM element and the plugin instance, so it’s important to 
 call the base function from your plugin’s `destroy` method.
 
-<div class="example" markdown="1">
+```
 Adding a destroy method to a widget
 
     $.widget( "nmk.progressbar", {
@@ -342,7 +342,7 @@ Adding a destroy method to a widget
             $.Widget.prototype.destroy.call(this);
         }
     });
-</div>
+```
 
 ### Conclusion
 

@@ -10,9 +10,9 @@ In this case, you may want to write a plugin.
 
 Before we write our own plugins, we must first understand a little about how jQuery works. Take a look at this code:
 
-<javascript>
+```
 $('a').css('color','red');
-</javascript> 
+``` 
 
 This is some pretty basic jQuery code, but do you know what's happening behind the scenes? Whenever you use the `$` function to select elements, it returns an object. This object contains all of the methods you've been using (`css()`, `click()`, etc.), and all of the elements that fit your selector. The `$` function gets the methods from the `$.fn` object. This object contains all of the jQuery methods, and If we want to write our own methods, it will need to contain those as well.
 
@@ -20,13 +20,13 @@ This is some pretty basic jQuery code, but do you know what's happening behind t
 
 Let's say we want to create a plugin that makes text green. All we have to do is add a function called `greenify` to `$.fn` and it will available just like any other method.
 
-<javascript>
+```
 $.fn.greenify = function () {
   this.css('color','green');
 }
 
 $('a').greenify();  // makes all the links green
-</javascript>
+```
 
 Notice that to use `css()`, another method, we use `this`, not `$(this)`. This is because our `greenify` function is a part of the same object as `css()`.
 
@@ -34,31 +34,31 @@ Notice that to use `css()`, another method, we use `this`, not `$(this)`. This i
 
 This works, but there's a couple of things we need to do for our plugin to survive in the real world. One of jQuery's features is chaining, when you link five or six actions onto one selector. This is accomplished by having all jQuery methods return the original jQuery object again (there are a few exeptions: `width()` called without parameters returns the width of the selected element, and is not chainable). Making our plugin chainable takes one line of code:
 
-<javascript>
+```
 $.fn.greenify = function () {
   this.css('color','green');
   return this;
 }
 
 $('a').greenify().addClass('greenified');
-</javascript>
+```
 
 ##Adding scope
 
 The `$` variable is very popular among javascript libraries, and if you're using one with jQuery, you will have to make jQuery not use the `$` with `jQuery.noConflict()`. However, this will break our plugin. To work well with other plugins, _and_ still use the jQuery `$` variable, we need to put all of our code inside of an [Immediately Invoked Function Expression](http://stage.learn.jquery.com/javascript-101/functions/#immediately-invoked-function-expression), and then pass the function `jQuery`, and name the parameter `$`:
 
-<javascript>
+```
 (function ($) {
   $.fn.greenify = function () {
     this.css('color','green');
     return this;
   }
 }(jQuery));
-</javascript>
+```
 
 In addition, the primary purpose of an Immediately Invoked Function is to allow us to have our own private variables. Pretend we want a different color green, and we want to store it in a variable.
 
-<javascript> 
+``` 
 (function ($) {
   var shade = '#556B2F';
 
@@ -67,13 +67,13 @@ In addition, the primary purpose of an Immediately Invoked Function is to allow 
     return this;
   }
 }(jQuery));
-</javascript>
+```
 
 ##Minimizing Plugin Footprint
 
 It's good practice when writing plugins to only take up one slot within `$.fn`. This reduces both the chance that your plugin will be overriden, and the chance that your plugin will override other plugins. In other words, this is bad:
 
-<javascript>
+```
 (function ($) {
   $.fn.openPopup = function () {
     // Open popup code
@@ -84,11 +84,11 @@ It's good practice when writing plugins to only take up one slot within `$.fn`. 
   };
 
 }(jQuery));
-</javascript>
+```
 
 It would be much better to have one slot, and use parameters to control what action that one slot performs.
 
-<javascript>
+```
 (function ($) {
   $.fn.popup = function (action) {
     if( action === 'open') {
@@ -99,7 +99,7 @@ It would be much better to have one slot, and use parameters to control what act
 
   };
 }(jQuery));
-</javascript>
+```
 
 ##Using the each() method
 
@@ -109,13 +109,13 @@ If you want to do any manipulating with specific elements (eg: getting data an
 attribute, calculating specific positions) then you need to use `each()` to 
 loop through the elements.
 
-<javascript>
+```
 $.fn.myNewPlugin = function() {
   return this.each(function(){
     // do something to each element here
   });
 };
-</javascript>
+```
 
 Notice that we return the results of `each()` instead of returning `this`. 
 Since `each()` is already chainable, it returns `this`, which we then return. 
@@ -128,7 +128,7 @@ customizable by accepting options. The easiest way do this, especially if there
 are lots of options, is with an object literal. Let's change our greenify plugin to 
 accept some options.
 
-<javascript>
+```
 (function ($) {
   $.greenify = function (options) {
     // This is the easiest way to have default options.
@@ -144,15 +144,15 @@ accept some options.
     });
   };
 }(jQuery));
-</javascript>
+```
 
 Example usage:
 
-<javascript>
+```
 $('div').greenify({
   'color': 'orange'
 });
-</javascript>
+```
 
 The default value for `color` of `#556B2F` gets overriden by `$.extend` to be orange.
 
@@ -161,7 +161,7 @@ The default value for `color` of `#556B2F` gets overriden by `$.extend` to be or
 Here's an example of a small plugin using some of the techniques
 we've discussed:
 
-<javascript>
+```
 (function($){
   $.fn.showLinkLocation = function() {
     return this.filter('a').each(function(){
@@ -172,22 +172,22 @@ we've discussed:
 
  // Usage example:
  $('a').showLinkLocation();
-</javascript>
+```
 
 This handy plugin goes through all anchors in the collection and appends the
 href attribute in brackets.
 
-<markup>
+```
 <!-- Before plugin is called: -->
 <a href="page.html">Foo</a>
 
 <!-- After plugin is called: -->
 <a href="page.html">Foo (page.html)</a>
-</markup>
+```
 
 Our plugin can be optimized though:
 
-<javascript>
+```
 (function($){
   $.fn.showLinkLocation = function() {
     return this.filter('a').append(function(){
@@ -195,7 +195,7 @@ Our plugin can be optimized though:
     });
   };
 }(jQuery));
-</javascript>
+```
 
 We're using the `append` method's capability to accept a callback, and the
 return value of that callback will determine what is appended to each element
