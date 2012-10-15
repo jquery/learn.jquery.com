@@ -1,6 +1,6 @@
 ---
 title:        Working with Events, part 1
-attribution:  Karl Swedberg 
+attribution:  Karl Swedberg
 status:       needswork
 editrequired: 2
 source:       http://www.learningjquery.com/2008/03/working-with-events-part-1
@@ -37,13 +37,13 @@ class="alert">Alert!</button>` in our document, and we want to attach
 a click handler to it that generates an alert message. In jQuery, we might do
 so with the following code:
 
-<javascript>
+```
     $(document).ready(function() {
       $('button.alert').click(function() {
         alert('this is an alert message');
       });
     });
-</javascript>
+```
 
 Here we are registering the click handler for the button with a class of
 "alert" as soon as the DOM has loaded. So, the button is there, and we have a
@@ -54,20 +54,20 @@ button will not generate an alert.
 
 Let's test what we've just discussed. I've added a script with the above three
 lines of jQuery code so that the following button will produce an alert message
-when clicked. 
+when clicked.
 
 ##Events Don't Work with Added Elements
 
 Now, let's create a new button (if we don't already have a second one) using jQuery code like this:
 
-<javascript>
+```
     $('#create-button').click(function() {
       if ( $('button.alert').length <2) {
         $('<button class="alert">Not another alert').insertAfter(this);
       }
       return false;
     });
-</javascript>
+```
 
 Have you clicked the link to create the second button? Great. Now click that button. It does nothing. Just as expected.
 
@@ -75,13 +75,13 @@ Have you clicked the link to create the second button? Great. Now click that but
 
 Now let's take a look at another example. In this one, we have three list items—two plain items and one with a class of special:
 
-<markup>
+```
 <ul id="list1" class="eventlist">
   <li>plain</li>
   <li class="special">special <button>I am special</button>&lt/li>
   <li>plain</li>
 </ul>
-</markup>
+```
 
 Press the "I am special" button to create a new list item with a class of "special":
 
@@ -93,14 +93,14 @@ item with a class of "special" (which itself is inside an element with id of
 "list1") a new list item with class="special" should be inserted after the list
 item in which the button was clicked:
 
-<javascript>
+```
     $(document).ready(function() {
       $('#list1 li.special button').click(function() {
         var $newLi = $('<li class="special">special and new <button>I am new</button></li>');
         $(this).parent().after($newLi);
       });
     });
-</javascript>
+```
 
 So, how can we get the events to carry over to the new elements? Two common
 approaches are event delegation and "re-binding" event handlers. In this entry,
@@ -126,13 +126,13 @@ this argument event. We can call it `e` or `evt` or `gummy` or whatever we want.
 just like to use labels that are as obvious as possible because I have a hard
 time keeping track of things. Here is what we have so far:
 
-<javascript>
+```
     $(document).ready(function() {
       $('#list2').click(function(event) {
         var $newLi = $('<li class="special">special and new <button>I am new</button></li>');
       });
     });
-</javascript>
+```
 
 So far, the code is very similar to our first attempt, except for the selector
 we're starting with (#list2) and the addition of the event argument. Now we
@@ -141,25 +141,25 @@ need to determine whether what is being clicked inside the `<ul>` is a
 We check the clicked element by using the "target" property of the event
 argument:
 
-<div class="example" markdown="1">
-    $(document).ready(function() {  
+```
+    $(document).ready(function() {
       $('#list2').click(function(event) {
         var $newLi = $('<li class="special">special and new <button>I am new</button></li>');
         var $tgt = $(event.target);
         if ($tgt.is('button')) {
           $tgt.parent().after($newLi);
         }
-     
+
         // next 2 lines show that you've clicked on the ul
         var bgc = $(this).css('backgroundColor');
         $(this).css({backgroundColor: bgc == '#ffcccc' || bgc == 'rgb(255, 204, 204)' ? '#ccccff' : '#ffcccc'});
       });
     });
-</div>
+```
 
 Line 4 above puts the target element in a jQuery wrapper and stores it in the
 $tgt variable. Line 5 checks whether the click's target is a button. If it is,
-the new list item is inserted after the parent of the clicked button. 
+the new list item is inserted after the parent of the clicked button.
 
 I put an additional two lines at the end to demonstrate that a click on one of
 the buttons is still considered a click on the `<ul>` You'll see that
@@ -170,7 +170,7 @@ It's probably worth noting that jQuery makes working with the event argument
 cross-browser friendly. If you do this sort of thing with plain JavaScript and
 DOM nodes, you'd have to do something like this:
 
-<javascript>
+```
 var list2 = document.getElementById('list2');
 list2.onclick = function(e) {
   var e = e || window.event;
@@ -179,7 +179,7 @@ list2.onclick = function(e) {
     // do something
   }
 };
-</javascript>
+```
 
 As you can see, it's a bit of a hassle.
 
@@ -193,7 +193,7 @@ one, you won't want to attach a click handler to every single one of them
 single table element and use event.target to pinpoint the cell that is being
 clicked:
 
-<javascript>
+```
     $(document).ready(function() {
       $('table').click(function(event) {
         var $thisCell, $tgt = $(event.target);
@@ -205,7 +205,7 @@ clicked:
         // now do something with $thisCell
       });
     });
-</javascript>
+```
 
 <div class="note" markdown="1"> I had to account for the possibility of
 clicking in a child/descendant of a table cell, but this seems a small

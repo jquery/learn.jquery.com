@@ -25,7 +25,7 @@ Why should you care? An example is probably the best way to explain. Suppose
 you have a lightbulb in a room in a house. The lightbulb is currently turned
 on, and it’s controlled by two three-way switches and a clapper:
 
-<markup>
+```
 <div class="example" markdown="1">
     <div class="room" id="kitchen">
         <div class="lightbulb on"></div>
@@ -34,7 +34,7 @@ on, and it’s controlled by two three-way switches and a clapper:
         <div class="clapper"></div>
     </div>
 </div>
-</markup>
+```
 
 Triggering the clapper or either of the switches will change the state of the
 lightbulb. The switches and the clapper don’t care what state the lightbulb is
@@ -42,7 +42,7 @@ in; they just want to change the state.
 
 Without custom events, you might write some code like this:
 
-<javascript>
+```
     $('.switch, .clapper').click(function() {
         var $light = $(this).parent().find('.lightbulb');
         if ($light.hasClass('on')) {
@@ -51,11 +51,11 @@ Without custom events, you might write some code like this:
            $light.removeClass('off').addClass('on');
         }
     });
-</javascript>
+```
 
 With custom events, your code might look more like this:
 
-<javascript>
+```
     $('.lightbulb').bind('changeState', function(e) {
         var $light = $(this);
         if ($light.hasClass('on')) {
@@ -68,13 +68,13 @@ With custom events, your code might look more like this:
     $('.switch, .clapper').click(function() {
         $(this).parent().find('.lightbulb').trigger('changeState');
     });
-</javascript>
+```
 
 This last bit of code is not that exciting, but something important has happened: we’ve moved the behavior of the lightbulb to the lightbulb, and away from the switches and the clapper.
 
 Let’s make our example a little more interesting. We’ll add another room to our house, along with a master switch, as shown here:
 
-<markup>
+```
 <div class="example" markdown="1">
     <div class="room" id="kitchen">
         <div class="lightbulb on"></div>
@@ -90,7 +90,7 @@ Let’s make our example a little more interesting. We’ll add another room to 
     </div>
     <div id="master_switch"></div>
 </div>
-</markup>
+```
 
 If there are any lights on in the house, we want the master switch to turn all
 the lights off; otherwise, we want it to turn all lights on. To accomplish
@@ -98,7 +98,7 @@ this, we’ll add two more custom events to the lightbulbs: `turnOn` and
 `turnOff`. We’ll make use of them in the `changeState` custom event, and use
 some logic to decide which one the master switch should trigger:
 
-<javascript>
+```
     $('.lightbulb')
         .bind('changeState', function(e) {
             var $light = $(this);
@@ -126,7 +126,7 @@ some logic to decide which one the master switch should trigger:
             $('.lightbulb').trigger('turnOn');
         }
     });
-</javascript>
+```
 
 Note how the behavior of the master switch is attached to the master switch;
 the behavior of a lightbulb belongs to the lightbulbs.
@@ -159,7 +159,7 @@ remember two things:
 Here is an example of the usage of `$.fn.bind` and `$.fn.trigger` that uses
 custom data in both cases:
 
-<javascript>
+```
     $(document).bind('myCustomEvent', { foo : 'bar' }, function(e, arg1, arg2) {
         console.log(e.data.foo); // 'bar'
         console.log(arg1); // 'bim'
@@ -167,7 +167,7 @@ custom data in both cases:
     });
 
     $(document).trigger('myCustomEvent', [ 'bim', 'baz' ]);
-</javascript>
+```
 
 ### A Sample Application
 
@@ -185,7 +185,7 @@ When we’re done, it will look like this:
 
 ![Our finished application](http://gyazo.com/70415e9fffab1c47953f5264ecf722fe.png)
 
-<markup>
+```
 <h1>Twitter Search</h1>
 <input type="button" id="get_trends" value="Load Trending Terms" />
 
@@ -200,7 +200,7 @@ When we’re done, it will look like this:
         <span class="search_term"></span></h2>
     </div>
 </div>
-</markup>
+```
 
 This gives us a container (#twitter) for our widget, a template for our results
 containers (hidden via CSS), and a simple form where users can input a search
@@ -239,7 +239,7 @@ It binds a click event to each action’s list item, and uses the list item’s
 class to determine which custom event will be triggered on the corresponding
 results container.
 
-<javascript>
+```
   $.fn.twitterResult = function(settings) {
       return this.each(function() {
           var $results = $(this),
@@ -352,7 +352,7 @@ results container.
           $(this).removeClass('collapsed');
       }
   };
-</javascript>
+```
 
 The Twitter container itself will have just two custom events:
 
@@ -370,7 +370,7 @@ The Twitter container itself will have just two custom events:
 
 Here's how the Twitter container bindings look:
 
-<javascript>
+```
     $('#twitter')
         .bind('getResults', function(e, term) {
             // make sure we don't have a box for this term already
@@ -402,7 +402,7 @@ Here's how the Twitter container bindings look:
                     });
                 });
         });
-</javascript>
+```
 
 So far, we’ve written a lot of code that does approximately nothing, but that’s
 OK. By specifying all the behaviors that we want our core objects to have,
@@ -413,7 +413,7 @@ For the text input, we’ll capture the term that was entered in the input and
 pass it as we trigger the Twitter container’s `getResults` event. Clicking the
 “Load Trending Terms” will trigger the Twitter container’s `getTrends` event:
 
-<javascript>
+```
     $('form').submit(function(e) {
         e.preventDefault();
         var term = $('#search_term').val();
@@ -422,8 +422,8 @@ pass it as we trigger the Twitter container’s `getResults` event. Clicking the
 
     $('#get_trends').click(function() {
         $('#twitter').trigger('getTrends');
-    });    
-</javascript>
+    });
+```
 
 By adding a few buttons with the appropriate IDs, we can make it possible to
 remove, collapse, expand, and refresh all results containers at once, as shown
@@ -431,7 +431,7 @@ below. For the remove button, note how we’re passing a value of true to the
 event handler as its second argument, telling the event handler that we don’t
 want to verify the removal of individual containers.
 
-<javascript>
+```
     $.each(['refresh', 'expand', 'collapse'], function(i, ev) {
         $('#' + ev).click(function(e) { $('#twitter div.results').trigger(ev); });
     });
@@ -441,7 +441,7 @@ want to verify the removal of individual containers.
             $('#twitter div.results').trigger('remove', [ true ]);
         }
     });
-</javascript>
+```
 
 ### Conclusion
 

@@ -10,30 +10,31 @@ function to multiple events, when you want to provide data to the event hander,
 when you are working with custom events, or when you want to pass an object of
 multiple events and handlers.
 
-<javascript caption="Event binding using a convenience method">
-    $('p').click(function() {
-        console.log('click');
-     });
-</javascript>
+```
+//Event binding using a convenience method
+$('p').click(function() {
+  console.log('click');
+});
+```
 
-<javascript caption="Event biding using the `$.fn.bind` method">
+```
+//Event biding using the `$.fn.bind` method
+$('p').bind('click', function() {
+  console.log('click');
+});
+```
 
-    $('p').bind('click', function() {
-        console.log('click');
-    });
-</javascript>
-
-<javascript caption="Event binding using the `$.fn.bind` method with data">
-    $('input').bind(
-        'click change',  // bind to multiple events
-        { foo : 'bar' }, // pass in data
-
-        function(eventObject) {
-            console.log(eventObject.type, eventObject.data);
-            // logs event type, then { foo : 'bar' }
-        }
-    );
-</javascript>
+```
+//Event binding using the `$.fn.bind` method with data
+$('input').bind(
+  'click change',  // bind to multiple events
+  { foo : 'bar' }, // pass in data
+  function(eventObject) {
+    console.log(eventObject.type, eventObject.data);
+    // logs event type, then { foo : 'bar' }
+  }
+);
+```
 
 ### Connecting Events to Run Only Once
 
@@ -41,12 +42,13 @@ Sometimes you need a particular handler to run only once — after that, you may
 want no handler to run, or you may want a different handler to run.  jQuery
 provides the `$.fn.one` method for this purpose.
 
-<javsacript caption="Switching handlers using the `$.fn.one` method">
-    $('p').one('click', function() {
-        console.log('You just clicked this for the first time!');
-        $(this).click(function() { console.log('You have clicked this before!'); });
-    });
-</javsacript>
+```
+//Switching handlers using the `$.fn.one` method
+$('p').one('click', function() {
+  console.log('You just clicked this for the first time!');
+  $(this).click(function() { console.log('You have clicked this before!'); });
+});
+```
 
 The `$.fn.one` method is especially useful if you need to do some complicated
 setup the first time an element is clicked, but not subsequent times.
@@ -58,17 +60,19 @@ the event type to unbind.  If you attached a named function to the event, then
 you can isolate the unbinding to that named function by passing it as the
 second argument.
 
-<javascript caption="Unbinding all click handlers on a selection">
-    $('p').unbind('click');
-</javascript>
+```
+//Unbinding all click handlers on a selection
+$('p').unbind('click');
+```
 
-<javascript caption="Unbinding a particular click handler, using a reference to the function">
-    var foo = function() { console.log('foo'); };
-    var bar = function() { console.log('bar'); };
+```
+//Unbinding a particular click handler, using a reference to the function
+var foo = function() { console.log('foo'); };
+var bar = function() { console.log('bar'); };
 
-    $('p').bind('click', foo).bind('click', bar);
-    $('p').unbind('click', bar); // foo is still bound to the click event
-</javascript>
+$('p').bind('click', foo).bind('click', bar);
+$('p').unbind('click', bar); // foo is still bound to the click event
+```
 
 ### Namespacing Events
 
@@ -76,11 +80,12 @@ For complex applications and for plugins you share with others, it can be
 useful to namespace your events so you don't unintentionally disconnect events
 that you didn't or couldn't know about.
 
-<javascript caption="Namespacing events">
-    $('p').bind('click.myNamespace', function() { /* ... */ });
-    $('p').unbind('click.myNamespace');
-    $('p').unbind('.myNamespace'); // unbind all events in the namespace
-</javascript>
+```
+//Namespacing events
+$('p').bind('click.myNamespace', function() { /* ... */ });
+$('p').unbind('click.myNamespace');
+$('p').unbind('.myNamespace'); // unbind all events in the namespace
+```
 
 ### Binding Multiple Events
 
@@ -89,12 +94,13 @@ having a different function for handing the event.  In these cases you can pass
 an object into `$.fn.bind` with one or more key/value pairs, with the key being
 the event name and the value being the function to handle the event.
 
-<javascript caption="Binding Multiple Events">
-    $('p').bind({
-      'click': function() { console.log('clicked!'); },
-      'mouseover': function() { console.log('hovered!'); }
-    });
-</javascript>
+```
+//Binding Multiple Events
+$('p').bind({
+  'click': function() { console.log('clicked!'); },
+  'mouseover': function() { console.log('hovered!'); }
+});
+```
 
 <div class="note" markdown="1">
 The option to pass an object of multiple events and handlers to `$.fn.bind` was
