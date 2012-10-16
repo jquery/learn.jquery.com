@@ -115,7 +115,7 @@ Given the following markup:
 we can write:
 
 ```
-$('li').each( function(index, Element){
+$('li').each( function(index, element){
 
 	console.log( $(this).text() );
 
@@ -261,7 +261,7 @@ $('li').each( function() {
 We can do this:
 
 ```
-$('li').map( function(index, Element) {
+$('li').map( function(index, element) {
 
 	return this.id;
 
@@ -297,9 +297,9 @@ var arr = [{
 }];
 
 
-$('li').map( function(index, Element) {
+$('li').map( function(index, element) {
 
-	return Element.id;
+	return element.id;
 
 }).get(); // returns ["a", "b", "c"]
 
