@@ -1,3 +1,7 @@
+## Before you begin
+
+You'll need to set up your development environment.  Please follow the [README.md] for instructions on setting up WordPress, web-base-templates and the learn.jquery.com repo which contains the content. 
+
 ## How Can I Help?
 
 The entire site is managed via [this Git repository](https://github.com/jquery/learn.jquery.com).  If you'd like to contribute new articles, make edits to existing content, or work on the site itself, the first thing you'll need is a [fork](https://help.github.com/articles/fork-a-repo). When you have changes you'd like to have reviewed for integration into the site, submit a [pull request](http://help.github.com/send-pull-requests/).
