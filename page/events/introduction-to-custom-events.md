@@ -26,13 +26,11 @@ you have a lightbulb in a room in a house. The lightbulb is currently turned
 on, and it&apos;s controlled by two three-way switches and a clapper:
 
 ```
-<div class="example" markdown="1">
-  <div class="room" id="kitchen">
-    <div class="lightbulb on"></div>
-    <div class="switch"></div>
-    <div class="switch"></div>
-    <div class="clapper"></div>
-  </div>
+<div class="room" id="kitchen">
+  <div class="lightbulb on"></div>
+  <div class="switch"></div>
+  <div class="switch"></div>
+  <div class="clapper"></div>
 </div>
 ```
 
@@ -75,21 +73,19 @@ This last bit of code is not that exciting, but something important has happened
 Let&apos;s make our example a little more interesting. We&apos;ll add another room to our house, along with a master switch, as shown here:
 
 ```
-<div class="example" markdown="1">
-  <div class="room" id="kitchen">
-    <div class="lightbulb on"></div>
-    <div class="switch"></div>
-    <div class="switch"></div>
-    <div class="clapper"></div>
-  </div>
-  <div class="room" id="bedroom">
-    <div class="lightbulb on"></div>
-    <div class="switch"></div>
-    <div class="switch"></div>
-    <div class="clapper"></div>
-  </div>
-  <div id="master_switch"></div>
+<div class="room" id="kitchen">
+  <div class="lightbulb on"></div>
+  <div class="switch"></div>
+  <div class="switch"></div>
+  <div class="clapper"></div>
 </div>
+<div class="room" id="bedroom">
+  <div class="lightbulb on"></div>
+  <div class="switch"></div>
+  <div class="switch"></div>
+  <div class="clapper"></div>
+</div>
+<div id="master_switch"></div>
 ```
 
 If there are any lights on in the house, we want the master switch to turn all
