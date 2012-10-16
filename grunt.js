@@ -1,4 +1,4 @@
-use strict;
+var cp = require("child_process");
 var config = require("./config.json");
 
 module.exports = function( grunt ) {
