@@ -62,6 +62,12 @@ If the article was pulled in from an outside source you also need to add an attr
 
 We will build the attribution of an article based on the git commit logs.  Only use the attribution meta tag to give credit to authors outside of git for an article that was pulled in for instance. 
 
-Writing Style Guide
+## Style Guide
 
-The jQuery Learning Site uses the [same style guide as the jQuery Documentation team](https://github.com/jquery/api.jquery.com#style-guidelines). If you have questions which are not addressed by this style guide, please refer to [idiomatic.js](https://github.com/rwldrn/idiomatic.js/).
+### Writing
+The jQuery Learning Site uses the [same style guide as the jQuery Documentation team](https://github.com/jquery/api.jquery.com#style-guidelines). 
+
+### Code 
+Please use the [jQuery Core Code Style Guide](http://docs.jquery.com/JQuery_Core_Style_Guidelines) for your code examples. 
+
+If you have questions which are not addressed by this style guide, please refer to [idiomatic.js](https://github.com/rwldrn/idiomatic.js/).
