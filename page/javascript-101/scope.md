@@ -30,6 +30,8 @@ sayHello();         // logs 'hello'
 console.log(foo);   // also logs 'hello'
 ```
 
+A big mistake commonly made by many is not using unique names for all initialized variables. Getting into the habit of good naming convention can save a lot of headache trying to debug errors or unintended results.
+
 ``` js
 // Code outside the scope in which a variable was defined does not have access to the variable
 var sayHello = function() {
@@ -40,6 +42,8 @@ var sayHello = function() {
 sayHello();         // logs 'hello'
 console.log(foo);   // doesn't log anything
 ```
+
+It is possible to use the same name for variables and have no issues with results. However, get in the habit of using unique variable names whenever defining new functions.
 
 ``` js
 // Variables with the same name can exist in different scopes with different values
@@ -53,6 +57,8 @@ var sayHello = function() {
 sayHello();         // logs 'hello'
 console.log(foo);   // logs 'world'
 ```
+
+JavaScript is flexible enough to adapt to changes of the same variable and return its variable as it was last modified within a function, unless told otherwise.
 
 ``` js
 // Functions can see changes in variable values after the function is defined
@@ -71,6 +77,7 @@ var myFunction = function() {
 var f = myFunction();
 f();  // logs 'world' -- uh oh
 ```
+Pay close attention to variable definitions. It can be easy to define a global variable without realizing you've done it outside of scope. Such consequences are shown below.
 
 ``` js
 // Scope insanity
