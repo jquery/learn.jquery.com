@@ -1,6 +1,5 @@
 ---
 title   : Finding & Evaluating Plugins
-attribution:  jQuery Fundamentals
 ---
 ## Finding &amp; Evaluating Plugins
 

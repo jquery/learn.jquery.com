@@ -1,7 +1,5 @@
 ---
 title:        Optimize Selectors
-attribution:  jQuery Fundamentals
-tags:         performance
 ---
 
 Selector optimization is less important than it used to be, as more browsers

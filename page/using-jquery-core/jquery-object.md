@@ -1,8 +1,6 @@
 ---
-level      : beginner
 title      : The jQuery Object
-attribution: Mike Pennisi
-github     : jugglinmike
+level      : beginner
 ---
 When creating new elements (or selecting existing ones), jQuery returns the elements in a collection.
 Many developers new to jQuery assume that this collection is an array.

@@ -1,8 +1,6 @@
 ---
 title   : using jQuery's index() function
-github: johnkpaul
 level: intermediate
-attribution:  John K. Paul
 ---
 ## .index() 
 

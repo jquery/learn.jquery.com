@@ -1,7 +1,5 @@
 ---
 title:        Syntax Basics
-attribution:  jQuery Fundamentals
-github: jquery
 ---
 
 ### Comments

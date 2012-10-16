@@ -1,7 +1,5 @@
 ---
 title:        Running Code
-attribution:  jQuery Fundamentals
-github: jquery
 ---
 
 ### External

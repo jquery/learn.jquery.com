@@ -1,7 +1,5 @@
 ---
 title   : Triggering Event Handlers
-attribution:  jQuery Fundamentals
-github: johnkpaul
 level: intermediate
 ---
 #### Triggering Events

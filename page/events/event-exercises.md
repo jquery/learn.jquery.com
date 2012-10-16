@@ -1,6 +1,5 @@
 ---
-title   : Excercises
-attribution:  jQuery Fundamentals
+title   : Exercises
 ---
 ###Create an Input Hint
 

@@ -1,6 +1,5 @@
 ---
 title:        Testing Type
-attribution:  jQuery Fundamentals
 ---
 
 JavaScript offers a way to test the "type" of a variable. However, the result

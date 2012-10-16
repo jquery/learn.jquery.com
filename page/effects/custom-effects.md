@@ -1,6 +1,5 @@
 ---
 title   : Custom Effects with $.fn.animate
-attribution:  jQuery Fundamentals
 ---
 jQuery makes it possible to animate arbitrary CSS properties via the
 `$.fn.animate` method.  The `$.fn.animate` method lets you animate to a set
