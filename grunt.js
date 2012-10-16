@@ -1,7 +1,8 @@
-use strict;
 var config = require("./config.json");
 
 module.exports = function( grunt ) {
+
+"use strict";
 
 grunt.loadNpmTasks( "grunt-clean" );
 grunt.loadNpmTasks( "grunt-html" );
