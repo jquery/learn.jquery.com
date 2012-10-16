@@ -1,5 +1,6 @@
 ---
 title:        Functions
+level:        beginner
 ---
 
 Functions contain blocks of code that need to be executed repeatedly. Functions

@@ -1,5 +1,6 @@
 ---
 title:        Beware Anonymous Functions
+level: beginner
 ---
 
 Anonymous functions bound everywhere are a pain. They're difficult to debug,

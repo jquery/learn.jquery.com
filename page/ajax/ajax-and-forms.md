@@ -1,5 +1,6 @@
 ---
 title   : Ajax and Forms
+level		: beginner
 ---
 
 jQuery’s ajax capabilities can be especially useful when dealing with forms. There are several advantages, which can range from serialization, to simple client-side validation (e.g. "Sorry, that username is taken"), to [prefilters](http://api.jquery.com/extending-ajax/#Prefilters) (explained below), and even more!

@@ -1,5 +1,6 @@
 ---
 title:        Don't Treat jQuery as a Black Box
+level:        intermediate
 ---
 
 Use the source as your documentation. Bookmark

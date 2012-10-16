@@ -1,5 +1,6 @@
 ---
 title:        Loops
+level:        beginner
 ---
 Loops let you run a block of code a certain number of times.
 

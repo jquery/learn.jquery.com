@@ -1,5 +1,6 @@
 ---
 title   : Working with JSONP
+level: beginner
 ---
 The advent of JSONP — essentially a consensual cross-site scripting hack — has
 opened the door to powerful mashups of content.  Many prominent sites provide

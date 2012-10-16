@@ -1,5 +1,6 @@
 ---
 title   : Managing Effects
+level: beginner
 ---
 ## Managing Effects
 

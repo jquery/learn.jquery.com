@@ -1,5 +1,6 @@
 ---
 title: Feature & Browser Detection
+level: beginner
 ---
 
 ### Can I Use This Browser Feature?

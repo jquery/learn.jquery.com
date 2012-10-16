@@ -1,5 +1,6 @@
 ---
 title:        Detach Elements to Work with Them
+level:        intermediate
 ---
 
 The DOM is slow; you want to avoid manipulating it as much as possible. jQuery

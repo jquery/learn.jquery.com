@@ -1,5 +1,6 @@
 ---
 title:        Reserved Words
+level:        beginner
 ---
 JavaScript has a number of “reserved words,” or words that have special meaning in the language. You should avoid using these words in your code except when using them with their intended meaning.
 

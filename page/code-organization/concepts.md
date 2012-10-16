@@ -1,5 +1,6 @@
 ---
 title:        Code Organization Concepts
+level: beginner
 ---
 
 When you move beyond adding simple enhancements to your website with jQuery and

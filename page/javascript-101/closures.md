@@ -1,5 +1,6 @@
 ---
 title:        Closures
+level:        beginner
 ---
 
 Closures are an extension of the concept of scope -- functions have access to

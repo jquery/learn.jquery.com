@@ -1,5 +1,6 @@
 ---
 title:        Syntax Basics
+level:        beginner
 ---
 
 ### Comments
