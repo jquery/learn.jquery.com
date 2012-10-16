@@ -54,7 +54,7 @@ $('.switch, .clapper').click(function() {
 With custom events, your code might look more like this:
 
 ```
-$('.lightbulb').bind('changeState', function(e) {
+$('.lightbulb').on('changeState', function(e) {
   var $light = $(this);
   if ($light.hasClass('on')) {
       $light.removeClass('on').addClass('off');
@@ -96,7 +96,7 @@ some logic to decide which one the master switch should trigger:
 
 ```
 $('.lightbulb')
-  .bind('changeState', function(e) {
+  .on('changeState', function(e) {
       var $light = $(this);
       if ($light.hasClass('on')) {
           $light.trigger('turnOff');
@@ -104,10 +104,10 @@ $('.lightbulb')
           $light.trigger('turnOn');
       }
   })
-  .bind('turnOn', function(e) {
+  .on('turnOn', function(e) {
       $(this).removeClass('off').addClass('on');
   })
-  .bind('turnOff', function(e) {
+  .on('turnOff', function(e) {
       $(this).removeClass('on').addClass('off');
   });
 
@@ -134,14 +134,14 @@ changeState custom event to all `$('.light')` elements is akin to having a
 class called `Light` with a method of `changeState`, and then instantiating new
 `Light` objects for each element with a classname of light.
 
-### Recap: $.fn.bind and $.fn.trigger
+### Recap: $.fn.on and $.fn.trigger
 
 In the world of custom events, there are two important jQuery methods:
-`$.fn.bind` and `$.fn.trigger`. In the Events chapter, we saw how to use these
+`$.fn.on` and `$.fn.trigger`. In the Events chapter, we saw how to use these
 methods for working with user events; for this chapter, it's important to
 remember two things:
 
-- `$.fn.bind` method takes an event type and an event handling function as
+- `$.fn.on` method takes an event type and an event handling function as
   arguments. Optionally, it can also receive event-related data as its second
   argument, pushing the event handling function to the third argument. Any data
   that is passed will be available to the event handling function in the `data`
@@ -152,11 +152,11 @@ remember two things:
   also take an array of values. These values will be passed to the event
   handling function as arguments after the event object.
 
-Here is an example of the usage of `$.fn.bind` and `$.fn.trigger` that uses
+Here is an example of the usage of `$.fn.on` and `$.fn.trigger` that uses
 custom data in both cases:
 
 ```
-$(document).bind('myCustomEvent', { foo : 'bar' }, function(e, arg1, arg2) {
+$(document).on('myCustomEvent', { foo : 'bar' }, function(e, arg1, arg2) {
   console.log(e.data.foo); // 'bar'
   console.log(arg1); // 'bim'
   console.log(arg2); // 'baz'
@@ -250,7 +250,7 @@ $.fn.twitterResult = function(settings) {
     $.each(
       ['refresh', 'populate', 'remove', 'collapse', 'expand'],
       function(i, ev) {
-        $results.bind(
+        $results.on(
           ev,
           { term : term },
           $.fn.twitterResult.events[ev]
@@ -368,7 +368,7 @@ Here's how the Twitter container bindings look:
 
 ```
 $('#twitter')
-  .bind('getResults', function(e, term) {
+  .on('getResults', function(e, term) {
     // make sure we don't have a box for this term already
     if (!search_terms[term]) {
       var $this = $(this);
@@ -389,7 +389,7 @@ $('#twitter')
       search_terms[term] = 1;
     }
   })
-  .bind('getTrends', function(e) {
+  .on('getTrends', function(e) {
       var $this = $(this);
       $.getJSON('http://search.twitter.com/trends.json?callback=?', function(json) {
         var trends = json.trends;
