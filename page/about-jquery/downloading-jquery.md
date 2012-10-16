@@ -1,8 +1,6 @@
 ---
 title: Downloading jQuery
-status: needswork
-editrequired: 2
-attribution:  jQuery Docs
+level: beginner
 ---
 
 ## About The Code

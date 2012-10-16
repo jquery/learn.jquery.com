@@ -1,8 +1,6 @@
 ---
 title:        Adding Keyboard Navigation
-attribution:  Remy Sharp
-status:       needswork
-editrequired: 2
+level:        beginner
 source:       http://jqueryfordesigners.com/adding-keyboard-navigation/
 ---
 

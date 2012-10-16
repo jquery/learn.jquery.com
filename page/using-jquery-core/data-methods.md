@@ -1,6 +1,5 @@
 ---
 title   : Data Methods
-attribution:  jQuery Fundamentals
 level: intermediate
 ---
 As your work with jQuery progresses, you'll find that there's often data about

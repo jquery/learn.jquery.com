@@ -1,6 +1,6 @@
 ---
 title:        Code Organization Concepts
-attribution:  $jQuery Fundamentals
+level: beginner
 ---
 
 When you move beyond adding simple enhancements to your website with jQuery and

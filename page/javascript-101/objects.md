@@ -1,6 +1,6 @@
 ---
 title:        Objects
-attribution:  jQuery Fundamentals
+level:        beginner
 ---
 Objects contain one or more key-value pairs. The key portion can be any string.
 The value portion can be any type of value: a number, a string, an array, a

@@ -1,7 +1,6 @@
 ---
 title:        Append Outside of Loops
-attribution:  jQuery Fundamentals
-tags:         performance
+level:        intermediate
 ---
 
 Touching the DOM comes at a cost; if you're appending a lot of elements to the

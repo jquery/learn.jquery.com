@@ -1,7 +1,6 @@
 ---
 title:        Syntax Basics
-attribution:  jQuery Fundamentals
-github: jquery
+level:        beginner
 ---
 
 ### Comments

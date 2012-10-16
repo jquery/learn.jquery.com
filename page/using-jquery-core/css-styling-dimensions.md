@@ -1,6 +1,6 @@
 ---
-level: beginner
 title   : CSS, Styling, & Dimensions
+level: beginner
 ---
 ## CSS, Styling, &amp; Dimensions
 

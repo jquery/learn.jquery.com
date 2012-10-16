@@ -1,8 +1,6 @@
 ---
 title:        The uses of jQuery .queue() and .dequeue()
-attribution:  Corey Frang 
-status:       needswork
-editrequired: 2
+level: beginner
 source:       http://gnarf.net/2010/09/30/the-uses-of-jquery-queue-and-dequeue/
 ---
 

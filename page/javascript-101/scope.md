@@ -1,6 +1,6 @@
 ---
 title:        Scope
-attribution:  jQuery Fundamentals
+level:        beginner
 ---
 
 "Scope" refers to the variables that are available to a piece of code at a

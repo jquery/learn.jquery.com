@@ -1,6 +1,6 @@
 ---
 title: Feature & Browser Detection
-attribution: Connor Montgomery & bobholt
+level: beginner
 ---
 
 ### Can I Use This Browser Feature?

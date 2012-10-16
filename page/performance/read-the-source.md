@@ -1,9 +1,6 @@
 ---
-chapter :     performance
-section:      0
 title:        Don't Treat jQuery as a Black Box
-attribution:  jQuery Fundamentals
-tags:         performance
+level:        intermediate
 ---
 
 Use the source as your documentation. Bookmark

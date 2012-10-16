@@ -1,6 +1,6 @@
 ---
 title   : Managing Effects
-attribution:  jQuery Fundamentals
+level: beginner
 ---
 ## Managing Effects
 
