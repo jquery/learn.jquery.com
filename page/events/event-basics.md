@@ -224,12 +224,13 @@ the first click on *each* paragraph element rather than the function being remov
 
 ```
 // Using $.fn.one to bind several events
-$('input').one('focus mouseover keydown', firstEvent);
+$('input[id]').one('focus mouseover keydown', firstEvent);
 
 function firstEvent(eventObject){
-  console.log('The ' + eventObject.type + ' event has occurred for the first time on the input with id ' + this.id)
+  console.log('A ' + eventObject.type + ' event occurred for the first time on the input with id ' + this.id)
 }
 ```
 
 In this case, the `firstEvent` function will be executed once *for each event*.  For the snippet above, this means
-that once an element gains focus, the handler function will still execute for the first keydown event.
+that once an input element gains focus, the handler function will still execute for the first keydown event on that 
+element.

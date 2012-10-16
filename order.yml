@@ -32,7 +32,7 @@
   - feature-browser-detection
   - utility-methods
 - events:
-  - events-basics
+  - event-basics
   - event-helpers
   - event-extensions
   - event-delegation
