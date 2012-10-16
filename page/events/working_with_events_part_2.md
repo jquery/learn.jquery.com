@@ -1,5 +1,6 @@
 ---
 title:        Working with Events, part 2
+level:        beginner
 source:       http://www.learningjquery.com/2008/05/working-with-events-part-2
 ---
 In my last article, I described the common problem of events seemingly ceasing

@@ -1,5 +1,6 @@
 ---
 title:        Variable Definition
+level:        intermediate
 ---
 
 Variables can be defined in one statement instead of several.

@@ -1,5 +1,6 @@
 ---
 title:        Conditional Code
+level:        beginner
 ---
 Sometimes you only want to run a block of code under certain conditions. Flow control — via if and else blocks — lets you run code only under certain conditions.
 

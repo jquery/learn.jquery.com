@@ -1,5 +1,6 @@
 ---
 title   : Connecting Events to Elements
+level: beginner
 ---
 jQuery offers convenience methods for most common events, and these are the
 methods you will see used most often.  These methods — including `$.fn.click`,

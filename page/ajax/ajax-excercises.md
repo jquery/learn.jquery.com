@@ -1,5 +1,6 @@
 ---
 title   : Exercises
+level: beginner
 ---
 ### Load External Content
 

@@ -1,5 +1,6 @@
 ---
 title:        Types
+level:        beginner
 ---
 
 The types in JavaScript fall into two categories; primitives and objects. The primitive types include:

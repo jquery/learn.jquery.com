@@ -1,5 +1,6 @@
 ---
 title:        Optimize Selectors
+level:        intermediate
 ---
 
 Selector optimization is less important than it used to be, as more browsers

@@ -1,5 +1,6 @@
 ---
 title: About jQuery
+level: beginner
 ---
 
 Getting started with jQuery can be easy or challenging, depending on

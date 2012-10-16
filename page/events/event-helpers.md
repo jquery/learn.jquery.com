@@ -1,5 +1,6 @@
 ---
 title   : Event Helpers
+level: beginner
 ---
 jQuery offers two event-related helper functions that save you a few keystrokes.
 

@@ -1,5 +1,6 @@
 ---
 title   : Built-in Effects
+level: beginner
 ---
 Frequently used effects are built into jQuery as methods:
 

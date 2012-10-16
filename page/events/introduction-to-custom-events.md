@@ -1,5 +1,6 @@
 ---
 title:        Introducing Custom Events
+level: beginner
 ---
 ## Custom Events
 
