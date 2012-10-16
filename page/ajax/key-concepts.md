@@ -1,6 +1,9 @@
 ---
 title   : Key Concepts
 level: beginner
+source: http://jqfundamentals.com/legacy
+attribution: 
+  - jQuery Fundamentals
 ---
 Proper use of Ajax-related jQuery methods requires understanding some key
 concepts first.

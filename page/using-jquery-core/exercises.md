@@ -1,5 +1,8 @@
 ---
 title   : Exercises
+source: http://jqfundamentals.com/legacy
+attribution: 
+  - jQuery Fundamentals
 ---
 ## Exercises
 

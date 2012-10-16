@@ -1,6 +1,9 @@
 ---
 title:        Don't Act on Absent Elements
 level:        intermediate
+source: http://jqfundamentals.com/legacy
+attribution: 
+  - jQuery Fundamentals
 ---
 
 jQuery won't tell you if you're trying to run a whole lot of code on an empty

@@ -1,7 +1,9 @@
 ---
 title: Getting Started
 level: Beginner
-attribution: Adam Lehman (adrocknaphobia)
+source: http://jqfundamentals.com/legacy
+attribution: 
+  - jQuery Fundamentals
 ---
 
 ##Anatomy of a Web Page

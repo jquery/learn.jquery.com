@@ -1,6 +1,9 @@
 ---
 title:        Functions
 level:        beginner
+source: http://jqfundamentals.com/legacy
+attribution: 
+  - jQuery Fundamentals
 ---
 
 Functions contain blocks of code that need to be executed repeatedly. Functions

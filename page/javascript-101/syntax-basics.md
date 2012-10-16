@@ -1,6 +1,9 @@
 ---
 title:        Syntax Basics
 level:        beginner
+source: http://jqfundamentals.com/legacy
+attribution: 
+  - jQuery Fundamentals
 ---
 
 ### Comments

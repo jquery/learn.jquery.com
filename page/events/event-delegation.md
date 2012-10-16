@@ -1,6 +1,8 @@
 ---
 title   : Understanding Event Delegation
-attribution:  jQuery Fundamentals
+source: http://jqfundamentals.com/legacy
+attribution: 
+  - jQuery Fundamentals
 ---
 
 Say you have to add new line items to your page, given the following HTML:

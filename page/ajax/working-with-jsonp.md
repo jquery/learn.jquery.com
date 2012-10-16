@@ -1,6 +1,9 @@
 ---
 title   : Working with JSONP
 level: beginner
+source: http://jqfundamentals.com/legacy
+attribution: 
+  - jQuery Fundamentals
 ---
 The advent of JSONP — essentially a consensual cross-site scripting hack — has
 opened the door to powerful mashups of content.  Many prominent sites provide

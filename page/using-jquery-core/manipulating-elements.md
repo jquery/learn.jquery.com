@@ -1,6 +1,9 @@
 ---
 title   : Manipulating Elements
 level: beginner
+source: http://jqfundamentals.com/legacy
+attribution: 
+  - jQuery Fundamentals
 ---
 Once you've made a selection, the fun begins. You can change, move, remove, and clone elements. 
 You can also create new elements via a simple syntax.

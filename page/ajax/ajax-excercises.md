@@ -1,6 +1,9 @@
 ---
 title   : Exercises
 level: beginner
+source: http://jqfundamentals.com/legacy
+attribution: 
+  - jQuery Fundamentals
 ---
 ### Load External Content
 

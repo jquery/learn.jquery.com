@@ -1,6 +1,9 @@
 ---
 title:        Code Organization Concepts
 level: beginner
+source: http://jqfundamentals.com/legacy
+attribution: 
+  - jQuery Fundamentals
 ---
 
 When you move beyond adding simple enhancements to your website with jQuery and

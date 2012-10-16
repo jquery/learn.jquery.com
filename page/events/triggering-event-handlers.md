@@ -1,6 +1,9 @@
 ---
 title   : Triggering Event Handlers
 level: intermediate
+source: http://jqfundamentals.com/legacy
+attribution: 
+  - jQuery Fundamentals
 ---
 #### Triggering Events
 jQuery provides a way to trigger the event handlers bound to an element without any user interaction via the `$.fn.trigger` method.

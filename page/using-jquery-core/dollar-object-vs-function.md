@@ -1,6 +1,9 @@
 ---
 title   : $ vs $()
 level: beginner
+source: http://jqfundamentals.com/legacy
+attribution: 
+  - jQuery Fundamentals
 ---
 Until now, we’ve been dealing entirely with methods that are called on a jQuery
 object. For example:
