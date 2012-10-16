@@ -5,7 +5,7 @@ source:       http://docs.jquery.com/Frequently_Asked_Questions
 
 [hasClass](http://api.jquery.com/hasClass/) (added in version 1.2) handles this common use case:
 
-``` js
+```
 $("div").click(function(){
  if ( $(this).hasClass("protected") )
    $(this)
@@ -19,14 +19,14 @@ $("div").click(function(){
 
 You can also use the [is()](http://api.jquery.com/is/) method along with an appropriate selector for more advanced matching:
 
-``` js
+```
 if ( $('#myDiv').is('.pretty.awesome') )
   $('#myDiv').show();
 ```
 
 Note that this method allows you to test for other things as well. For example, you can test whether an element is hidden (by using the custom [:hidden](http://api.jquery.com/hidden-selector/) selector):
 
-``` js
+```
 if ( $('#myDiv').is(':hidden') )
   $('#myDiv').show();
 ```

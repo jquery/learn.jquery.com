@@ -7,7 +7,7 @@ There are two ways to check/uncheck a checkbox/radio button.
 
 Set the 'checked' attribute to true or false.
 
-``` js
+```
  // Check #x
  $('#x').attr('checked', true);
  // Uncheck #x
@@ -16,7 +16,7 @@ Set the 'checked' attribute to true or false.
 
 Add or remove the 'checked' attribute:
 
-``` js
+```
  // Check #x
  $("#x").attr('checked', 'checked');
  // Uncheck #x

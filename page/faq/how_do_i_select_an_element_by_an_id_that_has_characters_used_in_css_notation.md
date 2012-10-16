@@ -7,7 +7,7 @@ Because jQuery uses CSS syntax for selecting elements, some characters are inter
 
 In order to tell jQuery to treat these characters literally rather than as CSS notation, they must be "escaped" by placing two backslashes in front of them.
 
-``` js
+```
  // Does not work
  $("#some:id")
  
@@ -22,7 +22,7 @@ In order to tell jQuery to treat these characters literally rather than as CSS n
 
 The following function takes care of escaping these characters and places a "#" at the beginning of the ID string:
 
-``` js
+```
  function jq(myid) { 
    return '#' + myid.replace(/(:|\.)/g,'\\$1');
  }
@@ -30,6 +30,6 @@ The following function takes care of escaping these characters and places a "#" 
 
 The function can be used like so:
 
-``` js
+```
  $( jq('some.id') )
 ```

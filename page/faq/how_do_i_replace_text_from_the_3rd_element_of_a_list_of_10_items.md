@@ -5,7 +5,7 @@ source:       http://docs.jquery.com/Frequently_Asked_Questions
 
 Either the :eq() selector or the .eq() method will allow you to select the proper item. However, to replace the text, you must get the value before you set it:
 
-``` js
+```
   // This doesn't work; text() returns a string, not the jQuery object
   $(this).find('li a').eq(2).text().replace('foo','bar');
 
