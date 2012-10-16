@@ -1,6 +1,5 @@
 ---
 title:        Introducing Custom Events
-attribution:  $jQuery Fundamentals
 ---
 ## Custom Events
 
