@@ -44,9 +44,8 @@
   - introduction-to-custom-events
   - history-of-events
 - effects:
-  - built-in-effects
+  - intro-to-effects
   - custom-effects
-  - managing-effects
   - queue_and_dequeue_explained
   - uses_of_queue_and_dequeue
 - ajax:
