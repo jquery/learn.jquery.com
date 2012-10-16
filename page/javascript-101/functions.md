@@ -1,6 +1,5 @@
 ---
 title:        Functions
-attribution:  jQuery Fundamentals
 ---
 
 Functions contain blocks of code that need to be executed repeatedly. Functions

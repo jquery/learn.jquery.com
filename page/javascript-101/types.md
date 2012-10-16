@@ -1,7 +1,5 @@
 ---
 title:        Types
-attribution:  jQuery Fundamentals
-github: jquery
 ---
 
 The types in JavaScript fall into two categories; primitives and objects. The primitive types include:

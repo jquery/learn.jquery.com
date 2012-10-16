@@ -1,6 +1,5 @@
 ---
 title   : Exercises
-attribution:  jQuery Fundamentals
 ---
 ### Load External Content
 

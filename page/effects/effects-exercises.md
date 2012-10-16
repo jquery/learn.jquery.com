@@ -1,6 +1,5 @@
 ---
 title   : Effect Exercises
-attribution:  jQuery Fundamentals
 ---
 ### Reveal Hidden Text
 

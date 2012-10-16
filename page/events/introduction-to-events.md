@@ -1,6 +1,5 @@
 ---
 title:        Introducing Events
-attribution:  $jQuery Fundamentals
 ---
 
 ## Introduction

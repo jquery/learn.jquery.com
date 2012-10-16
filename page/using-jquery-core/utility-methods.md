@@ -1,6 +1,5 @@
 ---
 title   : Utility Methods
-attribution:  jQuery Fundamentals
 level: beginner
 ---
 jQuery offers several utility methods in the $ namespace.  These methods are

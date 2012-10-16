@@ -1,6 +1,5 @@
 ---
 title:        Operators
-attribution:  jQuery Fundamentals
 ---
 Basic operators allow you to manipulate values.
 

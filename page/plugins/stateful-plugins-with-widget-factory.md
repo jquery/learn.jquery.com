@@ -1,6 +1,5 @@
 ---
 title   : Writing Stateful Plugins with the jQuery UI Widget Factory
-attribution:  jQuery Fundamentals
 ---
 ## Writing Stateful Plugins with the jQuery UI Widget Factory
 

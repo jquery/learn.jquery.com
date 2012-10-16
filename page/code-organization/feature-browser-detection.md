@@ -1,6 +1,5 @@
 ---
 title: Feature & Browser Detection
-attribution: Connor Montgomery & bobholt
 ---
 
 ### Can I Use This Browser Feature?

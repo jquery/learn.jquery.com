@@ -1,6 +1,5 @@
 ---
 title   : Managing Effects
-attribution:  jQuery Fundamentals
 ---
 ## Managing Effects
 

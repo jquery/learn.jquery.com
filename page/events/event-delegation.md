@@ -1,6 +1,5 @@
 ---
 title   : Increasing Performance with Event Delegation
-attribution:  jQuery Fundamentals
 ---
 You'll frequently use jQuery to add new elements to the page, and when you do,
 you may need to bind events to those new elements — events you already bound to

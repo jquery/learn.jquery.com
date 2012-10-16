@@ -1,6 +1,5 @@
 ---
 title:        Loops
-attribution:  jQuery Fundamentals
 ---
 Loops let you run a block of code a certain number of times.
 

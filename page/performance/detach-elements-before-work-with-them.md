@@ -1,7 +1,5 @@
 ---
 title:        Detach Elements to Work with Them
-attribution:  jQuery Fundamentals
-tags:         performance
 ---
 
 The DOM is slow; you want to avoid manipulating it as much as possible. jQuery
