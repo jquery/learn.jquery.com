@@ -1,8 +1,6 @@
 ---
-level      : beginner
 title      : The jQuery Object
-attribution: Mike Pennisi
-github     : jugglinmike
+level      : beginner
 ---
 When creating new elements (or selecting existing ones), jQuery returns the elements in a collection.
 Many developers new to jQuery assume that this collection is an array.
@@ -32,37 +30,40 @@ For example:
 The implementation of element methods varies across browser vendors and versions.
 The following snippet attempts to set the inner HTML of a `tr` element stored in `target`:
 
-<javascript caption="Setting the inner HTML with the native DOM API">
+```
 var target = document.getElementById("target");
 target.innerHTML = "<td>Hello <b>World</b>!</td>";
-</javascript>
+```
 
 This works in many cases, but it will fail in most versions of Internet Explorer.
 In that case, the [recommended approach](http://www.quirksmode.org/dom/w3c_html.html) is to use pure DOM methods instead.
 By wrapping the `target` element in a jQuery object, these edge cases are taken care of, and the expected result is achieved in all supported browsers:
 
-<javascript caption="Setting the inner HTML with jQuery">
+```
+// Setting the inner HTML with jQuery
 var target = document.getElementById("target");
 $( target ).html( "<td>Hello <b>World</b>!</td>");
-</javascript>
+```
 
 *Convenience*
 There are also a lot of common DOM manipulation use cases that are awkward to accomplish with pure DOM methods.
 For instance, inserting an element stored in `newElement` after the `target` element requires a rather verbose DOM method:
 
-<javascript caption="Inserting a new element after another with the native DOM API">
+```
+// Inserting a new element after another with the native DOM API
 var target = document.getElementById("target");
 var newElement = document.createElement("div");
 target.parentNode.insertBefore( target.nextSibling, newElement )
-</javascript>
+```
 
 By wrapping the `target` element in a jQuery object, the same task becomes much simpler:
 
-<javascript caption="Inserting a new element after another with jQuery">
+```
+// Inserting a new element after another with jQuery
 var target = document.getElementById("target");
 var newElement = document.createElement("div");
 $( target ).after( newElement );
-</javascript>
+```
 
 For the most part, these details are simply "gotchas" standing between a developer and her goals.
 
@@ -71,44 +72,49 @@ For the most part, these details are simply "gotchas" standing between a develop
 When the jQuery function is invoked with a CSS selector, it will return a jQuery object wrapping any element(s) that match this selector.
 For instance, by writing
 
-<javascript caption="Selecting all 'h1' tags">
-var allHeaders = $("h1");
-</javascript>
+```
+// Selecting all 'h1' tags
+var headers = $("h1");
+```
 
-`headers` is now a jQuery element containing *all* the `<h1>` tags already on the page.
+`headers` is now a jQuery element containing *all* the `h1` tags already on the page.
 This can be verified by inspecting the `length` property of `headers`:
 
-<javascript caption="Viewing the number of 'h1' tags on the page">
+```
+// Viewing the number of 'h1' tags on the page
 var allHeaders = $("h1");
 alert( allHeaders.length );
-</javascript>
+```
 
-If the page has more than one `<h1>` tag, this number will be greater than one.
-Likewise, if the page has no `<h1>` tags, the `length` property will be zero.
+If the page has more than one `h1` tag, this number will be greater than one.
+Likewise, if the page has no `h1` tags, the `length` property will be zero.
 Checking the `length` property is a common way to ensure that the selector successfully matched one or more elements.
 
 If the goal is to select only the first header element, another step is required.
 There are a number of ways to accomplish this, the most straight-forward may be the `eq()` function.
 
-<javascript caption="Selecting only the first 'h1' element on the page (in a jQuery object)">
+```
+// Selecting only the first 'h1' element on the page (in a jQuery object)
 var headers = $("h1");
 var firstHeader = headers.eq(0);
-</javascript>
+```
 
-Now `firstHeader` is a jQuery object containing only the first `<h1>` element on the page.
+Now `firstHeader` is a jQuery object containing only the first `h1` element on the page.
 And because `firstHeader` is a jQuery object, it has useful methods like `html()` and `after()`.
 jQuery also has a method named `get()` which provides a related function.
 Instead of returning a jQuery-wrapped DOM element, it returns the DOM element itself.
 
-<javascript caption="Selecting only the first 'h1' element on the page">
+```
+// Selecting only the first 'h1' element on the page
 var firstHeaderElem = $("h1").get(0);
-</javascript>
+```
 
 Alternatively, because the jQuery object is "array-like", it supports array subscripting via brackets:
 
-<javascript caption="Selecting only the first 'h1' element on the page (alternate approach)">
+```
+Selecting only the first 'h1' element on the page (alternate approach)
 var firstHeaderElem = $("h1")[0];
-</javascript>
+```
 
 In either case, `firstHeaderElem` contains the "native" DOM element.
 This means it has DOM properties like `innerHTML` and methods like `appendChild()`, but *not* jQuery methods like `html()` or `after()`.
@@ -120,22 +126,25 @@ One such instance is making comparisons.
 An important detail regarding this "wrapping" behavior is that each wrapped object is unique.
 This is true *even if the object was created with the same selector or contain references to the exact same DOM elements*.
 
-<javascript caption="Creating two jQuery objects for the same element">
+```
+// Creating two jQuery objects for the same element
 var logo1 = $("#logo");
 var logo2 = $("#logo");
-</javascript>
+```
 
 Although `logo1` and `logo2` are created in the same way (and wrap the same DOM element), they are not the same object.
 For example:
 
-<javascript caption="Comparing jQuery object">
+```
+// Comparing jQuery objects
 alert( $("#logo") === $("#logo") ); // alerts 'false'
-</javascript>
+```
 
 However, both objects contain the same DOM element.
 The `get` method is useful for testing if two jQuery objects have the same DOM element.
 
-<javascript caption="Comparing DOM elements">
+```
+// Comparing DOM elements
 var logo1 = $("$logo");
 var logo1Elem = logo1.get(0);
 
@@ -143,13 +152,14 @@ var logo2 = $("#logo");
 var logo2Elem = logo2.get(0);
 
 alert( logo1Elem === logo2Elem ); // alerts 'true'
-</javascript>
+```
 
 Many developers prefix a `$` to the name of variables that contain jQuery objects in order to help differentiate.
 There is nothing magic about this practice--it just helps some people to keep track of what different variables contain.
 The previous example could be re-written to follow this convention:
 
-<javascript caption="Comparing DOM elements (with more readable variable names)">
+```
+// Comparing DOM elements (with more readable variable names)
 var $logo1 = $("#logo");
 var logo1 = $logo1.get(0);
 
@@ -157,7 +167,7 @@ var $logo2 = $("#logo");
 var logo2 = $logo2.get(0);
 
 alert( logo1 === logo2 ); // alerts 'true'
-</javascript>
+```
 
 This code functions identically to the example above, but it is a little more clear to read.
 
@@ -169,12 +179,13 @@ Native DOM methods and properties are not present on the jQuery object, and vice
 
 Given a jQuery object with all the paragraph elements on the page:
 
-<javascript caption="Selecting all 'p' elements on the page">
+```
+// Selecting all 'p' elements on the page
 var allParagraphs = $("p");
-</javascript>
+```
 
 ...one might expect that the contents will grow and shrink over time as `<p>` elements are added and removed from the document.
-This is how "nodelists" returned by the `getElementsByTagName` method work, after all.
+This is how "NodeLists" returned by the `getElementsByTagName` method work, after all.
 
 jQuery objects do **not** behave in this manner.
 The set of elements contained within a jQuery object will not change unless explicitly modified.
@@ -182,9 +193,10 @@ This means that the collection is not "live"--it does not automatically update a
 If the document may have changed since the creation the jQuery object, the collection should be updated by creating a new one!
 It can be as easy as re-running the same selector:
 
-<javascript caption="Updating the selection">
+```
+// Updating the selection
 allParagraphs = $("p");
-</javascript>
+```
 
 ### Wrapping up
 

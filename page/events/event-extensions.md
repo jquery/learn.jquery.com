@@ -1,7 +1,6 @@
 ---
 title   : jQuery Event Extensions
-attribution:  Dave Methvin
-github: dmethvin
+level: beginner
 ---
 jQuery offers several ways to extend its event system to provide custom functionality when events are attached to elements. Internally in jQuery, these extensions are primarily used to ensure that standard events such as `submit` and `change` behave consistently across browsers. However, they can also be used to define new events with custom behavior.
 

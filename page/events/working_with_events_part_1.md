@@ -1,8 +1,6 @@
 ---
 title:        Working with Events, part 1
-attribution:  Karl Swedberg
-status:       needswork
-editrequired: 2
+level:        beginner
 source:       http://www.learningjquery.com/2008/03/working-with-events-part-1
 ---
 

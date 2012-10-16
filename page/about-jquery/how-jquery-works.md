@@ -1,8 +1,6 @@
 ---
 title   : How jQuery Works
-status: needswork
-editrequired: 11
-attribution:  jQuery Docs
+level: beginner
 ---
 ### jQuery: The Basics
 

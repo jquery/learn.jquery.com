@@ -1,6 +1,6 @@
 ---
 title:        Operators
-attribution:  jQuery Fundamentals
+level:        beginner
 ---
 Basic operators allow you to manipulate values.
 

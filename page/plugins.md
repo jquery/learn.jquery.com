@@ -1,6 +1,6 @@
 ---
 title: Plugins
-attribution:  jQuery Fundamentals
+level: intermediate
 ---
 A jQuery plugin is simply a new method that we use to extend jQuery's prototype
 object.  By extending the prototype object you enable all jQuery objects to

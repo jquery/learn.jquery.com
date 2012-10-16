@@ -1,7 +1,6 @@
 ---
 title:        Running Code
-attribution:  jQuery Fundamentals
-github: jquery
+level:        beginner
 ---
 
 ### External

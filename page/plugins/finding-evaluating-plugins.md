@@ -1,6 +1,6 @@
 ---
 title   : Finding & Evaluating Plugins
-attribution:  jQuery Fundamentals
+level:        intermediate
 ---
 ## Finding &amp; Evaluating Plugins
 

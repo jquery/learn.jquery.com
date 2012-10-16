@@ -1,6 +1,6 @@
 ---
 title:        Introducing Events
-attribution:  $jQuery Fundamentals
+level: beginner
 ---
 
 ## Introduction
