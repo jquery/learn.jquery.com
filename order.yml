@@ -1,8 +1,9 @@
 - index
 - about-jquery:
-  - downloading-jquery
   - how-jquery-works
+  - additional-support
 - javascript-101:
+  - getting-started
   - running-code
   - syntax-basics
   - types
@@ -41,6 +42,7 @@
   - working_with_events_part_2
   - triggering-event-handlers
   - introduction-to-custom-events
+  - history-of-events
 - effects:
   - built-in-effects
   - custom-effects

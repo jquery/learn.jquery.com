@@ -37,12 +37,6 @@ Each of the articles on the site has some [YAML "Front Matter"](https://github.c
 
 `level: advanced`
 
-## How Can I Help?
-
-The entire site is managed via [this Git repository](https://github.com/jquery/learn.jquery.com).  If you'd like to contribute new articles, make edits to existing content, or work on the site itself, the first thing you'll need is a [fork](http://help.github.com/fork-a-repo/). When you have changes you'd like to have reviewed for integration into the site, submit a [pull request](http://help.github.com/send-pull-requests/).
-
-If you're unfamiliar with Git, you can still contribute by editing files directly via [GitHub's in-browser editor](https://github.com/blog/905-edit-like-an-ace). But you won't be able to create new content, and you'll still need a GitHub account and a fork of this repository. So we encourage you to [learn how to use Git and GitHub](http://help.github.com/); it'll probably pretty useful no matter what.
-
 ## Building && Working Locally
 
 As this site is part of the jQuery network of sites, its presentation is controlled by our [web base template](https://github.com/jquery/web-base-template). To preview the site locally, first follow the [instructions there](https://github.com/jquery/web-base-template) to set up a local version of the jQuery WordPress network. Then, clone this repo and run the following steps (node.js required).
@@ -53,8 +47,14 @@ As this site is part of the jQuery network of sites, its presentation is control
 3. Edit config.json to use the username and password for your local WordPress network
 4. `grunt`
 
+
 *Windows note: Line endings need to be Unix-style (line-feed only). Make sure your text editor creates new files with Unix-style line endings. In addition, the following setting to your git config will keep the Unix-style line endings when pulling from the repository.*
 
 ```
 $ git config --global core.autocrlf true
 ```
+
+## How Can I Help?
+
+We encourage contributions from anyone.  We've set up a [CONTRIBUTING.md](contributing.md) page to help with contributing.
+
