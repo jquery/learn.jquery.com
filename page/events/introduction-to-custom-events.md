@@ -452,8 +452,6 @@ experimentation with interface options. Finally, custom events can enhance code
 readability and maintainability, by making clear the relationship between an
 element and its behaviors.
 
-You can see the full application at `demos/custom-events.html` and `demos/js/custom-events.js` in the sample code.
-
 
 
 
