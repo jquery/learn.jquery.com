@@ -12,7 +12,7 @@ source:       working-with-events-part-1.md, inside-event-handling-function.md, 
 
 jQuery makes it straightforward to set up event-driven responses on page elements. 
 These events are often triggered by the end user's interaction with the page, 
-such as when a text is entered into a form element or the mouse pointer is moved.  
+such as when text is entered into a form element or the mouse pointer is moved.  
 In some cases, such as the page load and unload events, the browser itself will 
 trigger the event.
 
@@ -45,21 +45,17 @@ after the event listeners are established will not automatically pick up event b
 you've set up previously.  For example:
 
 ```
-    $(document).ready(function(){
-
-       // Sets up click behavior on all button elements with the alert class
-       // that exist in the DOM when the instruction was executed
-       $('button.alert').on('click', function(){
-          console.log('A button with the alert class was clicked!');
-       });
-
-       // Now create a new button element with the alert class. This button
-       // was created after the click listeners were applied above, so it 
-       // will not have the same click behavior as its peers
-       $('button').addClass('alert').appendTo(document.body);
-
+$(document).ready(function(){
+   // Sets up click behavior on all button elements with the alert class
+   // that exist in the DOM when the instruction was executed
+   $('button.alert').on('click', function(){
+      console.log('A button with the alert class was clicked!');
     });
-
+   // Now create a new button element with the alert class. This button
+   // was created after the click listeners were applied above, so it 
+   // will not have the same click behavior as its peers
+   $('button').addClass('alert').appendTo(document.body);
+});
 ```
 
 Consult the article on event delegation to see how to use `$.fn.on` so that 
@@ -126,20 +122,20 @@ the DOM element into a jQuery object that we can use jQuery methods on, we
 simply do `$(this)`, often following this idiom:
 
 ```
-    var $this = $(this);
+var $this = $(this);
 ```
 
 A fuller example would be:
 
 ```
 // Preventing a link from being followed
-    $('a').click(function(eventObject) {
-        var $this = $(this);
-        if ($this.attr('href').match(/evil/)) {
-            eventObject.preventDefault();
-            $this.addClass('evil');
-        }
-    });
+$('a').click(function(eventObject) {
+   var $this = $(this);
+   if ($this.attr('href').match(/evil/)) {
+      eventObject.preventDefault();
+      $this.addClass('evil');
+   }
+});
 ```
 
 ### Setting Up Multiple Event Responses
@@ -219,3 +215,22 @@ $('p').one('click', function() {
   $(this).click(function() { console.log('You have clicked this before!'); });
 });
 ```
+
+Note that in the code snippet above, the `firstClick` function will be executed for 
+the first click on each paragraph element rather than the function being removed 
+from all paragraphs when any paragraph is clicked for the first time.
+
+`$.fn.one` can also be used to bind multiple events: 
+
+```
+// Using $.fn.one to bind several events
+$('input[id]').one('focus mouseover keydown', firstEvent);
+ 
+function firstEvent(eventObject){
+  console.log('A ' + eventObject.type + ' event occurred for the first time on the input with id ' + this.id)
+}
+```
+
+In this case, the `firstEvent` function will be executed once for each event. For the snippet above, 
+this means that once an input element gains focus, the handler function will still execute for the 
+first keydown event on that element.
