@@ -38,18 +38,22 @@ We are using the Github flavored Markdown.
 
 ## Article Header Metadata
 
-Each article should have the following header:
+Each article should have the following header (see below as some metatags are optional):
 
 ```
 ---
 title:  <article title>
 level:  [beginner|intermediate|advance]
 source:  <url of source of the material derived>
+attribution: 
+  - Ralph Whitbeck <ralph@email.com>
+  - John Paul<john@email.com>
 ---
 ```
 
 The `source` attibute is optional. 
+If the article was pulled in from an outside source you also need to add an attribution tag to give credit to the original authors. 
 
 ## How do I get credit for my contribution?
 
-We will build the attribution of an article based on the git commit logs. 
+We will build the attribution of an article based on the git commit logs.  Only use the attribution meta tag to give credit to authors outside of git for an article that was pulled in for instance. 
