@@ -1,6 +1,5 @@
 ---
 title: Events
-attribution:  jQuery Fundamentals
 ---
 jQuery provides simple methods for attaching event handlers to selections.
 When an event occurs, the provided function is executed.  Inside the function,

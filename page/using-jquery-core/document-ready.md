@@ -1,6 +1,6 @@
 ---
-level: beginner
 title   : $(document).ready()
+level: beginner
 ---
 You cannot safely manipulate a page until the document is “ready.” 
 jQuery detects this state of readiness for you; code included inside 

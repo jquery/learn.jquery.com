@@ -1,7 +1,5 @@
 ---
 title:        Clever Conditionals
-attribution:  jQuery Fundamentals
-tags:         performance
 ---
 
 ```

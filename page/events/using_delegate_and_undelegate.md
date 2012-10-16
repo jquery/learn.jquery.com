@@ -1,8 +1,5 @@
 ---
 title:        Using Delegate and Undelegate in jQuery
-attribution:  Jordan Boesch
-status:       needswork
-editrequired: 2
 source:       http://www.learningjquery.com/2010/03/using-delegate-and-undelegate-in-jquery-1-4-2
 ---
 

@@ -1,6 +1,5 @@
 ---
 title : JavaScript 101
-attribution: jQuery Fundamentals
 ---
 
 jQuery is built on top of JavaScript, a rich and expressive language in its own right. This means when using jQuery, we are still writing valid JavaScript; it just serves as a framework to make many aspects of writing JavaScript easier and more reliable in the various browser environments. With that said, a basic knowledge of JavaScript will go a long way in understanding, structuring, and debugging our code; jQuery will just help make that basic knowledge go much, much further.

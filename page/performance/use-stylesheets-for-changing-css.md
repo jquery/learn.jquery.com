@@ -1,8 +1,7 @@
 ---
 title:        Use Stylesheets for Changing CSS on Many Elements
-attribution:  jQuery Fundamentals
-tags:         performance
 ---
+
 If you're changing the CSS of more than 20 elements using `$.fn.css`, consider
 adding a style tag to the page instead for a nearly 60% increase in speed.
 

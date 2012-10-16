@@ -1,6 +1,5 @@
 ---
 title   : Exercises
-attribution:  jQuery Fundamentals
 ---
 ## Exercises
 

@@ -1,8 +1,5 @@
 ---
 title: Effects
-chapter : effects
-section : 1
-attribution:  jQuery Fundamentals
 ---
 jQuery makes it trivial to add simple effects to your page.  Effects can use
 the built-in settings, or provide a customized duration.  You can also create
