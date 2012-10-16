@@ -1,6 +1,6 @@
 ---
 title   : Handling Events
-attribution:  David Mazza, jQuery Fundementals
+attribution:  jQuery Fundementals
 level: beginner
 ---
 jQuery provides a method `.on()` to 
