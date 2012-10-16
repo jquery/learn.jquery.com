@@ -80,3 +80,14 @@
 - faq:
   - add_keyboard_navigation
   - enable_the_back_button
+  - how_do_i_select_an_item_using_class_or_id
+  - how_do_I_select_elements_when_I_already_have_a_dom_element
+  - how_do_i_test_whether_an_element_has_a_particular_class
+  - how_do_i_test_whether_an_element_exists
+  - how_do_i_determine_the_state_of_a_toggled_element
+  - how_do_i_select_an_element_by_an_id_that_has_characters_used_in_css_notation
+  - how_do_i_disable_enable_a_form_element
+  - how_do_i_check_uncheck_a_checkbox_input_or_radio_button
+  - how_do_i_get_the_text_value_of_a_selected_option
+  - how_do_i_replace_text_from_the_3rd_element_of_a_list_of_10_items
+  - how_do_i_pull_a_native_dom_element_from_a_jquery_object
