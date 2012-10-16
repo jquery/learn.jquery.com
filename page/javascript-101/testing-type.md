@@ -66,6 +66,7 @@ myNumInt = myNum;
 // Now, returning typeof may not return what you think...
 
 typeof myNumInt;	// returns 'string' (it's value is '5 forty five')
+```
 
 jQuery offers utility methods to help you determine the type of an arbitrary
 value. These will be covered later.
