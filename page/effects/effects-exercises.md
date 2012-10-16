@@ -1,5 +1,6 @@
 ---
 title   : Effect Exercises
+level: beginner
 ---
 ### Reveal Hidden Text
 

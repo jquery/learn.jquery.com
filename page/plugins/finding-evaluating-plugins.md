@@ -1,5 +1,6 @@
 ---
 title   : Finding & Evaluating Plugins
+level:        intermediate
 ---
 ## Finding &amp; Evaluating Plugins
 

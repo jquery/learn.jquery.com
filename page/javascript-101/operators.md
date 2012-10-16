@@ -1,5 +1,6 @@
 ---
 title:        Operators
+level:        beginner
 ---
 Basic operators allow you to manipulate values.
 

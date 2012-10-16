@@ -1,5 +1,6 @@
 ---
 title:        Working with Events, part 1
+level:        beginner
 source:       http://www.learningjquery.com/2008/03/working-with-events-part-1
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: Downloading jQuery
+level: beginner
 ---
 
 ## About The Code

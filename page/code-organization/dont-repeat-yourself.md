@@ -1,5 +1,6 @@
 ---
 title:        Keep Things DRY
+level: beginner
 ---
 Don't repeat yourself; if you're repeating yourself, you're doing it wrong.
 

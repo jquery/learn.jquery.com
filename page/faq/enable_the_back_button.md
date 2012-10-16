@@ -1,5 +1,6 @@
 ---
 title:        Enabling The Back-Button
+level:        beginner
 source:       http://jqueryfordesigners.com/enabling-the-back-button/
 ---
 

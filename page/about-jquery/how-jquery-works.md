@@ -1,5 +1,6 @@
 ---
 title   : How jQuery Works
+level: beginner
 ---
 ### jQuery: The Basics
 

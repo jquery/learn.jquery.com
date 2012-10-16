@@ -1,5 +1,6 @@
 ---
 title:        Introducing Events
+level: beginner
 ---
 
 ## Introduction

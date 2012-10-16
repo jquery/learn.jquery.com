@@ -1,5 +1,6 @@
 ---
 title:        Use Stylesheets for Changing CSS on Many Elements
+level:        intermediate
 ---
 
 If you're changing the CSS of more than 20 elements using `$.fn.css`, consider

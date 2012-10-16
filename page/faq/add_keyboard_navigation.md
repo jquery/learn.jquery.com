@@ -1,5 +1,6 @@
 ---
 title:        Adding Keyboard Navigation
+level:        beginner
 source:       http://jqueryfordesigners.com/adding-keyboard-navigation/
 ---
 

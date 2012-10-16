@@ -1,5 +1,6 @@
 ---
 title: Advanced Plugin Concepts
+level:        intermediate
 ---
 
 ### Provide public access to default plugin settings

@@ -1,5 +1,6 @@
 ---
 title   : Writing Stateful Plugins with the jQuery UI Widget Factory
+level:        intermediate
 ---
 ## Writing Stateful Plugins with the jQuery UI Widget Factory
 

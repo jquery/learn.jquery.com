@@ -1,5 +1,6 @@
 ---
 title:        Arrays
+level:        beginner
 ---
 Arrays are zero-indexed, ordered lists of values. They are a handy way to store a set of
 related items of the same type (such as strings), though in reality, an array

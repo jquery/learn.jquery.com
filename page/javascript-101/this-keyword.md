@@ -1,5 +1,6 @@
 ---
 title:        The "this" Keyword
+level:        beginner
 ---
 
 In JavaScript, as in most object-oriented programming languages, `this` is a

@@ -1,5 +1,6 @@
 ---
 title:        Scope
+level:        beginner
 ---
 
 "Scope" refers to the variables that are available to a piece of code at a

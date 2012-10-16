@@ -1,5 +1,6 @@
 ---
 title:        Clever Conditionals
+level:        intermediate
 ---
 
 ```
