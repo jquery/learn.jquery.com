@@ -8,7 +8,7 @@ The jQuery library, and virtually all of its plugins are constrained within the 
 As a general rule, global objects are stored inside the jQuery namespace as well, so you shouldn't 
 get a clash between jQuery and any other library (like prototype.js, MooTools, or YUI).
 
-That said, there is one caveat: *By default, jQuery uses `$` as a shortcut for `jQuery`.*  Thus, if 
+That said, there is one caveat: *by default, jQuery uses `$` as a shortcut for `jQuery`.*  Thus, if 
 you are using another JavaScript library that uses the `$` variable, you can
 run into conflicts with jQuery.  In order to avoid these conflicts, you need to
 put jQuery in no-conflict mode immediately after it is loaded onto the page and
