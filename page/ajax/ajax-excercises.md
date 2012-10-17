@@ -21,9 +21,9 @@ blog.html.  Once you have the href, here's one way to process it into an ID
 that you can use as a selector in `$.fn.load`:
 
 ```
-  var href = 'blog.html#post1';
-  var tempArray = href.split('#');
-  var id = '#' + tempArray[1];
+  var href = "blog.html#post1";
+  var tempArray = href.split("#");
+  var id = "#" + tempArray[1];
 ```
 
 Remember to make liberal use of `console.log` to make sure you're on the right
