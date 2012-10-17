@@ -11,14 +11,14 @@ If you're unfamiliar with Git, you can still contribute by editing files directl
 Here are some shortcuts to getting set up:
 
 1. Fork the [repository](https://github.com/jquery/learn.jquery.com)
-2. Clone the repo `git clone git@github.com:*<your username>*/learn.jquery.com.git`
+2. Clone the repo `git clone git@github.com:<your username>/learn.jquery.com.git`
 3. Set up an upstream remote back to the jQuery repo 'git remote add upstream git@github.com:jquery/learn.jquery.com.git'
-4. Branch master into a feature branch `git branch *<feature/issue name/number>*`
-5. Move into that branch `git checkout *<feature/issue name/number>*`
+4. Branch master into a feature branch `git branch <feature/issue name/number>`
+5. Move into that branch `git checkout <feature/issue name/number>`
 6. Work on your awesome contribution. 
 7. Stage the files to the index in preparation for commit `git add .`
-8. Commit the files to your local repo `git commit -m "*add a relevant message describing the change*"`
-9. Push the files to your github repo `git push origin *<feature/issue name/number>*`
+8. Commit the files to your local repo `git commit -m "add a relevant message describing the change"`
+9. Push the files to your github repo `git push origin <feature/issue name/number>`
 10. Go to github.com and go to the forked repo and submit a new [pull request](https://help.github.com/articles/using-pull-requests).
 
 ## Where is the content?
