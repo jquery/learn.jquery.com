@@ -34,21 +34,18 @@
   - utility-methods
   - iterating
 - events:
-  - events-to-elements
-  - inside-event-handling-function
+  - event-basics
   - event-helpers
   - event-extensions
   - event-delegation
   - using_delegate_and_undelegate
-  - working_with_events_part_1
   - working_with_events_part_2
   - triggering-event-handlers
   - introduction-to-custom-events
   - history-of-events
 - effects:
-  - built-in-effects
+  - intro-to-effects
   - custom-effects
-  - managing-effects
   - queue_and_dequeue_explained
   - uses_of_queue_and_dequeue
 - ajax:
