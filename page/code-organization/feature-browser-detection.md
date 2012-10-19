@@ -60,9 +60,9 @@ Let's take a look at how to check whether or not a `<canvas>` element exists in 
 
 ```js
 // We want to show a graph in browsers that support canvas, but a data table in browsers that don't.
-var elem = document.createElement('canvas');
+var elem = document.createElement("canvas");
 
-if ( elem.getContext && elem.getContext('2d') ) {
+if ( elem.getContext && elem.getContext("2d") ) {
 
   showGraph();
 
