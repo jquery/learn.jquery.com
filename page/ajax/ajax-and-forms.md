@@ -53,16 +53,16 @@ With that being said, let's jump on in to some examples! First, we'll see how ea
 // Using validation to check for the presence of an input
 $("#form").submit(function( e ) {
 
-	if ( $(".required").val().length === 0 ) { // if .required's value's length is zero
+  if ( $(".required").val().length === 0 ) { // if .required's value's length is zero
 
-		// usually show some kind of error message here
-		return false; // this prevents the form from submitting
+    // usually show some kind of error message here
+    return false; // this prevents the form from submitting
 
-	} else {
+  } else {
 
-		// run $.ajax here
+    // run $.ajax here
 
-	}
+  }
 
 });
 ```
@@ -73,19 +73,19 @@ Let's see how easy it is to check for invalid characters in a username:
 // Validate a phone number field
 $("#form").submit(function( e ) {
 
-	var inputtedPhoneNumber = $("#phone").val();
+  var inputtedPhoneNumber = $("#phone").val();
   var phoneNumberRegex = ^\d*$/; // match only numbers
 
-	if ( !phoneNumberRegex.test( inputtedPhoneNumber ) ) { // if the phone number doesn't match the regex
+  if ( !phoneNumberRegex.test( inputtedPhoneNumber ) ) { // if the phone number doesn't match the regex
 
-		// usually show some kind of error message ere
-		return false; // prevent the form from submitting
+    // usually show some kind of error message ere
+    return false; // prevent the form from submitting
 
-	} else {
+  } else {
 
-		// run $.ajax here
+    // run $.ajax here
 
-	}
+  }
 
 });
 ```
@@ -99,13 +99,13 @@ For example, say we would like to modify all crossDomain requests through a prox
 // Using a proxy with a prefilter
 $.ajaxPrefilter(function( options, originalOptions, jqXHR ) {
 
-	if ( options.crossDomain ) {
+  if ( options.crossDomain ) {
 
-		options.url = "http://mydomain.net/proxy/" + encodeURIComponent(options.url );
+    options.url = "http://mydomain.net/proxy/" + encodeURIComponent(options.url );
 
-		options.crossDomain = false;
+    options.crossDomain = false;
 
-	}
+  }
 
 });
 ```
@@ -116,7 +116,7 @@ You can pass in an optional argument before the callback function that specifies
 // Using the optional dataTypes argument">
 $.ajaxPrefilter( "json script", function( options, originalOptions, jqXHR ) {
 
-	// do all of the prefiltering here, but only for requests that indicate a dataType of "JSON" or "script"
+  // do all of the prefiltering here, but only for requests that indicate a dataType of "JSON" or "script"
 
 });
 ```
