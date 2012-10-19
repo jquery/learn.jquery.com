@@ -8,14 +8,19 @@ value, or to a value relative to the current value.
 
 ```
 // Custom effects with `$.fn.animate`">
-    $('div.funtimes').animate(
-        {
-            left : "+=50",
-            opacity : 0.25
-        },
-        300, // duration
-        function() { console.log('done!'); // calback
-    });
+$("div.funtimes").animate({
+
+    left : "+=50",
+    opacity : 0.25
+
+  },
+  300, // duration
+  function() {
+
+    console.log("done!"); // callback
+
+  }
+});
 ```
 
 <div class="note">
@@ -37,13 +42,14 @@ As of jQuery 1.4, it is possible to do per-property easing when using the
 
 ```
 // Per-property easing">
-    $('div.funtimes').animate(
-        {
-            left : [ "+=50", "swing" ],
-            opacity : [ 0.25, "linear" ]
-        },
-        300
-    );
+$("div.funtimes").animate({
+
+    left : [ "+=50", "swing" ],
+    opacity : [ 0.25, "linear" ]
+
+  },
+  300
+);
 ```
 
 For more details on easing options, see
