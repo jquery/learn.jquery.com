@@ -1,5 +1,5 @@
 ---
-title   : Exercises
+title: Exercises
 level: beginner
 source: http://jqfundamentals.com/legacy
 attribution: 

@@ -36,10 +36,14 @@ a click handler to it that generates an alert message. In jQuery, we might do
 so with the following code:
 
 ```
-$(document).ready(function() {
-  $('button.alert').click(function() {
-    alert('this is an alert message');
+$( document ).ready(function() {
+
+  $("button.alert").click(function() {
+
+    alert("this is an alert message");
+
   });
+
 });
 ```
 
@@ -59,11 +63,16 @@ when clicked.
 Now, let's create a new button (if we don't already have a second one) using jQuery code like this:
 
 ```
-$('#create-button').click(function() {
-  if ( $('button.alert').length <2) {
-    $('<button class="alert">Not another alert').insertAfter(this);
+$("#create-button").click(function() {
+
+  if ( $("button.alert").length <2 ) {
+
+    $("<button class="alert">Not another alert").insertAfter( this );
+
   }
+
   return false;
+
 });
 ```
 
@@ -92,11 +101,16 @@ item with a class of "special" (which itself is inside an element with id of
 item in which the button was clicked:
 
 ```
-$(document).ready(function() {
-  $('#list1 li.special button').click(function() {
-    var $newLi = $('<li class="special">special and new <button>I am new</button></li>');
-    $(this).parent().after($newLi);
+$( document ).ready(function() {
+
+  $("#list1 li.special button").click(function() {
+
+    var $newLi = $("<li class="special">special and new <button>I am new</button></li>");
+
+    $( this ).parent().after( $newLi );
+
   });
+
 });
 ```
 
@@ -125,10 +139,14 @@ just like to use labels that are as obvious as possible because I have a hard
 time keeping track of things. Here is what we have so far:
 
 ```
-$(document).ready(function() {
-  $('#list2').click(function(event) {
-    var $newLi = $('<li class="special">special and new <button>I am new</button></li>');
+$( document ).ready(function() {
+
+  $("#list2").click(function( event ) {
+
+    var $newLi = $("<li class="special">special and new <button>I am new</button></li>");
+
   });
+
 });
 ```
 
@@ -140,18 +158,29 @@ We check the clicked element by using the "target" property of the event
 argument:
 
 ```
-$(document).ready(function() {
-  $('#list2').click(function(event) {
-    var $newLi = $('<li class="special">special and new <button>I am new</button></li>');
-    var $tgt = $(event.target);
-    if ($tgt.is('button')) {
-      $tgt.parent().after($newLi);
+$( document ).ready(function() {
+
+  $("#list2").click(function(event) {
+
+    var $newLi = $("<li class="special">special and new <button>I am new</button></li>");
+
+    var $tgt = $( event.target );
+
+    if ( $tgt.is("button") ) {
+
+      $tgt.parent().after( $newLi );
+
     }
 
-    // next 2 lines show that you've clicked on the ul
-    var bgc = $(this).css('backgroundColor');
-    $(this).css({backgroundColor: bgc == '#ffcccc' || bgc == 'rgb(255, 204, 204)' ? '#ccccff' : '#ffcccc'});
+    // next 2 lines show that you"ve clicked on the ul
+    var bgc = $( this ).css("backgroundColor");
+
+    $( this ).css({
+      backgroundColor: bgc == "#ffcccc" || bgc == "rgb(255, 204, 204)" ? "#ccccff" : "#ffcccc"
+    });
+
   });
+
 });
 ```
 
@@ -169,13 +198,20 @@ cross-browser friendly. If you do this sort of thing with plain JavaScript and
 DOM nodes, you'd have to do something like this:
 
 ```
-var list2 = document.getElementById('list2');
-list2.onclick = function(e) {
+var list2 = document.getElementById("list2");
+
+list2.onclick = function( e ) {
+
   var e = e || window.event;
+
   var tgt = e.target || e.srcElement;
-  if (tgt.nodeName.toLowerCase() == 'button') {
+
+  if ( tgt.nodeName.toLowerCase() == "button" ) {
+
     // do something
+
   }
+
 };
 ```
 
@@ -192,16 +228,28 @@ single table element and use event.target to pinpoint the cell that is being
 clicked:
 
 ```
-$(document).ready(function() {
-  $('table').click(function(event) {
-    var $thisCell, $tgt = $(event.target);
-    if ($tgt.is('td')) {
+$( document ).ready(function() {
+
+  $("table").click(function(event) {
+
+    var $thisCell = null;
+
+    var $tgt = $( event.target );
+
+    if ( $tgt.is("td") ) {
+
       $thisCell = $tgt;
-    } else if ($tgt.parents('td').length) {
-      $thisCell = $tgt.parents('td:first');
+
+    } else if ( $tgt.parents("td").length ) {
+
+      $thisCell = $tgt.parents("td:first");
+
     }
+
     // now do something with $thisCell
+
   });
+
 });
 ```
 

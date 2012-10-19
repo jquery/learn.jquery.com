@@ -24,7 +24,7 @@ event system that coorespond to these events.
 
 ```
 //This will not change the current page
-$('a').trigger('click');
+$("a").trigger("click");
 ```
 
 ## How can I mimic a native browser event, if not `.trigger()`?
@@ -36,7 +36,7 @@ The jQuery UI Team created [jquery.simulate.js](https://github.com/eduardolundgr
 
 ```
 //Triggering a native browser event using the simulate plugin
-$('a').simulate('click');
+$("a").simulate("click");
 ```
 
 This will not only trigger the jQuery event handlers, but also follow the link and change the current page.
@@ -63,19 +63,25 @@ call the function itself whenever you want, without the need for
 
 ```
 //Triggering an event handler the right way
-var foo = function(e) {
-  if (e) {
-    console.log(e);
+var foo = function( e ) {
+
+  if ( e ) {
+
+    console.log( e );
+
   } else {
-     console.log('this didn\'t come from an event!');
+
+     console.log("this didn't come from an event!");
+
   }
+
 };
 
-$('p').on('click', foo);
+$("p").on( 'click', foo );
 
-foo(); // instead of $('p').trigger('click')
+foo(); // instead of $("p").trigger("click")
 ```
 
 A more complex architecture can built on top of trigger using the [publish-subscribe pattern](http://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) using [jQuery plugins](https://gist.github.com/661855).
-With this technique,  `.trigger()` can be used to notify other sections of code that an application specific event has happenned.
+With this technique,  `$.fn.trigger` can be used to notify other sections of code that an application specific event has happened.
 

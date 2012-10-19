@@ -45,16 +45,22 @@ the DOM element into a jQuery object that we can use jQuery methods on, we
 simply do $(this), often following this idiom:
 
 ```
-    var $this = $(this);
+var $this = $( this );
 ```
 
 ```
 // Preventing a link from being followed
-$('a').click(function(e) {
-  var $this = $(this);
-  if ($this.attr('href').match('evil')) {
+$("a").click(function(e) {
+
+  var $this = $( this );
+
+  if ( $this.attr("href").match("evil") ) {
+
     e.preventDefault();
-    $this.addClass('evil');
+
+    $this.addClass("evil");
+
   }
+
 });
 ```
