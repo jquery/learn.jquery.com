@@ -39,7 +39,6 @@
   - event-helpers
   - event-extensions
   - event-delegation
-  - using_delegate_and_undelegate
   - working_with_events_part_1
   - working_with_events_part_2
   - triggering-event-handlers
