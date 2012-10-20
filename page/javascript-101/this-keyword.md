@@ -23,64 +23,76 @@ of steps:
 - Otherwise, the function is being invoked as a standalone function not
   attached to any object, and `this` will refer to the global object.
 
-``` js
+```
 // A function invoked using Function.call
 var myObject = {
-  sayHello : function() {
-    console.log('Hi! My name is ' + this.myName);
+
+  sayHello: function() {
+
+    console.log( "Hi! My name is " + this.myName );
+
   },
 
-  myName : 'Rebecca'
+  myName: "Rebecca"
 };
 
 var secondObject = {
-  myName : 'Colin'
+  myName: "Colin"
 };
 
-myObject.sayHello();                  // logs 'Hi! My name is Rebecca'
-myObject.sayHello.call(secondObject); // logs 'Hi! My name is Colin'
+myObject.sayHello();                  // logs "Hi! My name is Rebecca"
+
+myObject.sayHello.call( secondObject ); // logs "Hi! My name is Colin"
 ```
 
-``` js
+```
 // A function created using Function.bind
-var myName = 'the global object',
+var myName = "the global object",
 
-    sayHello = function () {
-      console.log('Hi! My name is ' + this.myName);
-    },
+  sayHello = function () {
 
-    myObject = {
-      myName : 'Rebecca'
-    };
+    console.log( "Hi! My name is " + this.myName );
 
-var myObjectHello = sayHello.bind(myObject);
+  },
 
-sayHello();       // logs 'Hi! My name is the global object'
-myObjectHello();  // logs 'Hi! My name is Rebecca'
+  myObject = {
+    myName: "Rebecca"
+  };
+
+var myObjectHello = sayHello.bind( myObject );
+
+sayHello();       // logs "Hi! My name is the global object"
+
+myObjectHello();  // logs "Hi! My name is Rebecca"
 ```
 
-``` js
+```
 // A function being attached to an object at runtime
-    var myName = 'the global object',
+var myName = "the global object",
 
-        sayHello = function() {
-          console.log('Hi! My name is ' + this.myName);
-        },
+  sayHello = function() {
 
-        myObject = {
-          myName : 'Rebecca'
-        },
+    console.log( "Hi! My name is " + this.myName );
 
-        secondObject = {
-          myName : 'Colin'
-        };
+  },
 
-    myObject.sayHello = sayHello;
-    secondObject.sayHello = sayHello;
+  myObject = {
+    myName: "Rebecca"
+  },
 
-    sayHello();               // logs 'Hi! My name is the global object'
-    myObject.sayHello();      // logs 'Hi! My name is Rebecca'
-    secondObject.sayHello();  // logs 'Hi! My name is Colin'
+  secondObject = {
+    myName: "Colin"
+  };
+
+myObject.sayHello = sayHello;
+
+secondObject.sayHello = sayHello;
+
+sayHello();               // logs "Hi! My name is the global object"
+
+myObject.sayHello();      // logs "Hi! My name is Rebecca"
+
+secondObject.sayHello();  // logs "Hi! My name is Colin"
 ```
 
 <div class="note">
@@ -91,20 +103,25 @@ instance methods as this will cause the value of `this` within the function to
 change, leading to incorrect code operation. For instance:
 </div>
 
-``` js
+```
 var myNamespace = {
-    myObject : {
-      sayHello : function() {
-        console.log('Hi! My name is ' + this.myName);
-      },
 
-      myName : 'Rebecca'
-    }
+  myObject: {
+
+    sayHello: function() {
+
+      console.log("Hi! My name is " + this.myName);
+
+    },
+
+    myName: "Rebecca"
+  }
+
 };
 
 var hello = myNamespace.myObject.sayHello;
 
-hello();  // logs 'Hi! My name is undefined'
+hello();  // logs "Hi! My name is undefined"
 ```
 
 
@@ -114,16 +131,22 @@ You can, however, safely reduce everything up to the object on which the method 
 
 ```
 var myNamespace = {
-    myObject : {
-      sayHello : function() {
-        console.log('Hi! My name is ' + this.myName);
-      },
 
-      myName : 'Rebecca'
-    }
+  myObject : {
+
+    sayHello : function() {
+
+      console.log("Hi! My name is " + this.myName);
+
+    },
+
+    myName : "Rebecca"
+
+  }
+
 };
 
 var obj = myNamespace.myObject;
 
-obj.sayHello();  // logs 'Hi! My name is Rebecca'
+obj.sayHello();  // logs "Hi! My name is Rebecca"
 ```
