@@ -34,20 +34,28 @@ This process was our original code, and most of it needs to stay in place. The c
 So we listen for the hashchange event, just like we might listen for a click event:
 
 ```
-$(window).bind('hashchange', function(){
-	//do some magic
+$( window ).bind("hashchange", function(){
+
+  //do some magic
+
 });
 ```
 
 Now we move all of the original code from the click handler in to this new event listener. I’ve copied this code in, and marked in bold which lines we’ll need to change:
 
 ```
-$(window).bind('hashchange', function(){
-	tabContainers.hide();
-	tabContainers.filter(this.hash).show();
-$('div.tabs ul.tabNavigation a').removeClass('selected');
-	$(this).addClass('selected');
-	return false;
+$( window ).bind( "hashchange", function(){
+
+  tabContainers.hide();
+
+  tabContainers.filter( this.hash ).show();
+
+$("div.tabs ul.tabNavigation a").removeClass("selected");
+
+  $( this ).addClass("selected");
+
+  return false;
+
 });
 ```
 
@@ -60,7 +68,7 @@ Next we need to address how we can target the appropriate tab to add the selecte
 Since we don’t have this to target the right tab, we need to find the element using jQuery. Since we have the hash, we can use this to find the tab link. We can use the “hash” attribute selector like this:
 
 ```
-$('a[hash=#first]')
+$("a[hash = #first]")
 ```
 
 Therefore we can substitute our hash variable in to the ‘#first’ part of the selector above, and now we’ll have the right element to add the selected class.
@@ -75,18 +83,27 @@ Our final code looks like this:
 
 ```
 $(function() {
-var tabContainers = $('div.tabs > div');
-tabContainers.hide().filter(':first').show();
 
-$(window).bind('hashchange', function(){
-	var hash = window.location.hash || '#first';
-	tabContainers.hide();
-	tabContainers.filter(hash).show();
-	$('div.tabs ul.tabNavigation a').removeClass('selected');
-	$('a[hash=' + hash + ']').addClass('selected');
-});
+  var tabContainers = $("div.tabs > div");
 
-	$(window).trigger("hashchange");
+  tabContainers.hide().filter(":first").show();
+
+  $( window ).bind( "hashchange", function(){
+
+    var hash = window.location.hash || "#first";
+
+    tabContainers.hide();
+
+    tabContainers.filter( hash ).show();
+
+    $("div.tabs ul.tabNavigation a").removeClass("selected");
+
+    $( "a[hash = " + hash + "]" ).addClass("selected");
+
+  });
+
+  $( window ).trigger("hashchange");
+
 });
 ```
 

@@ -8,17 +8,19 @@ There are two ways to disable/enable form elements.
 Set the 'disabled' attribute to true or false:
 
 ```
- // Disable #x
- $('#x').attr('disabled', true);
- // Enable #x
- $('#x').attr('disabled', false);
+// Disable #x
+$("#x").attr( "disabled", true );
+
+// Enable #x
+$("#x").attr( "disabled", false );
 ```
 
 Add or remove the 'disabled' attribute:
 
 ```
- // Disable #x
- $("#x").attr('disabled', 'disabled');
- // Enable #x
- $("#x").removeAttr('disabled');
+// Disable #x
+$("#x").attr( "disabled", "disabled" );
+
+// Enable #x
+$("#x").removeAttr("disabled");
 ```
