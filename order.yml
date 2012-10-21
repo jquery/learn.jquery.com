@@ -58,8 +58,7 @@
 - plugins:
   - finding-evaluating-plugins
   - basic-plugin-creation
-  - a_plugin_development_pattern
-  - making_a_jquery_plugin_truly_customizable
+  - advanced-plugin-concepts
   - stateful-plugins-with-widget-factory
 - performance:
   - append-outside-loop
