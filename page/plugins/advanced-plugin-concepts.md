@@ -227,7 +227,7 @@ choose:
 And now we can hilight each of these divs uniquely using a single line of script:
 
 ```
-$('.hilight').hilight();
+$(".hilight").hilight();
 ```
 
 ###Bob and Sue
@@ -260,7 +260,7 @@ jQuery.fn.superGallery = function( options ) {
 
   var settings = $.extend( {}, defaults, options );
 
-  return this.each(function(){
+  return this.each(function() {
 
     // ----------------------------
     // Plugin code would go here...
@@ -400,7 +400,7 @@ If your plugin is driven by events then it might be a good idea to provide a cal
 ```
 var defaults = {
 
-  onImageShow : function(){}, // we define an empty anonymous function
+  onImageShow : function() {}, // we define an empty anonymous function
                               // so that we don"t need to check its
                               // existence before calling it.
 
@@ -429,7 +429,7 @@ $("ul.imgs li").superGallery({
 
   onImageShow : function() {
 
-    $( this ).after( "<span>" + $(this).attr("longdesc") + "</span>" );
+    $( this ).after( "<span>" + $( this ).attr("longdesc") + "</span>" );
 
   },
 

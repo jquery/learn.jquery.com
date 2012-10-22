@@ -56,7 +56,7 @@ $.fn.pause = function( n ) {
 
     var el = this;
 
-    setTimeout( function () {
+    setTimeout( function() {
 
       return $( el ).dequeue();
 

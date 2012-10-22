@@ -65,7 +65,7 @@ $("#helloBtn").click(function(event) {
 });
 ```
 
-The `$('#helloBtn')` code selects the button element using the `$` (aka `jQuery`) function and returns a jQuery object. The jQuery object has a bunch of methods (functions) available to it, one of them named `click`, which resides in the jQuery object's prototype. We call the `click` method on the jQuery object and pass along an anonymous function event handler that's going to be executed when a user clicks the button, alerting "Hello." to the user.
+The `$("#helloBtn")` code selects the button element using the `$` (aka `jQuery`) function and returns a jQuery object. The jQuery object has a bunch of methods (functions) available to it, one of them named `click`, which resides in the jQuery object's prototype. We call the `click` method on the jQuery object and pass along an anonymous function event handler that's going to be executed when a user clicks the button, alerting "Hello." to the user.
 
 There are a number of ways that events can be listened for using jQuery:
 
@@ -169,7 +169,7 @@ Finally, to inspect the event itself and see all of the data it contains, you sh
 
 ```
 //Logging an event's information
-$('form').on( 'submit', function(event) {
+$("form").on( "submit", function(event) {
 
   event.preventDefault(); // Prevent the form's default submission.
 

@@ -19,7 +19,7 @@ some concepts that are common to all good code organization patterns.
 
 - Your code should be divided into units of functionality — modules, services,
   etc. Avoid the temptation to have all of your code in one huge
-  `$(document).ready()` block. This concept, loosely, is known as
+  `$( document ).ready()` block. This concept, loosely, is known as
   encapsulation.
 - Don't repeat yourself. Identify similarities among pieces of functionality,
   and use inheritance techniques to avoid repetitive code.

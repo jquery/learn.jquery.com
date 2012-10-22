@@ -40,7 +40,7 @@ $("#list a").on( "click", function(event) {
 
   event.preventDefault();
 
-  console.log( $(this).text() );
+  console.log( $( this ).text() );
 
 });
 ```
@@ -72,7 +72,7 @@ $("#list").on("click", "a", function(event) {
 
   event.preventDefault();
 
-  console.log( $(this).text() );
+  console.log( $( this ).text() );
 
 });
 ```

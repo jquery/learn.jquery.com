@@ -41,7 +41,7 @@ $.fn.delay = function( time, type ) {
 The default queue in jQuery is fx. The default queue has some special
 properties that are not shared with other queues.
 
-- Auto Start: When calling `$(elem).queue(function(){});` the fx queue will
+- Auto Start: When calling `$(elem).queue(function() {});` the fx queue will
   automatically dequeue the next function and run it if the queue hasn’t
   started.
 - ‘inprogress’ sentinel: Whenever you `dequeue()` a function from the fx queue,

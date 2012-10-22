@@ -12,7 +12,9 @@ it beforehand.
 ```
 var myLength = myArray.length;
 
-for (var i = 0; i < myLength; i++) {
+for ( var i = 0; i < myLength; i++ ) {
+
   // do stuff
+
 }
 ```

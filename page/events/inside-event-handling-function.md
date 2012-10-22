@@ -42,7 +42,7 @@ Stop the event from bubbling up to other elements.
 In addition to the event object, the event handling function also has access to
 the DOM element that the handler was bound to via the keyword this.  To turn
 the DOM element into a jQuery object that we can use jQuery methods on, we
-simply do $(this), often following this idiom:
+simply do $( this ), often following this idiom:
 
 ```
 var $this = $( this );

@@ -148,7 +148,7 @@ by creating a bound function using the original object as demonstrated below.
 var user = "johnsmith";
 var module = {
 
-  getUser: function(){
+  getUser: function() {
 
       return this.user;
 

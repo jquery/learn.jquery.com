@@ -33,36 +33,7 @@ $.fn.greenify = function() {
 
 $("a").greenify();  // makes all the links green
 ```
-
-Notice that to use `css()`, another jQuery object method, we use `this`, not `$(this)`. This is because our `greenify` function is a part of the same jQuery object as `css()`.
-
-Additionally suppose we'd like to be more selective in our string trimming and provide for left trim (remove empty space characters at the beginning of the string) and right trim (remove empty space characters from the end of the string) methods.  We can create `$.ltrim()` and `$.rtrim()` utility methods by attaching them directly to the `$` function:
-
-```
-// Attach ltrim and rtrim directly to the $ function
-$.ltrim = function(str) {return str.replace(/^\s+/, '')}
-$.rtrim = function(str) {return str.replace(/\s+$/, '')}
-
-var myString = '      jQuery plugins are fun and easy!       ';
-console.log($.ltrim(myString));
-console.log($.rtrim(myString));
-```
-
-jQuery's `$.extend()` method provides another alternative for creating new utility methods.  When `$.extend()` is passed a single object, the contents of that object are merged with the `$` function.
-
-```
-// Have $.extend() attach ltrim and rtrim to the $ function
-$.extend({
-  ltrim : function(str) {return str.replace(/^\s+/, '')},
-  rtrim : function(str) {return str.replace(/\s+$/, '')}
-});
-
-// $.ltrim and $.rtrim defined in this snippet behave 
-// the same as in the snippet above
-var myString = '      jQuery plugins are fun and easy!       ';
-console.log($.ltrim(myString));
-console.log($.rtrim(myString));
-```
+Notice that to use `css()`, another method, we use `this`, not `$( this )`. This is because our `greenify` function is a part of the same object as `css()`.
 
 ##Chaining
 
@@ -87,6 +58,7 @@ The `$` variable is very popular among JavaScript libraries, and if you're using
 ```
 (function ( $ ) {
   $.fn.greenify = function () {
+
     this.css( "color", "green" );
     return this;
   }
@@ -118,11 +90,11 @@ It's good practice when writing plugins to only take up one slot within `$.fn`. 
 ```
 (function ( $ ) {
 
-  $.fn.openPopup = function () {
+  $.fn.openPopup = function() {
     // Open popup code
   };
 
-  $.fn.closePopup = function () {
+  $.fn.closePopup = function() {
     // Close popup code
   };
 
@@ -157,7 +129,13 @@ loop through the elements.
 
 ```
 $.fn.myNewPlugin = function() {
-  return this.each(function() { // do something to each element here }); 
+
+  return this.each(function() {
+
+    // do something to each element here
+
+  });
+
 };
 ```
 
@@ -215,9 +193,9 @@ we've discussed:
 (function( $ ){
   $.fn.showLinkLocation = function() {
 
-    return this.filter("a").each(function(){
+    return this.filter("a").each(function() {
 
-      $( this ).append( " (" + $(this).attr("href") + ")");
+      $( this ).append( " (" + $( this ).attr("href") + ")");
 
     });
 
@@ -247,7 +225,7 @@ Our plugin can be optimized though:
 
   $.fn.showLinkLocation = function() {
 
-    return this.filter("a").append(function(){
+    return this.filter("a").append(function() {
 
       return " (" + this.href + ")";
 

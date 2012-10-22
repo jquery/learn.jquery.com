@@ -165,7 +165,7 @@ the behavior of a lightbulb belongs to the lightbulbs.
 If you&apos;re accustomed to object-oriented programming, you may find it useful to
 think of custom events as methods of objects. Loosely speaking, the object to
 which the method belongs is created via the jQuery selector. Binding the
-changeState custom event to all `$('.light')` elements is akin to having a
+changeState custom event to all `$(".light")` elements is akin to having a
 class called `Light` with a method of `changeState`, and then instantiating new
 `Light` objects for each element with a classname of light.
 
