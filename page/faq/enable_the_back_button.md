@@ -22,7 +22,7 @@ Now armed with Ben’s plugin, we’re going to refactor the tab code so that th
 
 The way the existing tabs work is as follows:
 
-- Collect all the tab panels using $('div.tabs > div') and initialise to show the first tab1
+- Collect all the tab panels using $("div.tabs > div") and initialise to show the first tab1
 - Listen for clicks on the links that form the actual tabs
 - When a tab is clicked, hide all the tab panels, filter down to the one we wanted to see and show it, then update the classes on the tabs so the current link appears to be focused
 - Finally, initialise by finding the first tab and triggering a click
@@ -34,7 +34,7 @@ This process was our original code, and most of it needs to stay in place. The c
 So we listen for the hashchange event, just like we might listen for a click event:
 
 ```
-$( window ).bind("hashchange", function(){
+$( window ).bind("hashchange", function() {
 
   //do some magic
 
@@ -44,7 +44,7 @@ $( window ).bind("hashchange", function(){
 Now we move all of the original code from the click handler in to this new event listener. I’ve copied this code in, and marked in bold which lines we’ll need to change:
 
 ```
-$( window ).bind( "hashchange", function(){
+$( window ).bind( "hashchange", function() {
 
   tabContainers.hide();
 
@@ -88,7 +88,7 @@ $(function() {
 
   tabContainers.hide().filter(":first").show();
 
-  $( window ).bind( "hashchange", function(){
+  $( window ).bind( "hashchange", function() {
 
     var hash = window.location.hash || "#first";
 

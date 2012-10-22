@@ -30,7 +30,7 @@ $.fn.greenify = function() {
 $("a").greenify();  // makes all the links green
 ```
 
-Notice that to use `css()`, another method, we use `this`, not `$(this)`. This is because our `greenify` function is a part of the same object as `css()`.
+Notice that to use `css()`, another method, we use `this`, not `$( this )`. This is because our `greenify` function is a part of the same object as `css()`.
 
 ##Chaining
 
@@ -55,7 +55,7 @@ The `$` variable is very popular among javascript libraries, and if you're using
 ```
 (function ( $ ) {
 
-  $.fn.greenify = function () {
+  $.fn.greenify = function() {
 
     this.css( "color", "green" );
 
@@ -91,13 +91,13 @@ It's good practice when writing plugins to only take up one slot within `$.fn`. 
 ```
 (function ( $ ) {
 
-  $.fn.openPopup = function () {
+  $.fn.openPopup = function() {
 
     // Open popup code
 
   };
 
-  $.fn.closePopup = function () {
+  $.fn.closePopup = function() {
 
     // Close popup code
 
@@ -139,7 +139,7 @@ loop through the elements.
 ```
 $.fn.myNewPlugin = function() {
 
-  return this.each(function(){
+  return this.each(function() {
 
     // do something to each element here
 
@@ -201,9 +201,9 @@ we've discussed:
 (function( $ ){
   $.fn.showLinkLocation = function() {
 
-    return this.filter("a").each(function(){
+    return this.filter("a").each(function() {
 
-      $( this ).append( " (" + $(this).attr("href") + ")");
+      $( this ).append( " (" + $( this ).attr("href") + ")");
 
     });
 
@@ -233,7 +233,7 @@ Our plugin can be optimized though:
 
   $.fn.showLinkLocation = function() {
 
-    return this.filter("a").append(function(){
+    return this.filter("a").append(function() {
 
       return " (" + this.href + ")";
 

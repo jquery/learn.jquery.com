@@ -124,7 +124,7 @@ The general idea of event delegation is to bind the event handler to a
 containing element and then have an action take place based on which specific
 element within that containing element is targeted. Let's say we have another
 unordered list: `<ul id="list2"> ... </ul>`. Instead of attaching the .click()
-method to a button — $('#list2 li.special button').click(...) — we can attach
+method to a button — $("#list2 li.special button").click(...) — we can attach
 it to the entire surrounding `<ul>`. Through the magic of "bubbling," any click
 on the button is also a click on the button's surrounding list item, the list
 as a whole, the containing div, and all the way up to the window object. Since

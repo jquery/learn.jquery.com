@@ -117,7 +117,7 @@ we can write:
 ```
 $("li").each( function(index, element){
 
-	console.log( $(this).text() );
+	console.log( $( this ).text() );
 
 });
 
@@ -182,7 +182,7 @@ On the other hand, some methods do not iterate over the collection. `.each()` is
 This will not work:
 
 ```
-$("li").val( $(this).val() + "%" );
+$("li").val( $( this ).val() + "%" );
 
 // .val() does not change the execution context, so this === window
 ```

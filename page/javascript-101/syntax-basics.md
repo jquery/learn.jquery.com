@@ -46,7 +46,7 @@ var foo = function() {
 foo();
 
 // not so much!
-var foo=function(){for(var i=0;i<10;++){alert(i);}};foo();
+var foo=function() {for(var i=0;i<10;++){alert(i);}};foo();
 ```
 
 ### Reserved Words

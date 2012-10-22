@@ -46,7 +46,7 @@ myObject.sayHello.call( secondObject ); // logs "Hi! My name is Colin"
 // A function created using Function.bind
 var myName = "the global object",
 
-  sayHello = function () {
+  sayHello = function() {
 
     console.log( "Hi! My name is " + this.myName );
 

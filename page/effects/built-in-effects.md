@@ -85,7 +85,7 @@ functions provide a way to register your interest in an event that will happen
 in the future.] In this case, the event we'll be responding to is the
 conclusion of the animation.  Inside of the callback function, the keyword this
 refers to the element that the effect was called on; as we did inside of event
-handler functions, we can turn it into a jQuery object via $(this).
+handler functions, we can turn it into a jQuery object via $( this ).
 
 ```
 // Running code when an animation is complete

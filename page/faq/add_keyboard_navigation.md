@@ -170,7 +170,7 @@ In Mathieu’s code, he had the following:
 	});
 ```
 
-Note that $().ready is the same as $(document).ready (though it’s not a style I would personally use). *Directly* after the plugin (i.e. before the });) results in the following code:
+Note that $().ready is the same as $( document ).ready (though it’s not a style I would personally use). *Directly* after the plugin (i.e. before the });) results in the following code:
 
 ```
 $().ready(function() {

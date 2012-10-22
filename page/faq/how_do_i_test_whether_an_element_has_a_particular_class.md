@@ -6,9 +6,9 @@ source:       http://docs.jquery.com/Frequently_Asked_Questions
 [hasClass](http://api.jquery.com/hasClass/) (added in version 1.2) handles this common use case:
 
 ```
-$("div").click(function(){
+$("div").click(function() {
 
-  if ( $(this).hasClass("protected") ) {
+  if ( $( this ).hasClass("protected") ) {
 
     $( this )
       .animate({ left: -10 })
