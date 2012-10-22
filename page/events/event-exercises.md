@@ -1,5 +1,5 @@
 ---
-title   : Exercises
+title: Exercises
 level: beginner
 ---
 ###Create an Input Hint

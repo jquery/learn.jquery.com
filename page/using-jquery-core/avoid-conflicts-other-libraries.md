@@ -14,7 +14,11 @@ variable name to replace `$`.
 <!-- Putting jQuery into no-conflict mode -->
 <script src="prototype.js"></script>
 <script src="jquery.js"></script>
-<script>var $j = jQuery.noConflict();</script>
+<script>
+
+  var $j = jQuery.noConflict();
+
+</script>
 ```
 
 You can continue to use the standard $ by wrapping your code in a
@@ -27,10 +31,13 @@ over the `$`.
 <script src="prototype.js"></script>
 <script src="jquery.js"></script>
 <script>
+
 jQuery.noConflict();
 
 (function($) {
+
    // your code here, using the $
-})(jQuery);
+
+})( jQuery );
 </script>
 ```
