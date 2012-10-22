@@ -197,7 +197,7 @@ $.get( "myhtmlpage.html", myCallBack );
 The Wrong Way (will ***not*** work!)
 
 ```
-$.get( "myhtmlpage.html", myCallBack( param1, param2 ) );
+$.get( "myhtmlpage.html", myCallBack(param1, param2) );
 ```
 
 
