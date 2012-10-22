@@ -87,7 +87,7 @@ Note that `$.each` is for plain objects, arrays, array-like objects *that are no
 This would be considered incorrect:
 
 ```
-$.each( $('p'), function() {
+$.each( $("p"), function() {
 
 	// Do something
 
@@ -115,7 +115,7 @@ Given the following markup:
 we can write:
 
 ```
-$('li').each( function(index, element){
+$("li").each( function(index, element){
 
 	console.log( $(this).text() );
 
@@ -131,12 +131,12 @@ $('li').each( function(index, element){
 
 The question is often raised, "If `this` is the element, why is there a second (DOM element) argument passed to the callback?"
 
-Whether done intentionally, or in the context of our callback, our execution scope may change. If we consistently use the keyword `this`, we may end up confusing ourselves or another developer coming behind us. Even if our execution scope remains the same, it may be more readable to use the second parameter as a named parameter.
+Whether done intentionally, or inadvertently in our callback, our execution context may change. If we consistently use the keyword `this`, we may end up confusing ourselves or another developer coming behind us. Even if our execution context remains the same, it may be more readable to use the second parameter as a named parameter.
 
 For example:
 
 ```
-$('li').each( function(index, listItem) {
+$("li").each( function(index, listItem) {
 
 	this === listItem; // true
 
@@ -162,9 +162,9 @@ Many jQuery methods implicitly iterate over the entire collection, applying thei
 For example, this is unnecessary:
 
 ```
-$('li').each( function(index, el) {
+$("li").each( function(index, el) {
 
-	$(el).addClass('newClass');
+	$(el).addClass("newClass");
 
 });
 ```
@@ -172,7 +172,7 @@ $('li').each( function(index, el) {
 and this is fine:
 
 ```
-$('li').addClass( 'newClass' );
+$("li").addClass( "newClass" );
 ```
 
 Each `<li/>` in the document will have the class 'newClass' added.
@@ -182,7 +182,7 @@ On the other hand, some methods do not iterate over the collection. `.each()` is
 This will not work:
 
 ```
-$('li').val( $(this).val() + '%' );
+$("li").val( $(this).val() + "%" );
 
 // .val() does not change the execution context, so this === window
 ```
@@ -190,9 +190,9 @@ $('li').val( $(this).val() + '%' );
 and should be written like so:
 
 ```
-$('li').each( function(i, el) {
+$("li").each( function(i, el) {
 
-	$(el).val( $(el).val() + '%' );
+	$(el).val( $(el).val() + "%" );
 
 });
 ```
@@ -224,16 +224,16 @@ In addition to a value to set, the attribute, property, and css setters as well 
 For example, these are equivalent:
 
 ```
-$('li').each( function(i, el) {
+$("li").each( function(i, el) {
 
-	$(el).val( $(el).val() + '%' );
+	$(el).val( $(el).val() + "%" );
 
 });
 
 
-$('li').val(function(index, value) {
+$("li").val(function(index, value) {
 
-	return value + '%';
+	return value + "%";
 
 });
 
@@ -251,7 +251,7 @@ For example instead of doing this:
 ```
 var newArr = [];
 
-$('li').each( function() {
+$("li").each( function() {
 
 	newArr.push( this.id );
 
@@ -261,7 +261,7 @@ $('li').each( function() {
 We can do this:
 
 ```
-$('li').map( function(index, element) {
+$("li").map( function(index, element) {
 
 	return this.id;
 
@@ -287,17 +287,17 @@ Let's look at an example:
 
 var arr = [{
 	id: "a",
-	tagName: 'li'
+	tagName: "li"
 }, {
 	id: "b",
-	tagName: 'li'
+	tagName: "li"
 }, {
 	id: "c",
-	tagName: 'li'
+	tagName: "li"
 }];
 
 
-$('li').map( function(index, element) {
+$("li").map( function(index, element) {
 
 	return element.id;
 

@@ -5,7 +5,7 @@ source: http://jqfundamentals.com/legacy
 attribution: 
   - jQuery Fundamentals
 ---
-Once you've made a selection, the fun begins. You can change, move, remove, and clone elements. 
+Once you've made a selection, the fun begins. You can change, move, remove, and clone elements.
 You can also create new elements via a simple syntax.
 
 For complete documentation of jQuery manipulation methods, visit the
@@ -22,13 +22,13 @@ throughout this section, but specifically, here are a few methods you can use
 to get and set information about elements.
 
 <div class="note">
-Changing things about elements is trivial, but remember that the change will affect all elements in the selection. 
+Changing things about elements is trivial, but remember that the change will affect all elements in the selection.
 If you just want to change one element, be sure to specify that in the selection before calling a setter method.
 </div>
 
 <div class="note">
-When methods act as getters, they generally only work on the first element in the selection. 
-They do not return a jQuery object, so you can't chain additional methods to them. 
+When methods act as getters, they generally only work on the first element in the selection.
+They do not return a jQuery object, so you can't chain additional methods to them.
 One notable exception is `$.fn.text`; as mentioned below, it gets the text for all elements in the selection.
 </div>
 
@@ -55,8 +55,7 @@ Get or set the value of form elements.
 
 ```
 // Changing the HTML of an element
-$('#myDiv p:first')
-.html('New <strong>first</strong> paragraph!');
+$("#myDiv p:first").html("New <strong>first</strong> paragraph!");
 ```
 
 ### Moving, Copying, and Removing Elements
@@ -86,10 +85,10 @@ case, `$.fn.insertAfter`, `$.fn.insertBefore`, `$.fn.appendTo`, and
 // Moving elements using different approaches
 
 // make the first list item the last list item
-var $li = $('#myList li:first').appendTo('#myList');
+var $li = $("#myList li:first").appendTo("#myList");
 
 // another approach to the same problem
-$('#myList').append($('#myList li:first'));
+$("#myList").append( $("#myList li:first") );
 
 // note that there's no way to access the
 // list item that we moved, as this returns
@@ -98,14 +97,14 @@ $('#myList').append($('#myList li:first'));
 
 ### Cloning Elements
 
-When you use methods such as `$.fn.appendTo`, you are moving the element; sometimes you want to make a copy of the element instead. 
+When you use methods such as `$.fn.appendTo`, you are moving the element; sometimes you want to make a copy of the element instead.
 In this case, you'll need to use `$.fn.clone` first.
 
 ```
 // Making a copy of an element
 
 // copy the first list item to the end of the list
-$('#myList li:first').clone().appendTo('#myList');
+$("#myList li:first").clone().appendTo("#myList");
 ```
 
 <div class="note">
@@ -141,16 +140,17 @@ jQuery offers a trivial and elegant way to create new elements using the same `$
 
 ```
 // Creating new elements from an HTML string
-$('<p>This is a new paragraph</p>');
-$('<li class="new">new list item</li>');
+$("<p>This is a new paragraph</p>");
+
+$("<li class="new">new list item</li>");
 ```
 
 ```
-Creating a new element with an attribute object
-$('<a/>', {
-    html : 'This is a <strong>new</strong> link',
-    'class' : 'new',
-    href : 'foo.html'
+// Creating a new element with an attribute object
+$( "<a/>", {
+    html : "This is a <strong>new</strong> link",
+    "class" : "new",
+    href : "foo.html"
 });
 ```
 
@@ -159,16 +159,18 @@ property name class is quoted, while the property names text and href are not.
 Property names generally do not need to be quoted unless they are reserved
 words (as class is in this case).
 
-When you create a new element, it is not immediately added to the page. 
+When you create a new element, it is not immediately added to the page.
 There are several ways to add an element to the page once it's been created.
 
 ```
 // Getting a new element on to the page
-var $myNewElement = $('&lt;p>New element&lt;/p>');
-$myNewElement.appendTo('#content');
+var $myNewElement = $("<p>New element</p>");
 
-$myNewElement.insertAfter('ul:last'); // this will remove the p from #content!
-$('ul').last().after($myNewElement.clone());  // clone the p so now we have 2
+$myNewElement.appendTo("#content");
+
+$myNewElement.insertAfter("ul:last"); // this will remove the p from #content!
+
+$("ul").last().after( $myNewElement.clone() );  // clone the p so now we have 2
 ```
 
 Strictly speaking, you don't have to store the created element in a variable —
@@ -181,7 +183,7 @@ in this case you don't get a reference to the newly created element.
 
 ```
 // Creating and adding an element to the page at the same time
-$('ul').append('<li>list item</li>');
+$("ul").append("<li>list item</li>");
 ```
 
 <div class="note"> The syntax for adding new elements to the page
@@ -194,13 +196,16 @@ them into a single string for appending.
 </div>
 
 ```
-var myItems = [], $myList = $('#myList');
+var myItems = [];
+var $myList = $("#myList");
 
-for (var i=0; i&lt;100; i++) {
-  myItems.push('&lt;li>item ' + i + '&lt;/li>');
+for ( var i = 0; i < 100; i++ ) {
+
+  myItems.push( "<li>item " + i + "</li>" );
+
 }
 
-$myList.append(myItems.join(''));
+$myList.append( myItems.join("") );
 ```
 
 ### Manipulating Attributes
@@ -214,26 +219,29 @@ changed, and the current value of the attribute being changed.
 
 ```
 // Manipulating a single attribute
-$('#myDiv a:first').attr('href', 'newDestination.html');
+$("#myDiv a:first").attr( "href", "newDestination.html" );
 ```
 
 ```
 // Manipulating multiple attributes
-$('#myDiv a:first').attr({
-  href : 'newDestination.html',
-  rel : 'super-special'
+$("#myDiv a:first").attr({
+  href : "newDestination.html",
+  rel : "super-special"
 });
 ```
 
 ```
 // Using a function to determine an attribute's new value
-$('#myDiv a:first').attr({
-    rel : 'super-special',
-    href : function(idx, href) {
-        return '/new/' + href;
+$("#myDiv a:first").attr({
+    rel : "super-special",
+    href : function( idx, href ) {
+      return "/new/" + href;
     }
 });
-$('#myDiv a:first').attr('href', function(idx, href) {
-    return '/new/' + href;
+
+$("#myDiv a:first").attr("href", function( idx, href ) {
+
+    return "/new/" + href;
+
 });
 ```

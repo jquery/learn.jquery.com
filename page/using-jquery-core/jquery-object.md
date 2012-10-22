@@ -32,6 +32,7 @@ The following snippet attempts to set the inner HTML of a `tr` element stored in
 
 ```
 var target = document.getElementById("target");
+
 target.innerHTML = "<td>Hello <b>World</b>!</td>";
 ```
 
@@ -42,7 +43,8 @@ By wrapping the `target` element in a jQuery object, these edge cases are taken 
 ```
 // Setting the inner HTML with jQuery
 var target = document.getElementById("target");
-$( target ).html( "<td>Hello <b>World</b>!</td>");
+
+$( target ).html("<td>Hello <b>World</b>!</td>");
 ```
 
 *Convenience*
@@ -52,7 +54,9 @@ For instance, inserting an element stored in `newElement` after the `target` ele
 ```
 // Inserting a new element after another with the native DOM API
 var target = document.getElementById("target");
+
 var newElement = document.createElement("div");
+
 target.parentNode.insertBefore( target.nextSibling, newElement )
 ```
 
@@ -61,7 +65,9 @@ By wrapping the `target` element in a jQuery object, the same task becomes much 
 ```
 // Inserting a new element after another with jQuery
 var target = document.getElementById("target");
+
 var newElement = document.createElement("div");
+
 $( target ).after( newElement );
 ```
 
@@ -83,6 +89,7 @@ This can be verified by inspecting the `length` property of `headers`:
 ```
 // Viewing the number of 'h1' tags on the page
 var allHeaders = $("h1");
+
 alert( allHeaders.length );
 ```
 
@@ -96,7 +103,8 @@ There are a number of ways to accomplish this, the most straight-forward may be 
 ```
 // Selecting only the first 'h1' element on the page (in a jQuery object)
 var headers = $("h1");
-var firstHeader = headers.eq(0);
+
+var firstHeader = headers.eq( 0 );
 ```
 
 Now `firstHeader` is a jQuery object containing only the first `h1` element on the page.
@@ -106,14 +114,14 @@ Instead of returning a jQuery-wrapped DOM element, it returns the DOM element it
 
 ```
 // Selecting only the first 'h1' element on the page
-var firstHeaderElem = $("h1").get(0);
+var firstHeaderElem = $("h1").get( 0 );
 ```
 
 Alternatively, because the jQuery object is "array-like", it supports array subscripting via brackets:
 
 ```
-Selecting only the first 'h1' element on the page (alternate approach)
-var firstHeaderElem = $("h1")[0];
+// Selecting only the first 'h1' element on the page (alternate approach)
+var firstHeaderElem = $("h1")[ 0 ];
 ```
 
 In either case, `firstHeaderElem` contains the "native" DOM element.
@@ -146,10 +154,10 @@ The `get` method is useful for testing if two jQuery objects have the same DOM e
 ```
 // Comparing DOM elements
 var logo1 = $("$logo");
-var logo1Elem = logo1.get(0);
+var logo1Elem = logo1.get( 0 );
 
 var logo2 = $("#logo");
-var logo2Elem = logo2.get(0);
+var logo2Elem = logo2.get( 0 );
 
 alert( logo1Elem === logo2Elem ); // alerts 'true'
 ```
@@ -161,10 +169,10 @@ The previous example could be re-written to follow this convention:
 ```
 // Comparing DOM elements (with more readable variable names)
 var $logo1 = $("#logo");
-var logo1 = $logo1.get(0);
+var logo1 = $logo1.get( 0 );
 
 var $logo2 = $("#logo");
-var logo2 = $logo2.get(0);
+var logo2 = $logo2.get( 0 );
 
 alert( logo1 === logo2 ); // alerts 'true'
 ```
