@@ -33,6 +33,7 @@
   - feature-browser-detection
   - utility-methods
   - iterating
+  - understanding-index
 - events:
   - events-to-elements
   - inside-event-handling-function
