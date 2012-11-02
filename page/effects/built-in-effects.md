@@ -39,6 +39,7 @@ whether the elements are currently visible.
 ```
 // A basic use of a built-in effect
     $('h1').show();
+```
 
 ### Changing the Duration of Built-in Effects
 
@@ -47,7 +48,7 @@ are animated over the course of 400ms by default. Changing the duration of an
 effect is simple.
 
 ```
-// Setting the duration of an effect">
+// Setting the duration of an effect
     $('h1').fadeIn(300);      // fade in over 300ms
     $('h1').fadeOut('slow');  // using a built-in speed definition
 ```
@@ -71,7 +72,7 @@ change the default duration of effects, or you may want to create your own
 effects speed.
 
 ```
-// Augmenting `jQuery.fx.speeds` with custom speed definitions">
+// Augmenting `jQuery.fx.speeds` with custom speed definitions
     jQuery.fx.speeds.blazing = 100;
     jQuery.fx.speeds.turtle = 2000;
 ```
@@ -88,7 +89,7 @@ refers to the element that the effect was called on; as we did inside of event
 handler functions, we can turn it into a jQuery object via $(this).
 
 ```
-// Running code when an animation is complete">
+// Running code when an animation is complete
     $('div.old').fadeOut(300, function() { $(this).remove(); });
 ```
 
