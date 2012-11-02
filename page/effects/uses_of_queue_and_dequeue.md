@@ -16,15 +16,23 @@ queue function I’ve seen is `.delay()`:
 
 ```
 $.fn.delay = function( time, type ) {
+
   time = jQuery.fx ? jQuery.fx.speeds[time] || time : time;
+
   type = type || "fx";
 
   return this.queue( type, function() {
+
     var elem = this;
+
     setTimeout(function() {
+
       jQuery.dequeue( elem, type );
+
     }, time );
+
   });
+
 };
 ```
 
@@ -33,7 +41,7 @@ $.fn.delay = function( time, type ) {
 The default queue in jQuery is fx. The default queue has some special
 properties that are not shared with other queues.
 
-- Auto Start: When calling `$(elem).queue(function(){});` the fx queue will
+- Auto Start: When calling `$(elem).queue(function() {});` the fx queue will
   automatically dequeue the next function and run it if the queue hasn’t
   started.
 - ‘inprogress’ sentinel: Whenever you `dequeue()` a function from the fx queue,
@@ -59,105 +67,156 @@ function.
 ```
 // lets assume $elem is a jQuery object that points to some element we are animating.
 var queue = $elem.queue();
+
 // remove the last function from the animation queue.
 var lastFunc = queue.pop();
-// insert it at the beginning:    
-queue.unshift(lastFunc);
+
+// insert it at the beginning:
+queue.unshift( lastFunc );
+
 // replace queue with the first three items in the queue
-$elem.queue(queue.slice(0,3));
+$elem.queue( queue.slice(0,3) );
 ```
 
 ### An animation (fx) queue example:
 
 ```
 $(function() {
-    // lets do something with google maps:
-    var $map = $("#map_canvas");
-    var myLatlng = new google.maps.LatLng(-34.397, 150.644);
-    var myOptions = {zoom: 8, center: myLatlng, mapTypeId: google.maps.MapTypeId.ROADMAP};
-    var geocoder = new google.maps.Geocoder();
-    var map = new google.maps.Map($map[0], myOptions);
-    var resized = function() {
-        // simple animation callback - let maps know we resized
-        google.maps.event.trigger(map, 'resize');
-    };
 
-    // wait 2 seconds
-    $map.delay(2000);
-    // resize the div:
-    $map.animate({
-        width: 250,
-        height: 250,
-        marginLeft: 250,
-        marginTop:250
-    }, resized);
-    // geocode something
-    $map.queue(function(next) {
-        // find stackoverflow's whois address:
-      geocoder.geocode({'address': '55 Broadway New York NY 10006'},handleResponse);
+  // lets do something with google maps:
+  var $map = $("#map_canvas");
 
-      function handleResponse(results, status) {
-          if (status == google.maps.GeocoderStatus.OK) {
-              var location = results[0].geometry.location;
-              map.setZoom(13);
-              map.setCenter(location);
-              new google.maps.Marker({ map: map, position: location });
-          }
-          // geocoder result returned, continue with animations:
-          next();
+  var myLatlng = new google.maps.LatLng( -34.397, 150.644 );
+
+  var myOptions = {
+    zoom: 8,
+    center: myLatlng,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+
+  var geocoder = new google.maps.Geocoder();
+
+  var map = new google.maps.Map( $map[0], myOptions );
+
+  var resized = function() {
+
+    // simple animation callback - let maps know we resized
+    google.maps.event.trigger( map, "resize" );
+
+  };
+
+  // wait 2 seconds
+  $map.delay( 2000 );
+
+  // resize the div:
+  $map.animate({
+    width: 250,
+    height: 250,
+    marginLeft: 250,
+    marginTop:250
+  }, resized );
+
+  // geocode something
+  $map.queue(function(next) {
+
+    // find stackoverflow's whois address:
+    geocoder.geocode( {
+      address: "55 Broadway New York NY 10006"
+    }, handleResponse );
+
+    function handleResponse( results, status ) {
+
+      if ( status === google.maps.GeocoderStatus.OK ) {
+
+          var location = results[ 0 ].geometry.location;
+
+          map.setZoom( 13 );
+
+          map.setCenter( location );
+
+          new google.maps.Marker({
+            map: map,
+            position: location
+          });
+
       }
-    });
-    // after we find stack overflow, wait 3 more seconds
-    $map.delay(3000);
-    // and resize the map again
-    $map.animate({
-        width: 500,
-        height: 500,
-        marginLeft:0,
-        marginTop: 0
-    }, resized);
+
+      // geocoder result returned, continue with animations:
+      next();
+
+    }
+
+  });
+
+  // after we find stack overflow, wait 3 more seconds
+  $map.delay( 3000 );
+
+  // and resize the map again
+  $map.animate({
+    width: 500,
+    height: 500,
+    marginLeft:0,
+    marginTop: 0
+  }, resized );
 });
 ```
 
 ### Queueing something like Ajax Calls:
 
 ```
-  // jQuery on an empty object, we are going to use this as our Queue
-  var ajaxQueue = $({});
+// jQuery on an empty object, we are going to use this as our Queue
+var ajaxQueue = $({});
 
-  $.ajaxQueue = function(ajaxOpts) {
-    // hold the original complete function
-    var oldComplete = ajaxOpts.complete;
+$.ajaxQueue = function( ajaxOpts ) {
 
-    // queue our ajax request
-    ajaxQueue.queue(function(next) {
+  // hold the original complete function
+  var oldComplete = ajaxOpts.complete;
 
-      // create a complete callback to fire the next event in the queue
-      ajaxOpts.complete = function() {
-        // fire the original complete if it was there
-        if (oldComplete) oldComplete.apply(this, arguments);
+  // queue our ajax request
+  ajaxQueue.queue(function(next) {
 
-        next(); // run the next query in the queue
-      };
+    // create a complete callback to fire the next event in the queue
+    ajaxOpts.complete = function() {
 
-      // run the query
-      $.ajax(ajaxOpts);
-    });
-  };
+      // fire the original complete if it was there
+      if ( oldComplete ) {
+
+        oldComplete.apply( this, arguments );
+
+      }
+
+      // run the next query in the queue
+      next();
+
+    };
+
+    // run the query
+    $.ajax( ajaxOpts );
+
+  });
+
+};
 
 // get each item we want to copy
 $("#items li").each(function(idx) {
 
-    // queue up an ajax request
-    $.ajaxQueue({
-        url: '/ajax_html_echo/',
-        data: {html : "["+idx+"] "+$(this).html()},
-        type: 'POST',
-        success: function(data) {
-            // Write to #output
-            $("#output").append($("<li>", { html: data }));
-        }
-    });
+  // queue up an ajax request
+  $.ajaxQueue({
+    url: "/ajax_html_echo/",
+    data: {
+      html : "[" + idx + "] " + $( this ).html()
+    },
+    type: "POST",
+    success: function( data ) {
+
+      // Write to #output
+      $("#output").append( $("<li>", {
+        html: data
+      }));
+
+    }
+  });
+
 });
 ```
 
@@ -166,29 +225,39 @@ $("#items li").each(function(idx) {
 ```
 var theQueue = $({}); // jQuery on an empty object - a perfect queue holder
 
-$.each([1,2,3],function(i, num) {
+$.each( [1,2,3], function(i, num) {
+
   // lets add some really simple functions to a queue:
-  theQueue.queue('alerts', function(next) {
+  theQueue.queue( "alerts", function(next) {
+
     // show something, and if they hit "yes", run the next function.
-    if (confirm('index:'+i+' = '+num+'\nRun the next function?')) {
+    if ( confirm("index:" + i + " = " + num + "\nRun the next function?") ) {
+
       next();
+
     }
+
   });
+
 });
 
 // create a button to run the queue:
 $("<button>", {
-  text: 'Run Queue',
+  text: "Run Queue",
   click: function() {
-    theQueue.dequeue('alerts');
+
+    theQueue.dequeue("alerts");
+
   }
-}).appendTo('body');
+}).appendTo("body");
 
 // create a button to show the length:
 $("<button>", {
-  text: 'Show Length',
+  text: "Show Length",
   click: function() {
-    alert(theQueue.queue('alerts').length);
+
+    alert(theQueue.queue("alerts").length);
+
   }
-}).appendTo('body');
+}).appendTo("body");
 ```

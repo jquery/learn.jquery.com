@@ -13,8 +13,8 @@ store data related to an element, and it manages the memory issues for you.
 
 ```
 // Storing and retrieving data related to an element
-$('#myDiv').data('keyName', { foo : 'bar' });
-$('#myDiv').data('keyName'); // { foo : 'bar' }
+$("#myDiv").data( "keyName", { foo: "bar" } );
+$("#myDiv").data("keyName"); // { foo: "bar" }
 ```
 
 You can store any kind of data on an element, and it's hard to overstate the
@@ -30,15 +30,20 @@ list item using `$.fn.data`:
 
 ```
 // Storing a relationship between elements using $.fn.data
-$('#myList li').each(function() {
-  var $li = $(this), $div = $li.find('div.content');
-  $li.data('contentDiv', $div);
+$("#myList li").each(function() {
+
+  var $li = $( this );
+  var $div = $li.find("div.content");
+
+  $li.data( "contentDiv", $div );
+
 });
 
 // later, we don't have to find the div again;
 // we can just read it from the list item's data
-var $firstLi = $('#myList li:first');
-$firstLi.data('contentDiv').html('new content');
+var $firstLi = $("#myList li:first");
+
+$firstLi.data("contentDiv").html("new content");
 ```
 
 In addition to passing `$.fn.data` a single key-value pair to store data, you can also pass an object containing one or more pairs.

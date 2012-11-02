@@ -33,9 +33,11 @@ Then a keyboard key is pressed the event break into three separate events, which
 So I’m going to use the last phase of the events and use the keyup event.
 
 ```
-	$(document.documentElement).keyup(function (event) {
-	  // handle cursor keys
-	});
+$( document.documentElement ).keyup(function(event) {
+
+  // handle cursor keys
+
+});
 ```
 
 Note that all event handlers in jQuery, such as click, keyup, mouseover, etc receive an event [argument](http://en.wikipedia.org/wiki/Parameter_(computer_science)) - which I’ve captured under the variable name event.
@@ -43,14 +45,21 @@ Note that all event handlers in jQuery, such as click, keyup, mouseover, etc rec
 The left and right key codes are 37 and 39 respectively. So we only want to action the slide if these keys are pressed, so we’ll check the keyCode property on the event - this property is [very well supported in browsers](http://www.quirksmode.org/js/keys.html):
 
 ```
-	$(document.documentElement).keyup(function (event) {
-	  // handle cursor keys
-	  if (event.keyCode == 37) {
-	    // go left
-	  } else if (event.keyCode == 39) {
-	    // go right
-	  }
-	});
+$( document.documentElement ).keyup(function(event) {
+
+  // handle cursor keys
+
+  if (event.keyCode === 37) {
+
+    // go left
+
+  } else if (event.keyCode === 39) {
+
+    // go right
+
+  }
+
+});
 ```
 
 ##Triggering the Click on the Right Link
@@ -60,15 +69,15 @@ Triggering a click event is easy, but the problem we have to solve is finding th
 In some cases the current class might be on list element, which would make the navigating slightly easier, but in this case the markup looks a bit like this:
 
 ```
-	&lt;div class="coda-slider-wrapper"&gt;
-	  &lt;ul&gt;
-	    &lt;li&gt;&lt;a class="current" href="#1"&gt;1&lt;/a&gt;&lt;/li&gt;
-	    &lt;li&gt;&lt;a href="#2"&gt;2&lt;/a&gt;&lt;/li&gt;
-	    &lt;li&gt;&lt;a href="#3"&gt;3&lt;/a&gt;&lt;/li&gt;
-	    &lt;li&gt;&lt;a href="#4"&gt;4&lt;/a&gt;&lt;/li&gt;
-	    &lt;li&gt;&lt;a href="#5"&gt;5&lt;/a&gt;&lt;/li&gt;
-	  &lt;/ul&gt;
-	&lt;/div&gt;
+<div class="coda-slider-wrapper">
+  <ul>
+    <li><a class="current" href="#1">1</a></li>
+    <li><a href="#2">2</a></li>
+    <li><a href="#3">3</a></li>
+    <li><a href="#4">4</a></li>
+    <li><a href="#5">5</a></li>
+  </ul>
+</div>
 ```
 
 In the case above, the “next” link is #2. Currently there’s no previous available, but we’ll let jQuery handle this for us.
@@ -76,16 +85,16 @@ In the case above, the “next” link is #2. Currently there’s no previous av
 To find the next link, first we need to grab the link that’s currently selected:
 
 ```
-	$('.coda-slider-wrapper ul a.current')
+	$(".coda-slider-wrapper ul a.current")
 ```
 
 Next we need to move up the tree (to the li element) and move to the next element and then back down to the a element to trigger a click.
 
 ```
-	$('.coda-slider-wrapper ul a.current')
+	$(".coda-slider-wrapper ul a.current")
 	  .parent() // moves up to the li element
 	  .next() // moves to the adjacent li element
-	  .find('a') // moves down to the link
+	  .find("a") // moves down to the link
 	  .click(); // triggers a click on the next link
 ```
 
@@ -94,42 +103,55 @@ Since jQuery continues to allow chained methods to work even if there’s no ele
 Let’s plug this code in to the keyboard event handler:
 
 ```
-	$(document.documentElement).keyup(function (event) {
-	  // handle cursor keys
-	  if (event.keyCode == 37) {
-	    // go left
-	    $('.coda-slider-wrapper ul a.current')
-	      .parent() // moves up to the li element
-	      .prev() // moves to the adjacent li element
-	      .find('a') // moves down to the link
-	        .click(); // triggers a click on the previous link
-	  } else if (event.keyCode == 39) {
-	    // go right
-	    // same as above, but just on one line and next instead of prev
-	    $('.coda-slider-wrapper ul a.current').parent().next().find('a').click();
-	  }
-	});
+$( document.documentElement ).keyup(function(event) {
+
+  // handle cursor keys
+  if (event.keyCode === 37) {
+
+    // go left
+    $(".coda-slider-wrapper ul a.current")
+      .parent() // moves up to the li element
+      .prev() // moves to the adjacent li element
+      .find("a") // moves down to the link
+      .click(); // triggers a click on the previous link
+
+  } else if (event.keyCode === 39) {
+
+    // go right
+    // same as above, but just on one line and next instead of prev
+    $(".coda-slider-wrapper ul a.current").parent().next().find("a").click();
+
+  }
+
+});
 ```
 
 This code can be simplified since a lot of it is repetitive aside from the ‘next’ and ‘prev’. If you’re happy for slightly more complicated code, then use the code below, otherwise stick with the code above.
 
 ```
-	$(document.documentElement).keyup(function (event) {
-	  var direction = null;
+$( document.documentElement ).keyup(function(event) {
+  var direction = null;
 
-	  // handle cursor keys
-	  if (event.keyCode == 37) {
-	    // go left
-	    direction = 'prev';
-	  } else if (event.keyCode == 39) {
-	    // go right
-	    direction = 'next';
-	  }
+  // handle cursor keys
+  if (event.keyCode === 37) {
 
-	  if (direction != null) {
-	    $('.coda-slider-wrapper ul a.current').parent()[direction]().find('a').click();
-	  }
-	});
+    // go left
+    direction = "prev";
+
+  } else if (event.keyCode === 39) {
+
+    // go right
+    direction = "next";
+
+  }
+
+  if (direction != null) {
+
+    $(".coda-slider-wrapper ul a.current").parent()[ direction ]().find("a").click();
+
+  }
+
+});
 ```
 
 ##Where does this all go?
@@ -142,34 +164,48 @@ In Mathieu’s code, he had the following:
 
 ```
 	$().ready(function() {
-	  $('#coda-slider-1').codaSlider();
+
+	  $("#coda-slider-1").codaSlider();
+
 	});
 ```
 
-Note that $().ready is the same as $(document).ready (though it’s not a style I would personally use). *Directly* after the plugin (i.e. before the });) results in the following code:
+Note that $().ready is the same as $( document ).ready (though it’s not a style I would personally use). *Directly* after the plugin (i.e. before the });) results in the following code:
 
 ```
 $().ready(function() {
-	$().ready(function() {
-	  $('#coda-slider-1').codaSlider();
 
-	  $(document.documentElement).keyup(function (event) {
+	$().ready(function() {
+
+	  $("#coda-slider-1").codaSlider();
+
+	  $( document.documentElement ).keyup(function (event) {
+
 	    var direction = null;
 
 	    // handle cursor keys
-	    if (event.keyCode == 37) {
+	    if (event.keyCode === 37) {
+
 	      // go left
-	      direction = 'prev';
-	    } else if (event.keyCode == 39) {
+	      direction = "prev";
+
+	    } else if (event.keyCode === 39) {
+
 	      // go right
-	      direction = 'next';
+	      direction = "next";
+
 	    }
 
 	    if (direction != null) {
-	      $('.coda-slider-wrapper ul a.current').parent()[direction]().find('a').click();
+
+	      $(".coda-slider-wrapper ul a.current").parent()[ direction ]().find("a").click();
+
 	    }
+
 	  });
+
 	});
+
 ```
 
 You can see this all [in action in the demo](http://static.jqueryfordesigners.com/demo/keyboard-nav.html), and be sure to use the left and right keyboard cursor keys to see the demo working.

@@ -7,24 +7,32 @@ attribution:
 ---
 Sometimes you only want to run a block of code under certain conditions. Flow control — via if and else blocks — lets you run code only under certain conditions.
 
-``` js
+```
 // Flow control
 var foo = true;
 var bar = false;
 
-if (bar) {
-    // this code will never run
-    console.log('hello!');
+if ( bar ) {
+  // this code will never run
+  console.log("hello!");
 }
 
-if (bar) {
-    // this code won't run
+if ( bar ) {
+
+  // this code won't run
+
 } else {
-    if (foo) {
-        // this code will run
-    } else {
-        // this code would run if foo and bar were both false
-    }
+
+  if ( foo ) {
+
+    // this code will run
+
+  } else {
+
+    // this code would run if foo and bar were both false
+
+  }
+
 }
 ```
 
@@ -43,18 +51,18 @@ In order to use flow control successfully, it's important to understand which
 kinds of values are "truthy" and which kinds of values are "falsy." Sometimes,
 values that seem like they should evaluate one way actually evaluate another.
 
-``` js
+```
 // Values that evaluate to true
-'0';
-'any string';
+"0";
+"any string";
 [];  // an empty array
 {};  // an empty object
 1;   // any non-zero number
 ```
 
-``` js 
+```
 // Values that evaluate to false
-'';  // an empty string
+"";  // an empty string
 NaN; // JavaScript's "not-a-number" variable
 null;
 undefined;  // be careful -- undefined can be redefined!
@@ -68,8 +76,8 @@ more convenient. The ternary operator tests a condition; if the
 condition is true, it returns a certain value, otherwise it returns a different
 value.
 
-``` js
 The ternary operator
+```
 // set foo to 1 if bar is true;
 // otherwise, set foo to 0
 var foo = bar ? 1 : 0;
@@ -85,48 +93,64 @@ useful to use a switch statement instead. Switch statements look
 at the value of a variable or expression, and run different blocks of code
 depending on the value.
 
-``` js 
+```
 // A switch statement
-switch (foo) {
+switch ( foo ) {
 
-    case 'bar':
-        alert('the value was bar -- yay!');
-    break;
+  case "bar":
 
-    case 'baz':
-        alert('boo baz :(');
-    break;
+    alert("the value was bar -- yay!");
 
-    default:
-        alert('everything else is just ok');
-    break;
+  break;
+
+  case "baz":
+
+    alert("boo baz :(");
+
+  break;
+
+  default:
+
+    alert("everything else is just ok");
 
 }
-``` 
+```
 
 Switch statements have somewhat fallen out of favor in JavaScript, because
 often the same behavior can be accomplished by creating an object that has more
 potential for reuse, testing, etc. For example:
 
-``` js
+```
 var stuffToDo = {
-    'bar' : function() {
-        alert('the value was bar -- yay!');
-    },
 
-    'baz' : function() {
-        alert('boo baz :(');
-    },
+  bar: function() {
 
-    'default' : function() {
-        alert('everything else is just ok');
-    }
+    alert("the value was bar -- yay!");
+
+  },
+
+  "baz" : function() {
+
+    alert("boo baz :(");
+
+  },
+
+  "default" : function() {
+
+    alert("everything else is just ok");
+
+  }
+
 };
 
-if (stuffToDo[foo]) {
-    stuffToDo[foo]();
+if ( stuffToDo[foo] ) {
+
+    stuffToDo[ foo ]();
+
 } else {
-    stuffToDo['default']();
+
+    stuffToDo["default"]();
+
 }
 ```
 

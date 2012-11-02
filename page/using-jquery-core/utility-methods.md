@@ -14,20 +14,23 @@ visit [Utilities documenations on api.jquery.com](http://api.jquery.com/category
 Removes leading and trailing whitespace.
 
 ```
-    $.trim('    lots of extra whitespace    ');
-    // returns 'lots of extra whitespace'
+$.trim("    lots of extra whitespace    "); // returns "lots of extra whitespace"
 ```
 
 ### $.each
 Iterates over arrays and objects.
 
 ```
-$.each([ 'foo', 'bar', 'baz' ], function(idx, val) {
-  console.log('element ' + idx + 'is ' + val);
+$.each( [ "foo", "bar", "baz" ], function(idx, val) {
+
+  console.log( "element " + idx + "is " + val );
+
 });
 
-$.each({ foo : 'bar', baz : 'bim' }, function(k, v) {
-  console.log(k + ' : ' + v);
+$.each( { foo: "bar", baz: "bim" }, function(k, v) {
+
+  console.log( k + " : " + v );
+
 });
 ```
 
@@ -41,32 +44,38 @@ Returns a value's index in an array, or -1 if the value is not in the array.
 ```
 var myArray = [ 1, 2, 3, 5 ];
 
-if ($.inArray(4, myArray) !== -1) {
-  console.log('found it!');
+if ( $.inArray( 4, myArray ) !== -1 ) {
+
+  console.log("found it!");
+
 }
 ```
 
 ### $.extend
 Changes the properties of the first object using the properties of subsequent objects.
 ```
-var firstObject = { foo : 'bar', a : 'b' };
-var secondObject = { foo : 'baz' };
+var firstObject = { foo : "bar", a : "b" };
+var secondObject = { foo : "baz" };
 
 var newObject = $.extend(firstObject, secondObject);
-console.log(firstObject.foo); // 'baz'
-console.log(newObject.foo);   // 'baz'
+
+console.log(firstObject.foo); // "baz"
+
+console.log(newObject.foo);   // "baz"
 ```
 
 If you don't want to change any of the objects you pass to `$.extend`, pass an
 empty object as the first argument.
 
 ```
-var firstObject = { foo : 'bar', a : 'b' };
-var secondObject = { foo : 'baz' };
+var firstObject = { foo : "bar", a : "b" };
+var secondObject = { foo : "baz" };
 
-var newObject = $.extend({}, firstObject, secondObject);
-console.log(firstObject.foo); // 'bar'
-console.log(newObject.foo);   // 'baz'
+var newObject = $.extend( {}, firstObject, secondObject );
+
+console.log( firstObject.foo ); // "bar"
+
+console.log( newObject.foo );   // "baz"
 ```
 
 ### $.proxy
@@ -74,12 +83,13 @@ Returns a function that will always run in the provided scope — that is, sets
 the meaning of this inside the passed function to the second argument.
 
 ```
-var myFunction = function() { console.log(this); };
-var myObject = { foo : 'bar' };
+var myFunction = function() { console.log( this ); };
+var myObject = { foo : "bar" };
 
 myFunction(); // logs window object
 
-var myProxyFunction = $.proxy(myFunction, myObject);
+var myProxyFunction = $.proxy( myFunction, myObject );
+
 myProxyFunction(); // logs myObject object
 ```
 
@@ -89,10 +99,10 @@ method to return a function that will always run in the scope of the object.
 ```
 var myObject = {
   myFn : function() {
-    console.log(this);
+    console.log( this );
   }
 };
 
-$('#foo').click(myObject.myFn); // logs DOM element #foo
-$('#foo').click($.proxy(myObject, 'myFn')); // logs myObject
+$("#foo").click( myObject.myFn ); // logs DOM element #foo
+$("#foo").click( $.proxy(myObject, "myFn") ); // logs myObject
 ```

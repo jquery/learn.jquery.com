@@ -7,32 +7,37 @@ attribution:
 ---
 Basic operators allow you to manipulate values.
 
-``` js
+```
 // Concatenation
-var foo = 'hello';
-var bar = 'world';
-console.log(foo + ' ' + bar); // 'hello world'
+var foo = "hello";
+var bar = "world";
+
+console.log( foo + " " + bar ); // "hello world"
 ```
 
-``` js
+```
 // Multiplication and division
 2 * 3;
 2 / 3;
 ```
 
-``` js
+```
 // Incrementing and decrementing
 // The pre-increment operator increments the operand before any further processing.
 // pre-increment
 var i = 1;
-console.log(++i); // => 2
-console.log(i); // => 2
 
-The post-increment operator increments the operand after processing it.
+console.log( ++i ); // => 2
+
+console.log( i ); // => 2
+
+// The post-increment operator increments the operand after processing it.
 // post-increment
 var i = 1;
-console.log(i++); // => 1. This is because i was processed first
-console.log(i); // => 2. This is because the operand was incremented after processing in the previous step.
+
+console.log( i++ ); // => 1. This is because i was processed first
+
+console.log( i ); // => 2. This is because the operand was incremented after processing in the previous step.
 ```
 
 ## Operations on Numbers & Strings
@@ -40,29 +45,30 @@ console.log(i); // => 2. This is because the operand was incremented after proce
 In JavaScript, numbers and strings will occasionally behave in ways you might
 not expect.
 
-``` js
+```
 // Addition vs. Concatenation
 var foo = 1;
-var bar = '2';
-console.log(foo + bar);  // 12. uh oh
+var bar = "2";
+
+console.log( foo + bar );  // 12. uh oh
 ```
 
-``` js
+```
 // Forcing a string to act as a number
 var foo = 1;
-var bar = '2';
+var bar = "2";
 
 // coerce the string to a number
-console.log(foo + Number(bar));
+console.log( foo + Number(bar) );
 ```
 
 The Number constructor, when called as a function (like above) will have the
 effect of casting its argument into a number. You could also use the unary plus
 operator, which does the same thing:
 
-``` js
+```
 // Forcing a string to act as a number (using the unary-plus operator)
-console.log(foo + +bar);
+console.log( foo + +bar );
 ```
 
 ## Logical Operators
@@ -70,7 +76,7 @@ console.log(foo + +bar);
 Logical operators allow you to evaluate a series of operands using AND and OR
 operations.
 
-``` js
+```
 // Logical AND and OR operators
 var foo = 1;
 var bar = 0;
@@ -98,7 +104,7 @@ You'll sometimes see developers use these logical operators for flow control
 instead of using if statements. For example:
 
     // do something with foo if foo is truthy
-    foo && doSomething(foo);
+    foo && doSomething( foo );
 
     // set bar to baz if baz is truthy;
     // otherwise, set it to the return
@@ -116,11 +122,11 @@ comfortable with what it means and how you can expect it to behave.
 Comparison operators allow you to test whether values are equivalent or whether
 values are identical.
 
-``` js
+```
 // Comparison operators
 var foo = 1;
 var bar = 0;
-var baz = '1';
+var baz = "1";
 var bim = 2;
 
 foo == bar;   // returns false
@@ -129,7 +135,7 @@ foo == baz;   // returns true; careful!
 
 foo === baz;             // returns false
 foo !== baz;             // returns true
-foo === parseInt(baz);   // returns true
+foo === parseInt( baz );   // returns true
 
 foo > bim;    // returns false
 bim > baz;    // returns true

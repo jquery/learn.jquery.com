@@ -57,7 +57,7 @@ $( document ).ready( function() {
 Inside the ready event, add a click handler to the link:
 
 ```
-$( document ).ready(function(){
+$( document ).ready(function() {
 
   $("a").click(function( event ) {
 
@@ -106,7 +106,7 @@ element's src attribute
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
   <script>
 
-    $(document).ready(function() {
+    $( document ).ready(function() {
 
       $("a").click(function( event ) {
 
@@ -197,7 +197,7 @@ $.get( "myhtmlpage.html", myCallBack );
 The Wrong Way (will ***not*** work!)
 
 ```
-$.get( "myhtmlpage.html", myCallBack( param1, param2 ) );
+$.get( "myhtmlpage.html", myCallBack(param1, param2) );
 ```
 
 

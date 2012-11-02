@@ -11,33 +11,48 @@ maintain, test, or reuse. Instead, use an object literal to organize and name
 your handlers and callbacks.
 ```
 // BAD
-$(document).ready(function() {
-  $('#magic').click(function(e) {
-    $('#yayeffects').slideUp(function() {
+$( document ).ready(function() {
+
+  $("#magic").click(function(e) {
+
+    $("#yayeffects").slideUp(function() {
+
       // ...
+
     });
+
   });
 
-  $('#happiness').load(url + ' #unicorns', function() {
+  $("#happiness").load( url + " #unicorns", function() {
+
     // ...
+
   });
+
 });
 
 // BETTER
 var PI = {
+
   onReady : function() {
-    $('#magic').click(PI.candyMtn);
-    $('#happiness').load(PI.url + ' #unicorns', PI.unicornCb);
+
+    $("#magic").click( PI.candyMtn );
+
+    $("#happiness").load( PI.url + " #unicorns", PI.unicornCb );
+
   },
 
-  candyMtn : function(e) {
-    $('#yayeffects').slideUp(PI.slideCb);
+  candyMtn : function( e ) {
+
+    $("#yayeffects").slideUp( PI.slideCb );
+
   },
 
   slideCb : function() { ... },
 
   unicornCb : function() { ... }
+
 };
 
-$(document).ready(PI.onReady);
+$( document ).ready( PI.onReady );
 ```

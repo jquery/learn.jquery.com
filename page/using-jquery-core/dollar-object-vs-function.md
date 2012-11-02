@@ -9,7 +9,7 @@ Until now, we’ve been dealing entirely with methods that are called on a jQuer
 object. For example:
 
 ```
-$('h1').remove();
+$("h1").remove();
 ```
 
 Most jQuery methods are called on jQuery objects as shown above; these methods

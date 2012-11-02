@@ -17,14 +17,18 @@ will work.
 
 ```
 // Getting CSS properties
-$('h1').css('fontSize'); // returns a string such as "19px"
-$('h1').css('font-size'); // also works
+$("h1").css("fontSize"); // returns a string such as "19px"
+$("h1").css("font-size"); // also works
 ```
 
 ```
 // Setting CSS properties
-$('h1').css('fontSize', '100px'); // setting an individual property
-$('h1').css({ 'fontSize' : '100px', 'color' : 'red' }); // setting multiple properties
+$("h1").css( "fontSize", "100px" ); // setting an individual property
+
+$("h1").css({
+  "fontSize": "100px",
+  "color": "red"
+}); // setting multiple properties
 ```
 
 Note the style of the argument we use on the second line — it is an object that
@@ -44,13 +48,13 @@ class on the element you want to affect.
 
 ```
 // Working with classes
-var $h1 = $('h1');
+var $h1 = $("h1");
 
-$h1.addClass('big');
-$h1.removeClass('big');
-$h1.toggleClass('big');
+$h1.addClass("big");
+$h1.removeClass("big");
+$h1.toggleClass("big");
 
-if ($h1.hasClass('big')) { ... }
+if ( $h1.hasClass("big") ) { ... }
 ```
 
 Classes can also be useful for storing state information about an element, such as indicating that an element is selected.
@@ -65,13 +69,13 @@ methods, visit the [Dimensions documentation on api.jquery.com](http://api.jquer
 
 ```
 // Basic dimensions methods
-$('h1').width('50px');   // sets the width of all H1 elements
-$('h1').width();         // gets the width of the first H1
+$("h1").width("50px");   // sets the width of all H1 elements
+$("h1").width();         // gets the width of the first H1
 
-$('h1').height('50px');  // sets the height of all H1 elements
-$('h1').height();        // gets the height of the first H1
+$("h1").height("50px");  // sets the height of all H1 elements
+$("h1").height();        // gets the height of the first H1
 
-$('h1').position();      // returns an object containing position
+$("h1").position();      // returns an object containing position
                          // information for the first H1 relative to
                          // its "offset (positioned) parent"
 ```

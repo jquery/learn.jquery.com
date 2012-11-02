@@ -1,8 +1,7 @@
 ---
 title: Advanced Plugin Concepts
-level:        intermediate
+level: intermediate
 ---
-
 ### Provide public access to default plugin settings
 
 An improvement we can, and should, make to the code above is to expose the
@@ -12,17 +11,21 @@ where we begin to take advantage of the function object.
 
 ```
 // plugin definition
-$.fn.hilight = function(options) {
+$.fn.hilight = function( options ) {
+
   // Extend our default options with those provided.
   // Note that the first arg to extend is an empty object -
   // this is to keep from overriding our "defaults" object.
   var opts = $.extend({}, $.fn.hilight.defaults, options);
+
   // Our plugin implementation code goes here.
+
 };
+
 // plugin defaults - added as a property on our plugin function
 $.fn.hilight.defaults = {
-  foreground: 'red',
-  background: 'yellow'
+  foreground: "red",
+  background: "yellow"
 };
 ```
 
@@ -31,27 +34,31 @@ Now users can include a line like this in their scripts:
 ```
 // this need only be called once and does not
 // have to be called from within a 'ready' block
-$.fn.hilight.defaults.foreground = 'blue';
+$.fn.hilight.defaults.foreground = "blue";
 ```
 
 And now we can call the plugin method like this and it will use a blue foreground color:
 
 ```
-$('#myDiv').hilight();
+$("#myDiv").hilight();
 ```
 
-As you can see, we've allowed the user to write a single line of code to alter the default foreground color of the plugin. And users can still selectively override this new default value when they want:
+As you can see, we"ve allowed the user to write a single line of code to alter the default foreground color of the plugin. And users can still selectively override this new default value when they want:
 
 ```
 // override plugin default foreground color
-$.fn.hilight.defaults.foreground = 'blue';
+$.fn.hilight.defaults.foreground = "blue";
+
 // ...
+
 // invoke plugin using new defaults
-$('.hilightDiv').hilight();
+$(".hilightDiv").hilight();
+
 // ...
+
 // override default by passing options to plugin method
-$('#green').hilight({
-foreground: 'green'
+$("#green").hilight({
+  foreground: "green"
 });
 ```
 
@@ -66,20 +73,30 @@ implementation of the format method defined below the hilight function.
 ```
 
 // plugin definition
-$.fn.hilight = function(options) {
+$.fn.hilight = function( options ) {
+
   // iterate and reformat each matched element
   return this.each(function() {
-    var $this = $(this);
+
+    var $this = $( this );
+
     // ...
+
     var markup = $this.html();
+
     // call our format function
-    markup = $.fn.hilight.format(markup);
-    $this.html(markup);
-    });
+    markup = $.fn.hilight.format( markup );
+
+    $this.html( markup );
+
+  });
 };
+
 // define our format function
-$.fn.hilight.format = function(txt) {'
-  return '<strong>' + txt + '</strong>';
+$.fn.hilight.format = function( txt ) {"
+
+  return "<strong>" + txt + "</strong>";
+
 };
 ```
 
@@ -102,9 +119,11 @@ that's where this type of extensibility is useful. The Cycle Plugin exposes a
 definitions. It's defined in the plugin like this:
 
 ```
-    $.fn.cycle.transitions = {
-     // ...
-    };
+$.fn.cycle.transitions = {
+
+  // ...
+
+};
 ```
 
 This technique makes it possible for others to define and ship transition definitions that plug-in to the Cycle Plugin.
@@ -127,20 +146,32 @@ detailed in the jQuery Authoring Guidelines).
 
 ```
 // create closure
-(function($) {
+(function( $ ) {
+
   // plugin definition
-  $.fn.hilight = function(options) {
-    debug(this);
+  $.fn.hilight = function( options ) {
+
+    debug( this );
+
     // ...
+
   };
+
   // private function for debugging
-  function debug($obj) {
-    if (window.console && window.console.log)
-      window.console.log('hilight selection count: ' + $obj.size());
+  function debug( $obj ) {
+
+    if ( window.console && window.console.log ) {
+
+      window.console.log( "hilight selection count: " + $obj.size() );
+
+    }
+
   };
+
  //  ...
+
 // end of closure
-})(jQuery);
+})( jQuery );
 ```
 
 Our "debug" method cannot be accessed from outside of the closure and thus is private to our implementation.
@@ -155,16 +186,23 @@ when creating demos and examples). And supporting it is very simple!
 
 ```
 // plugin definition
-$.fn.hilight = function(options) {
+$.fn.hilight = function( options ) {
+
   // ...  build main options before element iteration
-  var opts = $.extend({}, $.fn.hilight.defaults, options); return
-  this.each(function() { var $this = $(this);
+  var opts = $.extend( {}, $.fn.hilight.defaults, options );
+
+  return this.each(function() {
+
+    var $this = $( this );
+
     // build element specific options
     // This changed line tests to see if the Metadata Plugin is installed,
     // andif it is, it extends our options object with the extracted metadata.
-    var o = $.meta ? $.extend({}, opts, $this.data()) : opts;
+    var o = $.meta ? $.extend( {}, opts, $this.data() ) : opts;
 
     //...
+
+  });
 ```
 
 <div class="note" markdown="1">
@@ -189,7 +227,7 @@ choose:
 And now we can hilight each of these divs uniquely using a single line of script:
 
 ```
-$('.hilight').hilight();
+$(".hilight").hilight();
 ```
 
 ###Bob and Sue
@@ -197,13 +235,14 @@ $('.hilight').hilight();
 Let's say Bob has created a wicked new gallery plugin (called "superGallery") which takes a list of images and makes them navigable. Bob's thrown in some animation to make it more interesting. He's tried to make the plugin as customizable as possible, and has ended up with something like this:
 
 ```
-jQuery.fn.superGallery = function(options) {
-  // Bob's default settings:
+jQuery.fn.superGallery = function( options ) {
+
+  // Bob"s default settings:
   var defaults = {
-    textColor : '#000',
-    backgroundColor : '#FFF',
-    fontSize : '1em',
-    delay : 'quite long',
+    textColor : "#000",
+    backgroundColor : "#FFF",
+    fontSize : "1em",
+    delay : "quite long",
     getTextFromTitle : true,
     getTextFromRel : false,
     getTextFromAlt : false,
@@ -213,19 +252,22 @@ jQuery.fn.superGallery = function(options) {
     animationDuration : 500,
     clickImgToGoToNext : true,
     clickImgToGoToLast : false,
-    nextButtonText : 'next',
-    previousButtonText : 'previous',
-    nextButtonTextColor : 'red',
-    previousButtonTextColor : 'red'
+    nextButtonText : "next",
+    previousButtonText : "previous",
+    nextButtonTextColor : "red",
+    previousButtonTextColor : "red"
   };
 
-  var settings = $.extend({}, defaults, options);
+  var settings = $.extend( {}, defaults, options );
 
-  return this.each(function(){
+  return this.each(function() {
+
     // ----------------------------
     // Plugin code would go here...
     // ----------------------------
+
   });
+
 };
 ```
 
@@ -257,16 +299,27 @@ Bob thought he was offering maximum customization with his *delay* option (look 
 
 ```
 var delayDuration = 0;
-switch (settings.delay) {
-  case 'very short' : delayDuration = 100;
+
+switch ( settings.delay ) {
+
+  case "very short":
+    delayDuration = 100;
   break;
-  case 'quite short' : delayDuration = 200;
+
+  case "quite short":
+    delayDuration = 200;
   break;
-  case 'quite long' : delayDuration = 300;
+
+  case "quite long":
+    delayDuration = 300;
   break;
-  case 'very long' : delayDuration = 400;
+
+  case "very long":
+    delayDuration = 400;
   break;
-  default : delayDuration = 200
+
+  default:
+    delayDuration = 200
 }
 ```
 
@@ -282,34 +335,36 @@ A bad implementation:
 
 ```
 // Plugin code
-$('&lt;div id="the_gallery_Wrapper" /&gt;').appendTo('body');
-$('#the_gallery_wrapper').append('...');
-</div>
+$("<div id="the_gallery_Wrapper" />").appendTo("body");
 
-<div class="example" markdown="1">
+$("#the_gallery_wrapper").append("...");
+
 // Retain an internal reference:
-var $wrapper = $('&lt;div /&gt;')
-                 .attr(settings.wrapperAttrs)
-                 .appendTo(settings.container);
-$wrapper.append('...'); // Easy to reference later...
+var $wrapper = $("<div />")
+  .attr( settings.wrapperAttrs )
+  .appendTo( settings.container );
+
+$wrapper.append("..."); // Easy to reference later...
 ```
 
 Notice that we've created a reference to the injected wrapper and we're also calling the 'attr' method to add any specified attributes to the element. So, in our settings it might be handled like this:
 
-<javscript>
-    var defaults = {
+```
+var defaults = {
 
-        wrapperAttrs : {
-            id : 'gallery-wrapper'
-        },
+  wrapperAttrs : {
 
-        // ... rest of settings ...
+    id: "gallery-wrapper"
 
-    };
+  },
 
-    // We can use the extend method to merge options/settings as usual:
-    // But with the added first parameter of TRUE to signify a DEEP COPY:
-    var settings = $.extend(true, {}, defaults, options);
+  // ... rest of settings ...
+
+};
+
+// We can use the extend method to merge options/settings as usual:
+// But with the added first parameter of TRUE to signify a DEEP COPY:
+var settings = $.extend( true, {}, defaults, options );
 ```
 
 The *$.extend()* method will now recurse through all nested objects to give us a merged version of both the defaults and the passed options, giving the passed options precedence.
@@ -319,19 +374,19 @@ The plugin user now has the power to specify any attribute of that wrapper eleme
 The same model can be used to let the user define CSS styles:
 
 ```
-    var defaults = {
+var defaults = {
 
-        wrapperCSS : {},
+  wrapperCSS : {},
 
-        // ... rest of settings ...
+  // ... rest of settings ...
 
-    };
+};
 
-    // Later on in the plugin where we define the wrapper:
-    var $wrapper = $('<div />')
-                     .attr(settings.wrapperAttrs)
-                     .css(settings.wrapperCSS) // ** Set CSS!
-                     .appendTo(settings.container);
+// Later on in the plugin where we define the wrapper:
+var $wrapper = $("<div />")
+  .attr( settings.wrapperAttrs )
+  .css( settings.wrapperCSS ) // ** Set CSS!
+  .appendTo( settings.container );
 ```
 
 Your plugin may have an associated StyleSheet where developers can add CSS styles. Even in this situation it's a good idea to offer some convenient way of setting styles in JavaScript, without having to use a selector to get at the elements.
@@ -343,42 +398,45 @@ Your plugin may have an associated StyleSheet where developers can add CSS style
 If your plugin is driven by events then it might be a good idea to provide a callback capability for each event. Plus, you can create your own custom events and then provide callbacks for those. In this gallery plugin it might make sense to add an 'onImageShow' callback.
 
 ```
-    var defaults = {
+var defaults = {
 
-        onImageShow : function(){}, // we define an empty anonymous function
-                                    // so that we don't need to check its
-                                    // existence before calling it.
+  onImageShow : function() {}, // we define an empty anonymous function
+                              // so that we don"t need to check its
+                              // existence before calling it.
 
-        // ... rest of settings ...
+  // ... rest of settings ...
 
-    };
+};
 
-    // Later on in the plugin:
+// Later on in the plugin:
 
-    $nextButton.bind('click', showNextImage);
+$nextButton.bind( "click", showNextImage );
 
-    function showNextImage() {
-        // DO stuff to show the image here...
-        // ...
-        // Here's the callback:
-        settings.onImageShow.call(this);
-    }
-</javscript>
+function showNextImage() {
+
+    // DO stuff to show the image here...
+    // ...
+    // Here"s the callback:
+    settings.onImageShow.call( this );
+
+}
+```
 
 Instead of initiating the callback via traditional means (adding parenthesis) we're calling it in the context of 'this' which will be a reference to the image node. This means that you have access to the actual image node through the 'this' keyword within the callback:
 
 ```
-    $('ul.imgs li').superGallery({
+$("ul.imgs li").superGallery({
 
-        onImageShow : function() {
-            $(this)
-                .after('<span>' + $(this).attr('longdesc') + '</span>');
-        },
+  onImageShow : function() {
 
-        // ... other options ...
-        // ...
+    $( this ).after( "<span>" + $( this ).attr("longdesc") + "</span>" );
 
-    });
+  },
+
+  // ... other options ...
+  // ...
+
+});
 ```
 
 Similarly you could add an "onImageHide" callback and numerous other ones...

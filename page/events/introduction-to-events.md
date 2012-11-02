@@ -45,22 +45,27 @@ If we wanted to be informed when a user clicks on that button unobtrusively, we 
 
 ```
 //Event binding using addEventListener
-var helloBtn = document.getElementById('helloBtn');
-helloBtn.addEventListener('click', function(event) {
-    alert('Hello.');
-}, false);
+var helloBtn = document.getElementById("helloBtn");
+
+helloBtn.addEventListener( "click", function(event) {
+
+  alert("Hello.");
+
+}, false );
 ```
 
 Here we're saving a reference to the button element by calling `getElementById` and assigning its return value to a variable. We then call `addEventListener` and provide an event handler function that will be called whenever that event occurs. While there's nothing wrong with this code as it will work fine in modern browsers, it won't fare well in versions of IE prior to IE9. This is because Microsoft chose to implement a different method, `attachEvent`, as opposed to the W3C standard `addEventListener`, and didn't get around to changing it until IE9 was released. For this reason, it's beneficial to utilize jQuery because it abstracts away browser inconsistencies, allowing developers to use a single API for these types of tasks, as seen below.
 
 ```
 //Event binding using a convenience method
-$('#helloBtn').click(function(event) {
-    alert('Hello.');
+$("#helloBtn").click(function(event) {
+
+  alert("Hello.");
+
 });
 ```
 
-The `$('#helloBtn')` code selects the button element using the `$` (aka `jQuery`) function and returns a jQuery object. The jQuery object has a bunch of methods (functions) available to it, one of them named `click`, which resides in the jQuery object's prototype. We call the `click` method on the jQuery object and pass along an anonymous function event handler that's going to be executed when a user clicks the button, alerting "Hello." to the user.
+The `$("#helloBtn")` code selects the button element using the `$` (aka `jQuery`) function and returns a jQuery object. The jQuery object has a bunch of methods (functions) available to it, one of them named `click`, which resides in the jQuery object's prototype. We call the `click` method on the jQuery object and pass along an anonymous function event handler that's going to be executed when a user clicks the button, alerting "Hello." to the user.
 
 There are a number of ways that events can be listened for using jQuery:
 
@@ -68,33 +73,44 @@ There are a number of ways that events can be listened for using jQuery:
 //The many ways to bind events with jQuery
 // Attach an event handler directly to the button using jQuery's
 // shorthand `click` method.
-$('#helloBtn').click(function(event) {
-  alert('Hello.');
+$("#helloBtn").click(function(event) {
+
+  alert("Hello.");
+
 });
 
 // Attach an event handler directly the to button using jQuery's
 // `bind` method, passing it an event string of `click`
-$('#helloBtn').bind('click', function(event) {
-  alert('Hello.');
+$("#helloBtn").bind( "click", function(event) {
+
+  alert("Hello.");
+
 });
 
 // As of jQuery 1.7, attach an event handler directly to the button
 // using jQuery's `on` method.
-$('#helloBtn').on('click', function(event) {
-  alert('Hello.');
+$("#helloBtn").on( "click", function(event) {
+
+  alert("Hello.");
+
 });
 
 // As of jQuery 1.7, attach an event handler to the `body` element that
 // is listening for clicks, and will respond whenever *any* button is
 // clicked on the page.
-$('body').on({
+$("body").on({
   click: function(event) {
-    alert('Hello.');
-}, 'button');
+
+    alert("Hello.");
+
+  }, "button"
+);
 
 // An alternative to the previous example, using slightly different syntax.
-$('body').on('click', 'button', function(event) {
-  alert('Hello.');
+$("body").on( "click", "button", function(event) {
+
+  alert("Hello.");
+
 });
 ```
 
@@ -117,11 +133,13 @@ In all of the previous examples, we've been using anonymous functions and specif
 
 ```
 //Binding a named function
-function sayHello(event) {
-    alert('Hello.');
+function sayHello( event ) {
+
+  alert("Hello.");
+
 }
 
-$('#helloBtn').on('click', sayHello);
+$("#helloBtn").on( "click", sayHello );
 ```
 
 In this slightly different example, we're defining a function called `sayHello` and then passing that function into the `on` method instead of an anonymous function. So many online examples show anonymous functions used as event handlers, but it's important to realize that you can also pass defined functions as event handlers as well. This is important if different elements or different events should perform the same functionality. This helps to keep your code DRY.
@@ -132,10 +150,14 @@ If the element has default functionality for a specific event (like a link opens
 
 ```
 //Preventing a default action from occurring and stopping the event bubbling
-$('form').on('submit', function(event) {
-  event.preventDefault(); // Prevent the form's default submission.
+$("form").on( "submit", function(event) {
+
+  event.preventDefault(); // Prevent the form"s default submission.
+
   event.stopPropagation(); // Prevent event from bubbling up DOM tree, prohibiting delegation
+
   // Make an AJAX request to submit the form data
+
 });
 ```
 
@@ -147,9 +169,13 @@ Finally, to inspect the event itself and see all of the data it contains, you sh
 
 ```
 //Logging an event's information
-$('form').on('submit', function(event) {
+$("form").on( "submit", function(event) {
+
   event.preventDefault(); // Prevent the form's default submission.
-  console.log(event); // Log the event object for inspectin'
+
+  console.log( event ); // Log the event object for inspectin'
+
   // Make an AJAX request to submit the form data
+
 });
 ```
