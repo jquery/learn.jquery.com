@@ -1,10 +1,5 @@
 ---
-<<<<<<< HEAD:page/events/handling-events.md
 title   : Handling Events
-=======
-title: Handling Events
-attribution: David Mazza, jQuery Fundementals
->>>>>>> add core styles to events section examples:page/events/events-to-elements.md
 level: beginner
 source: http://jqfundamentals.com/legacy
 attribution: 
