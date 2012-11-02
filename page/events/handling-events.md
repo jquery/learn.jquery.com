@@ -8,8 +8,8 @@ attribution:
 jQuery provides a method `.on()` to 
 respond to any event on the selected elements. This is called an _event binding_.
 Although `.on()` isn't the only method provided for event binding, it is a best
-practice to use this for jQuery 1.7+. See history of event binding for more info.
-<!-- TODO: link to history page -->
+practice to use this for jQuery 1.7+. To learn more, [read more about
+the evolution of event binding in jQuery](/events/history-of-events).
 
 The on method provides several useful features:
 <ul>

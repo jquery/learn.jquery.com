@@ -1,10 +1,11 @@
 ---
 title:        Introducing Custom Events
-level: beginner
+level: intermediate
 source: http://jqfundamentals.com/legacy
 attribution: 
   - jQuery Fundamentals
 ---
+
 ## Custom Events
 
 We&apos;re all familiar with the basic events &mdash; click, mouseover, focus, blur,
