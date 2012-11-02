@@ -1,6 +1,9 @@
 ---
 title:        Use Stylesheets for Changing CSS on Many Elements
 level:        intermediate
+source: http://jqfundamentals.com/legacy
+attribution: 
+  - jQuery Fundamentals
 ---
 
 If you're changing the CSS of more than 20 elements using `$.fn.css`, consider

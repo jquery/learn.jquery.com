@@ -1,6 +1,9 @@
 ---
 title:        Testing Type
 level:        beginner
+source: http://jqfundamentals.com/legacy
+attribution: 
+  - jQuery Fundamentals
 ---
 
 JavaScript offers a way to test the "type" of a variable. However, the result

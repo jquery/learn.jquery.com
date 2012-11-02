@@ -1,6 +1,9 @@
 ---
 title:        Variable Definition
 level:        intermediate
+source: http://jqfundamentals.com/legacy
+attribution: 
+  - jQuery Fundamentals
 ---
 
 Variables can be defined in one statement instead of several.

@@ -1,6 +1,9 @@
 ---
 title   : Avoiding Conflicts with Other Libraries
 level: beginner
+source: http://jqfundamentals.com/legacy
+attribution: 
+  - jQuery Fundamentals
 ---
 If you are using another JavaScript library that uses the `$` variable, you can
 run into conflicts with jQuery.  In order to avoid these conflicts, you need to

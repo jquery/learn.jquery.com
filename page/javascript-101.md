@@ -1,7 +1,9 @@
 ---
 title : JavaScript 101
 level: beginner
-attribution: jQuery Fundamentals
+source: http://jqfundamentals.com/legacy
+attribution: 
+  - jQuery Fundamentals
 ---
 
 ##Introduction

@@ -1,6 +1,9 @@
 ---
 title:        Closures
 level:        beginner
+source: http://jqfundamentals.com/legacy
+attribution: 
+  - jQuery Fundamentals
 ---
 
 Closures are an extension of the concept of scope -- functions have access to
