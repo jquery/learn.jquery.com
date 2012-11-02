@@ -1,6 +1,9 @@
 ---
 title:        Optimize Selectors
 level:        intermediate
+source: http://jqfundamentals.com/legacy
+attribution: 
+  - jQuery Fundamentals
 ---
 
 Selector optimization is less important than it used to be, as more browsers

@@ -1,6 +1,9 @@
 ---
 title:        The "this" Keyword
 level:        beginner
+source: http://jqfundamentals.com/legacy
+attribution: 
+  - jQuery Fundamentals
 ---
 
 In JavaScript, as in most object-oriented programming languages, `this` is a

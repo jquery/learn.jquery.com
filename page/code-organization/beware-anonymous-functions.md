@@ -1,6 +1,9 @@
 ---
 title:        Beware Anonymous Functions
 level: beginner
+source: http://jqfundamentals.com/legacy
+attribution: 
+  - jQuery Fundamentals
 ---
 
 Anonymous functions bound everywhere are a pain. They're difficult to debug,

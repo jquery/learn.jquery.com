@@ -1,6 +1,9 @@
 ---
 title   : Built-in Effects
 level: beginner
+source: http://jqfundamentals.com/legacy
+attribution: 
+    - jQuery Fundamentals
 ---
 Frequently used effects are built into jQuery as methods:
 

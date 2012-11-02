@@ -1,6 +1,9 @@
 ---
 title   : Ajax Events
 level: beginner
+source: http://jqfundamentals.com/legacy
+attribution: 
+  - jQuery Fundamentals
 ---
 Often, you’ll want to perform an operation whenever an Ajax requests starts or
 stops, such as showing or hiding a loading indicator.  Rather than defining

@@ -1,6 +1,9 @@
 ---
 title   : Inside the Event Handling Function
 level: beginner
+source: http://jqfundamentals.com/legacy
+attribution: 
+  - jQuery Fundamentals
 ---
 Every event handling function receives an event object, which contains many
 properties and methods.  The event object is most commonly used to prevent the

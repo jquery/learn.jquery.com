@@ -1,6 +1,9 @@
 ---
 title:        Introducing Events
 level: beginner
+source: http://jqfundamentals.com/legacy
+attribution: 
+  - jQuery Fundamentals
 ---
 
 ## Introduction

@@ -1,6 +1,9 @@
 ---
 title   : Event Helpers
 level: beginner
+source: http://jqfundamentals.com/legacy
+attribution: 
+  - jQuery Fundamentals
 ---
 jQuery offers two event-related helper functions that save you a few keystrokes.
 
