@@ -48,5 +48,28 @@ if (Object.prototype.toString.call(myArray) === '[object Array]') {
 }
 ```
 
+The added importance of returning a variable's type is that for obscure variable names or those further down the tree, it isn't always obvious what type you're working with.
+
+For example:
+
+``` js 
+// If we have the following variables
+var myNum,
+	myNumVal,
+	myNumInt;
+
+// And we initialize them at different points in the script...
+
+myNumVal = 5;
+
+myNumVal += ' forty five';
+
+myNumInt = myNum;
+
+// Now, returning typeof may not return what you think...
+
+typeof myNumInt;	// returns 'string' (it's value is '5 forty five')
+```
+
 jQuery offers utility methods to help you determine the type of an arbitrary
 value. These will be covered later.
