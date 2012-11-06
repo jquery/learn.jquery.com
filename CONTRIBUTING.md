@@ -64,32 +64,49 @@ We will build the attribution of an article based on the git commit logs.  Only 
 
 ## Style Guidelines
 
-The goal of the jQuery Learning Site is to educate newcomers to the jQuery community. Content should be educational and accessible to a broader audience of developers. 
-
-The jQuery Learning Site uses the [same style guide as the jQuery Documentation team](https://github.com/jquery/api.jquery.com#style-guidelines).
+The goal of the jQuery Learning Site is to educate newcomers to the jQuery community. Content should be educational and accessible to a broader audience of developers. Please use the following editorial direction when creating content for learn.jquery.com.
 
 ### Prose & Grammar
 
   - Use the Oxford comma in a list of three or more items:
-  - Numbers in text:
-  - Dates and times:
-  - Code within prose:
+    - *Yes:* The `load`, `scroll`, and `error` events (e.g., on an `<img>` element) do not bubble.
+    - *No:* The `load`, `scroll` and `error` events (e.g., on an `<img>` element) do not bubble.
+  - Numbers:
+    - Spell out numbers one under 10.
+    - Use numerals for numbers 10 and above.
   - Abbreviations:
+    - Spell out abbreviated words on first reference. Use abbreviations on second reference.
+
+#### Code within prose:
+  - Always use a `code block` to denote code from prose.
+  - Methods: use a dot, followed by the method name, followed by parentheses, e.g.: The `.focus()` method is a shortcut for the `.bind('focous', handler)` in the first and second variations, and `.trigger('focus') in the third.
+  - Properties: use a dot, followed by the property name, e.g.: `.length`.
+  - Functions: use the function name, followed by parentheses, e.g.: `myfunction()`.
 
 #### Article & Sentence Structure
 
-  - Use sub-headings to break up content into easier-to-read sections.
-  - Keep sentences short and to the point. A good rule of thumb is to break up any sentence longer than 21 words into two seperate thoughts.
+  - Use sub-headings to break up content into easier-to-read sections. Sub-headings should begin with H2.
+  - Keep sentences short and to the point. A good rule-of-thumb is to break up any sentence longer than 21 words into two or more seperate thoughts.
+  - Lists:
+    - Use bulleted lists when necessary to share a series of five or more points.
+    - Use numbered lists only when providing step-by-step instruction - note that this should be avoided.
+    - Use a full stop (period) at the end of each list item.
 
 #### Spelling
   - Capitalization:
-    - Capitalize proper nouns, jQuery, JavaScript,
-    - Capitalize all words in a heading or sub-heading except article adjectives and the prepositions "with" "of"
+    - Capitalize all proper nouns.
+    - Do not capitalize HTML elements in code examples.
+    - Capitalize all words in a heading or sub-heading with the exception of article adjectives and the prepositions "with" "of"
+    - Capitalize the first word in a list.
   - Use American English:
+  - Punctuation:
+    - Periods go inside quotation marks.
+    - Avoid using semicolons.
+
 
 
 #### Pronoun Usage
-  - Avoid "I" and "me""us" "our" "we"
+  - Avoid "I" and "me""us" "our" "we," and gender-specific pronounds such as "him" or "she."
   - Use ""
 
 #### Voice & Tone
