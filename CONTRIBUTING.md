@@ -62,12 +62,59 @@ If the article was pulled in from an outside source you also need to add an attr
 
 We will build the attribution of an article based on the git commit logs.  Only use the attribution meta tag to give credit to authors outside of git for an article that was pulled in for instance. 
 
-## Style Guide
+## Style Guidelines
 
-### Writing
-The jQuery Learning Site uses the [same style guide as the jQuery Documentation team](https://github.com/jquery/api.jquery.com#style-guidelines). 
+The goal of the jQuery Learning Site is to educate newcomers to the jQuery community. Content should be educational and accessible to a broader audience of developers. 
+
+The jQuery Learning Site uses the [same style guide as the jQuery Documentation team](https://github.com/jquery/api.jquery.com#style-guidelines).
+
+### Prose & Grammar
+
+  - Use the Oxford comma in a list of three or more items:
+  - Numbers in text:
+  - Dates and times:
+  - Code within prose:
+  - Abbreviations:
+
+#### Article & Sentence Structure
+
+  - Use sub-headings to break up content into easier-to-read sections.
+  - Keep sentences short and to the point. A good rule of thumb is to break up any sentence longer than 21 words into two seperate thoughts.
+
+#### Spelling
+  - Capitalization:
+    - Capitalize proper nouns, jQuery, JavaScript,
+    - Capitalize all words in a heading or sub-heading except article adjectives and the prepositions "with" "of"
+  - Use American English:
+
+
+#### Pronoun Usage
+  - Avoid "I" and "me""us" "our" "we"
+  - Use ""
+
+#### Voice & Tone
+  - Do write in clear, easy-to-understand statements. 
+  - Don't use rhetorical questions.
+  - Do write in active voice.
+  - Do write with the audience in mind. 
+  - Do write conversationally. 
+  - Do write in the second person to address the reader.
+  - Do use the imperitive mood.
+  - Do use humor strategically. When in doubt, err on the side of formality.
+  - Don't assume the reader will have prior knowledge of jQuery or JavaScript. Use hyperlinks to refer readers to other concepts or topics that have been covered in other sections.
+
+
+#### Linking & Referencing Content
+
+Link to relevant content within the learn.jquery.com site when possible. Link to the jQuery blog or API documentation when necessary.
+ 
+  - Use inline hyperlinks to reference relevant content.
+  - Acceptable external resources:
+
 
 ### Code 
 Please use the [jQuery Core Code Style Guide](http://docs.jquery.com/JQuery_Core_Style_Guidelines) for your code examples. 
+
+#### Code within Prose
 
 If you have questions which are not addressed by this style guide, please refer to [idiomatic.js](https://github.com/rwldrn/idiomatic.js/).
