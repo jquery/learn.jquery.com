@@ -114,9 +114,6 @@ Content should be educational and accessible to a broad audience of developers. 
 
 #### Voice & Tone
 
-  - Don't assume the reader will have prior knowledge of topics or concepts.
-  - Don't use rhetorical questions.
-  - Don't write in first or third person.
   - Do write in clear, easy-to-understand statements. 
   - Do write in active voice.
   - Do keep the audience in mind while writing.
@@ -126,6 +123,9 @@ Content should be educational and accessible to a broad audience of developers. 
   - Do use humor strategically. When in doubt, err on the side of formality.
   - Do use hyperlinks to refer readers to concepts or topics that have been covered in other sections.
   - Do attribute others.
+  - Don't assume the reader will have prior knowledge of topics or concepts, especially when targeting beginner or intermediate audiences.
+  - Don't use rhetorical questions.
+  - Don't write in first or third person.
 
 #### Linking & Referencing Content
 
