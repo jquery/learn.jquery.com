@@ -75,7 +75,7 @@ Content should be educational and accessible to a broad audience of developers. 
     - Spell out numbers one under 10.
     - Use numerals for numbers 10 and above.
   - Abbreviations:
-    - Spell out abbreviated words on first reference. Use abbreviations on second reference.
+    - Spell out abbreviated words on first reference, followed by the abbreviation in parentheses. Use abbreviations on second reference.
 
 #### Code within Prose
 
@@ -141,8 +141,8 @@ Content should be educational and accessible to a broad audience of developers. 
 
   - Use examples to illustrate important concepts.
   - Examples should indicate what the expected result will be in comments before code is presented.
-  - Break long examples up into shorter sections to aide comprehension.
+  - Break long examples up into shorter sections to aid comprehension.
   - Favor "Right Way" examples over "Wrong Way" examples - there is more than one wrong way to do something, after all.e
   - Use good comments so that explanation within prose isn't necessary.
   - Test your code examples before submitting.
-  - Please use the [jQuery Core Code Style Guide](http://docs.jquery.com/JQuery_Core_Style_Guidelines) for your code examples. 
+  - Use the [jQuery Core Code Style Guide](http://docs.jquery.com/JQuery_Core_Style_Guidelines) for your code examples. 
