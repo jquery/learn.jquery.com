@@ -99,7 +99,7 @@ Content should be educational and accessible to a broad audience of developers. 
   - Capitalization:
     - Capitalize all proper nouns.
     - Do not capitalize HTML elements in code examples.
-    - Capitalize all words in a heading or sub-heading with the exception of article adjectives and the prepositions "with" "of"
+    - Capitalize all words in a heading or sub-heading with the exception of article adjectives and the prepositions like "with," "of," or "to."
     - Capitalize the first word in a list.
   - Punctuation:
     - Periods and commas go inside quotation marks.
@@ -108,9 +108,9 @@ Content should be educational and accessible to a broad audience of developers. 
 #### Pronoun Usage
 
   - Don't use "I," "me," "us," "our," "we," and gender-specific pronouns such as "him" or "she."
-  - Use the second-person pronoun "you" when addressing the reader, and the definite article "the" when addressing code or content.
-    - *You will be able to herp derp after derping the herp.*
-    - *Insert the paragraph after the unordered list.*
+  - Use the second-person pronoun "you" when addressing the reader, and the definite article "the" when addressing code or content:
+    - *"You will be able to herp derp after derping the herp."*
+    - *"Insert the paragraph after the unordered list."*
 
 #### Voice & Tone
 
@@ -123,9 +123,9 @@ Content should be educational and accessible to a broad audience of developers. 
   - Don't write in first or third person.
   - Do use the imperitive mood.
   - Do use humor strategically. When in doubt, err on the side of formality.
-  - Don't assume the reader will have prior knowledge of jQuery or JavaScript.
+  - Don't assume the reader will have prior knowledge of topics or concepts.
   - Do use hyperlinks to refer readers to concepts or topics that have been covered in other sections.
-  - Do attribute other content creators within an article.
+  - Do attribute others.
 
 #### Linking & Referencing Content
 
@@ -138,7 +138,7 @@ Content should be educational and accessible to a broad audience of developers. 
 ### Code Examples
 
   - Use examples to illustrate important concepts.
-  - Examples should indicate what the expected result will be in comments before the code is presented.
+  - Examples should indicate what the expected result will be in comments before code is presented.
   - Favor short examples over long; "Right Way" examples over "Wrong."
   - Use good comments so that explanation within prose isn't necessary.
   - Test your code examples in the console before submitting.
