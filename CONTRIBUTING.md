@@ -91,7 +91,7 @@ Content should be educational and accessible to a broad audience of developers. 
   - Lists:
     - Use bulleted lists when necessary to share a series of five or more points.
     - Use numbered lists only when providing step-by-step instruction - note that this should be avoided.
-    - Use a period at the end of each list item.
+    - Use a period at the end of each ordered list item, and a period or comma at the end of an unordered list item.
 
 #### Spelling
 
@@ -109,21 +109,21 @@ Content should be educational and accessible to a broad audience of developers. 
 
   - Don't use "I," "me," "us," "our," "we," and gender-specific pronouns such as "him" or "she."
   - Use the second-person pronoun "you" when addressing the reader, and the definite article "the" when addressing code or content:
-    - *"You will be able to herp derp after derping the herp."*
+    - *"You will be able to foo bar after you bar the foo."*
     - *"Insert the paragraph after the unordered list."*
 
 #### Voice & Tone
 
-  - Do write in clear, easy-to-understand statements. 
+  - Don't assume the reader will have prior knowledge of topics or concepts.
   - Don't use rhetorical questions.
+  - Don't write in first or third person.
+  - Do write in clear, easy-to-understand statements. 
   - Do write in active voice.
   - Do keep the audience in mind while writing.
   - Do write conversationally. 
   - Do write in the second person to address the reader.
-  - Don't write in first or third person.
-  - Do use the imperitive mood.
+  - Do use the imperative mood.
   - Do use humor strategically. When in doubt, err on the side of formality.
-  - Don't assume the reader will have prior knowledge of topics or concepts.
   - Do use hyperlinks to refer readers to concepts or topics that have been covered in other sections.
   - Do attribute others.
 
@@ -134,12 +134,15 @@ Content should be educational and accessible to a broad audience of developers. 
   - Use inline hyperlinks to reference relevant content.
   - Acceptable external resources:
     - Mozilla Developer Network
+    - Webplatform.org
+    - htmldog.com
 
 ### Code Examples
 
   - Use examples to illustrate important concepts.
   - Examples should indicate what the expected result will be in comments before code is presented.
-  - Favor short examples over long; "Right Way" examples over "Wrong."
+  - Break long examples up into shorter sections to aide comprehension.
+  - Favor "Right Way" examples over "Wrong Way" examples - there is more than one wrong way to do something, after all.e
   - Use good comments so that explanation within prose isn't necessary.
-  - Test your code examples in the console before submitting.
+  - Test your code examples before submitting.
   - Please use the [jQuery Core Code Style Guide](http://docs.jquery.com/JQuery_Core_Style_Guidelines) for your code examples. 
