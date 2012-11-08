@@ -5,7 +5,7 @@ source: http://jqfundamentals.com/legacy
 attribution: 
   - jQuery Fundamentals
 ---
-Sometimes a block of code should only be run under certain conditions. Flow control — via `if` and `else` blocks — lets you run code if certain conditions have been met.
+Sometimes a block of code should only be run under certain conditions. Flow control &#8212; via `if` and `else` blocks &#8212; lets you run code if certain conditions have been met.
 
 ```
 // Flow control

@@ -6,7 +6,7 @@ attribution:
   - jQuery Fundamentals
 ---
 
-JavaScript offers a way to test the type of a variable. However, the result can be confusing -- for example, the type of an array is "Object."
+JavaScript offers a way to test the type of a variable. However, the result can be confusing &#8212; for example, the type of an array is "Object."
 
 It's common practice to use the `typeof` operator when trying to determining the type of a specific value.
 
