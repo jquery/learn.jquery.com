@@ -40,7 +40,7 @@ While curly braces aren't strictly required around single-line `if` statements, 
 
 Be mindful not to define functions with the same name multiple times within separate if/else blocks, as doing so may not have the expected result.
 
-[##](/truthy) Truthy and Falsy Things
+## Truthy and Falsy Things
 
 In order to use flow control successfully, it's important to understand which kinds of values are "truthy" and which kinds of values are "falsy." Sometimes, values that seem like they should evaluate one way actually evaluate another.
 
