@@ -5,13 +5,9 @@ source: http://jqfundamentals.com/legacy
 attribution: 
   - jQuery Fundamentals
 ---
-If you are using another JavaScript library that uses the `$` variable, you can
-run into conflicts with jQuery.  In order to avoid these conflicts, you need to
-put jQuery in no-conflict mode immediately after it is loaded onto the page and
-before you attempt to use jQuery in your page.
+If you're using another JavaScript library that uses the `$` variable, you might run into conflicts with jQuery.  In order to avoid these conflicts, you need to put jQuery in no-conflict mode immediately after it is loaded onto the page and before you attempt to use jQuery in your page.
 
-When you put jQuery into no-conflict mode, you have the option of assigning a
-variable name to replace `$`.
+You have the option of assigning a variable name to replace `$` in no-conflict mode:
 
 ```
 <!-- Putting jQuery into no-conflict mode -->
@@ -24,10 +20,7 @@ variable name to replace `$`.
 </script>
 ```
 
-You can continue to use the standard $ by wrapping your code in a
-self-executing anonymous function; this is a standard pattern for plugin
-authoring, where the author cannot know whether another library will have taken
-over the `$`.
+You can continue to use the standard `$` by wrapping your code in a self-executing anonymous function. This is a standard pattern for plugin authoring, where the author cannot know whether another library will have taken over the `$`. See the [Plugins](/plugins) section for more information about writing plugins.
 
 ```
 <!-- Using the $ inside an immediately-invoked function expression -->
