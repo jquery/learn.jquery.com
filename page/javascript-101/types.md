@@ -185,8 +185,7 @@ There are many more methods for manipulating arrays, some of which are covered f
 
 ## Type Checking with jQuery
 
-jQuery offers a few basic utility methods for determining the type of a
-specific value.
+jQuery offers a few basic utility methods for determining the type of a specific value. Type checking is covered further in the [Testing Type](/testing-type) section, but here are some examples:
 
 ```
 // Checking the type of an arbitrary value
