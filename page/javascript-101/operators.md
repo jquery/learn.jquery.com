@@ -100,7 +100,7 @@ foo && doSomething( foo );
 var bar = baz || createBar();
 ```
 
-This style is quite elegant and pleasantly terse; that said, it can be really hard to read or use, especially for beginners.
+This style is quite elegant and pleasantly terse; that said, it can be really hard to read or use, especially for beginners. See the section on truthy and falsy things in the [Conditional Code](/conditional-code) article for more about evaluating truthiness.
 
 ## Comparison Operators
 
