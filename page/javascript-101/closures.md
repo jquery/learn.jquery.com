@@ -11,7 +11,8 @@ Closures are an extension of the concept of scope. With closures, functions have
 As shown in the [Functions](/functions) section, functions have access to changing variable values. The same sort of behavior exists with functions defined within loops &#8212; the function "sees" the change in the variable's value even after the function is defined, resulting in each function referencing the last value stored in the variable.
 
 ```
-// Each function executed within the loop will reference the last value stored in i (5)
+// Each function executed within the loop will reference 
+// the last value stored in i (5).
 // this won't behave as we want it to -
 // every 100 milliseconds, 5 will alert
 for ( var i = 0; i < 5; i++ ) {
@@ -29,7 +30,7 @@ Closures can be used to prevent this by creating a unique scope for each iterati
 
 ```
 // Using a closure to create a new private scope
-/* fix: “close” the value of i inside createFunction, so it won't change */
+// fix: “close” the value of i inside createFunction, so it won't change
 var createFunction = function(i) {
 
   return function() {
@@ -50,7 +51,7 @@ for ( var i = 0; i < 5; i++ ) {
 Closures can also be used to resolve issues with the `this` keyword, which is unique to each scope:
 
 ```
-//Using a closure to access inner and outer object instances simultaneously">
+//Using a closure to access inner and outer object instances simultaneously
 var outerObj = {
   myName : "outer",
   outerFunction : function() {
@@ -81,17 +82,18 @@ Closures can be particularly useful when dealing with callbacks. However, it is 
 
 `Function.bind` is used to create a new function. When called, the new function then calls itself in the context of the supplied `this` value, using a given set of arguments that will precede any arguments provided when the new function was initially called.
 
-As `bind` is a recent addition to ECMAScript 5, it may not be present in all browsers, which is something to be wary of when deciding whether to use it. However, it's possible to work around support by using the following shim:
+As `bind` is a recent addition to ECMAScript 5, it may not be present in all browsers, which is something to be wary of when deciding whether to use it. However, it's possible to work around support by using [this shim](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function/bind) from MDN:
 
 ```
-// Shim from https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function/bind
+// Shim from MDN
 if (!Function.prototype.bind) {
 
   Function.prototype.bind = function( oThis ) {
 
     if (typeof this !== "function") {
 
-      // closest thing possible to the ECMAScript 5 internal IsCallable function
+      // closest thing possible to the ECMAScript 5 internal
+      // IsCallable function
       throw new TypeError("Function.prototype.bind - what is trying to be bound is not callable");
 
     }
@@ -136,7 +138,8 @@ var module = {
 
 };
 
-//module.getUser() is called where "module" is "this" and "module.user" is returned.
+//module.getUser() is called where "module" is "this" 
+// and "module.user" is returned.
 module.getUser(); //janedoe
 
 //let's now store a reference in the global version of "this"
