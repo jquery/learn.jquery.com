@@ -115,6 +115,8 @@ var person = { name: "John Doe" };
 alert( person.email ); // => undefined
 ```
 
+Objects are covered further in the [Objects](/objects) section.
+
 ### Array
 
 Arrays are a type of object that are ordered by the index of each item it contains. The index starts at zero and extends to however many items have been added, which is a property of the array known as the "length" of the array. Similar to a basic object, an array can be created with the array constructor or the shorthand syntax known as array literal.
@@ -179,7 +181,7 @@ alert( foo[1] ); // => undefined
 alert( foo.length ); // => 1
 ```
 
-There are many more methods for manipulating arrays. Details can be found on the [Mozilla Developer Network](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array "MDN - Array Reference").
+There are many more methods for manipulating arrays, some of which are covered further in the [Arrays](/arrays) section. Details can be found on the [Mozilla Developer Network](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array "MDN - Array Reference").
 
 ## Type Checking with jQuery
 
