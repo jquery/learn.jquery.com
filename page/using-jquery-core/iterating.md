@@ -1,16 +1,13 @@
 ---
 title   : Iterating over jQuery and non-jQuery Objects
 ---
+jQuery provides an object iterator utility called `$.each()` as well as a jQuery collection iterator: `.each()`. These are not interchangeable. In addition, there are a couple of helpful methods called `$.map()` and `.map()` that can shortcut one of our common iteration use cases. 
 
-jQuery provides an object iterator utility called `$.each` as well as a jQuery collection iterator: `.each()`. These are not interchangeable. In addition, there are a couple of helpful methods called `$.map` and `.map()` that can shortcut one of our common interation use cases. Let's take a look at these.
-
-### $.each
+### `$.each()`
 
 [`$.each`](http://api.jquery.com/jQuery.each/) is a generic iterator function for looping over object, arrays, and array-like objects. Plain objects are iterated via their named properties while arrays and array-like objects are iterated via their indices.
 
-$.each is essentially a drop-in replacement of a traditional `for` or 'for-in' loop.
-
-Given:
+`$.each()` is essentially a drop-in replacement of a traditional `for` or 'for-in' loop. Given:
 
 ```
 var sum = 0;
@@ -42,9 +39,7 @@ $.each( arr, function(index, value){
 console.log( sum ); // 15
 ```
 
-Notice that we don't have to access `arr[ index ]` as the value is conveniently passed to the callback in `$.each`.
-
-In addition, given:
+Notice that `arr[ index ]` can't be accessed as the value is conveniently passed to the callback in `$.each()`. In addition, given:
 
 ```
 var sum = 0;
@@ -80,13 +75,12 @@ $.each( obj, function(key, value){
 console.log( sum ); // 3
 ```
 
-Again, we don't have to directly access `obj[ key ]` as the value is passed directly to the callback.
-
-Note that `$.each` is for plain objects, arrays, array-like objects *that are not jQuery collections*.
+Again, `obj[ key ]` is passed directly to the callback and thus can't be accessed. Note that `$.each()` is for plain objects, arrays, array-like objects *that are not jQuery collections*.
 
 This would be considered incorrect:
 
 ```
+// incorrect
 $.each( $("p"), function() {
 
 	// Do something
@@ -94,15 +88,13 @@ $.each( $("p"), function() {
 });
 ```
 
-Instead, for jQuery collections, we have `.each()`.
+For jQuery collections, use `.each()`.
 
-### .each()
+### `.each()`
 
-[`.each()`](http://api.jquery.com/each/) is used directly on a jQuery collection. It iterates over each matched element in the collection and performs a callback on that object. The index of the current element within the collection is passed as an argument to the callback. The value (in this case the DOM element) is also passed, but the callback is fired within the context of the current matched element, so the `this` keyword points to the current element as we would expect in other jQuery callbacks.
+[`.each()`](http://api.jquery.com/each/) is used directly on a jQuery collection. It iterates over each matched element in the collection and performs a callback on that object. The index of the current element within the collection is passed as an argument to the callback. The value (the DOM element in this case) is also passed, but the callback is fired within the context of the current matched element so the `this` keyword points to the current element as expected in other jQuery callbacks.
 
-Let's see some examples.
-
-Given the following markup:
+For example, given the following markup:
 
 ```
 <ul>
@@ -112,7 +104,7 @@ Given the following markup:
 </ul>
 ```
 
-we can write:
+`.each()` may be used like so:
 
 ```
 $("li").each( function(index, element){
@@ -129,11 +121,9 @@ $("li").each( function(index, element){
 
 #### The Second Argument
 
-The question is often raised, "If `this` is the element, why is there a second (DOM element) argument passed to the callback?"
+The question is often raised, "If `this` is the element, why is there a second DOM element argument passed to the callback?"
 
-Whether done intentionally, or inadvertently in our callback, our execution context may change. If we consistently use the keyword `this`, we may end up confusing ourselves or another developer coming behind us. Even if our execution context remains the same, it may be more readable to use the second parameter as a named parameter.
-
-For example:
+Whether intentional or inadvert, the execution context may change. When consistently using the keyword `this`, it's easy to end up confusing ourselves or other developers reading the code. Even if the execution context remains the same, it may be more readable to use the second parameter as a named parameter. For example:
 
 ```
 $("li").each( function(index, listItem) {
@@ -155,11 +145,9 @@ $("li").each( function(index, listItem) {
 });
 ```
 
-#### Sometimes `.each()` isn't necessary
+#### Sometimes `.each()` Isn't Necessary
 
-Many jQuery methods implicitly iterate over the entire collection, applying their behavior to each matched element.
-
-For example, this is unnecessary:
+Many jQuery methods implicitly iterate over the entire collection, applying their behavior to each matched element. For example, this is unnecessary:
 
 ```
 $("li").each( function(index, el) {
@@ -177,17 +165,18 @@ $("li").addClass( "newClass" );
 
 Each `<li/>` in the document will have the class 'newClass' added.
 
-On the other hand, some methods do not iterate over the collection. `.each()` is required when we need to get information from our element before we set a new value.
+On the other hand, some methods do not iterate over the collection. `.each()` is required when we need to get information from the element before setting a new value.
 
 This will not work:
 
 ```
+// doesn't work:
 $("li").val( $( this ).val() + "%" );
 
 // .val() does not change the execution context, so this === window
 ```
 
-and should be written like so:
+Rather, this is how it should be written:
 
 ```
 $("li").each( function(i, el) {
@@ -197,9 +186,8 @@ $("li").each( function(i, el) {
 });
 ```
 
-It can be confusing knowing what requires a `.each()` and what doesn't, so here's a list:
+The following is a list of methods that require `.each()`:
 
-##### Methods requiring `.each()`
 * [`.attr()`](http://api.jquery.com/attr/#attr1) (getter)
 * [`.css()`](http://api.jquery.com/css/#css1) (getter)
 * [`.data()`](http://api.jquery.com/data/#data2) (getter)
@@ -219,7 +207,7 @@ It can be confusing knowing what requires a `.each()` and what doesn't, so here'
 
 Note that in most cases, the 'getter' signature returns the result from the first element in a jQuery collection while the setter acts over the entire collection of matched elements. The exception to this is `.text()` where the getter signature will return a concatenated string of text from all matched elements.
 
-In addition to a value to set, the attribute, property, and css setters as well as the DOM insertion 'setter' methods (i.e. `.text()` and `.html()`) accept anonymous callback functions that are applied to each element in the matching set. The arguments passed to the callback are the index of the matched element within the set and the result of the 'getter' signature of the method.
+In addition to a setter value, the attribute, property, css setters, and DOM insertion 'setter' methods (i.e. `.text()` and `.html()`) accept anonymous callback functions that are applied to each element in the matching set. The arguments passed to the callback are the index of the matched element within the set and the result of the 'getter' signature of the method.
 
 For example, these are equivalent:
 
@@ -237,10 +225,9 @@ $("li").val(function(index, value) {
 
 });
 
-
 ```
 
-One last thing thing to keep in mind with this implicit iteration is that the traversal methods such as `.children()` or `.parent()` will act on each matched element in a connection, returning a combined collection of all children or parent nodes.
+One other thing to keep in mind with this implicit iteration is that traversal methods such as `.children()` or `.parent()` will act on each matched element in a connection, returning a combined collection of all children or parent nodes.
 
 ### [`.map()`](http://api.jquery.com/map/)
 
@@ -272,11 +259,11 @@ Notice the `.get()` chained at the end. `.map()` actually returns a jQuery-wrapp
 
 ### [`$.map`](http://api.jquery.com/jQuery.map/)
 
-Like `$.each` and `.each()`, there is a `$.map` as well as `.map()`. The difference is also very similar to our each methods. `$.map` works on plain JavaScript arrays while `.map()` works on jQuery element collections. Because it is working on a plain array, `$.map` returns a plain array and `.get()` does not need to be called (and will in fact throw an error as it is not a native JavaScript method).
+Like `$.each()` and `.each()`, there is a `$.map()` as well as `.map()`. The difference is also very similar to both `.each` methods. `$.map()` works on plain JavaScript arrays while `.map()` works on jQuery element collections. Because it's working on a plain array, `$.map()` returns a plain array and `.get()` does not need to be called &#8212; in fact, it will throw an error as it's not a native JavaScript method.
 
-A word of warning: `$.map` switches the order of callback arguments. This was done in order to match the native JavaScript `.map()` method made available in ECMAScript 5.
+A word of warning: `$.map()` switches the order of callback arguments. This was done in order to match the native JavaScript `.map()` method made available in ECMAScript 5.
 
-Let's look at an example:
+For example:
 
 ```
 <li id="a"></li>
@@ -311,7 +298,3 @@ $.map( arr, function(value, index) {
 
 </script>
 ```
-
-### Conclusion
-
-An understanding of the proper usage and best practices of `$.each`, `.each()`, `$.map`, and `.map()` can save you from writing a lot of useless or inefficient code and can also save you from a lot of headaches with hard-to-find bugs down the road.
