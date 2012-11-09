@@ -5,11 +5,7 @@ source: http://jqfundamentals.com/legacy
 attribution: 
   - jQuery Fundamentals
 ---
-As your work with jQuery progresses, you'll find that there's often data about
-an element that you want to store with the element.  In plain JavaScript, you
-might do this by adding a property to the DOM element, but you'd have to deal
-with memory leaks in some browsers.  jQuery offers a straightforward way to
-store data related to an element, and it manages the memory issues for you.
+There's often data about an element you want to store with the element. In plain JavaScript, you might do this by adding a property to the DOM element, but you'd have to deal with memory leaks in some browsers. jQuery offers a straightforward way to store data related to an element, and it manages the memory issues for you.
 
 ```
 // Storing and retrieving data related to an element
@@ -17,16 +13,9 @@ $("#myDiv").data( "keyName", { foo: "bar" } );
 $("#myDiv").data("keyName"); // { foo: "bar" }
 ```
 
-You can store any kind of data on an element, and it's hard to overstate the
-importance of this when you get into complex application development.  For the
-purposes of this class, we'll mostly use `$.fn.data` to store references to
-other elements.
+Any kind of data can be stored on an element. For the purposes of this article, `$.fn.data` will be used to store references to other elements.
 
-For example, we may want to establish a relationship between a list item and a
-div that's inside of it.  We could establish this relationship every single
-time we interact with the list item, but a better solution would be to
-establish the relationship once, and then store a pointer to the div on the
-list item using `$.fn.data`:
+For example, you may want to establish a relationship between a list item and a `<div>` that's inside of it. This relationship could be established every single time the list item is touched, but a better solution would be to establish the relationship once, then store a pointer to the `<div>` on the list item using `$.fn.data`:
 
 ```
 // Storing a relationship between elements using $.fn.data
