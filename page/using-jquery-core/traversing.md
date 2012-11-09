@@ -2,21 +2,11 @@
 title   : Traversing
 level: beginner
 ---
-## Traversing
+Once you've made an initial selection with jQuery, you can traverse deeper into what was just selected. Traversing can be broken down into three basic parts: parents, children, and siblings. jQuery has an abundance of easy-to-use methods for all these parts. Notice that each of these methods can optionally be passed string selectors, and some can also take another jQuery object in order to filter your selection down. Pay attention and refer to the [API documentation on traversing](http://api.jquery.com/category/traversing/) to know what variation of arguments you have available.
 
-Once you have made an initial selection with jQuery, you may want to traverse
-deeper into what was just selected. Traversing can be broken down into three
-basic parts: parents, children and siblings. jQuery has an abundance of easy
-to use methods for all these parts. You will notice that each of these methods
-can optionaly be passed string selector and some can also take another jQuery
-object in order to filter your selection down. Be sure to pay attention and
-refer to the API docs to know what all variation of arguments you have
-available.
+## Parents
 
-
-### Parents
-
-The methods for finding the parents from a selection: `$.fn.parent`, `$.fn.parents`, `$.fn.parentsUntil` and `$.fn.closest`.
+The methods for finding the parents from a selection include `$.fn.parent()`, `$.fn.parents()`, `$.fn.parentsUntil()`, and `$.fn.closest()`.
 
 ```
 <div class="grandparent">
@@ -47,13 +37,9 @@ $("span.subchild").closest("div");  // returns [ div.child ]
 $("div.child").closest("div");      // returns [ div.child ] as the selector is also included in the search
 ```
 
-### Children
+## Children
 
-The methods for finding child elements from a selection: `$.fn.children` and
-`$.fn.find`. The difference between these methods lies in how far into the
-child structure the selection is made. `$.fn.children` only operates on direct
-child nodes, while `$.fn.find` can traverse recursively into children, and
-children of those children, etc.
+The methods for finding child elements from a selection include `$.fn.children()` and `$.fn.find()`. The difference between these methods lies in how far into the child structure the selection is made. `$.fn.children()` only operates on direct child nodes, while `$.fn.find()` can traverse recursively into children, children of those children, and so on.
 
 ```
 //Selecting an element's direct children
@@ -63,14 +49,9 @@ $("div.grandparent").children("div"); // returns [ div.parent, div.surrogatePare
 $("div.grandparent").find("div"); // returns [ div.child, div.parent, div.surrogateParent1, div.surrogateParent2 ]
 ```
 
-### Siblings
+## Siblings
 
-The rest of the traversal methods within jQuery all deal with finding sibling
-selections. There are a few basic methods as far as direction is concerned. You
-can find previous elements with `$.fn.prev`, next elements with `$.fn.next` and
-both with `$.fn.siblings`. There are also a few other methods that build onto
-these basic methods, similar to how `$.fn.parentsUntil` works; `$.fn.nextAll`,
-`$.fn.nextUntil`, `$.fn.prevAll` and `$.fn.prevUntil`.
+The rest of the traversal methods within jQuery all deal with finding sibling selections. There are a few basic methods as far as the direction of traversal is concerned. You can find previous elements with `$.fn.prev()`, next elements with `$.fn.next()`, and both with `$.fn.siblings()`. There are also a few other methods that build onto these basic methods: `$.fn.nextAll()`, `$.fn.nextUntil()`, `$.fn.prevAll()` and `$.fn.prevUntil()`.
 
 ```
 // Selecing a next sibling of the selectors
@@ -90,7 +71,7 @@ $("div.surrogateParent2").prevAll().first();  // returns [ div.surrogateParent1 
 $("div.surrogateParent2").prevAll().last();   // returns [ div.parent ]
 ```
 
-If you want to select all the siblings then `$.fn.siblings` comes handy.
+Use `$.fn.siblings()` to select all siblings:
 
 ```
 // Selecting an element's siblings in both directions that matches the given selector
@@ -98,14 +79,6 @@ $("div.parent").siblings();           // returns [ div.surrogateParent1, div.sur
 $("div.surrogateParent1").siblings(); // returns [ div.parent, div.surrogateParent2 ]
 ```
 
-You can see all these methods metioned and more at the
-[Traversal documentation on api.jquery.com](http://api.jquery.com/category/traversing/tree-traversal/)
+See the complete documentation for these methods and more at [Traversal documentation on api.jquery.com](http://api.jquery.com/category/traversing/tree-traversal/).
 
-<div class="note">
-Be cautious with traversing long distances in
-your documents — complex traversal makes it imperative that your document's
-structure remain the same, something that's difficult to guarantee even if
-you're the one creating the whole application from server to client. One- or
-two-step traversal is fine, but you generally want to avoid traversals that
-take you from one container to another.
-</div>
+Be cautious when traversing long distances in documents &#8212; complex traversal makes it imperative that the document's structure remain the same, which is difficult to guarantee even if you're the one creating the whole application from server to client. One- or two-step traversal is fine, but it's best to avoid traversals that go from one container to another.

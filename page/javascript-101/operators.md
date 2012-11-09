@@ -24,7 +24,7 @@ console.log( foo + " " + bar ); // "hello world"
 ```
 // Incrementing and decrementing
 // The pre-increment operator increments the operand before any further processing.
-// pre-increment
+// pre-increment:
 var i = 1;
 
 console.log( ++i ); // => 2
@@ -32,49 +32,45 @@ console.log( ++i ); // => 2
 console.log( i ); // => 2
 
 // The post-increment operator increments the operand after processing it.
-// post-increment
+// post-increment:
 var i = 1;
 
-console.log( i++ ); // => 1. This is because i was processed first
+console.log( i++ ); // => 1. This is because i was processed first.
 
-console.log( i ); // => 2. This is because the operand was incremented after processing in the previous step.
+console.log( i ); // => 2. This is because the operand was incremented after processing
+// in the previous step.
 ```
 
 ## Operations on Numbers & Strings
 
-In JavaScript, numbers and strings will occasionally behave in ways you might
-not expect.
+In JavaScript, numbers and strings will occasionally behave in unexpected ways.
 
 ```
 // Addition vs. Concatenation
 var foo = 1;
 var bar = "2";
 
-console.log( foo + bar );  // 12. uh oh
+console.log( foo + bar );  // => 12
 ```
 
 ```
-// Forcing a string to act as a number
+// Coercing a string to act as a number:
 var foo = 1;
 var bar = "2";
 
-// coerce the string to a number
 console.log( foo + Number(bar) );
 ```
 
-The Number constructor, when called as a function (like above) will have the
-effect of casting its argument into a number. You could also use the unary plus
-operator, which does the same thing:
+The Number constructor, when called as a function (as in the above example), will have the effect of casting its argument into a number. The unary plus operator also does the same thing:
 
 ```
-// Forcing a string to act as a number (using the unary-plus operator)
+// Forcing a string to act as a number (using the unary plus operator):
 console.log( foo + +bar );
 ```
 
 ## Logical Operators
 
-Logical operators allow you to evaluate a series of operands using AND and OR
-operations.
+Logical operators allow evaluation of a series of operands using AND ( `&&` ) and OR ( `||` ) operations.
 
 ```
 // Logical AND and OR operators
@@ -90,37 +86,25 @@ foo && baz;   // returns 2, which is true
 baz && foo;   // returns 1, which is true
 ```
 
-Though it may not be clear from the example, the `||` operator returns the value
-of the first truthy operand, or, in cases where neither operand is truthy,
-it'll return the last operand. The `&&` operator returns the value of
-the first false operand, or the value of the last operand if both operands are
-truthy.
+In the above example, the `||` operator returns the value of the first truthy operand, or in cases where neither operand is truthy, it returns the last operand. The `&&` operator returns the value of the first false operand, or the value of the last operand if both operands are truthy.
 
-Be sure to see the section called “Truthy and Falsy Things” for more
-details on which values evaluate to true and which evaluate to false.
+You'll sometimes see developers use these logical operators for flow control instead of using `if` statements. For example:
 
-<div class="note">
-You'll sometimes see developers use these logical operators for flow control
-instead of using if statements. For example:
+```
+// do something with foo if foo is truthy
+foo && doSomething( foo );
 
-    // do something with foo if foo is truthy
-    foo && doSomething( foo );
+// set bar to baz if baz is truthy;
+// otherwise, set it to the return
+// value of createBar()
+var bar = baz || createBar();
+```
 
-    // set bar to baz if baz is truthy;
-    // otherwise, set it to the return
-    // value of createBar()
-    var bar = baz || createBar();
-
-This style is quite elegant and pleasantly terse; that said, it can be really
-hard to read, especially for beginners. I bring it up here so you'll recognize
-it in code you read, but I don't recommend using it until you're extremely
-comfortable with what it means and how you can expect it to behave.
-</div>
+This style is quite elegant and pleasantly terse; that said, it can be really hard to read or use, especially for beginners. See the section on truthy and falsy things in the [Conditional Code](/conditional-code) article for more about evaluating truthiness.
 
 ## Comparison Operators
 
-Comparison operators allow you to test whether values are equivalent or whether
-values are identical.
+Comparison operators allow you to test whether values are equivalent or whether values are identical.
 
 ```
 // Comparison operators
@@ -131,7 +115,7 @@ var bim = 2;
 
 foo == bar;   // returns false
 foo != bar;   // returns true
-foo == baz;   // returns true; careful!
+foo == baz;   // returns true; but note that the types are different
 
 foo === baz;             // returns false
 foo !== baz;             // returns true
@@ -141,3 +125,4 @@ foo > bim;    // returns false
 bim > baz;    // returns true
 foo <= baz;   // returns true
 ```
+For more information about comparison operators, visit the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Operators/Comparison_Operators "MDN - Comparison Operators").

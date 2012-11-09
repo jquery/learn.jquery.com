@@ -8,7 +8,7 @@ attribution:
 
 ### Comments
 
-JavaScript has support for single and multi line comments. Comments are ignored by the JavaScript engine, therefore have no side-effects on the outcome of the program. They should be used to document the code for future developers (including yourself!). There are libraries available that can generate project documentation pages based on commenting conventions used, [JSDoc](http://code.google.com/p/jsdoc-toolkit/, "JSDoc Toolkit") is one of the more popular ones.
+JavaScript has support for single and multi-line comments. Comments are ignored by the JavaScript engine and therefore have no side-effects on the outcome of the program. Use comments to document the code for other developers. Libraries like [JSDoc](http://code.google.com/p/jsdoc-toolkit/, "JSDoc Toolkit") are available to help generate project documentation pages based on commenting conventions.
 
 ```
 // Single and multi line comments.
@@ -24,10 +24,10 @@ JavaScript has support for single and multi line comments. Comments are ignored 
 
 ### Whitespace
 
-Whitespace is also ignored in JavaScript. There are many tools that will actully strip out all the whitespace in a program reducing the overall file size in order to improve network latency. Given the availability of tools like these, whitespace should be leveraged to make the code as readible as possible.
+Whitespace is also ignored in JavaScript. There are many tools that will strip out all the whitespace in a program, reducing the overall file size and improving network latency. Given the availability of tools like these, whitespace should be leveraged to make the code as readible as possible.
 
 ```
-// Whitespace is insignifigant.
+// Whitespace is insignificant.
 var hello = "Hello";
 
 var world     =      "World!";
@@ -35,7 +35,7 @@ var world     =      "World!";
 
 ```
 // Semantic whitespace promotes readibility.
-// readible code is good!
+// Readible code is good!
 var foo = function() {
 
   for ( var i = 0; i < 10; i++ ) {
@@ -48,23 +48,23 @@ var foo = function() {
 
 foo();
 
-// not so much!
+// This is much harder to read!
 var foo=function() {for(var i=0;i<10;++){alert(i);}};foo();
 ```
 
 ### Reserved Words
 
-There is a handfull of reserved words that cannot be used when declaring user defined variables and functions. Some of these are currently implemented, some for future use, and others for historical reasons. A list of words and in depth explaination can be found on the [MDN JavaScript Reference](https://developer.mozilla.org/en/JavaScript/Reference/Reserved_Words, "MDN Reserved Words.")
+There are a handfull of reserved words that can't be used when declaring user-defined variables and functions. Some of these reserved words are currently implemented, some are saved for future use, and others are reserved for historical reasons. A list of words and in-depth explanations for each can be found on the [MDN JavaScript Reference](https://developer.mozilla.org/en/JavaScript/Reference/Reserved_Words, "MDN Reserved Words.") site.
 
 ### Identifiers
 
-Identifiers are used to name variables and functions with a unique name so they can subsequently be refererred to by that name; variables and functions will be discussed in a later chapter. The name of an identifier must follow a few rules:
+Identifiers are used to give variables and functions a unique name so they can subsequently be referred to by that name. The name of an identifier must follow a few rules:
 
 * Cannot be a reserved word.
 * Can only be composed of letters, numbers, dollar signs, and underscores.
 * The first character cannot be a number.
 
-It is best practice to name these identifiers to something that will make sense to other developers and to you later on.
+It's a best practice to name identifers in a way that will make sense to you and other developers later on.
 
 ```
 // Valid identifier names.
@@ -75,4 +75,3 @@ var $my_AwesomeVariable = "d";
 var _my_awesome_variable_$ = "e";
 ```
 
-While it is possible to run JavaScript in server-side environments, that is out of the scope for this section.

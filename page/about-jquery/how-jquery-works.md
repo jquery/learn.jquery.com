@@ -31,7 +31,7 @@ can use:
   <script src="jquery.js"></script>
 ```
 
-You can download your own copy of jQuery from the [Downloading jQuery](http://jquery.com/download/) page
+Download a copy of jQuery from the [Downloading jQuery](http://jquery.com/download/) page.
 
 ### Launching Code on Document Ready
 The first thing that most Javascript programmers end up doing is adding some code to their program, similar to this:
@@ -42,7 +42,7 @@ window.onload = function() {
 
 }
 ```
-Inside of which is the code that you want to run right when the page is loaded. Problematically, however, the Javascript code isn't run until all images are finished downloading (this includes banner ads). The reason for using window.onload in the first place is that the HTML 'document' isn't finished loading yet, when you first try to run your code.
+Inside of which is the code that you want to run right when the page is loaded. Problematically, however, the Javascript code isn't run until all images are finished downloading (this includes banner ads). The reason for using `window.onload` in the first place is that the HTML 'document' isn't finished loading yet, when you first try to run your code.
 
 To circumvent both problems, jQuery has a simple statement that checks the `document` and waits until it's ready to be manipulated, known as the [ ready event ](http://api.jquery.com/ready):
 
@@ -91,11 +91,11 @@ The following is an example of what the complete HTML file might look like if
 you were to use the script in your own file. Note that it links to Google's
 [CDN](http://code.google.com/apis/libraries/) to load the jQuery core file.
 Also, while the custom script is included in the `<head>`, it is generally
-preferable to place it in a separate file and refer that file with the script
-element's src attribute
+preferable to place it in a separate file and refer to that file with the script
+element's `src` attribute.
 
 ```
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -129,7 +129,7 @@ element's src attribute
 
 Another common task is adding (or removing) a `class`.
 
-First, add some style information into the `head` of your document, like this:
+First, add some style information into the `head` of the document, like this:
 
 ```
 <style>
@@ -139,15 +139,15 @@ First, add some style information into the `head` of your document, like this:
 </style>
 ```
 
-Next, add the [addClass](http://api.jquery.com/addClass) call to your script:
+Next, add the [addClass](http://api.jquery.com/addClass) call to the script:
 
 ```
 $("a").addClass("test");
 ```
 
-All your `a` elements will now be bold.
+All `a` elements will now be bold.
 
-To remove the `class`, use [removeClass](http://api.jquery.com/removeClass)
+To remove the `class`, use [removeClass](http://api.jquery.com/removeClass):
 
 ```
 $("a").removeClass("test");
@@ -156,8 +156,8 @@ $("a").removeClass("test");
 ### Special Effects
 
 In jQuery, a couple of handy [effects](http://api.jquery.com/category/effects/)
-are provided, to really make your web site stand out. To put this to the test,
-change the click that you added earlier to this:
+are provided, to really make web sites stand out. For example,
+change the click you added earlier to the following:
 
 ```
 $("a").click(function( event ){
@@ -169,9 +169,9 @@ $("a").click(function( event ){
 });
 ```
 
-Now, if you click any link, it should make itself slowly disappear.
+Now, the link should slowly disappear when clicked.
 
-## Callback and Functions
+## Callbacks and Functions
 
 A callback is a function that is passed as an argument to another function and
 is executed after its parent function has completed. The special thing about a
@@ -179,19 +179,19 @@ callback is that functions that appear after the "parent" can execute before
 the callback executes.  Another important thing to know is how to properly pass
 the callback.
 
-### Callback *without* arguments
+### Callback *without* Arguments
 
-For a callback with no arguments you pass it like this:
+Pass callbacks with no arguments like this:
 
 ```
 $.get( "myhtmlpage.html", myCallBack );
 ```
 
-**Note** that the second parameter here is simply the function name (but *not* as a string and without parentheses). Functions in Javascript are 'First class citizens' and so can be passed around like variable references and executed at a later time.
+**Note** that the second parameter here is simply the function name (but *not* as a string and without parentheses). Functions in Javascript are 'First class citizens' and can be passed around like variable references and executed at a later time.
 
-### Callback *with* arguments
+### Callback *with* Arguments
 
-"What do you do if you have arguments that you want to pass?", you might ask yourself.
+Executing callbacks with arguments can be tricky. The below example illustrates how to think about callbacks with arguments:
 
 #### Wrong
 The Wrong Way (will ***not*** work!)
@@ -201,18 +201,15 @@ $.get( "myhtmlpage.html", myCallBack(param1, param2) );
 ```
 
 
-This will not work because it calls `myCallBack( param1, param2 )`
-
-
-and then passes the return value as the second parameter to [$.get()](http://api.jquery.com/jQuery.get/)
+This will not work because it calls `myCallBack( param1, param2 )` and then passes the return value as the second parameter to [$.get()](http://api.jquery.com/jQuery.get/).
 
 #### Right
 
 The problem with the above example is that `myCallBack( param1, param2 )` is
-evaluated before being passed as a function. Javascript and by extension jQuery
-expects a function pointer in cases like these, e.g., `setTimeout( function() {}, 100)`
+evaluated before being passed as a function. Javascript (and by extension, jQuery)
+expects a function pointer in cases like these, e.g., `setTimeout( function() {}, 100)`.
 
-In the below usage, an anonymous function is created (just a block of
+In the example below, an anonymous function is created (just a block of
 statements) and is registered as the callback function.  Note the use of
 `function() {`.  The anonymous function does exactly one thing:  calls
 `myCallBack`, with the values of `param1` and `param2` from the outer scope.
