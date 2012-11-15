@@ -2,10 +2,7 @@
 title   : $( document ).ready()
 level: beginner
 ---
-You cannot safely manipulate a page until the document is “ready.”
-jQuery detects this state of readiness for you; code included inside
-`$( document ).ready()` will only run once the page DOM (Document Object Model) is ready for JavaScript code to execute
-whereas `$( window ).load(function() {})` will run once the entire page (images or iframe) not just the DOM is ready.
+A page can't be manipulated safely until the document is “ready.” jQuery detects this state of readiness for you. Code included inside `$( document ).ready()` will only run once the page DOM (Document Object Model) is ready for JavaScript code to execute. Code included inside `$( window ).load(function( {})` will run once the entire page (images or iframes), not just the DOM, is ready.
 
 ```
 // A $( document ).ready() block
@@ -16,9 +13,7 @@ $( document ).ready(function() {
 });
 ```
 
-There is a shorthand for `$( document ).ready()` that you will sometimes see; however,
-I recommend against using it if you are writing code that people who aren't experienced
-with jQuery may see.
+Experienced developers sometimes use shorthand for `$( document ).ready()`. If you are writing code that people who aren't experienced with jQuery may see, it's best to use the long form.
 
 ```
 // Shorthand for $( document ).ready()
@@ -47,7 +42,7 @@ $( document ).ready( readyFn );
 $( window ).load( readyFn );
 ```
 
-Let's take a look at how both the events act. The below example tries to load some website url in an iframe and checks for both the events.
+The below example shows `$( document ).ready()` and `$( window ).load()` in action. The code tries to load a website url in an iframe and checks for both events:
 ```
 <html>
   <head>
