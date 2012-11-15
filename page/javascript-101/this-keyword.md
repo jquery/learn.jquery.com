@@ -6,22 +6,12 @@ attribution:
   - jQuery Fundamentals
 ---
 
-In JavaScript, as in most object-oriented programming languages, `this` is a
-special keyword that is used within methods to refer to the object on which a
-method is being invoked. The value of `this` is determined using a simple series
-of steps:
+In JavaScript, as in most object-oriented programming languages, `this` is a special keyword that is used in methods to refer to the object on which a method is being invoked. The value of `this` is determined using a simple series of steps:
 
-- If the function is invoked using `Function.call` or `Function.apply`, this will
-  be set to the first argument passed to `call`/`apply`. If the first argument
-  passed to `call`/`apply` is null or undefined, `this` will refer to the global
-  object (which is the `window` object in Web browsers).
-- If the function being invoked was created using `Function.bind`, `this` will be
-  the first argument that was passed to `bind` at the time the function was
-  created.
-- If the function is being invoked as a method of an object, `this` will refer to
-  that object.
-- Otherwise, the function is being invoked as a standalone function not
-  attached to any object, and `this` will refer to the global object.
+- If the function is invoked using `Function.call` or `Function.apply`, this will be set to the first argument passed to `call`/`apply`. If the first argument passed to `call`/`apply` is null or undefined, `this` will refer to the global object (which is the `window` object in web browsers).
+- If the function being invoked was created using `Function.bind`, `this` will be the first argument that was passed to `bind` at the time the function was created.
+- If the function is being invoked as a method of an object, `this` will refer to that object.
+- Otherwise, the function is being invoked as a standalone function not attached to any object, and `this` will refer to the global object.
 
 ```
 // A function invoked using Function.call
@@ -95,13 +85,7 @@ myObject.sayHello();      // logs "Hi! My name is Rebecca"
 secondObject.sayHello();  // logs "Hi! My name is Colin"
 ```
 
-<div class="note">
-When invoking a function deep within a long namespace, it is often tempting to
-reduce the amount of code you need to type by storing a reference to the actual
-function as a single, shorter variable. It is important not to do this with
-instance methods as this will cause the value of `this` within the function to
-change, leading to incorrect code operation. For instance:
-</div>
+When invoking a function deep within a long namespace, it is often tempting to reduce the amount of code you need to type by storing a reference to the actual function as a single, shorter variable. It is important not to do this with instance methods as this will cause the value of `this` within the function to change, leading to incorrect code operation. For instance:
 
 ```
 var myNamespace = {
@@ -124,10 +108,7 @@ var hello = myNamespace.myObject.sayHello;
 hello();  // logs "Hi! My name is undefined"
 ```
 
-
-<div class="note">
 You can, however, safely reduce everything up to the object on which the method is invoked:
-</div>
 
 ```
 var myNamespace = {

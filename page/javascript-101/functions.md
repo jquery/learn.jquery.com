@@ -6,10 +6,9 @@ attribution:
   - jQuery Fundamentals
 ---
 
-Functions contain blocks of code that need to be executed repeatedly. Functions
-can take zero or more arguments, and can optionally return a value.
+Functions contain blocks of code that need to be executed repeatedly. Functions can take zero or more arguments, and can optionally return a value.
 
-Functions can be created in a variety of ways:
+Functions can be created in a variety of ways, two of which are shown below:
 
 ```
 // Function Declaration
@@ -28,10 +27,6 @@ var foo = function() {
 
 }
 ```
-
-I prefer the named function expression method of setting a function's name, for
-some rather in-depth and technical reasons. You are likely to see both methods
-used in others' JavaScript code.
 
 ## Using Functions
 
@@ -76,13 +71,9 @@ var greeting = greet("Rebecca", "Hello");
 greeting();
 ```
 
-## Immediately-Invoked Function Expression
+## Immediately-Invoked Function Expression (IIFE)
 
-A common pattern in JavaScript is the immediately-invoked function expression. This
-pattern creates a function expression and then immediately executes the
-function. This pattern is extremely useful for cases where you want to avoid
-polluting the global namespace with your code &#8212; no variables declared inside of
-the function are visible outside of it.
+A common pattern in JavaScript is the immediately-invoked function expression. This pattern creates a function expression and then immediately executes the function. This pattern is extremely useful for cases where you want to avoid polluting the global namespace with code &#8212; no variables declared inside of the function are visible outside of it.
 
 ```
 // An immediately-invoked function expression
@@ -97,9 +88,7 @@ console.log( foo );   // undefined!
 
 ## Functions as Arguments
 
-In JavaScript, functions are "first-class citizens" - they can be assigned
-to variables or passed to other functions as arguments. Passing functions as
-arguments is an extremely common idiom in jQuery.
+In JavaScript, functions are "first-class citizens" &#8212; they can be assigned to variables or passed to other functions as arguments. Passing functions as arguments is an extremely common idiom in jQuery.
 
 ```
 // Passing an anonymous function as an argument
