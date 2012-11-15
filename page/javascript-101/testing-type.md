@@ -6,11 +6,9 @@ attribution:
   - jQuery Fundamentals
 ---
 
-JavaScript offers a way to test the "type" of a variable. However, the result
-can be confusing -- for example, the type of an Array is "object".
+JavaScript offers a way to test the type of a variable. However, the result can be confusing &#8212; for example, the type of an array is "Object."
 
-It's common practice to use the typeof operator when trying to determining the
-type of a specific value.
+It's common practice to use the `typeof` operator when trying to determining the type of a specific value.
 
 ```
 // Testing the type of various variables
@@ -54,5 +52,4 @@ if ( Object.prototype.toString.call(myArray) === "[object Array]" ) {
 }
 ```
 
-jQuery offers utility methods to help you determine the type of an arbitrary
-value. These will be covered later.
+jQuery also offers utility methods to help determine the type of an arbitrary value.
