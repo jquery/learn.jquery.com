@@ -18,14 +18,13 @@ In the `body`, a div with a `data-role` of `page` is the wrapper used to delinea
     <body> 
 
         <div data-role="page">
-
-	        <div data-role="header">
-		             <h1>My Title</h1>
-			             </div><!-- /header -->
-
-				             <div data-role="content">	
-					     	          <p>Hello world</p>		
-							          </div><!-- /content -->
+        	<div data-role="header">
+        		<h1>My Title</h1>
+        	</div><!-- /header -->
+        	
+        	<div data-role="content">
+        		<p>Hello world</p>
+        	</div><!-- /content -->
 
         </div><!-- /page -->
 
