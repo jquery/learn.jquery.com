@@ -96,7 +96,7 @@ When you're ready to build a custom theme, use ThemeRoller to drag and drop, the
 
 ### Go forth and build something  
 
-This guide has provided you with a basic structure for a jQuery Mobile page and a few enhanced elements. You can explore the full jQuery Mobile documentation for linking pages, adding animated page transitions, and creating dialogs and popups. 
+This guide has provided you with a basic structure for a jQuery Mobile page and a few enhanced elements. You can explore the full [jQuery Mobile documentation](http://jquerymobile.com/demos/1.2.0/) to learn about linking pages, adding animated page transitions, and creating dialogs and popups. 
 
 If you're more of the type who prefers actually writing JavaScript to build your apps, and you don't want to use the `data-` attribute configuration system, you can take full control of everything and call plugins directly because these are all just standard jQuery plugins built with the UI widget factory. Be sure to dig into global configuration, events, and methods. 
 
