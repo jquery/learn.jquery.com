@@ -1,148 +1,188 @@
-## Before you begin
+---
+title: Contributing
+customFields: 
+  -
+    key: "is_chapter"
+    value: 0
+---
 
-You'll need to set up your development environment.  Please follow the [README.md] for instructions on setting up WordPress, web-base-templates and the learn.jquery.com repo which contains the content. 
+Depending on your level of experience with some of the workflows common to many
+open source projects, e.g., git/Github, the command line, and setting up a
+local development environment, contributing to this site may be a breeze or
+come with a bit of a learning curve. If you fit into the former group, great!
+Jump ahead to learn how to get started.
+
+But if you think you're part of the second group, and have had trouble
+participating in open source because of a lack of comfort with the tools,
+**you're still welcome**!. Beyond providing a resource for learning jQuery, a
+major goal of this site is to provide an encouraging environment for you to
+develop these skills, while still making a contribution that matters. Many
+people think that the only way to get involved with a programming project like
+jQuery is to solve intricate bugs that require a nuanced understanding of the
+codebase, or to propose enhancements that may or may not be in scope with the
+development team's plans. The fact is that there's way more: improving
+documentation, working on web properties, and supporting other users are
+crucial aspects where more help is always needed. If you're willing to share
+your time and expertise to help other developers, we're willing to [help you
+get up to speed with the tools](#getting-help) you'll need.
+
+
+## Why Contribute?
+
+If you've ever looked for help with jQuery -- or with web development in
+general -- you know the hunt can sometimes be challenging. It's can be a
+process of wading through a number of different posts until you find that
+article that's the right combination of trustworthy, timely, and helpful for
+your particular problem.  And if you're one of those authors -- thanks! -- then
+you are probably familiar with the frustrating feeling of putting a useful tip
+out there, and then wondering if it's actually making its way to the people who
+need it, and what to do with that old post years and versions down the road.
+You're invited to share that energy to help us bring that ecosystem together
+and grow it further! 
+
+
+If you've ever helped anyone, colleague or stranger, with a particular problem,
+then you know the value of having a reference you can quickly link to that says
+"here's how you do it." This site is intended to be that compendium, but
+there's always more to refine and add, and we need your help too!
+
+## How Does It Work?
+
+### Content
+
+The content in this site is maintained in
+[this GitHub repository](http://github.com/jquery/learn.jquery.com) as a collection of
+[Markdown](http://daringfireball.net/projects/markdown/) files in the `page`
+directory. The order in which chapters and articles are presented is controlled
+by the [order.yml](https://github.com/jquery/learn.jquery.com/blob/master/order.yml)
+file.
+
+### Design
+
+The site's layout and design is controlled by our
+[`web-base-template`](http://github.com/jquery/web-base-template), a custom
+[WordPress](http://wordpress.org) configuration that runs (or will run in the
+near future) all of the sites run by the jQuery Foundation. The [master
+theme](https://github.com/jquery/web-base-template/tree/master/themes/jquery)
+controls most of the layout for all of our sites, and there is a [child
+theme](https://github.com/jquery/web-base-template/tree/master/themes/learn.jquery.com)
+that controls the templates and styles specific to the learn site.
+
+[`web-base-template`](http://github.com/jquery/web-base-template) powers our sites in 
+production and staging environments, and can set up for local development relatively easily.
+
+### Build
+
+The static content in the `page` directory is deployed to a
+[`web-base-template`](http://github.com/jquery/web-base-template) instance
+using [grunt](http://gruntjs.com), specifically with two grunt plugins we've created:
+
+* [grunt-jquery-content](http://github.com/jquery/grunt-jquery-content) - pre-processes content in a variety of formats (HTML, Markdown, XML) into HTML, applying syntax highlighting and some simple partial support, preparing it for processing by 
+* [grunt-wordpress](http://github.com/scottgonzalez/grunt-wordpress) - syncs static content to WordPress using [XML-RPC](http://codex.wordpress.org/XML-RPC_Support)
+
 
 ## How Can I Help?
 
-The entire site is managed via [this Git repository](https://github.com/jquery/learn.jquery.com).  If you'd like to contribute new articles, make edits to existing content, or work on the site itself, the first thing you'll need is a [fork](https://help.github.com/articles/fork-a-repo). When you have changes you'd like to have reviewed for integration into the site, submit a [pull request](http://help.github.com/send-pull-requests/).
+The simplest and least complicated way to help is to [file
+issues](http://github.com/jquery/learn.jquery.com/issues) if you notice
+mistakes that should be fixed, improvements that can be made, or if you have
+ideas for new articles. We'll use the issues to continue discussion and track
+progress on anything you point out.
 
-If you're unfamiliar with Git, you can still contribute by editing files directly via [GitHub's in-browser editor](https://github.com/blog/905-edit-like-an-ace). But you won't be able to create new content, and you'll still need a GitHub account and a fork of this repository. So we encourage you to [learn how to use Git and GitHub](http://help.github.com/); it'll probably pretty useful no matter what.
+If you'd like to go a step further and contribute new articles, make edits to
+existing ones, or work on the site itself, the first thing you'll need is a
+[fork](https://help.github.com/articles/fork-a-repo). When you have changes
+you'd like to have reviewed for integration into the site, submit a [pull
+request](http://help.github.com/send-pull-requests/).
 
-Here are some shortcuts to getting set up:
+*(If you're unfamiliar with Git, you can still contribute by editing files
+directly via [GitHub's in-browser
+editor](https://github.com/blog/905-edit-like-an-ace). But you won't be able to
+create new content, and you'll still need a GitHub account and a fork of this
+repository. So we encourage you to [learn how to use Git and
+GitHub](http://help.github.com/) as soon as you can.)*
+
+## Local Development
+
+In order to preview your changes locally, work on design/layout issues, or work on
+other jQuery sites' content, and generally contribute most effectively, we
+recommend that you set up a local development environment. You'll need
+
+* [git](http://git-scm.com)
+* [GitHub](http://github.com) account
+* Local PHP/MySQL environment, e.g., [MAMP](http://www.mamp.info/en/index.html), [XAMPP](http://www.apachefriends.org/en/xampp.html)
+* [node.js](http://nodejs.org)
+
+### Initial Deploy
+
+Once you've got these major pieces in place, you'll want to get WordPress and
+`web-base-template` running locally by following [these
+instructions](https://github.com/jquery/web-base-template/blob/master/README.md). 
+
+If you're get everything working right, you should be able navigate to
+[local.learn.jquery.com](http://local.learn.jquery.com) in a browser, you
+should see a site that looks exactly like the [live
+site](http://learn.jquery.com), only without any actual articles. That's where
+your the `learn.jquery.com` content repo comes into play.
 
 1. Fork the [repository](https://github.com/jquery/learn.jquery.com)
-2. Clone the repo `git clone git@github.com:<your username>/learn.jquery.com.git`
-3. Set up an upstream remote back to the jQuery repo 'git remote add upstream git@github.com:jquery/learn.jquery.com.git'
-4. Branch master into a feature branch `git branch <feature/issue name/number>`
-5. Move into that branch `git checkout <feature/issue name/number>`
-6. Work on your awesome contribution. 
-7. Stage the files to the index in preparation for commit `git add .`
-8. Commit the files to your local repo `git commit -m "add a relevant message describing the change"`
-9. Push the files to your github repo `git push origin <feature/issue name/number>`
-10. Go to github.com and go to the forked repo and submit a new [pull request](https://help.github.com/articles/using-pull-requests).
+2. Clone the repo -- `git clone git@github.com:<your username>/learn.jquery.com.git`
+3. Enter the directory where you cloned the repo -- `cd learn.jquery.com`
+4. Set up an upstream remote back to the jQuery repo -- 'git remote add upstream git@github.com:jquery/learn.jquery.com.git'
+5. Install grunt (if you haven't already) -- `npm install -g grunt`
+6. Install local build dependencies -- `npm install`
+7. Copy the `config-sample.json` file to `config.json`
+8. Edit `config.json` to use the username and password for your local WordPress network
+9. Build and deploy the files to your local WordPress -- `grunt`
 
-## Where is the content?
-
-The site files are organized in a way that you can find all the content in the site in the `page` folder.
-
-## How to see changes you make?
-
-The site files are built using grunt. After making a change open up your terminal and run grunt.  Tip you can run grunt watch and grunt will watch the files for changes so you don't need to continually rerun grunt after each change. 
-
-## How do I add a new article?
-
-* Add the file to the right folder in the page folder. 
-* Add the slug name (the filename without the extension) to the right area in order.yml
-* Run grunt
-* You should now be able to navigate to the file. 
-
-## What is the syntax used?
-
-We are using the Github flavored Markdown.
-
-## Article Header Metadata
-
-Each article should have the following header (see below as some metatags are optional):
+* **Windows note:** Line endings need to be Unix-style (line-feed only). Make sure your text editor creates new files with Unix-style line endings. In addition, the following setting to your git config will keep the Unix-style line endings when pulling from the repository.*
 
 ```
----
-title:  <article title>
-level:  [beginner|intermediate|advance]
-source:  <url of source of the material derived>
-attribution: 
-  - Ralph Whitbeck <ralph@email.com>
-  - John Paul<john@email.com>
----
+$ git config --global core.autocrlf true
 ```
 
-The `source` attibute is optional. 
-If the article was pulled in from an outside source you also need to add an attribution tag to give credit to the original authors. 
+At this point, if you refresh your `local.learn.jquery.com`, your local
+instance should be populated with all of the site content. If it isn't,
+or you're having trouble with any of these steps, please come and
+[seek out some assistance](#getting-help).
 
-## How do I get credit for my contribution?
+### Working With Content
 
-We will build the attribution of an article based on the git commit logs.  Only use the attribution meta tag to give credit to authors outside of git for an article that was pulled in for instance. 
+Once you've gotten your environment working, here are the general steps you should follow to make your changes:
 
-## Style Guidelines
+1. Create a new "feature" branch based on `master` -- `git branch <feature/issue name/number>`
+2. Move onto that branch -- `git checkout <feature/issue name/number>`
+3. Work on your awesome contribution. 
+4. As you work and want to preview your changes, use `grunt` to deploy them to the your site. You can also use `grunt watch` to have the site monitor the `page` directory for any changes and automatically have the changes deployed every time you save.
+5. When you're done, stage the new/modified preparation for commit -- `git add page/faq/how-do-i-add-a-new-article-to-the-learn-site.md`
+6. Commit the files to your local repo -- `git commit -m "add a relevant message describing the change"`
+7. Push the files to your GitHub remote -- `git push origin <feature/issue name/number>`
+8. Go to your fork on GitHub and submit a new [pull request](https://help.github.com/articles/using-pull-requests).
 
-Content should be educational and accessible to a broad audience of developers. The primary target audience is beginning to intermediate jQuery users, with advanced jQuery users as a secondary audience. When creating content for this site, please keep one of these audiences in mind as well as the following style guidelines.
+### Adding A New Article
 
-### Prose & Grammar
+1. Add the file to the right folder in the page folder. 
+2. Add the slug name (the filename without the extension) to the desired location `order.yml`
+3. Run `grunt`
+4. You should now be able to navigate to the file. 
 
-  - Use the Oxford comma in a list of three or more items:
-    - **Yes:** The `load`, `scroll`, and `error` events (e.g., on an `<img>` element) do not bubble.
-    - **No:** The `load`, `scroll` and `error` events (e.g., on an `<img>` element) do not bubble.
-  - Numbers:
-    - Spell out numbers one under 10.
-    - Use numerals for numbers 10 and above.
-  - Abbreviations:
-    - Spell out abbreviated words on first reference, followed by the abbreviation in parentheses. Use abbreviations on second reference.
+### Formatting Articles
 
-#### Code within Prose
+Yes! Take a look at our [style guide](http://learn.jquery.com/style-guide) for
+more information on authoring and formatting conventions.
 
-  - Always use a `code` span to denote code from prose.
-  - Methods: use a dot, followed by the method name, followed by parentheses, e.g.: The `.focus()` method is a shortcut for the `.bind('focous', handler)` in the first and second variations, and `.trigger('focus') in the third.
-  - Properties: use a dot, followed by the property name, e.g.: `.length`.
-  - Functions: use the function name, followed by parentheses, e.g.: `myfunction()`.
+## How Will My Contribution Be Ackowledged?
 
-#### Article & Sentence Structure
+We will build the attribution of an article based on the git commit logs and present this information in the site.
 
-  - Use headings to break up content into easier-to-read sections. Begin headings within an article with `<h2>`.
-  - Keep sentences short and to the point. A good rule-of-thumb is to break up any sentence longer than 21 words into two or more seperate thoughts.
-  - Lists:
-    - Use bulleted lists when necessary to share a series of five or more points.
-    - Use numbered lists only when providing step-by-step instruction - note that this should be avoided.
-    - Use a period at the end of each ordered list item, and a period or comma at the end of an unordered list item.
+## <a name="getting-help">Getting Help</a>
 
-#### Spelling
+If you're struggling to get any part of the site working properly, or have any questions, we're here to help.
 
-  - Use standard American English spelling.
-  - Capitalization:
-    - Capitalize all proper nouns.
-    - Do not capitalize HTML elements in code examples.
-    - Capitalize all words in a heading or sub-heading with the exception of article adjectives and the prepositions like "with," "of," or "to."
-    - Capitalize the first word in a list.
-  - Punctuation:
-    - Periods and commas go inside quotation marks.
-    - Avoid using semicolons.
+The best place to get help is on [IRC](http://en.wikipedia.org/wiki/Internet_Relay_Chat), in the #jquery-content
+channel on [Freenode](http://freenode.net). If you're unfamiliar with IRC, you can use the [webchat gateway](http://webchat.freenode.net/).
 
-#### Pronoun Usage
+In addition, the jQuery Content Team holds a [public, weekly
+meetings](http://jquery.org/meeting) on Freenode, at 1PM Eastern time in the #jquery-meeting channel.
 
-  - Don't use "I," "me," "us," "our," "we," and gender-specific pronouns such as "him" or "she."
-  - Use the second-person pronoun "you" when addressing the reader, and the definite article "the" when addressing code or content:
-    - *"You will be able to foo bar after you bar the foo."*
-    - *"Insert the paragraph after the unordered list."*
-
-#### Voice & Tone
-
-  - Do write in clear, easy-to-understand statements. 
-  - Do write in active voice.
-  - Do keep the audience in mind while writing.
-  - Do write conversationally. 
-  - Do write in the second person to address the reader.
-  - Do use the imperative mood.
-  - Do use humor strategically. When in doubt, err on the side of formality.
-  - Do use hyperlinks to refer readers to concepts or topics that have been covered in other sections.
-  - Do attribute others.
-  - Don't assume the reader will have prior knowledge of topics or concepts, especially when targeting beginner or intermediate audiences.
-  - Don't use rhetorical questions.
-  - Don't write in first or third person.
-
-#### Linking & Referencing Content
-
-  - Link to relevant content within the learn.jquery.com site to refer readers to previously covered topics or concepts. 
-  - Link to the jQuery blog or API documentation when necessary.
-  - Use inline hyperlinks to reference relevant content.
-  - Acceptable external resources:
-    - Mozilla Developer Network
-    - Webplatform.org
-    - htmldog.com
-
-### Code Examples
-
-  - Use examples to illustrate important concepts.
-  - Examples should indicate what the expected result will be in comments before code is presented.
-  - Break long examples up into shorter sections to aid comprehension.
-  - Favor "Right Way" examples over "Wrong Way" examples - there is more than one wrong way to do something, after all.e
-  - Use good comments so that explanation within prose isn't necessary.
-  - Test your code examples before submitting.
-  - Use the [jQuery Core Code Style Guide](http://docs.jquery.com/JQuery_Core_Style_Guidelines) for your code examples. 
+If IRC is not your thing, but you still want or need to get in touch, please use the site's GitHub repo or send us an e-mail to `content at jquery dot org`.
