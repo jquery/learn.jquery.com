@@ -33,7 +33,7 @@ Then a keyboard key is pressed the event break into three separate events, which
 So I’m going to use the last phase of the events and use the keyup event.
 
 ```
-$( document.documentElement ).keyup(function(event) {
+$( document.documentElement ).keyup(function( event ) {
 
   // handle cursor keys
 
@@ -45,15 +45,15 @@ Note that all event handlers in jQuery, such as click, keyup, mouseover, etc rec
 The left and right key codes are 37 and 39 respectively. So we only want to action the slide if these keys are pressed, so we’ll check the keyCode property on the event - this property is [very well supported in browsers](http://www.quirksmode.org/js/keys.html):
 
 ```
-$( document.documentElement ).keyup(function(event) {
+$( document.documentElement ).keyup(function( event ) {
 
   // handle cursor keys
 
-  if (event.keyCode === 37) {
+  if ( event.keyCode === 37 ) {
 
     // go left
 
-  } else if (event.keyCode === 39) {
+  } else if ( event.keyCode === 39 ) {
 
     // go right
 
@@ -103,10 +103,10 @@ Since jQuery continues to allow chained methods to work even if there’s no ele
 Let’s plug this code in to the keyboard event handler:
 
 ```
-$( document.documentElement ).keyup(function(event) {
+$( document.documentElement ).keyup(function( event ) {
 
   // handle cursor keys
-  if (event.keyCode === 37) {
+  if ( event.keyCode === 37 ) {
 
     // go left
     $(".coda-slider-wrapper ul a.current")
@@ -129,23 +129,23 @@ $( document.documentElement ).keyup(function(event) {
 This code can be simplified since a lot of it is repetitive aside from the ‘next’ and ‘prev’. If you’re happy for slightly more complicated code, then use the code below, otherwise stick with the code above.
 
 ```
-$( document.documentElement ).keyup(function(event) {
+$( document.documentElement ).keyup(function( event ) {
   var direction = null;
 
   // handle cursor keys
-  if (event.keyCode === 37) {
+  if ( event.keyCode === 37 ) {
 
     // go left
     direction = "prev";
 
-  } else if (event.keyCode === 39) {
+  } else if ( event.keyCode === 39 ) {
 
     // go right
     direction = "next";
 
   }
 
-  if (direction != null) {
+  if ( direction !== null ) {
 
     $(".coda-slider-wrapper ul a.current").parent()[ direction ]().find("a").click();
 
@@ -175,36 +175,36 @@ Note that $().ready is the same as $( document ).ready (though it’s not a styl
 ```
 $().ready(function() {
 
-	$().ready(function() {
+  $().ready(function() {
 
-	  $("#coda-slider-1").codaSlider();
+    $("#coda-slider-1").codaSlider();
 
-	  $( document.documentElement ).keyup(function (event) {
+    $( document.documentElement ).keyup(function( event ) {
 
-	    var direction = null;
+      var direction = null;
 
-	    // handle cursor keys
-	    if (event.keyCode === 37) {
+      // handle cursor keys
+      if ( event.keyCode === 37 ) {
 
-	      // go left
-	      direction = "prev";
+        // go left
+        direction = "prev";
 
-	    } else if (event.keyCode === 39) {
+      } else if ( event.keyCode === 39 ) {
 
-	      // go right
-	      direction = "next";
+        // go right
+        direction = "next";
 
-	    }
+      }
 
-	    if (direction != null) {
+      if ( direction !== null ) {
 
-	      $(".coda-slider-wrapper ul a.current").parent()[ direction ]().find("a").click();
+        $(".coda-slider-wrapper ul a.current").parent()[ direction ]().find("a").click();
 
-	    }
+      }
 
-	  });
+    });
 
-	});
+  });
 
 ```
 

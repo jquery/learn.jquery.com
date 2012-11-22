@@ -15,8 +15,8 @@ The `$.fn.attr` method acts as both a getter and a setter. As a setter, `$.fn.at
 $("a").attr( "href", "allMyHrefsAreTheSameNow.html" );
 
 $("a").attr({
-  "title" : "all titles are the same too!",
-  "href" : "somethingNew.html"
+  title: "all titles are the same too!",
+  href: "somethingNew.html"
 });
 ```
 

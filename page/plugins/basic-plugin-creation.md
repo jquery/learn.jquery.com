@@ -28,7 +28,7 @@ Let's say we want to create a plugin that makes text within a set of retrieved e
 
 ```
 $.fn.greenify = function() {
-  this.css( "color","green" );
+  this.css( "color", "green" );
 }
 
 $("a").greenify();  // makes all the links green
@@ -41,7 +41,7 @@ This works, but there's a couple of things we need to do for our plugin to survi
 
 ```
 $.fn.greenify = function() {
-  this.css("color","green");
+  this.css( "color", "green" );
   return this;
 }
 
@@ -57,14 +57,17 @@ The `$` variable is very popular among JavaScript libraries, and if you're using
 
 ```
 (function ( $ ) {
-  $.fn.greenify = function () {
-
+  $.fn.greenify = function() {
     this.css( "color", "green" );
     return this;
   }
 
-  $.ltrim = function(str) {return str.replace(/^\s+/, '')}
-  $.rtrim = function(str) {return str.replace(/\s+$/, '')}
+  $.ltrim = function( str ) {
+    return str.replace(/^\s+/, '');
+  }
+  $.rtrim = function( str ) {
+    return str.replace(/\s+$/, '');
+  }
 
 }( jQuery ));
 ```
@@ -88,7 +91,7 @@ In addition, the primary purpose of an Immediately Invoked Function is to allow 
 It's good practice when writing plugins to only take up one slot within `$.fn`. This reduces both the chance that your plugin will be overridden, and the chance that your plugin will override other plugins. In other words, this is bad:
 
 ```
-(function ( $ ) {
+(function( $ ) {
 
   $.fn.openPopup = function() {
     // Open popup code
@@ -104,9 +107,9 @@ It's good practice when writing plugins to only take up one slot within `$.fn`. 
 It would be much better to have one slot, and use parameters to control what action that one slot performs.
 
 ```
-(function ( $ ) {
+(function( $ ) {
 
-  $.fn.popup = function ( action ) {
+  $.fn.popup = function( action ) {
 
     if ( action === "open") {
 
@@ -156,13 +159,10 @@ accept some options.
   $.greenify = function( options ) {
 
     // This is the easiest way to have default options.
-    var settings = $.extend(
-      {
-        "color": "#556B2F",  // These are the defaults
-        "background-color": "white"
-      },
-      options
-    );
+    var settings = $.extend({
+      "color": "#556B2F",  // These are the defaults
+      "background-color": "white"
+    }, options );
 
     // Greenify the collection based on the settings variable
     return this.css({
@@ -195,7 +195,7 @@ we've discussed:
 
     return this.filter("a").each(function() {
 
-      $( this ).append( " (" + $( this ).attr("href") + ")");
+      $( this ).append( " (" + $( this ).attr("href") + ")" );
 
     });
 

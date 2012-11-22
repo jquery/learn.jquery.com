@@ -45,7 +45,7 @@ in; they just want to change the state.
 Without custom events, you might write some code like this:
 
 ```
-$( ".switch, .clapper" ).click(function() {
+$(".switch, .clapper").click(function() {
 
   var $light = $( this ).parent().find(".lightbulb");
 
@@ -146,7 +146,7 @@ $(".switch, .clapper").click(function() {
 
 $("#master_switch").click(function() {
 
-  if ($(".lightbulb.on").length) {
+  if ( $(".lightbulb.on").length ) {
 
     $(".lightbulb").trigger("turnOff");
 
@@ -191,17 +191,15 @@ Here is an example of the usage of `$.fn.on` and `$.fn.trigger` that uses
 custom data in both cases:
 
 ```
-$( document ).on( "myCustomEvent", {foo: "bar"}, function(e, arg1, arg2) {
-
-  console.log( e.data.foo ); // "bar"
-
-  console.log( arg1 ); // "bim"
-
-  console.log( arg2 ); // "baz"
-
+$( document ).on( "myCustomEvent", {
+  foo: "bar"
+}, function( event, arg1, arg2 ) {
+  console.log( event.data.foo ); // "bar"
+  console.log( arg1 );           // "bim"
+  console.log( arg2 );           // "baz"
 });
 
-$( document ).trigger( "myCustomEvent", ["bim", "baz"]);
+$( document ).trigger( "myCustomEvent", [ "bim", "baz" ]);
 ```
 
 ### A Sample Application
@@ -276,30 +274,20 @@ results container.
 
 ```
 $.fn.twitterResult = function( settings ) {
-
   return this.each(function() {
-
     var $results = $( this );
-
     var $actions = $.fn.twitterResult.actions = $.fn.twitterResult.actions || $.fn.twitterResult.createActions();
-
     var $a = $actions.clone().prependTo( $results );
-
     var term = settings.term;
 
     $results.find("span.search_term").text( term );
+    $.each([ "refresh", "populate", "remove", "collapse", "expand" ], function( i, ev ) {
 
-    $.each(
+      $results.on( ev, {
+        term: term
+      }, $.fn.twitterResult.events[ ev ] );
 
-      [ "refresh", "populate", "remove", "collapse", "expand" ],
-
-      function( i, ev ) {
-
-        $results.on( ev, { term: term }, $.fn.twitterResult.events[ev] );
-
-      }
-
-    );
+    });
 
     // use the class of each action to figure out
     // which event it will trigger on the results panel
@@ -308,7 +296,6 @@ $.fn.twitterResult = function( settings ) {
       // pass the li that was clicked to the function
       // so it can be manipulated if needed
       $results.trigger( $( this ).attr("class"), [ $( this ) ] );
-
     });
 
   });
@@ -316,97 +303,77 @@ $.fn.twitterResult = function( settings ) {
 };
 
 $.fn.twitterResult.createActions = function() {
-
-  return $("<ul class="actions" />").append(
-    "<li class="refresh">Refresh</li>" +
-    "<li class="remove">Remove</li>" +
-    "<li class="collapse">Collapse</li>"
+  return $("<ul class='actions' />").append(
+    "<li class='refresh'>Refresh</li>" +
+    "<li class='remove'>Remove</li>" +
+    "<li class='collapse'>Collapse</li>"
   );
-
 };
 
 $.fn.twitterResult.events = {
 
   refresh: function( e ) {
-
     // indicate that the results are refreshing
     var $this = $( this ).addClass("refreshing");
 
     $this.find("p.tweet").remove();
-
-    $results.append("<p class="loading">Loading ...</p>");
+    $results.append("<p class='loading'>Loading ...</p>");
 
     // get the twitter data using jsonp
     $.getJSON("http://search.twitter.com/search.json?q=" + escape( e.data.term ) + "&rpp=5&callback=?", function( json ) {
-
-        $this.trigger( "populate", [ json ] );
-
-      }
-    );
-
+      $this.trigger( "populate", [ json ] );
+    });
   },
-
   populate: function( e, json ) {
-
     var results = json.results;
-
     var $this = $( this );
 
     $this.find("p.loading").remove();
-
-    $.each( results, function(i, result) {
-
-      var tweet = "<p class="tweet">" +
-          "<a href="http://twitter.com/" +
-          result.from_user +
-          "">" +
-          result.from_user +
-          "</a>: " +
-          result.text +
-          " <span class="date">" +
-          result.created_at +
-          "</span>" +
+    $.each( results, function( i, result ) {
+      var tweet = "<p class='tweet'>" +
+        "<a href='http://twitter.com/" +
+        result.from_user +
+        "'>" +
+        result.from_user +
+        "</a>: " +
+        result.text +
+        " <span class='date'>" +
+        result.created_at +
+        "</span>" +
       "</p>";
 
       $this.append( tweet );
-
     });
 
     // indicate that the results
     // are done refreshing
     $this.removeClass("refreshing");
-
   },
-
   remove: function( e, force ) {
-
     if ( !force && !confirm("Remove panel for term " + e.data.term + "?") ) {
-
       return;
-
     }
-
     $( this ).remove();
 
-    // indicate that we no longer
-    // have a panel for the term
+    // indicate that we no longer have a panel for the term
     search_terms[ e.data.term ] = 0;
-
   },
-
   collapse: function( e ) {
-
-    $( this ).find("li.collapse").removeClass("collapse").addClass("expand").text("Expand");
+    $( this ).find("li.collapse")
+      .removeClass("collapse")
+      .addClass("expand")
+      .text("Expand");
 
     $( this ).addClass("collapsed");
-
   },
 
   expand: function( e ) {
-    $( this ).find("li.expand").removeClass("expand").addClass("collapse").text("Collapse");
+    $( this ).find("li.expand")
+      .removeClass("expand")
+      .addClass("collapse")
+      .text("Collapse");
 
     $( this ).removeClass("collapsed");
-
   }
 
 };
@@ -429,13 +396,11 @@ The Twitter container itself will have just two custom events:
 Here's how the Twitter container bindings look:
 
 ```
-$("#twitter").on( "getResults", function(e, term) {
+$("#twitter").on( "getResults", function( e, term ) {
 
   // make sure we don"t have a box for this term already
-  if ( !search_terms[term] ) {
-
+  if ( !search_terms[ term ] ) {
     var $this = $( this );
-
     var $template = $this.find("div.template");
 
     // make a copy of the template div
@@ -445,7 +410,7 @@ $("#twitter").on( "getResults", function(e, term) {
       .insertBefore( $this.find("div:first") )
       .twitterResult({
         "term": term
-    });
+      });
 
     // load the content using the "refresh"
     // custom event that we bound to the results container
@@ -453,22 +418,16 @@ $("#twitter").on( "getResults", function(e, term) {
 
     search_terms[ term ] = 1;
   }
-}).on( "getTrends", function(e) {
-
+}).on( "getTrends", function( e ) {
   var $this = $( this );
 
-  $.getJSON( "http://search.twitter.com/trends.json?callback=?", function(json) {
-
+  $.getJSON( "http://search.twitter.com/trends.json?callback=?", function( json ) {
     var trends = json.trends;
 
-    $.each( trends, function(i, trend) {
-
+    $.each( trends, function( i, trend ) {
       $this.trigger( "getResults", [ trend.name ] );
-
     });
-
   });
-
 });
 ```
 
@@ -482,20 +441,15 @@ pass it as we trigger the Twitter container&apos;s `getResults` event. Clicking 
 &quot;Load Trending Terms&quot; will trigger the Twitter container&apos;s `getTrends` event:
 
 ```
-$("form").submit(function(e) {
-
-  e.preventDefault();
-
+$("form").submit(function( event ) {
   var term = $("#search_term").val();
-
   $("#twitter").trigger( "getResults", [ term ] );
 
+  event.preventDefault();
 });
 
 $("#get_trends").click(function() {
-
   $("#twitter").trigger("getTrends");
-
 });
 ```
 
@@ -506,24 +460,16 @@ event handler as its second argument, telling the event handler that we don&apos
 want to verify the removal of individual containers.
 
 ```
-$.each( ["refresh", "expand", "collapse"], function(i, ev) {
-
-  $( "#" + ev ).click( function(e) {
-
+$.each([ "refresh", "expand", "collapse" ], function( i, ev ) {
+  $( "#" + ev ).click( function( e ) {
     $("#twitter div.results").trigger( ev );
-
   });
-
 });
 
-$("#remove").click(function(e) {
-
+$("#remove").click(function( e ) {
   if ( confirm("Remove all results?") ) {
-
     $("#twitter div.results").trigger( "remove", [ true ] );
-
   }
-
 });
 ```
 

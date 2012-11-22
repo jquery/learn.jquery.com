@@ -12,20 +12,15 @@ As it turns out, nearly everything in JavaScript is an object &#8212; arrays, fu
 ```
 // Creating an object literal
 var myObject = {
-
   sayHello : function() {
-
     console.log("hello");
-
   },
-
   myName : "Rebecca"
-
 };
 
-myObject.sayHello();            // logs "hello"
+myObject.sayHello(); // "hello"
 
-console.log( myObject.myName );   // logs "Rebecca"
+console.log( myObject.myName ); // "Rebecca"
 ```
 
 When creating object literals, note that the key portion of each key-value pair can be written as any valid JavaScript identifier, a string (wrapped in quotes), or a number:
@@ -33,8 +28,8 @@ When creating object literals, note that the key portion of each key-value pair 
 ```
 // test
 var myObject = {
-  validIdentifier : 123,
-  "some string" : 456,
-  99999 : 789
+  validIdentifier: 123,
+  "some string": 456,
+  99999: 789
 };
 ```
