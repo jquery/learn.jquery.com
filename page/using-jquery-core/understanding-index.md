@@ -28,14 +28,12 @@ var $listItem = $("li");
 
 // this implicitly calls .last()
 console.log( "Index: " + $listItem.index() ); // 3
-
 console.log( "Index: " + $listItem.last().index() ); // 3
 
 var $div = $("div");
 
 // this implicitly calls .last()
 console.log( "Index: " + $div.index() ); // 4
-
 console.log( "Index: " + $div.last().index() ); // 4
 ```
 In the first example, `.index()` gives the zero-based index of `#foo1` within its parent. Since `#foo1` is the second child of its parent, `index()` returns 1.

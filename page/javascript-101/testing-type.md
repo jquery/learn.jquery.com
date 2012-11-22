@@ -13,44 +13,25 @@ It's common practice to use the `typeof` operator when trying to determining the
 ```
 // Testing the type of various variables
 var myFunction = function() {
-
   console.log("hello");
-
 };
-
 var myObject = {
 	foo : "bar"
 };
-
 var myArray = [ "a", "b", "c" ];
-
 var myString = "hello";
-
 var myNumber = 3;
 
-// returns "function"
-typeof myFunction;
-
-// returns "object"
-typeof myObject;
-
-// returns "object" -- careful!
-typeof myArray;
-
-// returns "string";
-typeof myString;
-
-// returns "number"
-typeof myNumber;
-
-// returns "object" -- careful!
-typeof null;
+typeof myFunction; // "function"
+typeof myObject;   // "object"
+typeof myArray;    // "object" -- Careful!
+typeof myString;   // "string"
+typeof myNumber;   // "number"
+typeof null;       // "object" -- Careful!
 
 if ( myArray.push && myArray.slice && myArray.join ) {
 
-  // probably an array
-  // (this is called "duck typing")
-
+  // probably an array (this is called "duck typing")
 }
 
 if ( Object.prototype.toString.call( myArray ) === "[object Array]" ) {
@@ -58,7 +39,6 @@ if ( Object.prototype.toString.call( myArray ) === "[object Array]" ) {
   // Definitely an array!
   // This is widely considered as the most robust way
   // to determine if a specific value is an Array.
-
 }
 ```
 

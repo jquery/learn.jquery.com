@@ -7,9 +7,7 @@ A page can't be manipulated safely until the document is “ready.” jQuery det
 ```
 // A $( document ).ready() block
 $( document ).ready(function() {
-
   console.log("ready!");
-
 });
 ```
 
@@ -18,9 +16,7 @@ Experienced developers sometimes use shorthand for `$( document ).ready()`. If y
 ```
 // Shorthand for $( document ).ready()
 $(function() {
-
   console.log("ready!");
-
 });
 ```
 
@@ -30,15 +26,11 @@ You can also pass a named function to `$( document ).ready()` instead of passing
 // Passing a named function instead of an anonymous function
 
 function readyFn( jQuery ) {
-
   // code to run when the document is ready
-
 }
 
 $( document ).ready( readyFn );
-
 // OR
-
 $( window ).load( readyFn );
 ```
 
@@ -48,17 +40,12 @@ The below example shows `$( document ).ready()` and `$( window ).load()` in acti
   <head>
     <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script>
-
       $( document ).ready(function() {
-
         console.log("document loaded");
-
       });
 
       $( window ).load(function() {
-
         console.log("window loaded");
-
       });
     </script>
     </head>

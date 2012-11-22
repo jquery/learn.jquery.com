@@ -63,14 +63,14 @@ var outerObj = {
       myName : "inner",
       innerFunction : function() {
 
-        console.log( self.myName, this.myName ); // logs "outer inner"
+        console.log( self.myName, this.myName ); // "outer inner"
 
       }
     };
 
     innerObj.innerFunction();
 
-    console.log( this.myName ); // logs "outer"
+    console.log( this.myName ); // "outer"
   }
 };
 

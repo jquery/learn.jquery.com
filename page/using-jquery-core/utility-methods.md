@@ -24,15 +24,11 @@ Iterates over arrays and objects.
 
 ```
 $.each([ "foo", "bar", "baz" ], function( idx, val ) {
-
   console.log( "element " + idx + "is " + val );
-
 });
 
 $.each({ foo: "bar", baz: "bim" }, function( k, v ) {
-
   console.log( k + " : " + v );
-
 });
 ```
 
@@ -45,9 +41,7 @@ Returns a value's index in an array, or -1 if the value is not in the array.
 var myArray = [ 1, 2, 3, 5 ];
 
 if ( $.inArray( 4, myArray ) !== -1 ) {
-
   console.log("found it!");
-
 }
 ```
 
@@ -60,11 +54,8 @@ var secondObject = { foo: "baz" };
 
 var newObject = $.extend( firstObject, secondObject );
 
-// "baz"
-console.log( firstObject.foo );
-
-// "baz"
-console.log( newObject.foo );
+console.log( firstObject.foo ); // "baz"
+console.log( newObject.foo );   // "baz"
 ```
 
 If you don't want to change any of the objects you pass to `$.extend`, pass an empty object as the first argument.
@@ -75,11 +66,8 @@ var secondObject = { foo: "baz" };
 
 var newObject = $.extend( {}, firstObject, secondObject );
 
-// "bar"
-console.log( firstObject.foo );
-
-// "baz"
-console.log( newObject.foo );
+console.log( firstObject.foo ); // "bar"
+console.log( newObject.foo ); // "baz"
 ```
 
 ### `$.proxy`
@@ -87,16 +75,18 @@ console.log( newObject.foo );
 Returns a function that will always run in the provided scope — that is, sets the meaning of this inside the passed function to the second argument.
 
 ```
-var myFunction = function() { console.log( this ); };
-var myObject = { foo : "bar" };
+var myFunction = function() {
+  console.log( this );
+};
+var myObject = {
+  foo: "bar"
+};
 
-// logs window object
-myFunction();
+myFunction(); // window
 
 var myProxyFunction = $.proxy( myFunction, myObject );
 
-// logs myObject object
-myProxyFunction();
+myProxyFunction(); // myObject
 ```
 
 If you have an object with methods, you can pass the object and the name of a method to return a function that will always run in the scope of the object.
@@ -108,8 +98,6 @@ var myObject = {
   }
 };
 
-// logs DOM element #foo
-$("#foo").click( myObject.myFn );
-// logs myObject
-$("#foo").click( $.proxy( myObject, "myFn" ) );
+$("#foo").click( myObject.myFn ); // HTMLElement #foo
+$("#foo").click( $.proxy( myObject, "myFn" ) ); // myObject
 ```

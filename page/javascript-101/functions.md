@@ -53,17 +53,17 @@ var greet = function( person, greeting ) {
 
 };
 
-console.log( greet( "Rebecca", "hello" ) );
+console.log( greet( "Rebecca", "hello" ) ); // "hello, Rebecca"
 ```
 
 ```
 // A function that returns another function
 var greet = function( person, greeting ) {
-
   var text = greeting + ", " + person;
 
-  return function() { console.log( text ); };
-
+  return function() {
+    console.log( text );
+  };
 };
 
 var greeting = greet( "Rebecca", "Hello" );
@@ -93,11 +93,8 @@ In JavaScript, functions are "first-class citizens" &#8212; they can be assigned
 ```
 // Passing an anonymous function as an argument
 var myFn = function( fn ) {
-
   var result = fn();
-
   console.log( result );
-
 };
 
 // logs "hello world"
@@ -110,19 +107,13 @@ myFn( function() {
 // Passing a named function as an argument
 
 var myFn = function( fn ) {
-
   var result = fn();
-
   console.log( result );
-
 };
 
 var myOtherFn = function() {
-
   return "hello world";
-
 };
 
-// logs "hello world"
-myFn( myOtherFn );
+myFn( myOtherFn ); // "hello world"
 ```

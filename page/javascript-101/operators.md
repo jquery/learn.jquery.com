@@ -27,22 +27,15 @@ console.log( foo + " " + bar ); // "hello world"
 // pre-increment:
 var i = 1;
 
-// => 2
-console.log( ++i );
-
-// => 2
-console.log( i );
+console.log( ++i ); // 2
+console.log( i );   // 2
 
 // The post-increment operator increments the operand after processing it.
 // post-increment:
 var i = 1;
 
-// => 1. This is because i was processed first.
-console.log( i++ );
-
-// => 2. This is because the operand was incremented after processing
-// in the previous step.
-console.log( i );
+console.log( i++ ); // 1 - because i was 1
+console.log( i );   // 2 - incremented after using it
 ```
 
 ## Operations on Numbers & Strings
@@ -54,8 +47,7 @@ In JavaScript, numbers and strings will occasionally behave in unexpected ways.
 var foo = 1;
 var bar = "2";
 
-// => 12
-console.log( foo + bar );
+console.log( foo + bar ); // 12
 ```
 
 ```
@@ -63,14 +55,14 @@ console.log( foo + bar );
 var foo = 1;
 var bar = "2";
 
-console.log( foo + Number(bar) );
+console.log( foo + Number(bar) ); // 3
 ```
 
 The Number constructor, when called as a function (as in the above example), will have the effect of casting its argument into a number. The unary plus operator also does the same thing:
 
 ```
 // Forcing a string to act as a number (using the unary plus operator):
-console.log( foo + +bar );
+console.log( foo + +bar ); // 3
 ```
 
 ## Logical Operators
@@ -126,16 +118,16 @@ var bar = 0;
 var baz = "1";
 var bim = 2;
 
-foo == bar;   // returns false
-foo != bar;   // returns true
-foo == baz;   // returns true; but note that the types are different
+foo == bar;   // false
+foo != bar;   // true
+foo == baz;   // true; but note that the types are different
 
-foo === baz;             // returns false
-foo !== baz;             // returns true
-foo === parseInt( baz );   // returns true
+foo === baz;             // false
+foo !== baz;             // true
+foo === parseInt( baz ); // true
 
-foo > bim;    // returns false
-bim > baz;    // returns true
-foo <= baz;   // returns true
+foo > bim;    // false
+bim > baz;    // true
+foo <= baz;   // true
 ```
 For more information about comparison operators, visit the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Operators/Comparison_Operators "MDN - Comparison Operators").

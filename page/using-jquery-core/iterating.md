@@ -18,34 +18,26 @@ var arr = [ 1, 2, 3, 4, 5 ];
 then this:
 ```
 for ( var i = 0, l = arr.length; i < l; i++ ) {
-
   sum += arr[ i ];
-
 }
 
-// 15
-console.log( sum );
-
+console.log( sum ); // 15
 ```
 
 can be replaced with this:
 
 ```
-$.each( arr, function(index, value){
-
+$.each( arr, function( index, value ){
   sum += value;
-
 });
 
-// 15
-console.log( sum );
+console.log( sum ); // 15
 ```
 
 Notice that `arr[ index ]` can't be accessed as the value is conveniently passed to the callback in `$.each()`. In addition, given:
 
 ```
 var sum = 0;
-
 var obj = {
   foo: 1,
   bar: 2
@@ -56,27 +48,21 @@ then this:
 
 ```
 for (var item in obj) {
-
   sum += obj[ item ];
-
 }
 
-// 3
-console.log( sum );
+console.log( sum ); // 3
 ```
 
 can be replaced with this:
 
 ```
 
-$.each( obj, function(key, value){
-
+$.each( obj, function( key, value ) {
   sum += value;
-
 });
 
-// 3
-console.log( sum );
+console.log( sum ); // 3
 ```
 
 Again, `obj[ key ]` is passed directly to the callback and thus can't be accessed. Note that `$.each()` is for plain objects, arrays, array-like objects *that are not jQuery collections*.
@@ -86,9 +72,7 @@ This would be considered incorrect:
 ```
 // incorrect
 $.each( $("p"), function() {
-
   // Do something
-
 });
 ```
 
@@ -112,9 +96,7 @@ For example, given the following markup:
 
 ```
 $("li").each( function( index, element ){
-
   console.log( $( this ).text() );
-
 });
 
 // Logs the following:
@@ -132,24 +114,17 @@ Whether intentional or inadvert, the execution context may change. When consiste
 ```
 $("li").each( function( index, listItem ) {
 
-  // true
-  this === listItem;
+  this === listItem; // true
 
   // For example only. You probably shouldn't call $.ajax in a loop
   $.ajax({
-
-    success: function(data) {
+    success: function( data ) {
 
       // The context has changed. The 'this' keyword
       // no longer refers to listItem.
-
-      // true
-      this !== listItem;
-
+      this !== listItem; // true
     }
-
   });
-
 });
 ```
 
@@ -159,9 +134,7 @@ Many jQuery methods implicitly iterate over the entire collection, applying thei
 
 ```
 $("li").each( function( index, el ) {
-
   $( el ).addClass("newClass");
-
 });
 ```
 
@@ -243,9 +216,7 @@ For example instead of doing this:
 var newArr = [];
 
 $("li").each( function() {
-
   newArr.push( this.id );
-
 });
 ```
 
@@ -253,9 +224,7 @@ We can do this:
 
 ```
 $("li").map( function(index, element) {
-
   return this.id;
-
 }).get();
 ```
 

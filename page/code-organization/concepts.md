@@ -51,43 +51,27 @@ options, and easing the path to reuse and refactoring.
 ```
 // An object literal
 var myFeature = {
-
-  myProperty : "hello",
-
-  myMethod : function() {
-
+  myProperty: "hello",
+  myMethod: function() {
     console.log( myFeature.myProperty );
-
   },
-
-  init : function( settings ) {
-
+  init: function( settings ) {
     myFeature.settings = settings;
-
   },
-
   readSettings : function() {
-
     console.log( myFeature.settings );
-
   }
-
 };
 
-// "hello"
-myFeature.myProperty;
+myFeature.myProperty === "hello"; // true
 
-// logs "hello"
-myFeature.myMethod();
+myFeature.myMethod(); // "hello"
 
 myFeature.init({
-
-  foo : "bar"
-
+  foo: "bar"
 });
 
-// logs { foo : "bar" }
-myFeature.readSettings(); 
+myFeature.readSettings(); // { foo: "bar" }
 ```
 
 The object literal above is simply an object assigned to a variable. The object
@@ -245,33 +229,26 @@ var feature = (function() {
 
   // private variables and functions
   var privateThing = "secret";
-
   var publicThing = "not secret";
-
   var changePrivateThing = function() {
-
     privateThing = "super secret";
-
   };
 
   var sayPrivateThing = function() {
-
     console.log( privateThing );
-
     changePrivateThing();
-
   };
 
   // public API
   return {
-    publicThing : publicThing,
-    sayPrivateThing : sayPrivateThing
-  }
+    publicThing: publicThing,
+    sayPrivateThing: sayPrivateThing
+  };
 
 })();
 
-// "not secret"
-feature.publicThing; 
+feature.publicThing; // "not secret"
+
 
 // logs "secret" and changes the value
 // of privateThing
@@ -302,67 +279,36 @@ $( document ).ready(function() {
   var feature = (function() {
 
     var $items = $("#myFeature li");
-
     var $container = $("<div class='container'></div>");
-
     var $currentItem = null;
-
     var urlBase = "/foo.php?item=";
-
     var createContainer = function() {
-
       var $i = $( this );
-
       var $c = $container.clone().appendTo( $i );
-
       $i.data( "container", $c );
-
     },
-
     buildUrl = function() {
-
       return urlBase + $currentItem.attr("id");
-
     },
-
     showItem = function() {
-
       var $currentItem = $( this );
-
       getContent( showContent );
-
     },
-
     showItemByIndex = function( idx ) {
-
       $.proxy( showItem, $items.get( idx ) );
-
     },
-
     getContent = function( callback ) {
-
       $currentItem.data("container").load( buildUrl(), callback );
-
     },
-
     showContent = function() {
-
       $currentItem.data("container").show();
-
       hideContent();
-
     },
-
     hideContent = function() {
-
       $currentItem.siblings().each(function() {
-
-          $( this ).data("container").hide();
-
+        $( this ).data("container").hide();
       });
-
     };
-
     $items.each( createContainer ).click( showItem );
 
     return {
@@ -372,6 +318,5 @@ $( document ).ready(function() {
   })();
 
   feature.showItemByIndex( 0 );
-
 });
 ```

@@ -137,7 +137,7 @@ testing whether your selection returned any elements; if not, you can just run t
 var $someElement = $("#nonexistent");
 
 var cb = function() {
-  console.log("done!"");
+  console.log("done!");
 };
 
 if ( $someElement.length ) {
@@ -159,8 +159,8 @@ end-users control over page animations by rigging a button they can click to sto
 ```
 // Create a button to stop all animations on the page:
 $("input").attr({
-  type : "button",
-  value : "Stop All Animations"
+  type: "button",
+  value: "Stop All Animations"
 }).on( "click", function() {
   $("body *").filter(":animated").stop();
 }).appendTo( document.body );

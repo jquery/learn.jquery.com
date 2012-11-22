@@ -37,11 +37,8 @@ We can attach a direct bind click event to each `<li>` using the `.on()` method,
 ```
 // attach a directly bound event
 $("#list a").on( "click", function( event ) {
-
   event.preventDefault();
-
   console.log( $( this ).text() );
-
 });
 ```
 
@@ -69,11 +66,8 @@ Since we know how events bubble we can created a delegated event that listens fo
 ```
 // attach a delegated event
 $("#list").on( "click", "a", function( event ) {
-
   event.preventDefault();
-
   console.log( $( this ).text() );
-
 });
 ```
 Notice for the second parameter to the `.on()` method we are telling it which selector to listen for.  Now when a *click* event is triggered on our `<ul>`, our delegated event will check to see if the triggering element matches our selector (`"a"`).  If it does, our anonymous function will execute. We have now attached a single *click* event listener to our `<ul>` instead of an unknown number of directly bound events on our `<a>`"s.

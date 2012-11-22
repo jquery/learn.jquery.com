@@ -44,8 +44,7 @@ myArray[ 0 ] = "hello";
 myArray[ 1 ] = "world";
 myArray[ 3 ] = "!";
 
-// logs [ "hello", "world", undefined, "!" ];
-console.log( myArray );
+console.log( myArray ); // [ "hello", "world", undefined, "!" ];
 ```
 
 If the size of the array is unknown, 'push' is far more safe. You can both access and assign values to array items with the index.
@@ -54,8 +53,7 @@ If the size of the array is unknown, 'push' is far more safe. You can both acces
 // Accessing array items by index
 var myArray = [ "hello", "world", "!" ];
 
-// logs "!"
-console.log( myArray[2] );
+console.log( myArray[2] ); // "!"
 ```
 
 ## Array Methods and Properties
@@ -68,8 +66,7 @@ The `.length` property is used to determine the amount of items in an array.
 // Length of an array
 var myArray = [ "hello", "world", "!" ];
 
-// logs 3
-console.log( myArray.length );
+console.log( myArray.length ); // 3
 ```
 
 You will need the `.length` property for looping through an array:
@@ -79,9 +76,7 @@ You will need the `.length` property for looping through an array:
 var myArray = [ "hello", "world", "!" ];
 
 for ( var i = 0; i < myArray.length; i = i + 1 ) {
-
   console.log( myArray[i] );
-
 }
 ```
 
@@ -92,9 +87,7 @@ Except when using `for`/`in` loops:
 var myArray = [ "hello", "world", "!" ];
 
 for ( var i in myArray ) {
-
   console.log( myArray[ i ] );
-
 }
 ```
 
@@ -106,6 +99,7 @@ Concatenate two or more arrays with `.concat`:
 // Concatenating Arrays
 var myArray = [ 2, 3, 4 ];
 var myOtherArray = [ 5, 6, 7 ];
+
 // [ 2, 3, 4, 5, 6, 7 ]
 var wholeArray = myArray.concat( myOtherArray );
 ```
@@ -118,17 +112,10 @@ var wholeArray = myArray.concat( myOtherArray );
 // Joining elements
 var myArray = [ "hello", "world", "!" ];
 
-// logs "hello world !";
-console.log( myArray.join(" ") );
-
-// logs "hello,world,!"
-console.log( myArray.join() );
-
-// logs "helloworld!"
-console.log( myArray.join("") );
-
-// logs "hello!!world!!!";
-console.log( myArray.join("!!") );
+console.log( myArray.join(" ") );  // "hello world !";
+console.log( myArray.join() );     // "hello,world,!"
+console.log( myArray.join("") );   // "helloworld!"
+console.log( myArray.join("!!") ); // "hello!!world!!!";
 ```
 
 ### `.pop`
@@ -139,17 +126,10 @@ console.log( myArray.join("!!") );
 // pushing and popping
 var myArray = [];
 
-// [ 0 ]
-myArray.push( 0 );
-
-// [ 0 , 2 ]
-myArray.push( 2 );
-
-// [ 0 , 2 , 7 ]
-myArray.push( 7 );
-
-// [ 0 , 2 ]
-myArray.pop();
+myArray.push( 0 ); // [ 0 ]
+myArray.push( 2 ); // [ 0 , 2 ]
+myArray.push( 7 ); // [ 0 , 2 , 7 ]
+myArray.pop();     // [ 0 , 2 ]
 ```
 
 ### `.reverse`
@@ -172,17 +152,10 @@ Removes the first element of an array. With `.pop` and `.shift`, you can recreat
 // queue with shift() and pop()
 var myArray = [];
 
-// [ 0 ]
-myArray.push( 0 );
-
-// [ 0 , 2 ]
-myArray.push( 2 );
-
-// [ 0 , 2 , 7 ]
-myArray.push( 7 );
-
-// [ 2 , 7 ]
-myArray.shift();
+myArray.push( 0 ); // [ 0 ]
+myArray.push( 2 ); // [ 0 , 2 ]
+myArray.push( 7 ); // [ 0 , 2 , 7 ]
+myArray.shift();   // [ 2 , 7 ]
 ```
 
 ### `.slice`
@@ -194,11 +167,8 @@ Extracts a part of the array and returns that part in a new array. This method t
 var myArray = [ 1, 2, 3, 4, 5, 6, 7, 8 ];
 var newArray = myArray.slice( 3 );
 
-// [ 1, 2, 3, 4, 5, 6, 7, 8 ]
-console.log( myArray );
-
-// [ 4, 5, 6, 7, 8 ]
-console.log( newArray );
+console.log( myArray );  // [ 1, 2, 3, 4, 5, 6, 7, 8 ]
+console.log( newArray ); // [ 4, 5, 6, 7, 8 ]
 ```
 
 ### `.splice`
@@ -221,8 +191,7 @@ For example:
 var myArray = [ 0, 7, 8, 5 ];
 myArray.splice( 1, 2, 1, 2, 3, 4 );
 
-// [ 0, 1, 2, 3, 4, 5 ]
-console.log( myArray );
+console.log( myArray ); // [ 0, 1, 2, 3, 4, 5 ]
 ```
 
 ### `.sort`
@@ -233,22 +202,18 @@ Sorts an array. It takes one parameter, which is a comparing function. If this f
 // sorting without comparing function
 var myArray = [ 3, 4, 6, 1 ];
 
-// 1, 3, 4, 6
-myArray.sort();
+myArray.sort(); // 1, 3, 4, 6
 ```
 
 ```
 // sorting with comparing function
 function descending( a, b ) {
-
   return b - a;
-
 }
 
 var myArray = [ 3, 4, 6, 1 ];
 
-// [ 6, 4, 3, 1 ]
-myArray.sort( descending );
+myArray.sort( descending ); // [ 6, 4, 3, 1 ]
 ```
 
 The return value of descending (for this example) is important. If the return value is less than zero, the index of a is before b, and if it is greater than zero it's vice-versa. If the return value is zero, the elements index is equal.
@@ -261,14 +226,9 @@ Inserts an element at the first position of the array:
 // unshift
 var myArray = [];
 
-// [ 0 ]
-myArray.unshift( 0 );
-
-// [ 2 , 0 ]
-myArray.unshift( 2 );
-
-// [ 7 , 2 , 0 ]
-myArray.unshift( 7 );
+myArray.unshift( 0 ); // [ 0 ]
+myArray.unshift( 2 ); // [ 2 , 0 ]
+myArray.unshift( 7 ); // [ 7 , 2 , 0 ]
 ```
 
 ### `.forEach`
@@ -285,21 +245,15 @@ All of these are optional, but you will need at least the 'element' parameter in
 ```
 // native forEach
 function printElement( elem ) {
-
   console.log( elem );
-
 }
 
 function printElementAndIndex( elem, index ) {
-
   console.log( "Index " + index + ": " + elem );
-
 }
 
 function negateElement( elem, index, array ) {
-
   array[ index ] = -elem;
-
 }
 
 myArray = [ 1, 2, 3, 4, 5 ];
