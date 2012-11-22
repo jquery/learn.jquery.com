@@ -74,9 +74,11 @@ var myFeature = {
 
 };
 
-myFeature.myProperty; // "hello"
+// "hello"
+myFeature.myProperty;
 
-myFeature.myMethod(); // logs "hello"
+// logs "hello"
+myFeature.myMethod();
 
 myFeature.init({
 
@@ -84,7 +86,8 @@ myFeature.init({
 
 });
 
-myFeature.readSettings(); // logs { foo : "bar" }
+// logs { foo : "bar" }
+myFeature.readSettings(); 
 ```
 
 The object literal above is simply an object assigned to a variable. The object
@@ -108,7 +111,7 @@ $( document ).ready(function() {
 
       var $div = $this.find("div");
 
-      $div.load( 'foo.php?item=' + $this.attr('id'), function() {
+      $div.load( "foo.php?item=" + $this.attr("id"), function() {
 
         $div.show();
 
@@ -138,7 +141,7 @@ var myFeature = {
 
     myFeature.config = {
       $items : $("#myFeature li"),
-      $container : $("<div class="container"></div>"),
+      $container : $("<div class='container'></div>"),
       urlBase : "/foo.php?item="
     };
 
@@ -267,7 +270,8 @@ var feature = (function() {
 
 })();
 
-feature.publicThing; // "not secret"
+// "not secret"
+feature.publicThing; 
 
 // logs "secret" and changes the value
 // of privateThing
@@ -299,7 +303,7 @@ $( document ).ready(function() {
 
     var $items = $("#myFeature li");
 
-    var $container = $("<div class="container"></div>");
+    var $container = $("<div class='container'></div>");
 
     var $currentItem = null;
 
@@ -331,7 +335,7 @@ $( document ).ready(function() {
 
     showItemByIndex = function( idx ) {
 
-      $.proxy( showItem, $items.get(idx) );
+      $.proxy( showItem, $items.get( idx ) );
 
     },
 

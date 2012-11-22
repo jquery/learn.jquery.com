@@ -65,9 +65,9 @@ Now, let's create a new button (if we don't already have a second one) using jQu
 ```
 $("#create-button").click(function() {
 
-  if ( $("button.alert").length <2 ) {
+  if ( $("button.alert").length < 2 ) {
 
-    $("<button class="alert">Not another alert").insertAfter( this );
+    $("<button class='alert'>Not another alert").insertAfter( this );
 
   }
 
@@ -105,7 +105,7 @@ $( document ).ready(function() {
 
   $("#list1 li.special button").click(function() {
 
-    var $newLi = $("<li class="special">special and new <button>I am new</button></li>");
+    var $newLi = $("<li class='special'>special and new <button>I am new</button></li>");
 
     $( this ).parent().after( $newLi );
 
@@ -143,7 +143,7 @@ $( document ).ready(function() {
 
   $("#list2").click(function( event ) {
 
-    var $newLi = $("<li class="special">special and new <button>I am new</button></li>");
+    var $newLi = $("<li class='special'>special and new <button>I am new</button></li>");
 
   });
 
@@ -160,9 +160,9 @@ argument:
 ```
 $( document ).ready(function() {
 
-  $("#list2").click(function(event) {
+  $("#list2").click(function( event ) {
 
-    var $newLi = $("<li class="special">special and new <button>I am new</button></li>");
+    var $newLi = $("<li class='special'>special and new <button>I am new</button></li>");
 
     var $tgt = $( event.target );
 
@@ -176,7 +176,7 @@ $( document ).ready(function() {
     var bgc = $( this ).css("backgroundColor");
 
     $( this ).css({
-      backgroundColor: bgc == "#ffcccc" || bgc == "rgb(255, 204, 204)" ? "#ccccff" : "#ffcccc"
+      backgroundColor: bgc === "#ffcccc" || bgc === "rgb(255, 204, 204)" ? "#ccccff" : "#ffcccc"
     });
 
   });
@@ -190,7 +190,7 @@ the new list item is inserted after the parent of the clicked button.
 
 I put an additional two lines at the end to demonstrate that a click on one of
 the buttons is still considered a click on the `<ul>` You'll see that
-clicking anywhere within the` <ul>` toggles its background between pink and
+clicking anywhere within the `<ul>` toggles its background between pink and
 blue.
 
 It's probably worth noting that jQuery makes working with the event argument
@@ -200,11 +200,11 @@ DOM nodes, you'd have to do something like this:
 ```
 var list2 = document.getElementById("list2");
 
-list2.onclick = function( e ) {
+list2.onclick = function( event ) {
 
-  var e = e || window.event;
+  var event = event || window.event;
 
-  var tgt = e.target || e.srcElement;
+  var tgt = event.target || event.srcElement;
 
   if ( tgt.nodeName.toLowerCase() == "button" ) {
 
@@ -230,7 +230,7 @@ clicked:
 ```
 $( document ).ready(function() {
 
-  $("table").click(function(event) {
+  $("table").click(function( event ) {
 
     var $thisCell = null;
 

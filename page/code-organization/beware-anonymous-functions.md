@@ -13,7 +13,7 @@ your handlers and callbacks.
 // BAD
 $( document ).ready(function() {
 
-  $("#magic").click(function(e) {
+  $("#magic").click(function( event ) {
 
     $("#yayeffects").slideUp(function() {
 
@@ -42,7 +42,7 @@ var PI = {
 
   },
 
-  candyMtn : function( e ) {
+  candyMtn : function( event ) {
 
     $("#yayeffects").slideUp( PI.slideCb );
 

@@ -103,9 +103,11 @@ $("div").on( "click", function(event) {
 You can pass your own data to the event object.
 
 ```
-$("p").on( "click", {foo: "bar"}, function(event) {
+$("p").on( "click", {
+  foo: "bar"
+}, function(event) {
 
-  console.log( "event data: " + event.data.foo + " (should be "bar")" );
+  console.log( "event data: " + event.data.foo + " (should be 'bar')" );
 
 });
 ```
@@ -180,7 +182,8 @@ var bar = function() {
 
 $("p").on( "click", foo ).bind( "click", bar );
 
-$("p").off( "click", bar ); // foo is still bound to the click event
+// foo will stay bound to the click event
+$("p").off( "click", bar );
 ```
 
 ### Namespacing Events

@@ -19,11 +19,12 @@ then this:
 ```
 for ( var i = 0, l = arr.length; i < l; i++ ) {
 
-	sum += arr[ i ];
+  sum += arr[ i ];
 
 }
 
-console.log( sum ); // 15
+// 15
+console.log( sum );
 
 ```
 
@@ -32,11 +33,12 @@ can be replaced with this:
 ```
 $.each( arr, function(index, value){
 
-	sum += value;
+  sum += value;
 
 });
 
-console.log( sum ); // 15
+// 15
+console.log( sum );
 ```
 
 Notice that `arr[ index ]` can't be accessed as the value is conveniently passed to the callback in `$.each()`. In addition, given:
@@ -45,8 +47,8 @@ Notice that `arr[ index ]` can't be accessed as the value is conveniently passed
 var sum = 0;
 
 var obj = {
-	foo: 1,
-	bar: 2
+  foo: 1,
+  bar: 2
 }
 ```
 
@@ -55,11 +57,12 @@ then this:
 ```
 for (var item in obj) {
 
-	sum += obj[ item ];
+  sum += obj[ item ];
 
 }
 
-console.log( sum ); // 3
+// 3
+console.log( sum );
 ```
 
 can be replaced with this:
@@ -68,11 +71,12 @@ can be replaced with this:
 
 $.each( obj, function(key, value){
 
-	sum += value;
+  sum += value;
 
 });
 
-console.log( sum ); // 3
+// 3
+console.log( sum );
 ```
 
 Again, `obj[ key ]` is passed directly to the callback and thus can't be accessed. Note that `$.each()` is for plain objects, arrays, array-like objects *that are not jQuery collections*.
@@ -83,7 +87,7 @@ This would be considered incorrect:
 // incorrect
 $.each( $("p"), function() {
 
-	// Do something
+  // Do something
 
 });
 ```
@@ -98,18 +102,18 @@ For example, given the following markup:
 
 ```
 <ul>
-	<li><a href="#">Link 1</a></li>
-	<li><a href="#">Link 2</a></li>
-	<li><a href="#">Link 3</a></li>
+  <li><a href="#">Link 1</a></li>
+  <li><a href="#">Link 2</a></li>
+  <li><a href="#">Link 3</a></li>
 </ul>
 ```
 
 `.each()` may be used like so:
 
 ```
-$("li").each( function(index, element){
+$("li").each( function( index, element ){
 
-	console.log( $( this ).text() );
+  console.log( $( this ).text() );
 
 });
 
@@ -126,21 +130,25 @@ The question is often raised, "If `this` is the element, why is there a second D
 Whether intentional or inadvert, the execution context may change. When consistently using the keyword `this`, it's easy to end up confusing ourselves or other developers reading the code. Even if the execution context remains the same, it may be more readable to use the second parameter as a named parameter. For example:
 
 ```
-$("li").each( function(index, listItem) {
+$("li").each( function( index, listItem ) {
 
-	this === listItem; // true
+  // true
+  this === listItem;
 
-	// For example only. You probably shouldn't call $.ajax in a loop
-	$.ajax({
+  // For example only. You probably shouldn't call $.ajax in a loop
+  $.ajax({
 
-		success: function(data) {
+    success: function(data) {
 
-			// The context has changed. The 'this' keyword no longer refers to listItem.
-			this !== listItem; // false
+      // The context has changed. The 'this' keyword
+      // no longer refers to listItem.
 
-		}
+      // true
+      this !== listItem;
 
-	});
+    }
+
+  });
 
 });
 ```
@@ -150,9 +158,9 @@ $("li").each( function(index, listItem) {
 Many jQuery methods implicitly iterate over the entire collection, applying their behavior to each matched element. For example, this is unnecessary:
 
 ```
-$("li").each( function(index, el) {
+$("li").each( function( index, el ) {
 
-	$(el).addClass("newClass");
+  $( el ).addClass("newClass");
 
 });
 ```
@@ -160,7 +168,7 @@ $("li").each( function(index, el) {
 and this is fine:
 
 ```
-$("li").addClass( "newClass" );
+$("li").addClass("newClass");
 ```
 
 Each `<li/>` in the document will have the class 'newClass' added.
@@ -171,7 +179,7 @@ This will not work:
 
 ```
 // doesn't work:
-$("li").val( $( this ).val() + "%" );
+$("input").val( $( this ).val() + "%" );
 
 // .val() does not change the execution context, so this === window
 ```
@@ -179,10 +187,9 @@ $("li").val( $( this ).val() + "%" );
 Rather, this is how it should be written:
 
 ```
-$("li").each( function(i, el) {
-
-	$(el).val( $(el).val() + "%" );
-
+$("input").each( function( i, el ) {
+  var elem = $( el );
+  elem.val( elem.val() + "%" );
 });
 ```
 
@@ -212,17 +219,14 @@ In addition to a setter value, the attribute, property, css setters, and DOM ins
 For example, these are equivalent:
 
 ```
-$("li").each( function(i, el) {
-
-	$(el).val( $(el).val() + "%" );
-
+$("input").each( function( i, el ) {
+  var elem = $( el );
+  elem.val( elem.val() + "%" );
 });
 
 
-$("li").val(function(index, value) {
-
-	return value + "%";
-
+$("input").val(function( index, value ) {
+  return value + "%";
 });
 
 ```
@@ -240,7 +244,7 @@ var newArr = [];
 
 $("li").each( function() {
 
-	newArr.push( this.id );
+  newArr.push( this.id );
 
 });
 ```
@@ -250,7 +254,7 @@ We can do this:
 ```
 $("li").map( function(index, element) {
 
-	return this.id;
+  return this.id;
 
 }).get();
 ```
@@ -273,28 +277,27 @@ For example:
 <script>
 
 var arr = [{
-	id: "a",
-	tagName: "li"
+  id: "a",
+  tagName: "li"
 }, {
-	id: "b",
-	tagName: "li"
+  id: "b",
+  tagName: "li"
 }, {
-	id: "c",
-	tagName: "li"
+  id: "c",
+  tagName: "li"
 }];
 
 
-$("li").map( function(index, element) {
+// returns [ "a", "b", "c" ]
+$("li").map( function( index, element ) {
+  return element.id;
+}).get();
 
-	return element.id;
-
-}).get(); // returns ["a", "b", "c"]
-
-$.map( arr, function(value, index) {
-
-	return value.id;
-
-}); // returns ["a", "b", "c"]
+// also returns ["a", "b", "c"]
+// note that the value comes first with $.map
+$.map( arr, function( value, index ) {
+  return value.id;
+});
 
 </script>
 ```

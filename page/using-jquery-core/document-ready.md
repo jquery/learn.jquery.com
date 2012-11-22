@@ -2,7 +2,7 @@
 title   : $( document ).ready()
 level: beginner
 ---
-A page can't be manipulated safely until the document is “ready.” jQuery detects this state of readiness for you. Code included inside `$( document ).ready()` will only run once the page DOM (Document Object Model) is ready for JavaScript code to execute. Code included inside `$( window ).load(function( {})` will run once the entire page (images or iframes), not just the DOM, is ready.
+A page can't be manipulated safely until the document is “ready.” jQuery detects this state of readiness for you. Code included inside `$( document ).ready()` will only run once the page DOM (Document Object Model) is ready for JavaScript code to execute. Code included inside `$( window ).load(function(){ ... })` will run once the entire page (images or iframes), not just the DOM, is ready.
 
 ```
 // A $( document ).ready() block
@@ -47,20 +47,20 @@ The below example shows `$( document ).ready()` and `$( window ).load()` in acti
 <html>
   <head>
     <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-      <script>
+    <script>
 
-        $( document ).ready(function() {
+      $( document ).ready(function() {
 
-          console.log("document loaded");
+        console.log("document loaded");
 
-        });
+      });
 
-        $( window ).load(function() {
+      $( window ).load(function() {
 
-          console.log("window loaded");
+        console.log("window loaded");
 
-        });
-      </script>
+      });
+    </script>
     </head>
     <body>
       <iframe src="http://techcrunch.com"></iframe>

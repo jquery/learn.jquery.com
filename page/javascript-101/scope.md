@@ -22,9 +22,11 @@ var sayHello = function() {
 
 };
 
-sayHello();         // logs "hello"
+// logs "hello"
+sayHello();
 
-console.log( foo );   // also logs "hello"
+// also logs "hello"
+console.log( foo );
 ```
 
 ```
@@ -37,9 +39,11 @@ var sayHello = function() {
 
 };
 
-sayHello();         // logs "hello"
+// logs "hello"
+sayHello();
 
-console.log( foo );   // doesn"t log anything
+// doesn't log anything
+console.log( foo );
 ```
 
 ```
@@ -79,7 +83,8 @@ var myFunction = function() {
 
 var f = myFunction();
 
-f();  // logs "world" -- uh oh
+// logs "world" -- uh oh
+f();
 ```
 
 ```
@@ -103,14 +108,17 @@ f();  // logs "world" -- uh oh
 
 })();
 
-console.log( baz );  // baz is not defined outside of the function
+// baz is not defined outside of the function
+console.log( baz );
 
-bar();  // bar is defined outside of the anonymous function
-        // because it wasn't declared with var; furthermore,
-        // because it was defined in the same scope as baz,
-        // it has access to baz even though other code
-        // outside of the function does not
+// bar is defined outside of the anonymous function
+// because it wasn't declared with var; furthermore,
+// because it was defined in the same scope as baz,
+// it has access to baz even though other code
+// outside of the function does not
+bar();
 
-bim();  // bim is not defined outside of the anonymous function,
-        // so this will result in an error
+// bim is not defined outside of the anonymous function,
+// so this will result in an error
+bim();
 ```

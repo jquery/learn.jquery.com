@@ -45,7 +45,7 @@ in; they just want to change the state.
 Without custom events, you might write some code like this:
 
 ```
-$( ".switch, .clapper" ).click(function() {
+$(".switch, .clapper").click(function() {
 
   var $light = $( this ).parent().find(".lightbulb");
 
@@ -146,7 +146,7 @@ $(".switch, .clapper").click(function() {
 
 $("#master_switch").click(function() {
 
-  if ($(".lightbulb.on").length) {
+  if ( $(".lightbulb.on").length ) {
 
     $(".lightbulb").trigger("turnOff");
 
@@ -191,17 +191,22 @@ Here is an example of the usage of `$.fn.on` and `$.fn.trigger` that uses
 custom data in both cases:
 
 ```
-$( document ).on( "myCustomEvent", {foo: "bar"}, function(e, arg1, arg2) {
+$( document ).on( "myCustomEvent", {
+  foo: "bar"
+}, function( event, arg1, arg2 ) {
 
-  console.log( e.data.foo ); // "bar"
+  // "bar"
+  console.log( event.data.foo );
 
-  console.log( arg1 ); // "bim"
+  // "bim"
+  console.log( arg1 );
 
-  console.log( arg2 ); // "baz"
+  // "baz"
+  console.log( arg2 );
 
 });
 
-$( document ).trigger( "myCustomEvent", ["bim", "baz"]);
+$( document ).trigger( "myCustomEvent", [ "bim", "baz" ]);
 ```
 
 ### A Sample Application
@@ -289,13 +294,13 @@ $.fn.twitterResult = function( settings ) {
 
     $results.find("span.search_term").text( term );
 
-    $.each(
-
-      [ "refresh", "populate", "remove", "collapse", "expand" ],
+    $.each([ "refresh", "populate", "remove", "collapse", "expand" ],
 
       function( i, ev ) {
 
-        $results.on( ev, { term: term }, $.fn.twitterResult.events[ev] );
+        $results.on( ev, {
+          term: term
+        }, $.fn.twitterResult.events[ ev ] );
 
       }
 
@@ -317,10 +322,10 @@ $.fn.twitterResult = function( settings ) {
 
 $.fn.twitterResult.createActions = function() {
 
-  return $("<ul class="actions" />").append(
-    "<li class="refresh">Refresh</li>" +
-    "<li class="remove">Remove</li>" +
-    "<li class="collapse">Collapse</li>"
+  return $("<ul class='actions' />").append(
+    "<li class='refresh'>Refresh</li>" +
+    "<li class='remove'>Remove</li>" +
+    "<li class='collapse'>Collapse</li>"
   );
 
 };
@@ -334,7 +339,7 @@ $.fn.twitterResult.events = {
 
     $this.find("p.tweet").remove();
 
-    $results.append("<p class="loading">Loading ...</p>");
+    $results.append("<p class='loading'>Loading ...</p>");
 
     // get the twitter data using jsonp
     $.getJSON("http://search.twitter.com/search.json?q=" + escape( e.data.term ) + "&rpp=5&callback=?", function( json ) {
@@ -354,18 +359,18 @@ $.fn.twitterResult.events = {
 
     $this.find("p.loading").remove();
 
-    $.each( results, function(i, result) {
+    $.each( results, function( i, result ) {
 
-      var tweet = "<p class="tweet">" +
-          "<a href="http://twitter.com/" +
-          result.from_user +
-          "">" +
-          result.from_user +
-          "</a>: " +
-          result.text +
-          " <span class="date">" +
-          result.created_at +
-          "</span>" +
+      var tweet = "<p class='tweet'>" +
+        "<a href='http://twitter.com/" +
+        result.from_user +
+        "'>" +
+        result.from_user +
+        "</a>: " +
+        result.text +
+        " <span class='date'>" +
+        result.created_at +
+        "</span>" +
       "</p>";
 
       $this.append( tweet );
@@ -396,14 +401,20 @@ $.fn.twitterResult.events = {
 
   collapse: function( e ) {
 
-    $( this ).find("li.collapse").removeClass("collapse").addClass("expand").text("Expand");
+    $( this ).find("li.collapse")
+      .removeClass("collapse")
+      .addClass("expand")
+      .text("Expand");
 
     $( this ).addClass("collapsed");
 
   },
 
   expand: function( e ) {
-    $( this ).find("li.expand").removeClass("expand").addClass("collapse").text("Collapse");
+    $( this ).find("li.expand")
+      .removeClass("expand")
+      .addClass("collapse")
+      .text("Collapse");
 
     $( this ).removeClass("collapsed");
 
@@ -429,10 +440,10 @@ The Twitter container itself will have just two custom events:
 Here's how the Twitter container bindings look:
 
 ```
-$("#twitter").on( "getResults", function(e, term) {
+$("#twitter").on( "getResults", function( e, term ) {
 
   // make sure we don"t have a box for this term already
-  if ( !search_terms[term] ) {
+  if ( !search_terms[ term ] ) {
 
     var $this = $( this );
 
@@ -445,7 +456,7 @@ $("#twitter").on( "getResults", function(e, term) {
       .insertBefore( $this.find("div:first") )
       .twitterResult({
         "term": term
-    });
+      });
 
     // load the content using the "refresh"
     // custom event that we bound to the results container
@@ -453,15 +464,15 @@ $("#twitter").on( "getResults", function(e, term) {
 
     search_terms[ term ] = 1;
   }
-}).on( "getTrends", function(e) {
+}).on( "getTrends", function( e ) {
 
   var $this = $( this );
 
-  $.getJSON( "http://search.twitter.com/trends.json?callback=?", function(json) {
+  $.getJSON( "http://search.twitter.com/trends.json?callback=?", function( json ) {
 
     var trends = json.trends;
 
-    $.each( trends, function(i, trend) {
+    $.each( trends, function( i, trend ) {
 
       $this.trigger( "getResults", [ trend.name ] );
 
@@ -482,7 +493,7 @@ pass it as we trigger the Twitter container&apos;s `getResults` event. Clicking 
 &quot;Load Trending Terms&quot; will trigger the Twitter container&apos;s `getTrends` event:
 
 ```
-$("form").submit(function(e) {
+$("form").submit(function( event ) {
 
   e.preventDefault();
 
@@ -506,9 +517,9 @@ event handler as its second argument, telling the event handler that we don&apos
 want to verify the removal of individual containers.
 
 ```
-$.each( ["refresh", "expand", "collapse"], function(i, ev) {
+$.each([ "refresh", "expand", "collapse" ], function( i, ev ) {
 
-  $( "#" + ev ).click( function(e) {
+  $( "#" + ev ).click( function( e ) {
 
     $("#twitter div.results").trigger( ev );
 
@@ -516,7 +527,7 @@ $.each( ["refresh", "expand", "collapse"], function(i, ev) {
 
 });
 
-$("#remove").click(function(e) {
+$("#remove").click(function( e ) {
 
   if ( confirm("Remove all results?") ) {
 

@@ -51,9 +51,11 @@ var myName = "the global object",
 
 var myObjectHello = sayHello.bind( myObject );
 
-sayHello();       // logs "Hi! My name is the global object"
+// logs "Hi! My name is the global object"
+sayHello();
 
-myObjectHello();  // logs "Hi! My name is Rebecca"
+// logs "Hi! My name is Rebecca"
+myObjectHello();
 ```
 
 ```
@@ -78,11 +80,14 @@ myObject.sayHello = sayHello;
 
 secondObject.sayHello = sayHello;
 
-sayHello();               // logs "Hi! My name is the global object"
+// logs "Hi! My name is the global object"
+sayHello();
 
-myObject.sayHello();      // logs "Hi! My name is Rebecca"
+// logs "Hi! My name is Rebecca"
+myObject.sayHello();
 
-secondObject.sayHello();  // logs "Hi! My name is Colin"
+// logs "Hi! My name is Colin"
+secondObject.sayHello();
 ```
 
 When invoking a function deep within a long namespace, it is often tempting to reduce the amount of code you need to type by storing a reference to the actual function as a single, shorter variable. It is important not to do this with instance methods as this will cause the value of `this` within the function to change, leading to incorrect code operation. For instance:
@@ -94,7 +99,7 @@ var myNamespace = {
 
     sayHello: function() {
 
-      console.log("Hi! My name is " + this.myName);
+      console.log( "Hi! My name is " + this.myName );
 
     },
 
@@ -105,7 +110,8 @@ var myNamespace = {
 
 var hello = myNamespace.myObject.sayHello;
 
-hello();  // logs "Hi! My name is undefined"
+// logs "Hi! My name is undefined"
+hello();
 ```
 
 You can, however, safely reduce everything up to the object on which the method is invoked:
@@ -113,15 +119,15 @@ You can, however, safely reduce everything up to the object on which the method 
 ```
 var myNamespace = {
 
-  myObject : {
+  myObject: {
 
-    sayHello : function() {
+    sayHello: function() {
 
-      console.log("Hi! My name is " + this.myName);
+      console.log( "Hi! My name is " + this.myName );
 
     },
 
-    myName : "Rebecca"
+    myName: "Rebecca"
 
   }
 
@@ -129,5 +135,6 @@ var myNamespace = {
 
 var obj = myNamespace.myObject;
 
-obj.sayHello();  // logs "Hi! My name is Rebecca"
+// logs "Hi! My name is Rebecca"
+obj.sayHello();
 ```

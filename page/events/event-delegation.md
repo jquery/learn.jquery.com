@@ -36,7 +36,7 @@ We need to attach the same event handler to multiple elements.  In this example 
 We can attach a direct bind click event to each `<li>` using the `.on()` method, that will alert the text inside of it by doing the following:
 ```
 // attach a directly bound event
-$("#list a").on( "click", function(event) {
+$("#list a").on( "click", function( event ) {
 
   event.preventDefault();
 
@@ -68,7 +68,7 @@ Anytime one of these links is clicked you can think of it as if you were clickin
 Since we know how events bubble we can created a delegated event that listens for a specific event to happen on our element
 ```
 // attach a delegated event
-$("#list").on("click", "a", function(event) {
+$("#list").on( "click", "a", function( event ) {
 
   event.preventDefault();
 
@@ -81,7 +81,7 @@ Notice for the second parameter to the `.on()` method we are telling it which se
 Now lets say that whenever a link is clicked we want to check and see if the `href` attribute starts with "http" and if it does we want to set the `target` attribute to `_blank`.
 ```
 // attach a delegated event
-$("#list").on( "click", "a", function(event) {
+$("#list").on( "click", "a", function( event ) {
 
   var $elem = $( this );
 
@@ -98,7 +98,7 @@ This simply passes the `.is()` method a selector to see if the element"s `href` 
 We can actually take this a step further and make our code simpiler and more concise by allowing the selector argument to `.on()` do our logic for us.
 ```
 // attach a delegated event with a more refined selector
-$("#list").on( "click", "a[href^=http]", function(event) {
+$("#list").on( "click", "a[href^=http]", function( event ) {
 
   $( this ).attr( "target", "_blank" );
 

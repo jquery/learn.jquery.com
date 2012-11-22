@@ -23,9 +23,11 @@ var myObject = {
 
 };
 
-myObject.sayHello();            // logs "hello"
+// logs "hello"
+myObject.sayHello();
 
-console.log( myObject.myName );   // logs "Rebecca"
+// logs "Rebecca"
+console.log( myObject.myName );
 ```
 
 When creating object literals, note that the key portion of each key-value pair can be written as any valid JavaScript identifier, a string (wrapped in quotes), or a number:
@@ -33,8 +35,8 @@ When creating object literals, note that the key portion of each key-value pair 
 ```
 // test
 var myObject = {
-  validIdentifier : 123,
-  "some string" : 456,
-  99999 : 789
+  validIdentifier: 123,
+  "some string": 456,
+  99999: 789
 };
 ```

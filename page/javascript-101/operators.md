@@ -27,18 +27,22 @@ console.log( foo + " " + bar ); // "hello world"
 // pre-increment:
 var i = 1;
 
-console.log( ++i ); // => 2
+// => 2
+console.log( ++i );
 
-console.log( i ); // => 2
+// => 2
+console.log( i );
 
 // The post-increment operator increments the operand after processing it.
 // post-increment:
 var i = 1;
 
-console.log( i++ ); // => 1. This is because i was processed first.
+// => 1. This is because i was processed first.
+console.log( i++ );
 
-console.log( i ); // => 2. This is because the operand was incremented after processing
+// => 2. This is because the operand was incremented after processing
 // in the previous step.
+console.log( i );
 ```
 
 ## Operations on Numbers & Strings
@@ -50,7 +54,8 @@ In JavaScript, numbers and strings will occasionally behave in unexpected ways.
 var foo = 1;
 var bar = "2";
 
-console.log( foo + bar );  // => 12
+// => 12
+console.log( foo + bar );
 ```
 
 ```
@@ -78,12 +83,20 @@ var foo = 1;
 var bar = 0;
 var baz = 2;
 
-foo || bar;   // returns 1, which is true
-bar || foo;   // returns 1, which is true
+// returns 1, which is true
+foo || bar;
 
-foo && bar;   // returns 0, which is false
-foo && baz;   // returns 2, which is true
-baz && foo;   // returns 1, which is true
+// returns 1, which is true
+bar || foo;
+
+// returns 0, which is false
+foo && bar;
+
+// returns 2, which is true
+foo && baz;
+
+// returns 1, which is true
+baz && foo;
 ```
 
 In the above example, the `||` operator returns the value of the first truthy operand, or in cases where neither operand is truthy, it returns the last operand. The `&&` operator returns the value of the first false operand, or the value of the last operand if both operands are truthy.

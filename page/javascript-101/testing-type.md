@@ -28,13 +28,23 @@ var myString = "hello";
 
 var myNumber = 3;
 
-typeof myFunction;   // returns "function"
-typeof myObject;     // returns "object"
-typeof myArray;      // returns "object" -- careful!
-typeof myString;     // returns "string";
-typeof myNumber;     // returns "number"
+// returns "function"
+typeof myFunction;
 
-typeof null;         // returns "object" -- careful!
+// returns "object"
+typeof myObject;
+
+// returns "object" -- careful!
+typeof myArray;
+
+// returns "string";
+typeof myString;
+
+// returns "number"
+typeof myNumber;
+
+// returns "object" -- careful!
+typeof null;
 
 if ( myArray.push && myArray.slice && myArray.join ) {
 
@@ -43,7 +53,7 @@ if ( myArray.push && myArray.slice && myArray.join ) {
 
 }
 
-if ( Object.prototype.toString.call(myArray) === "[object Array]" ) {
+if ( Object.prototype.toString.call( myArray ) === "[object Array]" ) {
 
   // Definitely an array!
   // This is widely considered as the most robust way

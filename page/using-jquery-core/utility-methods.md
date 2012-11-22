@@ -14,7 +14,8 @@ Below are examples of a few of the utility methods:
 Removes leading and trailing whitespace.
 
 ```
-$.trim("    lots of extra whitespace    "); // returns "lots of extra whitespace"
+// returns "lots of extra whitespace"
+$.trim("    lots of extra whitespace    ");
 ```
 
 ### `$.each`
@@ -22,13 +23,13 @@ $.trim("    lots of extra whitespace    "); // returns "lots of extra whitespace
 Iterates over arrays and objects.
 
 ```
-$.each( [ "foo", "bar", "baz" ], function(idx, val) {
+$.each([ "foo", "bar", "baz" ], function( idx, val ) {
 
   console.log( "element " + idx + "is " + val );
 
 });
 
-$.each( { foo: "bar", baz: "bim" }, function(k, v) {
+$.each({ foo: "bar", baz: "bim" }, function( k, v ) {
 
   console.log( k + " : " + v );
 
@@ -54,27 +55,31 @@ if ( $.inArray( 4, myArray ) !== -1 ) {
 
 Changes the properties of the first object using the properties of subsequent objects.
 ```
-var firstObject = { foo : "bar", a : "b" };
-var secondObject = { foo : "baz" };
+var firstObject = { foo: "bar", a: "b" };
+var secondObject = { foo: "baz" };
 
-var newObject = $.extend(firstObject, secondObject);
+var newObject = $.extend( firstObject, secondObject );
 
-console.log(firstObject.foo); // "baz"
+// "baz"
+console.log( firstObject.foo );
 
-console.log(newObject.foo);   // "baz"
+// "baz"
+console.log( newObject.foo );
 ```
 
 If you don't want to change any of the objects you pass to `$.extend`, pass an empty object as the first argument.
 
 ```
-var firstObject = { foo : "bar", a : "b" };
-var secondObject = { foo : "baz" };
+var firstObject = { foo: "bar", a: "b" };
+var secondObject = { foo: "baz" };
 
 var newObject = $.extend( {}, firstObject, secondObject );
 
-console.log( firstObject.foo ); // "bar"
+// "bar"
+console.log( firstObject.foo );
 
-console.log( newObject.foo );   // "baz"
+// "baz"
+console.log( newObject.foo );
 ```
 
 ### `$.proxy`
@@ -85,11 +90,13 @@ Returns a function that will always run in the provided scope — that is, sets 
 var myFunction = function() { console.log( this ); };
 var myObject = { foo : "bar" };
 
-myFunction(); // logs window object
+// logs window object
+myFunction();
 
 var myProxyFunction = $.proxy( myFunction, myObject );
 
-myProxyFunction(); // logs myObject object
+// logs myObject object
+myProxyFunction();
 ```
 
 If you have an object with methods, you can pass the object and the name of a method to return a function that will always run in the scope of the object.
@@ -101,6 +108,8 @@ var myObject = {
   }
 };
 
-$("#foo").click( myObject.myFn ); // logs DOM element #foo
-$("#foo").click( $.proxy(myObject, "myFn") ); // logs myObject
+// logs DOM element #foo
+$("#foo").click( myObject.myFn );
+// logs myObject
+$("#foo").click( $.proxy( myObject, "myFn" ) );
 ```

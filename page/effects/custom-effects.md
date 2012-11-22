@@ -17,7 +17,8 @@ $("div.funtimes").animate({
     opacity : 0.25
 
   },
-  300, // duration
+  // duration:
+  300,
   function() {
 
     console.log("done!"); // callback

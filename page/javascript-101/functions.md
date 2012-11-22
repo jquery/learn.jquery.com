@@ -32,20 +32,20 @@ var foo = function() {
 
 ```
 // A simple function
-var greet = function(person, greeting) {
+var greet = function( person, greeting ) {
 
   var text = greeting + ", " + person;
 
-  console.log(text);
+  console.log( text );
 
 };
 
-greet("Rebecca", "Hello");
+greet( "Rebecca", "Hello" );
 ```
 
 ```
 // A function that returns a value
-var greet = function(person, greeting) {
+var greet = function( person, greeting ) {
 
   var text = greeting + ", " + person;
 
@@ -53,20 +53,20 @@ var greet = function(person, greeting) {
 
 };
 
-console.log( greet("Rebecca", "hello") );
+console.log( greet( "Rebecca", "hello" ) );
 ```
 
 ```
 // A function that returns another function
-var greet = function(person, greeting) {
+var greet = function( person, greeting ) {
 
   var text = greeting + ", " + person;
 
-  return function() { console.log(text); };
+  return function() { console.log( text ); };
 
 };
 
-var greeting = greet("Rebecca", "Hello");
+var greeting = greet( "Rebecca", "Hello" );
 
 greeting();
 ```
@@ -100,17 +100,20 @@ var myFn = function( fn ) {
 
 };
 
-myFn( function() { return "hello world"; } );   // logs "hello world"
+// logs "hello world"
+myFn( function() {
+  return "hello world";
+});
 ```
 
 ```
 // Passing a named function as an argument
 
-var myFn = function(fn) {
+var myFn = function( fn ) {
 
   var result = fn();
 
-  console.log(result);
+  console.log( result );
 
 };
 
@@ -120,5 +123,6 @@ var myOtherFn = function() {
 
 };
 
-myFn(myOtherFn);   // logs "hello world"
+// logs "hello world"
+myFn( myOtherFn );
 ```
