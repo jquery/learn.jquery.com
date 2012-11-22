@@ -29,8 +29,8 @@ attribution:
 ```
 
 The `source` and `atttribution` properties are optional, and should be used
-primarily if you are importing `an article from an outside source where it was
-published before being donated for inclusion in learn site.  You should **not**
+primarily if you are importing an article from an outside source where it was
+published before being donated for inclusion in the learn site.  You should **not**
 include these properties if you are adding a new article or editing an existing
 one, as your contribution will be acknowledged via the git commit logs.
 
@@ -40,7 +40,6 @@ Code blocks should be set off with triple backticks and should **not** be
 indented.  (That is to say, the site prefers the use of "fenced blocks"
 notation supported by
 [gfm](http://github.github.com/github-flavored-markdown/).)
-
 
 ## Writing Style
 
