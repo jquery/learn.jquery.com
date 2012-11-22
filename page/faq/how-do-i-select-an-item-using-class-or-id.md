@@ -1,5 +1,5 @@
 ---
-title:        How Do I Select An Item Using Class or ID?
+title:        How do I select an item using class or ID?
 source:       http://docs.jquery.com/Frequently_Asked_Questions
 ---
 
