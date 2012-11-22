@@ -38,9 +38,9 @@
   - introduction-to-events
   - handling-events
   - inside-event-handling-function
-  - working_with_events_part_1
+  - working-with-events-part-1
   - event-delegation
-  - working_with_events_part_2
+  - working-with-events-part-2
   - triggering-event-handlers
   - history-of-events
   - introduction-to-custom-events
@@ -48,8 +48,8 @@
 - effects:
   - intro-to-effects
   - custom-effects
-  - queue_and_dequeue_explained
-  - uses_of_queue_and_dequeue
+  - queue-and-dequeue-explained
+  - uses-of-queue-and-dequeue
 - ajax:
   - key-concepts
   - jquery-ajax-methods
