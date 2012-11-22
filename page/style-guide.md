@@ -24,7 +24,7 @@ level:  [beginner|intermediate|advance]
 source:  <url of source of the material derived>
 attribution: 
   - Ralph Whitbeck <ralph@email.com>
-  - John Paul<john@email.com>
+  - John Paul <john@email.com>
 ---
 ```
 
