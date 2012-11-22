@@ -13,7 +13,7 @@ The XMLHttpRequest object is part of a technology called Ajax (Asynchronous Java
 
 Ajax requests are triggered by JavaScript code; your code sends a request to a URL, and when it receives a response, a callback function can be triggered to handle the response. Because the request is asynchronous, the rest of your code continues to execute while the request is being processed, so it’s imperative that a callback be used to handle the response.
 
-Unfortunately, different browsers implement the Ajax API differently. Typically this meant that developers would have to account for all the different browsers to ensure that Ajax would work universally. Fortunately, jQuery provides Ajax support that abstracts away painful browser differences. It offers both a full-featured `$.ajax()` method, and simple convenience methods such as `$.get()`, `$.getScript(), `$.getJSON()`, `$.post()`, and `$().load()`.
+Unfortunately, different browsers implement the Ajax API differently. Typically this meant that developers would have to account for all the different browsers to ensure that Ajax would work universally. Fortunately, jQuery provides Ajax support that abstracts away painful browser differences. It offers both a full-featured `$.ajax()` method, and simple convenience methods such as `$.get()`, `$.getScript()`, `$.getJSON()`, `$.post()`, and `$().load()`.
 
 Most jQuery applications don’t in fact use XML, despite the name “Ajax”; instead, they transport data as plain HTML or JSON (JavaScript Object Notation).
 
