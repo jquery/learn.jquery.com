@@ -61,7 +61,7 @@ wiki account and forcing all authoring into a `textarea`.
 
 Though this resource will never truly be "done," the current version of this
 site should still be considered something of a preview. We still have a number
-of improvements we want to make to both the content and the user experience
+of improvements we want to make to the content, user experience, and site build
 before we're ready to call it a "final release." At the same time, however,
 it's important for us to open the doors now so we can begin providing better
 docs to people who need the right away and spread the word about this effort.

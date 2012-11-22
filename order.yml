@@ -1,3 +1,6 @@
+- index
+- about
+- contributing
 - about-jquery:
   - how-jquery-works
   - additional-support
@@ -33,6 +36,20 @@
   - utility-methods
   - iterating
   - understanding-index
+  - faq:
+    - add-keyboard-navigation
+    - enable-the-back-button
+    - how-do-i-select-an-item-using-class-or-id
+    - how-do-i-select-elements-when-i-already-have-a-dom-element
+    - how-do-i-test-whether-an-element-has-a-particular-class
+    - how-do-i-test-whether-an-element-exists
+    - how-do-i-determine-the-state-of-a-toggled-element
+    - how-do-i-select-an-element-by-an-id-that-has-characters-used-in-css-notation
+    - how-do-i-disable-enable-a-form-element
+    - how-do-i-check-uncheck-a-checkbox-input-or-radio-button
+    - how-do-i-get-the-text-value-of-a-selected-option
+    - how-do-i-replace-text-from-the-3rd-element-of-a-list-of-10-items
+    - how-do-i-pull-a-native-dom-element-from-a-jquery-object
 - events:
   - introduction-to-events
   - handling-events
@@ -75,21 +92,8 @@
   - beware-anonymous-functions
   - dont-repeat-yourself
   - feature-browser-detection
-- misc:
-  - understanding-index
+  - deferreds:
+    - about-deferreds
+    - something-else
 - jquery-mobile:
   - getting-started
-- faq:
-  - add-keyboard-navigation
-  - enable-the-back-button
-  - how-do-i-select-an-item-using-class-or-id
-  - how-do-i-select-elements-when-i-already-have-a-dom-element
-  - how-do-i-test-whether-an-element-has-a-particular-class
-  - how-do-i-test-whether-an-element-exists
-  - how-do-i-determine-the-state-of-a-toggled-element
-  - how-do-i-select-an-element-by-an-id-that-has-characters-used-in-css-notation
-  - how-do-i-disable-enable-a-form-element
-  - how-do-i-check-uncheck-a-checkbox-input-or-radio-button
-  - how-do-i-get-the-text-value-of-a-selected-option
-  - how-do-i-replace-text-from-the-3rd-element-of-a-list-of-10-items
-  - how-do-i-pull-a-native-dom-element-from-a-jquery-object
