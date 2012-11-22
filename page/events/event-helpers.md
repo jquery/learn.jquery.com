@@ -37,19 +37,9 @@ providing a long list of functions can be difficult to debug.
 
 ```
 // The toggle helper function
-$("p.expander").toggle(
-
-    function() {
-
-        $( this ).prev().addClass("open");
-
-    },
-
-    function() {
-
-        $( this ).prev().removeClass("open");
-
-    }
-
-);
+$("p.expander").toggle( function() {
+  $( this ).prev().addClass("open");
+}, function() {
+  $( this ).prev().removeClass("open");
+});
 ```

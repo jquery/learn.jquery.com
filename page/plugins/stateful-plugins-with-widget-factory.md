@@ -189,7 +189,7 @@ We can specify a `_setOption` method in our plugin to react to option changes.
 
 Responding when an option is set
 ```
-$.widget("nmk.progressbar", {
+$.widget( "nmk.progressbar", {
 
   options: {
 
@@ -299,7 +299,7 @@ var bar = $("<div></div>").appendTo("body").progressbar({
 
     complete: function( event, data ) {
 
-        alert( "Callbacks are great!" );
+        alert("Callbacks are great!");
 
     }
 
@@ -311,7 +311,7 @@ var bar = $("<div></div>").appendTo("body").progressbar({
 
 });
 
-bar.progressbar("option", "value", 100);
+bar.progressbar( "option", "value", 100 );
 ```
 
 ### The Widget Factory: Under the Hood

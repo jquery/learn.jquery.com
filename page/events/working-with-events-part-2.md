@@ -88,7 +88,7 @@ function addItem() {
 
   $("#list5 li.special button").click(function() {
 
-    var $newLi = $("<li class="special">special and new <button>I am new</button></li>");
+    var $newLi = $("<li class='special'>special and new <button>I am new</button></li>");
 
     $( this ).parent().after( $newLi );
 
@@ -120,7 +120,7 @@ function addItem() {
 
   $("#list5 li.special button").click(function() {
 
-    var $newLi = $("&lt;li class="special"&gt;special and new &lt;button&gt;I am new&lt;/button&gt;&lt;/li&gt;");
+    var $newLi = $("<li class='special'>special and new <button>I am new</button></li>");
 
     $( this ).parent().after( $newLi );
 
@@ -182,7 +182,7 @@ function addItemUnbind() {
 
   $("#list6 li.special button").unbind("click").bind( "click", function() {
 
-    var $newLi = $("<li class="special">special and new <button>I am new</button></li>");
+    var $newLi = $("<li class='special'>special and new <button>I am new</button></li>");
 
     $( this ).parent().after( $newLi );
 
@@ -217,9 +217,9 @@ about what we're unbinding.
 ###Event Namespacing
 
 One way to avoid the over-reaching event unbinding is to apply a "namespace" to
-the click event for both binding and unbinding. So, instead of `.bind('click')`
-and `.unbind('click)`, we'll have, for example, `.bind('click.addit')` and
-`.unbind('click.addit)`. Here is one last code sample, which looks identical to
+the click event for both binding and unbinding. So, instead of `.bind("click")`
+and `.unbind("click")`, we'll have, for example, `.bind("click.addit")` and
+`.unbind("click.addit")`. Here is one last code sample, which looks identical to
 the previous, except that it now has the namespaced event (and the list id is
 `list7`):
 
@@ -228,7 +228,7 @@ function addItemNS() {
 
   $("#list7 li.special button").unbind("click.addit").bind( "click.addit", function() {
 
-    var $newLi = $("&lt;li class="special"&gt;special and new &lt;button&gt;I am new&lt;/button&gt;&lt;/li&gt;");
+    var $newLi = $("<li class='special'>special and new <button>I am new</button></li>");
 
     $( this ).parent().after( $newLi );
 
@@ -267,7 +267,7 @@ much recursion," but it'll do just fine like so:
 ```
 function addItemFinal() {
 
-  var $newLi = $("&lt;li class="special"&gt;special and new &lt;button&gt;I am new&lt;/button&gt;&lt;/li&gt;");
+  var $newLi = $("<li class='special'>special and new <button>I am new</button></li>");
 
   $( this ).parent().after($newLi);
 
@@ -312,7 +312,7 @@ The code is based on the "Event Namespacing" example above:
 ```
 function addRemoveItemNS() {
 
-  var $newLi = $("<li class="special">special and new <button class="addone">I am new</button> <button class="removeme">remove me</button></li>");
+  var $newLi = $("<li class='special'>special and new <button class='addone'>I am new</button> <button class='removeme'>remove me</button></li>");
 
   $("#list9 li.special")
     .find("button.addone")
@@ -324,7 +324,7 @@ function addRemoveItemNS() {
     .end()
     .find("button.removeme")
     .unbind("click.removeit")
-    .bind("click.removeit", function() {
+    .bind( "click.removeit", function() {
       $( this ).parent().remove();
     }
   );

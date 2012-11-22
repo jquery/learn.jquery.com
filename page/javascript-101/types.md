@@ -134,12 +134,17 @@ There is an important distinction to be made between the two. Both an array cons
 ```
 // The array literal returns a bar.length value of 1:
 var foo = [ 100 ];
-alert( foo[0] ); // => 100
+
+// => 100
+alert( foo[0] );
+// => 1
 alert( foo.length );
 
 // The array constructor returns a bar.length value of 100:
 var bar = new Array( 100 );
-alert( bar[0] ); // => undefined
+// => undefined
+alert( bar[0] );
+// => 100
 alert( bar.length );
 ```
 
@@ -154,29 +159,29 @@ var foo = [];
 foo.push("a");
 foo.push("b");
 
-alert( foo[0] ); // => a
-alert( foo[1] ); // => b
+alert( foo[ 0 ] ); // => a
+alert( foo[ 1 ] ); // => b
 
 alert( foo.length ); // => 2
 
 foo.pop();
 
-alert( foo[0] ); // => a
-alert( foo[1] ); // => undefined
+alert( foo[ 0 ] ); // => a
+alert( foo[ 1 ] ); // => undefined
 
 alert( foo.length ); // => 1
 
-foo.unshift('z');
+foo.unshift("z");
 
-alert( foo[0] ); => z
-alert( foo[1] ); => a
+alert( foo[ 0 ] ); => z
+alert( foo[ 1 ] ); => a
 
 alert( foo.length ); => 2
 
 foo.shift();
 
-alert( foo[0] ); // => a
-alert( foo[1] ); // => undefined
+alert( foo[ 0 ] ); // => a
+alert( foo[ 1 ] ); // => undefined
 
 alert( foo.length ); // => 1
 ```
@@ -192,16 +197,26 @@ jQuery offers a few basic utility methods for determining the type of a specific
 var myValue = [ 1, 2, 3 ];
 
 // Using JavaScript's typeof operator to test for primitive types:
-typeof myValue == "string"; // false
-typeof myValue == "number"; // false
-typeof myValue == "undefined"; // false
-typeof myValue == "boolean"; // false
+
+// false
+typeof myValue === "string";
+// false
+typeof myValue === "number";
+// false
+typeof myValue === "undefined";
+// false
+typeof myValue === "boolean"; 
 
 // Using strict equality operator to check for null
-myValue === null; // false
+// false
+myValue === null;
 
 // Using jQuery's methods to check for non-primitive types
-jQuery.isFunction(myValue); // false
-jQuery.isPlainObject(myValue); // false
-jQuery.isArray(myValue); // true
+
+// false
+jQuery.isFunction( myValue );
+// false
+jQuery.isPlainObject( myValue );
+// true
+jQuery.isArray( myValue );
 ```

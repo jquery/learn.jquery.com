@@ -15,8 +15,10 @@ The `serialize` method serializes a form's data into a query string. For the ele
 
 ```
 // Turning form data into a query string
-$("#myForm").serialize(); // creates a query string like this: field_1=something&field2=somethingElse
+$("#myForm").serialize();
 
+// creates a query string like this:
+// field_1=something&field2=somethingElse
 ```
 
 While plain old serialization is great, sometimes your application would work better if you sent over an array of objects, instead of just the query string. For that, jQuery has the `serializeArray` method. It's very similar to the `serialize` method listed above, except it produces an array of objects, instead of a string.
@@ -51,12 +53,15 @@ With that being said, let's jump on in to some examples! First, we'll see how ea
 
 ```
 // Using validation to check for the presence of an input
-$("#form").submit(function( e ) {
+$("#form").submit(function( event ) {
 
-  if ( $(".required").val().length === 0 ) { // if .required's value's length is zero
+  // if .required's value's length is zero
+  if ( $(".required").val().length === 0 ) {
 
     // usually show some kind of error message here
-    return false; // this prevents the form from submitting
+
+    // this prevents the form from submitting
+    return false; 
 
   } else {
 
@@ -71,15 +76,19 @@ Let's see how easy it is to check for invalid characters in a username:
 
 ```
 // Validate a phone number field
-$("#form").submit(function( e ) {
+$("#form").submit(function( event ) {
 
   var inputtedPhoneNumber = $("#phone").val();
-  var phoneNumberRegex = ^\d*$/; // match only numbers
+  // match only numbers
+  var phoneNumberRegex = ^\d*$/;
 
-  if ( !phoneNumberRegex.test( inputtedPhoneNumber ) ) { // if the phone number doesn't match the regex
+  // if the phone number doesn't match the regex
+  if ( !phoneNumberRegex.test( inputtedPhoneNumber ) ) {
 
-    // usually show some kind of error message ere
-    return false; // prevent the form from submitting
+    // usually show some kind of error message here
+
+    // prevent the form from submitting
+    return false;
 
   } else {
 
@@ -101,7 +110,7 @@ $.ajaxPrefilter(function( options, originalOptions, jqXHR ) {
 
   if ( options.crossDomain ) {
 
-    options.url = "http://mydomain.net/proxy/" + encodeURIComponent(options.url );
+    options.url = "http://mydomain.net/proxy/" + encodeURIComponent( options.url );
 
     options.crossDomain = false;
 
@@ -116,7 +125,8 @@ You can pass in an optional argument before the callback function that specifies
 // Using the optional dataTypes argument">
 $.ajaxPrefilter( "json script", function( options, originalOptions, jqXHR ) {
 
-  // do all of the prefiltering here, but only for requests that indicate a dataType of "JSON" or "script"
+  // do all of the prefiltering here, but only for
+  // requests that indicate a dataType of "JSON" or "script"
 
 });
 ```

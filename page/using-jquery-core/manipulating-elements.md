@@ -146,21 +146,21 @@ $("#myDiv a:first").attr( "href", "newDestination.html" );
 ```
 // Manipulating multiple attributes
 $("#myDiv a:first").attr({
-  href : "newDestination.html",
-  rel : "super-special"
+  href: "newDestination.html",
+  rel: "super-special"
 });
 ```
 
 ```
 // Using a function to determine an attribute's new value
 $("#myDiv a:first").attr({
-    rel : "super-special",
-    href : function( idx, href ) {
+    rel: "super-special",
+    href: function( idx, href ) {
       return "/new/" + href;
     }
 });
 
-$("#myDiv a:first").attr("href", function( idx, href ) {
+$("#myDiv a:first").attr( "href", function( idx, href ) {
 
     return "/new/" + href;
 

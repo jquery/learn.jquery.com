@@ -36,9 +36,7 @@ $.ajax({
   // the data to send
   // (will be converted to a query string)
   data : {
-
     id : 123
-
   },
 
   // whether this is a POST or GET request
@@ -50,27 +48,20 @@ $.ajax({
   // code to run if the request succeeds;
   // the response is passed to the function
   success : function( json ) {
-
-      $("<h1/>").text( json.title ).appendTo("body");
-
-      $("<div class=\"content\"/>").html( json.html ).appendTo("body");
-
+    $("<h1/>").text( json.title ).appendTo("body");
+    $("<div class=\"content\"/>").html( json.html ).appendTo("body");
   },
 
   // code to run if the request fails;
   // the raw request and status codes are
   // passed to the function
   error : function( xhr, status ) {
-
-      alert("Sorry, there was a problem!");
-
+    alert("Sorry, there was a problem!");
   },
 
   // code to run regardless of success or failure
   complete : function( xhr, status ) {
-
     alert("The request is complete!");
-
   }
 
 });
@@ -234,13 +225,9 @@ type in their name.  </div>
 // Using jQuery's Ajax convenience methods
 // get plain text or html
 $.get( "/users.php", {
-
-    userId : 1234
-
-  }, function( resp ) {
-
-  console.log( resp );
-
+  userId : 1234
+}, function( resp ) {
+  console.log( resp ); // server response
 });
 
 // add a script to the page, then run a function defined in it
@@ -253,10 +240,9 @@ $.getScript( "/static/js/myScript.js", function() {
 // get JSON-formatted data from the server
 $.getJSON( "/details.php", function( resp ) {
 
-  $.each( resp, function( k, v ) {
-
-    console.log( k + " : " + v );
-
+  // log each key in the response data
+  $.each( resp, function( key, value ) {
+    console.log( key + " : " + value );
   });
 
 });
@@ -278,8 +264,6 @@ $("#newContent").load("/foo.html");
 ```
 // Using $.fn.load to populate an element based on a selector
 $("#newContent").load( "/foo.html #myDiv h1:first:", function( html ) {
-
   alert("Content updated!"");
-
 });
 ```

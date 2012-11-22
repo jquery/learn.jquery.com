@@ -63,11 +63,11 @@ call the function itself whenever you want, without the need for
 
 ```
 //Triggering an event handler the right way
-var foo = function( e ) {
+var foo = function( event ) {
 
-  if ( e ) {
+  if ( event ) {
 
-    console.log( e );
+    console.log( event );
 
   } else {
 

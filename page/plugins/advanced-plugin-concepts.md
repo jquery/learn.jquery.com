@@ -150,25 +150,18 @@ detailed in the jQuery Authoring Guidelines).
 
   // plugin definition
   $.fn.hilight = function( options ) {
-
     debug( this );
-
     // ...
-
   };
 
   // private function for debugging
   function debug( $obj ) {
-
     if ( window.console && window.console.log ) {
-
       window.console.log( "hilight selection count: " + $obj.size() );
-
     }
-
   };
 
- //  ...
+  // ...
 
 // end of closure
 })( jQuery );
@@ -188,11 +181,10 @@ when creating demos and examples). And supporting it is very simple!
 // plugin definition
 $.fn.hilight = function( options ) {
 
-  // ...  build main options before element iteration
+  // build main options before element iteration
   var opts = $.extend( {}, $.fn.hilight.defaults, options );
 
   return this.each(function() {
-
     var $this = $( this );
 
     // build element specific options
@@ -201,8 +193,8 @@ $.fn.hilight = function( options ) {
     var o = $.meta ? $.extend( {}, opts, $this.data() ) : opts;
 
     //...
-
   });
+};
 ```
 
 <div class="note" markdown="1">
@@ -261,13 +253,8 @@ jQuery.fn.superGallery = function( options ) {
   var settings = $.extend( {}, defaults, options );
 
   return this.each(function() {
-
-    // ----------------------------
     // Plugin code would go here...
-    // ----------------------------
-
   });
-
 };
 ```
 
@@ -351,15 +338,10 @@ Notice that we've created a reference to the injected wrapper and we're also cal
 
 ```
 var defaults = {
-
   wrapperAttrs : {
-
     id: "gallery-wrapper"
-
   },
-
   // ... rest of settings ...
-
 };
 
 // We can use the extend method to merge options/settings as usual:
@@ -375,11 +357,8 @@ The same model can be used to let the user define CSS styles:
 
 ```
 var defaults = {
-
   wrapperCSS : {},
-
   // ... rest of settings ...
-
 };
 
 // Later on in the plugin where we define the wrapper:
@@ -399,10 +378,10 @@ If your plugin is driven by events then it might be a good idea to provide a cal
 
 ```
 var defaults = {
-
-  onImageShow : function() {}, // we define an empty anonymous function
-                              // so that we don"t need to check its
-                              // existence before calling it.
+  // we define an empty anonymous function
+  // so that we don't need to check its
+  // existence before calling it.
+  onImageShow : function() {},
 
   // ... rest of settings ...
 
@@ -414,11 +393,10 @@ $nextButton.bind( "click", showNextImage );
 
 function showNextImage() {
 
-    // DO stuff to show the image here...
-    // ...
-    // Here"s the callback:
-    settings.onImageShow.call( this );
+    // stuff to show the image here...
 
+    // Here's the callback:
+    settings.onImageShow.call( this );
 }
 ```
 
@@ -426,16 +404,11 @@ Instead of initiating the callback via traditional means (adding parenthesis) we
 
 ```
 $("ul.imgs li").superGallery({
-
   onImageShow : function() {
-
     $( this ).after( "<span>" + $( this ).attr("longdesc") + "</span>" );
-
   },
 
   // ... other options ...
-  // ...
-
 });
 ```
 

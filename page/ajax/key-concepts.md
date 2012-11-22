@@ -86,7 +86,7 @@ $.get( "foo.php", function( r ) {
 
 });
 
-console.log( response ); // undefined!
+console.log( response ); // undefined
 ```
 
 Instead, we need to pass a callback function to our request; this callback will
@@ -95,9 +95,7 @@ returned, if any.
 
 ```
 $.get( "foo.php", function( response ) {
-
-  console.log( response );
-
+  console.log( response ); // server response
 });
 ```
 

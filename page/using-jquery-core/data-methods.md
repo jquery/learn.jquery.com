@@ -10,7 +10,9 @@ There's often data about an element you want to store with the element. In plain
 ```
 // Storing and retrieving data related to an element
 $("#myDiv").data( "keyName", { foo: "bar" } );
-$("#myDiv").data("keyName"); // { foo: "bar" }
+
+// { foo: "bar" }
+$("#myDiv").data("keyName");
 ```
 
 Any kind of data can be stored on an element. For the purposes of this article, `$.fn.data` will be used to store references to other elements.

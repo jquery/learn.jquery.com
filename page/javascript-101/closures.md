@@ -31,7 +31,7 @@ Closures can be used to prevent this by creating a unique scope for each iterati
 ```
 // Using a closure to create a new private scope
 // fix: “close” the value of i inside createFunction, so it won't change
-var createFunction = function(i) {
+var createFunction = function( i ) {
 
   return function() {
 
@@ -63,14 +63,14 @@ var outerObj = {
       myName : "inner",
       innerFunction : function() {
 
-        console.log( self.myName, this.myName ); // logs "outer inner"
+        console.log( self.myName, this.myName ); // "outer inner"
 
       }
     };
 
     innerObj.innerFunction();
 
-    console.log( this.myName ); // logs "outer"
+    console.log( this.myName ); // "outer"
   }
 };
 
@@ -99,7 +99,7 @@ if (!Function.prototype.bind) {
     }
 
     var fSlice = Array.prototype.slice,
-        aArgs = fSlice.call(arguments, 1),
+        aArgs = fSlice.call( arguments, 1 ),
         fToBind = this,
         fNOP = function() {},
         fBound = function() {
@@ -107,7 +107,7 @@ if (!Function.prototype.bind) {
           return fToBind.apply( this instanceof fNOP
                                  ? this
                                  : oThis || window,
-                               aArgs.concat( fSlice.call(arguments) ) );
+                               aArgs.concat( fSlice.call( arguments ) ) );
 
         };
 
@@ -138,19 +138,25 @@ var module = {
 
 };
 
-//module.getUser() is called where "module" is "this" 
+// module.getUser() is called where "module" is "this" 
 // and "module.user" is returned.
-module.getUser(); //janedoe
 
-//let's now store a reference in the global version of "this"
+// janedoe
+module.getUser();
+
+// let's now store a reference in the global version of "this"
 var getUser = module.getUser;
 
-//getUser() called, "this" is global, "user" is returned
-getUser();  //johnsmith
+// getUser() called, "this" is global, "user" is returned
 
-//store a ref with "module" bound as "this"
+// johnsmith
+getUser();
+
+// store a ref with "module" bound as "this"
 var boundGetUser = getUser.bind( module );
 
-//boundGetUser() called, "module" is "this" again, "module.user" returned.
-boundGetUser(); //janedoe
+// boundGetUser() called, "module" is "this" again, "module.user" returned.
+
+// janedoe
+boundGetUser();
 ```

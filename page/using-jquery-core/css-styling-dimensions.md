@@ -14,10 +14,11 @@ $("h1").css("font-size"); // also works
 // Setting CSS properties
 $("h1").css( "fontSize", "100px" ); // setting an individual property
 
+// setting multiple properties
 $("h1").css({
-  "fontSize": "100px",
-  "color": "red"
-}); // setting multiple properties
+  fontSize: "100px",
+  color: "red"
+});
 ```
 
 Note the style of the argument on the second line &#8212; it is an object that contains multiple properties. This is a common way to pass multiple arguments to a function, and many jQuery setter methods accept objects to set mulitple values at once.
@@ -51,13 +52,23 @@ The code below shows a brief overview of the dimensions functionality in jQuery.
 
 ```
 // Basic dimensions methods
-$("h1").width("50px");   // sets the width of all H1 elements
-$("h1").width();         // gets the width of the first H1
 
-$("h1").height("50px");  // sets the height of all H1 elements
-$("h1").height();        // gets the height of the first H1
+// sets the width of all H1 elements
+$("h1").width("50px");
+// gets the width of the first H1
+$("h1").width();
 
-$("h1").position();      // returns an object containing position
-                         // information for the first H1 relative to
-                         // its "offset (positioned) parent"
+
+// sets the height of all H1 elements
+$("h1").height("50px");
+
+// gets the height of the first H1
+$("h1").height();
+
+
+// returns an object containing position
+// information for the first H1 relative to
+// its "offset (positioned) parent"
+$("h1").position();
+
 ```

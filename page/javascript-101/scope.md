@@ -15,31 +15,24 @@ Furthermore, variables that are declared inside a function without the `var` key
 ```
 // Functions have access to variables defined in the same scope
 var foo = "hello";
-
 var sayHello = function() {
-
   console.log( foo );
-
 };
 
-sayHello();         // logs "hello"
-
-console.log( foo );   // also logs "hello"
+sayHello(); // "hello"
+console.log( foo ); // "hello"
 ```
 
 ```
 // Code outside the scope in which a variable was defined does not have access to the variable
 var sayHello = function() {
-
   var foo = "hello";
-
   console.log( foo );
-
 };
 
-sayHello();         // logs "hello"
+sayHello(); // hello
 
-console.log( foo );   // doesn"t log anything
+console.log( foo ); // undefined
 ```
 
 ```
@@ -47,70 +40,55 @@ console.log( foo );   // doesn"t log anything
 var foo = "world";
 
 var sayHello = function() {
-
   var foo = "hello";
-
   console.log( foo );
-
 };
 
 sayHello();         // logs "hello"
-
-console.log( foo );   // logs "world"
+console.log( foo ); // logs "world"
 ```
 
 ```
 // Functions can see changes in variable values after the function is defined
 var myFunction = function() {
-
     var foo = "hello";
-
     var myFn = function() {
-
         console.log( foo );
-
     };
-
     foo = "world";
-
     return myFn;
-
 };
 
 var f = myFunction();
-
-f();  // logs "world" -- uh oh
+f(); // "world"
 ```
 
 ```
 // Scope insanity
 // a self-executing anonymous function
 (function() {
-
   var baz = 1;
-
   var bim = function() {
-
     alert( baz );
-
   };
 
   bar = function() {
-
     alert( baz );
-
   };
 
 })();
 
-console.log( baz );  // baz is not defined outside of the function
+// baz is not defined outside of the function
+console.log( baz );
 
-bar();  // bar is defined outside of the anonymous function
-        // because it wasn't declared with var; furthermore,
-        // because it was defined in the same scope as baz,
-        // it has access to baz even though other code
-        // outside of the function does not
+// bar is defined outside of the anonymous function
+// because it wasn't declared with var; furthermore,
+// because it was defined in the same scope as baz,
+// it has access to baz even though other code
+// outside of the function does not
+bar();
 
-bim();  // bim is not defined outside of the anonymous function,
-        // so this will result in an error
+// bim is not defined outside of the anonymous function,
+// so this will result in an error
+bim();
 ```

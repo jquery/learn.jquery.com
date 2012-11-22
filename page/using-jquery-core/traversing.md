@@ -21,20 +21,31 @@ The methods for finding the parents from a selection include `$.fn.parent()`, `$
 ```
 
 ```
-//Selecting an element's direct parent
-$("span.subchild").parent(); // returns [ div.child ]
+// Selecting an element's direct parent
 
-//Selecting all the parents of an element that match a given selector
-$("span.subchild").parents("div.parent"); // returns [ div.parent ]
-$("span.subchild").parents();             // returns [ div.child, div.parent, div.grandparent ]
+// returns [ div.child ]
+$("span.subchild").parent();
 
-//Selecting all the parents of an element up to, but *not including* the selector
-$("span.subchild").parentsUntil("div.grandparent"); // returns [ div.child, div.parent ]
+// Selecting all the parents of an element that match a given selector
 
-//Selecting the closest parent, note that only one parent will be selected
-//and that the initial element itself is included in the search
-$("span.subchild").closest("div");  // returns [ div.child ]
-$("div.child").closest("div");      // returns [ div.child ] as the selector is also included in the search
+// returns [ div.parent ]
+$("span.subchild").parents("div.parent");
+
+// returns [ div.child, div.parent, div.grandparent ]
+$("span.subchild").parents();
+
+// Selecting all the parents of an element up to, but *not including* the selector
+
+// returns [ div.child, div.parent ]
+$("span.subchild").parentsUntil("div.grandparent");
+
+// Selecting the closest parent, note that only one parent will be selected
+// and that the initial element itself is included in the search
+
+// returns [ div.child ]
+$("span.subchild").closest("div");
+// returns [ div.child ] as the selector is also included in the search
+$("div.child").closest("div");
 ```
 
 ## Children
@@ -42,11 +53,15 @@ $("div.child").closest("div");      // returns [ div.child ] as the selector is 
 The methods for finding child elements from a selection include `$.fn.children()` and `$.fn.find()`. The difference between these methods lies in how far into the child structure the selection is made. `$.fn.children()` only operates on direct child nodes, while `$.fn.find()` can traverse recursively into children, children of those children, and so on.
 
 ```
-//Selecting an element's direct children
-$("div.grandparent").children("div"); // returns [ div.parent, div.surrogateParent1, div.surrogateParent2 ]
+// Selecting an element's direct children
 
-//Finding all elements within a selection that match the selector
-$("div.grandparent").find("div"); // returns [ div.child, div.parent, div.surrogateParent1, div.surrogateParent2 ]
+// returns [ div.parent, div.surrogateParent1, div.surrogateParent2 ]
+$("div.grandparent").children("div");
+
+// Finding all elements within a selection that match the selector
+
+// returns [ div.child, div.parent, div.surrogateParent1, div.surrogateParent2 ]
+$("div.grandparent").find("div");
 ```
 
 ## Siblings
@@ -55,28 +70,43 @@ The rest of the traversal methods within jQuery all deal with finding sibling se
 
 ```
 // Selecing a next sibling of the selectors
-$("div.parent").next(); // returns [ div.surrogateParent1 ]
+
+// returns [ div.surrogateParent1 ]
+$("div.parent").next();
 
 // Selecing a prev sibling of the selectors
-$("div.parent").prev(); // returns [] as No sibling exists before div.parent
+
+// returns [] as No sibling exists before div.parent
+$("div.parent").prev();
 
 //Selecting all the next siblings of the selector
-$("div.parent").nextAll();          // returns [ div.surrogateParent1, div.surrogateParent2 ]
-$("div.parent").nextAll().first();  // returns [ div.surrogateParent1 ]
-$("div.parent").nextAll().last();   // returns [ div.surrogateParent2 ]
+
+// returns [ div.surrogateParent1, div.surrogateParent2 ]
+$("div.parent").nextAll();
+// returns [ div.surrogateParent1 ]
+$("div.parent").nextAll().first();
+// returns [ div.surrogateParent2 ]
+$("div.parent").nextAll().last();
 
 //Selecting all the previous siblings of the selector
-$("div.pasurrogateParent2rent").prevAll();    // returns [ div.surrogateParent1, div.parent ]
-$("div.surrogateParent2").prevAll().first();  // returns [ div.surrogateParent1 ]
-$("div.surrogateParent2").prevAll().last();   // returns [ div.parent ]
+
+// returns [ div.surrogateParent1, div.parent ]
+$("div.pasurrogateParent2rent").prevAll();
+// returns [ div.surrogateParent1 ]
+$("div.surrogateParent2").prevAll().first();
+// returns [ div.parent ]
+$("div.surrogateParent2").prevAll().last();
 ```
 
 Use `$.fn.siblings()` to select all siblings:
 
 ```
 // Selecting an element's siblings in both directions that matches the given selector
-$("div.parent").siblings();           // returns [ div.surrogateParent1, div.surrogateParent2 ]
-$("div.surrogateParent1").siblings(); // returns [ div.parent, div.surrogateParent2 ]
+
+// returns [ div.surrogateParent1, div.surrogateParent2 ]
+$("div.parent").siblings();
+// returns [ div.parent, div.surrogateParent2 ]
+$("div.surrogateParent1").siblings();
 ```
 
 See the complete documentation for these methods and more at [Traversal documentation on api.jquery.com](http://api.jquery.com/category/traversing/tree-traversal/).

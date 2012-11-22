@@ -75,9 +75,10 @@ var i = 0;
 while ( i < 100 ) {
 
   // This block will be executed 100 times
-  console.log( 'Currently at ' + i );
+  console.log( "Currently at " + i );
 
-  i++; // increment i
+  // increment i
+  i++;
 
 }
 ```
@@ -91,7 +92,7 @@ var i = -1;
 while ( ++i < 100 ) {
 
   // This block will be executed 100 times
-  console.log( 'Currently at ' + i );
+  console.log( "Currently at " + i );
 
 }
 ```
@@ -149,7 +150,7 @@ for ( var i = 0; i < 10; i++ ) {
 
   if ( something ) {
 
-      continue;
+    continue;
 
   }
 
