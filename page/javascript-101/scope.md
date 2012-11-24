@@ -12,22 +12,24 @@ When a variable is declared inside of a function using the `var` keyword, it is 
 
 There are two types of scopes in JavaScript: Global and local. Lets talk about each of them in turn.
 
-The first scope is __Global Scope__. This is very easy to define. If a variable or function is _global_, it can be got at from anywhere. In a browser, the global scope is the `window` object. So if in your code you simply have:
+The first scope is __Global Scope__. This is very easy to define. If a variable or function is _global_, it can be accessed from anywhere within a program. In a browser, the global scope is the `window` object. A variable that is defined from anywhere but within a function is global.
 
 ```
 var x = 9;
 ```
+
+Once that variable is set, it exists on the global object. Once that variable had been defined, it could be referenced as `window.x`, but because it exists on the global object we can simply refer to it as `x`.
 
 The only other scope we can have is __Local Scope__. JavaScript scopes at a function level. For example:
 
 ```
 function myFunc() {
   var x = 5;
-});
-console.log(x); //undefined
+};
+console.log(x); // ReferenceError: x is not defined
 ```
 
-Since `x` was initialised within `myFunc()`, it is only accessible within `myFunc()`.
+Since `x` was initialised within `myFunc`, it is only accessible within `myFunc`, and we get a reference error if we try to access it outside of `myFunc`.
 
 __A word of Caution__
 
@@ -37,16 +39,18 @@ If you declare a variable & forget to use the `var` keyword, that variable is au
 function myFunc() {
   x = 5;
 });
-console.log(x); //5
+console.log(x); // 5
 ```
 
-This is a __very bad idea__. It's considered bad practise to clutter the global scope. You should add as fewer properties as you possibly can to the global object. That's why you'll see libaries such as jQuery often do this:
+This is a bad idea. Any variable that is global can have its value changed by any other parts of a program or any other script. This is undesirable, as it could lead to unforseen side effects.
+
+Secondly, it's considered bad practise to clutter the global scope. You should add as fewer properties as you possibly can to the global object, and try to keep your program contained within its own scope. That's why you'll see libaries such as jQuery often do this:
 
 ```
 (function() {
   var jQuery = { /* all my methods go here */ };
   window.jQuery = jQuery.
-});
+})();
 ```
 
 Wrapping everything in a function which is then immediately invoked means all the variables within that function are bound to the _local scope_. At the very end you can then expose all your methods by binding the `jQuery` object to the `window`, the _global object_.
@@ -57,8 +61,10 @@ Because local scope works through functions, any functions defined within anothe
 function outer() {
   var x = 5;
   function inner() {
-    console.log(x); //5
+    console.log(x);
   }
+
+  inner(); // logs 5
 }
 ```
 
@@ -67,11 +73,15 @@ But the `outer()` function doesn't have access to any variables declared within 
 ```
 function outer() {
   var x = 5;
+
   function inner() {
-    console.log(x); //5
+    console.log(x);
     var y = 10;
   }
-  console.log(y); //undefined
+
+  inner(); // logs 5
+
+  console.log(y); // ReferenceError: y is not defined
 }
 ```
 
