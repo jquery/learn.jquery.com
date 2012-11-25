@@ -3,24 +3,12 @@ title:        How do I disable/enable a form element?
 source:       http://docs.jquery.com/Frequently_Asked_Questions
 ---
 
-There are two ways to disable/enable form elements.
-
-Set the 'disabled' attribute to true or false:
+You can enable or disable a form element using the `.prop()` method:
 
 ```
 // Disable #x
-$("#x").attr( "disabled", true );
+$("#x").prop( "disabled", true );
 
 // Enable #x
-$("#x").attr( "disabled", false );
-```
-
-Add or remove the 'disabled' attribute:
-
-```
-// Disable #x
-$("#x").attr( "disabled", "disabled" );
-
-// Enable #x
-$("#x").removeAttr("disabled");
+$("#x").prop( "disabled", false );
 ```
