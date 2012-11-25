@@ -9,14 +9,11 @@ adding a job on to the fx queue.By default, using queue and passing a function,
 will add to the fx queue. So we’re creating our own bespoke animation step:
 
 ```
-$(".box").animate(
-  {
-    height : 20
-  },
-  "slow"
-).queue(function() {
+$(".box").animate({
+  height : 20
+}, "slow" ).queue(function() {
 
-  $("#title").html("We"re in the animation, baby!");
+  $("#title").html("We're in the animation, baby!");
 
 });
 ```
@@ -28,19 +25,15 @@ animations wouldn’t run:
 
 ```
 $(".box").animate({
+  height : 20
+}, "slow" ).queue(function() {
 
-    height : 20
-
-},"slow").queue(function() {
-
-  $("#title").html("We"re in the animation, baby!");
+  $("#title").html("We're in the animation, baby!");
 
   $( this ).dequeue();
 
 }).animate({
-
   height: 150
-
 });
 ```
 
@@ -55,31 +48,20 @@ $.fn.pause = function( n ) {
   return this.queue(function() {
 
     var el = this;
-
     setTimeout( function() {
-
       return $( el ).dequeue();
-
     }, n );
-
   });
 
 };
 
-$
-(".box").animate(
-
-{
-    height : 20
-  },
-  "slow"
-).pause( 1000 ).animate({
+$(".box").animate({
+  height : 20
+}, "slow" ).pause( 1000 ).animate({
   height: 150
 });
-
 ```
 
 
 Remember that the first argument for queue and dequeue are `fx`, and that in
-all of these examples I’m not including it because jQuery set the argument to
-`fx` by default - so I don’t have to specify it.
+all of these examples I’m not including it because jQuery set the argument to `fx` by default - so I don’t have to specify it.

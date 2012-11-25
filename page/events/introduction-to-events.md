@@ -58,7 +58,7 @@ Here we're saving a reference to the button element by calling `getElementById` 
 
 ```
 //Event binding using a convenience method
-$("#helloBtn").click(function(event) {
+$("#helloBtn").click(function( event ) {
 
   alert("Hello.");
 
@@ -73,7 +73,7 @@ There are a number of ways that events can be listened for using jQuery:
 //The many ways to bind events with jQuery
 // Attach an event handler directly to the button using jQuery's
 // shorthand `click` method.
-$("#helloBtn").click(function(event) {
+$("#helloBtn").click(function( event ) {
 
   alert("Hello.");
 
@@ -81,7 +81,7 @@ $("#helloBtn").click(function(event) {
 
 // Attach an event handler directly the to button using jQuery's
 // `bind` method, passing it an event string of `click`
-$("#helloBtn").bind( "click", function(event) {
+$("#helloBtn").bind( "click", function( event ) {
 
   alert("Hello.");
 
@@ -89,7 +89,7 @@ $("#helloBtn").bind( "click", function(event) {
 
 // As of jQuery 1.7, attach an event handler directly to the button
 // using jQuery's `on` method.
-$("#helloBtn").on( "click", function(event) {
+$("#helloBtn").on( "click", function( event ) {
 
   alert("Hello.");
 
@@ -99,15 +99,15 @@ $("#helloBtn").on( "click", function(event) {
 // is listening for clicks, and will respond whenever *any* button is
 // clicked on the page.
 $("body").on({
-  click: function(event) {
+  click: function( event ) {
 
     alert("Hello.");
 
-  }, "button"
-);
+  }
+}, "button" );
 
 // An alternative to the previous example, using slightly different syntax.
-$("body").on( "click", "button", function(event) {
+$("body").on( "click", "button", function( event ) {
 
   alert("Hello.");
 
@@ -150,11 +150,13 @@ If the element has default functionality for a specific event (like a link opens
 
 ```
 //Preventing a default action from occurring and stopping the event bubbling
-$("form").on( "submit", function(event) {
+$("form").on( "submit", function( event ) {
 
-  event.preventDefault(); // Prevent the form"s default submission.
+  // Prevent the form's default submission.
+  event.preventDefault();
 
-  event.stopPropagation(); // Prevent event from bubbling up DOM tree, prohibiting delegation
+  // Prevent event from bubbling up DOM tree, prohibiting delegation
+  event.stopPropagation();
 
   // Make an AJAX request to submit the form data
 
@@ -169,11 +171,13 @@ Finally, to inspect the event itself and see all of the data it contains, you sh
 
 ```
 //Logging an event's information
-$("form").on( "submit", function(event) {
+$("form").on( "submit", function( event ) {
 
-  event.preventDefault(); // Prevent the form's default submission.
+  // Prevent the form's default submission.
+  event.preventDefault();
 
-  console.log( event ); // Log the event object for inspectin'
+  // Log the event object for inspectin'
+  console.log( event );
 
   // Make an AJAX request to submit the form data
 

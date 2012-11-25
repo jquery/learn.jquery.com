@@ -24,12 +24,12 @@ Look at this simple HTML page that includes CSS and JavaScript to see how it all
 <html>
 <head>
   <title>Hello World</title>
-  <!---- CSS for presentation ---->
+  <!-- CSS for presentation -->
   <style type="text/css">
     h1 { font-size: 14px; color: hotpink; }
     button { color: red; }
   </style>
-  <!---- JavaScript for interactivity ---->
+  <!-- JavaScript for interactivity -->
   <script type="text/javascript">
     function buttonClick() {
       alert("Hello!");

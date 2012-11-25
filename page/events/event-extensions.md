@@ -51,7 +51,9 @@ Note that for all events, the browser's native event object is available in `eve
 For example, to set a hook for the "drop" event that copies the "dataTransfer" property, assign an object to jQuery.event.fixHooks.drop:
 
 ```
-jQuery.event.fixHooks.drop = { props: [ "dataTransfer" ] };
+jQuery.event.fixHooks.drop = {
+  props: [ "dataTransfer" ]
+};
 ```
 
 Since fixHooks are an advanced feature and rarely used externally, we have not added extra code and interfaces to deal with conflict resolution. If there is a chance that some other code may be assigning fixHooks to the same events, the code should check for an existing hook and take appropriate measures. A simple solution might look like this:
@@ -63,7 +65,9 @@ if ( jQuery.event.fixHooks.drop ) {
 
 }
 
-jQuery.event.fixHooks.drop = { props: [ "dataTransfer" ] };
+jQuery.event.fixHooks.drop = {
+  props: [ "dataTransfer" ]
+};
 ```
 
 When there are known cases of different plugins wanting to attach to the drop hook, this solution might be more appropriate:
@@ -73,7 +77,9 @@ var existingHook = jQuery.event.fixHooks.drop;
 
 if ( !existingHook ) {
 
-  jQuery.event.fixHooks.drop = { props: [ "dataTransfer" ] };
+  jQuery.event.fixHooks.drop = {
+    props: [ "dataTransfer" ]
+  };
 
 } else {
 
@@ -151,7 +157,9 @@ These two properties are often used in conjunction with a `handle` hook function
 Many of the special event hook functions below are passed a `handleObj` object that provides more information about the event, how it was attached, and its current state. This object and its contents should be treated as read-only data, and only the properties below are documented for use by special event handlers. For the discussion below, assume an event is attached with this code:
 
 ```
-$(".dialog").on( "click.myPlugin", "button", {mydata: 42}, myHandler );
+$(".dialog").on( "click.myPlugin", "button", {
+  mydata: 42
+}, myHandler );
 ```
 
 type: String
@@ -247,9 +255,9 @@ jQuery.event.special.multiclick = {
 };
 
 // Sample usage
-$("p").on( "multiclick", {clicks: 3}, function(e) {
-
+$("p").on( "multiclick", {
+  clicks: 3
+}, function( event ) {
   alert("clicked 3 times");
-
 });
 ```

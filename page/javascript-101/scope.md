@@ -65,7 +65,7 @@ function outer() {
     console.log(x);
   }
 
-  inner(); // logs 5
+  inner(); //  5
 }
 ```
 
@@ -80,7 +80,7 @@ function outer() {
     var y = 10;
   }
 
-  inner(); // logs 5
+  inner(); //  5
 
   console.log(y); // ReferenceError: y is not defined
 }
@@ -93,9 +93,7 @@ Furthermore, variables that are declared inside a function without the `var` key
 var foo = "hello";
 
 var sayHello = function() {
-
   console.log( foo );
-
 };
 
 sayHello();         // "hello"
@@ -108,11 +106,8 @@ Variables with the same name can exist in different scopes with different values
 var foo = "world";
 
 var sayHello = function() {
-
   var foo = "hello";
-
   console.log( foo );
-
 };
 
 sayHello();         // "hello"
@@ -124,43 +119,34 @@ When you reference a global variable within a function, that function can see ch
 
 ```
 var myFunction = function() {
-
     var foo = "hello";
-
     var myFn = function() {
-
         console.log( foo );
-
     };
-
     foo = "world";
-
     return myFn;
-
 };
 
 var f = myFunction();
-
-f();  // logs "world"
+f(); // "world"
 ```
 
 Here's a more complex example of scopes at play:
 
 ```
 (function() {
-
   var baz = 1;
 
   var bim = function() {
-
     console.log( baz );
-
   };
 
   bar = function() {
-
     console.log( baz );
+  };
 
+  bar = function() {
+    console.log( baz );
   };
 
 })();
@@ -174,7 +160,7 @@ console.log( baz );  // baz is not defined outside of the function
 Gives us a `ReferenceError`. `baz` was only defined within the function, and was never exposed to the global scope.
 
 ```
-bar();  // logs 1
+bar();  //  1
 ```
 
 `bar()` may have been defined within the anonymous function, but it was defined without the `var` keyword, which means it wasn't bound to the local scope and was instead created globally. Furthermore, it has access to the `baz` variable because `bar()` was defined within the same scope as `baz`. This means it has access to it, even though other code outside of the function does not.

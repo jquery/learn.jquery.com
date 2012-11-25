@@ -1,6 +1,10 @@
 ---
 title: Plugins
 level: intermediate
+customFields:
+ -
+    key: "icon"
+    value: "bolt"
 ---
 A jQuery plugin is simply a new method that we use to extend jQuery's prototype
 object.  By extending the prototype object you enable all jQuery objects to

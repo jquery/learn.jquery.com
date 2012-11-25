@@ -17,7 +17,7 @@ queue function I’ve seen is `.delay()`:
 ```
 $.fn.delay = function( time, type ) {
 
-  time = jQuery.fx ? jQuery.fx.speeds[time] || time : time;
+  time = jQuery.fx ? jQuery.fx.speeds[ time ] || time : time;
 
   type = type || "fx";
 
@@ -75,7 +75,7 @@ var lastFunc = queue.pop();
 queue.unshift( lastFunc );
 
 // replace queue with the first three items in the queue
-$elem.queue( queue.slice(0,3) );
+$elem.queue( queue.slice( 0, 3 ) );
 ```
 
 ### An animation (fx) queue example:
@@ -117,7 +117,7 @@ $(function() {
   }, resized );
 
   // geocode something
-  $map.queue(function(next) {
+  $map.queue(function( next ) {
 
     // find stackoverflow's whois address:
     geocoder.geocode( {
@@ -173,7 +173,7 @@ $.ajaxQueue = function( ajaxOpts ) {
   var oldComplete = ajaxOpts.complete;
 
   // queue our ajax request
-  ajaxQueue.queue(function(next) {
+  ajaxQueue.queue(function( next ) {
 
     // create a complete callback to fire the next event in the queue
     ajaxOpts.complete = function() {
@@ -198,7 +198,7 @@ $.ajaxQueue = function( ajaxOpts ) {
 };
 
 // get each item we want to copy
-$("#items li").each(function(idx) {
+$("#items li").each(function( idx ) {
 
   // queue up an ajax request
   $.ajaxQueue({
@@ -225,7 +225,7 @@ $("#items li").each(function(idx) {
 ```
 var theQueue = $({}); // jQuery on an empty object - a perfect queue holder
 
-$.each( [1,2,3], function(i, num) {
+$.each( [1,2,3], function( i, num ) {
 
   // lets add some really simple functions to a queue:
   theQueue.queue( "alerts", function(next) {

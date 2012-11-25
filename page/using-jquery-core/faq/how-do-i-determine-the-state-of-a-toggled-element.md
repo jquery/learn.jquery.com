@@ -14,5 +14,7 @@ var isHidden = $("#myDiv").is(":hidden");
 If you're simply acting on an element based on its visibility, just include ":visible" or ":hidden" in the selector expression. For example:
 
 ```
-$("#myDiv:visible").animate( {left: "+=200px"}, "slow" );
+$("#myDiv:visible").animate({
+  left: "+=200px"
+}, "slow" );
 ```

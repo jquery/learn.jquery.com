@@ -59,7 +59,8 @@ There are several ways to go about feature detection:
 Let's take a look at how to check whether or not a `<canvas>` element exists in a specific browser, without using a helper library. We do this by specifically querying whether the method or property exists:
 
 ```
-// We want to show a graph in browsers that support canvas, but a data table in browsers that don't.
+// We want to show a graph in browsers that support canvas,
+// but a data table in browsers that don't.
 var elem = document.createElement("canvas");
 
 if ( elem.getContext && elem.getContext("2d") ) {
@@ -116,8 +117,8 @@ The Modernizr object exposes a `load()` method that many prefer over the syntax 
 ```
 Modernizr.load({
   test: Modernizr.canvas,
-  yep : 'canvas.js',
-  nope: 'canvas-polyfill.js'
+  yep : "canvas.js",
+  nope: "canvas-polyfill.js"
 });
 ```
 

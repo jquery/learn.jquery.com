@@ -28,14 +28,12 @@ var $listItem = $("li");
 
 // this implicitly calls .last()
 console.log( "Index: " + $listItem.index() ); // 3
-
 console.log( "Index: " + $listItem.last().index() ); // 3
 
 var $div = $("div");
 
 // this implicitly calls .last()
-console.log( "Index: " + $div.index() );  // 4
-
+console.log( "Index: " + $div.index() ); // 4
 console.log( "Index: " + $div.last().index() ); // 4
 ```
 In the first example, `.index()` gives the zero-based index of `#foo1` within its parent. Since `#foo1` is the second child of its parent, `index()` returns 1.
@@ -57,7 +55,7 @@ Potential confusion comes from the other examples of `.index()` in the above cod
 var $foo = $("li");
 
 // this implicitly calls .first()
-console.log( "Index: " + $foo.index("li")); // 0
+console.log( "Index: " + $foo.index("li") ); // 0
 console.log( "Index: " + $foo.first().index("li") ); // 0
 
 var $baz = $("#baz1");
@@ -91,15 +89,15 @@ The second point to consider is that jQuery is querying the entire DOM using the
 var $foo = $("li");
 var $baz = $("#baz1");
 
-console.log( "Index: " + $foo.index($baz) ); // 2
+console.log( "Index: " + $foo.index( $baz ) ); // 2
 
 var $tests = $(".test");
 var $bar = $("#bar1");
 
 // implicitly calls .first() on the argument
-console.log( "Index: " + $tests.index($bar) ); // 1
+console.log( "Index: " + $tests.index( $bar ) ); // 1
 
-console.log( "Index: " + $tests.index($bar.first()) ); // 1
+console.log( "Index: " + $tests.index( $bar.first() ) ); // 1
 ```
 
 In this case, the first element of the jQuery object that is passed into `.index()` is being checked against all of the elements in the original jQuery object.  The original jQuery object, on the left side of `.index()`, is array-like and is searched from index 0 through `length - 1` for the first element of the argument jQuery object.

@@ -1,5 +1,5 @@
 ---
-title:        How Do I Select Elements When I Already Have a DOM Element?
+title:        How do I select elements when I already have a DOM element?
 source:       http://docs.jquery.com/Frequently_Asked_Questions
 ---
 
