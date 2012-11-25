@@ -6,21 +6,22 @@ attribution:
   - jQuery Fundamentals
 ---
 
-"Scope" refers to the variables that are available to a piece of code at a given time. A lack of understanding of scope can lead to frustrating debugging experiences. The idea of "scope" is that it's where certain functions or variables are accessible from in our code, and the context in which they exist & are executed in.
-
-When a variable is declared inside of a function using the `var` keyword, it is only available to code inside of that function &#8212; code outside of that function cannot access the variable. On the other hand, functions defined inside that function will have access to to the declared variable.
+"Scope" refers to the variables that are available to a piece of code at a given time. A lack of understanding of scope can lead to frustrating debugging experiences. The idea of "scope" is that it's where certain functions or variables are accessible from in our code, and the context in which they exist and are executed in.
 
 There are two types of scopes in JavaScript: Global and local. Lets talk about each of them in turn.
 
-The first scope is __Global Scope__. This is very easy to define. If a variable or function is _global_, it can be accessed from anywhere within a program. In a browser, the global scope is the `window` object. A variable that is defined from anywhere but within a function is global.
+## Global Scope
+
+The first scope is __Global Scope__. This is very easy to define. If a variable or function is _global_, it can be accessed from anywhere within a program. In a browser, the global scope is the `window` object. If this variable declaration occurs outside of a function, then the variable x exists on the global object.
 
 ```
 var x = 9;
 ```
 
-Once that variable is set, it exists on the global object. Once that variable had been defined, it could be referenced as `window.x`, but because it exists on the global object we can simply refer to it as `x`.
+Once that variable had been defined, it could be referenced as `window.x`, but because it exists on the global object we can simply refer to it as `x`.
 
-The only other scope we can have is __Local Scope__. JavaScript scopes at a function level. For example:
+## Local Scope
+JavaScript also creates a __Local Scope__ inside each function body. For example:
 
 ```
 function myFunc() {
@@ -29,11 +30,11 @@ function myFunc() {
 console.log(x); // ReferenceError: x is not defined
 ```
 
-Since `x` was initialised within `myFunc`, it is only accessible within `myFunc`, and we get a reference error if we try to access it outside of `myFunc`.
+Since `x` was initialised within `myFunc()`, it is only accessible within `myFunc()`, and we get a reference error if we try to access it outside of `myFunc()`.
 
-__A word of Caution__
+##A word of Caution
 
-If you declare a variable & forget to use the `var` keyword, that variable is automically made global. So this code would work:
+If you declare a variable and forget to use the `var` keyword, that variable is automically made global. So this code would work:
 
 ```
 function myFunc() {
@@ -53,7 +54,7 @@ Secondly, it's considered bad practise to clutter the global scope. You should a
 })();
 ```
 
-Wrapping everything in a function which is then immediately invoked means all the variables within that function are bound to the _local scope_. At the very end you can then expose all your methods by binding the `jQuery` object to the `window`, the _global object_.
+Wrapping everything in a function which is then immediately invoked means all the variables within that function are bound to the _local scope_. At the very end you can then expose all your methods by binding the `jQuery` object to the `window`, the _global object_. To read more about Immediatly-Onvoked Functions, check out Ben Alman's [Immediately-Invoked Function Expression](http://benalman.com/news/2010/11/immediately-invoked-function-expression/) article.
 
 Because local scope works through functions, any functions defined within another have access to variables defined in the outer function:
 
@@ -102,23 +103,8 @@ sayHello();         // "hello"
 console.log( foo );   // "hello"
 ```
 
+Variables with the same name can exist in different scopes with different values:
 ```
-// Code outside the scope in which a variable was defined does not have access to the variable
-var sayHello = function() {
-
-  var foo = "hello";
-
-  console.log( foo );
-
-};
-
-sayHello();         // "hello"
-
-console.log( foo );   // undefined
-```
-
-```
-// Variables with the same name can exist in different scopes with different values
 var foo = "world";
 
 var sayHello = function() {
@@ -134,8 +120,9 @@ sayHello();         // "hello"
 console.log( foo );   // "world"
 ```
 
+When you reference a global variable within a function, that function can see changes to the variable value after the function is defined.
+
 ```
-// Functions can see changes in variable values after the function is defined
 var myFunction = function() {
 
     var foo = "hello";
@@ -154,38 +141,47 @@ var myFunction = function() {
 
 var f = myFunction();
 
-f();  // logs "world" -- uh oh
+f();  // logs "world"
 ```
 
+Here's a more complex example of scopes at play:
+
 ```
-// Scope insanity
-// a self-executing anonymous function
 (function() {
 
   var baz = 1;
 
   var bim = function() {
 
-    alert( baz );
+    console.log( baz );
 
   };
 
   bar = function() {
 
-    alert( baz );
+    console.log( baz );
 
   };
 
 })();
-
-console.log( baz );  // baz is not defined outside of the function
-
-bar();  // bar is defined outside of the anonymous function
-        // because it wasn't declared with var; furthermore,
-        // because it was defined in the same scope as baz,
-        // it has access to baz even though other code
-        // outside of the function does not
-
-bim();  // bim is not defined outside of the anonymous function,
-        // so this will result in an error
 ```
+In this instance, running:
+
+```
+console.log( baz );  // baz is not defined outside of the function
+```
+
+Gives us a `ReferenceError`. `baz` was only defined within the function, and was never exposed to the global scope.
+
+```
+bar();  // logs 1
+```
+
+`bar()` may have been defined within the anonymous function, but it was defined without the `var` keyword, which means it wasn't bound to the local scope and was instead created globally. Furthermore, it has access to the `baz` variable because `bar()` was defined within the same scope as `baz`. This means it has access to it, even though other code outside of the function does not.
+
+
+```
+bim();  // ReferenceError: bim is not defined
+```
+
+`bim()` was only defined within the function, so does not exist on the global object as it was defined locally.
