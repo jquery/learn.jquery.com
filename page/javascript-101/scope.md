@@ -27,7 +27,7 @@ JavaScript also creates a __Local Scope__ inside each function body. For example
 function myFunc() {
   var x = 5;
 };
-console.log(x); // ReferenceError: x is not defined
+console.log( x ); // ReferenceError: x is not defined
 ```
 
 Since `x` was initialised within `myFunc()`, it is only accessible within `myFunc()`, and we get a reference error if we try to access it outside of `myFunc()`.
@@ -40,7 +40,7 @@ If you declare a variable and forget to use the `var` keyword, that variable is 
 function myFunc() {
   x = 5;
 });
-console.log(x); // 5
+console.log( x ); // 5
 ```
 
 This is a bad idea. Any variable that is global can have its value changed by any other parts of a program or any other script. This is undesirable, as it could lead to unforseen side effects.
@@ -54,7 +54,7 @@ Secondly, it's considered bad practise to clutter the global scope. You should a
 })();
 ```
 
-Wrapping everything in a function which is then immediately invoked means all the variables within that function are bound to the _local scope_. At the very end you can then expose all your methods by binding the `jQuery` object to the `window`, the _global object_. To read more about Immediatly-Onvoked Functions, check out Ben Alman's [Immediately-Invoked Function Expression](http://benalman.com/news/2010/11/immediately-invoked-function-expression/) article.
+Wrapping everything in a function which is then immediately invoked means all the variables within that function are bound to the _local scope_. At the very end you can then expose all your methods by binding the `jQuery` object to the `window`, the _global object_. To read more about Immediatly-Invoked Functions, check out Ben Alman's [Immediately-Invoked Function Expression](http://benalman.com/news/2010/11/immediately-invoked-function-expression/) article.
 
 Because local scope works through functions, any functions defined within another have access to variables defined in the outer function:
 
@@ -62,7 +62,7 @@ Because local scope works through functions, any functions defined within anothe
 function outer() {
   var x = 5;
   function inner() {
-    console.log(x);
+    console.log( x );
   }
 
   inner(); //  5
@@ -76,13 +76,13 @@ function outer() {
   var x = 5;
 
   function inner() {
-    console.log(x);
+    console.log( x );
     var y = 10;
   }
 
   inner(); //  5
 
-  console.log(y); // ReferenceError: y is not defined
+  console.log( y ); // ReferenceError: y is not defined
 }
 ```
 
