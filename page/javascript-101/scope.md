@@ -12,7 +12,7 @@ There are two types of scopes in JavaScript: Global and local. Lets talk about e
 
 ## Global Scope
 
-The first scope is __Global Scope__. This is very easy to define. If a variable or function is _global_, it can be accessed from anywhere within a program. In a browser, the global scope is the `window` object. If this variable declaration occurs outside of a function, then the variable x exists on the global object.
+The first scope is __Global Scope__. This is very easy to define. If a variable or function is _global_, it can be accessed from anywhere within a program. In a browser, the global scope is the `window` object. If a variable declaration occurs outside of a function, then that variable exists on the global object. For example:
 
 ```
 var x = 9;
@@ -30,7 +30,7 @@ function myFunc() {
 console.log( x ); // ReferenceError: x is not defined
 ```
 
-Since `x` was initialised within `myFunc()`, it is only accessible within `myFunc()`, and we get a reference error if we try to access it outside of `myFunc()`.
+Since `x` was initialized within `myFunc()`, it is only accessible within `myFunc()`, and we get a reference error if we try to access it outside of `myFunc()`.
 
 ##A word of Caution
 
@@ -45,7 +45,7 @@ console.log( x ); // 5
 
 This is a bad idea. Any variable that is global can have its value changed by any other parts of a program or any other script. This is undesirable, as it could lead to unforseen side effects.
 
-Secondly, it's considered bad practise to clutter the global scope. You should add as fewer properties as you possibly can to the global object, and try to keep your program contained within its own scope. That's why you'll see libaries such as jQuery often do this:
+Secondly, it's considered bad practice to clutter the global scope. You should add as few properties as you possibly can to the global object, and try to keep your program contained within its own scope. That's why you'll see libaries such as jQuery often do this:
 
 ```
 (function() {
