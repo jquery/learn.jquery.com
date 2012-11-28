@@ -60,19 +60,27 @@ grunt.registerHelper( "read-order", function( orderFile ) {
 		return null;
 	}
 
-	order.forEach(function(chapter) {
-		var article, title;
 
-		if ( grunt.utils._.isObject( chapter ) ) {
-			title = Object.keys( chapter )[ 0 ];
-			map[ title ] = ++index;
+	function flatten( item, folder ) {
+		var title,
+		path = folder ? [ folder ] : [];
 
-			chapter[ title ].forEach(function( article ) {
-				map[ title + "/" + article ] = ++index;
+		if ( grunt.utils._.isObject( item ) ) {
+			title = Object.keys( item )[ 0 ];
+			path.push( title );
+			path = path.join( "/" );
+			map[ path ] = ++index;
+
+			item[ title ].forEach(function( item ) {
+				flatten( item, path );
 			});
 		} else {
-			map[ title ] = ++index;
+			path.push( item );
+			map[ path.join( "/" ) ] = ++index;
 		}
+	}
+	order.forEach(function( item ) {
+		flatten( item );
 	});
 	return map;
 });
@@ -96,3 +104,6 @@ grunt.registerTask( "build-wordpress", "check-modules clean lint build-pages bui
 grunt.registerTask( "deploy", "wordpress-deploy" );
 
 };
+
+
+
