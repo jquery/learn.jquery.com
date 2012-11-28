@@ -1,4 +1,5 @@
-var config = require("./config.json");
+var yaml = require( "js-yaml" ),
+	config = require("./config.json");
 
 module.exports = function( grunt ) {
 
@@ -41,8 +42,55 @@ grunt.initConfig({
 	wordpress: grunt.utils._.extend({
 		dir: "dist/wordpress",
 		order: "order.yml"
-        }, grunt.file.readJSON( "config.json" ) )
+	}, grunt.file.readJSON( "config.json" ) )
 });
+
+
+
+// Process a YAML order file and return an object of page slugs and their ordinal indices
+grunt.registerHelper( "read-order", function( orderFile ) {
+	var order,
+		map = {},
+		index = 0;
+
+	try {
+		order = yaml.load( grunt.file.read( orderFile ) );
+	} catch( error ) {
+		grunt.warn( "Invalid order file: " + orderFile );
+		return null;
+	}
+
+	order.forEach(function(chapter) {
+		var article, title;
+
+		if ( grunt.utils._.isObject( chapter ) ) {
+			title = Object.keys( chapter )[ 0 ];
+			map[ title ] = ++index;
+
+			chapter[ title ].forEach(function( article ) {
+				map[ title + "/" + article ] = ++index;
+			});
+		} else {
+			map[ title ] = ++index;
+		}
+	});
+	return map;
+});
+
+grunt.registerHelper( "build-pages-preprocess", (function() {
+	var orderMap = grunt.helper( "read-order", "order.yml" );
+
+	return function( content, post ) {
+		var menuOrder = orderMap[ post.__slug ];
+		if ( menuOrder ) {
+			post.menuOrder = menuOrder;
+		}
+
+		return content;
+	};
+})());
+
+
 
 grunt.registerTask( "default", "wordpress-deploy" );
 grunt.registerTask( "build-wordpress", "check-modules clean lint build-pages build-resources");
