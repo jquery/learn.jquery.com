@@ -37,8 +37,6 @@
   - iterating
   - understanding-index
   - faq:
-    - add-keyboard-navigation
-    - enable-the-back-button
     - how-do-i-select-an-item-using-class-or-id
     - how-do-i-select-elements-when-i-already-have-a-dom-element
     - how-do-i-test-whether-an-element-has-a-particular-class
