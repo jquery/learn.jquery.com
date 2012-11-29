@@ -150,6 +150,7 @@ grunt.registerHelper( "contributor-attribution", function( post, fileName, fn ) 
 					if ( post.source ) {
 						contrib.source = post.source;
 					}
+					contribs.unshift( contrib );
 				}
 			});
 		}
