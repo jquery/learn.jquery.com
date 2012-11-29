@@ -88,12 +88,13 @@ grunt.registerHelper( "read-order", function( orderFile ) {
 grunt.registerHelper( "build-pages-preprocess", (function() {
 	var orderMap = grunt.helper( "read-order", "order.yml" );
 
-	return function( post, fileName ) {
+	return function( post, fileName, done ) {
 		var slug = fileName.replace( /^.+?\/(.+)\.\w+$/, "$1" ),
 			menuOrder = orderMap[ slug ];
 		if ( menuOrder ) {
 			post.menuOrder = menuOrder;
 		}
+		done();
 	};
 })());
 
