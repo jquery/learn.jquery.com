@@ -85,20 +85,113 @@ grunt.registerHelper( "read-order", function( orderFile ) {
 	return map;
 });
 
+grunt.registerHelper( "contributor-attribution", function( post, fileName, fn ) {
+	var contribs = [],
+		_ = grunt.utils._,
+		parseRE = /^(.*)<(.*)>$/; // could certainly be better. 
+
+	// Read contributors from git file information
+	grunt.utils.spawn({
+		cmd: "git",
+		args: [ "log", "--format=%aN <%aE>", fileName ]
+	}, function( err, result ) {
+		if ( err ) {
+			grunt.verbose.error();
+			grunt.log.error( err );
+			return;
+		}
+		// make unique.)
+		result.stdout.split( /\r?\n/g ).forEach(function(line) {
+			if ( _.contains( contribs, line ) ) {
+				return;
+			}
+			contribs.push(line);
+		});
+		
+		// make object { name: 'name', email: 'email@address.com' }
+		contribs.forEach(function(str, idx) {
+			var m = parseRE.exec(str);
+			if ( m ) {
+				contribs[idx] = { name: m[1].trim(), email: m[2] };
+			}
+			else {
+				contribs[idx] = { name: str };
+			}
+		});
+
+		// Alphabetize by 'last name' (relatively crude)
+		contribs = _.sortBy( contribs, function(a) {
+			return a.name.split(' ').pop().toLowerCase();
+		});
+
+		// Handle "legacy" content - content authored outside of the learn site
+		// and attributed with metadata in the file, 
+		// push those contributors to the front of the list
+		if ( post.attribution ) {
+			post.attribution.forEach(function(str, idx) {
+				var contrib, m;
+
+				// Handling specifically for articles originally from jQuery Fundamentals
+				if (str == "jQuery Fundamentals") {
+					contribs.unshift({
+						name: str,
+						// Use the jQuery Gravatar
+						email: "github@jquery.com",
+						source: post.source
+					});
+				} else {
+					m = parseRE.exec(str);
+					if ( m ) {
+						contrib = { name: m[1].trim(), email: m[2] };
+					}
+					else {
+						contrib = { name: str };
+					}
+					if ( post.source ) {
+						contrib.source = post.source;
+					}
+				}
+			});
+		}
+
+		if ( post.customFields ) {
+			post.customFields.push({
+				key: "contributors",
+				value: JSON.stringify( contribs )
+			});
+		
+		} else {
+			post.customFields = [{
+				key: "contributors",
+				value: JSON.stringify( contribs )
+			}];
+		}
+
+		fn();
+	});
+
+});
+
 grunt.registerHelper( "build-pages-preprocess", (function() {
 	var orderMap = grunt.helper( "read-order", "order.yml" );
 
 	return function( post, fileName, done ) {
-		var slug = fileName.replace( /^.+?\/(.+)\.\w+$/, "$1" ),
-			menuOrder = orderMap[ slug ];
-		if ( menuOrder ) {
-			post.menuOrder = menuOrder;
-		}
-		done();
+		grunt.utils.async.series([
+			function applyOrder( fn ) {
+				var slug = fileName.replace( /^.+?\/(.+)\.\w+$/, "$1" ),
+				menuOrder = orderMap[ slug ];
+				if ( menuOrder ) {
+					post.menuOrder = menuOrder;
+				}
+				fn();
+			},
+
+			function applyContribs( fn ) {
+				grunt.helper( "contributor-attribution", post, fileName, fn );
+			}
+		], done );
 	};
 })());
-
-
 
 grunt.registerTask( "default", "wordpress-deploy" );
 grunt.registerTask( "build-wordpress", "check-modules clean lint build-pages build-resources");
