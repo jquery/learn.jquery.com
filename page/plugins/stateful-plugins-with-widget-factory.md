@@ -1,17 +1,13 @@
 ---
-title   : Writing Stateful Plugins with the jQuery UI Widget Factory
-level:        intermediate
+title: Writing Stateful Plugins with the jQuery UI Widget Factory
+level: intermediate
 source: http://jqfundamentals.com/legacy
 attribution: 
   - jQuery Fundamentals
+  - Scott González <scott.gonzalez@gmail.com>
 ---
+
 ## Writing Stateful Plugins with the jQuery UI Widget Factory
-
-<div class="note" markdown="1">
-### Note
-
-This section is based, with permission, on the blog post [Building Stateful jQuery Plugins](http://blog.nemikor.com/2010/05/15/building-stateful-jquery-plugins/) by Scott Gonzalez.
-</div>
 
 While most existing jQuery plugins are stateless — that is, we call them on an element and that is the extent of our interaction with the plugin — there’s a large set of functionality that doesn’t fit into the basic plugin pattern.
 
