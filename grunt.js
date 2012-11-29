@@ -100,13 +100,8 @@ grunt.registerHelper( "contributor-attribution", function( post, fileName, fn ) 
 			grunt.log.error( err );
 			return;
 		}
-		// make unique.)
-		result.stdout.split( /\r?\n/g ).forEach(function(line) {
-			if ( _.contains( contribs, line ) ) {
-				return;
-			}
-			contribs.push(line);
-		});
+		// make unique.
+		contribs = _.uniq( result.stdout.split( /\r?\n/g ) );
 		
 		// make object { name: 'name', email: 'email@address.com' }
 		contribs.forEach(function(str, idx) {
