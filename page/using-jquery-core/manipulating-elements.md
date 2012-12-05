@@ -16,7 +16,7 @@ There are many ways to can change an existing element. Among the most common tas
   * **`$.fn.attr`** - Get or set the value of the provided attribute.
   * **`$.fn.width`** - Get or set the width in pixels of the first element in the selection as an integer.
   * **`$.fn.height`** - Get or set the height in pixels of the first element in the selection as an integer.
-  * **`$fn.position`** - Get an object with position information for the first element in the selection, relative to its first positioned ancestor. _This is a getter only_.
+  * **`$.fn.position`** - Get an object with position information for the first element in the selection, relative to its first positioned ancestor. _This is a getter only_.
   * **`$.fn.val`** - Get or set the value of form elements.
 
 Changing things about elements is trivial, but remember that the change will affect all elements in the selection. If you just want to change one element, be sure to specify that in the selection before calling a setter method.
