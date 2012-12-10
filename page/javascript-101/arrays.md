@@ -146,10 +146,10 @@ myArray.reverse();
 
 ### `.shift`
 
-Removes the first element of an array. With `.pop` and `.shift`, you can recreate the method of a [queue](http://en.wikipedia.org/wiki/Queue_(data_structure)):
+Removes the first element of an array. With `.push` and `.shift`, you can recreate the method of a [queue](http://en.wikipedia.org/wiki/Queue_(data_structure)):
 
 ```
-// queue with shift() and pop()
+// queue with shift() and push()
 var myArray = [];
 
 myArray.push( 0 ); // [ 0 ]
