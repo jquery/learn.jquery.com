@@ -29,12 +29,12 @@ grunt.initConfig({
 	},
 	watch: {
 		pages: {
-			files: "pages/**",
+			files: "page/**",
 			tasks: "deploy"
 		}
 	},
 	"build-pages": {
-		all: grunt.file.expandFiles( "pages/**" )
+		all: grunt.file.expandFiles( "page/**" )
 	},
 	"build-resources": {
 		all: grunt.file.expandFiles( "resources/**/*" )

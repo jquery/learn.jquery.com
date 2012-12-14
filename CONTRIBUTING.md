@@ -154,7 +154,7 @@ Once you've gotten your environment working, here are the general steps you shou
 2. Move onto that branch -- `git checkout <feature/issue name/number>`
 3. Work on your awesome contribution. 
 4. As you work and want to preview your changes, use `grunt` to deploy them to the your site. You can also use `grunt watch` to have the site monitor the `page` directory for any changes and automatically have the changes deployed every time you save.
-5. When you're done, stage the new/modified preparation for commit -- `git add pages/faq/how-do-i-add-a-new-article-to-the-learn-site.md`
+5. When you're done, stage the new/modified preparation for commit -- `git add page/faq/how-do-i-add-a-new-article-to-the-learn-site.md`
 6. Commit the files to your local repo -- `git commit -m "add a relevant message describing the change"`
 7. Push the files to your GitHub remote -- `git push origin <feature/issue name/number>`
 8. Go to your fork on GitHub and submit a new [pull request](https://help.github.com/articles/using-pull-requests).
