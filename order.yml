@@ -92,6 +92,7 @@
   - feature-browser-detection
   - deferreds:
     - about-deferreds
-    - something-else
+    - jquery-deferreds
+    - examples
 - jquery-mobile:
   - getting-started
