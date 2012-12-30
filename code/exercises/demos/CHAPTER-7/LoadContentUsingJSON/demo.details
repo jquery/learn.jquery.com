@@ -1,6 +1,0 @@
----
- name: jQuery Fundamentals Chapter 7 Load Content Using JSON
- description: jQuery Fundamentals Chapter 7 Load Content Using JSON
- authors: Rebecca Murphey
- normalize_css: yes
- ...

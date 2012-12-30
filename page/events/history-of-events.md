@@ -1,7 +1,8 @@
 ---
-title   : History of jQuery Events
+title: History of jQuery Events
+level: intermediate
 ---
-Throughout the evolution of jQuery the means of event binding has changed for various reasons ranging from performance to semantics.  As of jQuery v1.7 the `.on()` method is the accepted means of both directly binding events and creating delegated events.  This article aims to explore the history of *event delegation* from jQuery v1.0 - present and how each version leverages it.  
+Throughout the evolution of jQuery the means of event binding has changed for various reasons ranging from performance to semantics.  As of jQuery v1.7 the `.on()` method is the accepted means of both directly binding events and creating delegated events.  This article aims to explore the history of *event delegation* from jQuery v1.0 - present and how each version leverages it.
 
 Given the following html, for our example we want to log the text of the each `<li>` to console whenever it is clicked.
 
@@ -23,8 +24,8 @@ Introduced in jQuery v1.0
 It is possible to use `.bind()` and attach a handler to every element.
 
 ```
-​$('#list li').bind('click', function(event){
-  console.log( $elem.text() );  
+​$("#list li").bind( "click", function(event) {
+  console.log( $elem.text() );
 });​​​​​​​​​​​​​​​​​​​​​
 ```
 As discussed in the [event delegation](/event/event-delegation) article, this is not optimal.
@@ -39,10 +40,10 @@ Introduced in jQuery v1.0
 Generally we don't associate `.bind()` with *event delegation*, however prior to jQuery v1.3 it was the only means of delegation available to us.
 
 ```
-​$('#list').bind('click', function(event){
-  var $elem = $(event.target);
-  if( $elem.is("li") ){
-    console.log( $elem.text() );  
+​$("#list").bind( "click", function(event) {
+  var $elem = $( event.target );
+  if ( $elem.is("li") ){
+    console.log( $elem.text() );
   }
 });​​​​​​​​​​​​​​​​​​​​​
 ```
@@ -55,13 +56,13 @@ Introduced in jQuery v1.3
 All `.live()` event handlers are bound to the *document* root by default.
 
 ```
-​$('#list li').live('click', function(event){
-  var $elem = $(this);
+​$("#list li").live( "click", function(event) {
+  var $elem = $( this );
   console.log( $elem.text() );
 });​​​​​​​​​​​​​​​​​​​​​
 ```
 
-When we use `.live()` our event is bound to `$(document)`.  When the `<li>` is clicked, bubbling occurs and our *click* event is fired for each of the following elements:
+When we use `.live()` our event is bound to `$( document )`.  When the `<li>` is clicked, bubbling occurs and our *click* event is fired for each of the following elements:
 
 * `<ul>`
 * `<div>`
@@ -75,13 +76,13 @@ The last element to recieve the *click* event is *document*, this is where our `
 ### [.live()](http://api.jquery.com/live/) w/ context (Deprecated)
 Introduced in jQuery v1.4
 
-Passing the *context* as a second optional argument to the `$()` function has been supported since v1.0.  However support for using this *context* with the `$.live()` method was not added until v1.4.  
+Passing the *context* as a second optional argument to the `$()` function has been supported since v1.0.  However support for using this *context* with the `$.live()` method was not added until v1.4.
 
 If we were take our previous `.live()` example and provide it the default *context*, it would look like:
 
 ```
-​$('#list li', document).live('click', function(event){
-  var $elem = $(this);
+​$( "#list li", document ).live( "click", function(event) {
+  var $elem = $( this );
   console.log( $elem.text() );
 });​​​​​​​​​​​​​​​​​​​​​
 ```
@@ -89,8 +90,8 @@ If we were take our previous `.live()` example and provide it the default *conte
 Since we can override the *context* when using the `.live()` method, we can specify a *context* that is closer to the element in the DOM hierarchy
 
 ```
-$('li', '#list').live('click', function(event){
-  var $elem = $(this);
+$( "li", "#list" ).live( "click", function(event) {
+  var $elem = $( this );
   console.log( $elem.text() );
 });​​​​​​​​​​​​​​​​​​​​​
 ```
@@ -100,11 +101,11 @@ In this instance when an `<li>` is clicked the event still bubbles all the way u
 ### [.delegate()](http://api.jquery.com/delegate/) (Deprecated)
 First introduced in jQuery v1.4.2
 
-The `.delegate()` method provides a clear difference between the *context* of where to attach delegated event handler, and the *selector* to match when the event bubbles up to the delegated element. 
+The `.delegate()` method provides a clear difference between the *context* of where to attach delegated event handler, and the *selector* to match when the event bubbles up to the delegated element.
 
 ```
-$('#list').delegate('li', 'click', function(event){
-  var $elem = $(this);
+$("#list").delegate( "li", "click", function(event) {
+  var $elem = $( this );
   console.log( $elem.text() );
 });​​​​​​​​​​​​​​​​​​​​​
 ```
@@ -112,14 +113,14 @@ $('#list').delegate('li', 'click', function(event){
 ### [.on()](http://api.jquery.com/on/)
 First introduced in jQuery v1.7
 
-The `on.()` method gives us a semantic approach for creating directly bound events as well as delegated events.  It eliminates the need to use the deprecated`.bind()`, `.live()` and `.delegate()` methods, providing a single API for creating events. 
+The `on.()` method gives us a semantic approach for creating directly bound events as well as delegated events.  It eliminates the need to use the deprecated`.bind()`, `.live()` and `.delegate()` methods, providing a single API for creating events.
 
 ```
-$('#list').on('click', 'li', function(event){
-  var $elem = $(this);
+$("#list").on( "click", "li", function(event) {
+  var $elem = $( this );
   console.log( $elem.text() );
 });​​​​​​​​​​​​​​​​​​​​​
 ```
 
 ### Summary
-All of these ways of *event delegation* were innovative and considered a best practice at the time of their release.  Depending on what version of jQuery you have implemented use the appropriate means of *event delegation*. 
+All of these ways of *event delegation* were innovative and considered a best practice at the time of their release.  Depending on what version of jQuery you have implemented use the appropriate means of *event delegation*.

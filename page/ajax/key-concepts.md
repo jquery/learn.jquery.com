@@ -1,6 +1,9 @@
 ---
 title   : Key Concepts
 level: beginner
+source: http://jqfundamentals.com/legacy
+attribution: 
+  - jQuery Fundamentals
 ---
 Proper use of Ajax-related jQuery methods requires understanding some key
 concepts first.
@@ -75,9 +78,15 @@ available.  Responses can only be handled using a callback.  So, for example,
 the following code will not work:
 
 ```
-    var response;
-    $.get('foo.php', function(r) { response = r; });
-    console.log(response); // undefined!
+var response;
+
+$.get( "foo.php", function( r ) {
+
+  response = r;
+
+});
+
+console.log( response ); // undefined
 ```
 
 Instead, we need to pass a callback function to our request; this callback will
@@ -85,7 +94,9 @@ run when the request succeeds, at which point we can access the data that it
 returned, if any.
 
 ```
-    $.get('foo.php', function(response) { console.log(response); });
+$.get( "foo.php", function( response ) {
+  console.log( response ); // server response
+});
 ```
 
 ### Same-Origin Policy and JSONP

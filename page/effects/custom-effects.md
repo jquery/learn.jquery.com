@@ -1,6 +1,9 @@
 ---
 title   : Custom Effects with $.fn.animate
 level: beginner
+source: http://jqfundamentals.com/legacy
+attribution: 
+    - jQuery Fundamentals
 ---
 jQuery makes it possible to animate arbitrary CSS properties via the
 `$.fn.animate` method.  The `$.fn.animate` method lets you animate to a set
@@ -8,14 +11,17 @@ value, or to a value relative to the current value.
 
 ```
 // Custom effects with `$.fn.animate`">
-    $('div.funtimes').animate(
-        {
-            left : "+=50",
-            opacity : 0.25
-        },
-        300, // duration
-        function() { console.log('done!'); // calback
-    });
+$("div.funtimes").animate({
+    left : "+=50",
+    opacity : 0.25
+  },
+  // duration:
+  300,
+  // callback:
+  function() {
+    console.log("done!");
+  }
+});
 ```
 
 <div class="note">
@@ -37,13 +43,10 @@ As of jQuery 1.4, it is possible to do per-property easing when using the
 
 ```
 // Per-property easing">
-    $('div.funtimes').animate(
-        {
-            left : [ "+=50", "swing" ],
-            opacity : [ 0.25, "linear" ]
-        },
-        300
-    );
+$("div.funtimes").animate({
+  left: [ "+=50", "swing" ],
+  opacity: [ 0.25, "linear" ]
+}, 300 );
 ```
 
 For more details on easing options, see

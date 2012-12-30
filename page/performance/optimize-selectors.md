@@ -1,6 +1,9 @@
 ---
 title:        Optimize Selectors
 level:        intermediate
+source: http://jqfundamentals.com/legacy
+attribution: 
+  - jQuery Fundamentals
 ---
 
 Selector optimization is less important than it used to be, as more browsers
@@ -13,10 +16,10 @@ Beginning your selector with an ID is always best.
 
 ```
 // fast
-$('#container div.robotarm');
+$("#container div.robotarm");
 
 // super-fast
-$('#container').find('div.robotarm');
+$("#container").find("div.robotarm");
 ```
 
 The `$.fn.find` approach is faster because the first selection is handled
@@ -31,10 +34,10 @@ left.
 
 ```
 // unoptimized
-$('div.data .gonzalez');
+$("div.data .gonzalez");
 
 // optimized
-$('.data td.gonzalez');
+$(".data td.gonzalez");
 
 ```
 
@@ -44,10 +47,10 @@ Use `tag.class` if possible on your right-most selector, and just tag or just
 ## Avoid excessive specificity.
 
 ```
-$('.data table.attendees td.gonzalez');
+$(".data table.attendees td.gonzalez");
 
 // better: drop the middle if possible
-$('.data td.gonzalez');
+$(".data td.gonzalez");
 ```
 
 A "flatter" DOM also helps improve selector performance, as the selector engine
@@ -59,10 +62,10 @@ Selections that specify or imply that a match could be found anywhere can be
 very slow.
 
 ```
-$('.buttons > *');  // extremely expensive
-$('.buttons').children();  // much better
+$(".buttons > *");  // extremely expensive
+$(".buttons").children();  // much better
 
-$('.gender :radio');  // implied universal selection
-$('.gender *:radio'); // same thing, explicit now
-$('.gender input:radio'); // much better
+$(".gender :radio");  // implied universal selection
+$(".gender *:radio"); // same thing, explicit now
+$(".gender input:radio"); // much better
 ```

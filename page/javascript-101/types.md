@@ -1,40 +1,45 @@
 ---
 title:        Types
 level:        beginner
+source: http://jqfundamentals.com/legacy
+attribution: 
+  - jQuery Fundamentals
 ---
 
-The types in JavaScript fall into two categories; primitives and objects. The primitive types include:
+Types in JavaScript fall into two categories: primitives or objects. Primitive types include:
 
-* string
-* number
-* boolean
-* null
-* undefined
+* String
+* Number
+* Boolean
+* Null
+* Undefined
 
 ### String
 
-String types are text wrapped in single or double quotation marks, but it is best practice to stick with a consistent variation. There may be times when the string contains quotation marks that collide with the ones used to create the string; in this case we must either escape the characters using a `\` backslash or use different quotes around the string.
+Strings are text wrapped in single or double quotation marks. It is best practice to consistently use one or the other. There may be times when the string contains quotation marks that collide with the ones used to create the string. In this case, either escape the characters using a `\` backslash or use different quotes around the string.
 
-``` js
+```
 // Strings can created with double or single quotes.
 var a = "I am a string";
 var b = 'So am I!';
 
-alert(a);
-alert(b);
+alert( a );
+
+alert( b );
 ```
 
-``` js
+```
 // Sometimes a string may contain quotation marks.
 var statement1 = 'He said "JavaScript is awesome!"';
+
 var statement2 = "He said \"JavaScript is awesome!\"";
-``` 
+```
 
 ### Number
 
-Number types are just any positive or negative numeric value, there is no distinction between integer and floating point values.
+Number types are any positive or negative numeric value. There is no distinction between integer and floating point values.
 
-``` js
+```
 // Numbers are any whole or floating point integer.
 var num1 = 100;
 var num2 = 100.10;
@@ -42,152 +47,176 @@ var num3 = 0.10;
 ```
 
 ### Boolean
-Boolean types are just simply true or false. 
+Boolean types are either true or false.
 
-``` js
+```
 // Boolean values.
 var okay = true;
 var fail = false;
 ```
 
-### Undefined and Null
+### Null and Undefined
 
-Undefined and null are special types in JavaScript. Null types are a value that represent the absence of a value, this is similar to many other programming languages. Undefined types represent a state in which no value has been assigned at all, you can achieve this type in two ways; by using the undefined keyword or by just not defining a value at all.
+Null and undefined are special types in JavaScript. Null types are a value that represent the absence of a value, similar to many other programming languages. Undefined types represent a state in which no value has been assigned at all. This type is created in two ways: by using the undefined keyword or by not defining a value at all.
 
-``` js
-\\ Two ways to achieve an undefined value.
+```
+// Two ways to achieve an undefined value.
 var foo = null;
 
 var bar1 = undefined;
 var bar2;
 ```
 
-### Objects
+## Objects
 
-Everything else is in JavaScript is considered an Object. While there are [numerous built-in objects](https://developer.mozilla.org/en/JavaScript/Reference#Global_Objects, "MDN - Global Object Reference"), the ones we will focus on in this chapter are:
+Everything else is in JavaScript is considered an Object. While there are [numerous built-in objects](https://developer.mozilla.org/en/JavaScript/Reference#Global_Objects, "MDN - Global Object Reference"), this chapter will cover:
 
 * Object
 * Array
 * Function
 
-The simplest way to create an object is either through the Object constructor or the short hand syntax other wise known as an object literal. These simple objects are unordered key/value pairs; the key is formally known as a property and the value can be any valid JavaScript type, even another object. To create or access a property on an object, we use what is known as "dot notation" or "bracket notation". 
+The simplest way to create an object is either through the Object constructor or the shorthand syntax known as object literal. These simple objects are unordered key/value pairs. The key is formally known as a property and the value can be any valid JavaScript type, even another object. To create or access a property on an object, we use what is known as "dot notation" or "bracket notation."
 
-``` js
-// Simple objects using the constructor or the literal syntax.
+```
+// Creating an object with the constructor:
 var person1 = new Object;
 
 person1.firstName = "John";
 person1.lastName = "Doe";
 
-alert(person1.firstName + " " + person1.lastName);
+alert( person1.firstName + " " + person1.lastName );
 
+// Creating an object with the object literal syntax:
 var person2 = {
     firstName: "Jane",
     lastName: "Doe"
 };
 
-alert(person2.firstName + " " + person2.lastName);
+alert( person2.firstName + " " + person2.lastName );
 ```
 
-``` js
+```
 // As mentioned, objects can also have objects as a property.
 var people = {};
 
-people['person1'] = person1;
-people['person2'] = person2;
+people["person1"] = person1;
+people["person2"] = person2;
 
-alert(people['person1'].firstName);
-alert(people['person2'].firstName);
+alert( people["person1"].firstName );
+alert( people["person2"].firstName );
 ```
 
-What happens if a property is accessed which has not been *defined* yet? Well, it will be a type of undefined.
+If a property is accessed that has not been defined, it will return a type of undefined.
 
-``` js 
+```
 // Properties that have not been created are undefined.
 var person = { name: "John Doe" };
-alert(person.email); // => undefined
+
+alert( person.email ); // => undefined
 ```
+
+Objects are covered further in the [Objects](/objects) section.
 
 ### Array
 
-Arrays are a type of object which are ordered by the index of each item that it contains; this index starts at zero and extends to however many items have been added, also known as the "length" of the array which happens to be a property as well. Similar to a basic object, an array can be created with the Array Constructor or the short hand syntax known as an array literal.
+Arrays are a type of object that are ordered by the index of each item it contains. The index starts at zero and extends to however many items have been added, which is a property of the array known as the "length" of the array. Similar to a basic object, an array can be created with the array constructor or the shorthand syntax known as array literal.
 
-``` js
-// Creating an array with initial items
+```
+// Creating an array with the constructor:
 var foo = new Array;
+
+// Creating an array with the array literal syntax:
 var bar = [];
 ```
 
-There is an important distinction to be made between the two though. An array literal can contain items to be added to the array upon creating it, the same is possible for the Array Constructor. However, if just a single numeric item is passed in, the Array Constructor will assume its length to be that value.
+There is an important distinction to be made between the two. Both an array construnctor and an array literal can contain items to be added to the array upon creating it. However, if just a single numeric item is passed in, the array constructor will assume its length to be that value.
 
-``` js
-var foo = [100];
-alert(foo[0]);
-alert(foo.length);
+```
+// The array literal returns a bar.length value of 1:
+var foo = [ 100 ];
 
-var bar = new Array(100);
-alert(bar[0]);
-alert(bar.length);  
+// => 100
+alert( foo[0] );
+// => 1
+alert( foo.length );
+
+// The array constructor returns a bar.length value of 100:
+var bar = new Array( 100 );
+// => undefined
+alert( bar[0] );
+// => 100
+alert( bar.length );
 ```
 
-An array can be manipulated through the methods that are available on the instance and items can be accessed using bracket notation with a given index, the value will be undefined if the index does not exists or contains no value.
+An array can be manipulated through methods that are available on the instance of the array. Items in the array can be accessed using bracket notation with a given. If the index does not exist or contains no value, the return type will be undefined. 
 
-``` js
-// Using the push(), pop(), unshift() and shift() methods.
+A few common array methods are shown below:
+
+```
+// Using the push(), pop(), unshift() and shift() methods on an array
 var foo = [];
 
-foo.push('a');
-foo.push('b');
+foo.push("a");
+foo.push("b");
 
-alert(foo[0]);
-alert(foo[1]);
+alert( foo[ 0 ] ); // => a
+alert( foo[ 1 ] ); // => b
 
-alert(foo.length);
+alert( foo.length ); // => 2
 
 foo.pop();
 
-alert(foo[0]);
-alert(foo[1]);
+alert( foo[ 0 ] ); // => a
+alert( foo[ 1 ] ); // => undefined
 
-alert(foo.length);
+alert( foo.length ); // => 1
 
-foo.unshift('z');
+foo.unshift("z");
 
-alert(foo[0]);
-alert(foo[1]);
+alert( foo[ 0 ] ); => z
+alert( foo[ 1 ] ); => a
 
-alert(foo.length);
+alert( foo.length ); => 2
 
 foo.shift();
 
-alert(foo[0]);
-alert(foo[1]);
+alert( foo[ 0 ] ); // => a
+alert( foo[ 1 ] ); // => undefined
 
-alert(foo.length);
+alert( foo.length ); // => 1
 ```
 
-There are many more methods for manipulating arrays, details can be found on the [MDN Document](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array "MDN - Array Reference")
+There are many more methods for manipulating arrays, some of which are covered further in the [Arrays](/arrays) section. Details can be found on the [Mozilla Developer Network](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array "MDN - Array Reference").
 
-## Type Checking With jQuery
+## Type Checking with jQuery
 
-jQuery offers a few basic utility methods for determining the type of a
-specific value.
+jQuery offers a few basic utility methods for determining the type of a specific value. Type checking is covered further in the [Testing Type](/testing-type) section, but here are some examples:
 
-``` js
+```
 // Checking the type of an arbitrary value
-var myValue = [1, 2, 3];
+var myValue = [ 1, 2, 3 ];
 
-// Using JavaScript's typeof operator to test for primitive types
-typeof myValue == 'string'; // false
-typeof myValue == 'number'; // false
-typeof myValue == 'undefined'; // false
-typeof myValue == 'boolean'; // false
+// Using JavaScript's typeof operator to test for primitive types:
+
+// false
+typeof myValue === "string";
+// false
+typeof myValue === "number";
+// false
+typeof myValue === "undefined";
+// false
+typeof myValue === "boolean"; 
 
 // Using strict equality operator to check for null
-myValue === null; // false
+// false
+myValue === null;
 
 // Using jQuery's methods to check for non-primitive types
-jQuery.isFunction(myValue); // false
-jQuery.isPlainObject(myValue); // false
-jQuery.isArray(myValue); // true
+
+// false
+jQuery.isFunction( myValue );
+// false
+jQuery.isPlainObject( myValue );
+// true
+jQuery.isArray( myValue );
 ```

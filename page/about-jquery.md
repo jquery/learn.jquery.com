@@ -1,6 +1,10 @@
 ---
 title: About jQuery
 level: beginner
+customFields:
+ -
+    key: "icon"
+    value: "certificate"
 ---
 
 Getting started with jQuery can be easy or challenging, depending on

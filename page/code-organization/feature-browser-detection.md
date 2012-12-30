@@ -58,11 +58,12 @@ There are several ways to go about feature detection:
 
 Let's take a look at how to check whether or not a `<canvas>` element exists in a specific browser, without using a helper library. We do this by specifically querying whether the method or property exists:
 
-```js
-// We want to show a graph in browsers that support canvas, but a data table in browsers that don't.
-var elem = document.createElement('canvas');
+```
+// We want to show a graph in browsers that support canvas,
+// but a data table in browsers that don't.
+var elem = document.createElement("canvas");
 
-if ( elem.getContext && elem.getContext('2d') ) {
+if ( elem.getContext && elem.getContext("2d") ) {
 
   showGraph();
 
@@ -93,7 +94,7 @@ Thankfully, there are some great helper libraries (like [Modernizr](http://moder
 
 For example, utilizing Modernizr, we are able to do the same canvas detection test with this code:
 
-```js
+```
 if ( Modernizr.canvas ) {
 
   showGraphWithCanvas();
@@ -113,11 +114,11 @@ So, while the Modernizr syntax is great, it can end up being quite cumbersome to
 
 The Modernizr object exposes a `load()` method that many prefer over the syntax mentioned previously. This is due to the another library that Modernizr now uses internally:  [yepnope](http://yepnopejs.com/). Testing for canvas can now become something like this:
 
-```js
+```
 Modernizr.load({
   test: Modernizr.canvas,
-  yep : 'canvas.js',
-  nope: 'canvas-polyfill.js'
+  yep : "canvas.js",
+  nope: "canvas-polyfill.js"
 });
 ```
 

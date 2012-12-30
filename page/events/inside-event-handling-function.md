@@ -1,6 +1,9 @@
 ---
 title   : Inside the Event Handling Function
 level: beginner
+source: http://jqfundamentals.com/legacy
+attribution: 
+  - jQuery Fundamentals
 ---
 Every event handling function receives an event object, which contains many
 properties and methods.  The event object is most commonly used to prevent the
@@ -39,19 +42,25 @@ Stop the event from bubbling up to other elements.
 In addition to the event object, the event handling function also has access to
 the DOM element that the handler was bound to via the keyword this.  To turn
 the DOM element into a jQuery object that we can use jQuery methods on, we
-simply do $(this), often following this idiom:
+simply do $( this ), often following this idiom:
 
 ```
-    var $this = $(this);
+var $this = $( this );
 ```
 
 ```
 // Preventing a link from being followed
-$('a').click(function(e) {
-  var $this = $(this);
-  if ($this.attr('href').match('evil')) {
+$("a").click(function(e) {
+
+  var $this = $( this );
+
+  if ( $this.attr("href").match("evil") ) {
+
     e.preventDefault();
-    $this.addClass('evil');
+
+    $this.addClass("evil");
+
   }
+
 });
 ```
