@@ -54,7 +54,7 @@ var foo=function() {for(var i=0;i<10;++){alert(i);}};foo();
 
 ### Reserved Words
 
-There are a handfull of reserved words that can't be used when declaring user-defined variables and functions. Some of these reserved words are currently implemented, some are saved for future use, and others are reserved for historical reasons. A list of words and in-depth explanations for each can be found on the [MDN JavaScript Reference](https://developer.mozilla.org/en/JavaScript/Reference/Reserved_Words, "MDN Reserved Words.") site.
+There are a handfull of reserved words that can't be used when declaring user-defined variables and functions. Some of these reserved words are currently implemented, some are saved for future use, and others are reserved for historical reasons. A list of words and in-depth explanations for each can be found on the [MDN JavaScript Reference](https://developer.mozilla.org/en/JavaScript/Reference/Reserved_Words "MDN Reserved Words.") site.
 
 ### Identifiers
 
