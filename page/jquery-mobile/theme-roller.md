@@ -27,9 +27,12 @@ The default theme includes 5 swatches that are given letters (a, b, c, d, e) for
 
 Most theme changes can be done using ThemeRoller, but it is also fairly simple to manually edit the base swatches in the default theme and/or add additional swatches by editing the theme CSS file. Just copy a block of swatch styles, rename the classes with the new swatch letter name, and tweak colors as you see fit. 
 
-## Creating a Custom Theme with ThemeRoller
+## Creating a Custom Theme with ThemeRoller 
+
+![picture Theme Roller Logo](/resources/jquery-mobile/themeroller-mobile-logo.png "Theme Roller") 
 
 The easiest way to create custom themes is with the ThemeRoller tool. It allows you to build a theme composed of up to 26 swatches, download a the newly created CSS file, and use it in your project. 
+
 
 ### Creating the Theme swatches
 
@@ -39,19 +42,19 @@ You can further edit your swatch from the menu. For example, you can expand the 
 
 Here are two examples of theme swatches created, the first one with the default colors and with the kuler colors:
 
-![picture alt](/resources/jquery-mobile/Theme.png "Default colors theme example")      ![picture alt](/resources/jquery-mobile/Kuler.png "Kuler theme example")     
+![picture Default colors theme example](/resources/jquery-mobile/Theme.png "Default colors theme example")      ![picture Kuler theme example](/resources/jquery-mobile/Kuler.png "Kuler theme example")     
 
 ### Downloading the created Theme
 
 Once you are satisfied with the various swatches that you have created in your theme, you can download this theme to be able to start using it in your project. You will simply need to press the 'Download theme zip file button', and enter the name of your theme in the popup window. Then, press the 'Download Zip' button on the download popup window, see below:
 
-![picture alt](/resources/jquery-mobile/downloadTheme.png "Download Theme")
+![picture Download Theme](/resources/jquery-mobile/downloadTheme.png "Download Theme")
 
 ### Using the downloaded Theme
 
 The theme gets downloaded on your local machine as a zip file. This contains an `index.html` file, and a `themes` folder. The `index.html` file is an example of how you can now se your theme. The `themes` folder contains your theme CSS files, and the icons that are used by jQuery Mobile. 
 
-To start using your theme, you can either start from the provided `index.html` or start from scratch. As exaplained in the theme download popup window, all you need is to add your theme to the head of your page before the jquery.mobile.structure file, like this:
+To start using your theme, you can either start from the provided `index.html` or start from scratch. As explained in the theme download popup window, all you need is to add your theme to the head of your page before the jquery.mobile.structure file, like this:
 
 ```
 <!DOCTYPE html>
