@@ -51,7 +51,7 @@ Once you are satisfied with the various swatches that you have created in your t
 
 The theme gets downloaded on your local machine as a zip file. This contains an `index.html` file, and a `themes` folder. The `index.html` file is an example of how you can now se your theme. The `themes` folder contains your theme CSS files, and the icons that are used by jQuery Mobile. 
 
-To start using your theme, you can either start from the provided `index.html` or start from scratch. As exaplained in the theme download popup window, all you need is to add your theme is to add it to the head of your page before the jquery.mobile.structure file, like this:
+To start using your theme, you can either start from the provided `index.html` or start from scratch. As exaplained in the theme download popup window, all you need is to add your theme to the head of your page before the jquery.mobile.structure file, like this:
 
 ```
 <!DOCTYPE html>
