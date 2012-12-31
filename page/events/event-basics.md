@@ -1,6 +1,7 @@
 ---
 title: jQuery Event Basics
-attribution:  jQuery Fundamentals
+attribution:
+  - jQuery Fundamentals
 level: beginner
 ---
 
