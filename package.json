@@ -25,7 +25,7 @@
 		"grunt-clean": "0.3.0",
 		"grunt-html": "0.1.1",
 		"grunt-wordpress": "1.0.5",
-		"grunt-jquery-content": "0.7.0",
+		"grunt-jquery-content": "0.7.2",
 		"grunt-check-modules": "0.1.0",
 		"js-yaml": "1.0.2"
 	}
