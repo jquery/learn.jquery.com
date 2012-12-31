@@ -11,7 +11,7 @@ jQuery Mobile has a robust theme framework that supports up to 26 sets of toolba
 
 If no theme swatch letter is set at all, the framework uses the 'a' swatch (black in the default theme) for headers and footers and the 'c' swatch (light gray in the default theme) for the page content to maximize contrast between the both. 
 
-All items in containers inherit the swatch from their parent. Exceptions to this rule are the listdivider in listviews, the header of nested list pages, and the button of split button lists. Those default to 'b' (blue in the default theme). Count bubbles default to 'c' (silver in the default theme). 
+All items in containers inherit the swatch from their parent. Exceptions to this rule are the listdivider in listviews, the header of nested list pages, and the button of split button lists, which all default to 'b' (blue in the default theme). Count bubbles default to 'c' (silver in the default theme). 
 
 Note that there is also a swatch named "active" (bright blue in the default theme) which is used to indicate an active selected item. See the Global "Active" state further down this page for further information on the active swatch. 
 
