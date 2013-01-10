@@ -91,7 +91,7 @@ $( document ).ready(function() {
 ### Complete Example
 
 The following example illustrates the click handling code discussed above,
-embedded directly in the HTML `<body>`. Note that
+embedded directly in the HTML `<body>`. Note that in practice,
 it is usually better to place your code in a separate JS file 
 and load it on the page with a `<script>` element's `src` attribute.
 
@@ -126,7 +126,7 @@ and load it on the page with a `<script>` element's `src` attribute.
 
 ### Adding and Removing an HTML Class
 
-**Important:** *You must place the remaining jQuery examples inside the `ready` event so that they execute when the document is ready to be worked on.*
+**Important:** *You must place the remaining jQuery examples inside the `ready` event so that your code executes when the document is ready to be worked on.*
 
 Another common task is adding or removing a `class`.
 
@@ -174,28 +174,28 @@ then the link slowly disappears when clicked.
 
 ## Callbacks and Functions
 
-A callback is a function that is passed as an argument to another function and
+Unlike many other programming languages, JavaScript enables you to freely pass functions around to be executed at a later time.
+A *callback* is a function that is passed as an argument to another function and
 is executed after its parent function has completed. Callbacks are special because
-they patiently wait to execute until their parent finishes -- 
-and meanwhile the browser can be executing other functions or doing all sorts of other work. 
+they patiently wait to execute until their parent finishes.
+Meanwhile, the browser can be executing other functions or doing all sorts of other work. 
 
-Another important thing to know is how to properly pass the callback.
+To use callbacks, it is important to know how to pass them into their parent function.
 
 ### Callback *without* Arguments
 
-If a callback has no arguments, you can pass it like this:
+If a callback has no arguments, you can pass it in like this:
 
 ```
 $.get( "myhtmlpage.html", myCallBack );
 ```
 
-When `$.get` finishes getting the page `myhtmlpage.html`, it executes the `myCallBack` function.
+When [$.get](http://api.jquery.com/jQuery.get/) finishes getting the page `myhtmlpage.html`, it executes the `myCallBack` function.
 **Note** that the second parameter here is simply the function name (but *not* as a string and without parentheses).
-Unlike many other programming languages, JavaScript enables you to freely pass functions around to be executed at a later time.
 
 ### Callback *with* Arguments
 
-Executing callbacks with arguments can be tricky. The following examples illustrate how to think about callbacks with arguments:
+As discussed in this section, executing callbacks with arguments can be tricky. 
 
 #### Wrong
 This code example will ***not*** work:
@@ -204,10 +204,10 @@ This code example will ***not*** work:
 $.get( "myhtmlpage.html", myCallBack(param1, param2) );
 ```
 
-The reason this fails is that the code executes `myCallBack( param1, param2 )` *immediately* 
-and then passes the myCallBack's *return value* as the second parameter to [$.get()](http://api.jquery.com/jQuery.get/).
+The reason this fails is that the code executes `myCallBack( param1, param2 )` immediately 
+and then passes the myCallBack's *return value* as the second parameter to `$.get`.
 We actually want to pass in `myCallBack` the function, not `myCallBack`'s return value
-(which might or might not be a function).  So -- how to pass in `myCallBack` *and* include its arguments?
+(which might or might not be a function).  So, how to pass in `myCallBack` *and* include its arguments?
 
 #### Right
 
