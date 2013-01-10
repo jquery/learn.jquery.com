@@ -35,9 +35,7 @@ many JavaScript programmers wrap their code in an `onload` function:
 
 ```
 window.onload = function() {
-
   alert("welcome");
-
 }
 ```
 
@@ -47,9 +45,7 @@ known as the [ ready event ](http://api.jquery.com/ready):
 
 ```
 $( document ).ready( function() {
-
   // Your code here
-
 });
 ```
 
@@ -57,13 +53,9 @@ For example, inside the `ready` event, you can add a click handler to the link:
 
 ```
 $( document ).ready(function() {
-
   $("a").click(function( event ) {
-
     alert("Thanks for visiting!");
-
   });
-
 });
 ```
 
@@ -76,15 +68,10 @@ you can prevent the default behavior by calling `event.preventDefault()` in the 
 
 ```
 $( document ).ready(function() {
-
   $("a").click(function( event ) {
-
     alert("As you can see, the link no longer took you to jquery.com");
-
     event.preventDefault();
-
   });
-
 });
 ```
 
@@ -106,19 +93,12 @@ and load it on the page with a `<script>` element's `src` attribute.
     <a href="http://jquery.com/">jQuery</a>
     <script src="jquery.js"></script>
     <script>
-
       $( document ).ready(function() {
-
         $("a").click(function( event ) {
-
           alert("The link will no longer take you to jquery.com");
-
           event.preventDefault();
-
         });
-
       });
-
     </script>
   </body>
 </html>
@@ -162,11 +142,8 @@ For example, if you create a click handler of:
 
 ```
 $("a").click(function( event ){
-
   event.preventDefault();
-
   $( this ).hide("slow");
-
 });
 ```
 
@@ -217,9 +194,7 @@ Note the use of `function() {`.  The anonymous function does exactly one thing: 
 
 ```
  $.get( "myhtmlpage.html", function() {
-
    myCallBack( param1, param2 );
-
  });
 ```
 
