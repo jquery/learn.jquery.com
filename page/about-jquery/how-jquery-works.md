@@ -195,7 +195,7 @@ When [$.get](http://api.jquery.com/jQuery.get/) finishes getting the page `myhtm
 
 ### Callback *with* Arguments
 
-As discussed in this section, executing callbacks with arguments can be tricky. 
+Executing callbacks with arguments can be tricky. 
 
 #### Wrong
 This code example will ***not*** work:
