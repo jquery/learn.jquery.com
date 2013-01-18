@@ -45,7 +45,7 @@ console.log( x ); // 5
 
 This is a bad idea. Any variable that is global can have its value changed by any other parts of a program or any other script. This is undesirable, as it could lead to unforseen side effects.
 
-Secondly, it's considered bad practice to clutter the global scope. You should add as few properties as you possibly can to the global object, and try to keep your program contained within its own scope. That's why you'll see libaries such as jQuery often do this:
+Secondly, Immediately-Invoked Funcion Expressions provide a way to avoid global variables. You'll see many libraries such as  jQuery often use these:
 
 ```
 (function() {
