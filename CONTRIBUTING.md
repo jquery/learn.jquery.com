@@ -171,7 +171,7 @@ Once you've gotten your environment working, here are the general steps you shou
 Yes! Take a look at our [style guide](http://learn.jquery.com/style-guide) for
 more information on authoring and formatting conventions.
 
-## How Will My Contribution Be Ackowledged?
+## How Will My Contribution Be Acknowledged?
 
 We will build the attribution of an article based on the git commit logs and present this information in the site.
 

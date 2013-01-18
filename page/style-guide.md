@@ -1,5 +1,7 @@
 ---
 title: Style Guide
+attribution:
+  - jorydotcom <jory@bocoup.com>
 customFields: 
   -
     key: "is_chapter"

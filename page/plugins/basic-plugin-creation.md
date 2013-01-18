@@ -123,7 +123,7 @@ It would be much better to have one slot, and use parameters to control what act
 
   };
 }( jQuery )); 
-
+```
 
 ## Using the `each()` Method 
 Your typical jQuery object will contain references to any number of DOM elements, and that's why jQuery objects are often referred to as collections.  
