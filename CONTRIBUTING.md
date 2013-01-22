@@ -60,21 +60,21 @@ file.
 ### Design
 
 The site's layout and design is controlled by our
-[`web-base-template`](http://github.com/jquery/web-base-template), a custom
+[`jquery-wp-content`](http://github.com/jquery/jquery-wp-content), a custom
 [WordPress](http://wordpress.org) configuration that runs (or will run in the
 near future) all of the sites run by the jQuery Foundation. The [master
-theme](https://github.com/jquery/web-base-template/tree/master/themes/jquery)
+theme](https://github.com/jquery/jquery-wp-content/tree/master/themes/jquery)
 controls most of the layout for all of our sites, and there is a [child
-theme](https://github.com/jquery/web-base-template/tree/master/themes/learn.jquery.com)
+theme](https://github.com/jquery/jquery-wp-content/tree/master/themes/learn.jquery.com)
 that controls the templates and styles specific to the learn site.
 
-[`web-base-template`](http://github.com/jquery/web-base-template) powers our sites in 
+[`jquery-wp-content`](http://github.com/jquery/jquery-wp-content) powers our sites in 
 production and staging environments, and can set up for local development relatively easily.
 
 ### Build
 
 The static content in the `page` directory is deployed to a
-[`web-base-template`](http://github.com/jquery/web-base-template) instance
+[`jquery-wp-content`](http://github.com/jquery/jquery-wp-content) instance
 using [grunt](http://gruntjs.com), specifically with two grunt plugins we've created:
 
 * [grunt-jquery-content](http://github.com/jquery/grunt-jquery-content) - pre-processes content in a variety of formats (HTML, Markdown, XML) into HTML, applying syntax highlighting and some simple partial support, preparing it for processing by 
@@ -116,8 +116,8 @@ recommend that you set up a local development environment. You'll need
 ### Initial Deploy
 
 Once you've got these major pieces in place, you'll want to get WordPress and
-`web-base-template` running locally by following [these
-instructions](https://github.com/jquery/web-base-template/blob/master/README.md). 
+`jquery-wp-content` running locally by following [these
+instructions](https://github.com/jquery/jquery-wp-content/blob/master/README.md). 
 
 If you're get everything working right, you should be able navigate to
 [local.learn.jquery.com](http://local.learn.jquery.com) in a browser, you
