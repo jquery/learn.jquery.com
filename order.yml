@@ -97,3 +97,7 @@
 - jquery-mobile:
   - getting-started
   - theme-roller
+- jquery-ui:
+  - how-jquery-ui-works
+  - how-to-use-the-widget-factory
+  - why-use-the-widget-factory
