@@ -14,11 +14,12 @@ then "join" a "channel" relevant to your "interests". Channels
 where like-minded souls congregate, and messages posted to a channel
 can be seen by other users in the channel.
 
-You can also send private messages (PMs) to other users but this should only
-be done on very special occassions, or if you already know the person you're PMing.
+You can also send private messages (PMs) to other users but this
+should only be done on very special occasions, or if you already know
+the person you're PMing.
 
-The [#jQuery](irc://irc.freenode.net/#jquery) channel on the Freenode network is very active, whimsical
-and especially patient with novices.
+The [#jQuery](irc://irc.freenode.net/#jquery) channel on the Freenode
+network is very active, whimsical and especially patient with novices.
 
 ### Downloading A Client
 
@@ -37,7 +38,8 @@ system. Some popular choices are listed below:
 * http://www.pidgin.im/download/
 
 #### Emacs
-* http://www.emacswiki.org/ERC - ERC is included in GNU Emacs since v22.3
+* http://www.emacswiki.org/ERC - ERC is included in GNU Emacs since
+  v22.3
 
 ### Using Webchat
 
@@ -53,11 +55,11 @@ client's documentation if this gives you any trouble.
 
 ## Etiquette
 
-Unlike some *other* channels, #jQuery is quite welcoming and
-friendly to newcomers, but we'd rather help you to help yourself than
-do your work for you. Keep in mind that users on the channel are
-volunteers who will happily find better things to do if you're rude or unable provide
-sufficient information to allow them to assist you..
+Unlike some *other* channels, #jQuery is quite welcoming and friendly
+to newcomers, but we'd rather help you to help yourself than do your
+work for you. Keep in mind that users on the channel are volunteers
+who will happily find better things to do if you're rude or unable
+provide sufficient information to allow them to assist you.
 
 Here are some general points to help you get the most out of your #jQuery
 experience.
@@ -78,10 +80,11 @@ experience.
   do find a solution let the channel know so people won't waste time
   solving it for you again.
 
-* If you are asked more questions about your problem, answer them, even if they
-  seem unrelated. It's not a quiz; someone is trying to get more information
-  about the situation in order to work toward a solution, and they may
-  recognize an issue as symptomatic of a common problem.
+* If you are asked more questions about your problem, answer them,
+  even if they seem unrelated. It's not a quiz; someone is trying to
+  get more information about the situation in order to work toward a
+  solution, and they may recognize an issue as symptomatic of a common
+  problem.
 
 * If you can help someone else with their problem while waiting for
   help with your own, please do so! This is good karma and will win
@@ -135,18 +138,19 @@ Good answers do at least two things: solve the issue AND educate. If
 we can help you prevent these issues in the future, or fix them
 yourself next time they arise, that leaves us free to help you with
 more interesting problems in the future. If someone tries to explain
-*how* and *why* their solution fixes your problem, pay attention
-and you might just learn something.
+*how* and *why* their solution fixes your problem, pay attention and
+you might just learn something.
 
-Remember, you're answering a *real live actual person's* question, and your
-goal should be to help them. Assume they're asking the question in good faith,
-and don't mock or belittle them for not knowing. Some folks are easier to help
-than others, and if at any given time you don't have the inclination to help
-someone constructively, it's better to just not engage them at all. If you get exasperated
-or busy, politely let them know that you can't assist them any longer.
+Remember, you're answering a *real live actual person's* question, and
+your goal should be to help them. Assume they're asking the question
+in good faith, and don't mock or belittle them for not knowing. Some
+folks are easier to help than others, and if at any given time you
+don't have the inclination to help someone constructively, it's better
+to just not engage them at all. If you get exasperated or busy,
+politely let them know that you can't assist them any longer.
 
-Try to give relatively practical, feasible advice that is related to the
-problem at hand. The following, for instance, is not helpful.
+Try to give relatively practical, feasible advice that is related to
+the problem at hand. The following, for instance, is not helpful.
 
 ```
 <john_doe> hi, i'm using wordpress and i'm having a problem with my jquery
@@ -156,21 +160,23 @@ problem at hand. The following, for instance, is not helpful.
 
 ## Learning to Fish: Debugging
 
-A lot of the times that someone comes in looking for support, it's not *really*
-because their code isn't working (which it isn't). Instead, they're unfamiliar
-with the debugging tools that make it possible to diagnose errors in code as it
-executes. Armed only with `alert` statements and looking at their code
-**hard**, it may not be surprising that they are struggling. If this sounds
-like you &mdash; or the person you're helping &mdash; it's a good time to pause
-and introduce them. Though debugging is an art not instantaneously learned,
-beginning to acquire the skill as soon as possible is of the utmost importance
-and can greatly cut down on future support needs for the individual.
+A lot of the times that someone comes in looking for support, it's not
+*really* because their code isn't working (which it isn't). Instead,
+they're unfamiliar with the debugging tools that make it possible to
+diagnose errors in code as it executes. Armed only with `alert`
+statements and looking at their code **hard**, it may not be
+surprising that they are struggling. If this sounds like you &mdash;
+or the person you're helping &mdash; it's a good time to pause and
+introduce them to the modern debugging tools and techniques. Though
+debugging is an art not instantaneously learned, beginning to acquire
+the skill as soon as possible is of the utmost importance and can
+greatly cut down on future support needs for the individual.
 
-One useful resource borne out of experience in the #jQuery channel is [Fixing
-These jQuery](http://fixingthesejquery.com/), which is a presentation that
-introduces basic concepts like how to open browser debugging tools, set
-breakpoints, and inspect application state. If you haven't used these tools,
-it's a good place to start.
+One useful resource borne out of experience in the #jQuery channel is
+[Fixing These jQuery](http://fixingthesejquery.com/), which is a
+presentation that introduces basic concepts like how to open browser
+debugging tools, set breakpoints, and inspect application state. If
+you haven't used these tools, it's a great place to start.
 
 
 ## More Reading
@@ -179,8 +185,9 @@ Much has been written to advise you on how to get help and be helpful.
 
 * [Freenode: Catalysts](http://freenode.net/catalysts.shtml)
 
-If you're finding yourself belittled, abused, banned or ignored you should read
-one of these guides to help you work out where you're going wrong.
+If you're finding yourself belittled, abused, banned or ignored you
+should read one of these guides to help you work out where you're
+going wrong.
 
 * [How To Ask Questions The Smart Way](http://www.catb.org/esr/faqs/smart-questions.html)
 * [Help Vampires: A Spotter’s Guide](http://slash7.com/2006/12/22/vampires/)
