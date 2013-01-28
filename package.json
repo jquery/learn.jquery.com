@@ -1,32 +1,32 @@
 {
-	"name": "learn.jquery.com",
-	"title": "jQuery Learning Site",
-	"description": "jQuery Foundation site for learning jQuery and JavaScript",
-	"version": "0.1.0",
-	"homepage": "http://learn.jquery.com",
-	"author": {
-		"name": "jQuery Foundation (http://jquery.org/)"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/jquery/learn.jquery.com.git"
-	},
-	"bugs": {
-		"url": "https://github.com/jquery/learn.jquery.com/issues"
-	},
-	"licenses": [
-		{
-			"type": "MIT",
-			"url": "http://www.opensource.org/licenses/MIT"
-		}
-	],
-	"dependencies": {
-		"grunt": "0.3.x",
-		"grunt-clean": "0.3.0",
-		"grunt-html": "0.1.1",
-		"grunt-wordpress": "1.0.5",
-		"grunt-jquery-content": "0.8.1",
-		"grunt-check-modules": "0.1.0",
-		"js-yaml": "1.0.2"
-	}
+  "name": "learn.jquery.com",
+  "title": "jQuery Learning Site",
+  "description": "jQuery Foundation site for learning jQuery and JavaScript",
+  "version": "0.1.1",
+  "homepage": "http://learn.jquery.com",
+  "author": {
+    "name": "jQuery Foundation (http://jquery.org/)"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jquery/learn.jquery.com.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jquery/learn.jquery.com/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ],
+  "dependencies": {
+    "grunt": "0.3.x",
+    "grunt-clean": "0.3.0",
+    "grunt-html": "0.1.1",
+    "grunt-wordpress": "1.0.5",
+    "grunt-jquery-content": "0.8.1",
+    "grunt-check-modules": "0.1.0",
+    "js-yaml": "1.0.2"
+  }
 }
