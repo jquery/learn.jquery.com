@@ -2,7 +2,7 @@
   "name": "irc.jquery.com",
   "title": "jQuery IRC Logs and Guide",
   "description": "Information about using the jQuery Foundation's IRC channels and links to IRC logs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "http://irc.jquery.com",
   "author": {
     "name": "jQuery Foundation (http://jquery.org/)"
