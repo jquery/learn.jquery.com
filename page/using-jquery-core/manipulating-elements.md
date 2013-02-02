@@ -67,7 +67,7 @@ If you need to copy related data and events, be sure to pass `true` as an argume
 
 ## Removing Elements
 
-There are two ways to remove elements from the page: `$.fn.remove` and `$.fn.detach`. Use `$.fn.remove` when you want to permanently remove the selection from the page. while `$.fn.remove` does return the removed element(s), those elements will not have their associated data and events attached to them if you return them to the page.
+There are two ways to remove elements from the page: `$.fn.remove` and `$.fn.detach`. Use `$.fn.remove` when you want to permanently remove the selection from the page. While `$.fn.remove` does return the removed element(s), those elements will not have their associated data and events attached to them if you return them to the page.
 
 Use `$.fn.detach` if you need the data and events to persist. Like `$.fn.remove`, it returns the selection, but it also maintains the data and events associated with the selection, so you can restore the selection to the page at a later time.
 
