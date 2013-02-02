@@ -15,7 +15,7 @@ Much of the initial content - and spirit - comes from [jQuery Fundamentals](http
 
 ## How This Site Works
 
-This site's core content consists of [Markdown](http://daringfireball.net/projects/markdown/) files. The template that controls the site's appearance is a [child theme](https://github.com/jquery/web-base-template/tree/master/themes/learn-jquery-com) of the jQuery [web base template](https://github.com/jquery/web-base-template), and any issues with the presentation should be directed to [that repository](https://github.com/jquery/web-base-template).
+This site's core content consists of [Markdown](http://daringfireball.net/projects/markdown/) files. The template that controls the site's appearance is a [child theme](https://github.com/jquery/jquery-wp-content/tree/master/themes/learn.jquery.com) of the jQuery [web base template](https://github.com/jquery/jquery-wp-content), and any issues with the presentation should be directed to [that repository](https://github.com/jquery/jquery-wp-content).
 
 ### Site Organization
 
@@ -38,7 +38,7 @@ Each of the articles on the site has some [YAML "Front Matter"](https://github.c
 
 ## Building && Working Locally
 
-As this site is part of the jQuery network of sites, its presentation is controlled by our [web base template](https://github.com/jquery/web-base-template). To preview the site locally, first follow the [instructions there](https://github.com/jquery/web-base-template) to set up a local version of the jQuery WordPress network. Then, clone this repo and run the following steps (node.js required).
+As this site is part of the jQuery network of sites, its presentation is controlled by our [web base template](https://github.com/jquery/jquery-wp-content). To preview the site locally, first follow the [instructions there](https://github.com/jquery/jquery-wp-content) to set up a local version of the jQuery WordPress network. Then, clone this repo and run the following steps (node.js required).
 
 
 1. `npm install`
