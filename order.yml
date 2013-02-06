@@ -72,6 +72,7 @@
   - basic-plugin-creation
   - advanced-plugin-concepts
   - stateful-plugins-with-widget-factory
+  - building-plugins-with-grunt
 - performance:
   - append-outside-loop
   - cache-loop-length
