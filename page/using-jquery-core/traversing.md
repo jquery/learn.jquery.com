@@ -91,7 +91,7 @@ $("div.parent").nextAll().last();
 //Selecting all the previous siblings of the selector
 
 // returns [ div.surrogateParent1, div.parent ]
-$("div.pasurrogateParent2rent").prevAll();
+$("div.surrogateParent2").prevAll();
 // returns [ div.surrogateParent1 ]
 $("div.surrogateParent2").prevAll().first();
 // returns [ div.parent ]
