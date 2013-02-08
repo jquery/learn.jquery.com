@@ -94,6 +94,9 @@
     - examples
 - jquery-ui:
   - getting-started
+  - theming
+    - themeroller
+    - api
 - jquery-mobile:
   - getting-started
   - theme-roller
