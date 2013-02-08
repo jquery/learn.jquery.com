@@ -97,6 +97,7 @@
   - theming
     - themeroller
     - api
+    - write-a-theme
 - jquery-mobile:
   - getting-started
   - theme-roller
