@@ -1,5 +1,5 @@
 ---
-title: Deferreds
+title: jQuery Deferreds
 level: advanced
 source: http://msdn.microsoft.com/en-us/magazine/gg723713.aspx
 attribution: 

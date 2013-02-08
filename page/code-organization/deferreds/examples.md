@@ -1,5 +1,5 @@
 ---
-title: Deferreds
+title: Deferred examples
 level: advanced
 source: http://msdn.microsoft.com/en-us/magazine/gg723713.aspx
 attribution: 
