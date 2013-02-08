@@ -92,6 +92,9 @@
     - about-deferreds
     - jquery-deferreds
     - examples
+- jquery-ui:
+  - getting-started
 - jquery-mobile:
   - getting-started
   - theme-roller
+
