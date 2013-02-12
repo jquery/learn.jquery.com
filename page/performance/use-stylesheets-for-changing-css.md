@@ -13,6 +13,6 @@ adding a style tag to the page instead for a nearly 60% increase in speed.
 // fine for up to 20 elements, slow after that
 $("a.swedberg").css("color", "#asd123");
 
-$("<style type="text/css">a.swedberg { color : #asd123 }</style>")
+$("<style type=\"text/css\">a.swedberg { color : #asd123 }</style>")
   .appendTo("head");
 ```
