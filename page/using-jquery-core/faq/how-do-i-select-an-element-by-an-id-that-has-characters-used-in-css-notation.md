@@ -26,7 +26,7 @@ The following function takes care of escaping these characters and places a "#" 
 ```
 function jq( myid ) {
 
-  return "#" + myid.replace( /(:|\.)/g, "\\$1" );
+  return "#" + myid.replace( /(:|\.|\[|\])/g, "\\$1" );
 
 }
 ```
