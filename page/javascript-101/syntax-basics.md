@@ -34,8 +34,8 @@ var world     =      "World!";
 ```
 
 ```
-// Semantic whitespace promotes readibility.
-// Readible code is good!
+// Semantic whitespace promotes readability.
+// Readable code is good!
 var foo = function() {
 
   for ( var i = 0; i < 10; i++ ) {

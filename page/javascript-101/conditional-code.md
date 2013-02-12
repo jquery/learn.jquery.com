@@ -106,7 +106,7 @@ Switch statements have somewhat fallen out of favor in JavaScript, because often
 ```
 var stuffToDo = {
 
-  bar: function() {
+  "bar" : function() {
 
     alert("the value was bar -- yay!");
 
@@ -128,7 +128,7 @@ var stuffToDo = {
 
 if ( stuffToDo[foo] ) {
 
-    stuffToDo[ foo ]();
+    stuffToDo[foo]();
 
 } else {
 
