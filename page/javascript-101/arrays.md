@@ -182,7 +182,7 @@ myArray.splice( index, length, values, ... );
 
 * *Index* - The starting index.
 * *Length* - The number of elements to remove.
-* *Values* - The values to be inserted at idx.
+* *Values* - The values to be inserted at the Index position.
 
 For example:
 
