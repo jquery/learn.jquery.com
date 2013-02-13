@@ -93,12 +93,15 @@
     - jquery-deferreds
     - examples
 - jquery-ui:
+  - how-jquery-ui-works
   - getting-started
   - theming
     - themeroller
     - api
     - write-a-theme
+  - widget-factory
+    - why-use-the-widget-factory
+    - how-to-use-the-widget-factory
 - jquery-mobile:
   - getting-started
   - theme-roller
-
