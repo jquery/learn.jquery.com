@@ -40,11 +40,14 @@ need it, and what to do with that old post years and versions down the road.
 You're invited to share that energy to help us bring that ecosystem together
 and grow it further! 
 
-
 If you've ever helped anyone, colleague or stranger, with a particular problem,
 then you know the value of having a reference you can quickly link to that says
 "here's how you do it." This site is intended to be that compendium, but
 there's always more to refine and add, and we need your help too!
+
+Of course, we'll also give you credit for your work! The **Contributors** section
+for each article is generated from the git commit logs on the file, so you'll
+be publicly acknolwedged for your help.
 
 ## How Does It Work?
 
