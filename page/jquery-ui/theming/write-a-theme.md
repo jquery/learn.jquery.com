@@ -1,5 +1,5 @@
 ---
-title: How to write a theme
+title: How To Write a Theme
 level: advanced
 ---
 

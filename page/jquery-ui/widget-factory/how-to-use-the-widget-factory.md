@@ -1,5 +1,5 @@
 ---
-title: How to use the widget factory
+title: How To Use the Widget Factory
 level: Beginner
 ---
 

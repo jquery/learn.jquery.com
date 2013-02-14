@@ -3,7 +3,7 @@ title: How jQuery UI Works
 level: Beginner
 ---
 
-jQuery UI contains many widgets that maintain state and therefore have a slightly different usage pattern than typical jQuery plugins. All of jQuery UI's widgets use the same patterns, so if you learn how to use one, then you'll know how to use all of them. This document will walk you through the common functionality, using a progressbar widget for the code examples.
+jQuery UI contains many widgets that maintain [state](http://en.wikipedia.org/wiki/State_%28computer_science%29) and therefore may have a slightly different usage pattern than typical jQuery plugins you are already used to. While the initialization is the same as most jQuery plugins, jQuery UI's widgets are built on top of the [Widget Factory](/jquery-ui/widget-factory/) which provides the same general API to all of them. So if you learn how to use one, then you'll know how to use all of them! This document will walk you through the common functionality, using the [progressbar](http://jqueryui.com/progressbar/) widget for the code examples.
 
 ## Initialization
 

@@ -4,12 +4,12 @@ level: beginner
 ---
 
 ### What is jQuery UI?
-jQuery UI is a widget and interaction library built on top of the jQuery JavaScript Library, that you can use to build highly interactive web applications.  This guide is designed to get you up to speed on how jQuery UI works. Follow along below to get started.
+jQuery UI is a widget and interaction library built on top of the jQuery JavaScript Library that you can use to build highly interactive web applications.  This guide is designed to get you up to speed on how jQuery UI works. Follow along below to get started.
 
 ### Start by checking out the demos
 To get a feel for what jQuery UI is capable of, check out the [UI Demos](http://jqueryui.com/demos/).
 
-In the demos section, the navigation lists all of the interactions and widgets that jQuery UI offers. Choose an interaction or widget and you'll be presented with several demo configurations for that particular plugin. Each demo allows you to view source code, change themes, and the URL can always be bookmarked. For example, check out the [accordion widget's fill space demo page](http://jqueryui.com/demos/accordion/#fillspace).
+In the demos section, the navigation lists all of the interactions and widgets that jQuery UI offers. Choose an interaction or widget and you'll be presented with several demo configurations for that particular plugin. Each demo allows you to view source code, change themes, and the URL can always be bookmarked. For example, check out the [accordion widget's fill space demo page](http://jqueryui.com/accordion/#fillspace).
 
 ### Build your custom jQuery UI download
 Once you have a basic understanding of what jQuery UI is and what it does, you're ready to try it out! It's time to head over to the [Download Builder](http://jqueryui.com/download/) on the jQuery UI website to download a copy of jQuery UI. jQuery UI's download builder allows you to choose the components you would like to download and get a custom version of the library for your project. There are 3 easy steps to building your custom jQuery UI download:
