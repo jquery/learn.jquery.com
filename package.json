@@ -27,6 +27,6 @@
     "grunt-wordpress": "1.0.5",
     "grunt-jquery-content": "0.8.1",
     "grunt-check-modules": "0.1.0",
-    "js-yaml": "1.0.2"
+    "js-yaml": "2.0.1"
   }
 }
