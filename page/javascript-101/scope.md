@@ -8,7 +8,7 @@ attribution:
 
 "Scope" refers to the variables that are available to a piece of code at a given time. A lack of understanding of scope can lead to frustrating debugging experiences.
 
-When a variable is declared inside of a function using the `var` keyword, it is only available to code inside of that function &#8212; code outside of that function cannot access the variable. On the other hand, functions defined inside that function will have access to to the declared variable.
+When a variable is declared inside of a function using the `var` keyword, it is only available to code inside of that function &#8212; code outside of that function cannot access the variable. On the other hand, functions defined inside that function will have access to the declared variable.
 
 Furthermore, variables that are declared inside a function without the `var` keyword are not local to the function &#8212; JavaScript will traverse the scope chain all the way up to the window scope to find where the variable was previously defined. If the variable wasn't previously defined, it will be defined in the global scope, which can have unexpected consequences.
 
