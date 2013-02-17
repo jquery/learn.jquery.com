@@ -24,7 +24,7 @@ Additionally the jQuery utility method `$.trim()` is used above to remove any le
 
 ##Basic Plugin Authoring
 
-Let's say we want to create a plugin that makes text within a set of retrieved elements green. All we have to do is add a function called `greenify` to `$.fn` and it will available just like any other jQuery object method.
+Let's say we want to create a plugin that makes text within a set of retrieved elements green. All we have to do is add a function called `greenify` to `$.fn` and it will be available just like any other jQuery object method.
 
 ```
 $.fn.greenify = function() {
