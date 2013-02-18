@@ -6,7 +6,7 @@ attribution:
   - jQuery Fundamentals
 ---
 
-Types in JavaScript fall into two categories: primitives or objects. Primitive types include:
+Types in JavaScript fall into two categories: primitives or composite. Primitive types include:
 
 * String
 * Number
@@ -67,9 +67,9 @@ var bar1 = undefined;
 var bar2;
 ```
 
-## Objects
+## Composite
 
-Everything else is in JavaScript is considered an Object. While there are [numerous built-in objects](https://developer.mozilla.org/en/JavaScript/Reference#Global_Objects, "MDN - Global Object Reference"), this chapter will cover:
+Everything else in JavaScript is considered an Object. While there are [numerous built-in objects](https://developer.mozilla.org/en/JavaScript/Reference#Global_Objects, "MDN - Global Object Reference"), this chapter will cover:
 
 * Object
 * Array
