@@ -83,7 +83,7 @@ jQuery offers a trivial and elegant way to create new elements using the same `$
 // Creating new elements from an HTML string
 $("<p>This is a new paragraph</p>");
 
-$("<li class="new">new list item</li>");
+$("<li class=\"new\">new list item</li>");
 ```
 
 ```
