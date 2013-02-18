@@ -27,7 +27,8 @@ you need to remember:
   automatically receive and return the selection as this.
 *	Methods in the $ namespace are generally utility-type methods, and do not
   work with selections; they are not automatically passed any arguments, and
-  their return value will vary.
+  their return value will vary; within the jQuery API documentation, to 
+  distinguish then from methods, they are referred as functions.
 
 There are a few cases where object methods and core methods have the same
 names, such as `$.each` and `$.fn.each`. In these cases, be extremely careful
