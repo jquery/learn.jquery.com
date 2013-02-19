@@ -16,7 +16,7 @@ $("#myId"); // note IDs must be unique per page
 
 ```
 // Selecting elements by class name
-$("div.myClass"); // performance improves if you specify element type
+$(".myClass");
 ```
 
 ## Selecting Elements by Attribute
