@@ -113,7 +113,7 @@ var wholeArray = myArray.concat( myOtherArray );
 var myArray = [ "hello", "world", "!" ];
 
 console.log( myArray.join(" ") );  // "hello world !";
-console.log( myArray.join("") );     // "hello,world,!"
+console.log( myArray.join() );     // "hello,world,!"
 console.log( myArray.join("") );   // "helloworld!"
 console.log( myArray.join("!!") ); // "hello!!world!!!";
 ```
