@@ -31,7 +31,7 @@ Say you have to add new line items to your page, given the following HTML:
 </html>
 ```
 
-We need to attach the same event handler to multiple elements.  In this example we want to attach an event that will the log the text of the anchor tag to the console whenever it is clicked.
+We need to attach the same event handler to multiple elements.  In this example we want to attach an event that will log the text of the anchor tag to the console whenever it is clicked.
 
 We can attach a direct bind click event to each `<li>` using the `.on()` method, that will alert the text inside of it by doing the following:
 ```
@@ -45,7 +45,7 @@ $("#list a").on( "click", function( event ) {
 While this works perfectly fine, there are drawbacks.  Consider this:
 ```
 // add a new element on to our existing list
-$("#list").append("<li><a href="http://newsite.com">Item #101</a></li>");
+$("#list").append("<li><a href=\"http://newsite.com\">Item #101</a></li>");
 ```
 If we were to click our newly added item, nothing would happen.  This is because of the directly bound event that we attached previously.  Direct events are only attached to elements at the time we called the `.on()` method for our existing collection of `<a>`"s, that is only the `<a>`"s that were found when we call `$()`
 
