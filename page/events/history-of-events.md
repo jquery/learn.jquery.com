@@ -31,7 +31,7 @@ It is possible to use `.bind()` and attach a handler to every element.
 As discussed in the [event delegation](/event/event-delegation) article, this is not optimal.
 
 ### liveQuery
-*liveQuery* was a popular jQuery plugin, that allowed for the creation of events which would be triggered for elements that existed now or in the future.  This plugin did not use event delegation is used expensive CPU processing to poll the DOM for changes every 20ms and fire events accordingly.
+*liveQuery* was a popular jQuery plugin that allowed for the creation of events which would be triggered for elements that existed now or in the future.  This plugin did not use event delegation and used expensive CPU processing to poll the DOM for changes every 20ms and fire events accordingly.
 
 
 ### [.bind()](http://api.jquery.com/bind/) delegation (Deprecated)
