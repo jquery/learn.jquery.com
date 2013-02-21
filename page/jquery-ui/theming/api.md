@@ -37,11 +37,11 @@ The following CSS classes are split between ui.core.css and ui.theme.css, depend
 ### Interaction Cues
 
 * `.ui-state-highlight`: Class to be applied to highlighted or selected elements. Applies "highlight" container styles to an element and its child text, links, and icons.
-* `.ui-state-error:</strong> Class to be applied to error messaging container elements. Applies "error" container styles to an element and its child text, links, and icons.
-* `.ui-state-error-text:</strong> An additional class that applies just the error text color without background. Can be used on form labels for instance. Also applies error icon color to child icons.
-* `.ui-state-disabled:</strong> Applies a dimmed opacity to disabled UI elements. Meant to be added in addition to an already-styled element.
-* `.ui-priority-primary:</strong> Class to be applied to a priority-1 button in situations where button hierarchy is needed. Applies bold text.
-* `.ui-priority-secondary:</strong> Class to be applied to a priority-2 button in situations where button hierarchy is needed. Applies normal weight text and slight transparency to element.
+* `.ui-state-error:` Class to be applied to error messaging container elements. Applies "error" container styles to an element and its child text, links, and icons.
+* `.ui-state-error-text:` An additional class that applies just the error text color without background. Can be used on form labels for instance. Also applies error icon color to child icons.
+* `.ui-state-disabled:` Applies a dimmed opacity to disabled UI elements. Meant to be added in addition to an already-styled element.
+* `.ui-priority-primary:` Class to be applied to a priority-1 button in situations where button hierarchy is needed. Applies bold text.
+* `.ui-priority-secondary:` Class to be applied to a priority-2 button in situations where button hierarchy is needed. Applies normal weight text and slight transparency to element.
 
 ### Icons
 
