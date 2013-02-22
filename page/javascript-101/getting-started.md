@@ -21,24 +21,31 @@ In the browser, JavaScript adds interactivity and behavior to HTML content. With
 Look at this simple HTML page that includes CSS and JavaScript to see how it all fits together:
 
 ```
-<html>
+<!DOCTYPE HTML>
+<html lang="en-US">
 <head>
+  <meta charset="UTF-8">
   <title>Hello World</title>
   <!-- CSS for presentation -->
   <style type="text/css">
     h1 { font-size: 14px; color: hotpink; }
     button { color: red; }
   </style>
-  <!-- JavaScript for interactivity -->
-  <script type="text/javascript">
-    function buttonClick() {
-      alert("Hello!");
-    }
-  </script>
 </head>
 <body>
   <h1>Hello World</h1>
-  <button onClick="buttonClick();">Click Me!</button>
+  <button>Click Me!</button>
+
+  <!-- JavaScript for interactivity -->
+  <script>
+    // get a handle on the first button element 
+    // in the document.
+    var button = document.querySelector('button');
+    // if a user clicks on it, say hello! 
+    button.addEventListener('click', function(ev) {
+      alert('Hello');
+    }, false);
+  </script>
 </body>
 </html>
 ```
