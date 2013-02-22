@@ -11,7 +11,7 @@ jQuery’s ajax capabilities can be especially useful when dealing with forms. T
 ### Serialization
 Serializing form inputs in jQuery is extremely easy. Two methods come supported natively - `$.fn.serialize` and `$.fn.serializeArray`. While the names are fairly self-explanatory, there are many advantages to using them.
 
-The `serialize` method serializes a form's data into a query string. For the element's value to be serialized, it **must** have a `name` attribute. Please noted that values from inputs with a type of `checkbox` or `radio` are included only if they are checked.
+The `serialize` method serializes a form's data into a query string. For the element's value to be serialized, it **must** have a `name` attribute. Please note that values from inputs with a type of `checkbox` or `radio` are included only if they are checked.
 
 ```
 // Turning form data into a query string
