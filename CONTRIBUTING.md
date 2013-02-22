@@ -14,7 +14,7 @@ Jump ahead to learn how to get started.
 
 But if you think you're part of the second group, and have had trouble
 participating in open source because of a lack of comfort with the tools,
-**you're still welcome**!. Beyond providing a resource for learning jQuery, a
+**you're still welcome**! Beyond providing a resource for learning jQuery, a
 major goal of this site is to provide an encouraging environment for you to
 develop these skills, while still making a contribution that matters. Many
 people think that the only way to get involved with a programming project like
