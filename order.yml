@@ -76,7 +76,6 @@
 - performance:
   - append-outside-loop
   - cache-loop-length
-  - clever-conditionals
   - detach-elements-before-work-with-them
   - dont-act-on-absent-elements
   - optimize-selectors
