@@ -90,12 +90,12 @@ prepending an underscore to the function name.
             // no value passed, act as a getter
             if ( value === undefined ) {
                 return this.options.value;
-            // value passed, act as a setter
-            } else {
-                this.options.value = this._constrain( value );
-                var progress = this.options.value + "%";
-                this.element.text( progress );
             }
+            
+            // value passed, act as a setter
+            this.options.value = this._constrain( value );
+            var progress = this.options.value + "%";
+            this.element.text( progress );
         },
         // create a private method
         _constrain: function( value ) {
