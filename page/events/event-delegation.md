@@ -89,7 +89,7 @@ $("#list").on( "click", "a", function( event ) {
 ```
 This simply passes the `.is()` method a selector to see if the element"s `href` attributes starts with "http".  Also we have removed the `event.preventDefault();` statement, this is because we want the default action to happen (which is to following the `href`)
 
-We can actually take this a step further and make our code simpiler and more concise by allowing the selector argument to `.on()` do our logic for us.
+We can actually take this a step further and make our code simpler and more concise by allowing the selector argument to `.on()` do our logic for us.
 ```
 // attach a delegated event with a more refined selector
 $("#list").on( "click", "a[href^=http]", function( event ) {

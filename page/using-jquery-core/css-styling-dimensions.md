@@ -21,11 +21,11 @@ $("h1").css({
 });
 ```
 
-Note the style of the argument on the second line &#8212; it is an object that contains multiple properties. This is a common way to pass multiple arguments to a function, and many jQuery setter methods accept objects to set mulitple values at once.
+Note the style of the argument on the second line &#8212; it is an object that contains multiple properties. This is a common way to pass multiple arguments to a function, and many jQuery setter methods accept objects to set multiple values at once.
 
 CSS properties that normally include a hyphen need to be camelCased in JavaScript.  For example, the CSS property `font-size` is expressed as `fontSize` when used as a property name in JavaScript.  However, this does not apply when passing the name of a CSS property to the `$.fn.css()` method as a string &#8212; in that case, either the camelCased or hyphenated form will work.
 
-It's not recommended to use `$.fn.css()` as a setter in production-ready code, but when passing in an object to set CSS, CSS properties will be camelCased instead of using a hypen.
+It's not recommended to use `$.fn.css()` as a setter in production-ready code, but when passing in an object to set CSS, CSS properties will be camelCased instead of using a hyphen.
 
 ## Using CSS Classes for Styling
 

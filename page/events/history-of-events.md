@@ -70,7 +70,7 @@ When we use `.live()` our event is bound to `$( document )`.  When the `<li>` is
 * `<html>`
 * *document* root
 
-The last element to recieve the *click* event is *document*, this is where our `.live()` event is bound.  `.live()` will then check to see if our selector `#list li` is the element that triggered the event, if so our event handler is executed.
+The last element to receive the *click* event is *document*, this is where our `.live()` event is bound.  `.live()` will then check to see if our selector `#list li` is the element that triggered the event, if so our event handler is executed.
 
 
 ### [.live()](http://api.jquery.com/live/) w/ context (Deprecated)

@@ -266,7 +266,7 @@ In order to get the best performance using `:radio`, first select elements with 
 $("form :reset");
 ```
 
-In order to get the best performance using `:reset`, wfirst select elements with a standard jQuery selector, then use `.filter(":reset")`, or precede the pseudo-selector with a tag name or some other selector.
+In order to get the best performance using `:reset`, first select elements with a standard jQuery selector, then use `.filter(":reset")`, or precede the pseudo-selector with a tag name or some other selector.
 
 **Note:** for better performance in modern browsers, use `[ type = "reset" ]` instead of the `:reset` pseudo-selector.
 

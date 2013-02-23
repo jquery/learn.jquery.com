@@ -47,7 +47,7 @@ there's always more to refine and add, and we need your help too!
 
 Of course, we'll also give you credit for your work! The **Contributors** section
 for each article is generated from the git commit logs on the file, so you'll
-be publicly acknolwedged for your help.
+be publicly acknowledged for your help.
 
 ## How Does It Work?
 
@@ -137,7 +137,7 @@ Once you've gotten your environment working, here are the general steps you shou
 8. Go to your fork on GitHub and submit a new [pull request](https://help.github.com/articles/using-pull-requests).
 
 For more advice on managing your fork and submitting pull requests to jQuery
-Foundation, read our [Committs and Pull
+Foundation, read our [Commits and Pull
 Requests](http://contribute.jquery.org/commits-and-pull-requests/) guide.
 
 ### Adding A New Article
