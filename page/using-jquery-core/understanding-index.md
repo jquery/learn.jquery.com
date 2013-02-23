@@ -67,7 +67,7 @@ var $div = $("#last");
 console.log( "Index: " + $div.index("div") ); // 2
 ```
 
-When `.index()` is called with a string argument, there are two things to consider. First, jQuery will implicitly call `.first()` on the original jQuery object. It will be find the index of the first element, not the last element in this case. This is inconsist, so be careful here.
+When `.index()` is called with a string argument, there are two things to consider. First, jQuery will implicitly call `.first()` on the original jQuery object. It will be find the index of the first element, not the last element in this case. This is inconsistent, so be careful here.
 
 The second point to consider is that jQuery is querying the entire DOM using the passed in string selector and checking the index within that newly queried jQuery object. For example, when using `.index("div")` in the last example above, jQuery is selecting all of the `<divs>` in the document, then searching for the index that contains the first element in the jQuery object `.index()` is called on.
 
