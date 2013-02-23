@@ -36,7 +36,7 @@ making it easier for new users to start using your plugins.
 In addition to defining the interface,
 the widget factory also implements much of this functionality for you.
 If you're not familiar with the API provided by the widget factory,
-you should read [How jQuery UI Works](how-jquery-ui-works.md).
+you should read [How jQuery UI Works](/jquery-ui/how-jquery-ui-works/).
 
 ## Setting Options on Initialization
 
