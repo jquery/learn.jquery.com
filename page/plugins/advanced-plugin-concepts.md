@@ -189,7 +189,7 @@ $.fn.hilight = function( options ) {
 
     // build element specific options
     // This changed line tests to see if the Metadata Plugin is installed,
-    // andif it is, it extends our options object with the extracted metadata.
+    // and if it is, it extends our options object with the extracted metadata.
     var o = $.meta ? $.extend( {}, opts, $this.data() ) : opts;
 
     //...
