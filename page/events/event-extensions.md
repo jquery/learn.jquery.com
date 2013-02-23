@@ -44,7 +44,7 @@ props: Array
 :               Strings representing properties that should be copied from the browser's event object to the jQuery event object. If omitted, no additional properties are copied beyond the standard ones that jQuery copies and normalizes (e.g., `event.target` and `event.relatedTarget`).
 
 filter: Function( event, originalEvent )
-:               jQuery calls this function after it constructs the `jQuery.Event` object, copies standard properties from `jQuery.event.props`, and copies the `fixHooks`-specific props (if any) specified above. The function can create new properties on the event object or modify existing ones. The second argument is the browser's native event object, which is also availble in `event.originalEvent`.
+:               jQuery calls this function after it constructs the `jQuery.Event` object, copies standard properties from `jQuery.event.props`, and copies the `fixHooks`-specific props (if any) specified above. The function can create new properties on the event object or modify existing ones. The second argument is the browser's native event object, which is also available in `event.originalEvent`.
 
 Note that for all events, the browser's native event object is available in `event.originalEvent`; if the jQuery event handler examines the properties there instead of jQuery's normalized `event` object, there is no need to create a `fixHooks` entry to copy or modify the properties.
 

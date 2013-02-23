@@ -33,7 +33,7 @@ for ( [initialisation]; [conditional]; [iteration] ) {
 
 The _initialisation_ statement is executed only once, before the loop starts. It gives you an opportunity to prepare or declare any variables.
 
-The _conditional_ statement is executed before each iteration, and its return value decides whether the loop is to continue. If the conditional statement evaluates to a falsey value, then the loop stops.
+The _conditional_ statement is executed before each iteration, and its return value decides whether the loop is to continue. If the conditional statement evaluates to a falsy value, then the loop stops.
 
 The _iteration_ statement is executed at the end of each iteration and gives you an opportunity to change the state of important variables. Typically, this will involve incrementing or decrementing a counter and thus bringing the loop closer to its end.
 

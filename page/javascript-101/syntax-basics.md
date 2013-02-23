@@ -24,7 +24,7 @@ JavaScript has support for single and multi-line comments. Comments are ignored 
 
 ### Whitespace
 
-Whitespace is also ignored in JavaScript. There are many tools that will strip out all the whitespace in a program, reducing the overall file size and improving network latency. Given the availability of tools like these, whitespace should be leveraged to make the code as readible as possible.
+Whitespace is also ignored in JavaScript. There are many tools that will strip out all the whitespace in a program, reducing the overall file size and improving network latency. Given the availability of tools like these, whitespace should be leveraged to make the code as readable as possible.
 
 ```
 // Whitespace is insignificant.
@@ -64,7 +64,7 @@ Identifiers are used to give variables and functions a unique name so they can s
 * Can only be composed of letters, numbers, dollar signs, and underscores.
 * The first character cannot be a number.
 
-It's a best practice to name identifers in a way that will make sense to you and other developers later on.
+It's a best practice to name identifiers in a way that will make sense to you and other developers later on.
 
 ```
 // Valid identifier names.
