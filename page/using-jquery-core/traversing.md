@@ -69,17 +69,17 @@ $("div.grandparent").find("div");
 The rest of the traversal methods within jQuery all deal with finding sibling selections. There are a few basic methods as far as the direction of traversal is concerned. You can find previous elements with `$.fn.prev()`, next elements with `$.fn.next()`, and both with `$.fn.siblings()`. There are also a few other methods that build onto these basic methods: `$.fn.nextAll()`, `$.fn.nextUntil()`, `$.fn.prevAll()` and `$.fn.prevUntil()`.
 
 ```
-// Selecing a next sibling of the selectors
+// Selecting a next sibling of the selectors
 
 // returns [ div.surrogateParent1 ]
 $("div.parent").next();
 
-// Selecing a prev sibling of the selectors
+// Selecting a prev sibling of the selectors
 
 // returns [] as No sibling exists before div.parent
 $("div.parent").prev();
 
-//Selecting all the next siblings of the selector
+// Selecting all the next siblings of the selector
 
 // returns [ div.surrogateParent1, div.surrogateParent2 ]
 $("div.parent").nextAll();
@@ -88,7 +88,7 @@ $("div.parent").nextAll().first();
 // returns [ div.surrogateParent2 ]
 $("div.parent").nextAll().last();
 
-//Selecting all the previous siblings of the selector
+// Selecting all the previous siblings of the selector
 
 // returns [ div.surrogateParent1, div.parent ]
 $("div.surrogateParent2").prevAll();
