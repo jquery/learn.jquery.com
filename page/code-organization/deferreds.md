@@ -72,7 +72,7 @@ promise.then( function( futureValue ) {
 In the case of certain applications, it is necessary to have several
 results returned before your application can continue at all (for
 example, displaying a dynamic set of options on a screen before a user
-is able to select the option that interests them).Where this is the
+is able to select the option that interests them). Where this is the
 case, a method called 'when' exists, which can be used to perform some
 action once all the promises have been fully fulfilled:
 
