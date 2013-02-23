@@ -37,7 +37,7 @@ Notice that to use `css()`, another method, we use `this`, not `$( this )`. This
 
 ##Chaining
 
-This works, but there's a couple of things we need to do for our plugin to survive in the real world. One of jQuery's features is chaining, when you link five or six actions onto one selector. This is accomplished by having all jQuery object methods return the original jQuery object again (there are a few exeptions: `width()` called without parameters returns the width of the selected element, and is not chainable). Making our plugin method chainable takes one line of code:
+This works, but there's a couple of things we need to do for our plugin to survive in the real world. One of jQuery's features is chaining, when you link five or six actions onto one selector. This is accomplished by having all jQuery object methods return the original jQuery object again (there are a few exceptions: `width()` called without parameters returns the width of the selected element, and is not chainable). Making our plugin method chainable takes one line of code:
 
 ```
 $.fn.greenify = function() {
@@ -127,7 +127,7 @@ It would be much better to have one slot, and use parameters to control what act
 
 ## Using the `each()` Method 
 Your typical jQuery object will contain references to any number of DOM elements, and that's why jQuery objects are often referred to as collections.  
-If you want to do any manipulating with specific elements (eg: getting data an attribute, calculating specific positions) then you need to use `each()` to
+If you want to do any manipulating with specific elements (e.g. getting data an attribute, calculating specific positions) then you need to use `each()` to
 loop through the elements.  
 
 ```
@@ -182,7 +182,7 @@ $("div").greenify({
 });
 ```
 
-The default value for `color` of `#556B2F` gets overriden by `$.extend()` to be orange.
+The default value for `color` of `#556B2F` gets overridden by `$.extend()` to be orange.
 
 ##Putting It Together
 
