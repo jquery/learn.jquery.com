@@ -41,7 +41,7 @@ $("p").hide( 500 );
 $("div.hidden").show( 1250 );
 ```
 
-Most developers pass in a number of milleseconds to have more precise control 
+Most developers pass in a number of milliseconds to have more precise control
 over the duration.
 
 ##Fade and Slide Animations
