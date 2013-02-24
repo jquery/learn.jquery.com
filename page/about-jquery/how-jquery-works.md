@@ -5,7 +5,7 @@ level: beginner
 ### jQuery: The Basics
 
 This is a basic tutorial, designed to help you get started using jQuery. If you
-don't have a test page setup yet, start by creating the following HTML page: 
+don&rsquo;t have a test page setup yet, start by creating the following HTML page: 
 
 ```
 <!doctype html>
@@ -39,7 +39,7 @@ window.onload = function() {
 }
 ```
 
-Unfortunately, the code doesn't run until all images are finished downloading, including banner ads.
+Unfortunately, the code doesn&rsquo;t run until all images are finished downloading, including banner ads.
 To run code as soon as the `document` is ready to be manipulated, jQuery has a statement 
 known as the [ ready event ](http://api.jquery.com/ready):
 
@@ -80,7 +80,7 @@ $( document ).ready(function() {
 The following example illustrates the click handling code discussed above,
 embedded directly in the HTML `<body>`. Note that in practice,
 it is usually better to place your code in a separate JS file 
-and load it on the page with a `<script>` element's `src` attribute.
+and load it on the page with a `<script>` element&rsquo;s `src` attribute.
 
 ```
 <!doctype html>
@@ -181,9 +181,9 @@ This code example will ***not*** work:
 $.get( "myhtmlpage.html", myCallBack(param1, param2) );
 ```
 
-The reason this fails is that the code executes `myCallBack( param1, param2 )` immediately 
-and then passes the myCallBack's *return value* as the second parameter to `$.get`.
-We actually want to pass the function `myCallBack`, not `myCallBack( param1, param2)`'s return value
+The reason this fails is that the code executes `myCallBack( param1, param2 )` immediately
+and then passes myCallBack&rsquo;s *return value* as the second parameter to `$.get`.
+We actually want to pass the function `myCallBack`, not `myCallBack( param1, param2 )`&rsquo;s return value
 (which might or might not be a function).  So, how to pass in `myCallBack` *and* include its arguments?
 
 #### Right
