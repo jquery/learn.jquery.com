@@ -44,7 +44,7 @@ To run code as soon as the `document` is ready to be manipulated, jQuery has a s
 known as the [ ready event ](http://api.jquery.com/ready):
 
 ```
-$( document ).ready( function() {
+$( document ).ready(function() {
   // Your code here
 });
 ```
@@ -178,7 +178,7 @@ Executing callbacks with arguments can be tricky.
 This code example will ***not*** work:
 
 ```
-$.get( "myhtmlpage.html", myCallBack(param1, param2) );
+$.get( "myhtmlpage.html", myCallBack( param1, param2 ) );
 ```
 
 The reason this fails is that the code executes `myCallBack( param1, param2 )` immediately
@@ -193,9 +193,9 @@ Note the use of `function() {`.  The anonymous function does exactly one thing: 
 `myCallBack`, with the values of `param1` and `param2`. 
 
 ```
- $.get( "myhtmlpage.html", function() {
-   myCallBack( param1, param2 );
- });
+$.get( "myhtmlpage.html", function() {
+  myCallBack( param1, param2 );
+});
 ```
 
 When `$.get` finishes getting the page `myhtmlpage.html`, it executes the anonymous function,
