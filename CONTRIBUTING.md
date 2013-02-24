@@ -7,7 +7,7 @@ customFields:
 ---
 
 Depending on your level of experience with some of the workflows common to many
-open source projects, e.g., git/Github, the command line, and setting up a
+open source projects, e.g. git/GitHub, the command line, and setting up a
 local development environment, contributing to this site may be a breeze or
 come with a bit of a learning curve. If you fit into the former group, great!
 Jump ahead to learn how to get started.
