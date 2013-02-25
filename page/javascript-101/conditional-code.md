@@ -55,6 +55,7 @@ In order to use flow control successfully, it's important to understand which ki
 
 ```
 // Values that evaluate to false
+0.0; // The number zero
 "";  // an empty string
 NaN; // JavaScript's "not-a-number" variable
 null;
