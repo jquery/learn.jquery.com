@@ -79,7 +79,6 @@
   - dont-act-on-absent-elements
   - optimize-selectors
   - use-stylesheets-for-changing-css
-  - variable-definition
   - read-the-source
 - code-organization:
   - concepts
