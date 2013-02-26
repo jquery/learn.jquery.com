@@ -2,7 +2,7 @@
 title:        Syntax Basics
 level:        beginner
 source: http://jqfundamentals.com/legacy
-attribution: 
+attribution:
   - jQuery Fundamentals
 ---
 
@@ -75,3 +75,27 @@ var $my_AwesomeVariable = "d";
 var _my_awesome_variable_$ = "e";
 ```
 
+### Variable definition
+
+Variables can be defined using multiple `var` statements, or in a single
+combined var statement.
+
+```
+// this works
+var test = 1;
+var test2 = function() { ... };
+var test3 = test2( test );
+
+// and so does this
+var test4 = 1,
+  test5 = function() { ... },
+  test6 = test2( test );
+```
+
+Variables can be declared without assigning them a value. The value of a
+variable declared without a value is `undefined`.
+
+```
+var x;
+x === undefined; // true
+```
