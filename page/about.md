@@ -34,9 +34,10 @@ documentation" to our community and serve the following goals:
 
 In order to achieve these goals, all of [this site's content is maintained
 publicly on GitHub](http://github.com/jquery/learn.jquery.com) and is licensed
-under the [Creative Commons Attribution-Share Alike 3.0 United States
-license](http://creativecommons.org/licenses/by-sa/3.0/us/). To learn more
-about how the site works, take a look at our [contributing guide](/contributing).
+under the [MIT
+License](https://github.com/jquery/learn.jquery.com/blob/master/MIT-LICENSE.txt).
+To learn more about how the site works, take a look at our [contributing
+guide](/contributing).
 
 ## History
 

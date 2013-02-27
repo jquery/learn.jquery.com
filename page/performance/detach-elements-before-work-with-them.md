@@ -17,5 +17,5 @@ var $parent = $table.parent();
 $table.detach();
 
 // ... add lots and lots of rows to table
-$parent.append( table );
+$parent.append( $table );
 ```

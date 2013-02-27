@@ -32,7 +32,6 @@
   - traversing
   - css-styling-dimensions
   - data-methods
-  - feature-browser-detection
   - utility-methods
   - iterating
   - understanding-index
@@ -52,9 +51,7 @@
   - introduction-to-events
   - handling-events
   - inside-event-handling-function
-  - working-with-events-part-1
   - event-delegation
-  - working-with-events-part-2
   - triggering-event-handlers
   - history-of-events
   - introduction-to-custom-events
@@ -78,12 +75,10 @@
 - performance:
   - append-outside-loop
   - cache-loop-length
-  - clever-conditionals
   - detach-elements-before-work-with-them
   - dont-act-on-absent-elements
   - optimize-selectors
   - use-stylesheets-for-changing-css
-  - variable-definition
   - read-the-source
 - code-organization:
   - concepts
@@ -94,6 +89,16 @@
     - about-deferreds
     - jquery-deferreds
     - examples
+- jquery-ui:
+  - getting-started
+  - how-jquery-ui-works
+  - theming:
+    - themeroller
+    - api
+    - write-a-theme
+  - widget-factory:
+    - why-use-the-widget-factory
+    - how-to-use-the-widget-factory
 - jquery-mobile:
   - getting-started
   - theme-roller

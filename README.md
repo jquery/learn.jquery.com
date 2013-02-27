@@ -15,7 +15,7 @@ Much of the initial content - and spirit - comes from [jQuery Fundamentals](http
 
 ## How This Site Works
 
-This site's core content consists of [Markdown](http://daringfireball.net/projects/markdown/) files. The template that controls the site's appearance is a [child theme](https://github.com/jquery/web-base-template/tree/master/themes/learn-jquery-com) of the jQuery [web base template](https://github.com/jquery/web-base-template), and any issues with the presentation should be directed to [that repository](https://github.com/jquery/web-base-template).
+This site's core content consists of [Markdown](http://daringfireball.net/projects/markdown/) files. The template that controls the site's appearance is a [child theme](https://github.com/jquery/jquery-wp-content/tree/master/themes/learn.jquery.com) of the jQuery [web base template](https://github.com/jquery/jquery-wp-content), and any issues with the presentation should be directed to [that repository](https://github.com/jquery/jquery-wp-content).
 
 ### Site Organization
 
@@ -38,7 +38,7 @@ Each of the articles on the site has some [YAML "Front Matter"](https://github.c
 
 ## Building && Working Locally
 
-As this site is part of the jQuery network of sites, its presentation is controlled by our [web base template](https://github.com/jquery/web-base-template). To preview the site locally, first follow the [instructions there](https://github.com/jquery/web-base-template) to set up a local version of the jQuery WordPress network. Then, clone this repo and run the following steps (node.js required).
+As this site is part of the jQuery network of sites, its presentation is controlled by our [web base template](https://github.com/jquery/jquery-wp-content). To preview the site locally, first follow the [instructions there](https://github.com/jquery/jquery-wp-content) to set up a local version of the jQuery WordPress network. Then, clone this repo and run the following steps (node.js required).
 
 
 1. `npm install`
@@ -55,19 +55,3 @@ $ git config --global core.autocrlf true
 ## How Can I Help?
 
 We encourage contribution from anyone. For more comprehensive documentation on how to get involved, please read our [contributing guide](http://learn.jquery.com/contributing).
-
-# Copyright & Licensing
-
-This material is Copyright &copy;2011 The jQuery Foundation and licensed under
-the [Creative Commons Attribution-Share Alike 3.0 United States
-license](http://creativecommons.org/licenses/by-sa/3.0/us/). You are free to
-copy, distribute, transmit, and remix this work, provided you attribute the
-work to The jQuery Foundation as the original author and reference [this
-repository](http://github.com/jquery/learn.jquery.com). If you alter,
-transform, or build upon this work, you may distribute the resulting work only
-under the same, similar or a compatible license. Any of the above conditions
-can be waived if you get permission from the copyright holder. For any reuse or
-distribution, you must make clear to others the license terms of this work. The
-best way to do this is with a link to the [Creative Commons Attribution-Share
-Alike 3.0 United States
-license](http://creativecommons.org/licenses/by-sa/3.0/us/).

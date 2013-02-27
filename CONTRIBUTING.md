@@ -14,7 +14,7 @@ Jump ahead to learn how to get started.
 
 But if you think you're part of the second group, and have had trouble
 participating in open source because of a lack of comfort with the tools,
-**you're still welcome**!. Beyond providing a resource for learning jQuery, a
+**you're still welcome**! Beyond providing a resource for learning jQuery, a
 major goal of this site is to provide an encouraging environment for you to
 develop these skills, while still making a contribution that matters. Many
 people think that the only way to get involved with a programming project like
@@ -40,11 +40,14 @@ need it, and what to do with that old post years and versions down the road.
 You're invited to share that energy to help us bring that ecosystem together
 and grow it further! 
 
-
 If you've ever helped anyone, colleague or stranger, with a particular problem,
 then you know the value of having a reference you can quickly link to that says
 "here's how you do it." This site is intended to be that compendium, but
 there's always more to refine and add, and we need your help too!
+
+Of course, we'll also give you credit for your work! The **Contributors** section
+for each article is generated from the git commit logs on the file, so you'll
+be publicly acknowledged for your help.
 
 ## How Does It Work?
 
@@ -60,21 +63,21 @@ file.
 ### Design
 
 The site's layout and design is controlled by our
-[`web-base-template`](http://github.com/jquery/web-base-template), a custom
+[`jquery-wp-content`](http://github.com/jquery/jquery-wp-content), a custom
 [WordPress](http://wordpress.org) configuration that runs (or will run in the
 near future) all of the sites run by the jQuery Foundation. The [master
-theme](https://github.com/jquery/web-base-template/tree/master/themes/jquery)
+theme](https://github.com/jquery/jquery-wp-content/tree/master/themes/jquery)
 controls most of the layout for all of our sites, and there is a [child
-theme](https://github.com/jquery/web-base-template/tree/master/themes/learn.jquery.com)
+theme](https://github.com/jquery/jquery-wp-content/tree/master/themes/learn.jquery.com)
 that controls the templates and styles specific to the learn site.
 
-[`web-base-template`](http://github.com/jquery/web-base-template) powers our sites in 
+[`jquery-wp-content`](http://github.com/jquery/jquery-wp-content) powers our sites in 
 production and staging environments, and can set up for local development relatively easily.
 
 ### Build
 
 The static content in the `page` directory is deployed to a
-[`web-base-template`](http://github.com/jquery/web-base-template) instance
+[`jquery-wp-content`](http://github.com/jquery/jquery-wp-content) instance
 using [grunt](http://gruntjs.com), specifically with two grunt plugins we've created:
 
 * [grunt-jquery-content](http://github.com/jquery/grunt-jquery-content) - pre-processes content in a variety of formats (HTML, Markdown, XML) into HTML, applying syntax highlighting and some simple partial support, preparing it for processing by 
@@ -95,56 +98,30 @@ existing ones, or work on the site itself, the first thing you'll need is a
 you'd like to have reviewed for integration into the site, submit a [pull
 request](http://help.github.com/send-pull-requests/).
 
-*(If you're unfamiliar with Git, you can still contribute by editing files
-directly via [GitHub's in-browser
-editor](https://github.com/blog/905-edit-like-an-ace). But you won't be able to
-create new content, and you'll still need a GitHub account and a fork of this
-repository. So we encourage you to [learn how to use Git and
-GitHub](http://help.github.com/) as soon as you can.)*
+*(If you're unfamiliar with Git, you can still contribute by using features in
+GitHub's web UI. You can edit files directly via [GitHub's in-browser
+editor](https://github.com/blog/905-edit-like-an-ace). You can [create and
+delete branches directly from your
+fork](https://github.com/blog/1377-create-and-delete-branches), so you can also
+submit new articles as well. Either way, we still encourage you to [learn how
+to use Git and GitHub](http://help.github.com/) as soon as you can.)*
 
 ## Local Development
 
-In order to preview your changes locally, work on design/layout issues, or work on
-other jQuery sites' content, and generally contribute most effectively, we
-recommend that you set up a local development environment. You'll need
+In order to preview your changes locally, work on design/layout issues, or work
+on other jQuery sites' content, and generally contribute most effectively, we
+recommend that you set up a local development environment. You can learn how to
+get set up from our [documentation on contributing to jQuery Foundation web
+sites](http://contribute.jquery.org/web-sites/#local-development).
 
-* [git](http://git-scm.com)
-* [GitHub](http://github.com) account
-* Local PHP/MySQL environment, e.g., [MAMP](http://www.mamp.info/en/index.html), [XAMPP](http://www.apachefriends.org/en/xampp.html)
-* [node.js](http://nodejs.org)
-
-### Initial Deploy
-
-Once you've got these major pieces in place, you'll want to get WordPress and
-`web-base-template` running locally by following [these
-instructions](https://github.com/jquery/web-base-template/blob/master/README.md). 
-
-If you're get everything working right, you should be able navigate to
-[local.learn.jquery.com](http://local.learn.jquery.com) in a browser, you
-should see a site that looks exactly like the [live
-site](http://learn.jquery.com), only without any actual articles. That's where
-your the `learn.jquery.com` content repo comes into play.
-
-1. Fork the [repository](https://github.com/jquery/learn.jquery.com)
-2. Clone the repo -- `git clone git@github.com:<your username>/learn.jquery.com.git`
-3. Enter the directory where you cloned the repo -- `cd learn.jquery.com`
-4. Set up an upstream remote back to the jQuery repo -- 'git remote add upstream git@github.com:jquery/learn.jquery.com.git'
-5. Install grunt (if you haven't already) -- `npm install -g grunt`
-6. Install local build dependencies -- `npm install`
-7. Copy the `config-sample.json` file to `config.json`
-8. Edit `config.json` to use the username and password for your local WordPress network
-9. Build and deploy the files to your local WordPress -- `grunt`
-
-* **Windows note:** Line endings need to be Unix-style (line-feed only). Make sure your text editor creates new files with Unix-style line endings. In addition, the following setting to your git config will keep the Unix-style line endings when pulling from the repository.*
+* **Windows note:** Line endings need to be Unix-style (line-feed only). Make
+  sure your text editor creates new files with Unix-style line endings. In
+  addition, the following setting to your git config will keep the Unix-style
+  line endings when pulling from the repository.*
 
 ```
 $ git config --global core.autocrlf true
 ```
-
-At this point, if you refresh your `local.learn.jquery.com`, your local
-instance should be populated with all of the site content. If it isn't,
-or you're having trouble with any of these steps, please come and
-[seek out some assistance](#getting-help).
 
 ### Working With Content
 
@@ -158,6 +135,10 @@ Once you've gotten your environment working, here are the general steps you shou
 6. Commit the files to your local repo -- `git commit -m "add a relevant message describing the change"`
 7. Push the files to your GitHub remote -- `git push origin <feature/issue name/number>`
 8. Go to your fork on GitHub and submit a new [pull request](https://help.github.com/articles/using-pull-requests).
+
+For more advice on managing your fork and submitting pull requests to jQuery
+Foundation, read our [Commits and Pull
+Requests](http://contribute.jquery.org/commits-and-pull-requests/) guide.
 
 ### Adding A New Article
 

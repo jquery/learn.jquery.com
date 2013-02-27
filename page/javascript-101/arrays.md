@@ -106,16 +106,22 @@ var wholeArray = myArray.concat( myOtherArray );
 
 ### `.join`
 
-`.join` creates a string representation of the array. Its parameter is a string that works as a separator between elements (default separator is a comma):
+`.join` creates a string representation of an array by joining all of its elements using a separator string. If no separator is supplied (e.g. `.join` is called without arguments) the array will be joined using a comma:
 
 ```
 // Joining elements
 var myArray = [ "hello", "world", "!" ];
 
-console.log( myArray.join(" ") );  // "hello world !";
+// The default separator is a comma
 console.log( myArray.join() );     // "hello,world,!"
-console.log( myArray.join("") );   // "helloworld!"
+
+// Any string can be used as separator...
+console.log( myArray.join(" ") );  // "hello world !";
 console.log( myArray.join("!!") ); // "hello!!world!!!";
+
+// ...including an empty one
+console.log( myArray.join("") );   // "helloworld!"
+
 ```
 
 ### `.pop`
@@ -146,10 +152,10 @@ myArray.reverse();
 
 ### `.shift`
 
-Removes the first element of an array. With `.pop` and `.shift`, you can recreate the method of a [queue](http://en.wikipedia.org/wiki/Queue_(data_structure)):
+Removes the first element of an array. With `.push` and `.shift`, you can recreate the method of a [queue](http://en.wikipedia.org/wiki/Queue_(data_structure)):
 
 ```
-// queue with shift() and pop()
+// queue with shift() and push()
 var myArray = [];
 
 myArray.push( 0 ); // [ 0 ]
@@ -182,7 +188,7 @@ myArray.splice( index, length, values, ... );
 
 * *Index* - The starting index.
 * *Length* - The number of elements to remove.
-* *Values* - The values to be inserted at idx.
+* *Values* - The values to be inserted at the Index position.
 
 For example:
 

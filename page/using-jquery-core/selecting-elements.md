@@ -16,7 +16,7 @@ $("#myId"); // note IDs must be unique per page
 
 ```
 // Selecting elements by class name
-$("div.myClass"); // performance improves if you specify element type
+$(".myClass");
 ```
 
 ## Selecting Elements by Attribute
@@ -56,43 +56,6 @@ $("div:animated");
 However, this test doesn't work with `<tr>` elements. In the case of `<tr>` jQuery does check the CSS display property, and considers an element hidden if its display property is set to none.
 
 Elements that have not been added to the DOM will always be considered hidden, even if the CSS that would affect them would render them visible. See the [Manipulating Elements](/manipulating-elements) section to learn how to create and add elements to the DOM.
-
-For reference, here is the code jQuery uses to determine whether an element is visible or hidden:
-
-```
-jQuery.expr.filters.hidden = function( elem ) {
-
-  var width = elem.offsetWidth;
-  var height = elem.offsetHeight;
-  var skip = elem.nodeName.toLowerCase() === "tr";
-
-  // does the element have 0 height, 0 width,
-  // and it's not a <tr>?
-  return width === 0 && height === 0 && !skip ?
-
-      // then it must be hidden
-      true :
-
-      // but if it has width and height
-      // and it's not a <tr>
-      width > 0 && height > 0 && !skip ?
-
-          // then it must be visible
-          false :
-
-          // if we get here, the element has width
-          // and height, but it's also a <tr>,
-          // so check its display property to
-          // decide whether it's hidden
-          jQuery.curCSS( elem, "display" ) === "none";
-};
-
-jQuery.expr.filters.visible = function( elem ) {
-
-  return !jQuery.expr.filters.hidden( elem );
-
-};
-```
 
 ## Choosing Selectors
 
@@ -303,7 +266,7 @@ In order to get the best performance using `:radio`, first select elements with 
 $("form :reset");
 ```
 
-In order to get the best performance using `:reset`, wfirst select elements with a standard jQuery selector, then use `.filter(":reset")`, or precede the pseudo-selector with a tag name or some other selector.
+In order to get the best performance using `:reset`, first select elements with a standard jQuery selector, then use `.filter(":reset")`, or precede the pseudo-selector with a tag name or some other selector.
 
 **Note:** for better performance in modern browsers, use `[ type = "reset" ]` instead of the `:reset` pseudo-selector.
 

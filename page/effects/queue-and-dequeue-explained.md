@@ -5,7 +5,7 @@ source:       http://jqueryfordesigners.com/api-queue-dequeue/
 ---
 
 When you use the animate and show, hide, slideUp, etc effect methods, you’re
-adding a job on to the fx queue.By default, using queue and passing a function,
+adding a job on to the fx queue. By default, using queue and passing a function,
 will add to the fx queue. So we’re creating our own bespoke animation step:
 
 ```

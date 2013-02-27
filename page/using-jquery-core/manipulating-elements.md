@@ -9,7 +9,7 @@ For complete documentation of jQuery manipulation methods, visit the [Manipulati
 
 ## Getting and Setting Information about Elements
 
-There are many ways to can change an existing element. Among the most common tasks is changing the inner HTML or attribute of an element. jQuery offers simple, cross-browser methods for these sorts of manipulations. You can also get information about elements using many of the same methods in their getter incarnations. For more information on getters and setters, see the [Working with Selections](/working-with-selections) section. Here are a few methods you can use to get and set information about elements:
+There are many ways to change an existing element. Among the most common tasks is changing the inner HTML or attribute of an element. jQuery offers simple, cross-browser methods for these sorts of manipulations. You can also get information about elements using many of the same methods in their getter incarnations. For more information on getters and setters, see the [Working with Selections](/working-with-selections) section. Here are a few methods you can use to get and set information about elements:
 
   * **`$.fn.html`** - Get or set the html contents.
   * **`$.fn.text`** - Get or set the text contents; HTML will be stripped.
@@ -67,7 +67,7 @@ If you need to copy related data and events, be sure to pass `true` as an argume
 
 ## Removing Elements
 
-There are two ways to remove elements from the page: `$.fn.remove` and `$.fn.detach`. Use `$.fn.remove` when you want to permanently remove the selection from the page. while `$.fn.remove` does return the removed element(s), those elements will not have their associated data and events attached to them if you return them to the page.
+There are two ways to remove elements from the page: `$.fn.remove` and `$.fn.detach`. Use `$.fn.remove` when you want to permanently remove the selection from the page. While `$.fn.remove` does return the removed element(s), those elements will not have their associated data and events attached to them if you return them to the page.
 
 Use `$.fn.detach` if you need the data and events to persist. Like `$.fn.remove`, it returns the selection, but it also maintains the data and events associated with the selection, so you can restore the selection to the page at a later time.
 
@@ -83,7 +83,7 @@ jQuery offers a trivial and elegant way to create new elements using the same `$
 // Creating new elements from an HTML string
 $("<p>This is a new paragraph</p>");
 
-$("<li class="new">new list item</li>");
+$("<li class=\"new\">new list item</li>");
 ```
 
 ```

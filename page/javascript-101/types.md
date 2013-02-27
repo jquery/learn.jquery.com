@@ -69,7 +69,7 @@ var bar2;
 
 ## Objects
 
-Everything else is in JavaScript is considered an Object. While there are [numerous built-in objects](https://developer.mozilla.org/en/JavaScript/Reference#Global_Objects, "MDN - Global Object Reference"), this chapter will cover:
+Everything else in JavaScript is considered an Object. While there are [numerous built-in objects](https://developer.mozilla.org/en/JavaScript/Reference#Global_Objects, "MDN - Global Object Reference"), this chapter will cover:
 
 * Object
 * Array
@@ -129,7 +129,7 @@ var foo = new Array;
 var bar = [];
 ```
 
-There is an important distinction to be made between the two. Both an array construnctor and an array literal can contain items to be added to the array upon creating it. However, if just a single numeric item is passed in, the array constructor will assume its length to be that value.
+There is an important distinction to be made between the two. Both an array constructor and an array literal can contain items to be added to the array upon creating it. However, if just a single numeric item is passed in, the array constructor will assume its length to be that value.
 
 ```
 // The array literal returns a bar.length value of 1:

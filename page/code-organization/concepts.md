@@ -291,7 +291,7 @@ $( document ).ready(function() {
       return urlBase + $currentItem.attr("id");
     },
     showItem = function() {
-      var $currentItem = $( this );
+      $currentItem = $( this );
       getContent( showContent );
     },
     showItemByIndex = function( idx ) {
