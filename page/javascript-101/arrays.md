@@ -106,16 +106,22 @@ var wholeArray = myArray.concat( myOtherArray );
 
 ### `.join`
 
-`.join` creates a string representation of the array. Its parameter is a string that works as a separator between elements (default separator is a comma):
+`.join` creates a string representation of an array by joining all of its elements using a separator string. If no separator is supplied (e.g. `.join` is called without arguments) the array will be joined using a comma:
 
 ```
 // Joining elements
 var myArray = [ "hello", "world", "!" ];
 
-console.log( myArray.join(" ") );  // "hello world !";
+// The default separator is a comma
 console.log( myArray.join() );     // "hello,world,!"
-console.log( myArray.join("") );   // "helloworld!"
+
+// Any string can be used as separator...
+console.log( myArray.join(" ") );  // "hello world !";
 console.log( myArray.join("!!") ); // "hello!!world!!!";
+
+// ...including an empty one
+console.log( myArray.join("") );   // "helloworld!"
+
 ```
 
 ### `.pop`
