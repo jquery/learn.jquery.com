@@ -183,7 +183,7 @@ $.get( "myhtmlpage.html", myCallBack(param1, param2) );
 
 The reason this fails is that the code executes `myCallBack( param1, param2 )` immediately 
 and then passes the myCallBack's *return value* as the second parameter to `$.get`.
-We actually want to pass in `myCallBack` the function, not `myCallBack`'s return value
+We actually want to pass the function `myCallBack`, not `myCallBack( param1, param2)`'s return value
 (which might or might not be a function).  So, how to pass in `myCallBack` *and* include its arguments?
 
 #### Right
