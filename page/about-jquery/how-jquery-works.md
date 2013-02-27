@@ -199,4 +199,4 @@ $.get( "myhtmlpage.html", function() {
 ```
 
 When `$.get` finishes getting the page `myhtmlpage.html`, it executes the anonymous function,
-which executes `myCallBack( param1, param2 )`. 
+which executes `myCallBack( param1, param2 )`.
