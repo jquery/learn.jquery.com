@@ -49,7 +49,7 @@ var foo = function() {
 foo();
 
 // This is much harder to read!
-var foo=function() {for(var i=0;i<10;++){alert(i);}};foo();
+var foo=function() {for(var i=0;i<10;i++){alert(i);}};foo();
 ```
 
 ### Reserved Words
