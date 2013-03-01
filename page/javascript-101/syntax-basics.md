@@ -52,6 +52,38 @@ foo();
 var foo=function() {for(var i=0;i<10;++){alert(i);}};foo();
 ```
 
+### Whitespace and Semicolon Insertion (a common pitfall)
+
+JavaScript has a feature called Semicolon Insertion where, in some cases, a semicolon may automatically be inserted into the code, in order to recover from a syntax error. 
+
+For example, JavaScript syntax does not allow a line break between a 'return' keyword and the expression being returned. The same is true for 'throw' and the expression being thrown. If a line break is encountered, a semicolon will be inserted which may cause the code to behave differently.
+
+Consider the following simplified example:
+
+```
+// Semicolon insertion JavaScript feature will insert a semicolon after 'return' keyword,
+// so the function will actually return 'undefined'. Therefore, the alert() shows undefined, and NOT 42
+var foo = function() {
+  return
+  42;
+};
+alert(foo());
+```
+
+Another example:
+
+```
+// Semicolon insertion JavaScript feature will insert a semicolon after 'return' keyword,
+// so the function will actually return 'undefined'. Therefore, foo().value will throw a TypeError
+var foo = function() {
+  return
+  {
+    value: 42
+  };
+};
+alert(foo().value);  // TypeError, foo() returns undefined
+```
+
 ### Reserved Words
 
 There are a handful of reserved words that can't be used when declaring user-defined variables and functions. Some of these reserved words are currently implemented, some are saved for future use, and others are reserved for historical reasons. A list of words and in-depth explanations for each can be found on the [MDN JavaScript Reference](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Reserved_Words "MDN Reserved Words.") site.
