@@ -81,9 +81,7 @@ the following code will not work:
 var response;
 
 $.get( "foo.php", function( r ) {
-
-  response = r;
-
+	response = r;
 });
 
 console.log( response ); // undefined
@@ -95,7 +93,7 @@ returned, if any.
 
 ```
 $.get( "foo.php", function( response ) {
-  console.log( response ); // server response
+	console.log( response ); // server response
 });
 ```
 

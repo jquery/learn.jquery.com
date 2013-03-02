@@ -15,7 +15,7 @@ The `serialize` method serializes a form's data into a query string. For the ele
 
 ```
 // Turning form data into a query string
-$("#myForm").serialize();
+$( "#myForm" ).serialize();
 
 // creates a query string like this:
 // field_1=something&field2=somethingElse
@@ -25,21 +25,17 @@ While plain old serialization is great, sometimes your application would work be
 
 ```
 // Creating an array of objects containing form data
-$("#myForm").serializeArray();
+$( "#myForm" ).serializeArray();
 
 // creates a structure like this:
 // [
 //   {
-//
 //     name : "field_1",
 //     value : "something"
-//
 //   },
 //   {
-//
 //     name : "field_2",
 //     value : "somethingElse"
-//
 //   }
 // ]
 ```
@@ -53,22 +49,16 @@ With that being said, let's jump on in to some examples! First, we'll see how ea
 
 ```
 // Using validation to check for the presence of an input
-$("#form").submit(function( event ) {
+$( "#form" ).submit(function( event ) {
+	// if .required's value's length is zero
+	if ( $( ".required" ).val().length === 0 ) {
+		// usually show some kind of error message here
 
-  // if .required's value's length is zero
-  if ( $(".required").val().length === 0 ) {
-
-    // usually show some kind of error message here
-
-    // this prevents the form from submitting
-    return false; 
-
-  } else {
-
-    // run $.ajax here
-
-  }
-
+		// this prevents the form from submitting
+		return false;
+	} else {
+		// run $.ajax here
+	}
 });
 ```
 
@@ -76,26 +66,21 @@ Let's see how easy it is to check for invalid characters in a username:
 
 ```
 // Validate a phone number field
-$("#form").submit(function( event ) {
+$( "#form" ).submit(function( event ) {
+	var inputtedPhoneNumber = $( "#phone" ).val();
 
-  var inputtedPhoneNumber = $("#phone").val();
-  // match only numbers
-  var phoneNumberRegex = ^\d*$/;
+	// match only numbers
+	var phoneNumberRegex = /^\d*$/;
 
-  // if the phone number doesn't match the regex
-  if ( !phoneNumberRegex.test( inputtedPhoneNumber ) ) {
+	// if the phone number doesn't match the regex
+	if ( !phoneNumberRegex.test( inputtedPhoneNumber ) ) {
+		// usually show some kind of error message here
 
-    // usually show some kind of error message here
-
-    // prevent the form from submitting
-    return false;
-
-  } else {
-
-    // run $.ajax here
-
-  }
-
+		// prevent the form from submitting
+		return false;
+	} else {
+		// run $.ajax here
+	}
 });
 ```
 
@@ -107,26 +92,19 @@ For example, say we would like to modify all crossDomain requests through a prox
 ```
 // Using a proxy with a prefilter
 $.ajaxPrefilter(function( options, originalOptions, jqXHR ) {
-
-  if ( options.crossDomain ) {
-
-    options.url = "http://mydomain.net/proxy/" + encodeURIComponent( options.url );
-
-    options.crossDomain = false;
-
-  }
-
+	if ( options.crossDomain ) {
+		options.url = "http://mydomain.net/proxy/" + encodeURIComponent( options.url );
+		options.crossDomain = false;
+	}
 });
 ```
 
 You can pass in an optional argument before the callback function that specifies which `dataTypes` you'd like the prefilter to be applied to. For example, if we want our prefilter to only apply to `JSON` and `script` requests, we'd do:
 
 ```
-// Using the optional dataTypes argument">
+// Using the optional dataTypes argument
 $.ajaxPrefilter( "json script", function( options, originalOptions, jqXHR ) {
-
-  // do all of the prefiltering here, but only for
-  // requests that indicate a dataType of "JSON" or "script"
-
+	// do all of the prefiltering here, but only for
+	// requests that indicate a dataType of "JSON" or "script"
 });
 ```
