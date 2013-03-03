@@ -2,24 +2,24 @@
 title   : Handling Events
 level: beginner
 source: http://jqfundamentals.com/legacy
-attribution: 
+attribution:
   - jQuery Fundamentals
 ---
 jQuery provides a method `.on()` to
 respond to any event on the selected elements. This is called an _event binding_.
-Although `.on()` isn't the only method provided for event binding, it is a best
+Although `.on()` isn&rsquo;t the only method provided for event binding, it is a best
 practice to use this for jQuery 1.7+. To learn more, [read more about
 the evolution of event binding in jQuery](/events/history-of-events).
 
-The on method provides several useful features:
-<ul>
-<li><a href="#simple-event-binding">Bind any event triggered on the selected elements to an event handler</a></li>
-<li><a href="#multiple-events-one-handler">Bind multiple events to one event handler</a></li>
-<li><a href="#multiple-events-multiple-handlers">Bind multiple events and multiple handlers to the selected elements</a></li>
-<li><a href="#event-object">Use details about the event in the event handler</a></li>
-<li><a href="#passing-data">Pass data to the event handler for custom events</a></li>
-<li><a href="#event-delegation">Bind events to elements that will be rendered in the future</a></li>
-</ul>
+The `.on()` method provides several useful features:
+
+- [Bind any event triggered on the selected elements to an event handler](#simple-event-binding)
+- [Bind multiple events to one event handler](#multiple-events-one-handler)
+- [Bind multiple events and multiple handlers to the selected elements](#multiple-events-multiple-handlers)
+- [Use details about the event in the event handler](#event-object)
+- [Pass data to the event handler for custom events](#passing-data)
+- [Bind events to elements that will be rendered in the future](#event-delegation)
+
 ### Examples
 
 #### <a name="simple-event-binding">Simple event binding</a>
@@ -33,7 +33,7 @@ $( "p" ).on( "click", function() {
 #### <a name="multiple-events-one-handler">Many events, but only one event handler</a>
 
 Suppose you want to trigger the same event whenever the mouse hovers over or leaves
-the selected elements. The best practice for this is to use "mouseenter mouseleave".
+the selected elements. The best practice for this is to use &ldquo;mouseenter mouseleave&rdquo;.
 Note the difference between this and the next example.
 
 ```
@@ -68,11 +68,10 @@ $( "div" ).on({
 
 #### <a name="event-object">The event object</a>
 
-Handling events can be tricky. It's often helpful to use the extra information contained
+Handling events can be tricky. It&rsquo;s often helpful to use the extra information contained
 in the event object passed to the event handler for more control. To become familiar with
 the event object, use this code to inspect it in your browser console after you click on
-a `<div>` in the page. For a breakdown of the event object, see
-<a href="/events/inside-event-handling-function/">Inside the Event Handling Function</a>.
+a `<div>` in the page. For a breakdown of the event object, see [Inside the Event Handling Function](/events/inside-event-handling-function/).
 
 ```
 $( "div" ).on( "click", function( event ) {
@@ -94,10 +93,10 @@ $( "p" ).on( "click", {
 ```
 
 
-#### <a name="event-delegation">Binding events to elements that don't exist yet</a>
+#### <a name="event-delegation">Binding events to elements that don&rsquo;t exist yet</a>
 
-This is called _event delegation_. Here's an example just for completeness, but see the
-page on <a href="/events/event-delegation/">Event Delegation</a> for a full explanation.
+This is called _event delegation_. Here&rsquo;s an example just for completeness, but see the
+page on [Event Delegation](/events/event-delegation/) for a full explanation.
 
 ```
 $( "ul" ).on( "click", "li", function() {
@@ -107,8 +106,8 @@ $( "ul" ).on( "click", "li", function() {
 
 ### Connecting Events to Run Only Once
 
-Sometimes you need a particular handler to run only once — after that, you may
-want no handler to run, or you may want a different handler to run.  jQuery
+Sometimes you need a particular handler to run only once &mdash; after that, you may
+want no handler to run, or you may want a different handler to run. jQuery
 provides the `.one()` method for this purpose.
 
 ```
@@ -124,14 +123,14 @@ $( "p" ).one( "click", function() {
 The `.one()` method is especially useful if you need to do some complicated
 setup the first time an element is clicked, but not subsequent times.
 
-`.one()` accepts the same arguments as `on()` which means it supports multiple events to one
+`.one()` accepts the same arguments as `.on()` which means it supports multiple events to one
 or multiple handlers, passing custom data and event delegation.
 
 ### Disconnecting Events
 
-Although all the fun of jQuery occurs in the `.on()` method, it's counterpart is just as important
+Although all the fun of jQuery occurs in the `.on()` method, it&rsquo;s counterpart is just as important
 if you want to be a responsible developer. `.off()` cleans up that event
-binding when you don't need it anymore. Complex user interfaces with lots of event bindings
+binding when you don&rsquo;t need it anymore. Complex user interfaces with lots of event bindings
 can bog down browser performance, so using the `.off()` method diligently is a best practice to
 ensure that you only have the event bindings that you need, when you need them.
 
@@ -159,7 +158,7 @@ $( "p" ).off( "click", bar );
 ### Namespacing Events
 
 For complex applications and for plugins you share with others, it can be
-useful to namespace your events so you don't unintentionally disconnect events
-that you didn't or couldn't know about. For details, see Event Namespacing.
+useful to namespace your events so you don&rsquo;t unintentionally disconnect events
+that you didn&rsquo;t or couldn&rsquo;t know about. For details, see Event Namespacing.
 
 <!-- TODO: Link to namespacing -->

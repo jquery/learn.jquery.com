@@ -2,19 +2,19 @@
 title:        Introducing Custom Events
 level: intermediate
 source: http://jqfundamentals.com/legacy
-attribution: 
+attribution:
   - jQuery Fundamentals
 ---
 
 ## Custom Events
 
-We&apos;re all familiar with the basic events &mdash; click, mouseover, focus, blur,
+We&rsquo;re all familiar with the basic events &mdash; click, mouseover, focus, blur,
 submit, etc. &mdash; that we can latch on to as a user interacts with the browser.
 Custom events open up a whole new world of event-driven programming. In this
-chapter, we&apos;ll use jQuery&apos;s custom events system to make a simple Twitter
+chapter, we&rsquo;ll use jQuery&rsquo;s custom events system to make a simple Twitter
 search application.
 
-It can be difficult at first to understand why you'd want to use custom events,
+It can be difficult at first to understand why you&rsquo;d want to use custom events,
 when the built-in events seem to suit your needs just fine. It turns out that
 custom events offer a whole new way of thinking about event-driven JavaScript.
 Instead of focusing on the element that triggers an action, custom events put
@@ -27,7 +27,7 @@ including:
 
 Why should you care? An example is probably the best way to explain. Suppose
 you have a lightbulb in a room in a house. The lightbulb is currently turned
-on, and it&apos;s controlled by two three-way switches and a clapper:
+on, and it&rsquo;s controlled by two three-way switches and a clapper:
 
 ```
 <div class="room" id="kitchen">
@@ -39,7 +39,7 @@ on, and it&apos;s controlled by two three-way switches and a clapper:
 ```
 
 Triggering the clapper or either of the switches will change the state of the
-lightbulb. The switches and the clapper don&apos;t care what state the lightbulb is
+lightbulb. The switches and the clapper don&rsquo;t care what state the lightbulb is
 in; they just want to change the state.
 
 Without custom events, you might write some code like this:
@@ -72,9 +72,9 @@ $( ".switch, .clapper" ).click(function() {
 });
 ```
 
-This last bit of code is not that exciting, but something important has happened: we&apos;ve moved the behavior of the lightbulb to the lightbulb, and away from the switches and the clapper.
+This last bit of code is not that exciting, but something important has happened: we&rsquo;ve moved the behavior of the lightbulb to the lightbulb, and away from the switches and the clapper.
 
-Let&apos;s make our example a little more interesting. We&apos;ll add another room to our house, along with a master switch, as shown here:
+Let&rsquo;s make our example a little more interesting. We&rsquo;ll add another room to our house, along with a master switch, as shown here:
 
 ```
 <div class="room" id="kitchen">
@@ -94,8 +94,8 @@ Let&apos;s make our example a little more interesting. We&apos;ll add another ro
 
 If there are any lights on in the house, we want the master switch to turn all
 the lights off; otherwise, we want it to turn all lights on. To accomplish
-this, we&apos;ll add two more custom events to the lightbulbs: `turnOn` and
-`turnOff`. We&apos;ll make use of them in the `changeState` custom event, and use
+this, we&rsquo;ll add two more custom events to the lightbulbs: `turnOn` and
+`turnOff`. We&rsquo;ll make use of them in the `changeState` custom event, and use
 some logic to decide which one the master switch should trigger:
 
 ```
@@ -128,18 +128,18 @@ $( "#master_switch" ).click(function() {
 Note how the behavior of the master switch is attached to the master switch;
 the behavior of a lightbulb belongs to the lightbulbs.
 
-If you&apos;re accustomed to object-oriented programming, you may find it useful to
+If you&rsquo;re accustomed to object-oriented programming, you may find it useful to
 think of custom events as methods of objects. Loosely speaking, the object to
 which the method belongs is created via the jQuery selector. Binding the
-changeState custom event to all `$(".light")` elements is akin to having a
+`changeState` custom event to all `$( ".light" )` elements is akin to having a
 class called `Light` with a method of `changeState`, and then instantiating new
-`Light` objects for each element with a classname of light.
+`Light` objects for each element with a classname of `light`.
 
 ### Recap: $.fn.on and $.fn.trigger
 
 In the world of custom events, there are two important jQuery methods:
-`$.fn.on` and `$.fn.trigger`. In the Events chapter, we saw how to use these
-methods for working with user events; for this chapter, it's important to
+`$.fn.on` and `$.fn.trigger`. In the [Events](/events/) chapter, we saw how to use these
+methods for working with user events; for this chapter, it&rsquo;s important to
 remember two things:
 
 - `$.fn.on` method takes an event type and an event handling function as
@@ -170,7 +170,7 @@ $( document ).trigger( "myCustomEvent", [ "bim", "baz" ] );
 
 ### A Sample Application
 
-To demonstrate the power of custom events, we&apos;re going to create a simple tool
+To demonstrate the power of custom events, we&rsquo;re going to create a simple tool
 for searching Twitter. The tool will offer several ways for a user to add
 search terms to the display: by entering a search term in a text box, by
 entering multiple search terms in the URL, and by querying Twitter for trending
@@ -180,7 +180,7 @@ The results for each term will be shown in a results container; these
 containers will be able to be expanded, collapsed, refreshed, and removed,
 either individually or all at once.
 
-When we&apos;re done, it will look like this:
+When we&rsquo;re done, it will look like this:
 
 ![Our finished application](http://gyazo.com/70415e9fffab1c47953f5264ecf722fe.png)
 
@@ -201,40 +201,40 @@ When we&apos;re done, it will look like this:
 </div>
 ```
 
-This gives us a container (#twitter) for our widget, a template for our results
+This gives us a container (`#twitter`) for our widget, a template for our results
 containers (hidden via CSS), and a simple form where users can input a search
-term. (For the sake of simplicity, we&apos;re going to assume that our application
+term. (For the sake of simplicity, we&rsquo;re going to assume that our application
 is JavaScript-only and that our users will always have CSS.)
 
-There are two types of objects we&apos;ll want to act on: the results containers,
+There are two types of objects we&rsquo;ll want to act on: the results containers,
 and the Twitter container.
 
-The results containers are the heart of the application. We&apos;ll create a plugin
-that will prepare each results container once it&apos;s added to the Twitter
+The results containers are the heart of the application. We&rsquo;ll create a plugin
+that will prepare each results container once it&rsquo;s added to the Twitter
 container. Among other things, it will bind the custom events for each
 container and add the action buttons at the top right of each container. Each
 results container will have the following custom events:
 
-- `refresh` - Mark the container as being in the &quot;refreshing&quot; state, and fire
+- `refresh` &mdash; Mark the container as being in the &ldquo;refreshing&rdquo; state, and fire
   the request to fetch the data for the search term.
 
-- `populate` - Receive the returned JSON data and use it to populate the container.
+- `populate` &mdash; Receive the returned JSON data and use it to populate the container.
 
-- `remove` - Remove the container from the page after the user verifies the
-  request to do so. Verification can be bypassed by passing true as the second
-  argument to the event handler. The remove event also removes the term
+- `remove` &mdash; Remove the container from the page after the user verifies the
+  request to do so. Verification can be bypassed by passing `true` as the second
+  argument to the event handler. The `remove` event also removes the term
   associated with the results container from the global object containing the
   search terms.
 
-- `collapse` - Add a class of collapsed to the container, which will hide the
-  results via CSS. It will also turn the container&apos;s &quot;Collapse&quot; button into an
-  &quot;Expand&quot; button.
+- `collapse` &mdash; Add a class of collapsed to the container, which will hide the
+  results via CSS. It will also turn the container&rsquo;s &ldquo;Collapse&rdquo; button into an
+  &ldquo;Expand&rdquo; button.
 
-- `expand` - Remove the collapsed class from the container. It will also turn
-  the container&apos;s &quot;Expand&quot; button into a &quot;Collapse&quot; button.
+- `expand` &mdash; Remove the collapsed class from the container. It will also turn
+  the container&rsquo;s &ldquo;Expand&rdquo; button into a &ldquo;Collapse&rdquo; button.
 
 The plugin is also responsible for adding the action buttons to the container.
-It binds a click event to each action&apos;s list item, and uses the list item&apos;s
+It binds a click event to each action&rsquo;s list item, and uses the list item&rsquo;s
 class to determine which custom event will be triggered on the corresponding
 results container.
 
@@ -344,7 +344,7 @@ $.fn.twitterResult.events = {
 
 The Twitter container itself will have just two custom events:
 
-- `getResults` - Receives a search term and checks to determine whether there&apos;s
+- `getResults` &mdash; Receives a search term and checks to determine whether there&rsquo;s
   already a results container for the term; if not, adds a results container
   using the results template, set up the results container using the
   `$.fn.twitterResult` plugin discussed above, and then triggers the `refresh`
@@ -352,11 +352,11 @@ The Twitter container itself will have just two custom events:
   Finally, it will store the search term so the application knows not to
   re-fetch the term.
 
-- `getTrends` - Queries Twitter for the top 10 trending terms, then iterates
+- `getTrends` &mdash; Queries Twitter for the top 10 trending terms, then iterates
   over them and triggers the `getResults` event for
   each of them, thereby adding a results container for each term.
 
-Here's how the Twitter container bindings look:
+Here&rsquo;s how the Twitter container bindings look:
 
 ```
 $( "#twitter" ).on( "getResults", function( e, term ) {
@@ -392,14 +392,14 @@ $( "#twitter" ).on( "getResults", function( e, term ) {
 });
 ```
 
-So far, we&apos;ve written a lot of code that does approximately nothing, but that&apos;s
+So far, we&rsquo;ve written a lot of code that does approximately nothing, but that&rsquo;s
 OK. By specifying all the behaviors that we want our core objects to have,
-we&apos;ve created a solid framework for rapidly building out the interface.
+we&rsquo;ve created a solid framework for rapidly building out the interface.
 
-Let&apos;s start by hooking up our text input and the &quot;Load Trending Terms&quot; button.
-For the text input, we&apos;ll capture the term that was entered in the input and
-pass it as we trigger the Twitter container&apos;s `getResults` event. Clicking the
-&quot;Load Trending Terms&quot; will trigger the Twitter container&apos;s `getTrends` event:
+Let&rsquo;s start by hooking up our text input and the &ldquo;Load Trending Terms&rdquo; button.
+For the text input, we&rsquo;ll capture the term that was entered in the input and
+pass it as we trigger the Twitter container&rsquo;s `getResults` event. Clicking the
+&ldquo;Load Trending Terms&rdquo; will trigger the Twitter container&rsquo;s `getTrends` event:
 
 ```
 $( "form" ).submit(function( event ) {
@@ -413,10 +413,10 @@ $( "#get_trends" ).click(function() {
 });
 ```
 
-By adding a few buttons with the appropriate IDs, we can make it possible to
+By adding a few buttons with the appropriate ID&rsquo;s, we can make it possible to
 remove, collapse, expand, and refresh all results containers at once, as shown
-below. For the remove button, note how we&apos;re passing a value of true to the
-event handler as its second argument, telling the event handler that we don&apos;t
+below. For the remove button, note how we&rsquo;re passing a value of `true` to the
+event handler as its second argument, telling the event handler that we don&rsquo;t
 want to verify the removal of individual containers.
 
 ```
@@ -439,7 +439,7 @@ Custom events offer a new way of thinking about your code: they put the
 emphasis on the target of a behavior, not on the element that triggers it. If
 you take the time at the outset to spell out the pieces of your application, as
 well as the behaviors those pieces need to exhibit, custom events can provide a
-powerful way for you to &quot;talk&quot; to those pieces, either one at a time or en
+powerful way for you to &ldquo;talk&rdquo; to those pieces, either one at a time or en
 masse. Once the behaviors of a piece have been described, it becomes trivial to
 trigger those behaviors from anywhere, allowing for rapid creation of and
 experimentation with interface options. Finally, custom events can enhance code

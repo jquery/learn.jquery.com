@@ -9,15 +9,15 @@ level: beginner
 
 ### Setting Up Event Responses on DOM Elements
 
-jQuery makes it straightforward to set up event-driven responses on page elements. 
-These events are often triggered by the end user's interaction with the page, 
-such as when text is entered into a form element or the mouse pointer is moved.  
-In some cases, such as the page load and unload events, the browser itself will 
+jQuery makes it straightforward to set up event-driven responses on page elements.
+These events are often triggered by the end user&rsquo;s interaction with the page,
+such as when text is entered into a form element or the mouse pointer is moved.
+In some cases, such as the page load and unload events, the browser itself will
 trigger the event.
 
-jQuery offers convenience methods for most native browser events.  These methods — 
-including `$.fn.click`, `$.fn.focus`, `$.fn.blur`, `$.fn.change`, etc. — are shorthand 
-for jQuery's `$.fn.on` method.  The on method is useful for binding the same handler
+jQuery offers convenience methods for most native browser events. These methods &mdash;
+including `$.fn.click`, `$.fn.focus`, `$.fn.blur`, `$.fn.change`, etc. &mdash; are shorthand
+for jQuery&rsquo;s `$.fn.on` method. The `on` method is useful for binding the same handler
 function to multiple events, when you want to provide data to the event hander,
 when you are working with custom events, or when you want to pass an object of
 multiple events and handlers.
@@ -38,10 +38,10 @@ $( "p" ).on( "click", function() {
 
 ### Extending Events to New Page Elements
 
-It is important to note that `$.fn.on` can only create event listeners 
-on elements that exist *at the time you set up the listeners*.  Similar elements created 
-after the event listeners are established will not automatically pick up event behaviors  
-you've set up previously.  For example:
+It is important to note that `$.fn.on` can only create event listeners
+on elements that exist *at the time you set up the listeners*. Similar elements created
+after the event listeners are established will not automatically pick up event behaviors
+you&rsquo;ve set up previously. For example:
 
 ```
 $( document ).ready(function(){
@@ -57,14 +57,14 @@ $( document ).ready(function(){
 });
 ```
 
-Consult the article on event delegation to see how to use `$.fn.on` so that 
+Consult the article on event delegation to see how to use `$.fn.on` so that
 event behaviors will be extended to new elements without having to rebind them.
 
 ### Inside the Event Handler Function
 
 Every event handling function receives an event object, which contains many
-properties and methods.  The event object is most commonly used to prevent the
-default action of the event via the preventDefault method.  However, the event
+properties and methods. The event object is most commonly used to prevent the
+default action of the event via the `.preventDefault()` method. However, the event
 object contains a number of other useful properties and methods, including:
 
 #### pageX, pageY
@@ -74,7 +74,7 @@ the page display area (not the entire browser window).
 
 #### type
 
-The type of the event (e.g. "click").
+The type of the event (e.g. &ldquo;click&rdquo;).
 
 #### which
 
@@ -116,9 +116,9 @@ Prevent the default action of the event (e.g. following a link).
 Stop the event from bubbling up to other elements.
 
 In addition to the event object, the event handling function also has access to
-the DOM element that the handler was bound to via the keyword `this`.  To turn
+the DOM element that the handler was bound to via the keyword `this`. To turn
 the DOM element into a jQuery object that we can use jQuery methods on, we
-simply do `$(this)`, often following this idiom:
+simply do `$( this )`, often following this idiom:
 
 ```
 var $this = $( this );
@@ -139,8 +139,8 @@ $( "a" ).click(function( eventObject ) {
 
 ### Setting Up Multiple Event Responses
 
-Quite often elements in your application will be bound to multiple events.  If 
-multiple events are to share the same handling function, you can provide the event types 
+Quite often elements in your application will be bound to multiple events. If
+multiple events are to share the same handling function, you can provide the event types
 as a space-separated list to `$.fn.on`:
 
 ```
@@ -153,8 +153,8 @@ $( "input" ).on(
 );
 ```
 
-When each event has its own handler, you can pass an object into `$.fn.on` with one or 
-more key/value pairs, with the key being the event name and the value being the function 
+When each event has its own handler, you can pass an object into `$.fn.on` with one or
+more key/value pairs, with the key being the event name and the value being the function
 to handle the event.
 
 ```
@@ -168,8 +168,8 @@ $( "p" ).on({
 ### Namespacing Events
 
 For complex applications and for plugins you share with others, it can be
-useful to namespace your events so you don't unintentionally disconnect events
-that you didn't or couldn't know about.
+useful to namespace your events so you don&rsquo;t unintentionally disconnect events
+that you didn&rsquo;t or couldn&rsquo;t know about.
 
 ```
 // Namespacing events
@@ -181,7 +181,7 @@ $( "p" ).off( ".myNamespace" ); // unbind all events in the namespace
 ### Tearing Down Event Listeners
 
 To remove an event listener, you use the `$.fn.off` method and pass in
-the event type to off.  If you attached a named function to the event, then
+the event type to off. If you attached a named function to the event, then
 you can isolate the event tear down to just that named function by passing it as the
 second argument.
 
@@ -201,8 +201,8 @@ $( "p" ).off( "click", bar ); // foo is still bound to the click event
 
 ### Setting Up Events to Run Only Once
 
-Sometimes you need a particular handler to run only once — after that, you may
-want no handler to run, or you may want a different handler to run.  jQuery
+Sometimes you need a particular handler to run only once &mdash; after that, you may
+want no handler to run, or you may want a different handler to run. jQuery
 provides the `$.fn.one` method for this purpose.
 
 ```
@@ -218,7 +218,7 @@ function firstClick() {
 ```
 
 Note that in the code snippet above, the `firstClick` function will be executed for
-the first click on *each* paragraph element rather than the function being removed from 
+the first click on *each* paragraph element rather than the function being removed from
 *all* paragraphs when *any* paragraph is clicked for the first time.
 
 `$.fn.one` can also be used to bind multiple events:
@@ -232,6 +232,6 @@ function firstEvent( eventObject ) {
 }
 ```
 
-In this case, the `firstEvent` function will be executed once *for each event*.  For the snippet above, this means
-that once an input element gains focus, the handler function will still execute for the first keydown event on that 
+In this case, the `firstEvent` function will be executed once *for each event*. For the snippet above, this means
+that once an input element gains focus, the handler function will still execute for the first keydown event on that
 element.
