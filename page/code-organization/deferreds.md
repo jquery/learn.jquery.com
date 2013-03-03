@@ -42,11 +42,11 @@ may look like:
 promise = callToAPI( arg1, arg2, ...);
 
 promise.then(function( futureValue ) {
-    /* handle futureValue */
+	/* handle futureValue */
 });
     
 promise.then(function( futureValue ) {
-    /* do something else */
+	/* do something else */
 });
 ```
 
@@ -62,11 +62,11 @@ promise was resolved, another for when the promise was rejected. If we
 get back to pseudo-code, we may do things like:
 
 ```
-promise.then( function( futureValue ) {
-    /* we got a value */
-} , function() {
-    /* something went wrong */
-} );
+promise.then(function( futureValue ) {
+	/* we got a value */
+}, function() {
+	/* something went wrong */
+});
 ```
 
 In the case of certain applications, it is necessary to have several
@@ -78,11 +78,11 @@ action once all the promises have been fully fulfilled:
 
 ```
 when(
-    promise1,
-    promise2,
-    ...
+	promise1,
+	promise2,
+	...
 ).then(function( futureValue1, futureValue2, ... ) {
-    /* all promises have completed and are resolved */
+	/* all promises have completed and are resolved */
 });
 ```
 
@@ -96,14 +96,14 @@ of this means it's a trivial process to execute a single callback once
 the animations are done. For example:
 
 ```
-var promise1 = $("#id1").animate().promise();
-var promise2 = $("#id2").animate().promise();
+var promise1 = $( "#id1" ).animate().promise();
+var promise2 = $( "#id2" ).animate().promise();
 when(
-    promise1,
-    promise2
-).then(function(){
-    /* once both animations have completed
-       we can then run our additional logic  */
+	promise1,
+	promise2
+).then(function() {
+	/* once both animations have completed
+	we can then run our additional logic  */
 });
 ```
 

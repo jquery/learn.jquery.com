@@ -46,17 +46,17 @@ conjunction with .then():
 
 ```
 function successFunc(){
-    console.log( "success!" );
-}    
+	console.log( "success!" );
+}
 
 function failureFunc(){
-    console.log( "failure!" );
+	console.log( "failure!" );
 }
 
 $.when(
-    $.ajax( "/main.php" ),
-    $.ajax( "/modules.php" ),
-    $.ajax( "/lists.php" )
+	$.ajax( "/main.php" ),
+	$.ajax( "/modules.php" ),
+	$.ajax( "/lists.php" )
 ).then( successFunc, failureFunc );
 ```
 
@@ -79,34 +79,34 @@ reactions.
 
 ```
 function getLatestNews() {
-    return $.get( "latestNews.php", function(data){
-        console.log( "news data received" );
-        $( ".news" ).html(data);
-     } );   
+	return $.get( "latestNews.php", function( data ) {
+		console.log( "news data received" );
+		$( ".news" ).html( data );
+	});
 }
 
 function getLatestReactions() {
-    return $.get( "latestReactions.php", function(data){
-        console.log( "reactions data received" );
-        $( ".reactions" ).html(data);
-  } );
+	return $.get( "latestReactions.php", function( data ) {
+		console.log( "reactions data received" );
+		$( ".reactions" ).html( data );
+	});
 }
 
 function prepareInterface() {
-    return $.Deferred(function( dfd ) {
-        var latest = $( ".news, .reactions" );
-            latest.slideDown( 500, dfd.resolve );
-            latest.addClass( "active" );
-        }).promise();
+	return $.Deferred(function( dfd ) {
+		var latest = $( ".news, .reactions" );
+			latest.slideDown( 500, dfd.resolve );
+			latest.addClass( "active" );
+	}).promise();
 }
 
 $.when(
-    getLatestNews(),
-    getLatestReactions(),
-    prepareInterface()
+	getLatestNews(),
+	getLatestReactions(),
+	prepareInterface()
 ).then(function(){
-    console.log( "fire after requests succeed" );
+	console.log( "fire after requests succeed" );
 }).fail(function(){
-    console.log( "something went wrong!" );
+	console.log( "something went wrong!" );
 });
 ```
