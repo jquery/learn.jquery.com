@@ -2,7 +2,7 @@
 title: Deferred examples
 level: advanced
 source: http://msdn.microsoft.com/en-us/magazine/gg723713.aspx
-attribution: 
+attribution:
   - Julian Aubourg <j@ubourg.net>
   - Addy Osmani <addyosmani@gmail.com>
   - Andree Hansson <peolanha@gmail.com>
@@ -10,7 +10,7 @@ attribution:
 
 ##Further Deferreds examples
 
-Deferreds are used behind the hood in Ajax but it doesn't mean they can't also
+Deferreds are used behind the hood in Ajax but it doesn&rsquo;t mean they can&rsquo;t also
 be used elsewhere. This section describes situations where deferreds will help
 abstract away asynchronous behaviour and decouple our code.
 
@@ -21,16 +21,16 @@ abstract away asynchronous behaviour and decouple our code.
 When it comes to asynchronous tasks, caching can be a bit demanding
 since you have to make sure a task is only performed once for a given
 key. As a consequence, the code has to somehow keep track of inbound
-tasks. 
+tasks.
 
 ```
 $.cachedGetScript( url, callback1 );
 $.cachedGetScript( url, callback2 );
 ```
 
-The caching mechanism has to make sure the url is only requested once
-even if the script isn't in cache yet. This shows some logic
-to keep track of callbacks bound to a given url in order for the cache
+The caching mechanism has to make sure the URL is only requested once
+even if the script isn&rsquo;t in cache yet. This shows some logic
+to keep track of callbacks bound to a given URL in order for the cache
 system to properly handle both complete and inbound requests.
 
 ```
@@ -46,7 +46,7 @@ $.cachedGetScript = function( url, callback ) {
 };
 ```
 
-One promise is cached per url. If there is no promise for the given url yet,
+One promise is cached per URL. If there is no promise for the given URL yet,
 then a deferred is created and the request is issued. If it already exists, however,
 the callback is attached to the existing deferred. The big advantage of this
 solution is that it will handle both complete and inbound requests
@@ -62,7 +62,7 @@ $.cachedGetScript( url ).then( successCallback, errorCallback );
 
 It is also possible to make the code completely generic and build a
 cache factory that will abstract out the actual task to be performed
-when a key isn't in the cache yet:
+when a key isn&rsquo;t in the cache yet:
 
 ```
 $.createCache = function( requestFunction ) {
@@ -78,7 +78,7 @@ $.createCache = function( requestFunction ) {
 }
 ```
 
-Now that the request logic is abstracted away, cachedGetScript can be rewritten
+Now that the request logic is abstracted away, `cachedGetScript` can be rewritten
 as follows:
 
 ```
@@ -87,7 +87,7 @@ $.cachedGetScript = $.createCache(function( defer, url ) {
 });
 ```
 
-This will work because every call to createCache will create a new cache
+This will work because every call to `createCache` will create a new cache
 repository and return a new cache-retrieval function.
 
 #### Image loading
@@ -116,7 +116,7 @@ $.loadImage( "my-image.png" ).done( callback1 );
 $.loadImage( "my-image.png" ).done( callback2 );
 ```
 
-will work regardless of whether my-image.png has already been loaded or
+will work regardless of whether `my-image.png` has already been loaded or
 not, or if it is actually in the process of being loaded.
 
 #### Caching Data API responses
@@ -152,10 +152,10 @@ This deferred-based cache is not limited to network requests; it can
 also be used for timing purposes.
 
 For instance, you may need to perform an action on the page after a
-given amount of time so as to attract the user's attention to a specific
+given amount of time so as to attract the user&rsquo;s attention to a specific
 feature they may not be aware of or deal with a timeout (for a quiz
-question for instance). While setTimeout is good for most use-cases it
-doesn't handle the situation when the timer is asked for later, even
+question for instance). While `setTimeout` is good for most use-cases it
+doesn&rsquo;t handle the situation when the timer is asked for later, even
 after it has theoretically expired. We can handle that with the
 following caching system:
 
@@ -179,7 +179,7 @@ $.afterDOMReady = $.createCache(function( defer, delay ) {
 });
 ```
 
-The new afterDOMReady helper method provides proper timing after the DOM
+The new `afterDOMReady` helper method provides proper timing after the DOM
 is ready while ensuring the bare minimum of timers will be used. If the
 delay is already expired, any callback will be called right away.
 
@@ -216,9 +216,9 @@ if ( buttonClicked ) {
 ```
 
 This is a very coupled solution. If you want to add some other action,
-you have to edit the bind code or just duplicate it all. If you don't,
-your only option is to test for buttonClicked and you may lose that new
-action because the buttonClicked variable may be false and your new code
+you have to edit the bind code or just duplicate it all. If you don&rsquo;t,
+your only option is to test for `buttonClicked` and you may lose that new
+action because the `buttonClicked` variable may be false and your new code
 may never be executed.
 
 We can do much better using deferreds (for simplification sake, the
@@ -245,7 +245,7 @@ $.fn.bindOnce = function( event, callback ) {
 
 The code works as follows:
 
--   check if the element already has a deferred attached for the given
+-   Check if the element already has a deferred attached for the given
     event
 -   if not, create it and make it so it is resolved when the event is
     fired the first time around
@@ -254,7 +254,7 @@ The code works as follows:
 
 While the code is definitely more verbose, it makes dealing with the
 problem at hand much simpler in a compartmentalized and decoupled way.
-But let's define a helper method first:
+But let&rsquo;s define a helper method first:
 
 ```
 $.fn.firstClick = function( callback ) {
@@ -279,7 +279,7 @@ openPanel.done(function() {
 });
 ```
 
-Nothing is lost if the panel isn't opened yet, the action will just get
+Nothing is lost if the panel isn&rsquo;t opened yet, the action will just get
 deferred until the button is clicked.
 
 ### Combining helpers
@@ -291,7 +291,7 @@ mix them together.
 #### Requesting panel content on first click and opening said panel
 
 Following is the code for a button that, when clicked, opens a panel.
-It requests its content over the wire and then fades the content in. Using 
+It requests its content over the wire and then fades the content in. Using
 the helpers defined earlier, it could be defined as:
 
 ```
@@ -308,10 +308,10 @@ $( "#myButton" ).firstClick(function() {
 
 #### Loading images in a panel on first click and opening said panel
 
-Another possible goal is to have the panel fade in, only after the button 
+Another possible goal is to have the panel fade in, only after the button
 has been clicked and after all of the images have been loaded.
 
-The html code for this would look something like:
+The HTML code for this would look something like:
 
 ```
 <div id="myPanel">
@@ -322,7 +322,7 @@ The html code for this would look something like:
 </div>
 ```
 
-We use the data-src attribute to keep track of the real image location.
+We use the `data-src` attribute to keep track of the real image location.
 The code to handle our use case using our promise helpers is as follows:
 
 ```
@@ -354,9 +354,9 @@ $( "#myButton" ).firstClick(function() {
 });
 ```
 
-The trick here is to keep track of all the loadImage promises. We later
-join them with the panel slideDown animation using $.when. So when the
-button is first clicked, the panel will slideDown and the images will
+The trick here is to keep track of all the `loadImage` promises. We later
+join them with the panel `slideDown` animation using `$.when`. So when the
+button is first clicked, the panel will slide down and the images will
 start loading. Once the panel has finished sliding down and all the
 images have been loaded, then, and only then, will the panel fade in.
 
@@ -374,11 +374,10 @@ the following format in HTML can be used.
 
 What it says is pretty straight-forward:
 
--   load image1.png and show it immediately for the third image and
+-   Load `image1.png` and show it immediately for the third image and
     after one second for the first one
--   load image2.png and show it after one second for the second image
+-   Load `image2.png` and show it after one second for the second image
     and after two seconds for the fourth image
-
 
 ```
 $( "img" ).each(function() {
