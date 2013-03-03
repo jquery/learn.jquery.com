@@ -75,7 +75,7 @@ Everything else in JavaScript is considered an Object. While there are [numerous
 * Array
 * Function
 
-The simplest way to create an object is either through the Object constructor or the shorthand syntax known as object literal. These simple objects are unordered key/value pairs. The key is formally known as a property and the value can be any valid JavaScript type, even another object. To create or access a property on an object, we use what is known as "dot notation" or "bracket notation."
+The simplest way to create an object is either through the Object constructor or the shorthand syntax known as object literal. These simple objects are unordered key/value pairs. The key can only be a String (any other value is coerced to a String, e.g. Number indices in an Array). The key is formally known as a property and the value can be any valid JavaScript type, even another object. To create or access a property on an object, we use what is known as "dot notation" or "bracket notation."
 
 ```
 // Creating an object with the constructor:
