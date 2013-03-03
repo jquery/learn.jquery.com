@@ -10,17 +10,15 @@ jQuery makes it possible to animate arbitrary CSS properties via the
 value, or to a value relative to the current value.
 
 ```
-// Custom effects with `$.fn.animate`">
-$("div.funtimes").animate({
-    left : "+=50",
-    opacity : 0.25
-  },
-  // duration:
-  300,
-  // callback:
-  function() {
-    console.log("done!");
-  }
+// Custom effects with $.fn.animate
+$( "div.funtimes" ).animate({
+		left: "+=50",
+		opacity: 0.25
+	},
+	300, // Duration
+	function() { // Callback when the animation is finished
+		console.log( "done!" );
+	}
 });
 ```
 
@@ -42,10 +40,10 @@ As of jQuery 1.4, it is possible to do per-property easing when using the
 `$.fn.animate` method.
 
 ```
-// Per-property easing">
-$("div.funtimes").animate({
-  left: [ "+=50", "swing" ],
-  opacity: [ 0.25, "linear" ]
+// Per-property easing
+$( "div.funtimes" ).animate({
+	left: [ "+=50", "swing" ],
+	opacity: [ 0.25, "linear" ]
 }, 300 );
 ```
 

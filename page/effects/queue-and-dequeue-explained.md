@@ -9,12 +9,10 @@ adding a job on to the fx queue. By default, using queue and passing a function,
 will add to the fx queue. So we’re creating our own bespoke animation step:
 
 ```
-$(".box").animate({
-  height : 20
+$( ".box" ).animate({
+	height: 20
 }, "slow" ).queue(function() {
-
-  $("#title").html("We're in the animation, baby!");
-
+	$( "#title" ).html( "We're in the animation, baby!" );
 });
 ```
 
@@ -24,16 +22,13 @@ chained more animations on, until I call `$( this ).dequeue()`, the subsequent
 animations wouldn’t run:
 
 ```
-$(".box").animate({
-  height : 20
+$( ".box" ).animate({
+	height: 20
 }, "slow" ).queue(function() {
-
-  $("#title").html("We're in the animation, baby!");
-
-  $( this ).dequeue();
-
+	$( "#title" ).html( "We're in the animation, baby!" );
+	$( this ).dequeue();
 }).animate({
-  height: 150
+	height: 150
 });
 ```
 
@@ -44,21 +39,18 @@ the element:
 
 ```
 $.fn.pause = function( n ) {
-
-  return this.queue(function() {
-
-    var el = this;
-    setTimeout( function() {
-      return $( el ).dequeue();
-    }, n );
-  });
-
+	return this.queue(function() {
+		var el = this;
+		setTimeout(function() {
+			return $( el ).dequeue();
+		}, n );
+	});
 };
 
-$(".box").animate({
-  height : 20
+$( ".box" ).animate({
+	height: 20
 }, "slow" ).pause( 1000 ).animate({
-  height: 150
+	height: 150
 });
 ```
 
