@@ -44,24 +44,20 @@ To accomplish the desired task unobtrusively, let's change our HTML a little bit
 If we wanted to be informed when a user clicks on that button unobtrusively, we might do something like the following in a separate script file:
 
 ```
-//Event binding using addEventListener
-var helloBtn = document.getElementById("helloBtn");
+// Event binding using addEventListener
+var helloBtn = document.getElementById( "helloBtn" );
 
-helloBtn.addEventListener( "click", function(event) {
-
-  alert("Hello.");
-
+helloBtn.addEventListener( "click", function( event ) {
+	alert( "Hello." );
 }, false );
 ```
 
 Here we're saving a reference to the button element by calling `getElementById` and assigning its return value to a variable. We then call `addEventListener` and provide an event handler function that will be called whenever that event occurs. While there's nothing wrong with this code as it will work fine in modern browsers, it won't fare well in versions of IE prior to IE9. This is because Microsoft chose to implement a different method, `attachEvent`, as opposed to the W3C standard `addEventListener`, and didn't get around to changing it until IE9 was released. For this reason, it's beneficial to utilize jQuery because it abstracts away browser inconsistencies, allowing developers to use a single API for these types of tasks, as seen below.
 
 ```
-//Event binding using a convenience method
-$("#helloBtn").click(function( event ) {
-
-  alert("Hello.");
-
+// Event binding using a convenience method
+$( "#helloBtn" ).click(function( event ) {
+	alert( "Hello." );
 });
 ```
 
@@ -70,47 +66,37 @@ The `$("#helloBtn")` code selects the button element using the `$` (aka `jQuery`
 There are a number of ways that events can be listened for using jQuery:
 
 ```
-//The many ways to bind events with jQuery
+// The many ways to bind events with jQuery
 // Attach an event handler directly to the button using jQuery's
 // shorthand `click` method.
-$("#helloBtn").click(function( event ) {
-
-  alert("Hello.");
-
+$( "#helloBtn" ).click(function( event ) {
+	alert( "Hello." );
 });
 
 // Attach an event handler directly the to button using jQuery's
 // `bind` method, passing it an event string of `click`
-$("#helloBtn").bind( "click", function( event ) {
-
-  alert("Hello.");
-
+$( "#helloBtn" ).bind( "click", function( event ) {
+	alert( "Hello." );
 });
 
 // As of jQuery 1.7, attach an event handler directly to the button
 // using jQuery's `on` method.
-$("#helloBtn").on( "click", function( event ) {
-
-  alert("Hello.");
-
+$( "#helloBtn" ).on( "click", function( event ) {
+	alert( "Hello." );
 });
 
 // As of jQuery 1.7, attach an event handler to the `body` element that
 // is listening for clicks, and will respond whenever *any* button is
 // clicked on the page.
-$("body").on({
-  click: function( event ) {
-
-    alert("Hello.");
-
-  }
+$( "body" ).on({
+	click: function( event ) {
+		alert( "Hello." );
+	}
 }, "button" );
 
 // An alternative to the previous example, using slightly different syntax.
-$("body").on( "click", "button", function( event ) {
-
-  alert("Hello.");
-
+$( "body" ).on( "click", "button", function( event ) {
+	alert( "Hello." );
 });
 ```
 
@@ -132,14 +118,12 @@ The event bubbling that occurs affords us the ability to add cells via AJAX for 
 In all of the previous examples, we've been using anonymous functions and specifying an `event` argument within that function. Let's change it up a little bit.
 
 ```
-//Binding a named function
+// Binding a named function
 function sayHello( event ) {
-
-  alert("Hello.");
-
+	alert( "Hello." );
 }
 
-$("#helloBtn").on( "click", sayHello );
+$( "#helloBtn" ).on( "click", sayHello );
 ```
 
 In this slightly different example, we're defining a function called `sayHello` and then passing that function into the `on` method instead of an anonymous function. So many online examples show anonymous functions used as event handlers, but it's important to realize that you can also pass defined functions as event handlers as well. This is important if different elements or different events should perform the same functionality. This helps to keep your code DRY.
@@ -149,16 +133,15 @@ But what about that `event` argument in the `sayHello` function—what is it and
 If the element has default functionality for a specific event (like a link opens a new page, a button in a form submits the form, etc), that default functionality can be cancelled. This is often useful for AJAX requests. When a user clicks on a button to submit a form via AJAX, we'd want to cancel the button/form's default action (to submit it to the form's `action` attribute), and we would instead do an AJAX request to accomplish the same task for a more seamless experience. To do this, we would utilize the event object and call its `preventDefault` method. We can also prevent the event from bubbling up the DOM tree using `stopPropagation` so that parent elements aren't notified of its occurrence (in the case that event delegation is being used).
 
 ```
-//Preventing a default action from occurring and stopping the event bubbling
-$("form").on( "submit", function( event ) {
+// Preventing a default action from occurring and stopping the event bubbling
+$( "form" ).on( "submit", function( event ) {
 
-  // Prevent the form's default submission.
-  event.preventDefault();
+	// Prevent the form's default submission.
+	event.preventDefault();
 
-  // Prevent event from bubbling up DOM tree, prohibiting delegation
-  event.stopPropagation();
+	event.stopPropagation();
 
-  // Make an AJAX request to submit the form data
+	// Make an AJAX request to submit the form data
 
 });
 ```
@@ -170,16 +153,16 @@ It's also important to note that the event object contains a property called `or
 Finally, to inspect the event itself and see all of the data it contains, you should log the event in the browser's console using `console.log`. This will allow you to see all of an event's properties (including the `originalEvent`) which can be really helpful for debugging.
 
 ```
-//Logging an event's information
-$("form").on( "submit", function( event ) {
+// Logging an event's information
+$( "form" ).on( "submit", function( event ) {
 
-  // Prevent the form's default submission.
-  event.preventDefault();
+	// Prevent the form's default submission.
+	event.preventDefault();
 
-  // Log the event object for inspectin'
-  console.log( event );
+	// Log the event object for inspectin'
+	console.log( event );
 
-  // Make an AJAX request to submit the form data
+	// Make an AJAX request to submit the form data
 
 });
 ```

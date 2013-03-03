@@ -25,8 +25,8 @@ The on method provides several useful features:
 #### <a name="simple-event-binding">Simple event binding</a>
 ```
 // When any <p> tag is clicked, we expect to see '<p> was clicked' in the console.
-$("p").on( "click", function() {
-  console.log("<p> was clicked");
+$( "p" ).on( "click", function() {
+	console.log( "<p> was clicked" );
 });
 ```
 
@@ -39,8 +39,8 @@ Note the difference between this and the next example.
 ```
 // When a user focuses on or changes any input element, we expect a console message
 // bind to multiple events
-$("div").on( "mouseenter mouseleave", function() {
-  console.log("mouse hovered over or left a div");
+$( "div" ).on( "mouseenter mouseleave", function() {
+	console.log( "mouse hovered over or left a div" );
 });
 ```
 
@@ -53,16 +53,16 @@ want to show and hide a tooltip on hover, you would use this.
 `.on()` accepts an object containing multiple events and handlers.
 
 ```
-$("div").on({
-  mouseenter: function() {
-    console.log("hovered over a div");
-  },
-  mouseleave: function() {
-    console.log("mouse left a div");
-  },
-  click: function() {
-    console.log("clicked on a div");
-  }
+$( "div" ).on({
+	mouseenter: function() {
+		console.log( "hovered over a div" );
+	},
+	mouseleave: function() {
+		console.log( "mouse left a div" );
+	},
+	click: function() {
+		console.log( "clicked on a div" );
+	}
 });
 ```
 
@@ -75,9 +75,9 @@ a `<div>` in the page. For a breakdown of the event object, see
 <a href="/events/inside-event-handling-function/">Inside the Event Handling Function</a>.
 
 ```
-$("div").on( "click", function( event ) {
-  console.log("event object:");
-  console.dir( event );
+$( "div" ).on( "click", function( event ) {
+	console.log( "event object:" );
+	console.dir( event );
 });
 ```
 
@@ -86,10 +86,10 @@ $("div").on( "click", function( event ) {
 You can pass your own data to the event object.
 
 ```
-$("p").on( "click", {
-  foo: "bar"
+$( "p" ).on( "click", {
+	foo: "bar"
 }, function( event ) {
-  console.log( "event data: " + event.data.foo + " (should be 'bar')" );
+	console.log( "event data: " + event.data.foo + " (should be 'bar')" );
 });
 ```
 
@@ -100,8 +100,8 @@ This is called _event delegation_. Here's an example just for completeness, but 
 page on <a href="/events/event-delegation/">Event Delegation</a> for a full explanation.
 
 ```
-$("ul").on( "click", "li", function() {
-  console.log("Something in a <ul> was clicked, and we detected that it was an <li> element.");
+$( "ul" ).on( "click", "li", function() {
+	console.log( "Something in a <ul> was clicked, and we detected that it was an <li> element." );
 });
 ```
 
@@ -113,11 +113,11 @@ provides the `.one()` method for this purpose.
 
 ```
 // Switching handlers using the `.one()` method
-$("p").one( "click", function() {
-  console.log("You just clicked this for the first time!");
-  $( this ).click(function() {
-    console.log("You have clicked this before!");
-  });
+$( "p" ).one( "click", function() {
+	console.log( "You just clicked this for the first time!" );
+	$( this ).click(function() {
+		console.log( "You have clicked this before!" );
+	});
 });
 ```
 
@@ -137,23 +137,23 @@ ensure that you only have the event bindings that you need, when you need them.
 
 ```
 // Unbinding all click handlers on a selection
-$("p").off("click");
+$( "p" ).off( "click" );
 ```
 
 ```
 // Unbinding a particular click handler, using a reference to the function
 var foo = function() {
-  console.log("foo");
+	console.log( "foo" );
 };
 
 var bar = function() {
-  console.log("bar");
+	console.log( "bar" );
 };
 
-$("p").on( "click", foo ).on( "click", bar );
+$( "p" ).on( "click", foo ).on( "click", bar );
 
 // foo will stay bound to the click event
-$("p").off( "click", bar );
+$( "p" ).off( "click", bar );
 ```
 
 ### Namespacing Events

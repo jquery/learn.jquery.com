@@ -50,17 +50,11 @@ var $this = $( this );
 
 ```
 // Preventing a link from being followed
-$("a").click(function(e) {
-
-  var $this = $( this );
-
-  if ( $this.attr("href").match("evil") ) {
-
-    e.preventDefault();
-
-    $this.addClass("evil");
-
-  }
-
+$( "a" ).click(function( e ) {
+	var $this = $( this );
+	if ( $this.attr( "href" ).match( "evil" ) ) {
+		e.preventDefault();
+		$this.addClass( "evil" );
+	}
 });
 ```

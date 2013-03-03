@@ -52,7 +52,7 @@ For example, to set a hook for the "drop" event that copies the "dataTransfer" p
 
 ```
 jQuery.event.fixHooks.drop = {
-  props: [ "dataTransfer" ]
+	props: [ "dataTransfer" ]
 };
 ```
 
@@ -60,11 +60,11 @@ Since `fixHooks` are an advanced feature and rarely used externally, jQuery does
 
 ```
 if ( jQuery.event.fixHooks.drop ) {
-  throw new Error("Someone else took the jQuery.event.fixHooks.drop hook!");
+	throw new Error( "Someone else took the jQuery.event.fixHooks.drop hook!" );
 }
 
 jQuery.event.fixHooks.drop = {
-  props: [ "dataTransfer" ]
+	props: [ "dataTransfer" ]
 };
 ```
 
@@ -74,15 +74,15 @@ When there are known cases of different plugins wanting to attach to the drop ho
 var existingHook = jQuery.event.fixHooks.drop;
 
 if ( !existingHook ) {
-  jQuery.event.fixHooks.drop = {
-    props: [ "dataTransfer" ]
-  };
+	jQuery.event.fixHooks.drop = {
+		props: [ "dataTransfer" ]
+	};
 } else {
-  if ( existingHook.props ) {
-    existingHook.props.push( "dataTransfer" );
-  } else {
-    existingHook.props = [ "dataTransfer" ];
-  }
+	if ( existingHook.props ) {
+		existingHook.props.push( "dataTransfer" );
+	} else {
+		existingHook.props = [ "dataTransfer" ];
+	}
 }
 ```
 
@@ -104,8 +104,8 @@ The behavior of these properties is easiest to see with an example. Assume a spe
 
 ```
 jQuery.event.special.pushy = {
-  bindType: "click",
-  delegateType: "click"
+	bindType: "click",
+	delegateType: "click"
 };
 ```
 
@@ -118,23 +118,23 @@ When these properties are defined, the following behavior occurs in the jQuery e
 So given the special event above, this code shows that a pushy isn't removed by removing clicks. That might be an effective way to defend against an ill-behaved plugin that didn't namespace its removal of click events, for example:
 
 ```
-var $p = $("p");
+var $p = $( "p" );
 
 $p.on( "click", function( e ) {
-  $("body").append( "I am a " + e.type + "!" ));
+	$( "body" ).append( "I am a " + e.type + "!" );
 });
 
 $p.on( "pushy", function( e ) {
-  $("body").append( "I am pushy but still a " + e.type + "!" );
+	$( "body" ).append( "I am pushy but still a " + e.type + "!" );
 });
 
-$p.trigger("click"); // triggers both handlers
+$p.trigger( "click" ); // triggers both handlers
 
-$p.off("click");
+$p.off( "click" );
 
-$p.trigger("click"); // still triggers "pushy"
+$p.trigger( "click" ); // still triggers "pushy"
 
-$p.off("pushy");
+$p.off( "pushy" );
 ```
 
 These two properties are often used in conjunction with a `handle` hook function; the hook might, for example, change the event name from "click" to "pushy" before calling event handlers. See below for an example.
@@ -144,8 +144,8 @@ These two properties are often used in conjunction with a `handle` hook function
 Many of the special event hook functions below are passed a `handleObj` object that provides more information about the event, how it was attached, and its current state. This object and its contents should be treated as read-only data, and only the properties below are documented for use by special event handlers. For the discussion below, assume an event is attached with this code:
 
 ```
-$(".dialog").on( "click.myPlugin", "button", {
-  mydata: 42
+$( ".dialog" ).on( "click.myPlugin", "button", {
+	mydata: 42
 }, myHandler );
 ```
 
@@ -212,29 +212,29 @@ The hook stores the current click count in the data object, so multiclick handle
 
 ```
 jQuery.event.special.multiclick = {
-  delegateType: "click",
-  bindType: "click",
-  handle: function( event ) {
-    var handleObj = event.handleObj;
-    var targetData = jQuery.data( event.target );
-    var ret = null;
+	delegateType: "click",
+	bindType: "click",
+	handle: function( event ) {
+		var handleObj = event.handleObj;
+		var targetData = jQuery.data( event.target );
+		var ret = null;
 
-    // If a multiple of the click count, run the handler
-    targetData.clicks = ( targetData.clicks || 0 ) + 1;
+		// If a multiple of the click count, run the handler
+		targetData.clicks = ( targetData.clicks || 0 ) + 1;
 
-    if ( targetData.clicks % event.data === 0 ) {
-      event.type = handleObj.origType;
-      ret = handleObj.handler.apply( this, arguments );
-      event.type = handleObj.type;
-      return ret;
-    }
-  }
+		if ( targetData.clicks % event.data === 0 ) {
+			event.type = handleObj.origType;
+			ret = handleObj.handler.apply( this, arguments );
+			event.type = handleObj.type;
+			return ret;
+		}
+	}
 };
 
 // Sample usage
-$("p").on( "multiclick", {
-  clicks: 3
+$( "p" ).on( "multiclick", {
+	clicks: 3
 }, function( event ) {
-  alert("clicked 3 times");
+	alert( "clicked 3 times" );
 });
 ```

@@ -24,15 +24,15 @@ multiple events and handlers.
 
 ```
 // Event setup using a convenience method
-$('p').click(function() {
-  console.log('You clicked a paragraph!');
+$( "p" ).click(function() {
+ 	console.log( "You clicked a paragraph!" );
 });
 ```
 
 ```
 // Equivalent event setup using the `$.fn.on` method
-$('p').on('click', function() {
-  console.log('click');
+$( "p" ).on( "click", function() {
+	console.log( "click" );
 });
 ```
 
@@ -44,16 +44,16 @@ after the event listeners are established will not automatically pick up event b
 you've set up previously.  For example:
 
 ```
-$(document).ready(function(){
-   // Sets up click behavior on all button elements with the alert class
-   // that exist in the DOM when the instruction was executed
-   $('button.alert').on('click', function(){
-      console.log('A button with the alert class was clicked!');
-   });
-   // Now create a new button element with the alert class. This button
-   // was created after the click listeners were applied above, so it 
-   // will not have the same click behavior as its peers
-   $('button').addClass('alert').appendTo(document.body);
+$( document ).ready(function(){
+	// Sets up click behavior on all button elements with the alert class
+	// that exist in the DOM when the instruction was executed
+	$( "button.alert" ).on( "click", function() {
+		console.log( "A button with the alert class was clicked!" );
+	});
+	// Now create a new button element with the alert class. This button
+	// was created after the click listeners were applied above, so it
+	// will not have the same click behavior as its peers
+	$( "button" ).addClass( "alert" ).appendTo( document.body );
 });
 ```
 
@@ -86,12 +86,12 @@ Any data that was passed in when the event was bound. For example:
 
 ```
 // Event setup using the `$.fn.on` method with data
-$('input').on(
-  'change',  
-  {foo : 'bar'}, // associate data with event binding
-  function(eventObject) {
-    console.log('An input value has changed! ', eventObject.data.foo);
-  }
+$( "input" ).on(
+	"change",
+	{ foo: "bar" }, // associate data with event binding
+	function( eventObject ) {
+		console.log("An input value has changed! ", eventObject.data.foo);
+	}
 );
 ```
 
@@ -121,19 +121,19 @@ the DOM element into a jQuery object that we can use jQuery methods on, we
 simply do `$(this)`, often following this idiom:
 
 ```
-var $this = $(this);
+var $this = $( this );
 ```
 
 A fuller example would be:
 
 ```
 // Preventing a link from being followed
-$('a').click(function(eventObject) {
-   var $this = $(this);
-   if ($this.attr('href').match(/evil/)) {
-      eventObject.preventDefault();
-      $this.addClass('evil');
-   }
+$( "a" ).click(function( eventObject ) {
+	var $this = $( this );
+	if ( $this.attr( "href" ).match( /evil/ ) ) {
+		eventObject.preventDefault();
+		$this.addClass( "evil" );
+	}
 });
 ```
 
@@ -145,11 +145,11 @@ as a space-separated list to `$.fn.on`:
 
 ```
 // Multiple events, same handler
-$('input').on(
-  'click change',  // bind listeners for multiple events
-  function() {
-    console.log('An input was clicked or changed!')
-  }
+$( "input" ).on(
+	"click change",  // bind listeners for multiple events
+	function() {
+		console.log( "An input was clicked or changed!" )
+	}
 );
 ```
 
@@ -159,9 +159,9 @@ to handle the event.
 
 ```
 // Binding multiple events with different handlers
-$('p').on({
-  'click': function() { console.log('clicked!'); },
-  'mouseover': function() { console.log('hovered!'); }
+$( "p" ).on({
+	"click": function() { console.log( "clicked!" ); },
+	"mouseover": function() { console.log( "hovered!" ); }
 });
 ```
 
@@ -173,9 +173,9 @@ that you didn't or couldn't know about.
 
 ```
 // Namespacing events
-$('p').on('click.myNamespace', function() { /* ... */ });
-$('p').off('click.myNamespace');
-$('p').off('.myNamespace'); // unbind all events in the namespace
+$( "p" ).on( "click.myNamespace", function() { /* ... */ } );
+$( "p" ).off( "click.myNamespace" );
+$( "p" ).off( ".myNamespace" ); // unbind all events in the namespace
 ```
 
 ### Tearing Down Event Listeners
@@ -187,16 +187,16 @@ second argument.
 
 ```
 // Tearing down all click handlers on a selection
-$('p').off('click');
+$( "p" ).off( "click" );
 ```
 
 ```
 // Tearing down a particular click handler, using a reference to the function
-var foo = function() { console.log('foo'); };
-var bar = function() { console.log('bar'); };
+var foo = function() { console.log( "foo" ); };
+var bar = function() { console.log( "bar" ); };
 
-$('p').on('click', foo).on('click', bar);
-$('p').off('click', bar); // foo is still bound to the click event
+$( "p" ).on( "click", foo ).on( "click", bar );
+$( "p" ).off( "click", bar ); // foo is still bound to the click event
 ```
 
 ### Setting Up Events to Run Only Once
@@ -207,13 +207,13 @@ provides the `$.fn.one` method for this purpose.
 
 ```
 // Switching handlers using the `$.fn.one` method
-$('p').one('click', firstClick);
+$( "p" ).one( "click", firstClick );
 
-function firstClick(){
-   console.log('You just clicked this for the first time!');
-   // Now set up the new handler for subsequent clicks; 
-   // omit this step if no further click responses are needed
-   $(this).click(function() { console.log('You have clicked this before!'); });
+function firstClick() {
+	console.log( "You just clicked this for the first time!" );
+	// Now set up the new handler for subsequent clicks;
+	// omit this step if no further click responses are needed
+	$( this ).click( function() { console.log( "You have clicked this before!" ); } );
 }
 ```
 
@@ -225,10 +225,10 @@ the first click on *each* paragraph element rather than the function being remov
 
 ```
 // Using $.fn.one to bind several events
-$('input[id]').one('focus mouseover keydown', firstEvent);
+$( "input[id]" ).one( "focus mouseover keydown", firstEvent);
 
-function firstEvent(eventObject){
-  console.log('A ' + eventObject.type + ' event occurred for the first time on the input with id ' + this.id)
+function firstEvent( eventObject ) {
+	console.log( "A " + eventObject.type + " event occurred for the first time on the input with id " + this.id );
 }
 ```
 

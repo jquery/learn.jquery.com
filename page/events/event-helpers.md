@@ -20,10 +20,8 @@ Prior to jQuery 1.4, the `$.fn.hover` method required two functions.
 
 ```
 // The hover helper function
-$("#menu li").hover(function() {
-
-  $( this ).toggleClass("hover");
-
+$( "#menu li" ).hover(function() {
+	$( this ).toggleClass( "hover" );
 });
 ```
 
@@ -37,9 +35,9 @@ providing a long list of functions can be difficult to debug.
 
 ```
 // The toggle helper function
-$("p.expander").toggle( function() {
-  $( this ).prev().addClass("open");
+$( "p.expander" ).toggle( function() {
+	$( this ).prev().addClass( "open" );
 }, function() {
-  $( this ).prev().removeClass("open");
+	$( this ).prev().removeClass( "open" );
 });
 ```
