@@ -2,20 +2,20 @@
 title   : Triggering Event Handlers
 level: intermediate
 source: http://jqfundamentals.com/legacy
-attribution: 
+attribution:
   - jQuery Fundamentals
 ---
 
-jQuery provides a way to trigger the event handlers bound to an element without any user interaction via the 
+jQuery provides a way to trigger the event handlers bound to an element without any user interaction via the
 `.trigger()` method.
 
 ## What handlers can be .trigger()'d
 
-jQuery's event handling system is a layer on top of native browser events. When an event handler is added using 
-`.on("click",function() {...})`, it can be triggered using jQuery's `.trigger("click")`because jQuery stores a 
-reference to that handler when it is originally added. Additionally, it will trigger the javascript inside the 
-"onclick" attribute. The `.trigger()` function cannot be used to mimic native browser events, such as 
-clicking on a file input box or an anchor tag. This is because, there is no event handler attached using jQuery's 
+jQuery's event handling system is a layer on top of native browser events. When an event handler is added using
+`.on("click",function() {...})`, it can be triggered using jQuery's `.trigger("click")`because jQuery stores a
+reference to that handler when it is originally added. Additionally, it will trigger the javascript inside the
+"onclick" attribute. The `.trigger()` function cannot be used to mimic native browser events, such as
+clicking on a file input box or an anchor tag. This is because, there is no event handler attached using jQuery's
 event system that corresponds to these events.
 
 ```
@@ -83,5 +83,5 @@ foo(); // instead of $("p").trigger("click")
 ```
 
 A more complex architecture can built on top of trigger using the [publish-subscribe pattern](http://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) using [jQuery plugins](https://gist.github.com/661855).
-With this technique,  `$.fn.trigger` can be used to notify other sections of code that an application specific event has happened.
+With this technique,  `.trigger()` can be used to notify other sections of code that an application specific event has happened.
 
