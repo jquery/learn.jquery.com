@@ -59,6 +59,7 @@ In order to use flow control successfully, it's important to understand which ki
 NaN; // JavaScript's "not-a-number" variable
 null;
 undefined;  // be careful -- undefined can be redefined!
+0;   // the number zero
 ```
 
 ## Conditional Variable Assignment with the Ternary Operator
