@@ -10,17 +10,17 @@ don't have a test page setup yet, start by creating the following HTML page:
 ```
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Demo</title>
-  </head>
-  <body>
-    <a href="http://jquery.com/">jQuery</a>
-    <script src="jquery.js"></script>
-    <script>
-      // Your code goes here
-    </script>
-  </body>
+<head>
+	<meta charset="utf-8">
+	<title>Demo</title>
+</head>
+<body>
+	<a href="http://jquery.com/">jQuery</a>
+	<script src="jquery.js"></script>
+	<script>
+	// Your code goes here
+	</script>
+</body>
 </html>
 ```
 
@@ -35,7 +35,7 @@ many JavaScript programmers wrap their code in an `onload` function:
 
 ```
 window.onload = function() {
-  alert("welcome");
+	alert( "welcome" );
 }
 ```
 
@@ -45,7 +45,7 @@ known as the [ready event](http://api.jquery.com/ready):
 
 ```
 $( document ).ready(function() {
-  // Your code here
+	// Your code here
 });
 ```
 
@@ -53,9 +53,9 @@ For example, inside the `ready` event, you can add a click handler to the link:
 
 ```
 $( document ).ready(function() {
-  $("a").click(function( event ) {
-    alert("Thanks for visiting!");
-  });
+	$( "a" ).click(function( event ) {
+		alert( "Thanks for visiting!" );
+	});
 });
 ```
 
@@ -68,10 +68,10 @@ you can prevent the default behavior by calling `event.preventDefault()` in the 
 
 ```
 $( document ).ready(function() {
-  $("a").click(function( event ) {
-    alert("As you can see, the link no longer took you to jquery.com");
-    event.preventDefault();
-  });
+	$( "a" ).click(function( event ) {
+		alert( "As you can see, the link no longer took you to jquery.com" );
+		event.preventDefault();
+	});
 });
 ```
 
@@ -85,22 +85,22 @@ and load it on the page with a `<script>` element's `src` attribute.
 ```
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Demo</title>
-  </head>
-  <body>
-    <a href="http://jquery.com/">jQuery</a>
-    <script src="jquery.js"></script>
-    <script>
-      $( document ).ready(function() {
-        $("a").click(function( event ) {
-          alert("The link will no longer take you to jquery.com");
-          event.preventDefault();
-        });
-      });
-    </script>
-  </body>
+<head>
+	<meta charset="utf-8">
+	<title>Demo</title>
+</head>
+<body>
+	<a href="http://jquery.com/">jQuery</a>
+	<script src="jquery.js"></script>
+	<script>
+	$( document ).ready(function() {
+		$( "a" ).click(function( event ) {
+			alert( "The link will no longer take you to jquery.com" );
+			event.preventDefault();
+		});
+	});
+	</script>
+</body>
 </html>
 ```
 
@@ -114,16 +114,16 @@ First, add some style information into the `<head>` of the document, like this:
 
 ```
 <style>
-  a.test {
-    font-weight: bold;
-  }
+a.test {
+	font-weight: bold;
+}
 </style>
 ```
 
 Next, add the [addClass()](http://api.jquery.com/addClass) call to the script:
 
 ```
-$("a").addClass("test");
+$( "a" ).addClass( "test" );
 ```
 
 All `a` elements are now bold.
@@ -131,7 +131,7 @@ All `a` elements are now bold.
 To remove an existing `class`, use [removeClass()](http://api.jquery.com/removeClass):
 
 ```
-$("a").removeClass("test");
+$( "a" ).removeClass( "test" );
 ```
 
 ### Special Effects
@@ -141,9 +141,9 @@ to help you make your web sites stand out.
 For example, if you create a click handler of:
 
 ```
-$("a").click(function( event ){
-  event.preventDefault();
-  $( this ).hide("slow");
+$( "a" ).click(function( event ){
+	event.preventDefault();
+	$( this ).hide( "slow" );
 });
 ```
 
@@ -194,7 +194,7 @@ Note the use of `function() {`.  The anonymous function does exactly one thing: 
 
 ```
 $.get( "myhtmlpage.html", function() {
-  myCallBack( param1, param2 );
+	myCallBack( param1, param2 );
 });
 ```
 
