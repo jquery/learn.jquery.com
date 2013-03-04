@@ -5,7 +5,7 @@ level: beginner
 ### jQuery: The Basics
 
 This is a basic tutorial, designed to help you get started using jQuery. If you
-don&rsquo;t have a test page setup yet, start by creating the following HTML page: 
+don't have a test page setup yet, start by creating the following HTML page:
 
 ```
 <!doctype html>
@@ -30,7 +30,7 @@ and store the `jquery.js` file in the same directory as your HTML file.
 
 ### Launching Code on Document Ready
 
-To ensure that their code runs after the browser finishes loading the document, 
+To ensure that their code runs after the browser finishes loading the document,
 many JavaScript programmers wrap their code in an `onload` function:
 
 ```
@@ -39,9 +39,9 @@ window.onload = function() {
 }
 ```
 
-Unfortunately, the code doesn&rsquo;t run until all images are finished downloading, including banner ads.
-To run code as soon as the `document` is ready to be manipulated, jQuery has a statement 
-known as the [ ready event ](http://api.jquery.com/ready):
+Unfortunately, the code doesn't run until all images are finished downloading, including banner ads.
+To run code as soon as the `document` is ready to be manipulated, jQuery has a statement
+known as the [ready event](http://api.jquery.com/ready):
 
 ```
 $( document ).ready(function() {
@@ -59,11 +59,11 @@ $( document ).ready(function() {
 });
 ```
 
-Save your HTML file and reload the test page in your browser. 
-Clicking the link should now first display an alert pop-up, 
+Save your HTML file and reload the test page in your browser.
+Clicking the link should now first display an alert pop-up,
 then continue with the default behavior of navigating to http://jquery.com.
 
-For `click` and most other [events](http://api.jquery.com/category/events/), 
+For `click` and most other [events](http://api.jquery.com/category/events/),
 you can prevent the default behavior by calling `event.preventDefault()` in the event handler:
 
 ```
@@ -79,8 +79,8 @@ $( document ).ready(function() {
 
 The following example illustrates the click handling code discussed above,
 embedded directly in the HTML `<body>`. Note that in practice,
-it is usually better to place your code in a separate JS file 
-and load it on the page with a `<script>` element&rsquo;s `src` attribute.
+it is usually better to place your code in a separate JS file
+and load it on the page with a `<script>` element's `src` attribute.
 
 ```
 <!doctype html>
@@ -155,7 +155,7 @@ Unlike many other programming languages, JavaScript enables you to freely pass f
 A *callback* is a function that is passed as an argument to another function and
 is executed after its parent function has completed. Callbacks are special because
 they patiently wait to execute until their parent finishes.
-Meanwhile, the browser can be executing other functions or doing all sorts of other work. 
+Meanwhile, the browser can be executing other functions or doing all sorts of other work.
 
 To use callbacks, it is important to know how to pass them into their parent function.
 
@@ -172,7 +172,7 @@ When [$.get](http://api.jquery.com/jQuery.get/) finishes getting the page `myhtm
 
 ### Callback *with* Arguments
 
-Executing callbacks with arguments can be tricky. 
+Executing callbacks with arguments can be tricky.
 
 #### Wrong
 This code example will ***not*** work:
@@ -182,15 +182,15 @@ $.get( "myhtmlpage.html", myCallBack( param1, param2 ) );
 ```
 
 The reason this fails is that the code executes `myCallBack( param1, param2 )` immediately
-and then passes myCallBack&rsquo;s *return value* as the second parameter to `$.get`.
-We actually want to pass the function `myCallBack`, not `myCallBack( param1, param2 )`&rsquo;s return value
+and then passes myCallBack's *return value* as the second parameter to `$.get`.
+We actually want to pass the function `myCallBack`, not `myCallBack( param1, param2 )`'s return value
 (which might or might not be a function).  So, how to pass in `myCallBack` *and* include its arguments?
 
 #### Right
 
 To defer executing `myCallBack` with its parameters, you can use an anonymous function as a wrapper.
 Note the use of `function() {`.  The anonymous function does exactly one thing:  calls
-`myCallBack`, with the values of `param1` and `param2`. 
+`myCallBack`, with the values of `param1` and `param2`.
 
 ```
 $.get( "myhtmlpage.html", function() {
