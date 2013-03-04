@@ -148,7 +148,7 @@ alert( bar[0] );
 alert( bar.length );
 ```
 
-An array can be manipulated through methods that are available on the instance of the array. Items in the array can be accessed using bracket notation with a given. If the index does not exist or contains no value, the return type will be undefined. 
+An array can be manipulated through methods that are available on the instance of the array. Items in the array can be accessed using bracket notation with a given index. If the index does not exist or contains no value, the return type will be undefined. 
 
 A few common array methods are shown below:
 
