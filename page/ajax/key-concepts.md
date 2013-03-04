@@ -10,17 +10,17 @@ concepts first.
 
 ### GET vs. POST
 
-The two most common &ldquo;methods&rdquo; for sending a request to a server are GET and
-POST. It&rsquo;s important to understand the proper application of each.
+The two most common "methods" for sending a request to a server are GET and
+POST. It's important to understand the proper application of each.
 
-The GET method should be used for non-destructive operations &mdash; that is,
-operations where you are only &ldquo;getting&rdquo; data from the server, not changing data
+The GET method should be used for non-destructive operations — that is,
+operations where you are only "getting" data from the server, not changing data
 on the server. For example, a query to a search service might be a GET
 request. GET requests may be cached by the browser, which can lead to
 unpredictable behavior if you are not expecting it. GET requests generally
 send all of their data in a query string.
 
-The POST method should be used for destructive operations &mdash; that is, operations
+The POST method should be used for destructive operations — that is, operations
 where you are changing data on the server. For example, a user saving a blog
 post should be a POST request. POST requests are generally not cached by the
 browser; a query string can be part of the URL, but the data tends to be sent
@@ -49,7 +49,7 @@ For adding a new script to the page.
 
 For transporting JSON-formatted data, which can include strings, arrays, and objects.
 
-**Note:** As of jQuery 1.4, if the JSON data sent by your server isn&rsquo;t properly
+**Note:** As of jQuery 1.4, if the JSON data sent by your server isn't properly
 formatted, the request may fail silently. See
 [http://json.org](http://json.org) for details on properly formatting JSON, but
 as a general rule, use built-in language methods for generating JSON on the
@@ -98,7 +98,7 @@ $.get( "foo.php", function( response ) {
 
 In general, Ajax requests are limited to the same protocol (http or https), the
 same port, and the same domain as the page making the request. This limitation
-does not apply to scripts that are loaded via jQuery&rsquo;s Ajax methods.
+does not apply to scripts that are loaded via jQuery's Ajax methods.
 
 The other exception is requests targeted at a JSONP service on another domain.
 In the case of JSONP, the provider of the service has agreed to respond to your
@@ -112,6 +112,6 @@ Firebug (or the Webkit Inspector in Chrome or Safari) is an invaluable tool for
 working with Ajax requests. You can see Ajax requests as they happen in the
 Console tab of Firebug (and in the Resources > XHR panel of Webkit Inspector),
 and you can click on a request to expand it and see details such as the request
-headers, response headers, response content, and more. If something isn&rsquo;t
+headers, response headers, response content, and more. If something isn't
 going as expected with an Ajax request, this is the first place to look to
-track down what&rsquo;s wrong.
+track down what's wrong.

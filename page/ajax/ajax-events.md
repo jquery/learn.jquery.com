@@ -5,10 +5,10 @@ source: http://jqfundamentals.com/legacy
 attribution:
   - jQuery Fundamentals
 ---
-Often, you&rsquo;ll want to perform an operation whenever an Ajax requests starts or
+Often, you'll want to perform an operation whenever an Ajax requests starts or
 stops, such as showing or hiding a loading indicator. Rather than defining
 this behavior inside every Ajax request, you can bind Ajax events to elements
-just like you&rsquo;d bind other events. For a complete list of Ajax events, visit
+just like you'd bind other events. For a complete list of Ajax events, visit
 [Ajax Events documentation on docs.jquery.com](http://docs.jquery.com/Ajax_Events).
 
 ```

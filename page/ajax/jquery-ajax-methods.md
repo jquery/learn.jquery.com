@@ -7,16 +7,16 @@ attribution:
 ---
 While jQuery does offer many Ajax-related convenience methods, the core
 `$.ajax` method is at the heart of all of them, and understanding it is
-imperative. We&rsquo;ll review it first, and then touch briefly on the convenience
+imperative. We'll review it first, and then touch briefly on the convenience
 methods.
 
 I generally use the `$.ajax` method and do not use convenience methods. As
-you&rsquo;ll see, it offers features that the convenience methods do not, and its
+you'll see, it offers features that the convenience methods do not, and its
 syntax is more easily understandable, in my opinion.
 
 ### `$.ajax`
 
-jQuery&rsquo;s core `$.ajax` method is a powerful and straightforward way of creating
+jQuery's core `$.ajax` method is a powerful and straightforward way of creating
 Ajax requests. It takes a configuration object that contains all the
 instructions jQuery requires to complete the request. The `$.ajax` method is
 particularly valuable because it offers the ability to specify both success and
@@ -67,7 +67,7 @@ $.ajax({
 different format than you specify, your code may fail, and the reason will not
 always be clear, because the HTTP response code will not show an error. When
 working with Ajax requests, make sure your server is sending back the data type
-you&rsquo;re asking for, and verify that the `Content-type` header is accurate for the
+you're asking for, and verify that the `Content-type` header is accurate for the
 data type. For example, for JSON data, the `Content-type` header should be
 `application/json`.
 
@@ -156,10 +156,10 @@ argument to `$.ajax`, and the options object as the second argument.
 
 ### Convenience Methods
 
-If you don&rsquo;t need the extensive configurability of `$.ajax`, and you don&rsquo;t care
+If you don't need the extensive configurability of `$.ajax`, and you don't care
 about handling errors, the Ajax convenience functions provided by jQuery can be
 useful, terse ways to accomplish Ajax requests. These methods are just
-&ldquo;wrappers&rdquo; around the core `$.ajax` method, and simply pre-set some of the
+"wrappers" around the core `$.ajax` method, and simply pre-set some of the
 options on the `$.ajax` method.
 
 The convenience methods provided by jQuery are:
@@ -204,7 +204,7 @@ object.
 
 The type of data you expect back from the server. Optional.
 
-**Note:** This option is only applicable for methods that don&rsquo;t already specify the data
+**Note:** This option is only applicable for methods that don't already specify the data
 type in their name.
 
 ```
@@ -233,7 +233,7 @@ $.getJSON( "/details.php", function( resp ) {
 
 ### `$.fn.load`
 
-The `$.fn.load` method is unique among jQuery&rsquo;s Ajax methods in that it is
+The `$.fn.load` method is unique among jQuery's Ajax methods in that it is
 called on a selection. The `$.fn.load` method fetches HTML from a URL, and
 uses the returned HTML to populate the selected element(s). In addition to
 providing a URL to the method, you can optionally provide a selector; jQuery
