@@ -9,13 +9,13 @@ attribution:
 jQuery provides a way to trigger the event handlers bound to an element without any user interaction via the
 `.trigger()` method.
 
-## What handlers can be .trigger()&rsquo;d?
+## What handlers can be .trigger()'d?
 
-jQuery&rsquo;s event handling system is a layer on top of native browser events. When an event handler is added using
-`.on( "click", function() {...} )`, it can be triggered using jQuery&rsquo;s `.trigger( "click" )` because jQuery stores a
+jQuery's event handling system is a layer on top of native browser events. When an event handler is added using
+`.on( "click", function() {...} )`, it can be triggered using jQuery's `.trigger( "click" )` because jQuery stores a
 reference to that handler when it is originally added. Additionally, it will trigger the JavaScript inside the
 `onclick` attribute. The `.trigger()` function cannot be used to mimic native browser events, such as
-clicking on a file input box or an anchor tag. This is because, there is no event handler attached using jQuery&rsquo;s
+clicking on a file input box or an anchor tag. This is because, there is no event handler attached using jQuery's
 event system that corresponds to these events.
 
 ```
@@ -31,7 +31,7 @@ $( "a" ).trigger( "click" );
 In order to trigger a native browser event, you have to use [document.createEventObject](http://msdn.microsoft.com/en-us/library/ie/ms536390%28v=vs.85%29.aspx) for < IE9 and  [document.createEvent](https://developer.mozilla.org/en/DOM/document.createEvent) for all other browsers.
 Using these two APIs, you can programmatically create an event that behaves exactly as if someone has actually clicked on a file input box. The default action will happen, and the browse file dialog will display.
 
-The jQuery UI Team created [jquery.simulate.js](https://github.com/eduardolundgren/jquery-simulate/blob/master/jquery.simulate.js) in order to simplify triggering a native browser event for use in their automated testing. Its usage is modeled after jQuery&rsquo;s trigger.
+The jQuery UI Team created [jquery.simulate.js](https://github.com/eduardolundgren/jquery-simulate/blob/master/jquery.simulate.js) in order to simplify triggering a native browser event for use in their automated testing. Its usage is modeled after jQuery's trigger.
 
 ```
 // Triggering a native browser event using the simulate plugin
@@ -52,7 +52,7 @@ There are four differences between `.trigger()` and `.triggerHandler()`
 
 For more information see the [triggerHandler documentation](http://api.jquery.com/triggerHandler)
 
-## Don&rsquo;t use `.trigger()` simply to execute specific functions
+## Don't use `.trigger()` simply to execute specific functions
 
 While this method has its uses, it should not be used simply to call a function that was bound as a click
 handler. Instead, you should store the function you want to call in a

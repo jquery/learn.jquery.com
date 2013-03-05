@@ -37,7 +37,7 @@ As discussed in the [event delegation](/event/event-delegation) article, this is
 ### [.bind()](http://api.jquery.com/bind/) delegation (Deprecated)
 Introduced in jQuery v1.0
 
-Generally we don&rsquo;t associate `.bind()` with *event delegation*, however prior to jQuery v1.3 it was the only means of delegation available to us.
+Generally we don't associate `.bind()` with *event delegation*, however prior to jQuery v1.3 it was the only means of delegation available to us.
 
 ```
 ​$( "#list" ).bind( "click", function( event ) {

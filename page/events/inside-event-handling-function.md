@@ -17,7 +17,7 @@ the page.
 
 #### type
 
-The type of the event (e.g. &ldquo;click&rdquo;).
+The type of the event (e.g. "click").
 
 #### which
 

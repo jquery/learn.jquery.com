@@ -25,7 +25,7 @@ $( "#menu li" ).hover(function() {
 
 ### `$.fn.toggle`
 
-The `$.fn.toggle` method is triggered by the &ldquo;click&rdquo; event and accepts two or
+The `$.fn.toggle` method is triggered by the "click" event and accepts two or
 more functions. Each time the click event occurs, the next function in the
 list is called. Generally, `$.fn.toggle` is used with just two functions;
 however, it will accept an unlimited number of functions. Be careful, though:

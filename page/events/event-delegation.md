@@ -39,7 +39,7 @@ While this works perfectly fine, there are drawbacks. Consider this:
 // add a new element on to our existing list
 $( "#list" ).append( "<li><a href=\"http://newsite.com\">Item #101</a></li>" );
 ```
-If we were to click our newly added item, nothing would happen. This is because of the directly bound event that we attached previously. Direct events are only attached to elements at the time we called the `.on()` method for our existing collection of `<a>`&rsquo;s, that is only the `<a>`&rsquo;s that were found when we call `$()`.
+If we were to click our newly added item, nothing would happen. This is because of the directly bound event that we attached previously. Direct events are only attached to elements at the time we called the `.on()` method for our existing collection of `<a>`'s, that is only the `<a>`'s that were found when we call `$()`.
 
 ## Event Propagation
 Understanding how events propagate is an important factor in being able to leverage Event Delegation. Any time an anchor tags is clicked, a *click* event is fired for the:
@@ -62,9 +62,9 @@ $( "#list" ).on( "click", "a", function( event ) {
 	console.log( $( this ).text() );
 });
 ```
-Notice for the second parameter to the `.on()` method we are telling it which selector to listen for. Now when a *click* event is triggered on our `<ul>`, our delegated event will check to see if the triggering element matches our selector (`"a"`). If it does, our anonymous function will execute. We have now attached a single *click* event listener to our `<ul>` instead of an unknown number of directly bound events on our `<a>`&rsquo;s.
+Notice for the second parameter to the `.on()` method we are telling it which selector to listen for. Now when a *click* event is triggered on our `<ul>`, our delegated event will check to see if the triggering element matches our selector (`"a"`). If it does, our anonymous function will execute. We have now attached a single *click* event listener to our `<ul>` instead of an unknown number of directly bound events on our `<a>`'s.
 
-Now lets say that whenever a link is clicked we want to check and see if the `href` attribute starts with &ldquo;http&rdquo; and if it does we want to set the `target` attribute to `_blank`.
+Now lets say that whenever a link is clicked we want to check and see if the `href` attribute starts with "http" and if it does we want to set the `target` attribute to `_blank`.
 ```
 // attach a delegated event
 $( "#list" ).on( "click", "a", function( event ) {
@@ -74,7 +74,7 @@ $( "#list" ).on( "click", "a", function( event ) {
 	}
 });
 ```
-This simply passes the `.is()` method a selector to see if the element&rsquo;s `href` attributes starts with &ldquo;http&rdquo;. Also we have removed the `event.preventDefault();` statement, this is because we want the default action to happen (which is to following the `href`)
+This simply passes the `.is()` method a selector to see if the element's `href` attributes starts with "http". Also we have removed the `event.preventDefault();` statement, this is because we want the default action to happen (which is to following the `href`)
 
 We can actually take this a step further and make our code simpler and more concise by allowing the selector argument to `.on()` do our logic for us.
 ```

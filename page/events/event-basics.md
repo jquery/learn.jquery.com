@@ -10,14 +10,14 @@ level: beginner
 ### Setting Up Event Responses on DOM Elements
 
 jQuery makes it straightforward to set up event-driven responses on page elements.
-These events are often triggered by the end user&rsquo;s interaction with the page,
+These events are often triggered by the end user's interaction with the page,
 such as when text is entered into a form element or the mouse pointer is moved.
 In some cases, such as the page load and unload events, the browser itself will
 trigger the event.
 
-jQuery offers convenience methods for most native browser events. These methods &mdash;
-including `$.fn.click`, `$.fn.focus`, `$.fn.blur`, `$.fn.change`, etc. &mdash; are shorthand
-for jQuery&rsquo;s `$.fn.on` method. The `on` method is useful for binding the same handler
+jQuery offers convenience methods for most native browser events. These methods —
+including `$.fn.click`, `$.fn.focus`, `$.fn.blur`, `$.fn.change`, etc. — are shorthand
+for jQuery's `$.fn.on` method. The `on` method is useful for binding the same handler
 function to multiple events, when you want to provide data to the event hander,
 when you are working with custom events, or when you want to pass an object of
 multiple events and handlers.
@@ -41,7 +41,7 @@ $( "p" ).on( "click", function() {
 It is important to note that `$.fn.on` can only create event listeners
 on elements that exist *at the time you set up the listeners*. Similar elements created
 after the event listeners are established will not automatically pick up event behaviors
-you&rsquo;ve set up previously. For example:
+you've set up previously. For example:
 
 ```
 $( document ).ready(function(){
@@ -74,7 +74,7 @@ the page display area (not the entire browser window).
 
 #### type
 
-The type of the event (e.g. &ldquo;click&rdquo;).
+The type of the event (e.g. "click").
 
 #### which
 
@@ -168,8 +168,8 @@ $( "p" ).on({
 ### Namespacing Events
 
 For complex applications and for plugins you share with others, it can be
-useful to namespace your events so you don&rsquo;t unintentionally disconnect events
-that you didn&rsquo;t or couldn&rsquo;t know about.
+useful to namespace your events so you don't unintentionally disconnect events
+that you didn't or couldn't know about.
 
 ```
 // Namespacing events
@@ -201,7 +201,7 @@ $( "p" ).off( "click", bar ); // foo is still bound to the click event
 
 ### Setting Up Events to Run Only Once
 
-Sometimes you need a particular handler to run only once &mdash; after that, you may
+Sometimes you need a particular handler to run only once — after that, you may
 want no handler to run, or you may want a different handler to run. jQuery
 provides the `$.fn.one` method for this purpose.
 
