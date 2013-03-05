@@ -50,7 +50,7 @@ You may have noticed that `$.fn.show` and `$.fn.hide` use a combination of slide
 when showing and hiding content in an animated way. If you would rather show or hide content with
 one effect or the other, there are additional methods that can help. `$.fn.slideDown` and `$.fn.slideUp`
 show and hide content, respectively, using only a slide effect. Slide animations are accomplished by
-rapidly making changes to an element&rsquo;s CSS `height` property.
+rapidly making changes to an element's CSS `height` property.
 
 ```
 // Hide all paragraphs using a slide up animation over 0.8 seconds
@@ -61,7 +61,7 @@ $( "div.hidden" ).slideDown( 600 );
 ```
 
 Similarly `$.fn.fadeIn` and `$.fn.fadeOut` show and hide content, respectively, by means of a fade
-animation. Fade animations involve rapidly making changes to an element&rsquo;s CSS `opacity` property.
+animation. Fade animations involve rapidly making changes to an element's CSS `opacity` property.
 
 ```
 // Hide all paragraphs using a fade out animation over 1.5 seconds
@@ -73,7 +73,7 @@ $( "div.hidden" ).fadeIn( 750 );
 
 ##Changing Display Based on Current Visibility State
 
-jQuery can also let you change a content&rsquo;s visibility based on its current visibility state. `$.fn.toggle`
+jQuery can also let you change a content's visibility based on its current visibility state. `$.fn.toggle`
 will show content that is currently hidden and hide content that is currently visible. You can pass the
 same arguments to `$.fn.toggle` as you pass to any of the effects methods above.
 

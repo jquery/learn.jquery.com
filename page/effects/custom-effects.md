@@ -24,12 +24,12 @@ $( "div.funtimes" ).animate({
 
 **Note:** Color-related properties cannot be animated with `$.fn.animate` using jQuery
 out of the box. Color animations can easily be accomplished by including the
-[color plugin](http://github.com/jquery/jquery-color). We&rsquo;ll discuss using
+[color plugin](http://github.com/jquery/jquery-color). We'll discuss using
 plugins later in the book.
 
 ### Easing
 
-Definition: Easing describes the manner in which an effect occurs &mdash; whether
+Definition: Easing describes the manner in which an effect occurs — whether
 the rate of change is steady, or varies over the duration of the animation.
 jQuery includes only two methods of easing: swing and linear. If you want more
 natural transitions in your animations, various easing plugins are available.

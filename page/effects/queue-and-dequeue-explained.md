@@ -4,9 +4,9 @@ level: beginner
 source:       http://jqueryfordesigners.com/api-queue-dequeue/
 ---
 
-When you use the `animate`, and `show`, `hide`, `slideUp`, etc. effect methods, you&rsquo;re
+When you use the `animate`, and `show`, `hide`, `slideUp`, etc. effect methods, you're
 adding a job to the effects queue. By default, using `queue()` and passing a function,
-will add it to the effects queue. So we&rsquo;re creating our own bespoke animation step:
+will add it to the effects queue. So we're creating our own bespoke animation step:
 
 ```
 $( ".box" ).animate({
@@ -19,7 +19,7 @@ $( ".box" ).animate({
 As I said though, these methods come in pairs, so anything you add using `queue()`,
 you need to dequeue to allow the process to continue. In the code above, if I
 chained more animations on, until I call `$( this ).dequeue()`, the subsequent
-animations wouldn&rsquo;t run:
+animations wouldn't run:
 
 ```
 $( ".box" ).animate({
@@ -32,7 +32,7 @@ $( ".box" ).animate({
 });
 ```
 
-Keeping in mind that the animation won&rsquo;t continue until we&rsquo;ve explicitly called
+Keeping in mind that the animation won't continue until we've explicitly called
 `dequeue()`, we can easily create a pausing plugin, by adding a step in the queue
 that sets a timer and triggers after `n` milliseconds, at which time, it dequeues
 the element:
@@ -55,4 +55,4 @@ $( ".box" ).animate({
 ```
 
 Remember that the first argument for `queue()` and `dequeue()` is `fx`, and that in
-all of these examples I&rsquo;m not including it because jQuery sets the argument to `fx` by default &mdash; so I don&rsquo;t have to specify it.
+all of these examples I'm not including it because jQuery sets the argument to `fx` by default — so I don't have to specify it.

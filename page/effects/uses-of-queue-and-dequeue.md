@@ -12,7 +12,7 @@ queue by calling `.queue()`, and you remove (by calling) the functions using
 
 To understand the internal jQuery queue functions, reading the source and
 looking at examples helps me out tremendously. One of the best examples of a
-queue function I&rsquo;ve seen is `.delay()`:
+queue function I've seen is `.delay()`:
 
 ```
 $.fn.delay = function( time, type ) {
@@ -42,12 +42,12 @@ The default queue in jQuery is `fx`. The default queue has some special
 properties that are not shared with other queues.
 
 - Auto Start: When calling `$(elem).queue( function() {} );` the fx queue will
-  automatically dequeue the next function and run it if the queue hasn&rsquo;t
+  automatically dequeue the next function and run it if the queue hasn't
   started.
 - &ldquo;inprogress&rdquo; sentinel: Whenever you `dequeue()` a function from the fx queue,
   it will `unshift()` (push into the first location of the array) the string
-  &ldquo;inprogress&rdquo; &mdash; which flags that the queue is currently being run.
-- It&rsquo;s the default! The fx queue is used by `.animate()` and all functions that
+  &ldquo;inprogress&rdquo; — which flags that the queue is currently being run.
+- It's the default! The fx queue is used by `.animate()` and all functions that
   call it by default.
 
 **Note:** If you are using a custom queue, you must manually `.dequeue()` the functions, they will not auto start!
