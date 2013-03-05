@@ -10,7 +10,7 @@ attribution:
 
 ##Further Deferreds examples
 
-Deferreds are used behind the hood in Ajax but it doesn&rsquo;t mean they can&rsquo;t also
+Deferreds are used behind the hood in Ajax but it doesn't mean they can't also
 be used elsewhere. This section describes situations where deferreds will help
 abstract away asynchronous behaviour and decouple our code.
 
@@ -29,7 +29,7 @@ $.cachedGetScript( url, callback2 );
 ```
 
 The caching mechanism has to make sure the URL is only requested once
-even if the script isn&rsquo;t in cache yet. This shows some logic
+even if the script isn't in cache yet. This shows some logic
 to keep track of callbacks bound to a given URL in order for the cache
 system to properly handle both complete and inbound requests.
 
@@ -62,7 +62,7 @@ $.cachedGetScript( url ).then( successCallback, errorCallback );
 
 It is also possible to make the code completely generic and build a
 cache factory that will abstract out the actual task to be performed
-when a key isn&rsquo;t in the cache yet:
+when a key isn't in the cache yet:
 
 ```
 $.createCache = function( requestFunction ) {
@@ -152,10 +152,10 @@ This deferred-based cache is not limited to network requests; it can
 also be used for timing purposes.
 
 For instance, you may need to perform an action on the page after a
-given amount of time so as to attract the user&rsquo;s attention to a specific
+given amount of time so as to attract the user's attention to a specific
 feature they may not be aware of or deal with a timeout (for a quiz
 question for instance). While `setTimeout` is good for most use-cases it
-doesn&rsquo;t handle the situation when the timer is asked for later, even
+doesn't handle the situation when the timer is asked for later, even
 after it has theoretically expired. We can handle that with the
 following caching system:
 
@@ -216,7 +216,7 @@ if ( buttonClicked ) {
 ```
 
 This is a very coupled solution. If you want to add some other action,
-you have to edit the bind code or just duplicate it all. If you don&rsquo;t,
+you have to edit the bind code or just duplicate it all. If you don't,
 your only option is to test for `buttonClicked` and you may lose that new
 action because the `buttonClicked` variable may be false and your new code
 may never be executed.
@@ -254,7 +254,7 @@ The code works as follows:
 
 While the code is definitely more verbose, it makes dealing with the
 problem at hand much simpler in a compartmentalized and decoupled way.
-But let&rsquo;s define a helper method first:
+But let's define a helper method first:
 
 ```
 $.fn.firstClick = function( callback ) {
@@ -279,7 +279,7 @@ openPanel.done(function() {
 });
 ```
 
-Nothing is lost if the panel isn&rsquo;t opened yet, the action will just get
+Nothing is lost if the panel isn't opened yet, the action will just get
 deferred until the button is clicked.
 
 ### Combining helpers

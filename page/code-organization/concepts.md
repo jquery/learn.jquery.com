@@ -8,24 +8,24 @@ attribution:
 
 When you move beyond adding simple enhancements to your website with jQuery and
 start developing full-blown client-side applications, you need to consider how
-to organize your code. In this chapter, we&rsquo;ll take a look at various code
+to organize your code. In this chapter, we'll take a look at various code
 organization patterns you can use in your jQuery application and explore the
 RequireJS dependency management and build system.
 
 ## Key Concepts
 
-Before we jump into code organization patterns, it&rsquo;s important to understand
+Before we jump into code organization patterns, it's important to understand
 some concepts that are common to all good code organization patterns.
 
-- Your code should be divided into units of functionality &mdash; modules, services,
+- Your code should be divided into units of functionality — modules, services,
   etc. Avoid the temptation to have all of your code in one huge
   `$( document ).ready()` block. This concept, loosely, is known as
   encapsulation.
-- Don&rsquo;t repeat yourself. Identify similarities among pieces of functionality,
+- Don't repeat yourself. Identify similarities among pieces of functionality,
   and use inheritance techniques to avoid repetitive code.
-- Despite jQuery&rsquo;s DOM-centric nature, JavaScript applications are not all
-  about the DOM. Remember that not all pieces of functionality need to &mdash; or
-  should &mdash; have a DOM representation.
+- Despite jQuery's DOM-centric nature, JavaScript applications are not all
+  about the DOM. Remember that not all pieces of functionality need to — or
+  should — have a DOM representation.
 - Units of functionality should be [loosely coupled](http://en.wikipedia.org/wiki/Loose_coupling), that is,
   a unit of functionality should be able to exist on its own, and communication between
   units should be handled via a messaging system such as custom events or
@@ -34,7 +34,7 @@ some concepts that are common to all good code organization patterns.
 
 The concept of loose coupling can be especially troublesome to developers
 making their first foray into complex applications, so be mindful of this as
-you&rsquo;re getting started.
+you're getting started.
 
 ## Encapsulation
 
@@ -44,7 +44,7 @@ into distinct pieces; sometimes, even just this effort is sufficient to lend
 ### The Object Literal
 
 An object literal is perhaps the simplest way to encapsulate related code. It
-doesn&rsquo;t offer any privacy for properties or methods, but it&rsquo;s useful for
+doesn't offer any privacy for properties or methods, but it's useful for
 eliminating anonymous functions from your code, centralizing configuration
 options, and easing the path to reuse and refactoring.
 
@@ -82,10 +82,10 @@ myFeature.readSettings(); // { foo: "bar" }
 The object literal above is simply an object assigned to a variable. The object
 has one property and several methods. All of the properties and methods are
 public, so any part of your application can see the properties and call methods
-on the object. While there is an init method, there&rsquo;s nothing requiring that it
+on the object. While there is an init method, there's nothing requiring that it
 be called before the object is functional.
 
-How would we apply this pattern to jQuery code? Let&rsquo;s say that we had this code
+How would we apply this pattern to jQuery code? Let's say that we had this code
 written in the traditional jQuery style:
 
 ```
@@ -106,7 +106,7 @@ $( document ).ready(function() {
 ```
 
 If this were the extent of our application, leaving it as-is would be fine. On
-the other hand, if this was a piece of a larger application, we&rsquo;d do well to
+the other hand, if this was a piece of a larger application, we'd do well to
 keep this functionality separate from unrelated functionality. We might also
 want to move the URL out of the code and into a configuration area. Finally, we
 might want to break up the chain to make it easier to modify pieces of the
@@ -169,23 +169,23 @@ var myFeature = {
 $( document ).ready( myFeature.init );
 ```
 
-The first thing you&rsquo;ll notice is that this approach is obviously far longer
-than the original &mdash; again, if this were the extent of our application, using an
-object literal would likely be overkill. Assuming it&rsquo;s not the extent of our
-application, though, we&rsquo;ve gained several things:
+The first thing you'll notice is that this approach is obviously far longer
+than the original — again, if this were the extent of our application, using an
+object literal would likely be overkill. Assuming it's not the extent of our
+application, though, we've gained several things:
 
-- We&rsquo;ve broken our feature up into tiny methods. In the future, if we want to
-  change how content is shown, it&rsquo;s clear where to change it. In the original
+- We've broken our feature up into tiny methods. In the future, if we want to
+  change how content is shown, it's clear where to change it. In the original
   code, this step is much harder to locate.
-- We&rsquo;ve eliminated the use of anonymous functions.
-- We&rsquo;ve moved configuration options out of the body of the code and put them in
+- We've eliminated the use of anonymous functions.
+- We've moved configuration options out of the body of the code and put them in
   a central location.
-- We&rsquo;ve eliminated the constraints of the chain, making the code easier to
+- We've eliminated the constraints of the chain, making the code easier to
   refactor, remix, and rearrange.
 
 For non-trivial features, object literals are a clear improvement over a long
 stretch of code stuffed in a `$( document ).ready()` block, as they get us
-thinking about the pieces of our functionality. However, they aren&rsquo;t a whole
+thinking about the pieces of our functionality. However, they aren't a whole
 lot more advanced than simply having a bunch of function declarations inside of
 that `$( document ).ready()` block.
 
@@ -228,7 +228,7 @@ feature.sayPrivateThing();
 
 In the example above, we self-execute an anonymous function that returns an
 object. Inside of the function, we define some variables. Because the variables
-are defined inside of the function, we don&rsquo;t have access to them outside of the
+are defined inside of the function, we don't have access to them outside of the
 function unless we put them in the return object. This means that no code
 outside of the function has access to the `privateThing` variable or to the
 `changePrivateThing` function. However, `sayPrivateThing` does have access to
@@ -237,7 +237,7 @@ scope as `sayPrivateThing`.
 
 This pattern is powerful because, as you can gather from the variable names, it
 can give you private variables and functions while exposing a limited API
-consisting of the returned object&rsquo;s properties and methods.
+consisting of the returned object's properties and methods.
 
 Below is a revised version of the previous example, showing how we could create
 the same feature using the module pattern while only exposing one public method

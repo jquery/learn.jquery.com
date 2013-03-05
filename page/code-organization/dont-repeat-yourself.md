@@ -5,7 +5,7 @@ attribution:
 source: http://jqfundamentals.com/legacy
   - jQuery Fundamentals
 ---
-Don&rsquo;t repeat yourself; if you&rsquo;re repeating yourself, you&rsquo;re doing it wrong.
+Don't repeat yourself; if you're repeating yourself, you're doing it wrong.
 
 ```
 // BAD
