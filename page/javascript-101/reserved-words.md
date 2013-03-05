@@ -2,18 +2,14 @@
 title:        Reserved Words
 level:        beginner
 source: http://jqfundamentals.com/legacy
-attribution: 
+attribution:
   - jQuery Fundamentals
 ---
-JavaScript has a number of “reserved words,” or words that have special meaning in the language. You should avoid using these words in your code except when using them with their intended meaning.
+JavaScript has a number of "reserved words," or words that have special meaning in the language. You should avoid using these words in your code except when using them with their intended meaning.
 
-- abstract
-- boolean
 - break
-- byte
 - case
 - catch
-- char
 - class
 - const
 - continue
@@ -21,45 +17,38 @@ JavaScript has a number of “reserved words,” or words that have special mean
 - default
 - delete
 - do
-- double
 - else
 - enum
 - export
 - extends
-- final
+- false
 - finally
-- float
 - for
 - function
-- goto
 - if
 - implements
 - import
 - in
 - instanceof
-- int
 - interface
-- long
-- native
+- let
 - new
+- null
 - package
 - private
 - protected
 - public
 - return
-- short
 - static
 - super
 - switch
-- synchronized
 - this
 - throw
-- throws
-- transient
+- true
 - try
 - typeof
 - var
 - void
-- volatile
 - while
 - with
+- yield
