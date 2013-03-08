@@ -64,4 +64,4 @@ $(".box").animate({
 
 
 Remember that the first argument for queue and dequeue are `fx`, and that in
-all of these examples I’m not including it because jQuery set the argument to `fx` by default - so I don’t have to specify it.
+all of these examples I’m not including it because jQuery sets the argument to `fx` by default - so I don’t have to specify it.
