@@ -21,7 +21,7 @@ $("div.funtimes").animate({
   function() {
     console.log("done!");
   }
-});
+);
 ```
 
 <div class="note">
