@@ -80,7 +80,7 @@ $("#form").submit(function( event ) {
 
   var inputtedPhoneNumber = $("#phone").val();
   // match only numbers
-  var phoneNumberRegex = ^\d*$/;
+  var phoneNumberRegex = /^\d*$/;
 
   // if the phone number doesn't match the regex
   if ( !phoneNumberRegex.test( inputtedPhoneNumber ) ) {
