@@ -199,7 +199,7 @@ href attribute in brackets.
 <a href="page.html">Foo</a>
 
 <!-- After plugin is called: -->
-<a href="page.html">Foo [page.html]</a>
+<a href="page.html">Foo (page.html)</a>
 ```
 
 Our plugin can be optimized though:
