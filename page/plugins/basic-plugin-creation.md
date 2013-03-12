@@ -2,7 +2,7 @@
 title   : How to Create a Basic Plugin
 level:        intermediate
 source: http://jqfundamentals.com/legacy
-attribution: 
+attribution:
   - jQuery Fundamentals
 ---
 Sometimes you want to make a piece of functionality available throughout your code;
@@ -19,7 +19,7 @@ $("a").css( "color", "red" );
 
 This is some pretty basic jQuery code, but do you know what's happening behind the scenes? Whenever you use the `$` function to select elements, it returns a jQuery object. This object contains all of the methods you've been using (`css()`, `click()`, etc.), and all of the elements that fit your selector. The jQuery object gets these methods from the `$.fn` object. This object contains all of the jQuery object methods, and if we want to write our own methods, it will need to contain those as well.
 
-Additionally the jQuery utility method `$.trim()` is used above to remove any leading or trailing empty space characters from the user input. Utility methods are functions that reside directly on 
+Additionally the jQuery utility method `$.trim()` is used above to remove any leading or trailing empty space characters from the user input. Utility methods are functions that reside directly on
 `$` function itself.  You may occasionally want to write a utility method plugin when your extension to the jQuery API does not have to do something to a set of DOM elements you've retrieved.
 
 ##Basic Plugin Authoring
@@ -29,7 +29,7 @@ Let's say we want to create a plugin that makes text within a set of retrieved e
 ```
 $.fn.greenify = function() {
   this.css( "color", "green" );
-}
+};
 
 $("a").greenify();  // makes all the links green
 ```
@@ -60,14 +60,14 @@ The `$` variable is very popular among JavaScript libraries, and if you're using
   $.fn.greenify = function() {
     this.css( "color", "green" );
     return this;
-  }
+  };
 
   $.ltrim = function( str ) {
     return str.replace(/^\s+/, '');
-  }
+  };
   $.rtrim = function( str ) {
     return str.replace(/\s+$/, '');
-  }
+  };
 
 }( jQuery ));
 ```
@@ -81,7 +81,7 @@ In addition, the primary purpose of an Immediately Invoked Function is to allow 
   $.fn.greenify = function() {
     this.css( "color", shade );
     return this;
-  }
+  };
 
 }( jQuery ));
 ```
@@ -110,35 +110,25 @@ It would be much better to have one slot, and use parameters to control what act
 (function( $ ) {
 
   $.fn.popup = function( action ) {
-
     if ( action === "open") {
-
       // Open popup code
-
     } if ( action === "close" ) {
-
       // Close popup code
-
     }
-
   };
-}( jQuery )); 
+}( jQuery ));
 ```
 
-## Using the `each()` Method 
-Your typical jQuery object will contain references to any number of DOM elements, and that's why jQuery objects are often referred to as collections.  
+## Using the `each()` Method
+Your typical jQuery object will contain references to any number of DOM elements, and that's why jQuery objects are often referred to as collections.
 If you want to do any manipulating with specific elements (e.g. getting data an attribute, calculating specific positions) then you need to use `each()` to
-loop through the elements.  
+loop through the elements.
 
 ```
 $.fn.myNewPlugin = function() {
-
   return this.each(function() {
-
     // do something to each element here
-
   });
-
 };
 ```
 
@@ -155,8 +145,7 @@ accept some options.
 
 ```
 (function ( $ ) {
-
-  $.greenify = function( options ) {
+  $.fn.greenify = function( options ) {
 
     // This is the easiest way to have default options.
     var settings = $.extend({
@@ -192,15 +181,10 @@ we've discussed:
 ```
 (function( $ ){
   $.fn.showLinkLocation = function() {
-
     return this.filter("a").each(function() {
-
       $( this ).append( " (" + $( this ).attr("href") + ")" );
-
     });
-
- };
-
+  };
 }( jQuery ));
 
  // Usage example:
@@ -222,16 +206,11 @@ Our plugin can be optimized though:
 
 ```
 (function( $ ){
-
   $.fn.showLinkLocation = function() {
-
     return this.filter("a").append(function() {
-
       return " (" + this.href + ")";
-
     });
   };
-
 }( jQuery ));
 ```
 
