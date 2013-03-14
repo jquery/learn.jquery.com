@@ -33,3 +33,24 @@ var myObject = {
   99999: 789
 };
 ```
+
+__Iterating over the enumerable properties of an object : __
+
+```
+var myObject = {
+  validIdentifier: 123,
+  "some string": 456,
+  99999: 789
+};
+
+for ( var prop in myObject ) { 
+  console.log("Property : "+prop+" ; value : "+myObject[prop]); 
+}
+
+/* Would log :
+Property : 99999 ; value : 789
+Property : validIdentifier ; value : 123
+Property : some string ; value : 456
+*/
+```
+
