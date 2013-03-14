@@ -2,7 +2,7 @@
 title:        Arrays
 level:        beginner
 source: http://jqfundamentals.com/legacy
-attribution: 
+attribution:
   - jQuery Fundamentals
 ---
 Arrays are zero-indexed, ordered lists of values. They are a handy way to store a set of related items of the same type (such as strings), though in reality, an array can include multiple types of items, including other arrays.
@@ -11,9 +11,9 @@ To create an array, either use the object constructor or the literal declaration
 
 ```
 // A simple array with constructor
-var myArray1 = new Array( "hello", "world" ); 
+var myArray1 = new Array( "hello", "world" );
 // literal declaration, the preferred way
-var myArray2 = [ "hello", "world" ]; 
+var myArray2 = [ "hello", "world" ];
 ```
 
 The literal declaration is generally preferred. See the [Google Coding Guidelines](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml#Array_and_Object_literals) for more information.

@@ -2,7 +2,7 @@
 title:        Testing Type
 level:        beginner
 source: http://jqfundamentals.com/legacy
-attribution: 
+attribution:
   - jQuery Fundamentals
 ---
 

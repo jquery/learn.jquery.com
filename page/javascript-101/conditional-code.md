@@ -2,7 +2,7 @@
 title:        Conditional Code
 level:        beginner
 source: http://jqfundamentals.com/legacy
-attribution: 
+attribution:
   - jQuery Fundamentals
 ---
 Sometimes a block of code should only be run under certain conditions. Flow control &#8212; via `if` and `else` blocks &#8212; lets you run code if certain conditions have been met.

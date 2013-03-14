@@ -2,7 +2,7 @@
 title:        Running Code
 level:        beginner
 source: http://jqfundamentals.com/legacy
-attribution: 
+attribution:
   - jQuery Fundamentals
 ---
 
@@ -76,10 +76,3 @@ It is a common pattern to move scripts to the bottom of the page, prior to the c
 </body>
 </html>
 ```
-
-
-
-
-
-
-

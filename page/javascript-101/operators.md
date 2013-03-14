@@ -2,7 +2,7 @@
 title:        Operators
 level:        beginner
 source: http://jqfundamentals.com/legacy
-attribution: 
+attribution:
   - jQuery Fundamentals
 ---
 Basic operators allow you to manipulate values.

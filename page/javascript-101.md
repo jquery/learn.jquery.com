@@ -2,7 +2,7 @@
 title : JavaScript 101
 level: beginner
 source: http://jqfundamentals.com/legacy
-attribution: 
+attribution:
   - jQuery Fundamentals
 customFields:
  -

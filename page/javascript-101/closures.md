@@ -2,7 +2,7 @@
 title:        Closures
 level:        beginner
 source: http://jqfundamentals.com/legacy
-attribution: 
+attribution:
   - jQuery Fundamentals
 ---
 
@@ -11,7 +11,7 @@ Closures are an extension of the concept of scope. With closures, functions have
 As shown in the [Functions](/functions) section, functions have access to changing variable values. The same sort of behavior exists with functions defined within loops &#8212; the function "sees" the change in the variable's value even after the function is defined, resulting in each function referencing the last value stored in the variable.
 
 ```
-// Each function executed within the loop will reference 
+// Each function executed within the loop will reference
 // the last value stored in i (5).
 // this won't behave as we want it to -
 // every 100 milliseconds, 5 will alert
@@ -78,7 +78,7 @@ outerObj.outerFunction();
 ```
 
 ## `Function.bind`
-Closures can be particularly useful when dealing with callbacks. However, it is often better to use `Function.bind`, which will avoid any overhead associated with scope traversal. 
+Closures can be particularly useful when dealing with callbacks. However, it is often better to use `Function.bind`, which will avoid any overhead associated with scope traversal.
 
 `Function.bind` is used to create a new function. When called, the new function then calls itself in the context of the supplied `this` value, using a given set of arguments that will precede any arguments provided when the new function was initially called.
 
@@ -138,7 +138,7 @@ var module = {
 
 };
 
-// module.getUser() is called where "module" is "this" 
+// module.getUser() is called where "module" is "this"
 // and "module.user" is returned.
 
 // janedoe

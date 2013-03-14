@@ -2,7 +2,7 @@
 title:        Loops
 level:        beginner
 source: http://jqfundamentals.com/legacy
-attribution: 
+attribution:
   - jQuery Fundamentals
 ---
 Loops let a block of code run a certain number of times:

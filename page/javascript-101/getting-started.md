@@ -2,7 +2,7 @@
 title: Getting Started
 level: Beginner
 source: http://jqfundamentals.com/legacy
-attribution: 
+attribution:
   - jQuery Fundamentals
 ---
 
@@ -38,10 +38,10 @@ Look at this simple HTML page that includes CSS and JavaScript to see how it all
 
   <!-- JavaScript for interactivity -->
   <script>
-    // get a handle on the first button element 
+    // get a handle on the first button element
     // in the document.
     var button = document.querySelector('button');
-    // if a user clicks on it, say hello! 
+    // if a user clicks on it, say hello!
     button.addEventListener('click', function(ev) {
       alert('Hello');
     }, false);
@@ -65,7 +65,7 @@ The name "JavaScript" is a bit misleading. Despite the similarity in name, JavaS
 One of JavaScript's greatest strengths is its simplicity. It can be written and run on any operating system, and the only requirements are a web browser and a text editor. There are also numerous tools that can make JavaScript development more productive, but they are completely optional.
 
 ###Developer Tools
-Commonly referred to as "developer tools," many browsers ship with built-in features that provide better insight into JavaScript and jQuery while they run in the browser. Although they aren't required, you may find developer tools helpful when it comes to debugging errors in your code. Check out these browsers' developer tools: 
+Commonly referred to as "developer tools," many browsers ship with built-in features that provide better insight into JavaScript and jQuery while they run in the browser. Although they aren't required, you may find developer tools helpful when it comes to debugging errors in your code. Check out these browsers' developer tools:
 
 - [Apple Safari](https://developer.apple.com/technologies/safari/developer-tools.html)
 - [Google Chrome Developer Tools](https://developers.google.com/chrome-developer-tools/)
