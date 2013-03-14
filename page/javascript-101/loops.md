@@ -12,7 +12,7 @@ Loops let a block of code run a certain number of times:
 // logs "try 0", "try 1", ..., "try 4"
 for ( var i = 0; i < 5; i++ ) {
 
-  console.log( "try " + i );
+	console.log( "try " + i );
 
 }
 ```
@@ -26,7 +26,7 @@ A `for` loop is made up of four statements and has the following structure:
 ```
 for ( [initialisation]; [conditional]; [iteration] ) {
 
- [ loopBody ]
+	[ loopBody ]
 
 }
 ```
@@ -44,13 +44,9 @@ Here's a typical `for` loop:
 ```
 // A typical for loop
 for (var i = 0, limit = 100; i < limit; i++) {
-
-  // This block will be executed 100 times
-
-  console.log( 'Currently at ' + i );
-
-  // Note: the last log will be "Currently at 99"
-
+	// This block will be executed 100 times
+	console.log( 'Currently at ' + i );
+	// Note: the last log will be "Currently at 99"
 }
 ```
 
@@ -61,7 +57,7 @@ A while loop is similar to an `if` statement, except that its body will keep exe
 ```
 while ( [conditional] ) {
 
-  [loopBody]
+	[loopBody]
 
 }
 ```
@@ -71,15 +67,12 @@ Here's a typical `while` loop:
 ```
 // A typical while loop
 var i = 0;
-
 while ( i < 100 ) {
+	// This block will be executed 100 times
+	console.log( "Currently at " + i );
 
-  // This block will be executed 100 times
-  console.log( "Currently at " + i );
-
-  // increment i
-  i++;
-
+	// increment i
+	i++;
 }
 ```
 
@@ -88,12 +81,9 @@ Notice that the counter is incrementing within the loop's body. It's possible to
 ```
 // A while loop with a combined conditional and incrementer
 var i = -1;
-
 while ( ++i < 100 ) {
-
-  // This block will be executed 100 times
-  console.log( "Currently at " + i );
-
+	// This block will be executed 100 times
+	console.log( "Currently at " + i );
 }
 ```
 
@@ -106,7 +96,7 @@ This is almost exactly the same as the `while` loop, except for the fact that th
 ```
 do {
 
-  [ loopBody ]
+	[ loopBody ]
 
 } while ( [conditional] )
 ```
@@ -115,10 +105,9 @@ Here's a `do-while` loop:
 ```
 // A do-while loop
 do {
-
-  // Even though the condition evaluates to false
-  // this loop's body will still execute once.
-  alert("Hi there!");
+	// Even though the condition evaluates to false
+	// this loop's body will still execute once.
+	alert( "Hi there!" );
 
 } while ( false );
 ```
@@ -132,13 +121,9 @@ Usually, a loop's termination will result from the conditional statement not eva
 ```
 // Stopping a loop
 for ( var i = 0; i < 10; i++ ) {
-
-  if ( something ) {
-
-    break;
-
-  }
-
+	if ( something ) {
+		break;
+	}
 }
 ```
 
@@ -147,16 +132,13 @@ You may also want to continue the loop without executing more of the loop's body
 ```
 // Skipping to the next iteration of a loop
 for ( var i = 0; i < 10; i++ ) {
+	if ( something ) {
+		continue;
+	}
 
-  if ( something ) {
-
-    continue;
-
-  }
-
-  // The following statement will only be executed
-  // if the conditional 'something' has not been met
-  console.log("I have been reached");
+	// The following statement will only be executed
+	// if the conditional 'something' has not been met
+	console.log( "I have been reached" );
 
 }
 ```

@@ -10,9 +10,9 @@ Arrays are zero-indexed, ordered lists of values. They are a handy way to store 
 To create an array, either use the object constructor or the literal declaration, by assigning the variable a list of values after the declaration.
 
 ```
-// A simple array with constructor
+// A simple array with constructor.
 var myArray1 = new Array( "hello", "world" );
-// literal declaration, the preferred way
+// Literal declaration, the preferred way.
 var myArray2 = [ "hello", "world" ];
 ```
 
@@ -25,10 +25,10 @@ If the values are unknown, it is also possible to declare an empty Array, and ad
 var myArray = [];
 
 // adds "hello" on index 0
-myArray.push("hello");
+myArray.push( "hello" );
 
 // adds "world" on index 1
-myArray.push("world");
+myArray.push( "world" );
 
 // adds "!" on index 2
 myArray[ 2 ] = "!";
@@ -76,7 +76,7 @@ You will need the `.length` property for looping through an array:
 var myArray = [ "hello", "world", "!" ];
 
 for ( var i = 0; i < myArray.length; i = i + 1 ) {
-  console.log( myArray[i] );
+	console.log( myArray[i] );
 }
 ```
 
@@ -87,7 +87,7 @@ Except when using `for`/`in` loops:
 var myArray = [ "hello", "world", "!" ];
 
 for ( var i in myArray ) {
-  console.log( myArray[ i ] );
+	console.log( myArray[ i ] );
 }
 ```
 
@@ -214,7 +214,7 @@ myArray.sort(); // 1, 3, 4, 6
 ```
 // sorting with comparing function
 function descending( a, b ) {
-  return b - a;
+	return b - a;
 }
 
 var myArray = [ 3, 4, 6, 1 ];
@@ -251,15 +251,15 @@ All of these are optional, but you will need at least the 'element' parameter in
 ```
 // native forEach
 function printElement( elem ) {
-  console.log( elem );
+	console.log( elem );
 }
 
 function printElementAndIndex( elem, index ) {
-  console.log( "Index " + index + ": " + elem );
+	console.log( "Index " + index + ": " + elem );
 }
 
 function negateElement( elem, index, array ) {
-  array[ index ] = -elem;
+	array[ index ] = -elem;
 }
 
 myArray = [ 1, 2, 3, 4, 5 ];

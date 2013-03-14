@@ -16,14 +16,14 @@ In JavaScript, as in most object-oriented programming languages, `this` is a spe
 ```
 // A function invoked using Function.call
 var myObject = {
-  sayHello: function() {
-    console.log( "Hi! My name is " + this.myName );
-  },
-  myName: "Rebecca"
+	sayHello: function() {
+		console.log( "Hi! My name is " + this.myName );
+	},
+	myName: "Rebecca"
 };
 
 var secondObject = {
-  myName: "Colin"
+	myName: "Colin"
 };
 
 myObject.sayHello();                    // "Hi! My name is Rebecca"
@@ -34,10 +34,10 @@ myObject.sayHello.call( secondObject ); // "Hi! My name is Colin"
 // A function created using Function.bind
 var myName = "the global object";
 var sayHello = function() {
-  console.log( "Hi! My name is " + this.myName );
+	console.log( "Hi! My name is " + this.myName );
 };
 var myObject = {
-  myName: "Rebecca"
+	myName: "Rebecca"
 };
 var myObjectHello = sayHello.bind( myObject );
 
@@ -46,16 +46,16 @@ myObjectHello(); // "Hi! My name is Rebecca"
 ```
 
 ```
-// A function being attached to an object at runtime
+// A function being attached to an object at runtime.
 var myName = "the global object";
 var sayHello = function() {
-    console.log( "Hi! My name is " + this.myName );
-  };
+	console.log( "Hi! My name is " + this.myName );
+};
 var myObject = {
-  myName: "Rebecca"
+	myName: "Rebecca"
 };
 var secondObject = {
-  myName: "Colin"
+	myName: "Colin"
 };
 
 myObject.sayHello = sayHello;
@@ -70,12 +70,12 @@ When invoking a function deep within a long namespace, it is often tempting to r
 
 ```
 var myNamespace = {
-  myObject: {
-    sayHello: function() {
-      console.log( "Hi! My name is " + this.myName );
-    },
-    myName: "Rebecca"
-  }
+	myObject: {
+		sayHello: function() {
+			console.log( "Hi! My name is " + this.myName );
+		},
+		myName: "Rebecca"
+	}
 };
 
 var hello = myNamespace.myObject.sayHello;
@@ -87,12 +87,12 @@ You can, however, safely reduce everything up to the object on which the method 
 
 ```
 var myNamespace = {
-  myObject: {
-    sayHello: function() {
-      console.log( "Hi! My name is " + this.myName );
-    },
-    myName: "Rebecca"
-  }
+	myObject: {
+		sayHello: function() {
+			console.log( "Hi! My name is " + this.myName );
+		},
+		myName: "Rebecca"
+	}
 };
 
 var obj = myNamespace.myObject;

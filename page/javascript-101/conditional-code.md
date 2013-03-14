@@ -13,25 +13,25 @@ var foo = true;
 var bar = false;
 
 if ( bar ) {
-  // this code will never run
-  console.log("hello!");
+	// this code will never run
+	console.log( "hello!" );
 }
 
 if ( bar ) {
 
-  // this code won't run
+	// this code won't run
 
 } else {
 
-  if ( foo ) {
+	if ( foo ) {
 
-    // this code will run
+		// this code will run
 
-  } else {
+	} else {
 
-    // this code would run if foo and bar were both false
+		// this code would run if foo and bar were both false
 
-  }
+	}
 
 }
 ```
@@ -48,9 +48,9 @@ In order to use flow control successfully, it's important to understand which ki
 // Values that evaluate to true
 "0";
 "any string";
-[];  // an empty array
-{};  // an empty object
-1;   // any non-zero number
+[]; // an empty array
+{}; // an empty object
+1;  // any non-zero number
 ```
 
 ```
@@ -58,8 +58,8 @@ In order to use flow control successfully, it's important to understand which ki
 "";  // an empty string
 NaN; // JavaScript's "not-a-number" variable
 null;
-undefined;  // be careful -- undefined can be redefined!
-0;   // the number zero
+undefined; // be careful -- undefined can be redefined!
+0; // the number zero
 ```
 
 ## Conditional Variable Assignment with the Ternary Operator
@@ -83,21 +83,16 @@ Rather than using a series of `if`/`else` blocks, sometimes it can be useful to 
 // A switch statement
 switch ( foo ) {
 
-  case "bar":
+	case "bar":
+		alert( "the value was bar -- yay!" );
+		break;
 
-    alert("the value was bar -- yay!");
+	case "baz":
+		alert( "boo baz :(" );
+		break;
 
-  break;
-
-  case "baz":
-
-    alert("boo baz :(");
-
-  break;
-
-  default:
-
-    alert("everything else is just ok");
+	default:
+		alert( "everything else is just ok" );
 
 }
 ```
@@ -107,33 +102,27 @@ Switch statements have somewhat fallen out of favor in JavaScript, because often
 ```
 var stuffToDo = {
 
-  "bar" : function() {
+	"bar": function() {
+		alert( "the value was bar -- yay!" );
+	},
 
-    alert("the value was bar -- yay!");
+	"baz": function() {
+		alert( "boo baz :(" );
+	},
 
-  },
-
-  "baz" : function() {
-
-    alert("boo baz :(");
-
-  },
-
-  "default" : function() {
-
-    alert("everything else is just ok");
-
-  }
+	"default": function() {
+		alert( "everything else is just ok" );
+	}
 
 };
 
 if ( stuffToDo[ foo ] ) {
 
-    stuffToDo[ foo ]();
+	stuffToDo[ foo ]();
 
 } else {
 
-    stuffToDo["default"]();
+	stuffToDo["default"]();
 
 }
 ```

@@ -12,7 +12,8 @@ JavaScript has support for single and multi-line comments. Comments are ignored 
 
 ```
 // Single and multi line comments.
-// this is an example of a single line comment.
+
+// This is an example of a single line comment.
 
 /*
  * this is an example
@@ -29,7 +30,6 @@ Whitespace is also ignored in JavaScript. There are many tools that will strip o
 ```
 // Whitespace is insignificant.
 var hello = "Hello";
-
 var world     =      "World!";
 ```
 
@@ -88,8 +88,8 @@ var test3 = test2( test );
 
 // and so does this
 var test4 = 1,
-  test5 = function() { ... },
-  test6 = test2( test );
+	test5 = function() { ... },
+	test6 = test2( test );
 ```
 
 Variables can be declared without assigning them a value. The value of a

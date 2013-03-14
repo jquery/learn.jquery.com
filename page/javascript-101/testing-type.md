@@ -11,12 +11,12 @@ JavaScript offers a way to test the type of a variable. However, the result can 
 It's common practice to use the `typeof` operator when trying to determining the type of a specific value.
 
 ```
-// Testing the type of various variables
+// Testing the type of various variables.
 var myFunction = function() {
-  console.log("hello");
+	console.log( "hello" );
 };
 var myObject = {
-	foo : "bar"
+	foo: "bar"
 };
 var myArray = [ "a", "b", "c" ];
 var myString = "hello";
@@ -30,15 +30,13 @@ typeof myNumber;   // "number"
 typeof null;       // "object" -- Careful!
 
 if ( myArray.push && myArray.slice && myArray.join ) {
-
-  // probably an array (this is called "duck typing")
+	// probably an array (this is called "duck typing")
 }
 
 if ( Object.prototype.toString.call( myArray ) === "[object Array]" ) {
-
-  // Definitely an array!
-  // This is widely considered as the most robust way
-  // to determine if a specific value is an Array.
+	// Definitely an array!
+	// This is widely considered as the most robust way
+	// to determine if a specific value is an Array.
 }
 ```
 

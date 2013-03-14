@@ -22,16 +22,13 @@ Strings are text wrapped in single or double quotation marks. It is best practic
 // Strings can created with double or single quotes.
 var a = "I am a string";
 var b = 'So am I!';
-
 alert( a );
-
 alert( b );
 ```
 
 ```
 // Sometimes a string may contain quotation marks.
 var statement1 = 'He said "JavaScript is awesome!"';
-
 var statement2 = "He said \"JavaScript is awesome!\"";
 ```
 
@@ -60,9 +57,10 @@ var fail = false;
 Null and undefined are special types in JavaScript. Null types are a value that represent the absence of a value, similar to many other programming languages. Undefined types represent a state in which no value has been assigned at all. This type is created in two ways: by using the undefined keyword or by not defining a value at all.
 
 ```
-// Two ways to achieve an undefined value.
+// Define a null value.
 var foo = null;
 
+// Two ways to achieve an undefined value.
 var bar1 = undefined;
 var bar2;
 ```
@@ -88,8 +86,8 @@ alert( person1.firstName + " " + person1.lastName );
 
 // Creating an object with the object literal syntax:
 var person2 = {
-    firstName: "Jane",
-    lastName: "Doe"
+	firstName: "Jane",
+	lastName: "Doe"
 };
 
 alert( person2.firstName + " " + person2.lastName );
@@ -99,11 +97,11 @@ alert( person2.firstName + " " + person2.lastName );
 // As mentioned, objects can also have objects as a property.
 var people = {};
 
-people["person1"] = person1;
-people["person2"] = person2;
+people[ "person1" ] = person1;
+people[ "person2" ] = person2;
 
-alert( people["person1"].firstName );
-alert( people["person2"].firstName );
+alert( people[ "person1" ].firstName );
+alert( people[ "person2" ].firstName );
 ```
 
 If a property is accessed that has not been defined, it will return a type of undefined.
@@ -111,7 +109,6 @@ If a property is accessed that has not been defined, it will return a type of un
 ```
 // Properties that have not been created are undefined.
 var person = { name: "John Doe" };
-
 alert( person.email ); // => undefined
 ```
 
@@ -132,20 +129,15 @@ var bar = [];
 There is an important distinction to be made between the two. Both an array constructor and an array literal can contain items to be added to the array upon creating it. However, if just a single numeric item is passed in, the array constructor will assume its length to be that value.
 
 ```
-// The array literal returns a bar.length value of 1:
+// The array literal returns a foo.length value of 1:
 var foo = [ 100 ];
-
-// => 100
-alert( foo[0] );
-// => 1
-alert( foo.length );
+alert( foo[0] ); // => 100
+alert( foo.length ); // => 1
 
 // The array constructor returns a bar.length value of 100:
 var bar = new Array( 100 );
-// => undefined
-alert( bar[0] );
-// => 100
-alert( bar.length );
+alert( bar[0] ); // => undefined
+alert( bar.length ); // => 100
 ```
 
 An array can be manipulated through methods that are available on the instance of the array. Items in the array can be accessed using bracket notation with a given index. If the index does not exist or contains no value, the return type will be undefined.
@@ -156,8 +148,8 @@ A few common array methods are shown below:
 // Using the push(), pop(), unshift() and shift() methods on an array
 var foo = [];
 
-foo.push("a");
-foo.push("b");
+foo.push( "a" );
+foo.push( "b" );
 
 alert( foo[ 0 ] ); // => a
 alert( foo[ 1 ] ); // => b
@@ -171,7 +163,7 @@ alert( foo[ 1 ] ); // => undefined
 
 alert( foo.length ); // => 1
 
-foo.unshift("z");
+foo.unshift( "z" );
 
 alert( foo[ 0 ] ); => z
 alert( foo[ 1 ] ); => a
@@ -198,25 +190,18 @@ var myValue = [ 1, 2, 3 ];
 
 // Using JavaScript's typeof operator to test for primitive types:
 
-// false
-typeof myValue === "string";
-// false
-typeof myValue === "number";
-// false
-typeof myValue === "undefined";
-// false
-typeof myValue === "boolean";
+typeof myValue === "string"; // false
+typeof myValue === "number"; // false
+typeof myValue === "undefined"; // false
+typeof myValue === "boolean"; // false
 
 // Using strict equality operator to check for null
-// false
-myValue === null;
+
+myValue === null; // false
 
 // Using jQuery's methods to check for non-primitive types
 
-// false
-jQuery.isFunction( myValue );
-// false
-jQuery.isPlainObject( myValue );
-// true
-jQuery.isArray( myValue );
+jQuery.isFunction( myValue ); // false
+jQuery.isPlainObject( myValue ); // false
+jQuery.isArray( myValue ); // true
 ```
