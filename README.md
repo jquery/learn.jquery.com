@@ -36,7 +36,7 @@ Each of the articles on the site has some [YAML "Front Matter"](https://github.c
 
 `level: advanced`
 
-## Building && Working Locally
+## Building & Working Locally
 
 As this site is part of the jQuery network of sites, its presentation is controlled by our [web base template](https://github.com/jquery/jquery-wp-content). To preview the site locally, first follow the [instructions there](https://github.com/jquery/jquery-wp-content) to set up a local version of the jQuery WordPress network. Then, clone this repo and run the following steps (node.js required).
 
