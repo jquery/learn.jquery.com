@@ -2,29 +2,28 @@
 title   : Triggering Event Handlers
 level: intermediate
 source: http://jqfundamentals.com/legacy
-attribution: 
+attribution:
   - jQuery Fundamentals
 ---
 
-jQuery provides a way to trigger the event handlers bound to an element without any user interaction via the 
+jQuery provides a way to trigger the event handlers bound to an element without any user interaction via the
 `.trigger()` method.
 
-## What handlers can be .trigger()'d
+## What handlers can be .trigger()'d?
 
-jQuery's event handling system is a layer on top of native browser events. When an event handler is added using 
-`.on("click",function() {...})`, it can be triggered using jQuery's `.trigger("click")`because jQuery stores a 
-reference to that handler when it is originally added. Additionally, it will trigger the javascript inside the 
-"onclick" attribute. The `.trigger()` function cannot be used to mimic native browser events, such as 
-clicking on a file input box or an anchor tag. This is because, there is no event handler attached using jQuery's 
+jQuery's event handling system is a layer on top of native browser events. When an event handler is added using
+`.on( "click", function() {...} )`, it can be triggered using jQuery's `.trigger( "click" )` because jQuery stores a
+reference to that handler when it is originally added. Additionally, it will trigger the JavaScript inside the
+`onclick` attribute. The `.trigger()` function cannot be used to mimic native browser events, such as
+clicking on a file input box or an anchor tag. This is because, there is no event handler attached using jQuery's
 event system that corresponds to these events.
 
 ```
 <a href="http://learn.jquery.com">Learn jQuery</a>
 ```
-
 ```
-//This will not change the current page
-$("a").trigger("click");
+// This will not change the current page
+$( "a" ).trigger( "click" );
 ```
 
 ## How can I mimic a native browser event, if not `.trigger()`?
@@ -35,8 +34,8 @@ Using these two APIs, you can programmatically create an event that behaves exac
 The jQuery UI Team created [jquery.simulate.js](https://github.com/eduardolundgren/jquery-simulate/blob/master/jquery.simulate.js) in order to simplify triggering a native browser event for use in their automated testing. Its usage is modeled after jQuery's trigger.
 
 ```
-//Triggering a native browser event using the simulate plugin
-$("a").simulate("click");
+// Triggering a native browser event using the simulate plugin
+$( "a" ).simulate( "click" );
 ```
 
 This will not only trigger the jQuery event handlers, but also follow the link and change the current page.
@@ -56,32 +55,25 @@ For more information see the [triggerHandler documentation](http://api.jquery.co
 ## Don't use `.trigger()` simply to execute specific functions
 
 While this method has its uses, it should not be used simply to call a function that was bound as a click
-handler.  Instead, you should store the function you want to call in a
-variable, and pass the variable name when you do your binding.  Then, you can
+handler. Instead, you should store the function you want to call in a
+variable, and pass the variable name when you do your binding. Then, you can
 call the function itself whenever you want, without the need for
 `.trigger()`.
 
 ```
-//Triggering an event handler the right way
+// Triggering an event handler the right way
 var foo = function( event ) {
-
-  if ( event ) {
-
-    console.log( event );
-
-  } else {
-
-     console.log("this didn't come from an event!");
-
-  }
-
+	if ( event ) {
+		console.log( event );
+	} else {
+		console.log( "this didn't come from an event!" );
+	}
 };
 
-$("p").on( 'click', foo );
+$( "p" ).on( "click", foo );
 
-foo(); // instead of $("p").trigger("click")
+foo(); // instead of $( "p" ).trigger( "click" )
 ```
 
 A more complex architecture can built on top of trigger using the [publish-subscribe pattern](http://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) using [jQuery plugins](https://gist.github.com/661855).
-With this technique,  `$.fn.trigger` can be used to notify other sections of code that an application specific event has happened.
-
+With this technique, `$.fn.trigger` can be used to notify other sections of code that an application specific event has happened.
