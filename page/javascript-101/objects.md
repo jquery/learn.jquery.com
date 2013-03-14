@@ -7,7 +7,7 @@ attribution:
 ---
 Objects contain one or more key-value pairs. The key portion can be any string. The value portion can be any type of value: a number, a string, an array, a function, or even another object.  When one of these values is a function, it’s called a method of the object. Otherwise, they are called properties.
 
-As it turns out, nearly everything in JavaScript is an object &#8212; arrays, functions, numbers, even strings &#8212; and they all have properties and methods.
+As it turns out, nearly everything in JavaScript is an object – arrays, functions, numbers, even strings – and they all have properties and methods.
 
 ```
 // Creating an object literal.

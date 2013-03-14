@@ -17,7 +17,7 @@ for ( var i = 0; i < 5; i++ ) {
 }
 ```
 
-Note that in loops, the variable i is not "scoped" to the loop block even though the keyword `var` is used before the variable name. Scope is covered in more depth in the [Scope](/scope) section.
+Note that in loops, the variable i is not "scoped" to the loop block even though the keyword `var` is used before the variable name. Scope is covered in more depth in the [Scope](/scope/) section.
 
 ## The `for` loop
 
@@ -37,7 +37,7 @@ The _conditional_ statement is executed before each iteration, and its return va
 
 The _iteration_ statement is executed at the end of each iteration and gives you an opportunity to change the state of important variables. Typically, this will involve incrementing or decrementing a counter and thus bringing the loop closer to its end.
 
-The _loopBody_ statement is what runs on every iteration. It can contain anything. Typically, there will be multiple statements that need to be executed, and should be wrapped in a block ( {...}).
+The _loopBody_ statement is what runs on every iteration. It can contain anything. Typically, there will be multiple statements that need to be executed, and should be wrapped in a block ( {...} ).
 
 Here's a typical `for` loop:
 
@@ -116,7 +116,7 @@ These types of loops are quite rare since only few situations require a loop tha
 
 ## Breaking and continuing
 
-Usually, a loop's termination will result from the conditional statement not evaluating to true, but it is possible to stop a loop in its tracks from within the loop's body with the break statement.
+Usually, a loop's termination will result from the conditional statement not evaluating to true, but it is possible to stop a loop in its tracks from within the loop's body with the `break` statement.
 
 ```
 // Stopping a loop
@@ -127,7 +127,7 @@ for ( var i = 0; i < 10; i++ ) {
 }
 ```
 
-You may also want to continue the loop without executing more of the loop's body. This is done using the continue statement.
+You may also want to continue the loop without executing more of the loop's body. This is done using the `continue` statement.
 
 ```
 // Skipping to the next iteration of a loop

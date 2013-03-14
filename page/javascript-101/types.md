@@ -11,15 +11,15 @@ Types in JavaScript fall into two categories: primitives or objects. Primitive t
 * String
 * Number
 * Boolean
-* Null
-* Undefined
+* null
+* undefined
 
 ### String
 
 Strings are text wrapped in single or double quotation marks. It is best practice to consistently use one or the other. There may be times when the string contains quotation marks that collide with the ones used to create the string. In this case, either escape the characters using a `\` backslash or use different quotes around the string.
 
 ```
-// Strings can created with double or single quotes.
+// Strings can be created with double or single quotes.
 var a = "I am a string";
 var b = 'So am I!';
 alert( a );
@@ -44,7 +44,7 @@ var num3 = 0.10;
 ```
 
 ### Boolean
-Boolean types are either true or false.
+Boolean types are either `true` or `false`.
 
 ```
 // Boolean values.
@@ -52,9 +52,9 @@ var okay = true;
 var fail = false;
 ```
 
-### Null and Undefined
+### null and undefined
 
-Null and undefined are special types in JavaScript. Null types are a value that represent the absence of a value, similar to many other programming languages. Undefined types represent a state in which no value has been assigned at all. This type is created in two ways: by using the undefined keyword or by not defining a value at all.
+`null` and `undefined` are special types in JavaScript. Null types are values that represent the absence of a value, similar to many other programming languages. Undefined types represent a state in which no value has been assigned at all. This type is created in two ways: by using the `undefined` keyword or by not defining a value at all.
 
 ```
 // Define a null value.
@@ -104,7 +104,7 @@ alert( people[ "person1" ].firstName );
 alert( people[ "person2" ].firstName );
 ```
 
-If a property is accessed that has not been defined, it will return a type of undefined.
+If a property is accessed that has not been defined, it will return a type of `undefined`.
 
 ```
 // Properties that have not been created are undefined.
@@ -112,11 +112,11 @@ var person = { name: "John Doe" };
 alert( person.email ); // => undefined
 ```
 
-Objects are covered further in the [Objects](/objects) section.
+Objects are covered further in the [Objects](/objects/) section.
 
 ### Array
 
-Arrays are a type of object that are ordered by the index of each item it contains. The index starts at zero and extends to however many items have been added, which is a property of the array known as the "length" of the array. Similar to a basic object, an array can be created with the array constructor or the shorthand syntax known as array literal.
+Arrays are a type of object that are ordered by the index of each item it contains. The index starts at zero and extends to however many items have been added, which is a property of the array known as the `length` of the array. Similar to a basic object, an array can be created with the array constructor or the shorthand syntax known as array literal.
 
 ```
 // Creating an array with the constructor:
@@ -140,7 +140,7 @@ alert( bar[0] ); // => undefined
 alert( bar.length ); // => 100
 ```
 
-An array can be manipulated through methods that are available on the instance of the array. Items in the array can be accessed using bracket notation with a given index. If the index does not exist or contains no value, the return type will be undefined.
+An array can be manipulated through methods that are available on the instance of the array. Items in the array can be accessed using bracket notation with a given index. If the index does not exist or contains no value, the return type will be `undefined`.
 
 A few common array methods are shown below:
 
@@ -178,11 +178,11 @@ alert( foo[ 1 ] ); // => undefined
 alert( foo.length ); // => 1
 ```
 
-There are many more methods for manipulating arrays, some of which are covered further in the [Arrays](/arrays) section. Details can be found on the [Mozilla Developer Network](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array "MDN - Array Reference").
+There are many more methods for manipulating arrays, some of which are covered further in the [Arrays](/arrays/) section. Details can be found on the [Mozilla Developer Network](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array "MDN - Array Reference").
 
 ## Type Checking with jQuery
 
-jQuery offers a few basic utility methods for determining the type of a specific value. Type checking is covered further in the [Testing Type](/testing-type) section, but here are some examples:
+jQuery offers a few basic utility methods for determining the type of a specific value. Type checking is covered further in the [Testing Type](/testing-type/) section, but here are some examples:
 
 ```
 // Checking the type of an arbitrary value

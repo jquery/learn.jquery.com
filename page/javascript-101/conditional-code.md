@@ -5,7 +5,7 @@ source: http://jqfundamentals.com/legacy
 attribution:
   - jQuery Fundamentals
 ---
-Sometimes a block of code should only be run under certain conditions. Flow control &#8212; via `if` and `else` blocks &#8212; lets you run code if certain conditions have been met.
+Sometimes a block of code should only be run under certain conditions. Flow control – via `if` and `else` blocks – lets you run code if certain conditions have been met.
 
 ```
 // Flow control
@@ -38,7 +38,7 @@ if ( bar ) {
 
 While curly braces aren't strictly required around single-line `if` statements, using them consistently, even when they aren't strictly required, makes for vastly more readable code.
 
-Be mindful not to define functions with the same name multiple times within separate if/else blocks, as doing so may not have the expected result.
+Be mindful not to define functions with the same name multiple times within separate `if`/`else` blocks, as doing so may not have the expected result.
 
 ## Truthy and Falsy Things
 
@@ -77,7 +77,7 @@ While the ternary operator can be used without assigning the return value to a v
 
 ## Switch Statements
 
-Rather than using a series of `if`/`else` blocks, sometimes it can be useful to use a `switch` statement instead. `Switch` statements look at the value of a variable or expression, and run different blocks of code depending on the value.
+Rather than using a series of `if`/`else` blocks, sometimes it can be useful to use a `switch` statement instead. `switch` statements look at the value of a variable or expression, and run different blocks of code depending on the value.
 
 ```
 // A switch statement
@@ -127,4 +127,4 @@ if ( stuffToDo[ foo ] ) {
 }
 ```
 
-Objects are covered further in the [Types](/types) and [Objects](/objects) sections.
+Objects are covered further in the [Types](/types/) and [Objects](/objects/) sections.

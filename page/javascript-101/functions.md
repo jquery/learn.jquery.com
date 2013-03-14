@@ -65,7 +65,7 @@ greeting();
 
 ## Immediately-Invoked Function Expression (IIFE)
 
-A common pattern in JavaScript is the immediately-invoked function expression. This pattern creates a function expression and then immediately executes the function. This pattern is extremely useful for cases where you want to avoid polluting the global namespace with code &#8212; no variables declared inside of the function are visible outside of it.
+A common pattern in JavaScript is the immediately-invoked function expression. This pattern creates a function expression and then immediately executes the function. This pattern is extremely useful for cases where you want to avoid polluting the global namespace with code – no variables declared inside of the function are visible outside of it.
 
 ```
 // An immediately-invoked function expression.
@@ -79,7 +79,7 @@ console.log( foo );   // undefined!
 
 ## Functions as Arguments
 
-In JavaScript, functions are "first-class citizens" &#8212; they can be assigned to variables or passed to other functions as arguments. Passing functions as arguments is an extremely common idiom in jQuery.
+In JavaScript, functions are "first-class citizens" – they can be assigned to variables or passed to other functions as arguments. Passing functions as arguments is an extremely common idiom in jQuery.
 
 ```
 // Passing an anonymous function as an argument.
