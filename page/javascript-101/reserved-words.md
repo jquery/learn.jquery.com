@@ -26,6 +26,7 @@ JavaScript has a number of “reserved words,” or words that have special mean
 - enum
 - export
 - extends
+- false
 - final
 - finally
 - float
@@ -39,9 +40,11 @@ JavaScript has a number of “reserved words,” or words that have special mean
 - instanceof
 - int
 - interface
+- let
 - long
 - native
 - new
+- null
 - package
 - private
 - protected
@@ -56,6 +59,7 @@ JavaScript has a number of “reserved words,” or words that have special mean
 - throw
 - throws
 - transient
+- true
 - try
 - typeof
 - var
@@ -63,3 +67,4 @@ JavaScript has a number of “reserved words,” or words that have special mean
 - volatile
 - while
 - with
+- yield
