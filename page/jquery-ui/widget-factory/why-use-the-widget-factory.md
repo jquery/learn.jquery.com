@@ -51,7 +51,7 @@ A common pattern in jQuery plugins looks like this:
     options = $.extend( {}, $.fn.plugin.defaults, options );
     // plugin logic goes here
   };
-  
+
   $.fn.plugin.defaults = {
     param1: "foo",
     param2: "bar",
@@ -64,14 +64,14 @@ Let's see what this looks like with the widget factory.
 
 ```
   $.widget( "ns.plugin", {
-  
+
     // default options
     options: {
       param1: "foo",
       param2: "bar",
       param3: "baz"
     },
-    
+
     _create: function() {
       // options are already merged and stored in this.options
       // plugin logic goes here
