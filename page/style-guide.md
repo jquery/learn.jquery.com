@@ -2,7 +2,7 @@
 title: Style Guide
 attribution:
   - jorydotcom <jory@bocoup.com>
-customFields: 
+customFields:
   -
     key: "is_chapter"
     value: 0
@@ -11,7 +11,7 @@ customFields:
 ## Formatting Conventions
 
 Articles in the learn site are authored with [GitHub Flavored
-Markdown](http://github.github.com/github-flavored-markdown/), and 
+Markdown](http://github.github.com/github-flavored-markdown/), and
 the beginning of each article contains some [YAML](http://www.yaml.org/)
 "front matter" that contains metadata used when the article is published.
 
@@ -24,7 +24,7 @@ Each article should have the following header (see below as some metatags are op
 title:  <article title>
 level:  [beginner|intermediate|advance]
 source:  <url of source of the material derived>
-attribution: 
+attribution:
   - Ralph Whitbeck <ralph@email.com>
   - John Paul <john@email.com>
 ---
@@ -99,10 +99,10 @@ guidelines.
 
 #### Voice & Tone
 
-  - Do write in clear, easy-to-understand statements. 
+  - Do write in clear, easy-to-understand statements.
   - Do write in active voice.
   - Do keep the audience in mind while writing.
-  - Do write conversationally. 
+  - Do write conversationally.
   - Do write in the second person to address the reader.
   - Do use the imperative mood.
   - Do use humor strategically. When in doubt, err on the side of formality.
@@ -114,7 +114,7 @@ guidelines.
 
 #### Linking & Referencing Content
 
-  - Link to relevant content within the learn.jquery.com site to refer readers to previously covered topics or concepts. 
+  - Link to relevant content within the learn.jquery.com site to refer readers to previously covered topics or concepts.
   - Link to the jQuery blog or API documentation when necessary.
   - Use inline hyperlinks to reference relevant content.
   - Acceptable external resources:
@@ -130,4 +130,4 @@ guidelines.
   - Favor "Right Way" examples over "Wrong Way" examples - there is more than one wrong way to do something, after all.
   - Use good comments so that explanation within prose isn't necessary.
   - Test your code examples before submitting.
-  - Use the [jQuery Core Code Style Guide](http://docs.jquery.com/JQuery_Core_Style_Guidelines) for your code examples. 
+  - Use the [jQuery Core Code Style Guide](http://docs.jquery.com/JQuery_Core_Style_Guidelines) for your code examples.

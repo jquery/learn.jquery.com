@@ -25,7 +25,7 @@ multiple events and handlers.
 ```
 // Event setup using a convenience method
 $( "p" ).click(function() {
- 	console.log( "You clicked a paragraph!" );
+	console.log( "You clicked a paragraph!" );
 });
 ```
 

@@ -20,7 +20,7 @@ The main column of the Download Builder lists all of the javascript components i
 ![Configuring a download](/resources/jquery-ui/configure.png)
 
 #### Step 2: Select a theme (or roll your own custom theme)
-In the right column of the download builder, you'll find a field where you can choose from a number of pre-designed themes for your jQuery UI widgets. 
+In the right column of the download builder, you'll find a field where you can choose from a number of pre-designed themes for your jQuery UI widgets.
 You can either choose from the various themes we provide, or you can design your own custom theme using ThemeRoller (more on that later).
 
 **Advanced Theme Settings:** *The theme section of the download builder also offers some advanced configuration settings for your theme. If you plan to use multiple themes on a single page, these fields will come in handy. If you plan to only use one theme on a page, you can skip these settings entirely.*
@@ -47,7 +47,7 @@ Open up index.html in a text editor and you'll see that it links to a few depend
 
 
 ```html
-<link type="text/css" href="css/themename/jquery-ui.custom.css" rel="Stylesheet" />	
+<link type="text/css" href="css/themename/jquery-ui.custom.css" rel="Stylesheet" />
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui.custom.min.js"></script>
 ```
@@ -82,7 +82,7 @@ $('#mySliderDiv').slider({
 });
 ```
 
-You can pass as many different options as you'd like by following each one with a comma (except the last one): 
+You can pass as many different options as you'd like by following each one with a comma (except the last one):
 
 ```javascript
 $('#mySliderDiv').slider({
@@ -104,11 +104,11 @@ ThemeRoller provides a custom interface for designing all of the elements used b
 
 ### Downloading your theme
 When you click the "Download theme" button in ThemeRoller, you'll be directed to the Download Builder and your custom theme will be auto-selected in the Theme dropdown menu. You can configure your download package further from there. Once you download, you'll see that the example.html page is styled using your custom theme.
- 
+
 **Quick tip:** *If you ever need to edit your theme, simply open the CSS file and find on line 43 where it says "To view and modify this theme, visit ..." That url will open the theme in ThemeRoller for editing.*
 
 ### Support: Where can I get help?
-JQuery UI user and developer resources are kept up-to-date at the [Support Center](http://jqueryui.com/support). 
+JQuery UI user and developer resources are kept up-to-date at the [Support Center](http://jqueryui.com/support).
 
 ### Developers Wanted!
-Want to join the jQuery UI team? We'd love your help! Visit the UI [Development Center](http://jqueryui.com/development) for details on how to get involved. 
+Want to join the jQuery UI team? We'd love your help! Visit the UI [Development Center](http://jqueryui.com/development) for details on how to get involved.

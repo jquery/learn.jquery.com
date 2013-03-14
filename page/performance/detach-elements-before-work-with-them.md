@@ -2,7 +2,7 @@
 title:        Detach Elements to Work with Them
 level:        intermediate
 source: http://jqfundamentals.com/legacy
-attribution: 
+attribution:
   - jQuery Fundamentals
 ---
 

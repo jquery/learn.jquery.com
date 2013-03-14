@@ -2,7 +2,7 @@
 title:        Don't Act on Absent Elements
 level:        intermediate
 source: http://jqfundamentals.com/legacy
-attribution: 
+attribution:
   - jQuery Fundamentals
 ---
 

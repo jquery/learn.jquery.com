@@ -2,7 +2,7 @@
 title:        Optimize Selectors
 level:        intermediate
 source: http://jqfundamentals.com/legacy
-attribution: 
+attribution:
   - jQuery Fundamentals
 ---
 
