@@ -50,7 +50,9 @@ Potential confusion comes from the other examples of `.index()` in the above cod
 <div class="test"></div>
 </ul>
 <div id="last"></div>
+```
 
+```
 var $foo = $("li");
 
 // this implicitly calls .first()
