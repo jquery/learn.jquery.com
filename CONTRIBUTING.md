@@ -1,6 +1,6 @@
 ---
 title: Contributing
-customFields: 
+customFields:
   -
     key: "is_chapter"
     value: 0
@@ -38,7 +38,7 @@ you are probably familiar with the frustrating feeling of putting a useful tip
 out there, and then wondering if it's actually making its way to the people who
 need it, and what to do with that old post years and versions down the road.
 You're invited to share that energy to help us bring that ecosystem together
-and grow it further! 
+and grow it further!
 
 If you've ever helped anyone, colleague or stranger, with a particular problem,
 then you know the value of having a reference you can quickly link to that says
@@ -71,7 +71,7 @@ controls most of the layout for all of our sites, and there is a [child
 theme](https://github.com/jquery/jquery-wp-content/tree/master/themes/learn.jquery.com)
 that controls the templates and styles specific to the learn site.
 
-[`jquery-wp-content`](http://github.com/jquery/jquery-wp-content) powers our sites in 
+[`jquery-wp-content`](http://github.com/jquery/jquery-wp-content) powers our sites in
 production and staging environments, and can set up for local development relatively easily.
 
 ### Build
@@ -80,7 +80,7 @@ The static content in the `page` directory is deployed to a
 [`jquery-wp-content`](http://github.com/jquery/jquery-wp-content) instance
 using [grunt](http://gruntjs.com), specifically with two grunt plugins we've created:
 
-* [grunt-jquery-content](http://github.com/jquery/grunt-jquery-content) - pre-processes content in a variety of formats (HTML, Markdown, XML) into HTML, applying syntax highlighting and some simple partial support, preparing it for processing by 
+* [grunt-jquery-content](http://github.com/jquery/grunt-jquery-content) - pre-processes content in a variety of formats (HTML, Markdown, XML) into HTML, applying syntax highlighting and some simple partial support, preparing it for processing by
 * [grunt-wordpress](http://github.com/scottgonzalez/grunt-wordpress) - syncs static content to WordPress using [XML-RPC](http://codex.wordpress.org/XML-RPC_Support)
 
 
@@ -129,7 +129,7 @@ Once you've gotten your environment working, here are the general steps you shou
 
 1. Create a new "feature" branch based on `master` -- `git branch <feature/issue name/number>`
 2. Move onto that branch -- `git checkout <feature/issue name/number>`
-3. Work on your awesome contribution. 
+3. Work on your awesome contribution.
 4. As you work and want to preview your changes, use `grunt` to deploy them to the your site. You can also use `grunt watch` to have the site monitor the `page` directory for any changes and automatically have the changes deployed every time you save.
 5. When you're done, stage the new/modified preparation for commit -- `git add page/faq/how-do-i-add-a-new-article-to-the-learn-site.md`
 6. Commit the files to your local repo -- `git commit -m "add a relevant message describing the change"`
@@ -142,10 +142,10 @@ Requests](http://contribute.jquery.org/commits-and-pull-requests/) guide.
 
 ### Adding A New Article
 
-1. Add the file to the right folder in the page folder. 
+1. Add the file to the right folder in the page folder.
 2. Add the slug name (the filename without the extension) to the desired location `order.yml`
 3. Run `grunt`
-4. You should now be able to navigate to the file. 
+4. You should now be able to navigate to the file.
 
 ### Formatting Articles
 

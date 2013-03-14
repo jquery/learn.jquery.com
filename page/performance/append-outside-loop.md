@@ -2,7 +2,7 @@
 title:        Append Outside of Loops
 level:        intermediate
 source: http://jqfundamentals.com/legacy
-attribution: 
+attribution:
   - jQuery Fundamentals
 ---
 

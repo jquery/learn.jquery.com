@@ -2,7 +2,7 @@
 title: Writing Stateful Plugins with the jQuery UI Widget Factory
 level: intermediate
 source: http://jqfundamentals.com/legacy
-attribution: 
+attribution:
   - jQuery Fundamentals
   - Scott González <scott.gonzalez@gmail.com>
 ---

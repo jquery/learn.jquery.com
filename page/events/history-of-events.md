@@ -8,7 +8,7 @@ Given the following HTML, for our example we want to log the text of the each `<
 
 ```
 <div id="container">
- 	<ul id="list">
+	<ul id="list">
 		<li>Item #1</li>
 		<li>Item #2</li>
 		<li>Item #3</li>

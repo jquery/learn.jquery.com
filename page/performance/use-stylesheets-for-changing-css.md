@@ -2,7 +2,7 @@
 title:        Use Stylesheets for Changing CSS on Many Elements
 level:        intermediate
 source: http://jqfundamentals.com/legacy
-attribution: 
+attribution:
   - jQuery Fundamentals
 ---
 
