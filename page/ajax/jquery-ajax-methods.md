@@ -2,26 +2,26 @@
 title   : jQuery's Ajax-Related Methods
 level: beginner
 source: http://jqfundamentals.com/legacy
-attribution: 
+attribution:
     - jQuery Fundamentals
 ---
 While jQuery does offer many Ajax-related convenience methods, the core
 `$.ajax` method is at the heart of all of them, and understanding it is
-imperative.  We'll review it first, and then touch briefly on the convenience
+imperative. We'll review it first, and then touch briefly on the convenience
 methods.
 
-I generally use the `$.ajax` method and do not use convenience methods.  As
+I generally use the `$.ajax` method and do not use convenience methods. As
 you'll see, it offers features that the convenience methods do not, and its
 syntax is more easily understandable, in my opinion.
 
 ### `$.ajax`
 
-jQuery’s core `$.ajax` method is a powerful and straightforward way of creating
-Ajax requests.  It takes a configuration object that contains all the
-instructions jQuery requires to complete the request.  The `$.ajax` method is
+jQuery's core `$.ajax` method is a powerful and straightforward way of creating
+Ajax requests. It takes a configuration object that contains all the
+instructions jQuery requires to complete the request. The `$.ajax` method is
 particularly valuable because it offers the ability to specify both success and
-failure callbacks.  Also, its ability to take a configuration object that can
-be defined separately makes it easier to write reusable code.  For complete
+failure callbacks. Also, its ability to take a configuration object that can
+be defined separately makes it easier to write reusable code. For complete
 documentation of the configuration options, visit
 [http://api.jquery.com/jQuery.ajax/](http://api.jquery.com/jQuery.ajax/ "$.ajax
 documentation on api.jquery.com").
@@ -29,59 +29,52 @@ documentation on api.jquery.com").
 ```
 // Using the core $.ajax method
 $.ajax({
+	// the URL for the request
+	url: "post.php",
 
-  // the URL for the request
-  url : "post.php",
+	// the data to send (will be converted to a query string)
+	data: {
+		id: 123
+	},
 
-  // the data to send
-  // (will be converted to a query string)
-  data : {
-    id : 123
-  },
+	// whether this is a POST or GET request
+	type: "GET",
 
-  // whether this is a POST or GET request
-  type : "GET",
+	// the type of data we expect back
+	dataType : "json",
 
-  // the type of data we expect back
-  dataType : "json",
+	// code to run if the request succeeds;
+	// the response is passed to the function
+	success: function( json ) {
+		$( "<h1/>" ).text( json.title ).appendTo( "body" );
+		$( "<div class=\"content\"/>").html( json.html ).appendTo( "body" );
+	},
 
-  // code to run if the request succeeds;
-  // the response is passed to the function
-  success : function( json ) {
-    $("<h1/>").text( json.title ).appendTo("body");
-    $("<div class=\"content\"/>").html( json.html ).appendTo("body");
-  },
+	// code to run if the request fails; the raw request and
+	// status codes are passed to the function
+	error: function( xhr, status ) {
+		alert( "Sorry, there was a problem!" );
+	},
 
-  // code to run if the request fails;
-  // the raw request and status codes are
-  // passed to the function
-  error : function( xhr, status ) {
-    alert("Sorry, there was a problem!");
-  },
-
-  // code to run regardless of success or failure
-  complete : function( xhr, status ) {
-    alert("The request is complete!");
-  }
-
+	// code to run regardless of success or failure
+	complete: function( xhr, status ) {
+		alert( "The request is complete!" );
+	}
 });
 ```
 
-<div class="note" >
-### Note
-
-A note about the dataType setting: if the server sends back data that is in a
+**Note:** A note about the `dataType` setting: if the server sends back data that is in a
 different format than you specify, your code may fail, and the reason will not
-always be clear, because the HTTP response code will not show an error.  When
+always be clear, because the HTTP response code will not show an error. When
 working with Ajax requests, make sure your server is sending back the data type
-you're asking for, and verify that the Content-type header is accurate for the
-data type.  For example, for JSON data, the Content-type header should be
-`application/json`.  </div>
+you're asking for, and verify that the `Content-type` header is accurate for the
+data type. For example, for JSON data, the `Content-type` header should be
+`application/json`.
 
 ### `$.ajax` Options
 
 There are many, many options for the `$.ajax` method, which is part of its
-power.  For a complete list of options, visit
+power. For a complete list of options, visit
 [http://api.jquery.com/jQuery.ajax/](http://api.jquery.com/jQuery.ajax/ "$.ajax
 documentation on api.jquery.com"); here are several that you will use
 frequently:
@@ -94,8 +87,8 @@ of other code until the response is received.
 
 #### cache
 
-Whether to use a cached response if available. Defaults to true for all
-dataTypes except "script" and "jsonp". When set to false, the URL will simply
+Whether to use a cached response if available. Defaults to `true` for all
+`dataType`s except "script" and "jsonp". When set to `false`, the URL will simply
 have a cachebusting parameter appended to it.
 
 #### complete
@@ -118,7 +111,7 @@ string, such as `foo=bar&amp;baz=bim`.
 #### dataType
 
 The type of data you expect back from the server. By default, jQuery will look
-at the MIME type of the response if no dataType is specified.
+at the MIME type of the response if no `dataType` is specified.
 
 #### error
 
@@ -133,7 +126,7 @@ Defaults to "callback".
 #### success
 
 A callback function to run if the request succeeds. The function receives the
-response data (converted to a JavaScript object if the dataType was JSON), as
+response data (converted to a JavaScript object if the `dataType` was JSON), as
 well as the text status of the request and the raw request object.
 
 #### timeout
@@ -142,7 +135,7 @@ The time in milliseconds to wait before considering the request a failure.
 
 #### traditional
 
-Set to true to use the param serialization style in use prior to jQuery 1.4.
+Set to `true` to use the param serialization style in use prior to jQuery 1.4.
 For details, see
 [http://api.jquery.com/jQuery.param/](http://api.jquery.com/jQuery.param/
 "$.param documentation on api.jquery.com").
@@ -159,13 +152,13 @@ The URL for the request.
 
 The `url` option is the only required property of the `$.ajax` configuration
 object; all other properties are optional. This can also be passed as the first
-argument to $.ajax, and the options object as the second argument.
+argument to `$.ajax`, and the options object as the second argument.
 
 ### Convenience Methods
 
 If you don't need the extensive configurability of `$.ajax`, and you don't care
 about handling errors, the Ajax convenience functions provided by jQuery can be
-useful, terse ways to accomplish Ajax requests.  These methods are just
+useful, terse ways to accomplish Ajax requests. These methods are just
 "wrappers" around the core `$.ajax` method, and simply pre-set some of the
 options on the `$.ajax` method.
 
@@ -198,11 +191,7 @@ The URL for the request. Required.
 The data to be sent to the server. Optional. This can either be an object or a
 query string, such as `foo=bar&amp;baz=bim`.
 
-<div class="note">
-### Note
-
-This option is not valid for `$.getScript`.
-</div>
+**Note:** This option is not valid for `$.getScript`.
 
 #### success callback
 
@@ -215,55 +204,49 @@ object.
 
 The type of data you expect back from the server. Optional.
 
-<div class="note">
-### Note
-
-This option is only applicable for methods that don't already specify the data
-type in their name.  </div>
+**Note:** This option is only applicable for methods that don't already specify the data
+type in their name.
 
 ```
 // Using jQuery's Ajax convenience methods
-// get plain text or html
+
+// get plain text or HTML
 $.get( "/users.php", {
-  userId : 1234
+	userId: 1234
 }, function( resp ) {
-  console.log( resp ); // server response
+	console.log( resp ); // server response
 });
 
 // add a script to the page, then run a function defined in it
 $.getScript( "/static/js/myScript.js", function() {
-
-  functionFromMyScript();
-
+	functionFromMyScript();
 });
 
 // get JSON-formatted data from the server
 $.getJSON( "/details.php", function( resp ) {
-
-  // log each key in the response data
-  $.each( resp, function( key, value ) {
-    console.log( key + " : " + value );
-  });
-
+	// log each key in the response data
+	$.each( resp, function( key, value ) {
+		console.log( key + " : " + value );
+	});
 });
 ```
 
 ### `$.fn.load`
 
-The `$.fn.load` method is unique among jQuery’s Ajax methods in that it is
-called on a selection.  The `$.fn.load` method fetches HTML from a URL, and
-uses the returned HTML to populate the selected element(s).  In addition to
+The `$.fn.load` method is unique among jQuery's Ajax methods in that it is
+called on a selection. The `$.fn.load` method fetches HTML from a URL, and
+uses the returned HTML to populate the selected element(s). In addition to
 providing a URL to the method, you can optionally provide a selector; jQuery
 will fetch only the matching content from the returned HTML.
 
 ```
 // Using $.fn.load to populate an element
-$("#newContent").load("/foo.html");
+$( "#newContent" ).load( "/foo.html" );
 ```
 
 ```
 // Using $.fn.load to populate an element based on a selector
-$("#newContent").load( "/foo.html #myDiv h1:first:", function( html ) {
-  alert("Content updated!"");
+$( "#newContent" ).load( "/foo.html #myDiv h1:first:", function( html ) {
+	alert( "Content updated!" );
 });
 ```
