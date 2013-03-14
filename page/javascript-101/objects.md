@@ -7,6 +7,18 @@ attribution:
 ---
 Objects contain one or more key-value pairs. The key portion can be any string. The value portion can be any type of value: a number, a string, an array, a function, or even another object.  When one of these values is a function, it’s called a method of the object. Otherwise, they are called properties.
 
+In comprasion to other programming languages Objects in JavaScript are similar to :
+
+* Dictionaries in Python.
+
+* Hashes in Perl and Ruby.
+
+* Hash tables in C and C++.
+
+* HashMaps in Java.
+
+* Associative arrays in PHP.
+
 As it turns out, nearly everything in JavaScript is an object &#8212; arrays, functions, numbers, even strings &#8212; and they all have properties and methods.
 
 ```
@@ -33,3 +45,24 @@ var myObject = {
   99999: 789
 };
 ```
+
+__Iterating over the enumerable properties of an object : __
+
+```
+var myObject = {
+  validIdentifier: 123,
+  "some string": 456,
+  99999: 789
+};
+
+for ( var prop in myObject ) { 
+  console.log("Property : "+prop+" ; value : "+myObject[prop]); 
+}
+
+/* Would log :
+Property : 99999 ; value : 789
+Property : validIdentifier ; value : 123
+Property : some string ; value : 456
+*/
+```
+
