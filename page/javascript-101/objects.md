@@ -10,13 +10,9 @@ Objects contain one or more key-value pairs. The key portion can be any string. 
 In comprasion to other programming languages Objects in JavaScript are similar to :
 
 * Dictionaries in Python.
-
 * Hashes in Perl and Ruby.
-
 * Hash tables in C and C++.
-
 * HashMaps in Java.
-
 * Associative arrays in PHP.
 
 As it turns out, nearly everything in JavaScript is an object &#8212; arrays, functions, numbers, even strings &#8212; and they all have properties and methods.
@@ -46,7 +42,7 @@ var myObject = {
 };
 ```
 
-__Iterating over the enumerable properties of an object : __
+## Iterating over the enumerable properties of an object :
 
 ```
 var myObject = {
