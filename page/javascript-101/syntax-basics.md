@@ -52,16 +52,16 @@ foo();
 var foo=function() {for(var i=0;i<10;++){alert(i);}};foo();
 ```
 
-### Whitespace and Semicolon Insertion (a common pitfall)
+### Whitespace and Automatic Semicolon Insertion (a common pitfall)
 
-JavaScript has a feature called Semicolon Insertion where, in some cases, a semicolon may automatically be inserted into the code, in order to recover from a syntax error. 
+JavaScript has a feature called Automatic Semicolon Insertion where, in some cases, a semicolon may automatically be inserted into the code, in order to recover from a syntax error. 
 
 For example, JavaScript syntax does not allow a line break between a 'return' keyword and the expression being returned. The same is true for 'throw' and the expression being thrown. If a line break is encountered, a semicolon will be inserted which may cause the code to behave differently.
 
 Consider the following simplified example:
 
 ```
-// Semicolon insertion JavaScript feature will insert a semicolon after 'return' keyword,
+// Automatic Semicolon Insertion JavaScript feature will insert a semicolon after 'return' keyword,
 // so the function will actually return 'undefined'. Therefore, the alert() shows undefined, and NOT 42
 var foo = function() {
   return
@@ -73,7 +73,7 @@ alert(foo());
 Another example:
 
 ```
-// Semicolon insertion JavaScript feature will insert a semicolon after 'return' keyword,
+// Automatic Semicolon Insertion JavaScript feature will insert a semicolon after 'return' keyword,
 // so the function will actually return 'undefined'. Therefore, foo().value will throw a TypeError
 var foo = function() {
   return
@@ -83,6 +83,11 @@ var foo = function() {
 };
 alert(foo().value);  // TypeError, foo() returns undefined
 ```
+
+To avoid issues caused by Automatic Semicolon Insertion rules, ECMAScript standard gives the following practical advice:
+* A postfix ++ or -- operator should appear on the same line as its operand.
+* An Expression in a return or throw statement should start on the same line as the return or throw token.
+* An Identifier in a break or continue statement should be on the same line as the break or continue token.
 
 ### Reserved Words
 
