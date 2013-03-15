@@ -2,10 +2,10 @@
 title:        Conditional Code
 level:        beginner
 source: http://jqfundamentals.com/legacy
-attribution: 
+attribution:
   - jQuery Fundamentals
 ---
-Sometimes a block of code should only be run under certain conditions. Flow control &#8212; via `if` and `else` blocks &#8212; lets you run code if certain conditions have been met.
+Sometimes a block of code should only be run under certain conditions. Flow control – via `if` and `else` blocks – lets you run code if certain conditions have been met.
 
 ```
 // Flow control
@@ -13,32 +13,32 @@ var foo = true;
 var bar = false;
 
 if ( bar ) {
-  // this code will never run
-  console.log("hello!");
+	// this code will never run
+	console.log( "hello!" );
 }
 
 if ( bar ) {
 
-  // this code won't run
+	// this code won't run
 
 } else {
 
-  if ( foo ) {
+	if ( foo ) {
 
-    // this code will run
+		// this code will run
 
-  } else {
+	} else {
 
-    // this code would run if foo and bar were both false
+		// this code would run if foo and bar were both false
 
-  }
+	}
 
 }
 ```
 
 While curly braces aren't strictly required around single-line `if` statements, using them consistently, even when they aren't strictly required, makes for vastly more readable code.
 
-Be mindful not to define functions with the same name multiple times within separate if/else blocks, as doing so may not have the expected result.
+Be mindful not to define functions with the same name multiple times within separate `if`/`else` blocks, as doing so may not have the expected result.
 
 ## Truthy and Falsy Things
 
@@ -48,9 +48,9 @@ In order to use flow control successfully, it's important to understand which ki
 // Values that evaluate to true
 "0";
 "any string";
-[];  // an empty array
-{};  // an empty object
-1;   // any non-zero number
+[]; // an empty array
+{}; // an empty object
+1;  // any non-zero number
 ```
 
 ```
@@ -58,8 +58,8 @@ In order to use flow control successfully, it's important to understand which ki
 "";  // an empty string
 NaN; // JavaScript's "not-a-number" variable
 null;
-undefined;  // be careful -- undefined can be redefined!
-0;   // the number zero
+undefined; // be careful -- undefined can be redefined!
+0; // the number zero
 ```
 
 ## Conditional Variable Assignment with the Ternary Operator
@@ -77,27 +77,22 @@ While the ternary operator can be used without assigning the return value to a v
 
 ## Switch Statements
 
-Rather than using a series of `if`/`else` blocks, sometimes it can be useful to use a `switch` statement instead. `Switch` statements look at the value of a variable or expression, and run different blocks of code depending on the value.
+Rather than using a series of `if`/`else` blocks, sometimes it can be useful to use a `switch` statement instead. `switch` statements look at the value of a variable or expression, and run different blocks of code depending on the value.
 
 ```
 // A switch statement
 switch ( foo ) {
 
-  case "bar":
+	case "bar":
+		alert( "the value was bar -- yay!" );
+		break;
 
-    alert("the value was bar -- yay!");
+	case "baz":
+		alert( "boo baz :(" );
+		break;
 
-  break;
-
-  case "baz":
-
-    alert("boo baz :(");
-
-  break;
-
-  default:
-
-    alert("everything else is just ok");
+	default:
+		alert( "everything else is just ok" );
 
 }
 ```
@@ -107,35 +102,29 @@ Switch statements have somewhat fallen out of favor in JavaScript, because often
 ```
 var stuffToDo = {
 
-  "bar" : function() {
+	"bar": function() {
+		alert( "the value was bar -- yay!" );
+	},
 
-    alert("the value was bar -- yay!");
+	"baz": function() {
+		alert( "boo baz :(" );
+	},
 
-  },
-
-  "baz" : function() {
-
-    alert("boo baz :(");
-
-  },
-
-  "default" : function() {
-
-    alert("everything else is just ok");
-
-  }
+	"default": function() {
+		alert( "everything else is just ok" );
+	}
 
 };
 
 if ( stuffToDo[ foo ] ) {
 
-    stuffToDo[ foo ]();
+	stuffToDo[ foo ]();
 
 } else {
 
-    stuffToDo["default"]();
+	stuffToDo["default"]();
 
 }
 ```
 
-Objects are covered further in the [Types](/types) and [Objects](/objects) sections.
+Objects are covered further in the [Types](/types/) and [Objects](/objects/) sections.

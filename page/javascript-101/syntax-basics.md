@@ -8,11 +8,12 @@ attribution:
 
 ### Comments
 
-JavaScript has support for single and multi-line comments. Comments are ignored by the JavaScript engine and therefore have no side-effects on the outcome of the program. Use comments to document the code for other developers. Libraries like [JSDoc](http://code.google.com/p/jsdoc-toolkit/, "JSDoc Toolkit") are available to help generate project documentation pages based on commenting conventions.
+JavaScript has support for single- and multi-line comments. Comments are ignored by the JavaScript engine and therefore have no side-effects on the outcome of the program. Use comments to document the code for other developers. Libraries like [JSDoc](http://code.google.com/p/jsdoc-toolkit/, "JSDoc Toolkit") are available to help generate project documentation pages based on commenting conventions.
 
 ```
 // Single and multi line comments.
-// this is an example of a single line comment.
+
+// This is an example of a single line comment.
 
 /*
  * this is an example
@@ -29,7 +30,6 @@ Whitespace is also ignored in JavaScript. There are many tools that will strip o
 ```
 // Whitespace is insignificant.
 var hello = "Hello";
-
 var world     =      "World!";
 ```
 
@@ -54,7 +54,7 @@ var foo=function() {for(var i=0;i<10;i++){alert(i);}};foo();
 
 ### Reserved Words
 
-There are a handful of reserved words that can't be used when declaring user-defined variables and functions. Some of these reserved words are currently implemented, some are saved for future use, and others are reserved for historical reasons. A list of words and in-depth explanations for each can be found on the [MDN JavaScript Reference](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Reserved_Words "MDN Reserved Words.") site.
+There are a handful of reserved words that can't be used when declaring user-defined variables and functions. Some of these reserved words are currently implemented, some are saved for future use, and others are reserved for historical reasons. A list of reserved words can be found [here](/javascript-101/reserved-words/), and in-depth explanations for each can be found on the [MDN JavaScript Reference](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Reserved_Words "MDN Reserved Words.") site.
 
 ### Identifiers
 
@@ -77,8 +77,7 @@ var _my_awesome_variable_$ = "e";
 
 ### Variable definition
 
-Variables can be defined using multiple `var` statements, or in a single
-combined var statement.
+Variables can be defined using multiple `var` statements, or in a single combined var statement.
 
 ```
 // this works
@@ -88,12 +87,11 @@ var test3 = test2( test );
 
 // and so does this
 var test4 = 1,
-  test5 = function() { ... },
-  test6 = test2( test );
+	test5 = function() { ... },
+	test6 = test2( test );
 ```
 
-Variables can be declared without assigning them a value. The value of a
-variable declared without a value is `undefined`.
+Variables can be declared without assigning them a value. The value of a variable declared without a value is `undefined`.
 
 ```
 var x;
