@@ -99,3 +99,5 @@ variable declared without a value is `undefined`.
 var x;
 x === undefined; // true
 ```
+
+Note that `var` has function scope and not block scope as one could expect if comming from languages like C or Java. All variables declared within a function, regardless of the block nesting level, will be internally combined into a single `var`. Future versions of JavaScript will have `val` keyword that will have block scope.
