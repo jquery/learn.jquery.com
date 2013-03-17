@@ -2,7 +2,7 @@
 title:        Code Organization Concepts
 level: beginner
 source: http://jqfundamentals.com/legacy
-attribution: 
+attribution:
   - jQuery Fundamentals
 ---
 
@@ -51,16 +51,21 @@ options, and easing the path to reuse and refactoring.
 ```
 // An object literal
 var myFeature = {
-  myProperty: "hello",
-  myMethod: function() {
-    console.log( myFeature.myProperty );
-  },
-  init: function( settings ) {
-    myFeature.settings = settings;
-  },
-  readSettings : function() {
-    console.log( myFeature.settings );
-  }
+
+	myProperty: "hello",
+
+	myMethod: function() {
+		console.log( myFeature.myProperty );
+	},
+
+	init: function( settings ) {
+		myFeature.settings = settings;
+	},
+
+	readSettings: function() {
+		console.log( myFeature.settings );
+	}
+
 };
 
 myFeature.myProperty === "hello"; // true
@@ -68,7 +73,7 @@ myFeature.myProperty === "hello"; // true
 myFeature.myMethod(); // "hello"
 
 myFeature.init({
-  foo: "bar"
+	foo: "bar"
 });
 
 myFeature.readSettings(); // { foo: "bar" }
@@ -84,28 +89,18 @@ How would we apply this pattern to jQuery code? Let's say that we had this code
 written in the traditional jQuery style:
 
 ```
-// clicking on a list item loads some content
-// using the list item's ID and hides content
-// in sibling list items
+// clicking on a list item loads some content using the
+// list item's ID, and hides content in sibling list items
 $( document ).ready(function() {
 
-  $("#myFeature li").append("<div/>").click(function() {
-
-      var $this = $( this );
-
-      var $div = $this.find("div");
-
-      $div.load( "foo.php?item=" + $this.attr("id"), function() {
-
-        $div.show();
-
-        $this.siblings().find("div").hide();
-
-      }
-
-    );
-
-  });
+	$( "#myFeature li" ).append( "<div/>" ).click(function() {
+		var $this = $( this );
+		var $div = $this.find( "div" );
+		$div.load( "foo.php?item=" + $this.attr( "id" ), function() {
+			$div.show();
+			$this.siblings().find( "div" ).hide();
+		});
+	});
 
 });
 ```
@@ -121,76 +116,53 @@ functionality later.
 // Using an object literal for a jQuery feature
 var myFeature = {
 
-  init : function( settings ) {
+	init: function( settings ) {
+		myFeature.config = {
+			$items: $( "#myFeature li" ),
+			$container: $( "<div class='container'></div>" ),
+			urlBase: "/foo.php?item="
+		};
 
-    myFeature.config = {
-      $items : $("#myFeature li"),
-      $container : $("<div class='container'></div>"),
-      urlBase : "/foo.php?item="
-    };
+		// allow overriding the default config
+		$.extend( myFeature.config, settings );
 
-    // allow overriding the default config
-    $.extend( myFeature.config, settings );
+		myFeature.setup();
+	},
 
-    myFeature.setup();
+	setup: function() {
+		myFeature.config.$items.each( myFeature.createContainer ).click( myFeature.showItem );
+	},
 
-  },
+	createContainer: function() {
+		var $i = $( this );
+		var $c = myFeature.config.$container.clone().appendTo( $i );
+		$i.data( "container", $c );
+	},
 
-  setup : function() {
+	buildUrl: function() {
+		return myFeature.config.urlBase + myFeature.$currentItem.attr( "id" );
+	},
 
-    myFeature.config.$items.each( myFeature.createContainer ).click( myFeature.showItem );
+	showItem: function() {
+		var myFeature.$currentItem = $( this );
+		myFeature.getContent( myFeature.showContent );
+	},
 
-  },
+	getContent: function( callback ) {
+		var url = myFeature.buildUrl();
+		myFeature.$currentItem.data( "container" ).load( url, callback );
+	},
 
-  createContainer : function() {
+	showContent: function() {
+		myFeature.$currentItem.data( "container" ).show();
+		myFeature.hideContent();
+	},
 
-    var $i = $( this );
-
-    var $c = myFeature.config.$container.clone().appendTo( $i );
-
-    $i.data( "container", $c );
-
-  },
-
-  buildUrl : function() {
-
-    return myFeature.config.urlBase + myFeature.$currentItem.attr("id");
-
-  },
-
-  showItem : function() {
-
-    var myFeature.$currentItem = $( this );
-
-    myFeature.getContent( myFeature.showContent );
-
-  },
-
-  getContent : function( callback ) {
-
-    var url = myFeature.buildUrl();
-
-    myFeature.$currentItem.data("container").load( url, callback );
-
-  },
-
-  showContent : function() {
-
-    myFeature.$currentItem.data("container").show();
-
-    myFeature.hideContent();
-
-  },
-
-  hideContent : function() {
-
-    myFeature.$currentItem.siblings().each(function() {
-
-      $( this ).data("container").hide();
-
-    });
-
-  }
+	hideContent: function() {
+		myFeature.$currentItem.siblings().each(function() {
+			$( this ).data( "container" ).hide();
+		});
+	}
 
 };
 
@@ -198,7 +170,7 @@ $( document ).ready( myFeature.init );
 ```
 
 The first thing you'll notice is that this approach is obviously far longer
-than the original -- again, if this were the extent of our application, using an
+than the original — again, if this were the extent of our application, using an
 object literal would likely be overkill. Assuming it's not the extent of our
 application, though, we've gained several things:
 
@@ -227,31 +199,30 @@ desired.
 // The module pattern
 var feature = (function() {
 
-  // private variables and functions
-  var privateThing = "secret";
-  var publicThing = "not secret";
-  var changePrivateThing = function() {
-    privateThing = "super secret";
-  };
+	// private variables and functions
+	var privateThing = "secret";
+	var publicThing = "not secret";
 
-  var sayPrivateThing = function() {
-    console.log( privateThing );
-    changePrivateThing();
-  };
+	var changePrivateThing = function() {
+		privateThing = "super secret";
+	};
 
-  // public API
-  return {
-    publicThing: publicThing,
-    sayPrivateThing: sayPrivateThing
-  };
+	var sayPrivateThing = function() {
+		console.log( privateThing );
+		changePrivateThing();
+	};
+
+	// public API
+	return {
+		publicThing: publicThing,
+		sayPrivateThing: sayPrivateThing
+	};
 
 })();
 
 feature.publicThing; // "not secret"
 
-
-// logs "secret" and changes the value
-// of privateThing
+// logs "secret" and changes the value of privateThing
 feature.sayPrivateThing();
 ```
 
@@ -276,47 +247,56 @@ of the module, `showItemByIndex()`.
 // Using the module pattern for a jQuery feature
 $( document ).ready(function() {
 
-  var feature = (function() {
+	var feature = (function() {
 
-    var $items = $("#myFeature li");
-    var $container = $("<div class='container'></div>");
-    var $currentItem = null;
-    var urlBase = "/foo.php?item=";
-    var createContainer = function() {
-      var $i = $( this );
-      var $c = $container.clone().appendTo( $i );
-      $i.data( "container", $c );
-    },
-    buildUrl = function() {
-      return urlBase + $currentItem.attr("id");
-    },
-    showItem = function() {
-      $currentItem = $( this );
-      getContent( showContent );
-    },
-    showItemByIndex = function( idx ) {
-      $.proxy( showItem, $items.get( idx ) );
-    },
-    getContent = function( callback ) {
-      $currentItem.data("container").load( buildUrl(), callback );
-    },
-    showContent = function() {
-      $currentItem.data("container").show();
-      hideContent();
-    },
-    hideContent = function() {
-      $currentItem.siblings().each(function() {
-        $( this ).data("container").hide();
-      });
-    };
-    $items.each( createContainer ).click( showItem );
+		var $items = $( "#myFeature li" );
+		var $container = $( "<div class='container'></div>" );
+		var $currentItem = null;
+		var urlBase = "/foo.php?item=";
 
-    return {
-      showItemByIndex: showItemByIndex
-    };
+		var createContainer = function() {
+			var $i = $( this );
+			var $c = $container.clone().appendTo( $i );
+			$i.data( "container", $c );
+		},
 
-  })();
+		buildUrl = function() {
+			return urlBase + $currentItem.attr( "id" );
+		},
 
-  feature.showItemByIndex( 0 );
+		showItem = function() {
+			$currentItem = $( this );
+			getContent( showContent );
+		},
+
+		showItemByIndex = function( idx ) {
+			$.proxy( showItem, $items.get( idx ) );
+		},
+
+		getContent = function( callback ) {
+			$currentItem.data( "container" ).load( buildUrl(), callback );
+		},
+
+		showContent = function() {
+			$currentItem.data( "container" ).show();
+			hideContent();
+		},
+
+		hideContent = function() {
+			$currentItem.siblings().each(function() {
+				$( this ).data( "container" ).hide();
+			});
+		};
+
+		$items.each( createContainer ).click( showItem );
+
+		return {
+			showItemByIndex: showItemByIndex
+		};
+
+	})();
+
+	feature.showItemByIndex( 0 );
+
 });
 ```

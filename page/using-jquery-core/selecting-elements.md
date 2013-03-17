@@ -217,7 +217,7 @@ In order to get the best performance using `:image`, first select elements with 
 Using the `:input` selector selects all `<input>`, `<textarea>`, `<select>`, and `<button>` elements:
 
 ```
-:input pseudo-selector
+// :input pseudo-selector
 // selects <input>, <textarea>, <select>, and <button> elements
 $("form :input");
 ```

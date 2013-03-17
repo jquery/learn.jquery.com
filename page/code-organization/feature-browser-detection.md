@@ -5,7 +5,7 @@ level: beginner
 
 ### Can I Use This Browser Feature?
 
-There are a couple of common  ways to check whether or not a particular feature is supported by a user's browser:
+There are a couple of common ways to check whether or not a particular feature is supported by a user's browser:
 
 * Browser Detection
 * Specific Feature Detection
@@ -26,7 +26,7 @@ While this seems to be an easy solution, there are several problems:
 
 #### Other browsers other than your target may have the same issue.
 
-If we target a specific browser for different functionality, we implicitly exclude any browser we did not account for. This is also not future-proof. If the browser we target receives a bug fix or change, we may not be able to discern between a 'working' and 'non-working' UA string. We may also need to update our test for each new release. This isn't a maintainable solution.
+If we target a specific browser for different functionality, we implicitly exclude any browser we did not account for. This is also not future-proof. If the browser we target receives a bug fix or change, we may not be able to discern between a "working" and "non-working" UA string. We may also need to update our test for each new release. This isn't a maintainable solution.
 
 #### User Agents are unreliable.
 
@@ -51,7 +51,7 @@ Now how would you go about doing that?
 There are several ways to go about feature detection:
 
 * Straight JavaScript
-* $.support
+* `$.support`
 * A Helper Library
 
 #### Straight JavaScript
@@ -61,16 +61,12 @@ Let's take a look at how to check whether or not a `<canvas>` element exists in 
 ```
 // We want to show a graph in browsers that support canvas,
 // but a data table in browsers that don't.
-var elem = document.createElement("canvas");
+var elem = document.createElement( "canvas" );
 
-if ( elem.getContext && elem.getContext("2d") ) {
-
-  showGraph();
-
+if ( elem.getContext && elem.getContext( "2d" ) ) {
+	showGraph();
 } else {
-
-  showTable();
-
+	showTable();
 }
 ```
 
@@ -96,13 +92,9 @@ For example, utilizing Modernizr, we are able to do the same canvas detection te
 
 ```
 if ( Modernizr.canvas ) {
-
-  showGraphWithCanvas();
-
+	showGraphWithCanvas();
 } else {
-
-  showTable();
-
+	showTable();
 }
 ```
 
@@ -112,13 +104,13 @@ That's it. Easy.
 
 So, while the Modernizr syntax is great, it can end up being quite cumbersome to have several conditionals. Secondly, we're sending the code for both conditions to every browser, regardless if we'll need it or not.
 
-The Modernizr object exposes a `load()` method that many prefer over the syntax mentioned previously. This is due to the another library that Modernizr now uses internally:  [yepnope](http://yepnopejs.com/). Testing for canvas can now become something like this:
+The `Modernizr` object exposes a `load()` method that many prefer over the syntax mentioned previously. This is due to the another library that Modernizr now uses internally: [yepnope](http://yepnopejs.com/). Testing for canvas can now become something like this:
 
 ```
 Modernizr.load({
-  test: Modernizr.canvas,
-  yep : "canvas.js",
-  nope: "canvas-polyfill.js"
+	test: Modernizr.canvas,
+	yep: "canvas.js",
+	nope: "canvas-polyfill.js"
 });
 ```
 
@@ -130,11 +122,11 @@ Additionally, Modernizr has a [production build configurator](http://modernizr.c
 
 #### Feature Detection Tools
 
-- [modernizr](http://modernizr.com/) - conditionally check to see if a specific feature is available in a browser
-- [html5please](http://html5please.com/) - use the new and shiny responsibly
-- [html5please api](http://api.html5please.com/) - an API you can query to see how good (or bad) support for a specific feature is.
-- [caniuse](http://caniuse.com/) - browser compatibility tables for HTML5, CSS3, SVG, etc…
-- [yepnope](http://yepnopejs.com/) - conditional polyfill loader
+- [modernizr](http://modernizr.com/) — Conditionally check to see if a specific feature is available in a browser.
+- [html5please](http://html5please.com/) — Use the new and shiny responsibly.
+- [html5please api](http://api.html5please.com/) — An API you can query to see how good (or bad) support for a specific feature is.
+- [caniuse](http://caniuse.com/) — Browser compatibility tables for HTML5, CSS3, SVG, etc.
+- [yepnope](http://yepnopejs.com/) — Conditional polyfill loader.
 
 #### Helpful Articles
 

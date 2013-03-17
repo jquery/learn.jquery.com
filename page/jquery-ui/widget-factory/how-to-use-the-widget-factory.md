@@ -91,7 +91,7 @@ prepending an underscore to the function name.
             if ( value === undefined ) {
                 return this.options.value;
             }
-            
+
             // value passed, act as a setter
             this.options.value = this._constrain( value );
             var progress = this.options.value + "%";

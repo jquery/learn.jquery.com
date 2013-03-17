@@ -2,7 +2,7 @@
 title:        Operators
 level:        beginner
 source: http://jqfundamentals.com/legacy
-attribution: 
+attribution:
   - jQuery Fundamentals
 ---
 Basic operators allow you to manipulate values.
@@ -24,17 +24,13 @@ console.log( foo + " " + bar ); // "hello world"
 ```
 // Incrementing and decrementing
 // The pre-increment operator increments the operand before any further processing.
-// pre-increment:
 var i = 1;
-
-console.log( ++i ); // 2
+console.log( ++i ); // 2 - because i was incremented before evaluation
 console.log( i );   // 2
 
 // The post-increment operator increments the operand after processing it.
-// post-increment:
 var i = 1;
-
-console.log( i++ ); // 1 - because i was 1
+console.log( i++ ); // 1 - because i was evaluated to 1 and _then_ incremented
 console.log( i );   // 2 - incremented after using it
 ```
 
@@ -100,12 +96,11 @@ You'll sometimes see developers use these logical operators for flow control ins
 foo && doSomething( foo );
 
 // set bar to baz if baz is truthy;
-// otherwise, set it to the return
-// value of createBar()
+// otherwise, set it to the return value of createBar()
 var bar = baz || createBar();
 ```
 
-This style is quite elegant and pleasantly terse; that said, it can be really hard to read or use, especially for beginners. See the section on truthy and falsy things in the [Conditional Code](/conditional-code) article for more about evaluating truthiness.
+This style is quite elegant and pleasantly terse; that said, it can be really hard to read or use, especially for beginners. See the section on truthy and falsy things in the [Conditional Code](/conditional-code/) article for more about evaluating truthiness.
 
 ## Comparison Operators
 
@@ -118,16 +113,16 @@ var bar = 0;
 var baz = "1";
 var bim = 2;
 
-foo == bar;   // false
-foo != bar;   // true
-foo == baz;   // true; but note that the types are different
+foo == bar; // false
+foo != bar; // true
+foo == baz; // true; but note that the types are different
 
 foo === baz;             // false
 foo !== baz;             // true
 foo === parseInt( baz ); // true
 
-foo > bim;    // false
-bim > baz;    // true
-foo <= baz;   // true
+foo > bim;  // false
+bim > baz;  // true
+foo <= baz; // true
 ```
 For more information about comparison operators, visit the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Operators/Comparison_Operators "MDN - Comparison Operators").

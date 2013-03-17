@@ -5,22 +5,22 @@ level: beginner
 ### jQuery: The Basics
 
 This is a basic tutorial, designed to help you get started using jQuery. If you
-don't have a test page setup yet, start by creating the following HTML page: 
+don't have a test page setup yet, start by creating the following HTML page:
 
 ```
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Demo</title>
-  </head>
-  <body>
-    <a href="http://jquery.com/">jQuery</a>
-    <script src="jquery.js"></script>
-    <script>
-      // Your code goes here
-    </script>
-  </body>
+<head>
+	<meta charset="utf-8">
+	<title>Demo</title>
+</head>
+<body>
+	<a href="http://jquery.com/">jQuery</a>
+	<script src="jquery.js"></script>
+	<script>
+	// Your code goes here
+	</script>
+</body>
 </html>
 ```
 
@@ -30,22 +30,22 @@ and store the `jquery.js` file in the same directory as your HTML file.
 
 ### Launching Code on Document Ready
 
-To ensure that their code runs after the browser finishes loading the document, 
+To ensure that their code runs after the browser finishes loading the document,
 many JavaScript programmers wrap their code in an `onload` function:
 
 ```
 window.onload = function() {
-  alert("welcome");
+	alert( "welcome" );
 }
 ```
 
 Unfortunately, the code doesn't run until all images are finished downloading, including banner ads.
-To run code as soon as the `document` is ready to be manipulated, jQuery has a statement 
-known as the [ ready event ](http://api.jquery.com/ready):
+To run code as soon as the `document` is ready to be manipulated, jQuery has a statement
+known as the [ready event](http://api.jquery.com/ready):
 
 ```
-$( document ).ready( function() {
-  // Your code here
+$( document ).ready(function() {
+	// Your code here
 });
 ```
 
@@ -53,25 +53,25 @@ For example, inside the `ready` event, you can add a click handler to the link:
 
 ```
 $( document ).ready(function() {
-  $("a").click(function( event ) {
-    alert("Thanks for visiting!");
-  });
+	$( "a" ).click(function( event ) {
+		alert( "Thanks for visiting!" );
+	});
 });
 ```
 
-Save your HTML file and reload the test page in your browser. 
-Clicking the link should now first display an alert pop-up, 
+Save your HTML file and reload the test page in your browser.
+Clicking the link should now first display an alert pop-up,
 then continue with the default behavior of navigating to http://jquery.com.
 
-For `click` and most other [events](http://api.jquery.com/category/events/), 
+For `click` and most other [events](http://api.jquery.com/category/events/),
 you can prevent the default behavior by calling `event.preventDefault()` in the event handler:
 
 ```
 $( document ).ready(function() {
-  $("a").click(function( event ) {
-    alert("As you can see, the link no longer took you to jquery.com");
-    event.preventDefault();
-  });
+	$( "a" ).click(function( event ) {
+		alert( "As you can see, the link no longer took you to jquery.com" );
+		event.preventDefault();
+	});
 });
 ```
 
@@ -79,28 +79,28 @@ $( document ).ready(function() {
 
 The following example illustrates the click handling code discussed above,
 embedded directly in the HTML `<body>`. Note that in practice,
-it is usually better to place your code in a separate JS file 
+it is usually better to place your code in a separate JS file
 and load it on the page with a `<script>` element's `src` attribute.
 
 ```
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Demo</title>
-  </head>
-  <body>
-    <a href="http://jquery.com/">jQuery</a>
-    <script src="jquery.js"></script>
-    <script>
-      $( document ).ready(function() {
-        $("a").click(function( event ) {
-          alert("The link will no longer take you to jquery.com");
-          event.preventDefault();
-        });
-      });
-    </script>
-  </body>
+<head>
+	<meta charset="utf-8">
+	<title>Demo</title>
+</head>
+<body>
+	<a href="http://jquery.com/">jQuery</a>
+	<script src="jquery.js"></script>
+	<script>
+	$( document ).ready(function() {
+		$( "a" ).click(function( event ) {
+			alert( "The link will no longer take you to jquery.com" );
+			event.preventDefault();
+		});
+	});
+	</script>
+</body>
 </html>
 ```
 
@@ -114,16 +114,16 @@ First, add some style information into the `<head>` of the document, like this:
 
 ```
 <style>
-  a.test {
-    font-weight: bold;
-  }
+a.test {
+	font-weight: bold;
+}
 </style>
 ```
 
 Next, add the [addClass()](http://api.jquery.com/addClass) call to the script:
 
 ```
-$("a").addClass("test");
+$( "a" ).addClass( "test" );
 ```
 
 All `a` elements are now bold.
@@ -131,7 +131,7 @@ All `a` elements are now bold.
 To remove an existing `class`, use [removeClass()](http://api.jquery.com/removeClass):
 
 ```
-$("a").removeClass("test");
+$( "a" ).removeClass( "test" );
 ```
 
 ### Special Effects
@@ -141,9 +141,9 @@ to help you make your web sites stand out.
 For example, if you create a click handler of:
 
 ```
-$("a").click(function( event ){
-  event.preventDefault();
-  $( this ).hide("slow");
+$( "a" ).click(function( event ){
+	event.preventDefault();
+	$( this ).hide( "slow" );
 });
 ```
 
@@ -155,7 +155,7 @@ Unlike many other programming languages, JavaScript enables you to freely pass f
 A *callback* is a function that is passed as an argument to another function and
 is executed after its parent function has completed. Callbacks are special because
 they patiently wait to execute until their parent finishes.
-Meanwhile, the browser can be executing other functions or doing all sorts of other work. 
+Meanwhile, the browser can be executing other functions or doing all sorts of other work.
 
 To use callbacks, it is important to know how to pass them into their parent function.
 
@@ -172,31 +172,31 @@ When [$.get](http://api.jquery.com/jQuery.get/) finishes getting the page `myhtm
 
 ### Callback *with* Arguments
 
-Executing callbacks with arguments can be tricky. 
+Executing callbacks with arguments can be tricky.
 
 #### Wrong
 This code example will ***not*** work:
 
 ```
-$.get( "myhtmlpage.html", myCallBack(param1, param2) );
+$.get( "myhtmlpage.html", myCallBack( param1, param2 ) );
 ```
 
-The reason this fails is that the code executes `myCallBack( param1, param2 )` immediately 
-and then passes the myCallBack's *return value* as the second parameter to `$.get`.
-We actually want to pass the function `myCallBack`, not `myCallBack( param1, param2)`'s return value
+The reason this fails is that the code executes `myCallBack( param1, param2 )` immediately
+and then passes myCallBack's *return value* as the second parameter to `$.get`.
+We actually want to pass the function `myCallBack`, not `myCallBack( param1, param2 )`'s return value
 (which might or might not be a function).  So, how to pass in `myCallBack` *and* include its arguments?
 
 #### Right
 
 To defer executing `myCallBack` with its parameters, you can use an anonymous function as a wrapper.
 Note the use of `function() {`.  The anonymous function does exactly one thing:  calls
-`myCallBack`, with the values of `param1` and `param2`. 
+`myCallBack`, with the values of `param1` and `param2`.
 
 ```
- $.get( "myhtmlpage.html", function() {
-   myCallBack( param1, param2 );
- });
+$.get( "myhtmlpage.html", function() {
+	myCallBack( param1, param2 );
+});
 ```
 
 When `$.get` finishes getting the page `myhtmlpage.html`, it executes the anonymous function,
-which executes `myCallBack( param1, param2 )`. 
+which executes `myCallBack( param1, param2 )`.

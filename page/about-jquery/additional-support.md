@@ -27,7 +27,7 @@ There are many subforums where you can discuss jQuery, ask questions, talk about
 * [Developing jQuery Plugins](http://forum.jquery.com/developing-jquery-plugins)
   * This forum covers development of jQuery plugins.
 * [Developing jQuery UI](http://forum.jquery.com/developing-jquery-ui)
-  * This is the place to discuss development of [jQuery UI](http://jqueryui.com/) itself - including bugs, new plugins, and how you can help.
+  * This is the place to discuss development of [jQuery UI](http://jqueryui.com/) itself — including bugs, new plugins, and how you can help.
   * All jQuery UI svn commits are posted to this list to facilitate feedback, discussion, and review.
   * Also note that a lot of the development and planning of jQuery UI takes place on the [jQuery UI Development and Planning Wiki](http://wiki.jqueryui.com/).
 * [Developing jQuery Mobile](http://forum.jquery.com/developing-jquery-mobile)
@@ -41,12 +41,12 @@ To ensure that you'll get a useful answer in no time, please consider the follow
 
 * Ensure your markup is valid.
 * Use Firebug/Developer Tools to see if you have an exception.
-* Use Firebug/Developer Tools to inspect the html classes, css. etc.
-* Try expected resulting html and css without javascript/jQuery and see if the problem could be isolated to those two.
+* Use Firebug/Developer Tools to inspect the HTML classes, CSS, etc.
+* Try expected resulting HTML and CSS without JavaScript/jQuery and see if the problem could be isolated to those two.
 * Reduce to a minimal test case (keep removing things until the problem goes away, etc.)
-* Provide that test case as part of your mail. Either upload it somewhere or post it on jsbin.com.
+* Provide that test case as part of your mail. Either upload it somewhere or post it on [jsbin.com](http://jsbin.com/).
 
-In general, keep your question short and focused and provide only essential details - others can be added when required.
+In general, keep your question short and focused and provide only essential details — others can be added when required.
 
 ### Mailing List Archives
 
@@ -71,8 +71,8 @@ The IRC Channel is best if you need quick help with any of the following:
 
 * JavaScript
 * jQuery syntax
-* problem solving
-* strange bugs.
+* Problem solving
+* Strange bugs
 
 If your problem is more in-depth, we may ask you to post to the mailing list, or the bug tracker, so that we can help you in a more-suitable environment.
 

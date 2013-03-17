@@ -17,7 +17,7 @@ The interface for ThemeRoller is categorized into panels for global font and cor
 ThemeRoller themes can be viewed via permalink URLs, and it includes a gallery of pre-designed themes to choose from. The theme gallery is accessible through the tab strip located at the top of the application interface. From the gallery, you can preview and download themes, or even choose to tweak a theme further in the "Roll Your Own" tab.
 
 ### Downloading Themes
-When you're done designing a theme, you can download it for use in your projects. ThemeRoller has a "Download Theme" button at the top which will generate a ZIP file containing all of theme assets. Images included in your download will be generated to your specifications and saved as high-quality PNG files. 
+When you're done designing a theme, you can download it for use in your projects. ThemeRoller has a "Download Theme" button at the top which will generate a ZIP file containing all of theme assets. Images included in your download will be generated to your specifications and saved as high-quality PNG files.
 
 Your theme will include images and CSS that make up a customized version of the jQuery UI CSS Framework including images and CSS for all of our plugins.
 

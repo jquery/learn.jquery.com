@@ -2,7 +2,7 @@
 title:        Cache Length During Loops
 level:        intermediate
 source: http://jqfundamentals.com/legacy
-attribution: 
+attribution:
   - jQuery Fundamentals
 ---
 
