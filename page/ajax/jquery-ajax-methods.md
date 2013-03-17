@@ -10,15 +10,15 @@ While jQuery does offer many Ajax-related convenience methods, the core
 imperative.  We'll review it first, and then touch briefly on the convenience
 methods.
 
-I generally use the `$.ajax()` method and do not use convenience methods.  As
-you'll see, it offers features that the convenience methods do not, and its
-syntax is more easily understandable, in my opinion.
+As you'll see, the `$.ajax()` method offers features that the convenience
+methods do not, along with a syntax that is more explicit, though also more
+verbose.
 
 ### `$.ajax()`
 
 jQuery’s core `$.ajax()` method is a powerful and straightforward way of creating
-Ajax requests.  It takes a configuration object that contains all the
-instructions jQuery requires to complete the request.  The `$.ajax()` method is
+Ajax requests. It takes a configuration object that contains all the
+instructions jQuery requires to complete the request. The `$.ajax()` method is
 particularly valuable because it offers the ability to specify both success and
 failure callbacks. Also, its ability to take a configuration object that can
 be defined separately makes it easier to write reusable code. For complete
