@@ -102,3 +102,5 @@
 - jquery-mobile:
   - getting-started
   - theme-roller
+- other-environments:
+  - windows-8
