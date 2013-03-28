@@ -7,7 +7,7 @@ With the release of Windows 8, Microsoft introduced Windows Store applications w
 
 ## Understanding Context
 
-Windows Store applications, unlike the web, have two different [contexts](http://msdn.microsoft.com/en-us/library/windows/apps/hh465373.aspx) known as local, and web. Due to the access that code in the local context has to the Windows Runtime APIs, a new security model was needed. Additionally, some of the APIs that are common to the web were modified to fit their new native environment in a more meaningful way.
+Windows Store applications, unlike the web, have two different [contexts](http://msdn.microsoft.com/en-us/library/windows/apps/hh465373.aspx) known as local, and web. Due to the access that code in the local context has to the Windows Runtime APIs, a new security model was needed.
 
 For best results, you will be downloading jQuery and loading it in the local context. Attempting to load from a remote location (such as a CDN) will result in a message along the lines of "An app can’t load remote web content in the local context."
 
