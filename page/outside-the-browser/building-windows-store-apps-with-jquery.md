@@ -26,7 +26,7 @@ Within a Windows Store application, which has easy access to the user's machine,
 This doesn't mean that you cannot programmatically populate a container with dynamic items, you just have to take a slightly different approach. For instance, you could use jQuery to create our input element itself rather than passing it along in a string:
 
 ```javascript
-$("<input>", { name: "foo", value: "bar", click: calc }).appendTo("#form");
+$("<input>", { name: "foo", value: "bar" }).appendTo("#form");
 ```
 
 In the above example, you create an input element using jQuery's [html, attributes signature](http://api.jquery.com/jQuery/#jQuery-html-attributes). This demonstrates to the security model that you are in full control of our element, it's attributes, and their corresponding values. This pattern works equally well in the browser also, being present in jQuery since version 1.4.
