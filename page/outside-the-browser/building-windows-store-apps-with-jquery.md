@@ -13,7 +13,7 @@ For best results, you will be downloading jQuery and loading it in the local con
 
 ### Understanding "Unsafe" Code
 
-Keeping the whole issue of context in mind, DOM manipulation is one of the biggest changes you'll encounter using jQuery in a Windows Store application as opposed to a browser.
+DOM manipulation is one of the biggest changes you'll encounter using jQuery in a Windows Store application as opposed to a browser.
 
 On the web, it's not uncommon to add an element to a form just by passing a string of HTML into jQuery's `.append()` method:
 
