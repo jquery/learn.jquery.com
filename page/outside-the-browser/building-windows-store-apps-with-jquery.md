@@ -18,10 +18,10 @@ DOM manipulation is one of the biggest changes you'll encounter using jQuery in 
 On the web, it's not uncommon to add an element to a form just by passing a string of HTML into jQuery's `.append()` method:
 
 ```javascript
-$("#form").append("<input name='foo' value='bar' onClick='calc()' />");
+$("#form").append("<input name='foo' value='bar' />");
 ```
 
-Within a Windows Store application, which has easy access to the user's machine, the stakes are much higher, and a lot of what you may be used to doing will require some reconsideration. The above is considered unsafe because of the `name` attribute, and the `onClick` attribute. There are many other elements, attributes, protocols and more that are considered unsafe. For an exhaustive list of what is considered safe and unsafe, see [Making HTML safer: details for toStaticHTML](http://msdn.microsoft.com/en-us/library/windows/apps/hh465388.aspx).
+Within a Windows Store application, which has easy access to the user's machine, the stakes are much higher, and a lot of what you may be used to doing will require some reconsideration. The above is considered unsafe because of the `name` attribute. There are many other elements, attributes, protocols and more that are considered unsafe. For an exhaustive list of what is considered safe and unsafe, see [Making HTML safer: details for toStaticHTML](http://msdn.microsoft.com/en-us/library/windows/apps/hh465388.aspx).
 
 This doesn't mean that you cannot programmatically populate a container with dynamic items, you just have to take a slightly different approach. For instance, you could use jQuery to create our input element itself rather than passing it along in a string:
 
