@@ -3,15 +3,13 @@ title: Building Windows Store Applications with jQuery 2.0
 level: intermediate
 ---
 
-With the release of Windows 8, Microsoft introduced Windows Store applications which can be authored with traditional web languages leveraging the power of Internet Explorer 10's underlying engines. This means jQuery 2.0 can be used to build Windows Store applications in Windows 8.
+With the release of Windows 8, Microsoft introduced Windows Store applications which can be authored using traditional web languages that leverage the underlying engines powering Internet Explorer 10. This means that jQuery 2.0, engineered to work best in modern browsers, is right at home in a Windows Store application.
 
 ## Understanding Context
 
-Windows Store applications, unlike the web, have two different contexts known as local, and web. Due to the access that code in the local context has to the Windows Runtime APIs, a new security model was needed. Additionally, some of the APIs that are common to the web were modified to fit their new native environment in a more meaningful way.
+Windows Store applications, unlike the web, have two different [contexts](http://msdn.microsoft.com/en-us/library/windows/apps/hh465373.aspx) known as local, and web. Due to the access that code in the local context has to the Windows Runtime APIs, a new security model was needed. Additionally, some of the APIs that are common to the web were modified to fit their new native environment in a more meaningful way.
 
 For best results, you will be downloading jQuery and loading it in the local context. Attempting to load from a remote location (such as a CDN) will result in a message along the lines of "An app can’t load remote web content in the local context."
-
-For additional information on context, see the resource [Features and restrictions by context](http://msdn.microsoft.com/en-us/library/windows/apps/hh465373.aspx) on MSDN. We'll discuss some of these items throughout this article.
 
 ### Understanding "Unsafe" Code
 
