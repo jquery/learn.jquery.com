@@ -1,5 +1,5 @@
 ---
-title: Building Windows Store applications with jQuery 2.0
+title: Building Windows Store Applications with jQuery 2.0
 level: intermediate
 ---
 

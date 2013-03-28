@@ -1,5 +1,5 @@
 ---
-title: Using jQuery Outside the Browser
+title: Outside the Browser
 customFields:
  -
     key: "icon"

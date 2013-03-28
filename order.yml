@@ -102,5 +102,5 @@
 - jquery-mobile:
   - getting-started
   - theme-roller
-- other-environments:
+- outside-the-browser:
   - building-windows-store-apps-with-jquery
