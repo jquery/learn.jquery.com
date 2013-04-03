@@ -52,6 +52,43 @@ foo();
 var foo=function() {for(var i=0;i<10;i++){alert(i);}};foo();
 ```
 
+### Whitespace and Automatic Semicolon Insertion (a common pitfall)
+
+JavaScript has a feature called Automatic Semicolon Insertion where, in some cases, a semicolon may automatically be inserted into the code, in order to recover from a syntax error. 
+
+For example, JavaScript syntax does not allow a line break between a 'return' keyword and the expression being returned. The same is true for 'throw' and the expression being thrown. If a line break is encountered, a semicolon will be inserted which may cause the code to behave differently.
+
+Consider the following simplified example:
+
+```
+// Automatic Semicolon Insertion JavaScript feature will insert a semicolon after 'return' keyword,
+// so the function will actually return 'undefined'. Therefore, the alert() shows undefined, and NOT 42
+var foo = function() {
+  return
+  42;
+};
+alert(foo());
+```
+
+Another example:
+
+```
+// Automatic Semicolon Insertion JavaScript feature will insert a semicolon after 'return' keyword,
+// so the function will actually return 'undefined'. Therefore, foo().value will throw a TypeError
+var foo = function() {
+  return
+  {
+    value: 42
+  };
+};
+alert(foo().value);  // TypeError, foo() returns undefined
+```
+
+To avoid issues caused by Automatic Semicolon Insertion rules, ECMAScript standard gives the following practical advice:
+* A postfix ++ or -- operator should appear on the same line as its operand.
+* An Expression in a return or throw statement should start on the same line as the return or throw token.
+* An Identifier in a break or continue statement should be on the same line as the break or continue token.
+
 ### Reserved Words
 
 There are a handful of reserved words that can't be used when declaring user-defined variables and functions. Some of these reserved words are currently implemented, some are saved for future use, and others are reserved for historical reasons. A list of reserved words can be found [here](/javascript-101/reserved-words/), and in-depth explanations for each can be found on the [MDN JavaScript Reference](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Reserved_Words "MDN Reserved Words.") site.
