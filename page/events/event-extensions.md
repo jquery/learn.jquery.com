@@ -216,7 +216,7 @@ jQuery.event.special.multiclick = {
 		// If a multiple of the click count, run the handler
 		targetData.clicks = ( targetData.clicks || 0 ) + 1;
 
-		if ( targetData.clicks % event.data === 0 ) {
+		if ( targetData.clicks % event.data.clicks === 0 ) {
 			event.type = handleObj.origType;
 			ret = handleObj.handler.apply( this, arguments );
 			event.type = handleObj.type;
