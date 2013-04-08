@@ -21,7 +21,7 @@ function foo() {
 // Named function expression.
 var foo = function() {
 	/* do something */
-}
+};
 ```
 
 ## Using Functions
