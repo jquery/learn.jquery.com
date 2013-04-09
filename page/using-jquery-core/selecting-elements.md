@@ -224,7 +224,7 @@ To select a set of associated radio buttons use:
 
 ```
 // Selects all radio buttons with the name attribute of gender.
-$( "form input[name="gender"]:radio" );
+$( "form input[name='gender']:radio" );
 ```
 
 In order to get the best performance using `:radio`, first select elements with a standard jQuery selector, then use `.filter( ":radio" )`, or precede the pseudo-selector with a tag name or some other selector.
