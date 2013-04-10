@@ -16,7 +16,7 @@ don't have a test page setup yet, start by creating the following HTML page:
 </head>
 <body>
 	<a href="http://jquery.com/">jQuery</a>
-	<script src="jquery.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
 	<script>
 	// Your code goes here
 	</script>
@@ -24,8 +24,9 @@ don't have a test page setup yet, start by creating the following HTML page:
 </html>
 ```
 
-The `src` attribute in the `<script>` element must point to a copy of jQuery.
-Download a copy of jQuery from the [Downloading jQuery](http://jquery.com/download/) page
+The `src` attribute in the `<script>` element must point to a copy of jQuery. The example
+uses the latest version of jQuery 1.x from the free Google CDN. You may want to download your
+own copy of jQuery from the [Downloading jQuery](http://jquery.com/download/) page
 and store the `jquery.js` file in the same directory as your HTML file.
 
 ### Launching Code on Document Ready
@@ -91,7 +92,7 @@ and load it on the page with a `<script>` element's `src` attribute.
 </head>
 <body>
 	<a href="http://jquery.com/">jQuery</a>
-	<script src="jquery.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
 	<script>
 	$( document ).ready(function() {
 		$( "a" ).click(function( event ) {
