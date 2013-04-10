@@ -14,33 +14,32 @@ In the `head` of this template, a meta `viewport` tag sets the screen width to t
 In the `body`, a div with a `data-role` of `page` is the wrapper used to delineate a page. A header bar (`data-role="header"`), a content region (`data-role="content"`) and a footer bar (`data-role="footer"`) are added inside to create a basic page (all three are optional). These `data-` attributes are HTML5 attributes used throughout jQuery Mobile to transform basic markup into an enhanced and styled widget.
 
 ```
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <title>My Page</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
-    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
-  </head>
-  <body>
+<head>
+	<title>My Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+</head>
+<body>
+	<div data-role="page">
 
-    <div data-role="page">
-      <div data-role="header">
-        <h1>My Title</h1>
-      </div><!-- /header -->
+		<div data-role="header">
+			<h1>My Title</h1>
+		</div><!-- /header -->
 
-      <div data-role="content">
-        <p>Hello world</p>
-      </div><!-- /content -->
+		<div data-role="content">
+			<p>Hello world</p>
+		</div><!-- /content -->
 
-      <div data-role="footer">
-        <h4>My Footer</h4>
-      </div><!-- /header -->
+		<div data-role="footer">
+			<h4>My Footer</h4>
+		</div><!-- /footer -->
 
-    </div><!-- /page -->
-
-  </body>
+	</div><!-- /page -->
+</body>
 </html>
 ```
 
@@ -55,11 +54,11 @@ jQuery Mobile includes a diverse set of common listviews that are coded as lists
 
 ```
 <ul data-role="listview" data-inset="true" data-filter="true">
-  <li><a href="#">Acura</a></li>
-  <li><a href="#">Audi</a></li>
-  <li><a href="#">BMW</a></li>
-  <li><a href="#">Cadillac</a></li>
-  <li><a href="#">Ferrari</a></li>
+	<li><a href="#">Acura</a></li>
+	<li><a href="#">Audi</a></li>
+	<li><a href="#">BMW</a></li>
+	<li><a href="#">Cadillac</a></li>
+	<li><a href="#">Ferrari</a></li>
 </ul>
 ```
 
@@ -69,8 +68,8 @@ The framework contains a full set of form elements that automatically are enhanc
 
 ```
 <form>
-  <label for="slider-0">Input slider:</label>
-  <input type="range" name="slider" id="slider-0" value="25" min="0" max="100"  />
+	<label for="slider-0">Input slider:</label>
+	<input type="range" name="slider" id="slider-0" value="25" min="0" max="100" />
 </form>
 ```
 
