@@ -47,21 +47,23 @@ Open up index.html in a text editor and you'll see that it links to a few depend
 
 
 ```html
-<link type="text/css" href="css/themename/jquery-ui.custom.css" rel="Stylesheet" />
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery-ui.custom.min.js"></script>
+<link rel="stylesheet" href="css/themename/jquery-ui.custom.css" />
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.custom.min.js"></script>
 ```
 
 Once you've included the necessary files, you can add some jQuery widgets to your page. For example, to make a datepicker widget, you'll add a text input element to your page and then call .datepicker(); on it. Like this:
 
 **HTML:**
+
 ```html
-<input type="text" name="date" id="date">
+<input type="text" name="date" id="date" />
 ```
 
-**JS:**
+**JavaScript:**
+
 ```javascript
-$('#date').datepicker();
+$( "#date" ).datepicker();
 ```
 
 ![Example Screenshot](/resources/jquery-ui/ex-datepicker.png)
@@ -77,19 +79,19 @@ Each plugin in jQuery UI has a default configuration which is catered to the mos
 
 
 ```javascript
-$('#mySliderDiv').slider({
-  orientation: 'vertical'
+$( "#mySliderDiv" ).slider({
+	orientation: "vertical"
 });
 ```
 
 You can pass as many different options as you'd like by following each one with a comma (except the last one):
 
 ```javascript
-$('#mySliderDiv').slider({
-  orientation: 'vertical',
-  min: 0,
-  max: 150,
-  value: 50
+$( "#mySliderDiv" ).slider({
+	orientation: "vertical",
+	min: 0,
+	max: 150,
+	value: 50
 });
 ```
 

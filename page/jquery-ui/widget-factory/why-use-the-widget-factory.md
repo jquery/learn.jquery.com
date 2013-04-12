@@ -47,34 +47,35 @@ It's also a good idea to expose the defaults so that users can even change the d
 A common pattern in jQuery plugins looks like this:
 
 ```
-  $.fn.plugin = function( options ) {
-    options = $.extend( {}, $.fn.plugin.defaults, options );
-    // plugin logic goes here
-  };
+$.fn.plugin = function( options ) {
+	options = $.extend( {}, $.fn.plugin.defaults, options );
+	// Plugin logic goes here.
+};
 
-  $.fn.plugin.defaults = {
-    param1: "foo",
-    param2: "bar",
-    param3: "baz"
-  };
+$.fn.plugin.defaults = {
+	param1: "foo",
+	param2: "bar",
+	param3: "baz"
+};
 ```
 
 The widget factory provides this functionality and even takes it a bit further.
 Let's see what this looks like with the widget factory.
 
 ```
-  $.widget( "ns.plugin", {
+$.widget( "ns.plugin", {
 
-    // default options
-    options: {
-      param1: "foo",
-      param2: "bar",
-      param3: "baz"
-    },
+	// Default options.
+	options: {
+		param1: "foo",
+		param2: "bar",
+		param3: "baz"
+	},
 
-    _create: function() {
-      // options are already merged and stored in this.options
-      // plugin logic goes here
-    }
-  });
+	_create: function() {
+		// Options are already merged and stored in this.options
+		// Plugin logic goes here.
+	}
+
+});
 ```

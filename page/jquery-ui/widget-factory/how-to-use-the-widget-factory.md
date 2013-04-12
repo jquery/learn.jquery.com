@@ -14,14 +14,14 @@ not a DOM element. Second, the context is always a single object, never
 a collection.
 
 ```
-    $.widget( "custom.progressbar", {
-        _create: function() {
-            var progress = this.options.value + "%";
-            this.element
-                .addClass( "progressbar" )
-                .text( progress );
-        }
-    });
+$.widget( "custom.progressbar", {
+	_create: function() {
+		var progress = this.options.value + "%";
+		this.element
+			.addClass( "progressbar" )
+			.text( progress );
+	}
+});
 ```
 
 The name of the plugin must contain a namespace, in this case we’ve used
@@ -36,9 +36,9 @@ containing key/value pairs for all of our plugin’s options. These
 options can be passed to our plugin as shown here.
 
 ```
-    $( "<div></div>" )
-        .appendTo( "body" )
-        .progressbar({ value: 20 });
+$( "<div></div>" )
+	.appendTo( "body" )
+	.progressbar({ value: 20 });
 ```
 
 When we call `jQuery.widget` it extends jQuery by adding a function to
@@ -52,18 +52,18 @@ common use case for your plugin so that you can set appropriate default
 values and make all options truly optional.
 
 ```
-    $.widget( "custom.progressbar", {
-        // default options
-        options: {
-            value: 0
-        },
-        _create: function() {
-            var progress = this.options.value + "%";
-            this.element
-                .addClass( "progressbar" )
-                .text( progress );
-        }
-    });
+$.widget( "custom.progressbar", {
+	// Default options.
+	options: {
+		value: 0
+	},
+	_create: function() {
+		var progress = this.options.value + "%";
+		this.element
+			.addClass( "progressbar" )
+			.text( progress );
+	}
+});
 ```
 
 ### Calling plugin methods
@@ -75,39 +75,43 @@ we pass to `jQuery.widget`. We can also define “private” methods by
 prepending an underscore to the function name.
 
 ```
-    $.widget( "custom.progressbar", {
-        options: {
-            value: 0
-        },
-        _create: function() {
-            var progress = this.options.value + "%";
-            this.element
-                .addClass( "progressbar" )
-                .text( progress );
-        },
-        // create a public method
-        value: function( value ) {
-            // no value passed, act as a getter
-            if ( value === undefined ) {
-                return this.options.value;
-            }
+$.widget( "custom.progressbar", {
 
-            // value passed, act as a setter
-            this.options.value = this._constrain( value );
-            var progress = this.options.value + "%";
-            this.element.text( progress );
-        },
-        // create a private method
-        _constrain: function( value ) {
-            if ( value > 100 ) {
-                value = 100;
-            }
-            if ( value < 0 ) {
-                value = 0;
-            }
-            return value;
-        }
-    });
+	options: {
+		value: 0
+	},
+
+	_create: function() {
+		var progress = this.options.value + "%";
+		this.element
+			.addClass( "progressbar" )
+			.text( progress );
+	},
+
+	// Create a public method.
+	value: function( value ) {
+		// No value passed, act as a getter.
+		if ( value === undefined ) {
+			return this.options.value;
+		}
+
+		// Value passed, act as a setter.
+		this.options.value = this._constrain( value );
+		var progress = this.options.value + "%";
+		this.element.text( progress );
+	},
+
+	// Create a private method.
+	_constrain: function( value ) {
+		if ( value > 100 ) {
+			value = 100;
+		}
+		if ( value < 0 ) {
+			value = 0;
+		}
+		return value;
+	}
+});
 ```
 
 To call a method on a plugin instance, you pass the name of the method
@@ -121,18 +125,18 @@ maintaining the ability to chain method calls. Later in this article
 we’ll see alternative uses that may feel more natural.
 
 ```
-    var bar = $( "<div></div>" )
-        .appendTo( "body" )
-        .progressbar({ value: 20 });
+var bar = $( "<div></div>" )
+	.appendTo( "body" )
+	.progressbar({ value: 20 });
 
-    // get the current value
-    alert( bar.progressbar( "value" ) );
+// Get the current value.
+alert( bar.progressbar( "value" ) );
 
-    // update the value
-    bar.progressbar( "value", 50 );
+// Update the value.
+bar.progressbar( "value", 50 );
 
-    // get the current value again
-    alert( bar.progressbar( "value" ) );
+// Get the current value again.
+alert( bar.progressbar( "value" ) );
 ```
 
 ### Working with options
@@ -151,38 +155,38 @@ For actions to perform independent of the number of options changed, we
 can override `_setOptions`.
 
 ```
-    $.widget( "custom.progressbar", {
-        options: {
-            value: 0
-        },
-        _create: function() {
-            this.element.addClass( "progressbar" );
-            this.refresh();
-        },
-        _setOption: function( key, value ) {
-            if ( key === "value" ) {
-                value = this._constrain( value );
-            }
-            this._super( key, value );
-        },
-        _setOptions: function( options ) {
-            this._super( options );
-            this.refresh();
-        },
-        refresh: function() {
-            var progress = this.options.value + "%";
-            this.element.text( progress );
-        },
-        _constrain: function( value ) {
-            if ( value > 100 ) {
-                value = 100;
-            }
-            if ( value < 0 ) {
-                value = 0;
-            }
-            return value;
-        }
-    });
+$.widget( "custom.progressbar", {
+	options: {
+		value: 0
+	},
+	_create: function() {
+		this.element.addClass( "progressbar" );
+		this.refresh();
+	},
+	_setOption: function( key, value ) {
+		if ( key === "value" ) {
+			value = this._constrain( value );
+		}
+		this._super( key, value );
+	},
+	_setOptions: function( options ) {
+		this._super( options );
+		this.refresh();
+	},
+	refresh: function() {
+		var progress = this.options.value + "%";
+		this.element.text( progress );
+	},
+	_constrain: function( value ) {
+		if ( value > 100 ) {
+			value = 100;
+		}
+		if ( value < 0 ) {
+			value = 0;
+		}
+		return value;
+	}
+});
 ```
 
 ### Adding callbacks
@@ -202,41 +206,41 @@ provided by the event object. Note that the original event passed to `_trigger`
 must be a jQuery event, not a native browser event.
 
 ```
-    $.widget( "custom.progressbar", {
-        options: {
-            value: 0
-        },
-        _create: function() {
-            this.element.addClass( "progressbar" );
-            this.refresh();
-        },
-        _setOption: function( key, value ) {
-            if ( key === "value" ) {
-                value = this._constrain( value );
-            }
-            this._super( key, value );
-        },
-        _setOptions: function( options ) {
-            this._super( options );
-            this.refresh();
-        },
-        refresh: function() {
-            var progress = this.options.value + "%";
-            this.element.text( progress );
-            if ( this.options.value == 100 ) {
-                this._trigger( "complete", null, { value: 100 } );
-            }
-        },
-        _constrain: function( value ) {
-            if ( value > 100 ) {
-                value = 100;
-            }
-            if ( value < 0 ) {
-                value = 0;
-            }
-            return value;
-        }
-    });
+$.widget( "custom.progressbar", {
+	options: {
+		value: 0
+	},
+	_create: function() {
+		this.element.addClass( "progressbar" );
+		this.refresh();
+	},
+	_setOption: function( key, value ) {
+		if ( key === "value" ) {
+			value = this._constrain( value );
+		}
+		this._super( key, value );
+	},
+	_setOptions: function( options ) {
+		this._super( options );
+		this.refresh();
+	},
+	refresh: function() {
+		var progress = this.options.value + "%";
+		this.element.text( progress );
+		if ( this.options.value == 100 ) {
+			this._trigger( "complete", null, { value: 100 } );
+		}
+	},
+	_constrain: function( value ) {
+		if ( value > 100 ) {
+			value = 100;
+		}
+		if ( value < 0 ) {
+			value = 0;
+		}
+		return value;
+	}
+});
 ```
 
 Callback functions are essentially just additional options, so you can
@@ -254,19 +258,19 @@ method will return false so you can implement the appropriate
 functionality within your plugin.
 
 ```
-    var bar = $( "<div></div>" )
-        .appendTo( "body" )
-        .progressbar({
-            complete: function( event, data ) {
-                alert( "Callbacks are great!" );
-            }
-        })
-        .bind( "progressbarcomplete", function( event, data ) {
-            alert( "Events bubble and support many handlers for extreme flexibility." );
-            alert( "The progress bar value is " + data.value );
-        });
+var bar = $( "<div></div>" )
+	.appendTo( "body" )
+	.progressbar({
+		complete: function( event, data ) {
+			alert( "Callbacks are great!" );
+		}
+	})
+	.bind( "progressbarcomplete", function( event, data ) {
+		alert( "Events bubble and support many handlers for extreme flexibility." );
+		alert( "The progress bar value is " + data.value );
+	});
 
-    bar.progressbar( "option", "value", 100 );
+bar.progressbar( "option", "value", 100 );
 ```
 
 ## Looking under the hood
@@ -288,16 +292,16 @@ directly on the plugin instance instead of passing method names as
 strings and will also give you direct access to the plugin’s properties.
 
 ```
-    var bar = $( "<div></div>" )
-        .appendTo( "body" )
-        .progressbar()
-        .data( "progressbar" );
+var bar = $( "<div></div>" )
+	.appendTo( "body" )
+	.progressbar()
+	.data( "progressbar" );
 
-    // call a method directly on the plugin instance
-    bar.option( "value", 50 );
+// Call a method directly on the plugin instance.
+bar.option( "value", 50 );
 
-    // access properties on the plugin instance
-    alert( bar.options.value );
+// Access properties on the plugin instance.
+alert( bar.options.value );
 ```
 
 You can also create an instance without going through the plugin method,
@@ -305,10 +309,10 @@ by calling the constructor directly, with the options and element
 arguments:
 
 ```
-    var bar = $.custom.progressbar( {}, $( "<div></div>" ).appendTo( "body") );
+var bar = $.custom.progressbar( {}, $( "<div></div>" ).appendTo( "body") );
 
-    // same result as before
-    alert( bar.options.value );
+// Same result as before.
+alert( bar.options.value );
 ```
 
 ### Extending a plugin’s prototype
@@ -322,9 +326,9 @@ the prototype and it would instantly be available to be called on any
 plugin instance.
 
 ```
-    $.custom.progressbar.prototype.reset = function() {
-        this._setOption( "value", 0 );
-    };
+$.custom.progressbar.prototype.reset = function() {
+	this._setOption( "value", 0 );
+};
 ```
 
 ### Cleaning up
@@ -341,46 +345,46 @@ widget's DOM element, unbinding all events in the widget's namespace from the
 element, and unbinding generally all events that were added using `_bind`.
 
 ```
-    $.widget( "custom.progressbar", {
-        options: {
-            value: 0
-        },
-        _create: function() {
-            this.element.addClass( "progressbar" );
-            this.refresh();
-        },
-        _setOption: function( key, value ) {
-            if ( key === "value" ) {
-                value = this._constrain( value );
-            }
-            this._super( key, value );
-        },
-        _setOptions: function( options ) {
-            this._super( options );
-            this.refresh();
-        },
-        refresh: function() {
-            var progress = this.options.value + "%";
-            this.element.text( progress );
-            if ( this.options.value == 100 ) {
-                this._trigger( "complete", null, { value: 100 } );
-            }
-        },
-        _constrain: function( value ) {
-            if ( value > 100 ) {
-                value = 100;
-            }
-            if ( value < 0 ) {
-                value = 0;
-            }
-            return value;
-        },
-        _destroy: function() {
-            this.element
-                .removeClass( "progressbar" )
-                .text( "" );
-        }
-    });
+$.widget( "custom.progressbar", {
+	options: {
+		value: 0
+	},
+	_create: function() {
+		this.element.addClass( "progressbar" );
+		this.refresh();
+	},
+	_setOption: function( key, value ) {
+		if ( key === "value" ) {
+			value = this._constrain( value );
+		}
+		this._super( key, value );
+	},
+	_setOptions: function( options ) {
+		this._super( options );
+		this.refresh();
+	},
+	refresh: function() {
+		var progress = this.options.value + "%";
+		this.element.text( progress );
+		if ( this.options.value == 100 ) {
+			this._trigger( "complete", null, { value: 100 } );
+		}
+	},
+	_constrain: function( value ) {
+		if ( value > 100 ) {
+			value = 100;
+		}
+		if ( value < 0 ) {
+			value = 0;
+		}
+		return value;
+	},
+	_destroy: function() {
+		this.element
+			.removeClass( "progressbar" )
+			.text( "" );
+	}
+});
 ```
 
 ## Closing comments

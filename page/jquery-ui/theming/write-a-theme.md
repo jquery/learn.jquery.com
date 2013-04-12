@@ -24,17 +24,15 @@ All themes should have a base CSS class to work off of. This main class allows t
 ```html
 <html>
 <head>
-  <title>My Site</title>
-  <link rel="stylesheet" href="themename/themename.css"/>
-  <link rel="stylesheet" href="othertheme/othertheme.css"/>
-  <link rel="stylesheet" href="othertheme/othertheme.dialog.css"/>
+	<title>My Site</title>
+	<link rel="stylesheet" href="themename/themename.css" />
+	<link rel="stylesheet" href="othertheme/othertheme.css" />
+	<link rel="stylesheet" href="othertheme/othertheme.dialog.css" />
 </head>
 <body class="ui-themename">
- ...
-
- <div class="ui-othertheme">
-   <div class="ui-dialog">... modal dialog ...</div>
- </div>
+	<div class="ui-othertheme">
+		<div class="ui-dialog">This is a modal dialog.</div>
+	</div>
 </body>
 </html>
 ```
