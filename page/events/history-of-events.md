@@ -25,6 +25,7 @@ It is possible to use `.bind()` and attach a handler to every element.
 
 ```
 ​$( "#list li" ).bind( "click", function( event ) {
+	var $elem = $( event.target );
 	console.log( $elem.text() );
 });​​​​​​​​​​​​​​​​​​​​​
 ```
