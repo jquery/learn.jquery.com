@@ -12,8 +12,7 @@ Themes are meant to be structured in a specific manner (in order to increase the
 * `themename/themename.pluginname.css` - You'll need one CSS file for each plugin that you support. The name of the plugin should be included directly in the filename (for example, if you themed the tabs plugin, you would have: themename.tabs.js).
 * `themename/img.png` - Your theme can include images, if need be. They can be named whatever you'd like (there is no, particular, naming convention for these).
 
-For examples of how theme file structures are done, feel free to look through the only completed theme so far:
-http://jquery-ui.googlecode.com/svn/trunk/themes/flora/
+For examples of how theme file structures are done, feel free to look through the [jQuery UI base theme](https://github.com/jquery/jquery-ui/tree/master/themes/base).
 
 ### Styling
 
