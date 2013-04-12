@@ -21,14 +21,4 @@ There are three general approaches to theming jQuery UI plugins:
 * **Modify the CSS files**: To get a bit more control over the look and feel, you may choose to start with the default theme (Smoothness) or a ThemeRoller-generated theme and then adjust the `ui.theme.css` file or any of the individual plugin stylesheets. For example, you could easily tweak the corner radius for all buttons to be different than the rest of the UI components or change the path for the icon sprite to use a custom set.  With a bit of style scoping, you can even use multiple themes together in a single UI. To keep maintenance simple, restricting changes to just the `ui.theme.css` file and images is recommended.
 * **Write completely custom CSS**: For the greatest amount of control, the CSS for each plugin can be written from scratch without using the framework classes or plugin-specific stylesheet. This may be necessary if the desired look and feel can't be achieved by modifying the CSS or if highly customized markup is used. This approach requires deep expertise in CSS and will require manual updates for future plugins.
 
-### Using ThemeRoller and Themes
-
-
-* [ThemeRoller application](http://jqueryui.com/themeroller/)
-* [ThemeRoller documentation](/jquery-ui/theming/themeroller) - How to use the ThemeRoller application
-
-### jQuery UI CSS Framework & Custom themes
-
-
-* [jQuery UI CSS Framework documentation](/jquery-ui/theming/api/) - Explore the full class API and icon set
-* [How to create custom themes](/jquery-ui/theming/custom-themes) - Tutorial for creating a theme from scratch
+### Using ThemeRoller, the jQuery UI CSS Framework, and Writing Custom Themes
