@@ -10,55 +10,55 @@ plugin users to override/customize the plugin with minimal code. And this is
 where we begin to take advantage of the function object.
 
 ```
-// plugin definition
+// Plugin definition.
 $.fn.hilight = function( options ) {
 
-  // Extend our default options with those provided.
-  // Note that the first arg to extend is an empty object -
-  // this is to keep from overriding our "defaults" object.
-  var opts = $.extend({}, $.fn.hilight.defaults, options);
+	// Extend our default options with those provided.
+	// Note that the first argument to extend is an empty
+	// object – this is to keep from overriding our "defaults" object.
+	var opts = $.extend( {}, $.fn.hilight.defaults, options );
 
-  // Our plugin implementation code goes here.
+	// Our plugin implementation code goes here.
 
 };
 
-// plugin defaults - added as a property on our plugin function
+// Plugin defaults – added as a property on our plugin function.
 $.fn.hilight.defaults = {
-  foreground: "red",
-  background: "yellow"
+	foreground: "red",
+	background: "yellow"
 };
 ```
 
 Now users can include a line like this in their scripts:
 
 ```
-// this need only be called once and does not
-// have to be called from within a 'ready' block
+// This needs only be called once and does not
+// have to be called from within a "ready" block
 $.fn.hilight.defaults.foreground = "blue";
 ```
 
 And now we can call the plugin method like this and it will use a blue foreground color:
 
 ```
-$("#myDiv").hilight();
+$( "#myDiv" ).hilight();
 ```
 
 As you can see, we"ve allowed the user to write a single line of code to alter the default foreground color of the plugin. And users can still selectively override this new default value when they want:
 
 ```
-// override plugin default foreground color
+// Override plugin default foreground color.
 $.fn.hilight.defaults.foreground = "blue";
 
 // ...
 
-// invoke plugin using new defaults
-$(".hilightDiv").hilight();
+// Invoke plugin using new defaults.
+$( ".hilightDiv" ).hilight();
 
 // ...
 
-// override default by passing options to plugin method
-$("#green").hilight({
-  foreground: "green"
+// Override default by passing options to plugin method.
+$( "#green" ).hilight({
+	foreground: "green"
 });
 ```
 
@@ -71,32 +71,30 @@ formats the hilight text. Our plugin may now look like this, with the default
 implementation of the format method defined below the hilight function.
 
 ```
-
-// plugin definition
+// Plugin definition.
 $.fn.hilight = function( options ) {
 
-  // iterate and reformat each matched element
-  return this.each(function() {
+	// Iterate and reformat each matched element.
+	return this.each(function() {
 
-    var $this = $( this );
+		var $this = $( this );
 
-    // ...
+		// ...
 
-    var markup = $this.html();
+		var markup = $this.html();
 
-    // call our format function
-    markup = $.fn.hilight.format( markup );
+		// Call our format function.
+		markup = $.fn.hilight.format( markup );
 
-    $this.html( markup );
+		$this.html( markup );
 
-  });
+	});
+
 };
 
-// define our format function
-$.fn.hilight.format = function( txt ) {"
-
-  return "<strong>" + txt + "</strong>";
-
+// Define our format function.
+$.fn.hilight.format = function( txt ) {
+	return "<strong>" + txt + "</strong>";
 };
 ```
 
@@ -121,7 +119,7 @@ definitions. It's defined in the plugin like this:
 ```
 $.fn.cycle.transitions = {
 
-  // ...
+	// ...
 
 };
 ```
@@ -145,25 +143,26 @@ create a closure, we wrap the entire plugin definition in a function (as
 detailed in the jQuery Authoring Guidelines).
 
 ```
-// create closure
+// Create closure.
 (function( $ ) {
 
-  // plugin definition
-  $.fn.hilight = function( options ) {
-    debug( this );
-    // ...
-  };
+	// Plugin definition.
+	$.fn.hilight = function( options ) {
+		debug( this );
+		// ...
+	};
 
-  // private function for debugging
-  function debug( $obj ) {
-    if ( window.console && window.console.log ) {
-      window.console.log( "hilight selection count: " + $obj.size() );
-    }
-  };
+	// Private function for debugging.
+	function debug( $obj ) {
+		if ( window.console && window.console.log ) {
+			window.console.log( "hilight selection count: " + $obj.size() );
+		}
+	};
 
-  // ...
+	// ...
 
-// end of closure
+// End of closure.
+
 })( jQuery );
 ```
 
@@ -178,22 +177,24 @@ use unobtrusive markup to override plugin options (which is particularly useful
 when creating demos and examples). And supporting it is very simple!
 
 ```
-// plugin definition
+// Plugin definition.
 $.fn.hilight = function( options ) {
 
-  // build main options before element iteration
-  var opts = $.extend( {}, $.fn.hilight.defaults, options );
+	// Build main options before element iteration.
+	var opts = $.extend( {}, $.fn.hilight.defaults, options );
 
-  return this.each(function() {
-    var $this = $( this );
+	return this.each(function() {
+		var $this = $( this );
 
-    // build element specific options
-    // This changed line tests to see if the Metadata Plugin is installed,
-    // and if it is, it extends our options object with the extracted metadata.
-    var o = $.meta ? $.extend( {}, opts, $this.data() ) : opts;
+		// Build element specific options.
+		// This changed line tests to see if the Metadata Plugin is installed,
+		// And if it is, it extends our options object with the extracted metadata.
+		var o = $.meta ? $.extend( {}, opts, $this.data() ) : opts;
 
-    //...
-  });
+		//...
+
+	});
+
 };
 ```
 
@@ -206,20 +207,20 @@ choose:
 ```
 <!--  markup  -->
 <div class="hilight { background: 'red', foreground: 'white' }">
-  Have a nice day!
+	Have a nice day!
 </div>
 <div class="hilight { foreground: 'orange' }">
-  Have a nice day!
+	Have a nice day!
 </div>
 <div class="hilight { background: 'green' }">
-  Have a nice day!
+	Have a nice day!
 </div>
 ```
 
 And now we can hilight each of these divs uniquely using a single line of script:
 
 ```
-$(".hilight").hilight();
+$( ".hilight" ).hilight();
 ```
 
 ###Bob and Sue
@@ -229,32 +230,33 @@ Let's say Bob has created a wicked new gallery plugin (called "superGallery") wh
 ```
 jQuery.fn.superGallery = function( options ) {
 
-  // Bob"s default settings:
-  var defaults = {
-    textColor : "#000",
-    backgroundColor : "#FFF",
-    fontSize : "1em",
-    delay : "quite long",
-    getTextFromTitle : true,
-    getTextFromRel : false,
-    getTextFromAlt : false,
-    animateWidth : true,
-    animateOpacity : true,
-    animateHeight : true,
-    animationDuration : 500,
-    clickImgToGoToNext : true,
-    clickImgToGoToLast : false,
-    nextButtonText : "next",
-    previousButtonText : "previous",
-    nextButtonTextColor : "red",
-    previousButtonTextColor : "red"
-  };
+	// Bob's default settings:
+	var defaults = {
+		textColor: "#000",
+		backgroundColor: "#fff",
+		fontSize: "1em",
+		delay: "quite long",
+		getTextFromTitle: true,
+		getTextFromRel: false,
+		getTextFromAlt: false,
+		animateWidth: true,
+		animateOpacity: true,
+		animateHeight: true,
+		animationDuration: 500,
+		clickImgToGoToNext: true,
+		clickImgToGoToLast: false,
+		nextButtonText: "next",
+		previousButtonText: "previous",
+		nextButtonTextColor: "red",
+		previousButtonTextColor: "red"
+	};
 
-  var settings = $.extend( {}, defaults, options );
+	var settings = $.extend( {}, defaults, options );
 
-  return this.each(function() {
-    // Plugin code would go here...
-  });
+	return this.each(function() {
+		// Plugin code would go here...
+	});
+
 };
 ```
 
@@ -289,24 +291,25 @@ var delayDuration = 0;
 
 switch ( settings.delay ) {
 
-  case "very short":
-    delayDuration = 100;
-  break;
+	case "very short":
+		delayDuration = 100;
+		break;
 
-  case "quite short":
-    delayDuration = 200;
-  break;
+	case "quite short":
+		delayDuration = 200;
+		break;
 
-  case "quite long":
-    delayDuration = 300;
-  break;
+	case "quite long":
+		delayDuration = 300;
+		break;
 
-  case "very long":
-    delayDuration = 400;
-  break;
+	case "very long":
+		delayDuration = 400;
+		break;
 
-  default:
-    delayDuration = 200
+	default:
+		delayDuration = 200;
+
 }
 ```
 
@@ -322,26 +325,26 @@ A bad implementation:
 
 ```
 // Plugin code
-$("<div id="the_gallery_Wrapper" />").appendTo("body");
+$( "<div id=\"the-gallery-wrapper\" />").appendTo( "body" );
 
-$("#the_gallery_wrapper").append("...");
+$( "#the-gallery-wrapper" ).append( "..." );
 
 // Retain an internal reference:
-var $wrapper = $("<div />")
-  .attr( settings.wrapperAttrs )
-  .appendTo( settings.container );
+var $wrapper = $( "<div />" )
+	.attr( settings.wrapperAttrs )
+	.appendTo( settings.container );
 
-$wrapper.append("..."); // Easy to reference later...
+$wrapper.append( "..." ); // Easy to reference later...
 ```
 
 Notice that we've created a reference to the injected wrapper and we're also calling the 'attr' method to add any specified attributes to the element. So, in our settings it might be handled like this:
 
 ```
 var defaults = {
-  wrapperAttrs : {
-    id: "gallery-wrapper"
-  },
-  // ... rest of settings ...
+	wrapperAttrs : {
+		id: "gallery-wrapper"
+	},
+	// ... rest of settings ...
 };
 
 // We can use the extend method to merge options/settings as usual:
@@ -357,15 +360,15 @@ The same model can be used to let the user define CSS styles:
 
 ```
 var defaults = {
-  wrapperCSS : {},
-  // ... rest of settings ...
+	wrapperCSS: {},
+	// ... rest of settings ...
 };
 
 // Later on in the plugin where we define the wrapper:
-var $wrapper = $("<div />")
-  .attr( settings.wrapperAttrs )
-  .css( settings.wrapperCSS ) // ** Set CSS!
-  .appendTo( settings.container );
+var $wrapper = $( "<div />" )
+	.attr( settings.wrapperAttrs )
+	.css( settings.wrapperCSS ) // ** Set CSS!
+	.appendTo( settings.container );
 ```
 
 Your plugin may have an associated StyleSheet where developers can add CSS styles. Even in this situation it's a good idea to offer some convenient way of setting styles in JavaScript, without having to use a selector to get at the elements.
@@ -378,12 +381,12 @@ If your plugin is driven by events then it might be a good idea to provide a cal
 
 ```
 var defaults = {
-  // we define an empty anonymous function
-  // so that we don't need to check its
-  // existence before calling it.
-  onImageShow : function() {},
 
-  // ... rest of settings ...
+	// We define an empty anonymous function so that
+	// we don't need to check its existence before calling it.
+	onImageShow : function() {},
+
+	// ... rest of settings ...
 
 };
 
@@ -393,22 +396,22 @@ $nextButton.bind( "click", showNextImage );
 
 function showNextImage() {
 
-    // stuff to show the image here...
+	// Stuff to show the image here...
 
-    // Here's the callback:
-    settings.onImageShow.call( this );
+	// Here's the callback:
+	settings.onImageShow.call( this );
 }
 ```
 
 Instead of initiating the callback via traditional means (adding parenthesis) we're calling it in the context of 'this' which will be a reference to the image node. This means that you have access to the actual image node through the 'this' keyword within the callback:
 
 ```
-$("ul.imgs li").superGallery({
-  onImageShow : function() {
-    $( this ).after( "<span>" + $( this ).attr("longdesc") + "</span>" );
-  },
+$( "ul.imgs li" ).superGallery({
+	onImageShow: function() {
+		$( this ).after( "<span>" + $( this ).attr( "longdesc" ) + "</span>" );
+	},
 
-  // ... other options ...
+	// ... other options ...
 });
 ```
 

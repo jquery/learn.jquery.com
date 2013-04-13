@@ -25,16 +25,15 @@ First, the context is an object, not a DOM element.
 Second, the context is always a single object, never a collection.
 
 A simple, stateful plugin using the jQuery UI widget factory
+
+
 ```
 $.widget( "nmk.progressbar", {
 
-  _create: function() {
-
-    var progress = this.options.value + "%";
-
-    this.element.addClass("progressbar").text( progress );
-
-  }
+	_create: function() {
+		var progress = this.options.value + "%";
+		this.element.addClass( "progressbar" ).text( progress );
+	}
 
 });
 ```
@@ -55,7 +54,7 @@ This makes it clear where the plugin came from and whether it is part of a large
 
 Passing options to a widget
 ```
-    $("<div></div>").appendTo( "body" ).progressbar({ value: 20 });
+$( "<div />" ).appendTo( "body" ).progressbar({ value: 20 });
 ```
 
 When we call `jQuery.widget `it extends jQuery by adding a method to `jQuery.fn` (the same way we'd create a standard plugin).
@@ -64,25 +63,22 @@ The options passed to our plugin get set in `this.options` inside of our plugin 
 As shown below, we can specify default values for any of our options.
 When designing your API, you should figure out the most common use case for your plugin so that you can set appropriate default values and make all options truly optional.
 
+
+
+
 ```
-Setting default options for a widget
 
 $.widget( "nmk.progressbar", {
 
-  // default options
-  options: {
+	// Default options.
+	options: {
+		value: 0
+	},
 
-    value: 0
-
-  },
-
-  _create: function() {
-
-    var progress = this.options.value + "%";
-
-    this.element.addClass( "progressbar" ).text( progress );
-
-  }
+	_create: function() {
+		var progress = this.options.value + "%";
+		this.element.addClass( "progressbar" ).text( progress );
+	}
 
 });
 ```
@@ -94,60 +90,50 @@ To define a plugin method, we just include the function in the object literal th
 We can also define “private” methods by prepending an underscore to the function name.
 
 Creating widget methods
+
 ```
-
 $.widget( "nmk.progressbar", {
-  options: {
-    value: 0
-  },
+	options: {
+		value: 0
+	},
 
-  _create: function() {
+	_create: function() {
+		var progress = this.options.value + "%";
+		this.element.addClass("progressbar").text( progress );
+	},
 
-    var progress = this.options.value + "%";
+	// Create a public method.
+	value: function( value ) {
 
-    this.element.addClass("progressbar").text( progress );
+		// No value passed, act as a getter.
+		if ( value === undefined ) {
 
-  },
+			return this.options.value;
 
-  // create a public method
-  value: function( value ) {
+		// Value passed, act as a setter.
+		} else {
 
-    // no value passed, act as a getter
-    if ( value === undefined ) {
+			this.options.value = this._constrain( value );
+			var progress = this.options.value + "%";
+			this.element.text( progress );
 
-      return this.options.value;
+		}
 
-    // value passed, act as a setter
-    } else {
+	},
 
-      this.options.value = this._constrain( value );
+	// Create a private method.
+	_constrain: function( value ) {
 
-      var progress = this.options.value + "%";
+		if ( value > 100 ) {
+			value = 100;
+		}
 
-      this.element.text( progress );
+		if ( value < 0 ) {
+			value = 0;
+		}
 
-    }
-
-  },
-
-  // create a private method
-  _constrain: function( value ) {
-
-    if ( value > 100 ) {
-
-      value = 100;
-
-    }
-
-    if ( value < 0 ) {
-
-      value = 0;
-
-    }
-
-    return value;
-
-  }
+		return value;
+	}
 
 });
 ```
@@ -156,16 +142,16 @@ To call a method on a plugin instance, you pass the name of the method to the jQ
 
 Calling methods on a plugin instance
 ```
-var bar = $("<div></div>").appendTo("body").progressbar({ value: 20 });
+var bar = $( "<div />" ).appendTo( "body").progressbar({ value: 20 });
 
-// get the current value
-alert( bar.progressbar("value") );
+// Get the current value.
+alert( bar.progressbar( "value" ) );
 
-// update the value
+// Update the value.
 bar.progressbar( "value", 50 );
 
-// get the current value again
-alert( bar.progressbar("value") );
+// Get the current value again.
+alert( bar.progressbar( "value" ) );
 ```
 
 <div class="note" markdown="1">
@@ -187,35 +173,24 @@ Responding when an option is set
 ```
 $.widget( "nmk.progressbar", {
 
-  options: {
+	options: {
+		value: 0
+	},
 
-    value: 0
+	_create: function() {
+		this.element.addClass( "progressbar" );
+		this._update();
+	},
 
-  },
+	_setOption: function( key, value ) {
+		this.options[ key ] = value;
+		this._update();
+	},
 
-  _create: function() {
-
-    this.element.addClass("progressbar");
-
-    this._update();
-
-  },
-
-  _setOption: function( key, value ) {
-
-    this.options[ key ] = value;
-
-    this._update();
-
-  },
-
-  _update: function() {
-
-    var progress = this.options.value + "%";
-
-    this.element.text( progress );
-
-  }
+	_update: function() {
+		var progress = this.options.value + "%";
+		this.element.text( progress );
+	}
 
 });
 ```
@@ -235,42 +210,32 @@ allow users to react to the drag based on the x/y coordinates provided by the
 event object.
 
 Providing callbacks for user extension
+
+
 ```
 $.widget( "nmk.progressbar", {
 
-  options: {
+	options: {
+		value: 0
+	},
 
-    value: 0
+	_create: function() {
+		this.element.addClass( "progressbar" );
+		this._update();
+	},
 
-  },
+	_setOption: function( key, value ) {
+		this.options[ key ] = value;
+		this._update();
+	},
 
-  _create: function() {
-
-    this.element.addClass("progressbar");
-
-    this._update();
-  },
-
-  _setOption: function( key, value ) {
-
-    this.options[ key ] = value;
-
-    this._update();
-  },
-
-  _update: function() {
-
-    var progress = this.options.value + "%";
-
-    this.element.text( progress );
-
-    if ( this.options.value == 100 ) {
-
-      this._trigger( "complete", null, { value: 100 } );
-
-    }
-
-  }
+	_update: function() {
+		var progress = this.options.value + "%";
+		this.element.text( progress );
+		if ( this.options.value == 100 ) {
+			this._trigger( "complete", null, { value: 100 } );
+		}
+	}
 
 });
 ```
@@ -290,20 +255,21 @@ cancels the callback, the `_trigger` method will return false so you can
 implement the appropriate functionality within your plugin.
 
 Binding to widget events
+
+
+
 ```
-var bar = $("<div></div>").appendTo("body").progressbar({
+var bar = $( "<div />" ).appendTo( "body" ).progressbar({
 
-    complete: function( event, data ) {
-
-        alert("Callbacks are great!");
-
-    }
+	complete: function( event, data ) {
+		alert( "Callbacks are great!" );
+	}
 
 }).bind( "progressbarcomplete", function( event, data ) {
 
-  alert("Events bubble and support many handlers for extreme flexibility.");
+ 	alert( "Events bubble and support many handlers for extreme flexibility." );
 
-  alert( "The progress bar value is " + data.value );
+ 	alert( "The progress bar value is " + data.value );
 
 });
 
@@ -317,15 +283,15 @@ When you call jQuery.widget, it creates a constructor function for your plugin a
 Because the plugin instance is directly linked to the DOM element, you can access the plugin instance directly instead of going through the exposed plugin method if you want. This will allow you to call methods directly on the plugin instance instead of passing method names as strings and will also give you direct access to the plugin’s properties.
 
 ```
-var bar = $("<div></div>")
-  .appendTo("body")
-  .progressbar()
-  .data("progressbar");
+var bar = $( "<div />")
+	.appendTo( "body" )
+	.progressbar()
+	.data( "progressbar" );
 
-// call a method directly on the plugin instance
+// Call a method directly on the plugin instance.
 bar.option( "value", 50 );
 
-// access properties on the plugin instance
+// Access properties on the plugin instance.
 alert( bar.options.value );
 ```
 
@@ -338,9 +304,7 @@ be available to be called on any plugin instance.
 
 ```
 $.nmk.progressbar.prototype.reset = function() {
-
-  this._setOption( "value", 0 );
-
+	this._setOption( "value", 0 );
 };
 ```
 
@@ -359,52 +323,36 @@ Adding a destroy method to a widget
 ```
 $.widget( "nmk.progressbar", {
 
-  options: {
+	options: {
+		value: 0
+	},
 
-    value: 0
+	_create: function() {
+		this.element.addClass("progressbar");
+		this._update();
+	},
 
-  },
+	_setOption: function( key, value ) {
+		this.options[ key ] = value;
+		this._update();
+	},
 
-  _create: function() {
+	_update: function() {
+		var progress = this.options.value + "%";
+		this.element.text( progress );
+		if ( this.options.value === 100 ) {
+			this._trigger( "complete", null, { value: 100 } );
+		}
+	},
 
-    this.element.addClass("progressbar");
+	destroy: function() {
+		this.element
+			.removeClass( "progressbar" )
+			.text( "" );
 
-    this._update();
-
-  },
-
-  _setOption: function( key, value ) {
-
-    this.options[ key ] = value;
-
-    this._update();
-
-  },
-
-  _update: function() {
-
-    var progress = this.options.value + "%";
-
-    this.element.text( progress );
-
-    if ( this.options.value === 100 ) {
-
-      this._trigger( "complete", null, { value: 100 } );
-
-    }
-
-  },
-
-  destroy: function() {
-
-    this.element
-      .removeClass("progressbar")
-      .text("");
-
-    // call the base destroy function
-    $.Widget.prototype.destroy.call( this );
-
-  }
+		// Call the base destroy function.
+		$.Widget.prototype.destroy.call( this );
+	}
 
 });
 ```
