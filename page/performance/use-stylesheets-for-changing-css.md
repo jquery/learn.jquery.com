@@ -6,8 +6,7 @@ attribution:
   - jQuery Fundamentals
 ---
 
-If you're changing the CSS of more than 20 elements using `$.fn.css`, consider
-adding a style tag to the page instead for a nearly 60% increase in speed.
+If you're changing the CSS of more than 20 elements using `$.fn.css`, consider adding a style tag to the page instead for a nearly 60% increase in speed.
 
 ```
 // Fine for up to 20 elements, slow after that:

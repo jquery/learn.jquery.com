@@ -6,8 +6,7 @@ attribution:
   - jQuery Fundamentals
 ---
 
-Touching the DOM comes at a cost; if you're appending a lot of elements to the
-DOM, you will want to append them all at once, rather then one at a time. This is common problem when appending elements within a loop.
+Touching the DOM comes at a cost; if you're appending a lot of elements to the DOM, you will want to append them all at once, rather then one at a time. This is common problem when appending elements within a loop.
 
 ```
 $.each( myArray, function( i, item ) {
@@ -19,9 +18,7 @@ $.each( myArray, function( i, item ) {
 });
 ```
 
-One common technique is to leverage a document fragment. During each iteration
-of the loop, you append the element to the fragment rather than the DOM
-element. After the loop, just append the fragment to the DOM element.
+One common technique is to leverage a document fragment. During each iteration of the loop, you append the element to the fragment rather than the DOM element. After the loop, just append the fragment to the DOM element.
 
 ```
 var frag = document.createDocumentFragment();
@@ -40,7 +37,7 @@ $.each( myArray, function( i, item ) {
 $( "#ballers" )[ 0 ].appendChild( frag );
 ```
 
-Another technique, which is quite simple, is to build up a string during each iteration of the loop. After the loop, just set the html of the DOM element to that string.
+Another technique, which is quite simple, is to build up a string during each iteration of the loop. After the loop, just set the HTML of the DOM element to that string.
 
 ```
 var myHtml = "";

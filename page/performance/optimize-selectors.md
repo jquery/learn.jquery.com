@@ -6,9 +6,7 @@ attribution:
   - jQuery Fundamentals
 ---
 
-Selector optimization is less important than it used to be, as more browsers
-implement document.querySelectorAll() and the burden of selection shifts from
-jQuery to the browser. However, there are still some tips to keep in mind.
+Selector optimization is less important than it used to be, as more browsers implement `document.querySelectorAll()` and the burden of selection shifts from jQuery to the browser. However, there are still some tips to keep in mind.
 
 ## ID-Based Selectors
 
@@ -22,15 +20,11 @@ $( "#container div.robotarm" );
 $( "#container" ).find( "div.robotarm" );
 ```
 
-The `$.fn.find` approach is faster because the first selection is handled
-without going through the Sizzle selector engine — ID-only selections are
-handled using `document.getElementById()`, which is extremely fast because it is
-native to the browser.
+The `$.fn.find` approach is faster because the first selection is handled without going through the Sizzle selector engine – ID-only selections are handled using `document.getElementById()`, which is extremely fast because it is native to the browser.
 
 ## Specificity
 
-Be specific on the right-hand side of your selector, and less specific on the
-left.
+Be specific on the right-hand side of your selector, and less specific on the left.
 
 ```
 // Unoptimized:
@@ -40,10 +34,9 @@ $( "div.data .gonzalez" );
 $( ".data td.gonzalez" );
 ```
 
-Use `tag.class` if possible on your right-most selector, and just tag or just
-`.class` on the left.
+Use `tag.class` if possible on your right-most selector, and just tag or just `.class` on the left.
 
-## Avoid excessive specificity.
+## Avoid Excessive Specificity
 
 ```
 $( ".data table.attendees td.gonzalez" );
@@ -52,13 +45,11 @@ $( ".data table.attendees td.gonzalez" );
 $( ".data td.gonzalez" );
 ```
 
-A "flatter" DOM also helps improve selector performance, as the selector engine
-has fewer layers to traverse when looking for an element.
+A "flatter" DOM also helps improve selector performance, as the selector engine has fewer layers to traverse when looking for an element.
 
 ## Avoid the Universal Selector
 
-Selections that specify or imply that a match could be found anywhere can be
-very slow.
+Selections that specify or imply that a match could be found anywhere can be very slow.
 
 ```
 $( ".buttons > *" ); // Extremely expensive.
