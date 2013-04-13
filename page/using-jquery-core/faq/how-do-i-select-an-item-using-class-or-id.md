@@ -6,27 +6,27 @@ source:       http://docs.jquery.com/Frequently_Asked_Questions
 This code selects an element with an ID of "myDivId". Since IDs are unique, this expression always selects either zero or one elements depending upon whether or not an element with the specified ID exists.
 
 ```
-$("#myDivId")
+$( "#myDivId" );
 ```
 
 This code selects an element with a class of "myCssClass". Since any number of elements can have the same class, this expression will select any number of elements.
 
 ```
-$(".myCssClass")
+$( ".myCssClass" );
 ```
 
 A jQuery object containing the selected element can be assigned to a JavaScript variable like normal:
 
 ```
-var myDivElement = $("#myDivId");
+var myDivElement = $( "#myDivId" );
 ```
 
 Usually, elements in a jQuery object are acted on by other jQuery functions:
 
 ```
-var myValue = $("#myDivId").val();    // get the value of a form input
+var myValue = $( "#myDivId" ).val(); // Get the value of a form input.
 
-$("#myDivId").val("hello world");     // set the value of a form input
+$( "#myDivId" ).val( "hello world" ); // Set the value of a form input.
 ```
 
 ### Related Articles

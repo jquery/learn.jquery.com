@@ -7,8 +7,8 @@ You can enable or disable a form element using the `.prop()` method:
 
 ```
 // Disable #x
-$("#x").prop( "disabled", true );
+$( "#x" ).prop( "disabled", true );
 
 // Enable #x
-$("#x").prop( "disabled", false );
+$( "#x" ).prop( "disabled", false );
 ```

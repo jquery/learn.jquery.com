@@ -7,8 +7,8 @@ You can check or uncheck a checkbox element or a radio button using the `.prop()
 
 ```
 // Check #x
-$("#x").prop( "checked", true );
+$( "#x" ).prop( "checked", true );
 
 // Uncheck #x
-$("#x").prop( "checked", false );
+$( "#x" ).prop( "checked", false );
 ```
