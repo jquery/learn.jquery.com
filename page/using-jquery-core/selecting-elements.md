@@ -120,77 +120,77 @@ jQuery offers several pseudo-selectors that help find elements in forms. These a
 
 #### :button
 
-Using the `:button` pseudo-selector targets just the `<button>` elements and elements with a `type = "button"`:
+Using the `:button` pseudo-selector targets any `<button>` elements and elements with a `type="button"`:
 
 ```
 $( "form :button" );
 ```
 
-In order to get the best performance using `:button`, it's best to first select elements with a standard jQuery selector, then to use `.filter(":button")`. More can be seen on the [jQuery :button documentation page](http://api.jquery.com/button-selector/). Another option is to precede the pseudo-selector with a tag name or some other selector.
+In order to get the best performance using `:button`, it's best to first select elements with a standard jQuery selector, then use `.filter( ":button" )`. More can be seen on the [jQuery :button documentation page](http://api.jquery.com/button-selector/). Another option is to precede the pseudo-selector with a tag name or some other selector.
 
 #### :checkbox
 
-Using the `:checkbox` pseudo-selector targets any elements with a `type = "checkbox"`:
+Using the `:checkbox` pseudo-selector targets any `<input>` elements with a `type="checkbox"`:
 
 ```
 $( "form :checkbox" );
 ```
 
-Much like the `:button` pseudo-selector, it's best to first select elements with a standard jQuery selector, then to use `.filter(":checkbox")`, or to precede the pseudo-selector with some other selector.
+Much like the `:button` pseudo-selector, it's best to first select elements with a standard jQuery selector, then to use `.filter( ":checkbox" )`, or to precede the pseudo-selector with some other selector.
 
 #### :checked
 
-Not to be confused with *:checkbox*, `:checked` targets only the *checked* checkboxes as well as checked radio buttons.
+Not to be confused with *:checkbox*, `:checked` targets only the *checked* checkboxes as well as checked radio buttons:
 
 ```
 $( "form :checked" );
 ```
 
-The `:checked` pseudo-selector works when used with **checkboxes** and **radio** buttons.
+The `:checked` pseudo-selector works when used with **checkboxes** and **radio buttons**.
 
 #### :disabled
 
-Using the `:disabled` pseudo-selector targets all `<input>` elements with the `disabled` attribute:
+Using the `:disabled` pseudo-selector targets any `<input>` elements with the `disabled` attribute:
 
 ```
 $( "form :disabled" );
 ```
 
-In order to get the best performance using `:disabled`, first select elements with a standard jQuery selector, then use `.filter(":disabled")`, or precede the pseudo-selector with a tag name or some other selector.
+In order to get the best performance using `:disabled`, first select elements with a standard jQuery selector, then use `.filter( ":disabled" )`, or precede the pseudo-selector with a tag name or some other selector.
 
 #### :enabled
 
-Basically the inverse of the *:disabled* pseudo-selector, the `:enabled` pseudo-selector targets all elements that *do not* have a disabled attribute:
+Basically the inverse of the *:disabled* pseudo-selector, the `:enabled` pseudo-selector targets any elements that *do not* have a `disabled` attribute:
 
 ```
 $( "form :enabled" );
 ```
 
-In order to get the best performance using `:enabled`, first select elements with a standard jQuery selector, then use `.filter(":enabled")`, or precede the pseudo-selector with a tag name or some other selector.
+In order to get the best performance using `:enabled`, first select elements with a standard jQuery selector, then use `.filter( ":enabled" )`, or precede the pseudo-selector with a tag name or some other selector.
 
 #### :file
 
-Using the `:file` pseudo-selector targets all `<input>`s that have a `type = "file"`:
+Using the `:file` pseudo-selector targets any `<input>` elements that have a `type="file"`:
 
 ```
 $( "form :file" );
 ```
 
-In order to get the best performance using `:file`, first select elements with a standard jQuery selector, then use `.filter(":file")`, or precede the pseudo-selector with a tag name or some other selector.
+In order to get the best performance using `:file`, first select elements with a standard jQuery selector, then use `.filter( ":file" )`, or precede the pseudo-selector with a tag name or some other selector.
 
-**Note:** for better performance in modern browsers, use `[type = "file"]` instead of the `:file` pseudo-selector.
+**Note:** For better performance in modern browsers, use `[type="file"]` instead of the `:file` pseudo-selector.
 
 #### :image
 
-Using the `:image` pseudo-selector easily targets all `<input>` tags that are the *image* type:
+Using the `:image` pseudo-selector targets any `<input>` elements that have a `type="image"`:
 
 ```
 $( "form :image" );
 ```
 
-In order to get the best performance using `:image`, first select elements with a standard jQuery selector, then use `.filter(":image")`, or precede the pseudo-selector with a tag name or some other selector.
+In order to get the best performance using `:image`, first select elements with a standard jQuery selector, then use `.filter( ":image" )`, or precede the pseudo-selector with a tag name or some other selector.
 
-**Note:** for better performance in modern browsers, use `[type = "image"]` instead of the `:image` pseudo-selector.
+**Note:** For better performance in modern browsers, use `[type="image"]` instead of the `:image` pseudo-selector.
 
 #### :input
 
@@ -202,19 +202,19 @@ $( "form :input" );
 
 #### :password
 
-Using the `:password` pseudo-selector easily targets any `<input>`s with a type of *password*:
+Using the `:password` pseudo-selector targets any `<input>` elements with a `type="password"`:
 
 ```
 $( "form :password" );
 ```
 
-In order to get the best performance using `:password`,first select elements with a standard jQuery selector, then use `.filter(":password")`, or precede the pseudo-selector with a tag name or some other selector.
+In order to get the best performance using `:password`, first select elements with a standard jQuery selector, then use `.filter( ":password" )`, or precede the pseudo-selector with a tag name or some other selector.
 
-**Note:** for better performance in modern browsers, use `[ type = "password" ]` instead of the `:password` pseudo-selector.
+**Note:** For better performance in modern browsers, use `[type="password"]` instead of the `:password` pseudo-selector.
 
 #### :radio
 
-Using the `:radio` pseudo-selector easily targets any `<input>`s that have a type of *radio*:
+Using the `:radio` pseudo-selector targets any `<input>` elements that have a `type="radio"`:
 
 ```
 $( "form :radio" );
@@ -227,43 +227,52 @@ To select a set of associated radio buttons use:
 $( "form input[name="gender"]:radio" );
 ```
 
-In order to get the best performance using `:radio`, first select elements with a standard jQuery selector, then use `.filter(":radio")`, or precede the pseudo-selector with a tag name or some other selector.
+In order to get the best performance using `:radio`, first select elements with a standard jQuery selector, then use `.filter( ":radio" )`, or precede the pseudo-selector with a tag name or some other selector.
 
-**Note:** for better performance in modern browsers, use `[ type = "radio" ]` instead of the `:radio` pseudo-selector.
+**Note:** For better performance in modern browsers, use `[type="radio"]` instead of the `:radio` pseudo-selector.
 
 #### :reset
+
+Using the `:reset` pseudo-selector targets any `<input>` elements that have a `type="reset"`:
 
 ```
 $( "form :reset" );
 ```
 
-In order to get the best performance using `:reset`, first select elements with a standard jQuery selector, then use `.filter(":reset")`, or precede the pseudo-selector with a tag name or some other selector.
+In order to get the best performance using `:reset`, first select elements with a standard jQuery selector, then use `.filter( ":reset" )`, or precede the pseudo-selector with a tag name or some other selector.
 
-**Note:** for better performance in modern browsers, use `[ type = "reset" ]` instead of the `:reset` pseudo-selector.
+**Note:** For better performance in modern browsers, use `[type="reset"]` instead of the `:reset` pseudo-selector.
 
 #### :selected
+
+Using the `:selected` pseudo-selector targets any selected items in `<option>` elements:
 
 ```
 $( "form :selected" );
 ```
 
-In order to get the best performance using `:selected`, first select elements with a standard jQuery selector, then use `.filter(":selected")`, or precede the pseudo-selector with a tag name or some other selector.
+In order to get the best performance using `:selected`, first select elements with a standard jQuery selector, then use `.filter( ":selected" )`, or precede the pseudo-selector with a tag name or some other selector.
 
 #### :submit
+
+Using the `:submit` pseudo-selector targets any `<button>` or `<input>` elements with a `type="button"`:
 
 ```
 $( "form :submit" );
 ```
 
-The `:submit` selector usually applies to `<button>` or `<input>` elements. Some browsers (such as Internet Explorer) do not automatically give the `<button>` element a *type = "submit"* by default.
+The `:submit` selector usually applies to `<button>` or `<input>` elements. Some browsers (such as Internet Explorer) do not automatically give the `<button>` element a `type="submit"` by default.
 
-**Note:** for better performance in modern browsers, use `[ type = "submit" ]` instead of the `:submit` pseudo-selector.
+**Note:** For better performance in modern browsers, use `[type="submit"]` instead of the `:submit` pseudo-selector.
 
 #### :text
+
+Using the `:text` pseudo-selector targets any `<input>` elements with a `type="text"`:
+
 ```
 $( "form :text" );
 ```
 
-In order to get the best performance using `:selected`, first select elements with a standard jQuery selector, then use `.filter(":selected")`, or precede the pseudo-selector with a tag name or some other selector.
+In order to get the best performance using `:text`, first select elements with a standard jQuery selector, then use `.filter( ":text" )`, or precede the pseudo-selector with a tag name or some other selector.
 
-**Note:** As of jQuery 1.5.2, `:text` selects `<input>` elements that have no specified *type* attribute. So, `type = "text"` is implied.
+**Note:** As of jQuery 1.5.2, `:text` selects `<input>` elements that have no specified *type* attribute. So, `type="text"` is implied.
