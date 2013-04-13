@@ -16,23 +16,24 @@ That said, there is one caveat: *by default, jQuery uses `$` as a shortcut for `
 When you put jQuery into no-conflict mode, you have the option of assigning a new variable name to replace the `$` alias.
 
 ```
-<!-- Putting jQuery into no-conflict mode -->
+<!-- Putting jQuery into no-conflict mode. -->
 <script src="prototype.js"></script>
 <script src="jquery.js"></script>
 <script>
-	// $j is now an alias to the jQuery function;
-	// creating the new alias is optional
-	var $j = jQuery.noConflict();
-	$j(document).ready(function(){
-       $j("div").hide();
-     });
 
-	// The $ variable now has the prototype meaning,
-	// which is a shortcut for document.getElementById.
-	// mainDiv below is a DOM element, not a jQuery object
-	window.onload = function(){
-	   var mainDiv = $('main');
-    }
+var $j = jQuery.noConflict();
+// $j is now an alias to the jQuery function; creating the new alias is optional.
+
+$j(document).ready(function() {
+	$j( "div" ).hide();
+});
+
+// The $ variable now has the prototype meaning, which is a shortcut for
+// document.getElementById(). mainDiv below is a DOM element, not a jQuery object.
+window.onload = function() {
+	var mainDiv = $( "main" );
+}
+
 </script>
 ```
 
@@ -41,24 +42,24 @@ In the code above, the `$` will revert back to its meaning in original library. 
 Finally, if you don't want to define another alternative to the full `jQuery` function name (you really like to use `$` and don't care about using the other library's `$` method), then there's still another approach you might try: simply add the `$` as an argument passed to your `jQuery(document).ready()` function. This is most frequently used in the case where you still want the benefits of really concise jQuery code, but don't want to cause conflicts with other libraries.
 
 ```
-<!-- Another way to put jQuery into no-conflict mode -->
+<!-- Another way to put jQuery into no-conflict mode. -->
 <script src="prototype.js"></script>
 <script src="jquery.js"></script>
 <script>
 
-	jQuery.noConflict();
-	jQuery(document).ready(function($){
-       // You can use the locally-scoped $ in here as an alias to jQuery
-       $("div").hide();
-     });
+jQuery.noConflict();
 
-	// The $ variable in the global scope has the prototype.js meaning
-	window.onload = function(){
-	   var mainDiv = $('main');
-    }
+jQuery( document ).ready(function( $ ) {
+	// You can use the locally-scoped $ in here as an alias to jQuery.
+	$( "div" ).hide();
+});
+
+// The $ variable in the global scope has the prototype.js meaning.
+window.onload = function(){
+	var mainDiv = $( "main" );
+}
 
 </script>
-
 ```
 
 This is probably the ideal solution for most of your code, considering that there'll be less code that you'll have to change in order to achieve complete compatibility.
@@ -68,20 +69,20 @@ This is probably the ideal solution for most of your code, considering that ther
 The code snippets above rely on jQuery being loaded after prototype.js is loaded. If you include jQuery before other libraries, you may use `jQuery` when you do some work with jQuery, but the `$` will have the meaning defined in the other library. There is no need to relinquish the `$` alias by calling `jQuery.noConflict()`.
 
 ```
-<!-- Loading jQuery before other libraries -->
+<!-- Loading jQuery before other libraries. -->
 <script src="jquery.js"></script>
 <script src="prototype.js"></script>
 <script>
 
-	// Use full jQuery function name to reference jQuery
-	jQuery(document).ready(function(){
-     jQuery("div").hide();
-   });
+// Use full jQuery function name to reference jQuery.
+jQuery( document ).ready(function() {
+	jQuery( "div" ).hide();
+});
 
-	// Use the $ variable as defined in prototype.js
-	window.onload = function() {
-   var mainDiv = $('main');
-  };
+// Use the $ variable as defined in prototype.js
+window.onload = function() {
+	var mainDiv = $( "main" );
+};
 
 </script>
 ```
@@ -99,8 +100,8 @@ The `jQuery.noConflict()` method returns a reference to the jQuery function, so 
 <script src="jquery.js"></script>
 <script>
 
-	// Give $ back to prototype.js; create new alias to jQuery
-    var $jq = jQuery.noConflict();
+// Give $ back to prototype.js; create new alias to jQuery.
+var $jq = jQuery.noConflict();
 
 </script>
 ```
@@ -110,15 +111,17 @@ The `jQuery.noConflict()` method returns a reference to the jQuery function, so 
 You can continue to use the standard `$` by wrapping your code in an immediately invoked function expression; this is also a standard pattern for jQuery plugin authoring, where the author cannot know whether another library will have taken over the `$`. See the [Plugins](/plugins) section for more information about writing plugins.
 
 ```
-<!-- Using the $ inside an immediately-invoked function expression -->
+<!-- Using the $ inside an immediately-invoked function expression. -->
 <script src="prototype.js"></script>
 <script src="jquery.js"></script>
 <script>
-   jQuery.noConflict();
 
-   (function($) {
-      // your jQuery code here, using the $
-   })(jQuery);
+jQuery.noConflict();
+
+(function( $ ) {
+	// Your jQuery code here, using the $
+})( jQuery );
+
 </script>
 ```
 
@@ -131,9 +134,9 @@ Note that if you use this technique, you will not be able to use prototype.js me
 <script src="prototype.js"></script>
 <script>
 
-   jQuery(document).ready(function($){
-      // your jQuery code here, using $ to refer to jQuery
-   });
+jQuery(document).ready(function( $ ) {
+	// Your jQuery code here, using $ to refer to jQuery.
+});
 
 </script>
 ```
@@ -145,9 +148,9 @@ Or using the more concise syntax for the DOM ready function:
 <script src="prototype.js"></script>
 <script>
 
-   jQuery(function($){
-      // your jQuery code here, using the $
-   });
+jQuery(function($){
+	// Your jQuery code here, using the $
+});
 
 </script>
 ```

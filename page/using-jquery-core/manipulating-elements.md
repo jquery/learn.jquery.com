@@ -23,8 +23,8 @@ There are many ways to change an existing element. Among the most common tasks i
 Changing things about elements is trivial, but remember that the change will affect all elements in the selection. If you just want to change one element, be sure to specify that in the selection before calling a setter method.
 
 ```
-// Changing the HTML of an element
-$("#myDiv p:first").html("New <strong>first</strong> paragraph!");
+// Changing the HTML of an element.
+$( "#myDiv p:first" ).html( "New <strong>first</strong> paragraph!" );
 ```
 
 ## Moving, Copying, and Removing Elements
@@ -39,17 +39,16 @@ For example, jQuery provides `$.fn.insertAfter` and `$.fn.after`. The `$.fn.inse
 The method that makes the most sense will depend on what elements are selected, and whether you need to store a reference to the elements you're adding to the page. If you need to store a reference, you will always want to take the first approach &#8212; placing the selected elements relative to another element &#8212; as it returns the element(s) you're placing.  In this case, `$.fn.insertAfter`, `$.fn.insertBefore`, `$.fn.appendTo`, and `$.fn.prependTo` should be the tools of choice.
 
 ```
-// Moving elements using different approaches
+// Moving elements using different approaches.
 
-// make the first list item the last list item
-var $li = $("#myList li:first").appendTo("#myList");
+// Make the first list item the last list item:
+var $li = $( "#myList li:first" ).appendTo( "#myList" );
 
-// another approach to the same problem
-$("#myList").append( $("#myList li:first") );
+// Another approach to the same problem:
+$( "#myList" ).append( $( "#myList li:first" ) );
 
-// note that there's no way to access the
-// list item that we moved, as this returns
-// the list itself
+// Note that there's no way to access the list item
+// that we moved, as this returns the list itself.
 ```
 
 ## Cloning Elements
@@ -57,10 +56,10 @@ $("#myList").append( $("#myList li:first") );
 Methods such as `$.fn.appendTo` move the element, but sometimes a copy of the element is needed instead. In this case, use `$.fn.clone` first:
 
 ```
-// Making a copy of an element
+// Making a copy of an element.
 
-// copy the first list item to the end of the list
-$("#myList li:first").clone().appendTo("#myList");
+// Copy the first list item to the end of the list:
+$( "#myList li:first" ).clone().appendTo( "#myList" );
 ```
 
 If you need to copy related data and events, be sure to pass `true` as an argument to `$.fn.clone`.
@@ -81,18 +80,17 @@ If you want to leave the element on the page but remove its contents, you can us
 jQuery offers a trivial and elegant way to create new elements using the same `$()` method used to make selections:
 
 ```
-// Creating new elements from an HTML string
-$("<p>This is a new paragraph</p>");
-
-$("<li class=\"new\">new list item</li>");
+// Creating new elements from an HTML string.
+$( "<p>This is a new paragraph</p>" );
+$( "<li class=\"new\">new list item</li>" );
 ```
 
 ```
-// Creating a new element with an attribute object
+// Creating a new element with an attribute object.
 $( "<a/>", {
-    html : "This is a <strong>new</strong> link",
-    "class" : "new",
-    href : "foo.html"
+	html: "This is a <strong>new</strong> link",
+	"class": "new",
+	href: "foo.html"
 });
 ```
 
@@ -101,14 +99,15 @@ Note that the attributes object in the second argument above, the property name 
 When you create a new element, it is not immediately added to the page. There are several ways to add an element to the page once it's been created.
 
 ```
-// Getting a new element on to the page
-var $myNewElement = $("<p>New element</p>");
+// Getting a new element on to the page.
 
-$myNewElement.appendTo("#content");
+var $myNewElement = $( "<p>New element</p>" );
 
-$myNewElement.insertAfter("ul:last"); // this will remove the p from #content!
+$myNewElement.appendTo( "#content" );
 
-$("ul").last().after( $myNewElement.clone() );  // clone the p so now we have 2
+$myNewElement.insertAfter( "ul:last" ); // This will remove the p from #content!
+
+$( "ul" ).last().after( $myNewElement.clone() );  // Clone the p so now we have two.
 ```
 
 The created element doesn't need to be stored in a variable &#8212; you can call the method to add the element to the page directly after the `$()`.  However, most of the time you'll want a reference to the element you added so you won't have to select it later.
@@ -116,23 +115,21 @@ The created element doesn't need to be stored in a variable &#8212; you can call
 You can also create an element as you're adding it to the page, but note that in this case you don't get a reference to the newly created element:
 
 ```
-// Creating and adding an element to the page at the same time
-$("ul").append("<li>list item</li>");
+// Creating and adding an element to the page at the same time.
+$( "ul" ).append( "<li>list item</li>" );
 ```
 
 The syntax for adding new elements to the page is easy, so it's tempting to forget that there's a huge performance cost for adding to the DOM repeatedly. If you're adding many elements to the same container, you'll want to concatenate all the html into a single string, and then append that string to the container instead of appending the elements one at a time. Use an array to gather all the pieces together, then join them into a single string for appending.
 
 ```
 var myItems = [];
-var $myList = $("#myList");
+var $myList = $( "#myList" );
 
 for ( var i = 0; i < 100; i++ ) {
-
-  myItems.push( "<li>item " + i + "</li>" );
-
+	myItems.push( "<li>item " + i + "</li>" );
 }
 
-$myList.append( myItems.join("") );
+$myList.append( myItems.join( "" ) );
 ```
 
 ## Manipulating Attributes
@@ -140,30 +137,28 @@ $myList.append( myItems.join("") );
 jQuery's attribute manipulation capabilities are extensive. Basic changes are simple, but the `$.fn.attr` method also allows for more complex manipulations. It can either set an explicit value, or set a value using the return value of a function.  When the function syntax is used, the function receives two arguments: the zero-based index of the element whose attribute is being changed, and the current value of the attribute being changed.
 
 ```
-// Manipulating a single attribute
-$("#myDiv a:first").attr( "href", "newDestination.html" );
+// Manipulating a single attribute.
+$( "#myDiv a:first" ).attr( "href", "newDestination.html" );
 ```
 
 ```
-// Manipulating multiple attributes
-$("#myDiv a:first").attr({
-  href: "newDestination.html",
-  rel: "super-special"
+// Manipulating multiple attributes.
+$( "#myDiv a:first" ).attr({
+	href: "newDestination.html",
+	rel: "super-special"
 });
 ```
 
 ```
-// Using a function to determine an attribute's new value
-$("#myDiv a:first").attr({
-    rel: "super-special",
-    href: function( idx, href ) {
-      return "/new/" + href;
-    }
+// Using a function to determine an attribute's new value.
+$( "#myDiv a:first" ).attr({
+	rel: "super-special",
+	href: function( idx, href ) {
+		return "/new/" + href;
+	}
 });
 
-$("#myDiv a:first").attr( "href", function( idx, href ) {
-
-    return "/new/" + href;
-
+$( "#myDiv a:first" ).attr( "href", function( idx, href ) {
+	return "/new/" + href;
 });
 ```
