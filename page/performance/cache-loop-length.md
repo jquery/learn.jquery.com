@@ -14,7 +14,7 @@ var myLength = myArray.length;
 
 for ( var i = 0; i < myLength; i++ ) {
 
-  // do stuff
+	// do stuff
 
 }
 ```
