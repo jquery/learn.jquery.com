@@ -10,18 +10,18 @@ jQuery offers several utility methods in the `$` namespace. These methods are he
 
 Below are examples of a few of the utility methods:
 
-### `$.trim`
+### `$.trim()`
 
-Removes leading and trailing whitespace.
+Removes leading and trailing whitespace:
 
 ```
 // Returns "lots of extra whitespace"
 $.trim( "    lots of extra whitespace    " );
 ```
 
-### `$.each`
+### `$.each()`
 
-Iterates over arrays and objects.
+Iterates over arrays and objects:
 
 ```
 $.each([ "foo", "bar", "baz" ], function( idx, val ) {
@@ -33,11 +33,12 @@ $.each({ foo: "bar", baz: "bim" }, function( k, v ) {
 });
 ```
 
-The method `$.fn.each` is also used for iterating over a selection of elements.
+The method `.each()` is also used for iterating over a selection of elements.
 
-### `$.inArray`
+### `$.inArray()`
 
-Returns a value's index in an array, or -1 if the value is not in the array.
+Returns a value's index in an array, or -1 if the value is not in the array:
+
 ```
 var myArray = [ 1, 2, 3, 5 ];
 
@@ -46,9 +47,10 @@ if ( $.inArray( 4, myArray ) !== -1 ) {
 }
 ```
 
-### `$.extend`
+### `$.extend()`
 
-Changes the properties of the first object using the properties of subsequent objects.
+Changes the properties of the first object using the properties of subsequent objects:
+
 ```
 var firstObject = { foo: "bar", a: "b" };
 var secondObject = { foo: "baz" };
@@ -59,7 +61,7 @@ console.log( firstObject.foo ); // "baz"
 console.log( newObject.foo ); // "baz"
 ```
 
-If you don't want to change any of the objects you pass to `$.extend`, pass an empty object as the first argument.
+If you don't want to change any of the objects you pass to `$.extend()`, pass an empty object as the first argument:
 
 ```
 var firstObject = { foo: "bar", a: "b" };
@@ -71,9 +73,9 @@ console.log( firstObject.foo ); // "bar"
 console.log( newObject.foo ); // "baz"
 ```
 
-### `$.proxy`
+### `$.proxy()`
 
-Returns a function that will always run in the provided scope — that is, sets the meaning of this inside the passed function to the second argument.
+Returns a function that will always run in the provided scope – that is, sets the meaning of this inside the passed function to the second argument:
 
 ```
 var myFunction = function() {

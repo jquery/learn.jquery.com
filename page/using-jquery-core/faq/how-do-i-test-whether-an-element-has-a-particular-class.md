@@ -3,7 +3,7 @@ title:        How do I test whether an element has a particular class?
 source:       http://docs.jquery.com/Frequently_Asked_Questions
 ---
 
-[hasClass](http://api.jquery.com/hasClass/) (added in version 1.2) handles this common use case:
+[.hasClass()](http://api.jquery.com/hasClass/) (added in version 1.2) handles this common use case:
 
 ```
 $( "div" ).click(function() {
@@ -22,7 +22,7 @@ $( "div" ).click(function() {
 });
 ```
 
-You can also use the [is()](http://api.jquery.com/is/) method along with an appropriate selector for more advanced matching:
+You can also use the [.is()](http://api.jquery.com/is/) method along with an appropriate selector for more advanced matching:
 
 ```
 if ( $( "#myDiv" ).is( ".pretty.awesome" ) ) {

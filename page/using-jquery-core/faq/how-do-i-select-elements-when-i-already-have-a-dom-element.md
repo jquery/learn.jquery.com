@@ -19,6 +19,6 @@ $( myDomElement + ".bar" ); // This is equivalent to $( "[object HTMLElement].ba
 
 Unfortunately, you cannot concatenate strings to objects.
 
-###Related Articles
+### Related Articles
 
 * [The jQuery Object](/using-jquery-core/jquery-object/)

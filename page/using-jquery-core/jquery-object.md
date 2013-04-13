@@ -5,17 +5,17 @@ level      : beginner
 
 When creating new elements (or selecting existing ones), jQuery returns the elements in a collection. Many developers new to jQuery assume that this collection is an array. It has a zero-indexed sequence of DOM elements, some familiar array functions, and a `.length` property, after all. Actually, the jQuery object is more complicated than that.
 
-## DOM and DOM elements
+## DOM and DOM Elements
 
 The Document Object Model (DOM for short) is a representation of an HTML document. It may contain any number of DOM elements. At a high level, a DOM element can be thought of as a "piece" of a web page. It may contain text and/or other DOM elements. DOM elements are described by a type, such as `<div>`, `<a>`, or `<p>`, and any number of attributes such as `src`, `href`, `class` and so on. For a more thorough description, refer to [the official DOM specification from the W3C](http://www.w3.org/TR/DOM-Level-2-Core/core.html#ID-745549614).
 
-Elements have properties like any JavaScript object. Among these properties are attributes like `tagName` and methods like `appendChild`. These properties are the only way to interact with the web page via JavaScript.
+Elements have properties like any JavaScript object. Among these properties are attributes like `.tagName` and methods like `.appendChild()`. These properties are the only way to interact with the web page via JavaScript.
 
 ## The jQuery Object
 
 It turns out that working directly with DOM elements can be awkward. The jQuery object defines [many](http://api.jquery.com/) methods to smooth out the experience for developers. Some benefits of the jQuery Object include:
 
-*Compatibility* &#8212; The implementation of element methods varies across browser vendors and versions. The following snippet attempts to set the inner HTML of a `<tr>` element stored in `target`:
+*Compatibility* – The implementation of element methods varies across browser vendors and versions. The following snippet attempts to set the inner HTML of a `<tr>` element stored in `target`:
 
 ```
 var target = document.getElementById( "target" );
@@ -33,7 +33,7 @@ var target = document.getElementById( "target" );
 $( target ).html( "<td>Hello <b>World</b>!</td>" );
 ```
 
-*Convenience* &#8212; There are also a lot of common DOM manipulation use cases that are awkward to accomplish with pure DOM methods. For instance, inserting an element stored in `newElement` after the `target` element requires a rather verbose DOM method:
+*Convenience* – There are also a lot of common DOM manipulation use cases that are awkward to accomplish with pure DOM methods. For instance, inserting an element stored in `newElement` after the `target` element requires a rather verbose DOM method:
 
 ```
 // Inserting a new element after another with the native DOM API.
@@ -59,7 +59,7 @@ $( target ).after( newElement );
 
 For the most part, these details are simply "gotchas" standing between you and your goals.
 
-### Getting Elements in to the jQuery Object
+### Getting Elements Into the jQuery Object
 
 When the jQuery function is invoked with a CSS selector, it will return a jQuery object wrapping any element(s) that match this selector. For instance, writing:
 
@@ -69,7 +69,7 @@ When the jQuery function is invoked with a CSS selector, it will return a jQuery
 var headers = $( "h1" );
 ```
 
-`headers` is now a jQuery element containing *all* the `<h1>` tags already on the page. This can be verified by inspecting the `length` property of `headers`:
+`headers` is now a jQuery element containing *all* the `<h1>` tags already on the page. This can be verified by inspecting the `.length` property of `headers`:
 
 ```
 // Viewing the number of <h1> tags on the page.
@@ -79,9 +79,9 @@ var allHeaders = $( "h1" );
 alert( allHeaders.length );
 ```
 
-If the page has more than one `<h1>` tag, this number will be greater than one. If the page has no `<h1>` tags, the `length` property will be zero. Checking the `length` property is a common way to ensure that the selector successfully matched one or more elements.
+If the page has more than one `<h1>` tag, this number will be greater than one. If the page has no `<h1>` tags, the `.length` property will be zero. Checking the `.length` property is a common way to ensure that the selector successfully matched one or more elements.
 
-If the goal is to select only the first header element, another step is required. There are a number of ways to accomplish this, but the most straight-forward is the `eq()` function.
+If the goal is to select only the first header element, another step is required. There are a number of ways to accomplish this, but the most straight-forward is the `.eq()` function.
 
 ```
 // Selecting only the first <h1> element on the page (in a jQuery object)
@@ -128,7 +128,7 @@ Although `logo1` and `logo2` are created in the same way (and wrap the same DOM 
 alert( $( "#logo" ) === $( "#logo" ) ); // alerts "false"
 ```
 
-However, both objects contain the same DOM element. The `get` method is useful for testing if two jQuery objects have the same DOM element.
+However, both objects contain the same DOM element. The `.get()` method is useful for testing if two jQuery objects have the same DOM element.
 
 ```
 // Comparing DOM elements.
@@ -142,7 +142,7 @@ var logo2Elem = logo2.get( 0 );
 alert( logo1Elem === logo2Elem ); // alerts "true"
 ```
 
-Many developers prefix a `$` to the name of variables that contain jQuery objects in order to help differentiate. There is nothing magic about this practice &#8212; it just helps some people keep track of what different variables contain. The previous example could be re-written to follow this convention:
+Many developers prefix a `$` to the name of variables that contain jQuery objects in order to help differentiate. There is nothing magic about this practice – it just helps some people keep track of what different variables contain. The previous example could be re-written to follow this convention:
 
 ```
 // Comparing DOM elements (with more readable variable names).
@@ -170,7 +170,7 @@ Given a jQuery object with all the paragraph elements on the page:
 var allParagraphs = $( "p" );
 ```
 
-...one might expect that the contents will grow and shrink over time as `<p>` elements are added and removed from the document. jQuery objects do **not** behave in this manner. The set of elements contained within a jQuery object will not change unless explicitly modified. This means that the collection is not "live" &#8212; it does not automatically update as the document changes. If the document may have changed since the creation the jQuery object, the collection should be updated by creating a new one. It can be as easy as re-running the same selector:
+…one might expect that the contents will grow and shrink over time as `<p>` elements are added and removed from the document. jQuery objects do **not** behave in this manner. The set of elements contained within a jQuery object will not change unless explicitly modified. This means that the collection is not "live" – it does not automatically update as the document changes. If the document may have changed since the creation the jQuery object, the collection should be updated by creating a new one. It can be as easy as re-running the same selector:
 
 ```
 // Updating the selection.

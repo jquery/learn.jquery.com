@@ -7,11 +7,11 @@ attribution:
   - jQuery Fundamentals
 ---
 
-The jQuery library and virtually all of its plugins are contained within the `jQuery` namespace.  As a general rule, global objects are stored inside the jQuery namespace as well, so you shouldn't get a clash between jQuery and any other library (like prototype.js, MooTools, or YUI).
+The jQuery library and virtually all of its plugins are contained within the `jQuery` namespace. As a general rule, global objects are stored inside the jQuery namespace as well, so you shouldn't get a clash between jQuery and any other library (like prototype.js, MooTools, or YUI).
 
-That said, there is one caveat: *by default, jQuery uses `$` as a shortcut for `jQuery`.*  Thus, if you are using another JavaScript library that uses the `$` variable, you can run into conflicts with jQuery.  In order to avoid these conflicts, you need to put jQuery in no-conflict mode immediately after it is loaded onto the page and before you attempt to use jQuery in your page.
+That said, there is one caveat: *by default, jQuery uses `$` as a shortcut for `jQuery`.* Thus, if you are using another JavaScript library that uses the `$` variable, you can run into conflicts with jQuery. In order to avoid these conflicts, you need to put jQuery in no-conflict mode immediately after it is loaded onto the page and before you attempt to use jQuery in your page.
 
-##Putting jQuery into No-Conflict Mode
+## Putting jQuery Into No-Conflict Mode
 
 When you put jQuery into no-conflict mode, you have the option of assigning a new variable name to replace the `$` alias.
 
@@ -39,7 +39,7 @@ window.onload = function() {
 
 In the code above, the `$` will revert back to its meaning in original library. You'll still be able to use the full function name `jQuery` as well as the new alias `$j` in the rest of your application. The new alias can be named anything you'd like: `jq`, `$J`, `awesomeQuery`, etc.
 
-Finally, if you don't want to define another alternative to the full `jQuery` function name (you really like to use `$` and don't care about using the other library's `$` method), then there's still another approach you might try: simply add the `$` as an argument passed to your `jQuery(document).ready()` function. This is most frequently used in the case where you still want the benefits of really concise jQuery code, but don't want to cause conflicts with other libraries.
+Finally, if you don't want to define another alternative to the full `jQuery` function name (you really like to use `$` and don't care about using the other library's `$` method), then there's still another approach you might try: simply add the `$` as an argument passed to your `jQuery( document ).ready()` function. This is most frequently used in the case where you still want the benefits of really concise jQuery code, but don't want to cause conflicts with other libraries.
 
 ```
 <!-- Another way to put jQuery into no-conflict mode. -->
@@ -64,7 +64,7 @@ window.onload = function(){
 
 This is probably the ideal solution for most of your code, considering that there'll be less code that you'll have to change in order to achieve complete compatibility.
 
-##Including jQuery Before Other Libraries
+## Including jQuery Before Other Libraries
 
 The code snippets above rely on jQuery being loaded after prototype.js is loaded. If you include jQuery before other libraries, you may use `jQuery` when you do some work with jQuery, but the `$` will have the meaning defined in the other library. There is no need to relinquish the `$` alias by calling `jQuery.noConflict()`.
 
@@ -87,11 +87,11 @@ window.onload = function() {
 </script>
 ```
 
-##Summary of Ways to Reference the jQuery Function
+## Summary of Ways to Reference the jQuery Function
 
 Here's a recap of ways you can reference the jQuery function when the presence of another library creates a conflict over the use of the `$` variable:
 
-###Create a New Alias
+### Create a New Alias
 
 The `jQuery.noConflict()` method returns a reference to the jQuery function, so you can capture it in whatever variable you'd like:
 
@@ -106,9 +106,9 @@ var $jq = jQuery.noConflict();
 </script>
 ```
 
-###Use an Immediately Invoked Function Expression
+### Use an Immediately Invoked Function Expression
 
-You can continue to use the standard `$` by wrapping your code in an immediately invoked function expression; this is also a standard pattern for jQuery plugin authoring, where the author cannot know whether another library will have taken over the `$`. See the [Plugins](/plugins) section for more information about writing plugins.
+You can continue to use the standard `$` by wrapping your code in an immediately invoked function expression; this is also a standard pattern for jQuery plugin authoring, where the author cannot know whether another library will have taken over the `$`. See the [Plugins](/plugins/) section for more information about writing plugins.
 
 ```
 <!-- Using the $ inside an immediately-invoked function expression. -->
@@ -127,7 +127,7 @@ jQuery.noConflict();
 
 Note that if you use this technique, you will not be able to use prototype.js methods inside the immediately invoked function that expect `$` to be prototype.js's `$`.
 
-###Use the Argument That's Passed to the `jQuery(document).ready()` Function
+### Use the Argument That's Passed to the `jQuery( document ).ready()` Function
 
 ```
 <script src="jquery.js"></script>

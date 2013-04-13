@@ -22,7 +22,7 @@ The second is the text value of the select. For example, using the following sel
 </select>
 ```
 
-If you wanted to get the string "Mr" if the first option was selected (instead of just "1"), you would do that in the following way:
+If you wanted to get the string "Mr" if the first option was selected (instead of just "1") you would do that in the following way:
 
 ```
 $( "#myselect option:selected" ).text();

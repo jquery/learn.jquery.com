@@ -8,7 +8,7 @@ jQuery provides an object iterator utility called `$.each()` as well as a jQuery
 
 [`$.each`](http://api.jquery.com/jQuery.each/) is a generic iterator function for looping over object, arrays, and array-like objects. Plain objects are iterated via their named properties while arrays and array-like objects are iterated via their indices.
 
-`$.each()` is essentially a drop-in replacement of a traditional `for` or 'for-in' loop. Given:
+`$.each()` is essentially a drop-in replacement of a traditional `for` or `for-in` loop. Given:
 
 ```
 var sum = 0;
@@ -16,7 +16,8 @@ var sum = 0;
 var arr = [ 1, 2, 3, 4, 5 ];
 ```
 
-then this:
+Then this:
+
 ```
 for ( var i = 0, l = arr.length; i < l; i++ ) {
 	sum += arr[ i ];
@@ -25,7 +26,7 @@ for ( var i = 0, l = arr.length; i < l; i++ ) {
 console.log( sum ); // 15
 ```
 
-can be replaced with this:
+Can be replaced with this:
 
 ```
 $.each( arr, function( index, value ){
@@ -45,7 +46,7 @@ var obj = {
 }
 ```
 
-then this:
+Then this:
 
 ```
 for (var item in obj) {
@@ -55,7 +56,7 @@ for (var item in obj) {
 console.log( sum ); // 3
 ```
 
-can be replaced with this:
+Can be replaced with this:
 
 ```
 
@@ -139,13 +140,13 @@ $( "li" ).each( function( index, el ) {
 });
 ```
 
-and this is fine:
+And this is fine:
 
 ```
 $( "li" ).addClass( "newClass" );
 ```
 
-Each `<li/>` in the document will have the class 'newClass' added.
+Each `<li>` in the document will have the class "newClass" added.
 
 On the other hand, some methods do not iterate over the collection. `.each()` is required when we need to get information from the element before setting a new value.
 
@@ -186,9 +187,9 @@ The following is a list of methods that require `.each()`:
 * [`.val()`](http://api.jquery.com/val/#val1) (getter)
 * [`.width()`](http://api.jquery.com/width/#width1) (getter)
 
-Note that in most cases, the 'getter' signature returns the result from the first element in a jQuery collection while the setter acts over the entire collection of matched elements. The exception to this is `.text()` where the getter signature will return a concatenated string of text from all matched elements.
+Note that in most cases, the "getter" signature returns the result from the first element in a jQuery collection while the setter acts over the entire collection of matched elements. The exception to this is `.text()` where the getter signature will return a concatenated string of text from all matched elements.
 
-In addition to a setter value, the attribute, property, css setters, and DOM insertion 'setter' methods (i.e. `.text()` and `.html()`) accept anonymous callback functions that are applied to each element in the matching set. The arguments passed to the callback are the index of the matched element within the set and the result of the 'getter' signature of the method.
+In addition to a setter value, the attribute, property, CSS setters, and DOM insertion "setter" methods (i.e. `.text()` and `.html()`) accept anonymous callback functions that are applied to each element in the matching set. The arguments passed to the callback are the index of the matched element within the set and the result of the 'getter' signature of the method.
 
 For example, these are equivalent:
 
@@ -232,7 +233,7 @@ Notice the `.get()` chained at the end. `.map()` actually returns a jQuery-wrapp
 
 ### [`$.map`](http://api.jquery.com/jQuery.map/)
 
-Like `$.each()` and `.each()`, there is a `$.map()` as well as `.map()`. The difference is also very similar to both `.each` methods. `$.map()` works on plain JavaScript arrays while `.map()` works on jQuery element collections. Because it's working on a plain array, `$.map()` returns a plain array and `.get()` does not need to be called &#8212; in fact, it will throw an error as it's not a native JavaScript method.
+Like `$.each()` and `.each()`, there is a `$.map()` as well as `.map()`. The difference is also very similar to both `.each` methods. `$.map()` works on plain JavaScript arrays while `.map()` works on jQuery element collections. Because it's working on a plain array, `$.map()` returns a plain array and `.get()` does not need to be called – in fact, it will throw an error as it's not a native JavaScript method.
 
 A word of warning: `$.map()` switches the order of callback arguments. This was done in order to match the native JavaScript `.map()` method made available in ECMAScript 5.
 
