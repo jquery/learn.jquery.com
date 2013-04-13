@@ -5,11 +5,10 @@ source: http://jqfundamentals.com/legacy
 attribution:
   - jQuery Fundamentals
 ---
-Sometimes you want to make a piece of functionality available throughout your code;
-for example, perhaps you want a single method you can call on a jQuery selection that performs a series of operations on the selection. Maybe you wrote a really useful utility function that you want to be able to move easily to other projects.
-In this case, you may want to write a plugin.
 
-##How jQuery Works 101: jQuery Object Methods and Utility Methods
+Sometimes you want to make a piece of functionality available throughout your code. For example, perhaps you want a single method you can call on a jQuery selection that performs a series of operations on the selection. Maybe you wrote a really useful utility function that you want to be able to move easily to other projects. In this case, you may want to write a plugin.
+
+## How jQuery Works 101: jQuery Object Methods and Utility Methods
 
 Before we write our own plugins, we must first understand a little about how jQuery works. Take a look at this code:
 
@@ -17,12 +16,11 @@ Before we write our own plugins, we must first understand a little about how jQu
 $( "a" ).css( "color", "red" );
 ```
 
-This is some pretty basic jQuery code, but do you know what's happening behind the scenes? Whenever you use the `$` function to select elements, it returns a jQuery object. This object contains all of the methods you've been using (`css()`, `click()`, etc.), and all of the elements that fit your selector. The jQuery object gets these methods from the `$.fn` object. This object contains all of the jQuery object methods, and if we want to write our own methods, it will need to contain those as well.
+This is some pretty basic jQuery code, but do you know what's happening behind the scenes? Whenever you use the `$` function to select elements, it returns a jQuery object. This object contains all of the methods you've been using (`.css()`, `.click()`, etc.) and all of the elements that fit your selector. The jQuery object gets these methods from the `$.fn` object. This object contains all of the jQuery object methods, and if we want to write our own methods, it will need to contain those as well.
 
-Additionally the jQuery utility method `$.trim()` is used above to remove any leading or trailing empty space characters from the user input. Utility methods are functions that reside directly on
-`$` function itself.  You may occasionally want to write a utility method plugin when your extension to the jQuery API does not have to do something to a set of DOM elements you've retrieved.
+Additionally the jQuery utility method `$.trim()` is used above to remove any leading or trailing empty space characters from the user input. Utility methods are functions that reside directly in the `$` function itself. You may occasionally want to write a utility method plugin when your extension to the jQuery API does not have to do something to a set of DOM elements you've retrieved.
 
-##Basic Plugin Authoring
+## Basic Plugin Authoring
 
 Let's say we want to create a plugin that makes text within a set of retrieved elements green. All we have to do is add a function called `greenify` to `$.fn` and it will be available just like any other jQuery object method.
 
@@ -33,11 +31,12 @@ $.fn.greenify = function() {
 
 $( "a" ).greenify(); // Makes all the links green.
 ```
-Notice that to use `css()`, another method, we use `this`, not `$( this )`. This is because our `greenify` function is a part of the same object as `css()`.
 
-##Chaining
+Notice that to use `.css()`, another method, we use `this`, not `$( this )`. This is because our `greenify` function is a part of the same object as `.css()`.
 
-This works, but there's a couple of things we need to do for our plugin to survive in the real world. One of jQuery's features is chaining, when you link five or six actions onto one selector. This is accomplished by having all jQuery object methods return the original jQuery object again (there are a few exceptions: `width()` called without parameters returns the width of the selected element, and is not chainable). Making our plugin method chainable takes one line of code:
+## Chaining
+
+This works, but there's a couple of things we need to do for our plugin to survive in the real world. One of jQuery's features is chaining, when you link five or six actions onto one selector. This is accomplished by having all jQuery object methods return the original jQuery object again (there are a few exceptions: `.width()` called without parameters returns the width of the selected element, and is not chainable). Making our plugin method chainable takes one line of code:
 
 ```
 $.fn.greenify = function() {
@@ -50,8 +49,7 @@ $( "a" ).greenify().addClass( "greenified" );
 
 Note that the notion of chaining is *not* applicable to jQuery utility methods like `$.trim()`.
 
-
-##Protecting the $ Alias and Adding Scope
+## Protecting the $ Alias and Adding Scope
 
 The `$` variable is very popular among JavaScript libraries, and if you're using another library with jQuery, you will have to make jQuery not use the `$` with `jQuery.noConflict()`. However, this will break our plugin since it is written with the assumption that `$` is an alias to the `jQuery` function. To work well with other plugins, _and_ still use the jQuery `$` alias, we need to put all of our code inside of an [Immediately Invoked Function Expression](http://stage.learn.jquery.com/javascript-101/functions/#immediately-invoked-function-expression), and then pass the function `jQuery`, and name the parameter `$`:
 
@@ -89,7 +87,7 @@ In addition, the primary purpose of an Immediately Invoked Function is to allow 
 }( jQuery ));
 ```
 
-##Minimizing Plugin Footprint
+## Minimizing Plugin Footprint
 
 It's good practice when writing plugins to only take up one slot within `$.fn`. This reduces both the chance that your plugin will be overridden, and the chance that your plugin will override other plugins. In other words, this is bad:
 
@@ -128,9 +126,8 @@ It would be much better to have one slot, and use parameters to control what act
 ```
 
 ## Using the `each()` Method
-Your typical jQuery object will contain references to any number of DOM elements, and that's why jQuery objects are often referred to as collections.
-If you want to do any manipulating with specific elements (e.g. getting data an attribute, calculating specific positions) then you need to use `each()` to
-loop through the elements.
+
+Your typical jQuery object will contain references to any number of DOM elements, and that's why jQuery objects are often referred to as collections. If you want to do any manipulating with specific elements (e.g. getting a data attribute, calculating specific positions) then you need to use `.each()` to loop through the elements.
 
 ```
 $.fn.myNewPlugin = function() {
@@ -142,16 +139,11 @@ $.fn.myNewPlugin = function() {
 };
 ```
 
-Notice that we return the results of `each()` instead of returning `this`.
-Since `each()` is already chainable, it returns `this`, which we then return.
-This is a better way to maintain chainability than what we've been doing so far.
+Notice that we return the results of `.each()` instead of returning `this`. Since `.each()` is already chainable, it returns `this`, which we then return. This is a better way to maintain chainability than what we've been doing so far.
 
-##Accepting Options
+## Accepting Options
 
-As your plugins get more and more complex, it's a good idea to make your plugin
-customizable by accepting options. The easiest way do this, especially if there
-are lots of options, is with an object literal. Let's change our greenify plugin to
-accept some options.
+As your plugins get more and more complex, it's a good idea to make your plugin customizable by accepting options. The easiest way do this, especially if there are lots of options, is with an object literal. Let's change our greenify plugin to accept some options.
 
 ```
 (function ( $ ) {
@@ -183,12 +175,11 @@ $( "div" ).greenify({
 });
 ```
 
-The default value for `color` of `#556B2F` gets overridden by `$.extend()` to be orange.
+The default value for `color` of `#556b2f` gets overridden by `$.extend()` to be orange.
 
-##Putting It Together
+## Putting It Together
 
-Here's an example of a small plugin using some of the techniques
-we've discussed:
+Here's an example of a small plugin using some of the techniques we've discussed:
 
 ```
 (function( $ ) {
@@ -207,8 +198,7 @@ we've discussed:
  $( "a" ).showLinkLocation();
 ```
 
-This handy plugin goes through all anchors in the collection and appends the
-href attribute in brackets.
+This handy plugin goes through all anchors in the collection and appends the `href` attribute in brackets.
 
 ```
 <!-- Before plugin is called: -->
@@ -234,8 +224,4 @@ Our plugin can be optimized though:
 }( jQuery ));
 ```
 
-We're using the `append()` method's capability to accept a callback, and the
-return value of that callback will determine what is appended to each element
-in the collection.  Notice also that we're not using the `attr` method to
-retrieve the href attribute, because the native DOM API gives us easy access
-with the aptly named href property.
+We're using the `.append()` method's capability to accept a callback, and the return value of that callback will determine what is appended to each element in the collection. Notice also that we're not using the `.attr()` method to retrieve the `href` attribute, because the native DOM API gives us easy access with the aptly named `href` property.
