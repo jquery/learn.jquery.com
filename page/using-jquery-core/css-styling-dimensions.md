@@ -2,6 +2,7 @@
 title   : CSS, Styling, & Dimensions
 level: beginner
 ---
+
 jQuery includes a handy way to get and set CSS properties of elements:
 
 ```

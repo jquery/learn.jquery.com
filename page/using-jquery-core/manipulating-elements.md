@@ -5,6 +5,7 @@ source: http://jqfundamentals.com/legacy
 attribution:
   - jQuery Fundamentals
 ---
+
 For complete documentation of jQuery manipulation methods, visit the [Manipulation documentation on api.jquery.com](http://api.jquery.com/category/manipulation/).
 
 ## Getting and Setting Information about Elements
