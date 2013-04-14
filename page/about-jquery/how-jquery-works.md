@@ -38,7 +38,7 @@ window.onload = function() {
 }
 ```
 
-Unfortunately, the code doesn't run until all images are finished downloading, including banner ads. To run code as soon as the `document` is ready to be manipulated, jQuery has a statement known as the [ready event](http://api.jquery.com/ready):
+Unfortunately, the code doesn't run until all images are finished downloading, including banner ads. To run code as soon as the document is ready to be manipulated, jQuery has a statement known as the [ready event](http://api.jquery.com/ready):
 
 ```
 $( document ).ready(function() {
