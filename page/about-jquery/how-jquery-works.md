@@ -133,7 +133,7 @@ Next, add the [.addClass()](http://api.jquery.com/addClass/) call to the script:
 $( "a" ).addClass( "test" );
 ```
 
-All `a` elements are now bold.
+All `<a>` elements are now bold.
 
 To remove an existing class, use [.removeClass()](http://api.jquery.com/removeClass/):
 
