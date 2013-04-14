@@ -83,7 +83,7 @@ Yes! Take a look at our [style guide](http://learn.jquery.com/style-guide) for m
 
 ## How Will My Contribution Be Acknowledged?
 
-We will build the attribution of an article based on the git commit logs and present this information in the site.
+We will build the attribution of an article based on the git commit logs and present this information on the site.
 
 ## <a name="getting-help">Getting Help</a>
 
