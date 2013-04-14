@@ -73,7 +73,7 @@ For more advice on managing your fork and submitting pull requests to the jQuery
 ### Adding a New Article
 
 1. Add the file to the right folder in the `page` folder.
-2. Add the slug name (the filename without the extension) to the desired location `order.yml`
+2. Add the slug name (the filename without the extension) to the desired location in `order.yml`
 3. Run `grunt`
 4. You should now be able to navigate to the file.
 
