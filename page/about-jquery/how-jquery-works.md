@@ -115,7 +115,7 @@ The following example illustrates the click handling code discussed above, embed
 
 **Important:** *You must place the remaining jQuery examples inside the `ready` event so that your code executes when the document is ready to be worked on.*
 
-Another common task is adding or removing a `class`.
+Another common task is adding or removing a class.
 
 First, add some style information into the `<head>` of the document, like this:
 
