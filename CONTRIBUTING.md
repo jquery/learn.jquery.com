@@ -34,8 +34,8 @@ The site's layout and design is controlled by our [`jquery-wp-content`](http://g
 
 The static content in the `page` directory is deployed to a [`jquery-wp-content`](http://github.com/jquery/jquery-wp-content) instance using [grunt](http://gruntjs.com), specifically with two grunt plugins we've created:
 
-* [grunt-jquery-content](http://github.com/jquery/grunt-jquery-content) - pre-processes content in a variety of formats (HTML, Markdown, XML) into HTML, applying syntax highlighting and some simple partial support, preparing it for processing by
-* [grunt-wordpress](http://github.com/scottgonzalez/grunt-wordpress) - syncs static content to WordPress using [XML-RPC](http://codex.wordpress.org/XML-RPC_Support)
+* [grunt-jquery-content](http://github.com/jquery/grunt-jquery-content) – pre-processes content in a variety of formats (HTML, Markdown, XML) into HTML, applying syntax highlighting and some simple partial support, preparing it for processing by:
+* [grunt-wordpress](http://github.com/scottgonzalez/grunt-wordpress) – syncs static content to WordPress using [XML-RPC](http://codex.wordpress.org/XML-RPC_Support)
 
 ## How Can I Help?
 
