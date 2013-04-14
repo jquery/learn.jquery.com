@@ -16,7 +16,7 @@ documentation" to our community and serve the following goals:
 
 1. Provide our **users** with a digestible reference on all aspects of using jQuery, from the basics of getting started and performing common tasks to more advanced topics like approaches to structuring code and where jQuery fits into modern web application development.
 2. Provide our **contributors** a central, open place to collaborate and provide a dependable, highly sharable resource that will improve our users' support experiences.
-3. Foster an environment by which users are encouraged to become contributors and build the skills to help them work on jQuery — or any other open source project!
+3. Foster an environment by which users are encouraged to become contributors and build the skills to help them work on jQuery – or any other open source project!
 
 In order to achieve these goals, all of [this site's content is maintained publicly on GitHub](http://github.com/jquery/learn.jquery.com) and is licensed under the [MIT License](https://github.com/jquery/learn.jquery.com/blob/master/LICENSE-MIT.txt). To learn more about how the site works, take a look at our [contributing guide](/contributing).
 
@@ -26,7 +26,7 @@ The jQuery Learning site has its roots in two primary places.
 
 The first is Rebecca Murphey's [jQuery Fundamentals](http://jqfundamentals.com/legacy), a free, open source book on jQuery basics she originally released in 2010. Seeking a better home where the information could be both maintained going forward, and consumed in a more piecemeal fashion, Rebecca donated the content to the jQuery Foundation to form the basis of what was then an abstract idea for some sort of "learning center."
 
-The second is [docs.jquery.com](http://docs.jquery.com), that erstwhile chestnut still living out its final days before it will be shut down in early 2013. Since we've moved the API documentation for jQuery Core off that domain, we needed a place that could serve a similar need — documentation (that anyone can contribute to) that gets into the "how-to" and FAQs — without clumsy barriers to entry like finding the right person to set you up with a special wiki account and forcing all authoring into a `textarea`.
+The second is [docs.jquery.com](http://docs.jquery.com), that erstwhile chestnut still living out its final days before it will be shut down in early 2013. Since we've moved the API documentation for jQuery Core off that domain, we needed a place that could serve a similar need – documentation (that anyone can contribute to) that gets into the "how-to" and FAQs – without clumsy barriers to entry like finding the right person to set you up with a special wiki account and forcing all authoring into a `textarea`.
 
 <h2><a name="beta">About the Beta</a></h2>
 
