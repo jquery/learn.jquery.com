@@ -55,7 +55,7 @@ In order to preview your changes locally, work on design/layout issues, or work 
 $ git config --global core.autocrlf true
 ```
 
-### Working With Content
+### Working with Content
 
 Once you've gotten your environment working, here are the general steps you should follow to make your changes:
 
@@ -70,7 +70,7 @@ Once you've gotten your environment working, here are the general steps you shou
 
 For more advice on managing your fork and submitting pull requests to jQuery Foundation, read our [Commits and Pull Requests](http://contribute.jquery.org/commits-and-pull-requests/) guide.
 
-### Adding A New Article
+### Adding a New Article
 
 1. Add the file to the right folder in the page folder.
 2. Add the slug name (the filename without the extension) to the desired location `order.yml`
