@@ -127,7 +127,7 @@ a.test {
 </style>
 ```
 
-Next, add the [addClass()](http://api.jquery.com/addClass/) call to the script:
+Next, add the [.addClass()](http://api.jquery.com/addClass/) call to the script:
 
 ```
 $( "a" ).addClass( "test" );
@@ -135,7 +135,7 @@ $( "a" ).addClass( "test" );
 
 All `a` elements are now bold.
 
-To remove an existing `class`, use [removeClass()](http://api.jquery.com/removeClass/):
+To remove an existing class, use [.removeClass()](http://api.jquery.com/removeClass/):
 
 ```
 $( "a" ).removeClass( "test" );
@@ -171,8 +171,9 @@ If a callback has no arguments, you can pass it in like this:
 $.get( "myhtmlpage.html", myCallBack );
 ```
 
-When [$.get](http://api.jquery.com/jQuery.get/) finishes getting the page `myhtmlpage.html`, it executes the `myCallBack` function.
-**Note** that the second parameter here is simply the function name (but *not* as a string and without parentheses).
+When [$.get()](http://api.jquery.com/jQuery.get/) finishes getting the page `myhtmlpage.html`, it executes the `myCallBack` function.
+
+* **Note:** The second parameter here is simply the function name (but *not* as a string, and without parentheses).
 
 ### Callback *with* Arguments
 
@@ -185,7 +186,7 @@ This code example will ***not*** work:
 $.get( "myhtmlpage.html", myCallBack( param1, param2 ) );
 ```
 
-The reason this fails is that the code executes `myCallBack( param1, param2 )` immediately and then passes myCallBack's *return value* as the second parameter to `$.get`. We actually want to pass the function `myCallBack`, not `myCallBack( param1, param2 )`'s return value (which might or might not be a function).  So, how to pass in `myCallBack` *and* include its arguments?
+The reason this fails is that the code executes `myCallBack( param1, param2 )` immediately and then passes `myCallBack`'s *return value* as the second parameter to `$.get()`. We actually want to pass the function `myCallBack`, not `myCallBack( param1, param2 )`'s return value (which might or might not be a function).  So, how to pass in `myCallBack` *and* include its arguments?
 
 #### Right
 
