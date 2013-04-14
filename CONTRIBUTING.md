@@ -68,7 +68,7 @@ Once you've gotten your environment working, here are the general steps you shou
 7. Push the files to your GitHub remote: `git push origin <feature/issue name/number>`
 8. Go to your fork on GitHub and submit a new [pull request](https://help.github.com/articles/using-pull-requests).
 
-For more advice on managing your fork and submitting pull requests to jQuery Foundation, read our [Commits and Pull Requests](http://contribute.jquery.org/commits-and-pull-requests/) guide.
+For more advice on managing your fork and submitting pull requests to the jQuery Foundation, read our [Commits and Pull Requests](http://contribute.jquery.org/commits-and-pull-requests/) guide.
 
 ### Adding a New Article
 
