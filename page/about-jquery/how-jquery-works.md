@@ -34,15 +34,20 @@ To ensure that their code runs after the browser finishes loading the document, 
 
 ```
 window.onload = function() {
+
 	alert( "welcome" );
+
 }
 ```
 
 Unfortunately, the code doesn't run until all images are finished downloading, including banner ads. To run code as soon as the document is ready to be manipulated, jQuery has a statement known as the [ready event](http://api.jquery.com/ready/):
 
 ```
+
 $( document ).ready(function() {
-	// Your code here
+
+	// Your code here.
+
 });
 ```
 
@@ -50,9 +55,13 @@ For example, inside the `ready` event, you can add a click handler to the link:
 
 ```
 $( document ).ready(function() {
+
 	$( "a" ).click(function( event ) {
+
 		alert( "Thanks for visiting!" );
+
 	});
+
 });
 ```
 
@@ -62,10 +71,15 @@ For `click` and most other [events](http://api.jquery.com/category/events/), you
 
 ```
 $( document ).ready(function() {
+
 	$( "a" ).click(function( event ) {
+
 		alert( "As you can see, the link no longer took you to jquery.com" );
+
 		event.preventDefault();
+
 	});
+
 });
 ```
 
@@ -77,19 +91,21 @@ The following example illustrates the click handling code discussed above, embed
 <!doctype html>
 <html>
 <head>
-	<meta charset="utf-8">
+	<meta charset="utf-8" />
 	<title>Demo</title>
 </head>
 <body>
 	<a href="http://jquery.com/">jQuery</a>
 	<script src="jquery.js"></script>
 	<script>
+
 	$( document ).ready(function() {
 		$( "a" ).click(function( event ) {
 			alert( "The link will no longer take you to jquery.com" );
 			event.preventDefault();
 		});
 	});
+
 	</script>
 </body>
 </html>
@@ -130,9 +146,12 @@ $( "a" ).removeClass( "test" );
 jQuery also provides some handy [effects](http://api.jquery.com/category/effects/) to help you make your web sites stand out. For example, if you create a click handler of:
 
 ```
-$( "a" ).click(function( event ){
+$( "a" ).click(function( event ) {
+
 	event.preventDefault();
+
 	$( this ).hide( "slow" );
+
 });
 ```
 
@@ -174,7 +193,9 @@ To defer executing `myCallBack` with its parameters, you can use an anonymous fu
 
 ```
 $.get( "myhtmlpage.html", function() {
+
 	myCallBack( param1, param2 );
+
 });
 ```
 
