@@ -22,28 +22,28 @@ Of course, we'll also give you credit for your work! The **Contributors** sectio
 
 ### Content
 
-The content in this site is maintained in [this GitHub repository](http://github.com/jquery/learn.jquery.com) as a collection of [Markdown](http://daringfireball.net/projects/markdown/) files in the `page` directory. The order in which chapters and articles are presented is controlled by the [order.yml](https://github.com/jquery/learn.jquery.com/blob/master/order.yml) file.
+The content in this site is maintained in [this GitHub repository](https://github.com/jquery/learn.jquery.com) as a collection of [Markdown](http://daringfireball.net/projects/markdown/) files in the `page` directory. The order in which chapters and articles are presented is controlled by the [order.yml](https://github.com/jquery/learn.jquery.com/blob/master/order.yml) file.
 
 ### Design
 
-The site's layout and design is controlled by our [`jquery-wp-content`](http://github.com/jquery/jquery-wp-content), a custom [WordPress](http://wordpress.org) configuration that runs (or will run in the near future) all of the sites run by the jQuery Foundation. The [master theme](https://github.com/jquery/jquery-wp-content/tree/master/themes/jquery) controls most of the layout for all of our sites, and there is a [child theme](https://github.com/jquery/jquery-wp-content/tree/master/themes/learn.jquery.com) that controls the templates and styles specific to the learn site.
+The site's layout and design is controlled by our [`jquery-wp-content`](https://github.com/jquery/jquery-wp-content), a custom [WordPress](http://wordpress.org) configuration that runs (or will run in the near future) all of the sites run by the jQuery Foundation. The [master theme](https://github.com/jquery/jquery-wp-content/tree/master/themes/jquery) controls most of the layout for all of our sites, and there is a [child theme](https://github.com/jquery/jquery-wp-content/tree/master/themes/learn.jquery.com) that controls the templates and styles specific to the learn site.
 
-[`jquery-wp-content`](http://github.com/jquery/jquery-wp-content) powers our sites in production and staging environments, and can be set up for local development relatively easily.
+[`jquery-wp-content`](https://github.com/jquery/jquery-wp-content) powers our sites in production and staging environments, and can be set up for local development relatively easily.
 
 ### Build
 
-The static content in the `page` directory is deployed to a [`jquery-wp-content`](http://github.com/jquery/jquery-wp-content) instance using [grunt](http://gruntjs.com), specifically with two grunt plugins we've created:
+The static content in the `page` directory is deployed to a [`jquery-wp-content`](https://github.com/jquery/jquery-wp-content) instance using [grunt](http://gruntjs.com), specifically with two grunt plugins we've created:
 
-* [grunt-jquery-content](http://github.com/jquery/grunt-jquery-content) – pre-processes content in a variety of formats (HTML, Markdown, XML) into HTML, applying syntax highlighting and some simple partial support, preparing it for processing by:
-* [grunt-wordpress](http://github.com/scottgonzalez/grunt-wordpress) – syncs static content to WordPress using [XML-RPC](http://codex.wordpress.org/XML-RPC_Support)
+* [grunt-jquery-content](https://github.com/jquery/grunt-jquery-content) – pre-processes content in a variety of formats (HTML, Markdown, XML) into HTML, applying syntax highlighting and some simple partial support, preparing it for processing by:
+* [grunt-wordpress](https://github.com/scottgonzalez/grunt-wordpress) – syncs static content to WordPress using [XML-RPC](http://codex.wordpress.org/XML-RPC_Support)
 
 ## How Can I Help?
 
-The simplest and least complicated way to help is to [file issues](http://github.com/jquery/learn.jquery.com/issues) if you notice mistakes that should be fixed, improvements that can be made, or if you have ideas for new articles. We'll use the issues to continue discussion and track progress on anything you point out.
+The simplest and least complicated way to help is to [file issues](https://github.com/jquery/learn.jquery.com/issues) if you notice mistakes that should be fixed, improvements that can be made, or if you have ideas for new articles. We'll use the issues to continue discussion and track progress on anything you point out.
 
 If you'd like to go a step further and contribute new articles, make edits to existing ones, or work on the site itself, the first thing you'll need is a [fork](https://help.github.com/articles/fork-a-repo). When you have changes you'd like to have reviewed for integration into the site, submit a [pull request](https://help.github.com/articles/using-pull-requests).
 
-*(If you're unfamiliar with Git, you can still contribute by using features in GitHub's web interface. You can edit files directly via [GitHub's in-browser editor](https://github.com/blog/905-edit-like-an-ace). You can [create and delete branches directly from your fork](https://github.com/blog/1377-create-and-delete-branches), so you can also submit new articles as well. Either way, we still encourage you to [learn how to use Git and GitHub](http://help.github.com/) as soon as you can.)*
+*(If you're unfamiliar with Git, you can still contribute by using features in GitHub's web interface. You can edit files directly via [GitHub's in-browser editor](https://github.com/blog/905-edit-like-an-ace). You can [create and delete branches directly from your fork](https://github.com/blog/1377-create-and-delete-branches), so you can also submit new articles as well. Either way, we still encourage you to [learn how to use Git and GitHub](https://help.github.com/) as soon as you can.)*
 
 ## Local Development
 
