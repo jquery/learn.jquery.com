@@ -38,7 +38,7 @@ window.onload = function() {
 }
 ```
 
-Unfortunately, the code doesn't run until all images are finished downloading, including banner ads. To run code as soon as the document is ready to be manipulated, jQuery has a statement known as the [ready event](http://api.jquery.com/ready):
+Unfortunately, the code doesn't run until all images are finished downloading, including banner ads. To run code as soon as the document is ready to be manipulated, jQuery has a statement known as the [ready event](http://api.jquery.com/ready/):
 
 ```
 $( document ).ready(function() {
@@ -111,7 +111,7 @@ a.test {
 </style>
 ```
 
-Next, add the [addClass()](http://api.jquery.com/addClass) call to the script:
+Next, add the [addClass()](http://api.jquery.com/addClass/) call to the script:
 
 ```
 $( "a" ).addClass( "test" );
@@ -119,7 +119,7 @@ $( "a" ).addClass( "test" );
 
 All `a` elements are now bold.
 
-To remove an existing `class`, use [removeClass()](http://api.jquery.com/removeClass):
+To remove an existing `class`, use [removeClass()](http://api.jquery.com/removeClass/):
 
 ```
 $( "a" ).removeClass( "test" );
