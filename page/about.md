@@ -18,7 +18,7 @@ documentation" to our community and serve the following goals:
 2. Provide our **contributors** a central, open place to collaborate and provide a dependable, highly sharable resource that will improve our users' support experiences.
 3. Foster an environment by which users are encouraged to become contributors and build the skills to help them work on jQuery – or any other open source project!
 
-In order to achieve these goals, all of [this site's content is maintained publicly on GitHub](http://github.com/jquery/learn.jquery.com) and is licensed under the [MIT License](https://github.com/jquery/learn.jquery.com/blob/master/LICENSE-MIT.txt). To learn more about how the site works, take a look at our [contributing guide](/contributing).
+In order to achieve these goals, all of [this site's content is maintained publicly on GitHub](http://github.com/jquery/learn.jquery.com) and is licensed under the [MIT License](https://github.com/jquery/learn.jquery.com/blob/master/LICENSE-MIT.txt). To learn more about how the site works, take a look at our [contributing guide](/contributing/).
 
 ## History
 
@@ -30,4 +30,4 @@ The second is [docs.jquery.com](http://docs.jquery.com), that erstwhile chestnut
 
 <h2><a name="beta">About the Beta</a></h2>
 
-Though this resource will never truly be "done," the current version of this site should still be considered something of a preview. We still have a number of improvements we want to make to the content, user experience, and site build before we're ready to call it a "final release." At the same time, however, it's important for us to open the doors now so we can begin providing better docs to people who need them right away and spread the word about this effort. If you're interested in helping us reach the finish line, we invite you to please read more about how [you can get involved with contributing](/contributing)!
+Though this resource will never truly be "done," the current version of this site should still be considered something of a preview. We still have a number of improvements we want to make to the content, user experience, and site build before we're ready to call it a "final release." At the same time, however, it's important for us to open the doors now so we can begin providing better docs to people who need them right away and spread the word about this effort. If you're interested in helping us reach the finish line, we invite you to please read more about how [you can get involved with contributing](/contributing/)!
