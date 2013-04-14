@@ -93,4 +93,4 @@ The best place to get help is on [IRC](http://en.wikipedia.org/wiki/Internet_Rel
 
 In addition, the jQuery Content Team holds a [public, weekly meetings](http://jquery.org/meeting) on Freenode, at 1PM Eastern time in the `#jquery-meeting` channel.
 
-If IRC is not your thing, but you still want or need to get in touch, please use the site's GitHub repo or send us an e-mail to `content at jquery dot org`.
+If IRC is not your thing, but you still want or need to get in touch, please use the site's [GitHub repo](https://github.com/jquery/learn.jquery.com) or send us an e-mail to `content at jquery dot org`.
