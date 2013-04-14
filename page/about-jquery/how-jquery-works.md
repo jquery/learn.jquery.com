@@ -155,7 +155,7 @@ $( "a" ).click(function( event ) {
 });
 ```
 
-then the link slowly disappears when clicked.
+Then the link slowly disappears when clicked.
 
 ## Callbacks and Functions
 
