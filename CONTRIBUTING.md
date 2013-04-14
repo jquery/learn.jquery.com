@@ -49,7 +49,7 @@ If you'd like to go a step further and contribute new articles, make edits to ex
 
 In order to preview your changes locally, work on design/layout issues, or work on other jQuery sites' content, and generally contribute most effectively, we recommend that you set up a local development environment. You can learn how to get set up from our [documentation on contributing to jQuery Foundation web sites](http://contribute.jquery.org/web-sites/#local-development).
 
-* **Windows note:** Line endings need to be Unix-style (line-feed only). Make sure your text editor creates new files with Unix-style line endings. In addition, the following setting to your git config will keep the Unix-style line endings when pulling from the repository.*
+* **Windows note:** Line endings need to be Unix-style (line-feed only). Make sure your text editor creates new files with Unix-style line endings. In addition, the following setting to your git config will keep the Unix-style line endings when pulling from the repository:
 
 ```
 $ git config --global core.autocrlf true
