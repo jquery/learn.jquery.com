@@ -65,7 +65,7 @@ There are two different ways of browsing the mailing list archives.
 
 ### Chat / IRC Channel
 
-jQuery also has a very active IRC channel, **#jquery**, hosted by [freenode](http://freenode.net/).
+jQuery also has a very active IRC channel, `#jquery`, hosted by [freenode](http://freenode.net/).
 
 The IRC Channel is best if you need quick help with any of the following:
 
@@ -80,11 +80,11 @@ If your problem is more in-depth, we may ask you to post to the mailing list, or
 
 **Server:** irc.freenode.net
 
-**Room:** #jquery
+**Room:** `#jquery`
 
 You can also connect at http://webchat.freenode.net/?channels=#jquery.
 
-Additionally we have **#jquery-es** and **#jquery-de** if you want to speak your native language.
+Additionally we have `#jquery-es` and `#jquery-de` if you want to speak your native language.
 
 If you wish to post code snippets to the channel, you should use a paste site, like http://jsfiddle.net/ or http://jsbin.com/
 
