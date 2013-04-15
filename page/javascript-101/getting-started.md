@@ -57,7 +57,7 @@ Look at this simple HTML page that includes CSS and JavaScript to see how it all
 </html>
 ```
 
-In the example above, HTML is used to describe the content. The "Hello World" text is described as a heading with the `<h1>` tag and "Click Me!" is described as a button with the `<button>` tag. The `<style>` block contains CSS that changes the font-size and color of the header text. The `<script>` block contains JavaScript that adds interactivity to the button. When a user clicks on the button, an alert message will appear that says "Hello!".
+In the example above, HTML is used to describe the content. The "Hello World" text is described as a heading with the `<h1>` tag and "Click Me!" is described as a button with the `<button>` tag. The `<style>` block contains CSS that changes the font size and color of the header text. The `<script>` block contains JavaScript that adds interactivity to the button. When a user clicks on the button, an alert message will appear that says "Hello!"
 
 ## A Scripting Language for the Web
 
