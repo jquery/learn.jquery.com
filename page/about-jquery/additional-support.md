@@ -86,7 +86,7 @@ You can also connect at http://webchat.freenode.net/?channels=#jquery.
 
 Additionally we have `#jquery-es` and `#jquery-de` if you want to speak your native language.
 
-If you wish to post code snippets to the channel, you should use a paste site, like http://jsfiddle.net/ or http://jsbin.com/
+If you wish to post code snippets to the channel, you should use a paste site, like [jsfiddle.net](http://jsfiddle.net/) or [jsbin.com](http://jsbin.com/)
 
 ### StackOverflow
 
