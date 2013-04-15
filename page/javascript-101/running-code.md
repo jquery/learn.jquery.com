@@ -21,7 +21,7 @@ The second option is to inline the code directly on the web page. This is also a
 ```
 <!-- Embed code directly on a web page using script tags. -->
 <script>
-	alert( "Hello World!" );
+alert( "Hello World!" );
 </script>
 ```
 
