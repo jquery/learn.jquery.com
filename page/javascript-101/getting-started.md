@@ -28,7 +28,7 @@ Look at this simple HTML page that includes CSS and JavaScript to see how it all
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
+	<meta charset="utf-8" />
 	<title>Hello World</title>
 	<!-- CSS for presentation -->
 	<style>
