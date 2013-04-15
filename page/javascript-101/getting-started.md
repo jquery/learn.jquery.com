@@ -12,7 +12,7 @@ Before diving into JavaScript, it helps to understand how it aligns with the oth
 
 ### HTML is for Content
 
-HTML is a markup language used to define and describe content. Whether it be a blog post, a search engine result or an e-commerce site, the core content of a web page is written in HTML. A semantic markup, HTML is used to describe content in universal terms (headers, paragraphs, images, etc.)
+HTML is a markup language used to define and describe content. Whether it be a blog post, a search engine result, or an e-commerce site, the core content of a web page is written in HTML. A semantic markup, HTML is used to describe content in universal terms (headers, paragraphs, images, etc.)
 
 ### CSS is for Presentation
 
