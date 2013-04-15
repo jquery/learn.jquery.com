@@ -36,7 +36,7 @@ When creating object literals, note that the key portion of each key-value pair 
 ```
 // test
 var myObject = {
-  validIdentifier: 123,
+	validIdentifier: 123,
 	"some string": 456,
 	99999: 789
 };
@@ -52,7 +52,7 @@ var myObject = {
 };
 
 for ( var prop in myObject ) { 
-  console.log("Property : " + prop + " ; value : "+myObject[ prop ]); 
+	console.log("Property : " + prop + " ; value : "+myObject[ prop ]); 
 }
 
 # Would log :
