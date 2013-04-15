@@ -30,7 +30,8 @@ Look at this simple HTML page that includes CSS and JavaScript to see how it all
 <head>
 	<meta charset="utf-8" />
 	<title>Hello World</title>
-	<!-- CSS for presentation -->
+
+	<!-- CSS for presentation. -->
 	<style>
 	h1 { font-size: 14px; color: hotpink; }
 	button { color: red; }
@@ -39,14 +40,18 @@ Look at this simple HTML page that includes CSS and JavaScript to see how it all
 <body>
 	<h1>Hello World</h1>
 	<button>Click Me!</button>
-	<!-- JavaScript for interactivity -->
+
+	<!-- JavaScript for interactivity. -->
 	<script>
+
     // Get a handle on the first button element in the document.
 	var button = document.querySelector( "button" );
+
 	// If a user clicks on it, say hello!
 	button.addEventListener( "click", function( ev ) {
 		alert( "Hello" );
 	}, false);
+
 	</script>
 </body>
 </html>
