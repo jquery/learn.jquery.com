@@ -50,7 +50,7 @@ In general, keep your question short and focused and provide only essential deta
 
 ### Mailing List Archives
 
-The mailing list existed before the forums were created. The mailing lists were closed in early 2010.
+The mailing lists existed before the forums were created, and were closed in early 2010.
 
 There are two different ways of browsing the mailing list archives.
 
