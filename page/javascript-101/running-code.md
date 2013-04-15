@@ -57,7 +57,7 @@ Placement of the previous two options is important and can vary depending on the
 </html>
 ```
 
-It is a common pattern to move scripts to the bottom of the page, prior to the closing HTML `<body>` tag. This will guarantee that elements are defined when the script is executed.
+It is a common pattern to move scripts to the bottom of the page, prior to the closing HTML `<body>` tag. This will guarantee that elements are defined when the script is executed:
 
 ```
 <!-- Moving the script to the bottom of the page will -->
