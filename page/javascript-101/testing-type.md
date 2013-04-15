@@ -28,8 +28,7 @@ typeof myArray;    // "object" -- Careful!
 typeof myString;   // "string"
 typeof myNumber;   // "number"
 typeof null;       // "object" -- Careful!
-typeof undefined   // "undefined" -- Careful!
-typeof NaN         // "number" -- Careful!
+typeof undefined;  // "undefined" -- Careful!
 
 
 if ( myArray.push && myArray.slice && myArray.join ) {
