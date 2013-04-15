@@ -60,18 +60,18 @@ Placement of the previous two options is important and can vary depending on the
 It is a common pattern to move scripts to the bottom of the page, prior to the closing HTML `<body>` tag. This will guarantee that elements are defined when the script is executed:
 
 ```
-<!-- Moving the script to the bottom of the page will -->
-<!-- make sure the element exists. -->
 <!doctype html>
 <html>
-<head>
-</head>
+<head></head>
 <body>
-	<h1 id="hello-world">Hello World</h1>
-	<script>
-	var title = document.getElementById( "hello-world" );
-	console.log( title );
-	</script>
+
+<h1 id="hello-world">Hello World</h1>
+<script>
+// Moving the script to the bottom of the page will make sure the element exists.
+var title = document.getElementById( "hello-world" );
+console.log( title );
+</script>
+
 </body>
 </html>
 ```
