@@ -61,7 +61,7 @@ There are two different ways of browsing the mailing list archives.
 	* [jQuery UI Dev List Archives](http://groups.google.com/group/jquery-ui-dev)
 	* [jQuery Plugins List Archives](http://groups.google.com/group/jquery-plugins)
 
-2. Also, an interactive, browsable, version of the General Discussion mailing list can be found on [Nabble](http://www.nabble.com/JQuery-f15494.html) (a forum-like mailing list mirror).
+2. Also, an interactive, browsable version of the General Discussion mailing list can be found on [Nabble](http://www.nabble.com/JQuery-f15494.html) (a forum-like mailing list mirror).
 
 ### Chat / IRC Channel
 
