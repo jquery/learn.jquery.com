@@ -20,4 +20,4 @@ This guide covers the foundational concepts of JavaScript, as well as frequent p
 
 If you have experience with other programming languages, good for you! If not, don't worry. We'll take it slow and teach you everything you need to know to unlock the power of jQuery with JavaScript.
 
-##Table of Contents
+## Table of Contents
