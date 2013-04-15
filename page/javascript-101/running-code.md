@@ -50,7 +50,9 @@ Placement of the previous two options is important and can vary depending on the
 	</script>
 </head>
 <body>
-	<h1 id="hello-world">Hello World</h1>
+
+<h1 id="hello-world">Hello World</h1>
+
 </body>
 </html>
 ```
