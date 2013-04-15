@@ -11,7 +11,7 @@ attribution:
 The first and recommended option is to write code in an external file (with a `.js` extension), which can then be included on our web page using an HTML `<script>` tag and pointing the `src` attribute to the file's location. Having JavaScript in a separate file will reduce code duplication if you want to reuse it on other pages. It will also allow the browser to cache the file on the remote client's computer, decreasing page load time.
 
 ```
-<!-- Code is written in a .js file, then included via the script tag src attribute. -->
+<!-- Code is written in a .js file, included via the script tag src attribute. -->
 <script src="/path/to/example.js"></script>
 ```
 ### Inline
