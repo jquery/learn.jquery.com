@@ -14,11 +14,11 @@ Before diving into JavaScript, it helps to understand how it aligns with the oth
 
 HTML is a markup language used to define and describe content. Whether it be a blog post, a search engine result or an e-commerce site, the core content of a web page is written in HTML. A semantic markup, HTML is used to describe content in universal terms (headers, paragraphs, images, etc.)
 
-###CSS is for Presentation
+### CSS is for Presentation
 
 CSS is a supplemental language that applies style to HTML documents. CSS is all about making content look better by defining fonts, colors, and other visual aesthetics. The power of CSS comes from the fact that styling is not intermingled with content. This means you can apply different styles to the same piece of content, which is critical when building responsive websites that look good across a range of devices.
 
-###JavaScript is for Interactivity
+### JavaScript is for Interactivity
 
 In the browser, JavaScript adds interactivity and behavior to HTML content. Without JavaScript, web pages would be static and boring. JavaScript helps bring a web page to life.
 
