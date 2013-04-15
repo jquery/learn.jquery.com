@@ -55,13 +55,13 @@ The mailing list existed before the forums were created. The mailing lists were 
 There are two different ways of browsing the mailing list archives.
 
 1. The official mailing list archives can be found here:
-  * [jQuery General Discussion Archives](http://groups.google.com/group/jquery-en)
-	* [jQuery Dev List Archives](http://groups.google.com/group/jquery-dev)
-	* [jQuery UI General Discussion Archives](http://groups.google.com/group/jquery-ui)
-  * [jQuery UI Dev List Archives](http://groups.google.com/group/jquery-ui-dev)
-  * [jQuery Plugins List Archives](http://groups.google.com/group/jquery-plugins)
+	* [jQuery General Discussion Archives](http://groups.google.com/group/jquery-en)
+		* [jQuery Dev List Archives](http://groups.google.com/group/jquery-dev)
+		* [jQuery UI General Discussion Archives](http://groups.google.com/group/jquery-ui)
+	* [jQuery UI Dev List Archives](http://groups.google.com/group/jquery-ui-dev)
+	* [jQuery Plugins List Archives](http://groups.google.com/group/jquery-plugins)
 
-Also, an interactive, browsable, version of the General Discussion mailing list can be found on [Nabble](http://www.nabble.com/JQuery-f15494.html) (a forum-like mailing list mirror).
+2. Also, an interactive, browsable, version of the General Discussion mailing list can be found on [Nabble](http://www.nabble.com/JQuery-f15494.html) (a forum-like mailing list mirror).
 
 ### Chat / IRC Channel
 
