@@ -40,11 +40,11 @@ The last option is to use the event handler attributes of HTML elements. This me
 Placement of the previous two options is important and can vary depending on the situation. If you are including JavaScript that doesn't access the elements on the page, you can safely place the script before the closing HTML `<head>` tag. However, if the code will interact with the elements on the page, you have to make sure those elements exist at the time the script is executed. This common pitfall can be seen in the example below. The script for finding the element with the ID `hello-world` will be executed before the element is defined in the document.
 
 ```
-<!-- Attempting to access an element too early will have unexpected results. -->
 <!doctype html>
 <html>
 <head>
 	<script>
+	// Attempting to access an element too early will have unexpected results.
 	var title = document.getElementById( "hello-world" );
 	console.log( title );
 	</script>
