@@ -75,7 +75,7 @@ var $my_AwesomeVariable = "d";
 var _my_awesome_variable_$ = "e";
 ```
 
-### Variable definition
+### Variable Definition
 
 Variables can be defined using multiple `var` statements, or in a single combined var statement.
 
