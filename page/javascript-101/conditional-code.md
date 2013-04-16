@@ -5,10 +5,12 @@ source: http://jqfundamentals.com/legacy
 attribution:
   - jQuery Fundamentals
 ---
+
 Sometimes a block of code should only be run under certain conditions. Flow control – via `if` and `else` blocks – lets you run code if certain conditions have been met.
 
 ```
 // Flow control
+
 var foo = true;
 var bar = false;
 
@@ -24,13 +26,9 @@ if ( bar ) {
 } else {
 
 	if ( foo ) {
-
 		// this code will run
-
 	} else {
-
 		// this code would run if foo and bar were both false
-
 	}
 
 }
@@ -67,6 +65,7 @@ undefined; // be careful -- undefined can be redefined!
 Sometimes a variable should be set depending on some condition. An `if`/`else` statement works, but in many cases the ternary operator is more convenient. The ternary operator tests a condition; if the condition is true, it returns a certain value, otherwise it returns a different value.
 
 The ternary operator:
+
 ```
 // set foo to 1 if bar is true;
 // otherwise, set foo to 0
@@ -81,6 +80,7 @@ Rather than using a series of `if`/`else` blocks, sometimes it can be useful to 
 
 ```
 // A switch statement
+
 switch ( foo ) {
 
 	case "bar":
