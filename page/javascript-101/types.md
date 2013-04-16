@@ -116,7 +116,7 @@ Objects are covered further in the [Objects](/objects/) section.
 
 ### Array
 
-Arrays are a type of object that are ordered by the index of each item it contains. The index starts at zero and extends to however many items have been added, which is a property of the array known as the `length` of the array. Similar to a basic object, an array can be created with the array constructor or the shorthand syntax known as array literal.
+An array is a type of object that is ordered by the index of each item it contains. The index starts at zero and extends to however many items have been added, which is a property of the array known as the `.length`. Similar to a basic object, an array can be created with the `Array` constructor or the shorthand syntax known as array literal.
 
 ```
 // Creating an array with the constructor:
