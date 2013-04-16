@@ -64,7 +64,7 @@ console.log( foo + +bar ); // 3
 
 ## Logical Operators
 
-Logical operators allow evaluation of a series of operands using AND ( `&&` ) and OR ( `||` ) operations.
+Logical operators allow evaluation of a series of operands using AND (`&&`) and OR (`||`) operations.
 
 ```
 // Logical AND and OR operators.
