@@ -55,7 +55,7 @@ var bar = "2";
 console.log( foo + Number(bar) ); // 3
 ```
 
-The Number constructor, when called as a function (as in the above example), will have the effect of casting its argument into a number. The unary plus operator also does the same thing:
+The `Number` constructor, when called as a function (as in the above example), will have the effect of casting its argument into a number. The unary plus operator also does the same thing:
 
 ```
 // Forcing a string to act as a number (using the unary plus operator).
