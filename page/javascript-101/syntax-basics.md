@@ -11,14 +11,14 @@ attribution:
 JavaScript has support for single- and multi-line comments. Comments are ignored by the JavaScript engine and therefore have no side-effects on the outcome of the program. Use comments to document the code for other developers. Libraries like [JSDoc](http://code.google.com/p/jsdoc-toolkit/ "JSDoc Toolkit") are available to help generate project documentation pages based on commenting conventions.
 
 ```
-// Single and multi line comments.
+// Single- and multi-line comments.
 
-// This is an example of a single line comment.
+// This is an example of a single-line comment.
 
 /*
  * this is an example
  * of a
- * multi line
+ * multi-line
  * comment.
  */
 ```
