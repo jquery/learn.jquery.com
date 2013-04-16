@@ -9,26 +9,26 @@ attribution:
 Sometimes a block of code should only be run under certain conditions. Flow control – via `if` and `else` blocks – lets you run code if certain conditions have been met.
 
 ```
-// Flow control
+// Flow control.
 
 var foo = true;
 var bar = false;
 
 if ( bar ) {
-	// this code will never run
+	// This code will never run.
 	console.log( "hello!" );
 }
 
 if ( bar ) {
 
-	// this code won't run
+	// This code won't run.
 
 } else {
 
 	if ( foo ) {
-		// this code will run
+		// This code will run.
 	} else {
-		// this code would run if foo and bar were both false
+		// This code would run if foo and bar were both false.
 	}
 
 }
@@ -43,21 +43,21 @@ Be mindful not to define functions with the same name multiple times within sepa
 In order to use flow control successfully, it's important to understand which kinds of values are "truthy" and which kinds of values are "falsy." Sometimes, values that seem like they should evaluate one way actually evaluate another.
 
 ```
-// Values that evaluate to true
+// Values that evaluate to true:
 "0";
 "any string";
-[]; // an empty array
-{}; // an empty object
-1;  // any non-zero number
+[]; // An empty array.
+{}; // An empty object.
+1; // Any non-zero number.
 ```
 
 ```
-// Values that evaluate to false
-"";  // an empty string
-NaN; // JavaScript's "not-a-number" variable
+// Values that evaluate to false:
+""; // An empty string.
+NaN; // JavaScript's "not-a-number" variable.
 null;
-undefined; // be careful -- undefined can be redefined!
-0; // the number zero
+undefined; // Be careful -- undefined can be redefined!
+0; // The number zero.
 ```
 
 ## Conditional Variable Assignment with the Ternary Operator
@@ -67,8 +67,7 @@ Sometimes a variable should be set depending on some condition. An `if`/`else` s
 The ternary operator:
 
 ```
-// set foo to 1 if bar is true;
-// otherwise, set foo to 0
+// Set foo to 1 if bar is true; otherwise, set foo to 0:
 var foo = bar ? 1 : 0;
 ```
 
@@ -79,7 +78,7 @@ While the ternary operator can be used without assigning the return value to a v
 Rather than using a series of `if`/`else` blocks, sometimes it can be useful to use a `switch` statement instead. `switch` statements look at the value of a variable or expression, and run different blocks of code depending on the value.
 
 ```
-// A switch statement
+// A switch statement.
 
 switch ( foo ) {
 
@@ -122,7 +121,7 @@ if ( stuffToDo[ foo ] ) {
 
 } else {
 
-	stuffToDo["default"]();
+	stuffToDo[ "default" ]();
 
 }
 ```
