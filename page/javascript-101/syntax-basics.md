@@ -80,12 +80,12 @@ var _my_awesome_variable_$ = "e";
 Variables can be defined using multiple `var` statements, or in a single combined var statement.
 
 ```
-// this works
+// This works:
 var test = 1;
 var test2 = function() { ... };
 var test3 = test2( test );
 
-// and so does this
+// And so does this:
 var test4 = 1,
 	test5 = function() { ... },
 	test6 = test2( test );
