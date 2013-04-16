@@ -6,7 +6,7 @@ attribution:
   - jQuery Fundamentals
 ---
 
-Types in JavaScript fall into two categories: primitives or objects. Primitive types include:
+Types in JavaScript fall into two categories: primitives and objects. Primitive types include:
 
 * String
 * Number
