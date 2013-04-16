@@ -5,6 +5,7 @@ source: http://jqfundamentals.com/legacy
 attribution:
   - jQuery Fundamentals
 ---
+
 Basic operators allow you to manipulate values.
 
 ```
@@ -125,4 +126,5 @@ foo > bim;  // false
 bim > baz;  // true
 foo <= baz; // true
 ```
+
 For more information about comparison operators, visit the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Operators/Comparison_Operators "MDN - Comparison Operators").
