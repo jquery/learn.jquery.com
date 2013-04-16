@@ -145,7 +145,8 @@ An array can be manipulated through methods that are available on the instance o
 A few common array methods are shown below:
 
 ```
-// Using the push(), pop(), unshift() and shift() methods on an array
+// Using the push(), pop(), unshift() and shift() methods on an array.
+
 var foo = [];
 
 foo.push( "a" );
@@ -185,22 +186,20 @@ There are many more methods for manipulating arrays, some of which are covered f
 jQuery offers a few basic utility methods for determining the type of a specific value. Type checking is covered further in the [Testing Type](/testing-type/) section, but here are some examples:
 
 ```
-// Checking the type of an arbitrary value
+// Checking the type of an arbitrary value.
+
 var myValue = [ 1, 2, 3 ];
 
 // Using JavaScript's typeof operator to test for primitive types:
-
 typeof myValue === "string"; // false
 typeof myValue === "number"; // false
 typeof myValue === "undefined"; // false
 typeof myValue === "boolean"; // false
 
-// Using strict equality operator to check for null
-
+// Using strict equality operator to check for null:
 myValue === null; // false
 
-// Using jQuery's methods to check for non-primitive types
-
+// Using jQuery's methods to check for non-primitive types:
 jQuery.isFunction( myValue ); // false
 jQuery.isPlainObject( myValue ); // false
 jQuery.isArray( myValue ); // true
