@@ -109,7 +109,7 @@ If a property is accessed that has not been defined, it will return a type of `u
 ```
 // Properties that have not been created are undefined.
 var person = { name: "John Doe" };
-alert( person.email ); // => undefined
+alert( person.email ); // undefined
 ```
 
 Objects are covered further in the [Objects](/objects/) section.
@@ -131,13 +131,13 @@ There is an important distinction to be made between the two. Both an array cons
 ```
 // The array literal returns a foo.length value of 1:
 var foo = [ 100 ];
-alert( foo[0] ); // => 100
-alert( foo.length ); // => 1
+alert( foo[ 0 ] ); // 100
+alert( foo.length ); // 1
 
 // The array constructor returns a bar.length value of 100:
 var bar = new Array( 100 );
-alert( bar[0] ); // => undefined
-alert( bar.length ); // => 100
+alert( bar[ 0 ] ); // undefined
+alert( bar.length ); // 100
 ```
 
 An array can be manipulated through methods that are available on the instance of the array. Items in the array can be accessed using bracket notation with a given index. If the index does not exist or contains no value, the return type will be `undefined`.
@@ -151,31 +151,31 @@ var foo = [];
 foo.push( "a" );
 foo.push( "b" );
 
-alert( foo[ 0 ] ); // => a
-alert( foo[ 1 ] ); // => b
+alert( foo[ 0 ] ); // a
+alert( foo[ 1 ] ); // b
 
-alert( foo.length ); // => 2
+alert( foo.length ); // 2
 
 foo.pop();
 
-alert( foo[ 0 ] ); // => a
-alert( foo[ 1 ] ); // => undefined
+alert( foo[ 0 ] ); // a
+alert( foo[ 1 ] ); // undefined
 
-alert( foo.length ); // => 1
+alert( foo.length ); // 1
 
 foo.unshift( "z" );
 
-alert( foo[ 0 ] ); => z
-alert( foo[ 1 ] ); => a
+alert( foo[ 0 ] ); // z
+alert( foo[ 1 ] ); // a
 
-alert( foo.length ); => 2
+alert( foo.length ); // 2
 
 foo.shift();
 
-alert( foo[ 0 ] ); // => a
-alert( foo[ 1 ] ); // => undefined
+alert( foo[ 0 ] ); // a
+alert( foo[ 1 ] ); // undefined
 
-alert( foo.length ); // => 1
+alert( foo.length ); // 1
 ```
 
 There are many more methods for manipulating arrays, some of which are covered further in the [Arrays](/arrays/) section. Details can be found on the [Mozilla Developer Network](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array "MDN - Array Reference").
