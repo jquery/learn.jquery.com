@@ -38,11 +38,11 @@ var world     =      "World!";
 // Readable code is good!
 var foo = function() {
 
-  for ( var i = 0; i < 10; i++ ) {
+	for ( var i = 0; i < 10; i++ ) {
 
-    alert( i );
+		alert( i );
 
-  }
+	}
 
 };
 
