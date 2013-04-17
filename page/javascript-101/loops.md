@@ -15,7 +15,7 @@ for ( var i = 0; i < 5; i++ ) {
 }
 ```
 
-Note that in loops, the variable i is not "scoped" to the loop block even though the keyword `var` is used before the variable name. Scope is covered in more depth in the [Scope](/scope/) section.
+Note that in loops, the variable `i` is not "scoped" to the loop block even though the keyword `var` is used before the variable name. Scope is covered in more depth in the [Scope](/scope/) section.
 
 ## The `for` loop
 
