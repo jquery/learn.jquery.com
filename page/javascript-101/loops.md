@@ -24,7 +24,7 @@ A `for` loop is made up of four statements and has the following structure:
 ```
 for ( [initialisation]; [conditional]; [iteration] ) {
 
-	[ loopBody ]
+	[loopBody]
 
 }
 ```
@@ -89,7 +89,7 @@ This is almost exactly the same as the `while` loop, except for the fact that th
 ```
 do {
 
-	[ loopBody ]
+	[loopBody]
 
 } while ( [conditional] )
 ```
