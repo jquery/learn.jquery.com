@@ -35,7 +35,7 @@ The _conditional_ statement is executed before each iteration, and its return va
 
 The _iteration_ statement is executed at the end of each iteration and gives you an opportunity to change the state of important variables. Typically, this will involve incrementing or decrementing a counter and thus bringing the loop closer to its end.
 
-The _loopBody_ statement is what runs on every iteration. It can contain anything. Typically, there will be multiple statements that need to be executed, and should be wrapped in a block ( {...} ).
+The _loopBody_ statement is what runs on every iteration. It can contain anything. Typically, there will be multiple statements that need to be executed, and should be wrapped in a block (`{...}`).
 
 Here's a typical `for` loop:
 
