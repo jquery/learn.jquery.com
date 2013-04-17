@@ -8,7 +8,6 @@ attribution:
 Loops let a block of code run a certain number of times:
 
 ```
-// A for loop
 // logs "try 0", "try 1", ..., "try 4"
 for ( var i = 0; i < 5; i++ ) {
 
@@ -42,7 +41,6 @@ The _loopBody_ statement is what runs on every iteration. It can contain anythin
 Here's a typical `for` loop:
 
 ```
-// A typical for loop
 for (var i = 0, limit = 100; i < limit; i++) {
 	// This block will be executed 100 times
 	console.log( 'Currently at ' + i );
@@ -65,7 +63,6 @@ while ( [conditional] ) {
 Here's a typical `while` loop:
 
 ```
-// A typical while loop
 var i = 0;
 while ( i < 100 ) {
 	// This block will be executed 100 times
@@ -79,7 +76,6 @@ while ( i < 100 ) {
 Notice that the counter is incrementing within the loop's body. It's possible to combine the conditional and incrementer, like so:
 
 ```
-// A while loop with a combined conditional and incrementer
 var i = -1;
 while ( ++i < 100 ) {
 	// This block will be executed 100 times
@@ -103,7 +99,6 @@ do {
 Here's a `do-while` loop:
 
 ```
-// A do-while loop
 do {
 	// Even though the condition evaluates to false
 	// this loop's body will still execute once.
