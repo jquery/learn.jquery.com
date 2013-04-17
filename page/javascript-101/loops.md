@@ -5,14 +5,13 @@ source: http://jqfundamentals.com/legacy
 attribution:
   - jQuery Fundamentals
 ---
+
 Loops let a block of code run a certain number of times:
 
 ```
-// logs "try 0", "try 1", ..., "try 4"
 for ( var i = 0; i < 5; i++ ) {
-
+	// Logs "try 0", "try 1", ..., "try 4".
 	console.log( "try " + i );
-
 }
 ```
 
@@ -42,9 +41,9 @@ Here's a typical `for` loop:
 
 ```
 for (var i = 0, limit = 100; i < limit; i++) {
-	// This block will be executed 100 times
-	console.log( 'Currently at ' + i );
-	// Note: the last log will be "Currently at 99"
+	// This block will be executed 100 times.
+	console.log( "Currently at " + i );
+	// Note: The last log will be "Currently at 99".
 }
 ```
 
@@ -65,11 +64,9 @@ Here's a typical `while` loop:
 ```
 var i = 0;
 while ( i < 100 ) {
-	// This block will be executed 100 times
+	// This block will be executed 100 times.
 	console.log( "Currently at " + i );
-
-	// increment i
-	i++;
+	i++; // Increment i
 }
 ```
 
@@ -78,7 +75,7 @@ Notice that the counter is incrementing within the loop's body. It's possible to
 ```
 var i = -1;
 while ( ++i < 100 ) {
-	// This block will be executed 100 times
+	// This block will be executed 100 times.
 	console.log( "Currently at " + i );
 }
 ```
@@ -96,6 +93,7 @@ do {
 
 } while ( [conditional] )
 ```
+
 Here's a `do-while` loop:
 
 ```
@@ -114,7 +112,7 @@ These types of loops are quite rare since only few situations require a loop tha
 Usually, a loop's termination will result from the conditional statement not evaluating to true, but it is possible to stop a loop in its tracks from within the loop's body with the `break` statement.
 
 ```
-// Stopping a loop
+// Stopping a loop.
 for ( var i = 0; i < 10; i++ ) {
 	if ( something ) {
 		break;
@@ -125,14 +123,14 @@ for ( var i = 0; i < 10; i++ ) {
 You may also want to continue the loop without executing more of the loop's body. This is done using the `continue` statement.
 
 ```
-// Skipping to the next iteration of a loop
+// Skipping to the next iteration of a loop.
 for ( var i = 0; i < 10; i++ ) {
 	if ( something ) {
 		continue;
 	}
 
 	// The following statement will only be executed
-	// if the conditional 'something' has not been met
+	// if the conditional "something" has not been met
 	console.log( "I have been reached" );
 
 }
