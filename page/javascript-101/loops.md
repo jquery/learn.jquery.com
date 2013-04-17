@@ -49,7 +49,7 @@ for (var i = 0, limit = 100; i < limit; i++) {
 
 ## The `while` loop
 
-A while loop is similar to an `if` statement, except that its body will keep executing until the condition evaluates to false.
+A while loop is similar to an `if` statement, except that its body will keep executing until the condition evaluates to a falsy value.
 
 ```
 while ( [conditional] ) {
@@ -109,7 +109,7 @@ These types of loops are quite rare since only few situations require a loop tha
 
 ## Breaking and Continuing
 
-Usually, a loop's termination will result from the conditional statement not evaluating to true, but it is possible to stop a loop in its tracks from within the loop's body with the `break` statement.
+Usually, a loop's termination will result from the conditional statement not evaluating to a truthy value, but it is possible to stop a loop in its tracks from within the loop's body with the `break` statement:
 
 ```
 // Stopping a loop.
