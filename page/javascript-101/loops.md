@@ -80,7 +80,7 @@ while ( ++i < 100 ) {
 }
 ```
 
-Notice that the counter starts at -1 and uses the prefix incrementer (++i).
+Notice that the counter starts at -1 and uses the prefix incrementer (`++i`).
 
 ## The `do-while` Loop
 
