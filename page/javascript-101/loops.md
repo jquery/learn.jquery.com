@@ -17,7 +17,7 @@ for ( var i = 0; i < 5; i++ ) {
 
 Note that in loops, the variable `i` is not "scoped" to the loop block even though the keyword `var` is used before the variable name. Scope is covered in more depth in the [Scope](/scope/) section.
 
-## The `for` loop
+## The `for` Loop
 
 A `for` loop is made up of four statements and has the following structure:
 
@@ -82,7 +82,7 @@ while ( ++i < 100 ) {
 
 Notice that the counter starts at -1 and uses the prefix incrementer (++i).
 
-## The `do-while` loop
+## The `do-while` Loop
 
 This is almost exactly the same as the `while` loop, except for the fact that the loop's body is executed at least once before the condition is tested.
 
@@ -107,7 +107,7 @@ do {
 
 These types of loops are quite rare since only few situations require a loop that blindly executes at least once. Regardless, it's good to be aware of it.
 
-## Breaking and continuing
+## Breaking and Continuing
 
 Usually, a loop's termination will result from the conditional statement not evaluating to true, but it is possible to stop a loop in its tracks from within the loop's body with the `break` statement.
 
