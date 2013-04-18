@@ -13,14 +13,14 @@ Functions can be created in a variety of ways, two of which are shown below:
 ```
 // Function declaration.
 function foo() {
-	/* do something */
+	// Do something.
 }
 ```
 
 ```
 // Named function expression.
 var foo = function() {
-	/* do something */
+	// Do something.
 };
 ```
 
