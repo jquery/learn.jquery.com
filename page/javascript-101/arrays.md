@@ -5,6 +5,7 @@ source: http://jqfundamentals.com/legacy
 attribution:
   - jQuery Fundamentals
 ---
+
 Arrays are zero-indexed, ordered lists of values. They are a handy way to store a set of related items of the same type (such as strings), though in reality, an array can include multiple types of items, including other arrays.
 
 To create an array, either use the object constructor or the literal declaration, by assigning the variable a list of values after the declaration.
@@ -12,6 +13,7 @@ To create an array, either use the object constructor or the literal declaration
 ```
 // A simple array with constructor.
 var myArray1 = new Array( "hello", "world" );
+
 // Literal declaration, the preferred way.
 var myArray2 = [ "hello", "world" ];
 ```
@@ -22,6 +24,7 @@ If the values are unknown, it is also possible to declare an empty array, and ad
 
 ```
 // Creating empty arrays and adding values
+
 var myArray = [];
 
 // adds "hello" on index 0
@@ -38,6 +41,7 @@ myArray[ 2 ] = "!";
 
 ```
 // Leaving indices
+
 var myArray = [];
 
 myArray[ 0 ] = "hello";
@@ -51,6 +55,7 @@ If the size of the array is unknown, `.push()` is far more safe. You can both ac
 
 ```
 // Accessing array items by index
+
 var myArray = [ "hello", "world", "!" ];
 
 console.log( myArray[2] ); // "!"
@@ -64,6 +69,7 @@ The `.length` property is used to determine the amount of items in an array.
 
 ```
 // Length of an array
+
 var myArray = [ "hello", "world", "!" ];
 
 console.log( myArray.length ); // 3
@@ -73,10 +79,13 @@ You will need the `.length` property for looping through an array:
 
 ```
 // For loops and arrays - a classic
+
 var myArray = [ "hello", "world", "!" ];
 
 for ( var i = 0; i < myArray.length; i = i + 1 ) {
 	console.log( myArray[i] );
+
+
 }
 ```
 
@@ -84,10 +93,13 @@ Except when using `for`/`in` loops:
 
 ```
 // For loops and arrays - alternate method
+
 var myArray = [ "hello", "world", "!" ];
 
 for ( var i in myArray ) {
+
 	console.log( myArray[ i ] );
+
 }
 ```
 
@@ -99,7 +111,6 @@ Concatenate two or more arrays with `.concat()`:
 // Concatenating Arrays
 var myArray = [ 2, 3, 4 ];
 var myOtherArray = [ 5, 6, 7 ];
-
 // [ 2, 3, 4, 5, 6, 7 ]
 var wholeArray = myArray.concat( myOtherArray );
 ```
@@ -110,6 +121,7 @@ var wholeArray = myArray.concat( myOtherArray );
 
 ```
 // Joining elements
+
 var myArray = [ "hello", "world", "!" ];
 
 // The default separator is a comma
@@ -130,6 +142,7 @@ console.log( myArray.join("") );   // "helloworld!"
 
 ```
 // pushing and popping
+
 var myArray = [];
 
 myArray.push( 0 ); // [ 0 ]
@@ -145,7 +158,6 @@ As the name suggests, the elements of the array are in reverse order after calli
 ```
 // reverse
 var myArray = [ "world" , "hello" ];
-
 // [ "hello", "world" ]
 myArray.reverse();
 ```
@@ -156,6 +168,7 @@ Removes the first element of an array. With `.push()` and `.shift()`, you can re
 
 ```
 // queue with shift() and push()
+
 var myArray = [];
 
 myArray.push( 0 ); // [ 0 ]
@@ -170,6 +183,7 @@ Extracts a part of the array and returns that part in a new array. This method t
 
 ```
 // slicing
+
 var myArray = [ 1, 2, 3, 4, 5, 6, 7, 8 ];
 var newArray = myArray.slice( 3 );
 
@@ -206,6 +220,7 @@ Sorts an array. It takes one parameter, which is a comparing function. If this f
 
 ```
 // sorting without comparing function
+
 var myArray = [ 3, 4, 6, 1 ];
 
 myArray.sort(); // 1, 3, 4, 6
@@ -213,6 +228,7 @@ myArray.sort(); // 1, 3, 4, 6
 
 ```
 // sorting with comparing function
+
 function descending( a, b ) {
 	return b - a;
 }
@@ -251,6 +267,7 @@ All of these are optional, but you will need at least the "Element" parameter in
 
 ```
 // native forEach
+
 function printElement( elem ) {
 	console.log( elem );
 }
