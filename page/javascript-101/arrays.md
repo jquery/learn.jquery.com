@@ -23,24 +23,24 @@ The literal declaration is generally preferred. See the [Google Coding Guideline
 If the values are unknown, it is also possible to declare an empty array, and add elements either through functions or through accessing by index:
 
 ```
-// Creating empty arrays and adding values
+// Creating empty arrays and adding values.
 
 var myArray = [];
 
-// adds "hello" on index 0
+// Adds "hello" on index 0
 myArray.push( "hello" );
 
-// adds "world" on index 1
+// Adds "world" on index 1
 myArray.push( "world" );
 
-// adds "!" on index 2
+// Adds "!" on index 2
 myArray[ 2 ] = "!";
 ```
 
 `.push()` is a function that adds an element on the end of the array and expands the array respectively. You also can directly add items by index. Missing indices will be filled with `undefined`.
 
 ```
-// Leaving indices
+// Leaving indices.
 
 var myArray = [];
 
@@ -54,7 +54,7 @@ console.log( myArray ); // [ "hello", "world", undefined, "!" ];
 If the size of the array is unknown, `.push()` is far more safe. You can both access and assign values to array items with the index.
 
 ```
-// Accessing array items by index
+// Accessing array items by index.
 
 var myArray = [ "hello", "world", "!" ];
 
@@ -68,7 +68,7 @@ console.log( myArray[2] ); // "!"
 The `.length` property is used to determine the amount of items in an array.
 
 ```
-// Length of an array
+// Length of an array.
 
 var myArray = [ "hello", "world", "!" ];
 
@@ -78,7 +78,7 @@ console.log( myArray.length ); // 3
 You will need the `.length` property for looping through an array:
 
 ```
-// For loops and arrays - a classic
+// For loops and arrays - a classic.
 
 var myArray = [ "hello", "world", "!" ];
 
@@ -92,7 +92,7 @@ for ( var i = 0; i < myArray.length; i = i + 1 ) {
 Except when using `for`/`in` loops:
 
 ```
-// For loops and arrays - alternate method
+// For loops and arrays - alternate method.
 
 var myArray = [ "hello", "world", "!" ];
 
@@ -120,11 +120,11 @@ var wholeArray = myArray.concat( myOtherArray );
 `.join()` creates a string representation of an array by joining all of its elements using a separator string. If no separator is supplied (e.g. `.join()` is called without arguments) the array will be joined using a comma:
 
 ```
-// Joining elements
+// Joining elements.
 
 var myArray = [ "hello", "world", "!" ];
 
-// The default separator is a comma
+// The default separator is a comma.
 console.log( myArray.join() );     // "hello,world,!"
 
 // Any string can be used as separator...
@@ -141,7 +141,7 @@ console.log( myArray.join("") );   // "helloworld!"
 `.pop()` removes the last element of an array. It is the opposite method of `.push()`:
 
 ```
-// pushing and popping
+// Pushing and popping.
 
 var myArray = [];
 
@@ -167,7 +167,7 @@ myArray.reverse();
 Removes the first element of an array. With `.push()` and `.shift()`, you can recreate the method of a [queue](http://en.wikipedia.org/wiki/Queue_(data_structure)):
 
 ```
-// queue with shift() and push()
+// Queue with shift() and push()
 
 var myArray = [];
 
@@ -182,7 +182,7 @@ myArray.shift();   // [ 2 , 7 ]
 Extracts a part of the array and returns that part in a new array. This method takes one parameter, which is the starting index:
 
 ```
-// slicing
+// Slicing.
 
 var myArray = [ 1, 2, 3, 4, 5, 6, 7, 8 ];
 var newArray = myArray.slice( 3 );
@@ -219,7 +219,7 @@ console.log( myArray ); // [ 0, 1, 2, 3, 4, 5 ]
 Sorts an array. It takes one parameter, which is a comparing function. If this function is not given, the array is sorted ascending:
 
 ```
-// sorting without comparing function
+// Sorting without comparing function.
 
 var myArray = [ 3, 4, 6, 1 ];
 
@@ -227,7 +227,7 @@ myArray.sort(); // 1, 3, 4, 6
 ```
 
 ```
-// sorting with comparing function
+// Sorting with comparing function.
 
 function descending( a, b ) {
 	return b - a;
@@ -266,7 +266,7 @@ The function takes up to three arguments:
 All of these are optional, but you will need at least the "Element" parameter in most cases.
 
 ```
-// native forEach
+// Native .forEach()
 
 function printElement( elem ) {
 	console.log( elem );
@@ -282,10 +282,10 @@ function negateElement( elem, index, array ) {
 
 myArray = [ 1, 2, 3, 4, 5 ];
 
-// prints all elements to the console
+// Prints all elements to the console.
 myArray.forEach( printElement );
 
-// prints "Index 0: 1" "Index 1: 2" "Index 2: 3" ...
+// Prints "Index 0: 1", "Index 1: 2", "Index 2: 3", ...
 myArray.forEach( printElementAndIndex );
 
 // myArray is now [ -1, -2, -3, -4, -5 ]
