@@ -160,7 +160,7 @@ myArray.reverse(); // [ "hello", "world" ]
 
 ### .shift()
 
-Removes the first element of an array. With `.push()` and `.shift()`, you can recreate the method of a [queue](http://en.wikipedia.org/wiki/Queue_(data_structure)):
+Removes the first element of an array. With `.push()` and `.shift()`, you can recreate the method of a [queue](http://en.wikipedia.org/wiki/Queue_(abstract_data_type%29):
 
 ```
 // Queue with shift() and push()
