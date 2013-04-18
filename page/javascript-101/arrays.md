@@ -232,7 +232,7 @@ var myArray = [ 3, 4, 6, 1 ];
 myArray.sort( descending ); // [ 6, 4, 3, 1 ]
 ```
 
-The return value of descending (for this example) is important. If the return value is less than zero, the index of a is before b, and if it is greater than zero it's vice-versa. If the return value is zero, the elements index is equal.
+The return value of descending (for this example) is important. If the return value is less than zero, the index of `a` is before `b`, and if it is greater than zero it's vice-versa. If the return value is zero, the elements' index is equal.
 
 ### .unshift()
 
