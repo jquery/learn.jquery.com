@@ -67,7 +67,7 @@ function outer() {
 		console.log( x );
 	}
 
-	inner(); //  5
+	inner(); // 5
 }
 ```
 
@@ -82,7 +82,7 @@ function outer() {
 		var y = 10;
 	}
 
-	inner(); //  5
+	inner(); // 5
 
 	console.log( y ); // ReferenceError: y is not defined
 }
