@@ -256,7 +256,7 @@ The function takes up to three arguments:
 * *Index* – The index of this element in the array.
 * *Array* – The array itself.
 
-All of these are optional, but you will need at least the "Element" parameter in most cases.
+All of these are optional, but you will need at least the *Element* parameter in most cases.
 
 ```
 // Native .forEach()
