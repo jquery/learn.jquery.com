@@ -52,8 +52,8 @@ Secondly, Immediately-Invoked Function Expressions provide a way to avoid global
 
 ```
 (function() {
-	var jQuery = { /* all my methods go here */ };
-	window.jQuery = jQuery.
+	var jQuery = { /* All my methods go here. */ };
+	window.jQuery = jQuery;
 })();
 ```
 
