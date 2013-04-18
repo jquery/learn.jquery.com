@@ -48,7 +48,7 @@ console.log( x ); // 5
 
 This is a bad idea. Any variable that is global can have its value changed by any other parts of a program or any other script. This is undesirable, as it could lead to unforseen side effects.
 
-Secondly, Immediately-Invoked Funcion Expressions provide a way to avoid global variables. You'll see many libraries such as  jQuery often use these:
+Secondly, Immediately-Invoked Function Expressions provide a way to avoid global variables. You'll see many libraries such as  jQuery often use these:
 
 ```
 (function() {
@@ -57,7 +57,7 @@ Secondly, Immediately-Invoked Funcion Expressions provide a way to avoid global 
 })();
 ```
 
-Wrapping everything in a function which is then immediately invoked means all the variables within that function are bound to the _local scope_. At the very end you can then expose all your methods by binding the `jQuery` object to the `window`, the _global object_. To read more about Immediatly-Invoked Functions, check out Ben Alman's [Immediately-Invoked Function Expression](http://benalman.com/news/2010/11/immediately-invoked-function-expression/) article.
+Wrapping everything in a function which is then immediately invoked means all the variables within that function are bound to the _local scope_. At the very end you can then expose all your methods by binding the `jQuery` object to the `window`, the _global object_. To read more about Immediately-Invoked Functions, check out Ben Alman's [Immediately-Invoked Function Expression](http://benalman.com/news/2010/11/immediately-invoked-function-expression/) article.
 
 Because local scope works through functions, any functions defined within another have access to variables defined in the outer function:
 
