@@ -76,7 +76,7 @@ A common pattern in JavaScript is the immediately-invoked function expression. T
 	var foo = "Hello world";
 })();
 
-console.log( foo );   // undefined!
+console.log( foo ); // undefined!
 ```
 
 ## Functions as Arguments
