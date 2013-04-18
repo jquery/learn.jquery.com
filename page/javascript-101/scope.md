@@ -40,7 +40,8 @@ If you declare a variable and forget to use the `var` keyword, that variable is 
 ```
 function myFunc() {
 	x = 5;
-});
+};
+
 console.log( x ); // 5
 ```
 
