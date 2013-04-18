@@ -14,7 +14,8 @@ In JavaScript, as in most object-oriented programming languages, `this` is a spe
 - Otherwise, the function is being invoked as a standalone function not attached to any object, and `this` will refer to the global object.
 
 ```
-// A function invoked using Function.call
+// A function invoked using Function.call()
+
 var myObject = {
 	sayHello: function() {
 		console.log( "Hi! My name is " + this.myName );
@@ -31,7 +32,8 @@ myObject.sayHello.call( secondObject ); // "Hi! My name is Colin"
 ```
 
 ```
-// A function created using Function.bind
+// A function created using Function.bind()
+
 var myName = "the global object";
 var sayHello = function() {
 	console.log( "Hi! My name is " + this.myName );
@@ -41,12 +43,13 @@ var myObject = {
 };
 var myObjectHello = sayHello.bind( myObject );
 
-sayHello(); // "Hi! My name is the global object"
+sayHello();      // "Hi! My name is the global object"
 myObjectHello(); // "Hi! My name is Rebecca"
 ```
 
 ```
 // A function being attached to an object at runtime.
+
 var myName = "the global object";
 var sayHello = function() {
 	console.log( "Hi! My name is " + this.myName );
