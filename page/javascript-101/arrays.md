@@ -58,7 +58,7 @@ If the size of the array is unknown, `.push()` is far more safe. You can both ac
 
 var myArray = [ "hello", "world", "!" ];
 
-console.log( myArray[2] ); // "!"
+console.log( myArray[ 2 ] ); // "!"
 ```
 
 ## Array Methods and Properties
@@ -83,8 +83,8 @@ You will need the `.length` property for looping through an array:
 var myArray = [ "hello", "world", "!" ];
 
 for ( var i = 0; i < myArray.length; i = i + 1 ) {
-	console.log( myArray[i] );
 
+	console.log( myArray[ i ] );
 
 }
 ```
@@ -110,8 +110,7 @@ Concatenate two or more arrays with `.concat()`:
 ```
 var myArray = [ 2, 3, 4 ];
 var myOtherArray = [ 5, 6, 7 ];
-// [ 2, 3, 4, 5, 6, 7 ]
-var wholeArray = myArray.concat( myOtherArray );
+var wholeArray = myArray.concat( myOtherArray ); // [ 2, 3, 4, 5, 6, 7 ]
 ```
 
 ### .join()
@@ -127,11 +126,11 @@ var myArray = [ "hello", "world", "!" ];
 console.log( myArray.join() );     // "hello,world,!"
 
 // Any string can be used as separator...
-console.log( myArray.join(" ") );  // "hello world !";
-console.log( myArray.join("!!") ); // "hello!!world!!!";
+console.log( myArray.join( " " ) );  // "hello world !";
+console.log( myArray.join( "!!" ) ); // "hello!!world!!!";
 
-// ...including an empty one
-console.log( myArray.join("") );   // "helloworld!"
+// ...including an empty one.
+console.log( myArray.join( "" ) );   // "helloworld!"
 
 ```
 
@@ -156,8 +155,7 @@ As the name suggests, the elements of the array are in reverse order after calli
 
 ```
 var myArray = [ "world" , "hello" ];
-// [ "hello", "world" ]
-myArray.reverse();
+myArray.reverse(); // [ "hello", "world" ]
 ```
 
 ### .shift()
