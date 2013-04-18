@@ -12,6 +12,7 @@ Functions can be created in a variety of ways, two of which are shown below:
 
 ```
 // Function declaration.
+
 function foo() {
 	// Do something.
 }
@@ -19,6 +20,7 @@ function foo() {
 
 ```
 // Named function expression.
+
 var foo = function() {
 	// Do something.
 };
