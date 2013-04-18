@@ -108,7 +108,6 @@ for ( var i in myArray ) {
 Concatenate two or more arrays with `.concat()`:
 
 ```
-// Concatenating Arrays
 var myArray = [ 2, 3, 4 ];
 var myOtherArray = [ 5, 6, 7 ];
 // [ 2, 3, 4, 5, 6, 7 ]
@@ -156,7 +155,6 @@ myArray.pop();     // [ 0 , 2 ]
 As the name suggests, the elements of the array are in reverse order after calling this method:
 
 ```
-// reverse
 var myArray = [ "world" , "hello" ];
 // [ "hello", "world" ]
 myArray.reverse();
@@ -196,7 +194,6 @@ console.log( newArray ); // [ 4, 5, 6, 7, 8 ]
 Removes a certain amount of elements and adds new ones at the given index. It takes at least three parameters:
 
 ```
-// splice method
 myArray.splice( index, length, values, ... );
 ```
 
@@ -207,7 +204,6 @@ myArray.splice( index, length, values, ... );
 For example:
 
 ```
-// splice example
 var myArray = [ 0, 7, 8, 5 ];
 myArray.splice( 1, 2, 1, 2, 3, 4 );
 
@@ -245,7 +241,6 @@ The return value of descending (for this example) is important. If the return va
 Inserts an element at the first position of the array:
 
 ```
-// unshift
 var myArray = [];
 
 myArray.unshift( 0 ); // [ 0 ]
