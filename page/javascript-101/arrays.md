@@ -195,9 +195,9 @@ Removes a certain amount of elements and adds new ones at the given index. It ta
 myArray.splice( index, length, values, ... );
 ```
 
-* *Index* - The starting index.
-* *Length* - The number of elements to remove.
-* *Values* - The values to be inserted at the Index position.
+* *Index* – The starting index.
+* *Length* – The number of elements to remove.
+* *Values* – The values to be inserted at the index position.
 
 For example:
 
@@ -252,9 +252,9 @@ In modern browsers it is possible to traverse through arrays with a `.forEach()`
 
 The function takes up to three arguments:
 
-* *Element* - The element itself.
-* *Index* - The index of this element in the array.
-* *Array* - The array itself.
+* *Element* – The element itself.
+* *Index* – The index of this element in the array.
+* *Array* – The array itself.
 
 All of these are optional, but you will need at least the "Element" parameter in most cases.
 
