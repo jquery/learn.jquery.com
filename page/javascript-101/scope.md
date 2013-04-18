@@ -6,7 +6,7 @@ attribution:
   - jQuery Fundamentals
 ---
 
-"Scope" refers to the variables that are available to a piece of code at a given time. A lack of understanding of scope can lead to frustrating debugging experiences. The idea of "scope" is that it's where certain functions or variables are accessible from in our code, and the context in which they exist and are executed in.
+"Scope" refers to the variables that are available to a piece of code at a given time. A lack of understanding of scope can lead to frustrating debugging experiences. The idea of scope is that it's where certain functions or variables are accessible from in our code, and the context in which they exist and are executed in.
 
 There are two types of scopes in JavaScript: global and local. Let's talk about each of them in turn.
 
