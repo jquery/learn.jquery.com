@@ -36,7 +36,7 @@ var greet = function( person, greeting ) {
 	console.log( text );
 };
 
-greet( "Rebecca", "Hello" );
+greet( "Rebecca", "Hello" ); // "Hello, Rebecca"
 ```
 
 ```
@@ -47,7 +47,7 @@ var greet = function( person, greeting ) {
 	return text;
 };
 
-console.log( greet( "Rebecca", "hello" ) ); // "hello, Rebecca"
+console.log( greet( "Rebecca", "Hello" ) ); // "Hello, Rebecca"
 ```
 
 ```
@@ -62,7 +62,7 @@ var greet = function( person, greeting ) {
 
 var greeting = greet( "Rebecca", "Hello" );
 
-greeting();
+greeting(); // "Hello, Rebecca"
 ```
 
 ## Immediately-Invoked Function Expression (IIFE)
@@ -91,7 +91,7 @@ var myFn = function( fn ) {
 	console.log( result );
 };
 
-// logs "hello world"
+// Logs "hello world"
 myFn( function() {
 	return "hello world";
 });
