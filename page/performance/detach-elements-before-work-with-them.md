@@ -7,7 +7,7 @@ attribution:
 ---
 
 The DOM is slow; you want to avoid manipulating it as much as possible. jQuery
-introduced `$.fn.detach` in version 1.4 to help address this issue, allowing you
+introduced `.detach()` in version 1.4 to help address this issue, allowing you
 to remove an element from the DOM while you work with it.
 
 ```

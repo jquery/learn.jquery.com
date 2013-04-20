@@ -15,12 +15,12 @@ $("#myDiv").data( "keyName", { foo: "bar" } );
 $("#myDiv").data("keyName");
 ```
 
-Any kind of data can be stored on an element. For the purposes of this article, `$.fn.data` will be used to store references to other elements.
+Any kind of data can be stored on an element. For the purposes of this article, `.data()` will be used to store references to other elements.
 
-For example, you may want to establish a relationship between a list item and a `<div>` that's inside of it. This relationship could be established every single time the list item is touched, but a better solution would be to establish the relationship once, then store a pointer to the `<div>` on the list item using `$.fn.data`:
+For example, you may want to establish a relationship between a list item and a `<div>` that's inside of it. This relationship could be established every single time the list item is touched, but a better solution would be to establish the relationship once, then store a pointer to the `<div>` on the list item using `.data()`:
 
 ```
-// Storing a relationship between elements using $.fn.data
+// Storing a relationship between elements using .data()
 $("#myList li").each(function() {
 
   var $li = $( this );
@@ -37,4 +37,4 @@ var $firstLi = $("#myList li:first");
 $firstLi.data("contentDiv").html("new content");
 ```
 
-In addition to passing `$.fn.data` a single key-value pair to store data, you can also pass an object containing one or more pairs.
+In addition to passing `.data()` a single key-value pair to store data, you can also pass an object containing one or more pairs.

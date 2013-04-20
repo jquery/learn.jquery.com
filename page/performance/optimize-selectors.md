@@ -22,7 +22,7 @@ $("#container div.robotarm");
 $("#container").find("div.robotarm");
 ```
 
-The `$.fn.find` approach is faster because the first selection is handled
+The `.find()` approach is faster because the first selection is handled
 without going through the Sizzle selector engine — ID-only selections are
 handled using `document.getElementById()`, which is extremely fast because it is
 native to the browser.

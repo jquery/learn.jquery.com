@@ -18,7 +18,7 @@ Removes leading and trailing whitespace.
 $.trim("    lots of extra whitespace    ");
 ```
 
-### `$.each`
+### `$.each()`
 
 Iterates over arrays and objects.
 
@@ -32,9 +32,11 @@ $.each({ foo: "bar", baz: "bim" }, function( k, v ) {
 });
 ```
 
-The method `$.fn.each` is also used for iterating over a selection of elements.
+The method `.each()` can be called on a selection to iterate over the
+elements contained in the selection. `.each()`, not `$.each()`, should be used
+for iterating over elements in a selection.
 
-### `$.inArray`
+### `$.inArray()`
 
 Returns a value's index in an array, or -1 if the value is not in the array.
 ```
@@ -45,7 +47,7 @@ if ( $.inArray( 4, myArray ) !== -1 ) {
 }
 ```
 
-### `$.extend`
+### `$.extend()`
 
 Changes the properties of the first object using the properties of subsequent objects.
 ```
@@ -70,9 +72,9 @@ console.log( firstObject.foo ); // "bar"
 console.log( newObject.foo ); // "baz"
 ```
 
-### `$.proxy`
+### `$.proxy()`
 
-Returns a function that will always run in the provided scope — that is, sets the meaning of this inside the passed function to the second argument.
+Returns a function that will always run in the provided scope — that is, sets the meaning of `this` inside the passed function to the second argument.
 
 ```
 var myFunction = function() {
