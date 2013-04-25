@@ -66,37 +66,37 @@ When the jQuery function is invoked with a CSS selector, it will return a jQuery
 ```
 // Selecting all <h1> tags.
 
-var headers = $( "h1" );
+var headings = $( "h1" );
 ```
 
-`headers` is now a jQuery element containing *all* the `<h1>` tags already on the page. This can be verified by inspecting the `.length` property of `headers`:
+`headings` is now a jQuery element containing *all* the `<h1>` tags already on the page. This can be verified by inspecting the `.length` property of `headings`:
 
 ```
 // Viewing the number of <h1> tags on the page.
 
-var allHeaders = $( "h1" );
+var allHeadings = $( "h1" );
 
-alert( allHeaders.length );
+alert( allHeadings.length );
 ```
 
 If the page has more than one `<h1>` tag, this number will be greater than one. If the page has no `<h1>` tags, the `.length` property will be zero. Checking the `.length` property is a common way to ensure that the selector successfully matched one or more elements.
 
-If the goal is to select only the first header element, another step is required. There are a number of ways to accomplish this, but the most straight-forward is the `.eq()` function.
+If the goal is to select only the first heading element, another step is required. There are a number of ways to accomplish this, but the most straight-forward is the `.eq()` function.
 
 ```
 // Selecting only the first <h1> element on the page (in a jQuery object)
 
-var headers = $( "h1" );
+var headings = $( "h1" );
 
-var firstHeader = headers.eq( 0 );
+var firstHeading = headings.eq( 0 );
 ```
 
-Now `firstHeader` is a jQuery object containing only the first `<h1>` element on the page. And because `firstHeader` is a jQuery object, it has useful methods like `.html()` and `.after()`. jQuery also has a method named `.get()` which provides a related function. Instead of returning a jQuery-wrapped DOM element, it returns the DOM element itself.
+Now `firstHeading` is a jQuery object containing only the first `<h1>` element on the page. And because `firstHeading` is a jQuery object, it has useful methods like `.html()` and `.after()`. jQuery also has a method named `.get()` which provides a related function. Instead of returning a jQuery-wrapped DOM element, it returns the DOM element itself.
 
 ```
 // Selecting only the first <h1> element on the page.
 
-var firstHeaderElem = $( "h1" ).get( 0 );
+var firstHeadingElem = $( "h1" ).get( 0 );
 ```
 
 Alternatively, because the jQuery object is "array-like," it supports array subscripting via brackets:
@@ -104,10 +104,10 @@ Alternatively, because the jQuery object is "array-like," it supports array subs
 ```
 // Selecting only the first <h1> element on the page (alternate approach).
 
-var firstHeaderElem = $( "h1" )[ 0 ];
+var firstHeadingElem = $( "h1" )[ 0 ];
 ```
 
-In either case, `firstHeaderElem` contains the native DOM element. This means it has DOM properties like `.innerHTML` and methods like `.appendChild()`, but *not* jQuery methods like `.html()` or `.after()`. The `firstHeaderElem` element is more difficult to work with, but there are certain instances that require it. One such instance is making comparisons.
+In either case, `firstHeadingElem` contains the native DOM element. This means it has DOM properties like `.innerHTML` and methods like `.appendChild()`, but *not* jQuery methods like `.html()` or `.after()`. The `firstHeadingElem` element is more difficult to work with, but there are certain instances that require it. One such instance is making comparisons.
 
 ### Not All jQuery Objects are Created `===`
 
