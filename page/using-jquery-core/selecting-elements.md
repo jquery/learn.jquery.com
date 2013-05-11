@@ -299,6 +299,6 @@ The `:submit` selector usually applies to `<button>` or `<input>` elements. Some
 $("form :text");
 ```
 
-In order to get the best performance using `:selected`, first select elements with a standard jQuery selector, then use `.filter(":selected")`, or precede the pseudo-selector with a tag name or some other selector.
+In order to get the best performance using `:text`, first select elements with a standard jQuery selector, then use `.filter(":text")`, or precede the pseudo-selector with a tag name or some other selector.
 
 **Note:** As of jQuery 1.5.2, `:text` selects `<input>` elements that have no specified *type* attribute. So, `type = "text"` is implied.
