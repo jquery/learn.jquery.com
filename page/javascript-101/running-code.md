@@ -32,7 +32,7 @@ The last option is to use the event handler attributes of HTML elements. This me
 ```
 <!-- Inline code directly on HTML elements being clicked. -->
 <a href="javascript:alert( 'Hello World' );">Click Me!</a>
-<button onClick="alert( 'Good Bye World' );">Click Me Too!</a>
+<button onClick="alert( 'Good Bye World' );">Click Me Too!</button>
 ```
 
 ### Placement
