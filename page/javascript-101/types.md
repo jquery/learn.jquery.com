@@ -165,10 +165,10 @@ alert( foo.length ); // => 1
 
 foo.unshift( "z" );
 
-alert( foo[ 0 ] ); => z
-alert( foo[ 1 ] ); => a
+alert( foo[ 0 ] ); // => z
+alert( foo[ 1 ] ); // => a
 
-alert( foo.length ); => 2
+alert( foo.length ); // => 2
 
 foo.shift();
 
