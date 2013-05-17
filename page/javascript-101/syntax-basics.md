@@ -8,17 +8,17 @@ attribution:
 
 ### Comments
 
-JavaScript has support for single- and multi-line comments. Comments are ignored by the JavaScript engine and therefore have no side-effects on the outcome of the program. Use comments to document the code for other developers. Libraries like [JSDoc](http://code.google.com/p/jsdoc-toolkit/ "JSDoc Toolkit") are available to help generate project documentation pages based on commenting conventions.
+JavaScript has support for single- and multi-line comments. Comments are ignored by the JavaScript engine and therefore have no side-effects on the outcome of the program. Use comments to document the code for other developers. Libraries like [JSDoc](https://code.google.com/p/jsdoc-toolkit/ "JSDoc Toolkit") are available to help generate project documentation pages based on commenting conventions.
 
 ```
-// Single and multi line comments.
+// Single- and multi-line comments.
 
-// This is an example of a single line comment.
+// This is an example of a single-line comment.
 
 /*
  * this is an example
  * of a
- * multi line
+ * multi-line
  * comment.
  */
 ```
@@ -38,11 +38,11 @@ var world     =      "World!";
 // Readable code is good!
 var foo = function() {
 
-  for ( var i = 0; i < 10; i++ ) {
+	for ( var i = 0; i < 10; i++ ) {
 
-    alert( i );
+		alert( i );
 
-  }
+	}
 
 };
 
@@ -75,17 +75,17 @@ var $my_AwesomeVariable = "d";
 var _my_awesome_variable_$ = "e";
 ```
 
-### Variable definition
+### Variable Definition
 
-Variables can be defined using multiple `var` statements, or in a single combined var statement.
+Variables can be defined using multiple `var` statements, or in a single combined `var` statement.
 
 ```
-// this works
+// This works:
 var test = 1;
 var test2 = function() { ... };
 var test3 = test2( test );
 
-// and so does this
+// And so does this:
 var test4 = 1,
 	test5 = function() { ... },
 	test6 = test2( test );
