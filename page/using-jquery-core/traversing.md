@@ -6,7 +6,7 @@ Once you've made an initial selection with jQuery, you can traverse deeper into 
 
 ## Parents
 
-The methods for finding the parents from a selection include `$.fn.parent()`, `$.fn.parents()`, `$.fn.parentsUntil()`, and `$.fn.closest()`.
+The methods for finding the parents from a selection include `.parent()`, `.parents()`, `.parentsUntil()`, and `.closest()`.
 
 ```
 <div class="grandparent">
@@ -50,7 +50,7 @@ $("div.child").closest("div");
 
 ## Children
 
-The methods for finding child elements from a selection include `$.fn.children()` and `$.fn.find()`. The difference between these methods lies in how far into the child structure the selection is made. `$.fn.children()` only operates on direct child nodes, while `$.fn.find()` can traverse recursively into children, children of those children, and so on.
+The methods for finding child elements from a selection include `.children()` and `.find()`. The difference between these methods lies in how far into the child structure the selection is made. `.children()` only operates on direct child nodes, while `.find()` can traverse recursively into children, children of those children, and so on.
 
 ```
 // Selecting an element's direct children
@@ -66,7 +66,7 @@ $("div.grandparent").find("div");
 
 ## Siblings
 
-The rest of the traversal methods within jQuery all deal with finding sibling selections. There are a few basic methods as far as the direction of traversal is concerned. You can find previous elements with `$.fn.prev()`, next elements with `$.fn.next()`, and both with `$.fn.siblings()`. There are also a few other methods that build onto these basic methods: `$.fn.nextAll()`, `$.fn.nextUntil()`, `$.fn.prevAll()` and `$.fn.prevUntil()`.
+The rest of the traversal methods within jQuery all deal with finding sibling selections. There are a few basic methods as far as the direction of traversal is concerned. You can find previous elements with `.prev()`, next elements with `.next()`, and both with `.siblings()`. There are also a few other methods that build onto these basic methods: `.nextAll()`, `.nextUntil()`, `.prevAll()` and `.prevUntil()`.
 
 ```
 // Selecting a next sibling of the selectors
@@ -98,7 +98,7 @@ $("div.surrogateParent2").prevAll().first();
 $("div.surrogateParent2").prevAll().last();
 ```
 
-Use `$.fn.siblings()` to select all siblings:
+Use `.siblings()` to select all siblings:
 
 ```
 // Selecting an element's siblings in both directions that matches the given selector

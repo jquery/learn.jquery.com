@@ -9,9 +9,10 @@ attribution:
 jQuery's ajax capabilities can be especially useful when dealing with forms. There are several advantages, which can range from serialization, to simple client-side validation (e.g. "Sorry, that username is taken"), to [prefilters](http://api.jquery.com/extending-ajax/#Prefilters) (explained below), and even more!
 
 ### Serialization
-Serializing form inputs in jQuery is extremely easy. Two methods come supported natively — `$.fn.serialize` and `$.fn.serializeArray`. While the names are fairly self-explanatory, there are many advantages to using them.
 
-The `serialize` method serializes a form's data into a query string. For the element's value to be serialized, it **must** have a `name` attribute. Please note that values from inputs with a type of `checkbox` or `radio` are included only if they are checked.
+Serializing form inputs in jQuery is extremely easy. Two methods come supported natively: `.serialize()` and `.serializeArray()`. While the names are fairly self-explanatory, there are many advantages to using them.
+
+The `.serialize()` method serializes a form's data into a query string. For the element's value to be serialized, it **must** have a `name` attribute. Please note that values from inputs with a type of `checkbox` or `radio` are included only if they are checked.
 
 ```
 // Turning form data into a query string
@@ -21,7 +22,7 @@ $( "#myForm" ).serialize();
 // field_1=something&field2=somethingElse
 ```
 
-While plain old serialization is great, sometimes your application would work better if you sent over an array of objects, instead of just the query string. For that, jQuery has the `serializeArray` method. It's very similar to the `serialize` method listed above, except it produces an array of objects, instead of a string.
+While plain old serialization is great, sometimes your application would work better if you sent over an array of objects, instead of just the query string. For that, jQuery has the `.serializeArray()` method. It's very similar to the `.serialize()` method listed above, except it produces an array of objects, instead of a string.
 
 ```
 // Creating an array of objects containing form data

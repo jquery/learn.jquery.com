@@ -5,7 +5,7 @@ level: beginner
 
 ## Showing and Hiding Content
 
-jQuery can show or hide content instantaneously with `$.fn.show` or `$.fn.hide`:
+jQuery can show or hide content instantaneously with `.show()` or `.hide()`:
 
 ```
 // Instantaneously hide all paragraphs
@@ -19,8 +19,8 @@ When jQuery hides an element, it sets its CSS `display` property to `none`. This
 zero width and height; it does not mean that the content will simply become transparent and leave an empty area on the page.
 
 jQuery can also show or hide content by means of animation effects. You can tell
-`$.fn.show` and `$.fn.hide` to use animation in a couple of ways. One is to pass
-in a string-valued argument of `slow`, `normal`, or `fast`:
+`.show()` and `.hide()` to use animation in a couple of ways. One is to pass
+in an argument of `'slow'`, `'normal'`, or `'fast'`:
 
 ```
 // Slowly hide all paragraphs
@@ -31,7 +31,7 @@ $( "div.hidden" ).show( "fast" );
 ```
 
 If you prefer more direct control over the duration of the animation effect, you
-can pass the desired duration in milliseconds to `$.fn.show` and `$.fn.hide`:
+can pass the desired duration in milliseconds to `.show()` and `.hide()`:
 
 ```
 // Hide all paragraphs over half a second
@@ -46,9 +46,9 @@ over the duration.
 
 ##Fade and Slide Animations
 
-You may have noticed that `$.fn.show` and `$.fn.hide` use a combination of slide and fade effects
+You may have noticed that `.show()` and `.hide()` use a combination of slide and fade effects
 when showing and hiding content in an animated way. If you would rather show or hide content with
-one effect or the other, there are additional methods that can help. `$.fn.slideDown` and `$.fn.slideUp`
+one effect or the other, there are additional methods that can help. `.slideDown()` and `.slideUp()`
 show and hide content, respectively, using only a slide effect. Slide animations are accomplished by
 rapidly making changes to an element's CSS `height` property.
 
@@ -60,7 +60,7 @@ $( "p" ).slideUp( 800 );
 $( "div.hidden" ).slideDown( 600 );
 ```
 
-Similarly `$.fn.fadeIn` and `$.fn.fadeOut` show and hide content, respectively, by means of a fade
+Similarly `.fadeIn()` and `.fadeOut()` show and hide content, respectively, by means of a fade
 animation. Fade animations involve rapidly making changes to an element's CSS `opacity` property.
 
 ```
@@ -73,9 +73,9 @@ $( "div.hidden" ).fadeIn( 750 );
 
 ##Changing Display Based on Current Visibility State
 
-jQuery can also let you change a content's visibility based on its current visibility state. `$.fn.toggle`
+jQuery can also let you change a content's visibility based on its current visibility state. `.toggle()`
 will show content that is currently hidden and hide content that is currently visible. You can pass the
-same arguments to `$.fn.toggle` as you pass to any of the effects methods above.
+same arguments to `.toggle()` as you pass to any of the effects methods above.
 
 ```
 // Instantaneously toggle the display of all paragraphs
@@ -88,8 +88,8 @@ $( "img" ).toggle( "slow" );
 $( "div" ).toggle( 1800 );
 ```
 
-`$.fn.toggle` will use a combination of slide and fade effects, just as `$.fn.show` and `$.fn.hide` do. You can
-toggle the display of content with just a slide or a fade using `$.fn.slideToggle` and `$.fn.fadeToggle`.
+`.toggle()` will use a combination of slide and fade effects, just as `.show()` and `.hide()` do. You can
+toggle the display of content with just a slide or a fade using `.slideToggle()` and `.fadeToggle()`.
 
 ```
 // Toggle the display of all ordered lists over 1 second using slide up/down animations
@@ -109,10 +109,10 @@ chain will wait until the animation runs to completion.
 $( "p.hidden" ).fadeIn( 750 ).addClass( "lookAtMe" );
 ```
 
-It is important to realize that `$.fn.fadeIn` above only *kicks off* the animation. Once started, the
+It is important to realize that `.fadeIn()` above only *kicks off* the animation. Once started, the
 animation is implemented by rapidly changing CSS properties in a JavaScript `setInterval()` loop. When
-you call `$.fn.fadeIn`, it starts the animation loop and then returns the jQuery object, passing it along
-to `$.fn.addClass` which will then add the `lookAtMe` style class while the animation loop is just
+you call `.fadeIn()`, it starts the animation loop and then returns the jQuery object, passing it along
+to `.addClass()` which will then add the `lookAtMe` style class while the animation loop is just
 getting started.
 
 To defer an action until after an animation has run to completion, you need to use an animation callback
@@ -151,9 +151,9 @@ if ( $someElement.length ) {
 
 jQuery provides some additional features for controlling your animations:
 
-### `$.fn.stop`
+### `.stop()`
 
-`$.fn.stop` will immediately terminate all animations running on the elements in your selection. You might give
+`.stop()` will immediately terminate all animations running on the elements in your selection. You might give
 end-users control over page animations by rigging a button they can click to stop the animations.
 
 ```
@@ -166,9 +166,9 @@ $( "input" ).attr({
 }).appendTo( document.body );
 ```
 
-### `$.fn.delay`
+### `.delay()`
 
-`$.fn.delay` is used to introduce a delay between successive animations. For example:
+`.delay()` is used to introduce a delay between successive animations. For example:
 
 ```
 // Hide all level 1 headings over half a second; then wait for 1.5 seconds

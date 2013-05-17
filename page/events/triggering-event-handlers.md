@@ -76,4 +76,4 @@ foo(); // instead of $( "p" ).trigger( "click" )
 ```
 
 A more complex architecture can built on top of trigger using the [publish-subscribe pattern](http://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) using [jQuery plugins](https://gist.github.com/661855).
-With this technique, `$.fn.trigger` can be used to notify other sections of code that an application specific event has happened.
+With this technique, `.trigger()` can be used to notify other sections of code that an application specific event has happened.

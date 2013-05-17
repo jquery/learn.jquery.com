@@ -30,5 +30,10 @@ you need to remember:
   their return value will vary.
 
 There are a few cases where object methods and core methods have the same
-names, such as `$.each` and `$.fn.each`. In these cases, be extremely careful
+names, such as `$.each()` and `$.fn.each()`. In these cases, be extremely careful
 when reading the documentation that you are exploring the correct method.
+
+In this guide, if a method can be called on a jQuery selection, we'll refer to
+it just by its name: `.each()`. If it is a utility method -- that is, a method
+that isn't called on a selection -- we'll refer to it explicitly as a method in
+the jQuery namespace: `$.each()`.

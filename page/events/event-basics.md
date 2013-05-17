@@ -16,8 +16,8 @@ In some cases, such as the page load and unload events, the browser itself will
 trigger the event.
 
 jQuery offers convenience methods for most native browser events. These methods —
-including `$.fn.click`, `$.fn.focus`, `$.fn.blur`, `$.fn.change`, etc. — are shorthand
-for jQuery's `$.fn.on` method. The `on` method is useful for binding the same handler
+including `.click()`, `.focus()`, `.blur()`, `.change()`, etc. — are shorthand
+for jQuery's `.on()` method. The on method is useful for binding the same handler
 function to multiple events, when you want to provide data to the event hander,
 when you are working with custom events, or when you want to pass an object of
 multiple events and handlers.
@@ -30,7 +30,7 @@ $( "p" ).click(function() {
 ```
 
 ```
-// Equivalent event setup using the `$.fn.on` method
+// Equivalent event setup using the `.on()` method
 $( "p" ).on( "click", function() {
 	console.log( "click" );
 });
@@ -38,7 +38,7 @@ $( "p" ).on( "click", function() {
 
 ### Extending Events to New Page Elements
 
-It is important to note that `$.fn.on` can only create event listeners
+It is important to note that `.on()` can only create event listeners
 on elements that exist *at the time you set up the listeners*. Similar elements created
 after the event listeners are established will not automatically pick up event behaviors
 you've set up previously. For example:
@@ -57,7 +57,7 @@ $( document ).ready(function(){
 });
 ```
 
-Consult the article on event delegation to see how to use `$.fn.on` so that
+Consult the article on event delegation to see how to use `.on()` so that
 event behaviors will be extended to new elements without having to rebind them.
 
 ### Inside the Event Handler Function
@@ -85,7 +85,7 @@ The button or key that was pressed.
 Any data that was passed in when the event was bound. For example:
 
 ```
-// Event setup using the `$.fn.on` method with data
+// Event setup using the `.on()` method with data
 $( "input" ).on(
 	"change",
 	{ foo: "bar" }, // associate data with event binding
@@ -141,7 +141,7 @@ $( "a" ).click(function( eventObject ) {
 
 Quite often elements in your application will be bound to multiple events. If
 multiple events are to share the same handling function, you can provide the event types
-as a space-separated list to `$.fn.on`:
+as a space-separated list to `.on()`:
 
 ```
 // Multiple events, same handler
@@ -153,7 +153,7 @@ $( "input" ).on(
 );
 ```
 
-When each event has its own handler, you can pass an object into `$.fn.on` with one or
+When each event has its own handler, you can pass an object into `.on()` with one or
 more key/value pairs, with the key being the event name and the value being the function
 to handle the event.
 
@@ -180,7 +180,7 @@ $( "p" ).off( ".myNamespace" ); // unbind all events in the namespace
 
 ### Tearing Down Event Listeners
 
-To remove an event listener, you use the `$.fn.off` method and pass in
+To remove an event listener, you use the `.off()` method and pass in
 the event type to off. If you attached a named function to the event, then
 you can isolate the event tear down to just that named function by passing it as the
 second argument.
@@ -203,7 +203,7 @@ $( "p" ).off( "click", bar ); // foo is still bound to the click event
 
 Sometimes you need a particular handler to run only once — after that, you may
 want no handler to run, or you may want a different handler to run. jQuery
-provides the `$.fn.one` method for this purpose.
+provides the `.one()` method for this purpose.
 
 ```
 // Switching handlers using the `$.fn.one` method
@@ -221,10 +221,10 @@ Note that in the code snippet above, the `firstClick` function will be executed 
 the first click on *each* paragraph element rather than the function being removed from
 *all* paragraphs when *any* paragraph is clicked for the first time.
 
-`$.fn.one` can also be used to bind multiple events:
+`.one()` can also be used to bind multiple events:
 
 ```
-// Using $.fn.one to bind several events
+// Using .one() to bind several events
 $( "input[id]" ).one( "focus mouseover keydown", firstEvent);
 
 function firstEvent( eventObject ) {

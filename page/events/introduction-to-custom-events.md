@@ -135,25 +135,25 @@ which the method belongs is created via the jQuery selector. Binding the
 class called `Light` with a method of `changeState`, and then instantiating new
 `Light` objects for each element with a classname of `light`.
 
-### Recap: $.fn.on and $.fn.trigger
+### Recap: `.on()` and `.trigger()`
 
 In the world of custom events, there are two important jQuery methods:
-`$.fn.on` and `$.fn.trigger`. In the [Events](/events/) chapter, we saw how to use these
+`.on()` and `.trigger()`. In the [Events](/events/) chapter, we saw how to use these
 methods for working with user events; for this chapter, it's important to
 remember two things:
 
-- `$.fn.on` method takes an event type and an event handling function as
+- `.on()` method takes an event type and an event handling function as
   arguments. Optionally, it can also receive event-related data as its second
   argument, pushing the event handling function to the third argument. Any data
   that is passed will be available to the event handling function in the `data`
   property of the event object. The event handling function always receives the
   event object as its first argument.
 
-- `$.fn.trigger` method takes an event type as its argument. Optionally, it can
+- `.trigger()` method takes an event type as its argument. Optionally, it can
   also take an array of values. These values will be passed to the event
   handling function as arguments after the event object.
 
-Here is an example of the usage of `$.fn.on` and `$.fn.trigger` that uses
+Here is an example of the usage of `.on()` and `.trigger()` that uses
 custom data in both cases:
 
 ```

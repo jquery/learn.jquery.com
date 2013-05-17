@@ -6,19 +6,19 @@ attribution:
     - jQuery Fundamentals
 ---
 While jQuery does offer many Ajax-related convenience methods, the core
-`$.ajax` method is at the heart of all of them, and understanding it is
+`$.ajax()` method is at the heart of all of them, and understanding it is
 imperative. We'll review it first, and then touch briefly on the convenience
 methods.
 
-I generally use the `$.ajax` method and do not use convenience methods. As
+I generally use the `$.ajax()` method and do not use convenience methods. As
 you'll see, it offers features that the convenience methods do not, and its
 syntax is more easily understandable, in my opinion.
 
-### `$.ajax`
+### `$.ajax()`
 
-jQuery's core `$.ajax` method is a powerful and straightforward way of creating
+jQuery’s core `$.ajax()` method is a powerful and straightforward way of creating
 Ajax requests. It takes a configuration object that contains all the
-instructions jQuery requires to complete the request. The `$.ajax` method is
+instructions jQuery requires to complete the request. The `$.ajax()` method is
 particularly valuable because it offers the ability to specify both success and
 failure callbacks. Also, its ability to take a configuration object that can
 be defined separately makes it easier to write reusable code. For complete
@@ -27,7 +27,7 @@ documentation of the configuration options, visit
 documentation on api.jquery.com").
 
 ```
-// Using the core $.ajax method
+// Using the core $.ajax() method
 $.ajax({
 	// the URL for the request
 	url: "post.php",
@@ -71,9 +71,9 @@ you're asking for, and verify that the `Content-type` header is accurate for the
 data type. For example, for JSON data, the `Content-type` header should be
 `application/json`.
 
-### `$.ajax` Options
+### `$.ajax()` Options
 
-There are many, many options for the `$.ajax` method, which is part of its
+There are many, many options for the `$.ajax()` method, which is part of its
 power. For a complete list of options, visit
 [http://api.jquery.com/jQuery.ajax/](http://api.jquery.com/jQuery.ajax/ "$.ajax
 documentation on api.jquery.com"); here are several that you will use
@@ -101,7 +101,7 @@ the request.
 
 The scope in which the callback function(s) should run (i.e. what `this` will
 mean inside the callback function(s)). By default, `this` inside the callback
-function(s) refers to the object originally passed to `$.ajax`.
+function(s) refers to the object originally passed to `$.ajax()`.
 
 #### data
 
@@ -150,17 +150,17 @@ all browsers.
 
 The URL for the request.
 
-The `url` option is the only required property of the `$.ajax` configuration
+The `url` option is the only required property of the `$.ajax()` configuration
 object; all other properties are optional. This can also be passed as the first
-argument to `$.ajax`, and the options object as the second argument.
+argument to `$.ajax()`, and the options object as the second argument.
 
 ### Convenience Methods
 
-If you don't need the extensive configurability of `$.ajax`, and you don't care
+If you don't need the extensive configurability of `$.ajax()`, and you don't care
 about handling errors, the Ajax convenience functions provided by jQuery can be
 useful, terse ways to accomplish Ajax requests. These methods are just
-"wrappers" around the core `$.ajax` method, and simply pre-set some of the
-options on the `$.ajax` method.
+"wrappers" around the core `$.ajax()` method, and simply pre-set some of the
+options on the `$.ajax()` method.
 
 The convenience methods provided by jQuery are:
 
@@ -233,8 +233,8 @@ $.getJSON( "/details.php", function( resp ) {
 
 ### `$.fn.load`
 
-The `$.fn.load` method is unique among jQuery's Ajax methods in that it is
-called on a selection. The `$.fn.load` method fetches HTML from a URL, and
+The `.load()` method is unique among jQuery’s Ajax methods in that it is
+called on a selection. The `.load()` method fetches HTML from a URL, and
 uses the returned HTML to populate the selected element(s). In addition to
 providing a URL to the method, you can optionally provide a selector; jQuery
 will fetch only the matching content from the returned HTML.
