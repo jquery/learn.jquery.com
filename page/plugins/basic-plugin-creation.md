@@ -152,14 +152,15 @@ As your plugins get more and more complex, it's a good idea to make your plugin 
 
 		// This is the easiest way to have default options.
 		var settings = $.extend({
-			"color": "#556b2f",  // These are the defaults.
-			"background-color": "white"
+			// These are the defaults.
+			color: "#556b2f",
+			backgroundColor: "white"
 		}, options );
 
 		// Greenify the collection based on the settings variable.
 		return this.css({
-			"color": settings.color,
-			"background-color": settings.background-color
+			color: settings.color,
+			backgroundColor: settings.backgroundColor
 		});
 
 	};
@@ -171,7 +172,7 @@ Example usage:
 
 ```
 $( "div" ).greenify({
-	"color": "orange"
+	color: "orange"
 });
 ```
 
