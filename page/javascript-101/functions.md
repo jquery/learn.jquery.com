@@ -12,15 +12,17 @@ Functions can be created in a variety of ways, two of which are shown below:
 
 ```
 // Function declaration.
+
 function foo() {
-	/* do something */
+	// Do something.
 }
 ```
 
 ```
 // Named function expression.
+
 var foo = function() {
-	/* do something */
+	// Do something.
 };
 ```
 
@@ -34,7 +36,7 @@ var greet = function( person, greeting ) {
 	console.log( text );
 };
 
-greet( "Rebecca", "Hello" );
+greet( "Rebecca", "Hello" ); // "Hello, Rebecca"
 ```
 
 ```
@@ -45,7 +47,7 @@ var greet = function( person, greeting ) {
 	return text;
 };
 
-console.log( greet( "Rebecca", "hello" ) ); // "hello, Rebecca"
+console.log( greet( "Rebecca", "Hello" ) ); // "Hello, Rebecca"
 ```
 
 ```
@@ -60,7 +62,7 @@ var greet = function( person, greeting ) {
 
 var greeting = greet( "Rebecca", "Hello" );
 
-greeting();
+greeting(); // "Hello, Rebecca"
 ```
 
 ## Immediately-Invoked Function Expression (IIFE)
@@ -74,7 +76,7 @@ A common pattern in JavaScript is the immediately-invoked function expression. T
 	var foo = "Hello world";
 })();
 
-console.log( foo );   // undefined!
+console.log( foo ); // undefined!
 ```
 
 ## Functions as Arguments
@@ -89,7 +91,7 @@ var myFn = function( fn ) {
 	console.log( result );
 };
 
-// logs "hello world"
+// Logs "hello world"
 myFn( function() {
 	return "hello world";
 });
