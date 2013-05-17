@@ -3,12 +3,12 @@ title:        How do I test whether an element exists?
 source:       http://docs.jquery.com/Frequently_Asked_Questions
 ---
 
-Use the [length](http://api.jquery.com/length/) property of the jQuery collection returned by your selector:
+Use the [.length](http://api.jquery.com/length/) property of the jQuery collection returned by your selector:
 
 ```
-if ( $("#myDiv").length ) {
+if ( $( "#myDiv" ).length ) {
 
-  $("#myDiv").show();
+	$( "#myDiv" ).show();
 
 }
 ```
@@ -16,5 +16,5 @@ if ( $("#myDiv").length ) {
 Note that it isn't always necessary to test whether an element exists. The following code will show the element if it exists, and do nothing (with no errors) if it does not:
 
 ```
-$("#myDiv").show();
+$( "#myDiv" ).show();
 ```
