@@ -5,6 +5,7 @@ source: http://jqfundamentals.com/legacy
 attribution:
   - jQuery Fundamentals
 ---
+
 Basic operators allow you to manipulate values.
 
 ```
@@ -16,13 +17,13 @@ console.log( foo + " " + bar ); // "hello world"
 ```
 
 ```
-// Multiplication and division
+// Multiplication and division.
 2 * 3;
 2 / 3;
 ```
 
 ```
-// Incrementing and decrementing
+// Incrementing and decrementing.
 // The pre-increment operator increments the operand before any further processing.
 var i = 1;
 console.log( ++i ); // 2 - because i was incremented before evaluation
@@ -47,26 +48,27 @@ console.log( foo + bar ); // 12
 ```
 
 ```
-// Coercing a string to act as a number:
+// Coercing a string to act as a number.
 var foo = 1;
 var bar = "2";
 
 console.log( foo + Number(bar) ); // 3
 ```
 
-The Number constructor, when called as a function (as in the above example), will have the effect of casting its argument into a number. The unary plus operator also does the same thing:
+The `Number` constructor, when called as a function (as in the above example), will have the effect of casting its argument into a number. The unary plus operator also does the same thing:
 
 ```
-// Forcing a string to act as a number (using the unary plus operator):
+// Forcing a string to act as a number (using the unary plus operator).
 console.log( foo + +bar ); // 3
 ```
 
 ## Logical Operators
 
-Logical operators allow evaluation of a series of operands using AND ( `&&` ) and OR ( `||` ) operations.
+Logical operators allow evaluation of a series of operands using AND (`&&`) and OR (`||`) operations.
 
 ```
-// Logical AND and OR operators
+// Logical AND and OR operators.
+
 var foo = 1;
 var bar = 0;
 var baz = 2;
@@ -92,10 +94,10 @@ In the above example, the `||` operator returns the value of the first truthy op
 You'll sometimes see developers use these logical operators for flow control instead of using `if` statements. For example:
 
 ```
-// do something with foo if foo is truthy
+// Do something with foo if foo is truthy.
 foo && doSomething( foo );
 
-// set bar to baz if baz is truthy;
+// Set bar to baz if baz is truthy;
 // otherwise, set it to the return value of createBar()
 var bar = baz || createBar();
 ```
@@ -107,7 +109,8 @@ This style is quite elegant and pleasantly terse; that said, it can be really ha
 Comparison operators allow you to test whether values are equivalent or whether values are identical.
 
 ```
-// Comparison operators
+// Comparison operators.
+
 var foo = 1;
 var bar = 0;
 var baz = "1";
@@ -125,4 +128,5 @@ foo > bim;  // false
 bim > baz;  // true
 foo <= baz; // true
 ```
+
 For more information about comparison operators, visit the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Operators/Comparison_Operators "MDN - Comparison Operators").
