@@ -251,7 +251,7 @@ To select a set of associated radio buttons use:
 ```
 // Selection associated radio buttons with :radio
 // selects all radio buttons with the name attribute of gender
-$("form input[name="gender"]:radio")
+$("form input[name='gender']:radio")
 ```
 
 In order to get the best performance using `:radio`, first select elements with a standard jQuery selector, then use `.filter(":radio")`, or precede the pseudo-selector with a tag name or some other selector.
@@ -299,6 +299,6 @@ The `:submit` selector usually applies to `<button>` or `<input>` elements. Some
 $("form :text");
 ```
 
-In order to get the best performance using `:selected`, first select elements with a standard jQuery selector, then use `.filter(":selected")`, or precede the pseudo-selector with a tag name or some other selector.
+In order to get the best performance using `:text`, first select elements with a standard jQuery selector, then use `.filter(":text")`, or precede the pseudo-selector with a tag name or some other selector.
 
 **Note:** As of jQuery 1.5.2, `:text` selects `<input>` elements that have no specified *type* attribute. So, `type = "text"` is implied.
