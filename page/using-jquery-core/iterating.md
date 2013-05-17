@@ -36,7 +36,9 @@ $.each( arr, function( index, value ){
 console.log( sum ); // 15
 ```
 
-Notice that `arr[ index ]` can't be accessed as the value is conveniently passed to the callback in `$.each()`. In addition, given:
+Notice that we don't have to access `arr[ index ]` as the value is conveniently passed to the callback in `$.each()`.
+
+In addition, given:
 
 ```
 var sum = 0;
@@ -67,7 +69,9 @@ $.each( obj, function( key, value ) {
 console.log( sum ); // 3
 ```
 
-Again, `obj[ key ]` is passed directly to the callback and thus can't be accessed. Note that `$.each()` is for plain objects, arrays, array-like objects *that are not jQuery collections*.
+Again, we don't have to directly access `obj[ key ]` as the value is passed directly to the callback.
+
+Note that `$.each()` is for plain objects, arrays, array-like objects *that are not jQuery collections*.
 
 This would be considered incorrect:
 
