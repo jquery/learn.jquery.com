@@ -126,7 +126,7 @@ function sayHello( event ) {
 $( "#helloBtn" ).on( "click", sayHello );
 ```
 
-In this slightly different example, we're defining a function called `sayHello` and then passing that function into the `on` method instead of an anonymous function. So many online examples show anonymous functions used as event handlers, but it's important to realize that you can also pass defined functions as event handlers as well. This is important if different elements or different events should perform the same functionality. This helps to keep your code DRY.
+In this slightly different example, we're defining a function called `sayHello` and then passing that function into the `on` method instead of an anonymous function. So many online examples show anonymous functions used as event handlers, but it's important to realize that you can also pass defined functions as event handlers as well. This is important if different elements or different events should perform the same functionality. This helps to keep your code [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself).
 
 But what about that `event` argument in the `sayHello` function — what is it and why does it matter? In all DOM event callbacks, jQuery passes an *event object* argument which contains information about the event, such as precisely when and where it occurred, what type of event it was, which element the event occurred on, and a plethora of other information. Of course you don't have to call it `event`; you could call it `e` or whatever you want to, but `event` is a pretty common convention.
 
