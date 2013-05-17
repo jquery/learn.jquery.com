@@ -6,7 +6,7 @@ jQuery provides an object iterator utility called `$.each()` as well as a jQuery
 
 ### `$.each()`
 
-[`$.each`](http://api.jquery.com/jQuery.each/) is a generic iterator function for looping over object, arrays, and array-like objects. Plain objects are iterated via their named properties while arrays and array-like objects are iterated via their indices.
+[`$.each()`](http://api.jquery.com/jQuery.each/) is a generic iterator function for looping over object, arrays, and array-like objects. Plain objects are iterated via their named properties while arrays and array-like objects are iterated via their indices.
 
 `$.each()` is essentially a drop-in replacement of a traditional `for` or `for-in` loop. Given:
 
@@ -237,7 +237,7 @@ Notice the `.get()` chained at the end. `.map()` actually returns a jQuery-wrapp
 
 ### [`$.map`](http://api.jquery.com/jQuery.map/)
 
-Like `$.each()` and `.each()`, there is a `$.map()` as well as `.map()`. The difference is also very similar to both `.each` methods. `$.map()` works on plain JavaScript arrays while `.map()` works on jQuery element collections. Because it's working on a plain array, `$.map()` returns a plain array and `.get()` does not need to be called – in fact, it will throw an error as it's not a native JavaScript method.
+Like `$.each()` and `.each()`, there is a `$.map()` as well as `.map()`. The difference is also very similar to both `.each()` methods. `$.map()` works on plain JavaScript arrays while `.map()` works on jQuery element collections. Because it's working on a plain array, `$.map()` returns a plain array and `.get()` does not need to be called – in fact, it will throw an error as it's not a native JavaScript method.
 
 A word of warning: `$.map()` switches the order of callback arguments. This was done in order to match the native JavaScript `.map()` method made available in ECMAScript 5.
 
