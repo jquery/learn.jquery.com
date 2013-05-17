@@ -2,168 +2,137 @@
 title: Advanced Plugin Concepts
 level: intermediate
 ---
-### Provide public access to default plugin settings
 
-An improvement we can, and should, make to the code above is to expose the
-default plugin settings. This is important because it makes it very easy for
-plugin users to override/customize the plugin with minimal code. And this is
-where we begin to take advantage of the function object.
+### Provide Public Access to Default Plugin Settings
+
+An improvement we can, and should, make to the code above is to expose the default plugin settings. This is important because it makes it very easy for plugin users to override/customize the plugin with minimal code. And this is where we begin to take advantage of the function object.
 
 ```
-// plugin definition
+// Plugin definition.
 $.fn.hilight = function( options ) {
 
-  // Extend our default options with those provided.
-  // Note that the first arg to extend is an empty object -
-  // this is to keep from overriding our "defaults" object.
-  var opts = $.extend({}, $.fn.hilight.defaults, options);
+	// Extend our default options with those provided.
+	// Note that the first argument to extend is an empty
+	// object – this is to keep from overriding our "defaults" object.
+	var opts = $.extend( {}, $.fn.hilight.defaults, options );
 
-  // Our plugin implementation code goes here.
+	// Our plugin implementation code goes here.
 
 };
 
-// plugin defaults - added as a property on our plugin function
+// Plugin defaults – added as a property on our plugin function.
 $.fn.hilight.defaults = {
-  foreground: "red",
-  background: "yellow"
+	foreground: "red",
+	background: "yellow"
 };
 ```
 
 Now users can include a line like this in their scripts:
 
 ```
-// this need only be called once and does not
-// have to be called from within a 'ready' block
+// This needs only be called once and does not
+// have to be called from within a "ready" block
 $.fn.hilight.defaults.foreground = "blue";
 ```
 
 And now we can call the plugin method like this and it will use a blue foreground color:
 
 ```
-$("#myDiv").hilight();
+$( "#myDiv" ).hilight();
 ```
 
-As you can see, we"ve allowed the user to write a single line of code to alter the default foreground color of the plugin. And users can still selectively override this new default value when they want:
+As you can see, we've allowed the user to write a single line of code to alter the default foreground color of the plugin. And users can still selectively override this new default value when they want:
 
 ```
-// override plugin default foreground color
+// Override plugin default foreground color.
 $.fn.hilight.defaults.foreground = "blue";
 
 // ...
 
-// invoke plugin using new defaults
-$(".hilightDiv").hilight();
+// Invoke plugin using new defaults.
+$( ".hilightDiv" ).hilight();
 
 // ...
 
-// override default by passing options to plugin method
-$("#green").hilight({
-  foreground: "green"
+// Override default by passing options to plugin method.
+$( "#green" ).hilight({
+	foreground: "green"
 });
 ```
 
-### Provide public access to secondary functions as applicable
+### Provide Public Access to Secondary Functions as Applicable
 
-This item goes hand-in-hand with the previous item and is an interesting way to
-extend your plugin (and to let others extend your plugin). For example, the
-implementation of our plugin may define a function called "format" which
-formats the hilight text. Our plugin may now look like this, with the default
-implementation of the format method defined below the hilight function.
+This item goes hand-in-hand with the previous item and is an interesting way to extend your plugin (and to let others extend your plugin). For example, the implementation of our plugin may define a function called "format" which formats the hilight text. Our plugin may now look like this, with the default implementation of the format method defined below the hilight function:
 
 ```
-
-// plugin definition
+// Plugin definition.
 $.fn.hilight = function( options ) {
 
-  // iterate and reformat each matched element
-  return this.each(function() {
+	// Iterate and reformat each matched element.
+	return this.each(function() {
 
-    var $this = $( this );
+		var $this = $( this );
 
-    // ...
+		// ...
 
-    var markup = $this.html();
+		var markup = $this.html();
 
-    // call our format function
-    markup = $.fn.hilight.format( markup );
+		// Call our format function.
+		markup = $.fn.hilight.format( markup );
 
-    $this.html( markup );
+		$this.html( markup );
 
-  });
+	});
+
 };
 
-// define our format function
-$.fn.hilight.format = function( txt ) {"
-
-  return "<strong>" + txt + "</strong>";
-
+// Define our format function.
+$.fn.hilight.format = function( txt ) {
+	return "<strong>" + txt + "</strong>";
 };
 ```
 
-We could have just as easily supported another property on the options object
-that allowed a callback function to be provided to override the default
-formatting. That's another excellent way to support customization of your
-plugin. The technique shown here takes this a step further by actually exposing
-the format function so that it can be redefined. With this technique it would
-be possible for others to ship their own custom overrides of your plugin ?in
-other words, it means others can write plugins for your plugin.
+We could have just as easily supported another property on the options object that allowed a callback function to be provided to override the default formatting. That's another excellent way to support customization of your plugin. The technique shown here takes this a step further by actually exposing the format function so that it can be redefined. With this technique it would be possible for others to ship their own custom overrides of your plugin – in other words, it means others can write plugins for your plugin.
 
-Considering the trivial example plugin we're building in this article, you may
-be wondering when this would ever be useful. One real-world example is the
-[Cycle Plugin](http://malsup.com/jquery/cycle/). The Cycle Plugin is a
-slideshow plugin which supports a number of built-in transition effects
-?scroll, slide, fade, etc. But realistically, there is no way to define every
-single type of effect that one might wish to apply to a slide transition. And
-that's where this type of extensibility is useful. The Cycle Plugin exposes a
-"transitions" object to which users can add their own custom transition
-definitions. It's defined in the plugin like this:
+Considering the trivial example plugin we're building in this article, you may be wondering when this would ever be useful. One real-world example is the [Cycle Plugin](http://malsup.com/jquery/cycle/). The Cycle Plugin is a slideshow plugin which supports a number of built-in transition effects – scroll, slide, fade, etc. But realistically, there is no way to define every single type of effect that one might wish to apply to a slide transition. And that's where this type of extensibility is useful. The Cycle Plugin exposes a "transitions" object to which users can add their own custom transition definitions. It's defined in the plugin like this:
 
 ```
 $.fn.cycle.transitions = {
 
-  // ...
+	// ...
 
 };
 ```
 
 This technique makes it possible for others to define and ship transition definitions that plug-in to the Cycle Plugin.
 
-### Keep private functions private
+### Keep Private Functions Private
 
-The technique of exposing part of your plugin to be overridden can be very
-powerful. But you need to think carefully about what parts of your
-implementation to expose. Once it's exposed, you need to keep in mind that any
-changes to the calling arguments or semantics may break backward compatibility.
-As a general rule, if you're not sure whether to expose a particular function,
-then you probably shouldn't.
+The technique of exposing part of your plugin to be overridden can be very powerful. But you need to think carefully about what parts of your implementation to expose. Once it's exposed, you need to keep in mind that any changes to the calling arguments or semantics may break backward compatibility. As a general rule, if you're not sure whether to expose a particular function, then you probably shouldn't.
 
-So how then do we define more functions without cluttering the namespace and
-without exposing the implementation? This is a job for closures. To
-demonstrate, we'll add another function to our plugin called "debug". The debug
-function will log the number of selected elements to the Firebug console. To
-create a closure, we wrap the entire plugin definition in a function (as
-detailed in the jQuery Authoring Guidelines).
+So how then do we define more functions without cluttering the namespace and without exposing the implementation? This is a job for closures. To demonstrate, we'll add another function to our plugin called "debug". The debug function will log the number of selected elements to the Firebug console. To create a closure, we wrap the entire plugin definition in a function (as detailed in the jQuery Authoring Guidelines).
 
 ```
-// create closure
+// Create closure.
 (function( $ ) {
 
-  // plugin definition
-  $.fn.hilight = function( options ) {
-    debug( this );
-    // ...
-  };
+	// Plugin definition.
+	$.fn.hilight = function( options ) {
+		debug( this );
+		// ...
+	};
 
-  // private function for debugging
-  function debug( $obj ) {
-    if ( window.console && window.console.log ) {
-      window.console.log( "hilight selection count: " + $obj.size() );
-    }
-  };
+	// Private function for debugging.
+	function debug( $obj ) {
+		if ( window.console && window.console.log ) {
+			window.console.log( "hilight selection count: " + $obj.size() );
+		}
+	};
 
-  // ...
+	// ...
 
-// end of closure
+// End of closure.
+
 })( jQuery );
 ```
 
@@ -171,55 +140,49 @@ Our "debug" method cannot be accessed from outside of the closure and thus is pr
 
 ### Support the Metadata Plugin
 
-Depending on the type of plugin you're writing, adding support for the
-[Metadata Plugin](http://docs.jquery.com/Plugins/Metadata/metadata) can make it
-even more powerful. Personally, I love the Metadata Plugin because it lets you
-use unobtrusive markup to override plugin options (which is particularly useful
-when creating demos and examples). And supporting it is very simple!
+Depending on the type of plugin you're writing, adding support for the [Metadata Plugin](http://docs.jquery.com/Plugins/Metadata/metadata) can make it even more powerful. Personally, I love the Metadata Plugin because it lets you use unobtrusive markup to override plugin options (which is particularly useful when creating demos and examples). And supporting it is very simple!
 
 ```
-// plugin definition
+// Plugin definition.
 $.fn.hilight = function( options ) {
 
-  // build main options before element iteration
-  var opts = $.extend( {}, $.fn.hilight.defaults, options );
+	// Build main options before element iteration.
+	var opts = $.extend( {}, $.fn.hilight.defaults, options );
 
-  return this.each(function() {
-    var $this = $( this );
+	return this.each(function() {
+		var $this = $( this );
 
-    // build element specific options
-    // This changed line tests to see if the Metadata Plugin is installed,
-    // and if it is, it extends our options object with the extracted metadata.
-    var o = $.meta ? $.extend( {}, opts, $this.data() ) : opts;
+		// Build element specific options.
+		// This changed line tests to see if the Metadata Plugin is installed,
+		// And if it is, it extends our options object with the extracted metadata.
+		var o = $.meta ? $.extend( {}, opts, $this.data() ) : opts;
 
-    //...
-  });
+		//...
+
+	});
+
 };
 ```
 
-<div class="note" markdown="1">
-This line is added as the last argument to *jQuery.extend* so it will override
-any other option settings. Now we can drive behavior from the markup if we
-choose:
-</div>
+*Note:* This line is added as the last argument to *jQuery.extend* so it will override any other option settings. Now we can drive behavior from the markup if we choose:
 
 ```
 <!--  markup  -->
 <div class="hilight { background: 'red', foreground: 'white' }">
-  Have a nice day!
+	Have a nice day!
 </div>
 <div class="hilight { foreground: 'orange' }">
-  Have a nice day!
+	Have a nice day!
 </div>
 <div class="hilight { background: 'green' }">
-  Have a nice day!
+	Have a nice day!
 </div>
 ```
 
-And now we can hilight each of these divs uniquely using a single line of script:
+And now we can hilight each of these `<div>`s uniquely using a single line of script:
 
 ```
-$(".hilight").hilight();
+$( ".hilight" ).hilight();
 ```
 
 ###Bob and Sue
@@ -229,48 +192,49 @@ Let's say Bob has created a wicked new gallery plugin (called "superGallery") wh
 ```
 jQuery.fn.superGallery = function( options ) {
 
-  // Bob"s default settings:
-  var defaults = {
-    textColor : "#000",
-    backgroundColor : "#FFF",
-    fontSize : "1em",
-    delay : "quite long",
-    getTextFromTitle : true,
-    getTextFromRel : false,
-    getTextFromAlt : false,
-    animateWidth : true,
-    animateOpacity : true,
-    animateHeight : true,
-    animationDuration : 500,
-    clickImgToGoToNext : true,
-    clickImgToGoToLast : false,
-    nextButtonText : "next",
-    previousButtonText : "previous",
-    nextButtonTextColor : "red",
-    previousButtonTextColor : "red"
-  };
+	// Bob's default settings:
+	var defaults = {
+		textColor: "#000",
+		backgroundColor: "#fff",
+		fontSize: "1em",
+		delay: "quite long",
+		getTextFromTitle: true,
+		getTextFromRel: false,
+		getTextFromAlt: false,
+		animateWidth: true,
+		animateOpacity: true,
+		animateHeight: true,
+		animationDuration: 500,
+		clickImgToGoToNext: true,
+		clickImgToGoToLast: false,
+		nextButtonText: "next",
+		previousButtonText: "previous",
+		nextButtonTextColor: "red",
+		previousButtonTextColor: "red"
+	};
 
-  var settings = $.extend( {}, defaults, options );
+	var settings = $.extend( {}, defaults, options );
 
-  return this.each(function() {
-    // Plugin code would go here...
-  });
+	return this.each(function() {
+		// Plugin code would go here...
+	});
+
 };
 ```
 
-The first thing that probably comes to your mind (ok, maybe not the first) is the prospect of how huge this plugin must be to accommodate such a level of customization. The plugin, if it weren't fictional, would probably be a lot larger than necessary. There are only so many kilobytes people will be willing to spend!
+The first thing that probably comes to your mind (OK, maybe not the first) is the prospect of how huge this plugin must be to accommodate such a level of customization. The plugin, if it weren't fictional, would probably be a lot larger than necessary. There are only so many kilobytes people will be willing to spend!
 
 Now, our friend Bob thinks this is all fine; in fact, he's quite impressed with the plugin and its level of customization. He believes that all the options make for a more versatile solution, one which can be used in many different situations.
 
 Sue, another friend of ours, has decided to use this new plugin. She has set up all of the options required and now has a working solution sitting in front of her. It's only five minutes later, after playing with the plugin, that she realizes the gallery would look much nicer if each image's width were animated at a slower speed. She hastily searches through Bob's documentation but finds no *animateWidthDuration* option!
 
-###Do you see the problem?
+### Do You See The Problem?
 
 It's not really about how many options your plugin has; but what options it has!
 
 Bob has gone a little over the top. The level of customization he's offering, while it may seem high, is actually quite low, especially considering all the possible things one might want to control when using this plugin. Bob has made the mistake of offering a lot of ridiculously specific options, rendering his plugin much more difficult to customize!
 
-###A better model
+### A Better Model
 
 So it's pretty obvious: Bob needs a new customization model, one which does not relinquish control or abstract away the necessary details.
 
@@ -278,7 +242,7 @@ The reason Bob is so drawn to this high-level simplicity is that the jQuery fram
 
 Here are a few tips which should help you create a better set of customizable options for your plugins:
 
-###Don't create plugin-specific syntax
+### Don't Create Plugin-specific Syntax
 
 Developers who use your plugin shouldn't have to learn a new language or terminology just to get the job done.
 
@@ -289,32 +253,33 @@ var delayDuration = 0;
 
 switch ( settings.delay ) {
 
-  case "very short":
-    delayDuration = 100;
-  break;
+	case "very short":
+		delayDuration = 100;
+		break;
 
-  case "quite short":
-    delayDuration = 200;
-  break;
+	case "quite short":
+		delayDuration = 200;
+		break;
 
-  case "quite long":
-    delayDuration = 300;
-  break;
+	case "quite long":
+		delayDuration = 300;
+		break;
 
-  case "very long":
-    delayDuration = 400;
-  break;
+	case "very long":
+		delayDuration = 400;
+		break;
 
-  default:
-    delayDuration = 200
+	default:
+		delayDuration = 200;
+
 }
 ```
 
-Not only does this limit the level of control people have, but it takes up quite a bit of space. Twelve lines of code just to define the delaying time is a bit much, don't you think? A better way to construct this option would be to let plugin users specify the amount of time (in milliseconds) as a number, so that no processing of the option needs to take place.
+Not only does this limit the level of control people have, but it takes up quite a bit of space. Twelve lines of code just to define the delay time is a bit much, don't you think? A better way to construct this option would be to let plugin users specify the amount of time (in milliseconds) as a number, so that no processing of the option needs to take place.
 
-The key here is not to diminish the level of control through your abstraction. Your abstraction, whatever it is, can be as simplistic as you want, but make sure that people who use your plugin will still have that much-sought-after low-level control! (By low-level I mean non-abstracted)
+The key here is not to diminish the level of control through your abstraction. Your abstraction, whatever it is, can be as simplistic as you want, but make sure that people who use your plugin will still have that much-sought-after low-level control! (By low-level I mean non-abstracted.)
 
-###Give full control of elements
+### Give Full Control of Elements
 
 If your plugin creates elements to be used within the DOM, then it's a good idea to offer plugin users some way to access those elements. Sometimes this means giving certain elements IDs or classes. But note that your plugin shouldn't rely on these hooks internally:
 
@@ -322,26 +287,26 @@ A bad implementation:
 
 ```
 // Plugin code
-$("<div id="the_gallery_Wrapper" />").appendTo("body");
+$( "<div id=\"the-gallery-wrapper\" />").appendTo( "body" );
 
-$("#the_gallery_wrapper").append("...");
+$( "#the-gallery-wrapper" ).append( "..." );
 
 // Retain an internal reference:
-var $wrapper = $("<div />")
-  .attr( settings.wrapperAttrs )
-  .appendTo( settings.container );
+var $wrapper = $( "<div />" )
+	.attr( settings.wrapperAttrs )
+	.appendTo( settings.container );
 
-$wrapper.append("..."); // Easy to reference later...
+$wrapper.append( "..." ); // Easy to reference later...
 ```
 
-Notice that we've created a reference to the injected wrapper and we're also calling the 'attr' method to add any specified attributes to the element. So, in our settings it might be handled like this:
+Notice that we've created a reference to the injected wrapper and we're also calling the ´.attr()` method to add any specified attributes to the element. So, in our settings it might be handled like this:
 
 ```
 var defaults = {
-  wrapperAttrs : {
-    id: "gallery-wrapper"
-  },
-  // ... rest of settings ...
+	wrapperAttrs : {
+		id: "gallery-wrapper"
+	},
+	// ... rest of settings ...
 };
 
 // We can use the extend method to merge options/settings as usual:
@@ -357,33 +322,33 @@ The same model can be used to let the user define CSS styles:
 
 ```
 var defaults = {
-  wrapperCSS : {},
-  // ... rest of settings ...
+	wrapperCSS: {},
+	// ... rest of settings ...
 };
 
 // Later on in the plugin where we define the wrapper:
-var $wrapper = $("<div />")
-  .attr( settings.wrapperAttrs )
-  .css( settings.wrapperCSS ) // ** Set CSS!
-  .appendTo( settings.container );
+var $wrapper = $( "<div />" )
+	.attr( settings.wrapperAttrs )
+	.css( settings.wrapperCSS ) // ** Set CSS!
+	.appendTo( settings.container );
 ```
 
-Your plugin may have an associated StyleSheet where developers can add CSS styles. Even in this situation it's a good idea to offer some convenient way of setting styles in JavaScript, without having to use a selector to get at the elements.
+Your plugin may have an associated stylesheet where developers can add CSS styles. Even in this situation it's a good idea to offer some convenient way of setting styles in JavaScript, without having to use a selector to get at the elements.
 
-###Provide callback capabilities
+### Provide Callback Capabilities
 
-*What is a callback?* - A callback is essentially a function to be called later, normally triggered by an event. It's passed as an argument, usually to the initiating call of a component. (in this case, a jQuery plugin).
+*What is a callback?* – A callback is essentially a function to be called later, normally triggered by an event. It's passed as an argument, usually to the initiating call of a component, in this case, a jQuery plugin.
 
-If your plugin is driven by events then it might be a good idea to provide a callback capability for each event. Plus, you can create your own custom events and then provide callbacks for those. In this gallery plugin it might make sense to add an 'onImageShow' callback.
+If your plugin is driven by events then it might be a good idea to provide a callback capability for each event. Plus, you can create your own custom events and then provide callbacks for those. In this gallery plugin it might make sense to add an "onImageShow" callback.
 
 ```
 var defaults = {
-  // we define an empty anonymous function
-  // so that we don't need to check its
-  // existence before calling it.
-  onImageShow : function() {},
 
-  // ... rest of settings ...
+	// We define an empty anonymous function so that
+	// we don't need to check its existence before calling it.
+	onImageShow : function() {},
+
+	// ... rest of settings ...
 
 };
 
@@ -393,33 +358,31 @@ $nextButton.bind( "click", showNextImage );
 
 function showNextImage() {
 
-    // stuff to show the image here...
+	// Stuff to show the image here...
 
-    // Here's the callback:
-    settings.onImageShow.call( this );
+	// Here's the callback:
+	settings.onImageShow.call( this );
 }
 ```
 
-Instead of initiating the callback via traditional means (adding parenthesis) we're calling it in the context of 'this' which will be a reference to the image node. This means that you have access to the actual image node through the 'this' keyword within the callback:
+Instead of initiating the callback via traditional means (adding parenthesis) we're calling it in the context of `this` which will be a reference to the image node. This means that you have access to the actual image node through the `this` keyword within the callback:
 
 ```
-$("ul.imgs li").superGallery({
-  onImageShow : function() {
-    $( this ).after( "<span>" + $( this ).attr("longdesc") + "</span>" );
-  },
+$( "ul.imgs li" ).superGallery({
+	onImageShow: function() {
+		$( this ).after( "<span>" + $( this ).attr( "longdesc" ) + "</span>" );
+	},
 
-  // ... other options ...
+	// ... other options ...
 });
 ```
 
-Similarly you could add an "onImageHide" callback and numerous other ones...
+Similarly you could add an "onImageHide" callback and numerous other ones. The point of callbacks is to give plugin users an easy way to add additional functionality without digging around in the source.
 
-The point with callbacks is to give plugin users an easy way to add additional functionality without digging around in the source.
-
-###Remember, it's a compromise
+### Remember, It's a Compromise
 
 Your plugin is not going to be able to work in every situation. And equally, it's not going to be very useful if you offer no or very few methods of control. So, remember, it's always going to be a compromise. Three things you must always take into account are:
 
 - *Flexibility*: How many situations will your plugin be able to deal with?
-- *Size*: Does the size of your plugin correspond to its level of functionality? I.e. Would you use a very basic tooltip plugin if it was 20k in size? - Probably not!
-- *Performance*: Does your plugin heavily process the options in any way? Does this effect speed? Is the overhead caused worth it for the end user?
+- *Size*: Does the size of your plugin correspond to its level of functionality? I.e. Would you use a very basic tooltip plugin if it was 20k in size? – Probably not!
+- *Performance*: Does your plugin heavily process the options in any way? Does this affect speed? Is the overhead caused worth it for the end user?
