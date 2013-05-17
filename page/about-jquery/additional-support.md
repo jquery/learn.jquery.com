@@ -27,7 +27,7 @@ There are many subforums where you can discuss jQuery, ask questions, talk about
 * [Developing jQuery Plugins](http://forum.jquery.com/developing-jquery-plugins)
   * This forum covers development of jQuery plugins.
 * [Developing jQuery UI](http://forum.jquery.com/developing-jquery-ui)
-  * This is the place to discuss development of [jQuery UI](http://jqueryui.com/) itself — including bugs, new plugins, and how you can help.
+  * This is the place to discuss development of [jQuery UI](http://jqueryui.com/) itself – including bugs, new plugins, and how you can help.
   * All jQuery UI svn commits are posted to this list to facilitate feedback, discussion, and review.
   * Also note that a lot of the development and planning of jQuery UI takes place on the [jQuery UI Development and Planning Wiki](http://wiki.jqueryui.com/).
 * [Developing jQuery Mobile](http://forum.jquery.com/developing-jquery-mobile)
@@ -46,26 +46,26 @@ To ensure that you'll get a useful answer in no time, please consider the follow
 * Reduce to a minimal test case (keep removing things until the problem goes away, etc.)
 * Provide that test case as part of your mail. Either upload it somewhere or post it on [jsbin.com](http://jsbin.com/).
 
-In general, keep your question short and focused and provide only essential details — others can be added when required.
+In general, keep your question short and focused and provide only essential details – others can be added when required.
 
 ### Mailing List Archives
 
-The mailing list existed before the forums were created. The mailing lists were closed in early 2010.
+The mailing lists existed before the forums were created, and were closed in early 2010.
 
 There are two different ways of browsing the mailing list archives.
 
 1. The official mailing list archives can be found here:
-  * [jQuery General Discussion Archives](http://groups.google.com/group/jquery-en)
-	* [jQuery Dev List Archives](http://groups.google.com/group/jquery-dev)
-	* [jQuery UI General Discussion Archives](http://groups.google.com/group/jquery-ui)
-  * [jQuery UI Dev List Archives](http://groups.google.com/group/jquery-ui-dev)
-  * [jQuery Plugins List Archives](http://groups.google.com/group/jquery-plugins)
+	* [jQuery General Discussion Archives](http://groups.google.com/group/jquery-en)
+		* [jQuery Dev List Archives](http://groups.google.com/group/jquery-dev)
+		* [jQuery UI General Discussion Archives](http://groups.google.com/group/jquery-ui)
+	* [jQuery UI Dev List Archives](http://groups.google.com/group/jquery-ui-dev)
+	* [jQuery Plugins List Archives](http://groups.google.com/group/jquery-plugins)
 
-Also, an interactive, browsable, version of the General Discussion mailing list can be found on [Nabble](http://www.nabble.com/JQuery-f15494.html) (a forum-like mailing list mirror).
+2. Also, an interactive, browsable version of the General Discussion mailing list can be found on [Nabble](http://jquery.10927.n7.nabble.com/jQuery-General-Discussion-f3.html) (a forum-like mailing list mirror).
 
 ### Chat / IRC Channel
 
-jQuery also has a very active IRC channel, **#jquery**, hosted by [freenode](http://freenode.net/).
+jQuery also has a very active IRC channel, `#jquery`, hosted by [freenode](http://freenode.net/).
 
 The IRC Channel is best if you need quick help with any of the following:
 
@@ -80,13 +80,13 @@ If your problem is more in-depth, we may ask you to post to the mailing list, or
 
 **Server:** irc.freenode.net
 
-**Room:** #jquery
+**Room:** `#jquery`
 
 You can also connect at http://webchat.freenode.net/?channels=#jquery.
 
-Additionally we have **#jquery-es** and **#jquery-de** if you want to speak your native language.
+Additionally we have `#jquery-es` and `#jquery-de` if you want to speak your native language.
 
-If you wish to post code snippets to the channel, you should use a paste site, like http://jsfiddle.net/ or http://jsbin.com/
+If you wish to post code snippets to the channel, you should use a paste site, like [jsfiddle.net](http://jsfiddle.net/) or [jsbin.com](http://jsbin.com/)
 
 ### StackOverflow
 
