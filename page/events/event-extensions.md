@@ -6,7 +6,7 @@ jQuery offers several ways to extend its event system to provide custom function
 
 This document covers the extensions available starting with jQuery 1.7; a sparsely documented subset of this functionality has been available since jQuery 1.3 but the differences in functionality are extensive. For an overview of special events in earlier versions, see [Ben Alman's jQuery Special Events](http://benalman.com/news/2010/03/jquery-special-events/) article.
 
-> **Note:** jQuery event extensions are an advanced feature; they require deeper knowledge of both browser behavior and jQuery internals than most of the API. Most users of jQuery will not need to use event extensions, and those who do should use them with care. For example, on a large project with third-party plugins, changing the behavior of standard events such as `click` or `mouseover` can cause serious compatibility issues.
+<div class="warning">**Note:** jQuery event extensions are an advanced feature; they require deeper knowledge of both browser behavior and jQuery internals than most of the API. Most users of jQuery will not need to use event extensions, and those who do should use them with care. For example, on a large project with third-party plugins, changing the behavior of standard events such as `click` or `mouseover` can cause serious compatibility issues.</div>
 
 ### Events overview and general advice
 
