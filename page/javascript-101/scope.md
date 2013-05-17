@@ -6,7 +6,7 @@ attribution:
   - jQuery Fundamentals
 ---
 
-"Scope" refers to the variables that are available to a piece of code at a given time. A lack of understanding of scope can lead to frustrating debugging experiences. The idea of "scope" is that it's where certain functions or variables are accessible from in our code, and the context in which they exist and are executed in.
+"Scope" refers to the variables that are available to a piece of code at a given time. A lack of understanding of scope can lead to frustrating debugging experiences. The idea of scope is that it's where certain functions or variables are accessible from in our code, and the context in which they exist and are executed in.
 
 There are two types of scopes in JavaScript: global and local. Let's talk about each of them in turn.
 
@@ -28,6 +28,7 @@ JavaScript also creates a __Local Scope__ inside each function body. For example
 function myFunc() {
 	var x = 5;
 };
+
 console.log( x ); // ReferenceError: x is not defined
 ```
 
@@ -40,22 +41,23 @@ If you declare a variable and forget to use the `var` keyword, that variable is 
 ```
 function myFunc() {
 	x = 5;
-});
+};
+
 console.log( x ); // 5
 ```
 
 This is a bad idea. Any variable that is global can have its value changed by any other parts of a program or any other script. This is undesirable, as it could lead to unforseen side effects.
 
-Secondly, Immediately-Invoked Funcion Expressions provide a way to avoid global variables. You'll see many libraries such as  jQuery often use these:
+Secondly, Immediately-Invoked Function Expressions provide a way to avoid global variables. You'll see many libraries such as  jQuery often use these:
 
 ```
 (function() {
-	var jQuery = { /* all my methods go here */ };
-	window.jQuery = jQuery.
+	var jQuery = { /* All my methods go here. */ };
+	window.jQuery = jQuery;
 })();
 ```
 
-Wrapping everything in a function which is then immediately invoked means all the variables within that function are bound to the _local scope_. At the very end you can then expose all your methods by binding the `jQuery` object to the `window`, the _global object_. To read more about Immediatly-Invoked Functions, check out Ben Alman's [Immediately-Invoked Function Expression](http://benalman.com/news/2010/11/immediately-invoked-function-expression/) article.
+Wrapping everything in a function which is then immediately invoked means all the variables within that function are bound to the _local scope_. At the very end you can then expose all your methods by binding the `jQuery` object to the `window`, the _global object_. To read more about Immediately-Invoked Functions, check out Ben Alman's [Immediately-Invoked Function Expression](http://benalman.com/news/2010/11/immediately-invoked-function-expression/) article.
 
 Because local scope works through functions, any functions defined within another have access to variables defined in the outer function:
 
@@ -67,7 +69,7 @@ function outer() {
 		console.log( x );
 	}
 
-	inner(); //  5
+	inner(); // 5
 }
 ```
 
@@ -82,7 +84,7 @@ function outer() {
 		var y = 10;
 	}
 
-	inner(); //  5
+	inner(); // 5
 
 	console.log( y ); // ReferenceError: y is not defined
 }
