@@ -44,7 +44,7 @@ Look at this simple HTML page that includes CSS and JavaScript to see how it all
 	<!-- JavaScript for interactivity. -->
 	<script>
 
-    // Get a handle on the first button element in the document.
+	// Get a handle on the first button element in the document.
 	var button = document.querySelector( "button" );
 
 	// If a user clicks on it, say hello!
