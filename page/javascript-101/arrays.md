@@ -115,7 +115,7 @@ var wholeArray = myArray.concat( myOtherArray ); // [ 2, 3, 4, 5, 6, 7 ]
 
 ### .join()
 
-`.join()` creates a string representation of an array by joining all of its elements using a separator string. If no separator is supplied (e.g. `.join()` is called without arguments) the array will be joined using a comma.
+`.join()` creates a string representation of an array by joining all of its elements using a separator string. If no separator is supplied (i.e., `.join()` is called without arguments) the array will be joined using a comma.
 
 ```
 // Joining elements
