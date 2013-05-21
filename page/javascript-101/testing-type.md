@@ -21,6 +21,7 @@ var myObject = {
 var myArray = [ "a", "b", "c" ];
 var myString = "hello";
 var myNumber = 3;
+var myRegExp = /(\w+)\s(\w+)/;
 
 typeof myFunction; // "function"
 typeof myObject;   // "object"
@@ -28,6 +29,10 @@ typeof myArray;    // "object" -- Careful!
 typeof myString;   // "string"
 typeof myNumber;   // "number"
 typeof null;       // "object" -- Careful!
+typeof undefined;  // "undefined"
+typeof meh;        // "undefined" -- undefined variable.
+typeof myRegExp;   // "function" or "object" depending on environment.
+
 
 if ( myArray.push && myArray.slice && myArray.join ) {
 	// probably an array (this is called "duck typing")
