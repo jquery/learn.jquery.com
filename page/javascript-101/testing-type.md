@@ -28,6 +28,10 @@ typeof myArray;    // "object" -- Careful!
 typeof myString;   // "string"
 typeof myNumber;   // "number"
 typeof null;       // "object" -- Careful!
+typeof undefined;  // "undefined"
+typeof meh;        // "undefined" -- undefined variable.
+typeof /re/        // 'function'; -- Chrome and 'object' in Firefox.
+
 
 if ( myArray.push && myArray.slice && myArray.join ) {
 	// probably an array (this is called "duck typing")
