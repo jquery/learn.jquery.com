@@ -54,7 +54,7 @@ Understanding how events propagate is an important factor in being able to lever
 
 Anytime one of these links is clicked you can think of it as if you were clicking the entire document body. This is called *event bubbling* or *event propagation*.
 
-Since we know how events bubble we can created a delegated event that listens for a specific event to happen on our element
+Since we know how events bubble, we can create a delegated event that listens for a specific event to happen on our element
 ```
 // attach a delegated event
 $( "#list" ).on( "click", "a", function( event ) {
