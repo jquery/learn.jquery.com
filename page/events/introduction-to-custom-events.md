@@ -72,7 +72,7 @@ $( ".switch, .clapper" ).click(function() {
 });
 ```
 
-This last bit of code is not that exciting, but something important has happened: we've moved the behavior of the lightbulb to the lightbulb, and away from the switches and the clapper.
+This last bit of code is not that exciting, but something important has happened: we've moved the behavior of the lightbulb away from the switches and the clapper and to the lightbulb itself.
 
 Let's make our example a little more interesting. We'll add another room to our house, along with a master switch, as shown here:
 
