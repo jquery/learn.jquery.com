@@ -93,7 +93,13 @@ grunt.registerHelper( "contributor-attribution", function( post, fileName, fn ) 
 	// Read contributors from git file information
 	grunt.utils.spawn({
 		cmd: "git",
-		args: [ "log", "--format=%aN <%aE>", fileName ]
+		args: [
+			"log",
+			"--follow", // Trace history through file rename operations
+			"--diff-filter=AM", // Only consider "Add" and "Modify" operations
+			"--format=%aN <%aE>",
+			fileName
+		]
 	}, function( err, result ) {
 		if ( err ) {
 			grunt.verbose.error();
