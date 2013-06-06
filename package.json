@@ -2,7 +2,7 @@
   "name": "learn.jquery.com",
   "title": "jQuery Learning Site",
   "description": "jQuery Foundation site for learning jQuery and JavaScript",
-  "version": "0.2.9",
+  "version": "0.3.0",
   "homepage": "http://learn.jquery.com",
   "author": {
     "name": "jQuery Foundation (http://jquery.org/)"
