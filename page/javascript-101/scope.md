@@ -27,7 +27,7 @@ JavaScript also creates a __Local Scope__ inside each function body. For example
 ```
 function myFunc() {
 	var x = 5;
-};
+}
 
 console.log( x ); // ReferenceError: x is not defined
 ```
@@ -41,7 +41,7 @@ If you declare a variable and forget to use the `var` keyword, that variable is 
 ```
 function myFunc() {
 	x = 5;
-};
+}
 
 console.log( x ); // 5
 ```
