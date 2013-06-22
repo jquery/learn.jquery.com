@@ -73,7 +73,7 @@ $( "#helloBtn" ).click(function( event ) {
 	alert( "Hello." );
 });
 
-// Attach an event handler directly the to button using jQuery's
+// Attach an event handler directly to the button using jQuery's
 // `bind` method, passing it an event string of `click`
 $( "#helloBtn" ).bind( "click", function( event ) {
 	alert( "Hello." );
