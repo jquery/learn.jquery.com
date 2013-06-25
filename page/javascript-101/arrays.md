@@ -89,20 +89,6 @@ for ( var i = 0; i < myArray.length; i = i + 1 ) {
 }
 ```
 
-Except when using `for`/`in` loops:
-
-```
-// For loops and arrays - alternate method
-
-var myArray = [ "hello", "world", "!" ];
-
-for ( var i in myArray ) {
-
-	console.log( myArray[ i ] );
-
-}
-```
-
 ### .concat()
 
 Concatenate two or more arrays with `.concat()`:
