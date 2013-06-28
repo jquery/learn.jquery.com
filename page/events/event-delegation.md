@@ -6,26 +6,30 @@ attribution:
   - jQuery Fundamentals
 ---
 
-Say you have to add new line items to your page, given the following HTML:
+## Introduction
+
+Event delegation allows us to attach a single event listener, to a parent element, that will fire for all children matching a selector, whether those children exist now or are added in the future.
+
+## Example
+
+For the remainder of the lesson, we will reference the following HTML structure:
 ```
 <html>
 <body>
 <div id="container">
 	<ul id="list">
-		<li><a href="#">Item #1</a></li>
-		<li><a href="http://somedomain.com">Item #2</a></li>
-		<li><a href="#">Item #3</a></li>
-		<li>...</li>
-		<li><a href="http://someotherdomain.com">Item #100</a></li>
+		<li><a href="http://domain1.com">Item #1</a></li>
+		<li><a href="/local/path/1">Item #2</a></li>
+		<li><a href="/local/path/2">Item #3</a></li>
+		<li><a href="http://domain4.com">Item #4</a></li>
 	</ul>
 </div>
 </body>
 </html>
 ```
 
-We need to attach the same event handler to multiple elements. In this example we want to attach an event that will log the text of the anchor tag to the console whenever it is clicked.
+When an anchor in our `#list` group is clicked, we want to log its text to the console. Normally we could directly bind to the click event of each anchor using the `.on()` method:
 
-We can attach a direct bind click event to each `<li>` using the `.on()` method, that will alert the text inside of it by doing the following:
 ```
 // attach a directly bound event
 $( "#list a" ).on( "click", function( event ) {
@@ -34,27 +38,31 @@ $( "#list a" ).on( "click", function( event ) {
 });
 ```
 
-While this works perfectly fine, there are drawbacks. Consider this:
+While this works perfectly fine, there are drawbacks. Consider what happens when we add a new anchor after having already bound the above listener:
+
 ```
 // add a new element on to our existing list
-$( "#list" ).append( "<li><a href=\"http://newsite.com\">Item #101</a></li>" );
+$( "#list" ).append( "<li><a href='http://newdomain.com'>Item #5</a></li>" );
 ```
-If we were to click our newly added item, nothing would happen. This is because of the directly bound event that we attached previously. Direct events are only attached to elements at the time we called the `.on()` method for our existing collection of `<a>`'s, that is only the `<a>`'s that were found when we call `$()`.
+
+If we were to click our newly added item, nothing would happen. This is because of the directly bound event handler that we attached previously. Direct events are only attached to elements at the time the `.on()` method is called. In this case, since our new anchor did not exist when `.on()` was called, it does not get the event handler.
 
 ## Event Propagation
-Understanding how events propagate is an important factor in being able to leverage Event Delegation. Any time an anchor tags is clicked, a *click* event is fired for the:
+
+Understanding how events propagate is an important factor in being able to leverage Event Delegation. Any time one of our anchor tags is clicked, a *click* event is fired for that anchor, and then bubbles up the DOM tree, triggering each of its parent click event handlers:
 
 * `<a>`
 * `<li>`
-* `<ul>`
-* `<div>`
+* `<ul #list>`
+* `<div #container>`
 * `<body>`
 * `<html>`
 * *document* root
 
-Anytime one of these links is clicked you can think of it as if you were clicking the entire document body. This is called *event bubbling* or *event propagation*.
+This means that anytime you click one of our bound anchor tags, you are effectively clicking the entire document body! This is called *event bubbling* or *event propagation*.
 
-Since we know how events bubble we can created a delegated event that listens for a specific event to happen on our element
+Since we know how events bubble, we can create a *delegated* event: 
+
 ```
 // attach a delegated event
 $( "#list" ).on( "click", "a", function( event ) {
@@ -62,27 +70,33 @@ $( "#list" ).on( "click", "a", function( event ) {
 	console.log( $( this ).text() );
 });
 ```
-Notice for the second parameter to the `.on()` method we are telling it which selector to listen for. Now when a *click* event is triggered on our `<ul>`, our delegated event will check to see if the triggering element matches our selector (`"a"`). If it does, our anonymous function will execute. We have now attached a single *click* event listener to our `<ul>` instead of an unknown number of directly bound events on our `<a>`'s.
 
-Now lets say that whenever a link is clicked we want to check and see if the `href` attribute starts with "http" and if it does we want to set the `target` attribute to `_blank`.
+Notice how we have moved the `a` part from the selector to the second parameter position of the `.on()` method. This second, selector parameter tells the handler to listen for the specified event, and when it hears it, check to see if the triggering element for that event matches the second parameter. In this case, the triggering event is our anchor tag, which matches that parameter. Since it matches, our anonymous function will execute. We have now attached a single *click* event listener to our `<ul>` that will listen for clicks on its children anchors, instead of attaching an unknown number of directly bound events to the existing anchor tags only.
+
+### Using the Triggering Element
+
+What if we wanted to open the link in a new window if that link is an external one (as denoted here by beginning with "http")? 
+
 ```
 // attach a delegated event
 $( "#list" ).on( "click", "a", function( event ) {
 	var $elem = $( this );
-	if ( $elem.is( "[href^=http]" ) ) {
+	if ( $elem.is( "[href^='http']" ) ) {
 		$elem.attr( "target", "_blank" );
 	}
 });
 ```
-This simply passes the `.is()` method a selector to see if the element's `href` attributes starts with "http". Also we have removed the `event.preventDefault();` statement, this is because we want the default action to happen (which is to following the `href`)
 
-We can actually take this a step further and make our code simpler and more concise by allowing the selector argument to `.on()` do our logic for us.
+This simply passes the `.is()` method a selector to see if the `href` attribute of the element starts with "http". We have also removed the `event.preventDefault();` statement as we want the default action to happen (which is to follow the `href`).
+
+We can actually simplify our code by allowing the selector parameter of `.on()` do our logic for us:
+
 ```
 // attach a delegated event with a more refined selector
-$( "#list" ).on( "click", "a[href^=http]", function( event ) {
+$( "#list" ).on( "click", "a[href^='http']", function( event ) {
 	$( this ).attr( "target", "_blank" );
 });
 ```
 
 ##Summary
-Event delegation refers to the process of using event bubbling to handle events at a higher level in the DOM than the element on which the event originated. It allows us to attach a single event listener for elements that exist now or in the future.
+Event delegation refers to the process of using event propagation (bubbling) to handle events at a higher level in the DOM than the element on which the event originated. It allows us to attach a single event listener for elements that exist now or in the future.
