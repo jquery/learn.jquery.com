@@ -133,7 +133,7 @@ However, both objects contain the same DOM element. The `.get()` method is usefu
 ```
 // Comparing DOM elements.
 
-var logo1 = $( "$logo" );
+var logo1 = $( "#logo" );
 var logo1Elem = logo1.get( 0 );
 
 var logo2 = $( "#logo" );
