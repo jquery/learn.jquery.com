@@ -13,15 +13,15 @@ This is a basic tutorial, designed to help you get started using jQuery. If you 
 <head>
 	<meta charset="utf-8" />
 	<title>Demo</title>
-</head>
-<body>
-	<a href="http://jquery.com/">jQuery</a>
 	<script src="jquery.js"></script>
 	<script>
 
 	// Your code goes here.
 
 	</script>
+</head>
+<body>
+	<a href="http://jquery.com/">jQuery</a>
 </body>
 </html>
 ```
