@@ -41,3 +41,9 @@ if ( $( "#myDiv" ).is( ":hidden" ) ) {
 
 }
 ```
+
+Also may be useful method [.filter()](http://api.jquery.com/filter/):
+
+```
+$( "#myDiv" ).filter( ".pretty" ).show();
+```
