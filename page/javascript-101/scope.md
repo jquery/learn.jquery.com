@@ -113,7 +113,7 @@ var foo = "world";
 
 var sayHello = function() {
 	var foo = "hello";
-	console.log( foo );
+	console.log( foo + " " + this.foo );
 };
 
 sayHello(); // "hello"
