@@ -199,7 +199,7 @@ Here's an example of a small plugin using some of the techniques we've discussed
  $( "a" ).showLinkLocation();
 ```
 
-This handy plugin goes through all anchors in the collection and appends the `href` attribute in brackets.
+This handy plugin goes through all anchors in the collection and appends the `href` attribute in parentheses.
 
 ```
 <!-- Before plugin is called: -->
