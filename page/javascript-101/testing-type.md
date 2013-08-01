@@ -30,7 +30,7 @@ typeof myNumber;   // "number"
 typeof null;       // "object" -- Careful!
 typeof undefined;  // "undefined"
 typeof meh;        // "undefined" -- undefined variable.
-typeof /myRegExp/; // 'function' or 'object' depending on environment.
+typeof myRegExp;   // "function" or "object" depending on environment.
 
 
 if ( myArray.push && myArray.slice && myArray.join ) {
