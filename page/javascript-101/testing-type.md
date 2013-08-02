@@ -21,6 +21,7 @@ var myObject = {
 var myArray = [ "a", "b", "c" ];
 var myString = "hello";
 var myNumber = 3;
+var myRegExp = /(\w+)\s(\w+)/;
 
 typeof myFunction; // "function"
 typeof myObject;   // "object"
