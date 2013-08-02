@@ -151,7 +151,7 @@ if ( $someElement.length ) {
 
 jQuery provides some additional features for controlling your animations:
 
-### `.stop()`
+### <h4>`.stop()`</h4>
 
 `.stop()` will immediately terminate all animations running on the elements in your selection. You might give
 end-users control over page animations by rigging a button they can click to stop the animations.
@@ -166,7 +166,7 @@ $( "<button type='button'></button>" )
 	.appendTo( document.body );
 ```
 
-### `.delay()`
+### <h4>`.delay()`</h4>
 
 `.delay()` is used to introduce a delay between successive animations. For example:
 
@@ -176,7 +176,7 @@ $( "<button type='button'></button>" )
 $( "h1" ).hide( 500 ).delay( 1500 ).show( 300 );
 ```
 
-### `jQuery.fx`
+### <h4>`jQuery.fx`</h4>
 
 The `jQuery.fx` object has a number of properties that control how effects are implemented. `jQuery.fx.speeds` maps
 the `slow`, `normal`, and `fast` duration arguments mentioned above to a specific
