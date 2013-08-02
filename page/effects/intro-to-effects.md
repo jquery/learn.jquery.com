@@ -158,12 +158,12 @@ end-users control over page animations by rigging a button they can click to sto
 
 ```
 // Create a button to stop all animations on the page:
-$( "input" ).attr({
-	type: "button",
-	value: "Stop All Animations"
-}).on( "click", function() {
-	$( "body *" ).filter( ":animated" ).stop();
-}).appendTo( document.body );
+$( "<button type='button'></button>" )
+	.text( "Stop All Animations" )
+	.on( "click", function() {
+		$( "body *" ).filter( ":animated" ).stop();
+	})
+	.appendTo( document.body );
 ```
 
 ### `.delay()`
@@ -211,10 +211,10 @@ especially useful when dealing with older browsers; you also may want to
 provide the option to disable all animations to your users.
 
 ```
-$( "input" ).attr({
-	type: "button",
-	value: "Disable Animations"
-}).on( "click", function() {
-	jQuery.fx.off = true;
-}).appendTo( document.body );
+$( "<button type='button'></button>" )
+	.text( "Disable Animations" )
+	.on( "click", function() {
+		jQuery.fx.off = true;
+	})
+	.appendTo( document.body );
 ```
