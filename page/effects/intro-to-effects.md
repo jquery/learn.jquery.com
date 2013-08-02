@@ -158,7 +158,7 @@ end-users control over page animations by rigging a button they can click to sto
 
 ```
 // Create a button to stop all animations on the page:
-$( "input" ).attr({
+$( "<input/>" ).attr({
 	type: "button",
 	value: "Stop All Animations"
 }).on( "click", function() {
