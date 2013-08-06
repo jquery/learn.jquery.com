@@ -173,7 +173,7 @@ alert( foo.length ); // 2
 
 foo.shift();
 
-alert( foo[ 0 ] ); // a
+alert( foo[ 0 ] ); // b
 alert( foo[ 1 ] ); // undefined
 
 alert( foo.length ); // 1
