@@ -138,53 +138,6 @@ So how then do we define more functions without cluttering the namespace and wit
 
 Our "debug" method cannot be accessed from outside of the closure and thus is private to our implementation.
 
-### Support the Metadata Plugin
-
-Depending on the type of plugin you're writing, adding support for the [Metadata Plugin](http://docs.jquery.com/Plugins/Metadata/metadata) can make it even more powerful. Personally, I love the Metadata Plugin because it lets you use unobtrusive markup to override plugin options (which is particularly useful when creating demos and examples). And supporting it is very simple!
-
-```
-// Plugin definition.
-$.fn.hilight = function( options ) {
-
-	// Build main options before element iteration.
-	var opts = $.extend( {}, $.fn.hilight.defaults, options );
-
-	return this.each(function() {
-		var $this = $( this );
-
-		// Build element specific options.
-		// This changed line tests to see if the Metadata Plugin is installed,
-		// And if it is, it extends our options object with the extracted metadata.
-		var o = $.meta ? $.extend( {}, opts, $this.data() ) : opts;
-
-		//...
-
-	});
-
-};
-```
-
-*Note:* This line is added as the last argument to *jQuery.extend* so it will override any other option settings. Now we can drive behavior from the markup if we choose:
-
-```
-<!--  markup  -->
-<div class="hilight { background: 'red', foreground: 'white' }">
-	Have a nice day!
-</div>
-<div class="hilight { foreground: 'orange' }">
-	Have a nice day!
-</div>
-<div class="hilight { background: 'green' }">
-	Have a nice day!
-</div>
-```
-
-And now we can hilight each of these `<div>`s uniquely using a single line of script:
-
-```
-$( ".hilight" ).hilight();
-```
-
 ###Bob and Sue
 
 Let's say Bob has created a wicked new gallery plugin (called "superGallery") which takes a list of images and makes them navigable. Bob's thrown in some animation to make it more interesting. He's tried to make the plugin as customizable as possible, and has ended up with something like this:
