@@ -6,7 +6,7 @@ attribution:
   - jQuery Fundamentals
 ---
 
-Touching the DOM comes at a cost; if you're appending a lot of elements to the DOM, you will want to append them all at once, rather then one at a time. This is common problem when appending elements within a loop.
+Touching the DOM comes at a cost. If you're appending a lot of elements to the DOM, you will want to append them all at once, rather than one at a time. This is a common problem when appending elements within a loop.
 
 ```
 $.each( myArray, function( i, item ) {
@@ -37,7 +37,7 @@ $.each( myArray, function( i, item ) {
 $( "#ballers" )[ 0 ].appendChild( frag );
 ```
 
-Another technique, which is quite simple, is to build up a string during each iteration of the loop. After the loop, just set the HTML of the DOM element to that string.
+Another simple technique is to build up a string during each iteration of the loop. After the loop, just set the HTML of the DOM element to that string.
 
 ```
 var myHtml = "";
@@ -51,4 +51,4 @@ $.each( myArray, function( i, item ) {
 $( "#ballers" ).html( myHtml );
 ```
 
-There are of course other techniques you could certainly test out; a great way to test the performance of these is through a site called [jsperf](http://jsperf.com). This site allows you to benchmark each technique and visually see how it performs across all the browsers.
+There are of course other techniques you could certainly test out. A great way to test the performance of these is through a site called [jsperf](http://jsperf.com). This site allows you to benchmark each technique and visually see how it performs across all the browsers.
