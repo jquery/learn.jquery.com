@@ -57,7 +57,8 @@ The exception to this are methods that return information about the widget. For 
 ```
 $( ".selector" )
 	.dialog( "isOpen" )
+	// This will throw a TypeError
 	.css( "color", "red" );
 ```
 
-This produces an error as `isOpen()` returns a boolean, not a `jQuery` object.
+This produces a `TypeError` error as `isOpen()` returns a boolean, not a jQuery object.
