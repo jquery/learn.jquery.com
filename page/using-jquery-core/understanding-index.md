@@ -41,6 +41,29 @@ In the first example, `.index()` gives the zero-based index of `#foo1` within it
 
 Potential confusion comes from the other examples of `.index()` in the above code.  When `.index()` is called on a jQuery object that contains more than one element, it does not calculate the index of the first element as might be expected, but instead calculates the index of the last element. This is equivalent to always calling `$jqObject.last().index();`.
 
+
+As of **jQuery version 1.9.0b1** the `.index()` functions uses `.first()` instead of `.last()`,
+so on versions greater than **1.9.0b1** the above code would produce the following result.
+
+```
+var $foo = $( "#foo1" );
+
+console.log( "Index: " + $foo.index() ); // 1
+
+var $listItem = $( "li" );
+
+// This implicitly calls .first()
+console.log( "Index: " + $listItem.index() ); // 1
+console.log( "Index: " + $listItem.first().index() ); // 1
+
+var $div = $( "div" );
+
+// This implicitly calls .first()
+console.log( "Index: " + $div.index() ); // 0
+console.log( "Index: " + $div.first().index() ); // 0
+```
+
+
 ## `.index()` with a String Argument
 
 ```
