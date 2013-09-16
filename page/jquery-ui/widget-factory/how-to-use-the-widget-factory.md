@@ -143,44 +143,16 @@ $.widget( "custom.progressbar", {
 });
 ```
 
-please note that this code doesn't handle passing negative value when initializing the progress bar, so it's your job to insure handling invalid options in the create method also. One way of fixing this is to add `this.options.value = this._constrain(this.options.value);` to either the `_create()` method or the `refresh()` method.
+**Note** that this code doesn't handle passing negative value when initializing the progress bar, so it's your job to insure handling invalid options in the create method also. One way of fixing this is to add `this.options.value = this._constrain(this.options.value);` to either the `_create()` method or the `refresh()` method.
 
-so the code might look like
+so the `_create()` method code might look like
 
 ```
-$.widget( "custom.progressbar", {
-	options: {
-		value: 0
-	},
 	_create: function() {
-        this.options.value = this._constrain(this.options.value);
+    this.options.value = this._constrain(this.options.value);
 		this.element.addClass( "progressbar" );
 		this.refresh();
 	},
-	_setOption: function( key, value ) {
-		if ( key === "value" ) {
-			value = this._constrain( value );
-		}
-		this._super( key, value );
-	},
-	_setOptions: function( options ) {
-		this._super( options );
-		this.refresh();
-	},
-	refresh: function() {
-		var progress = this.options.value + "%";
-		this.element.text( progress );
-	},
-	_constrain: function( value ) {
-		if ( value > 100 ) {
-			value = 100;
-		}
-		if ( value < 0 ) {
-			value = 0;
-		}
-		return value;
-	}
-});
 ```
 
 ### Adding Callbacks
@@ -193,7 +165,7 @@ $.widget( "custom.progressbar", {
 		value: 0
 	},
 	_create: function() {
-        this.options.value = this._constrain(this.options.value);
+    this.options.value = this._constrain(this.options.value);
 		this.element.addClass( "progressbar" );
 		this.refresh();
 	},
@@ -292,7 +264,7 @@ $.widget( "custom.progressbar", {
 		value: 0
 	},
 	_create: function() {
-        this.options.value = this._constrain(this.options.value);
+    this.options.value = this._constrain(this.options.value);
 		this.element.addClass( "progressbar" );
 		this.refresh();
 	},
