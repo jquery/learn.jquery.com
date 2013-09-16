@@ -143,6 +143,46 @@ $.widget( "custom.progressbar", {
 });
 ```
 
+please note that this code doesn't handle passing negative value when initializing the progress bar, so it's your job to insure handling invalid options in the create method also. One way of fixing this is to add `this.options.value = this._constrain(this.options.value);` to either the `_create()` method or the `refresh()` method.
+
+so the code might look like
+
+```
+$.widget( "custom.progressbar", {
+	options: {
+		value: 0
+	},
+	_create: function() {
+        this.options.value = this._constrain(this.options.value);
+		this.element.addClass( "progressbar" );
+		this.refresh();
+	},
+	_setOption: function( key, value ) {
+		if ( key === "value" ) {
+			value = this._constrain( value );
+		}
+		this._super( key, value );
+	},
+	_setOptions: function( options ) {
+		this._super( options );
+		this.refresh();
+	},
+	refresh: function() {
+		var progress = this.options.value + "%";
+		this.element.text( progress );
+	},
+	_constrain: function( value ) {
+		if ( value > 100 ) {
+			value = 100;
+		}
+		if ( value < 0 ) {
+			value = 0;
+		}
+		return value;
+	}
+});
+```
+
 ### Adding Callbacks
 
 One of the easiest ways to make your plugin extensible is to add callbacks so users can react when the state of your plugin changes. We can see below how to add a callback to our progress bar to signify when the progress has reached 100%. The `_trigger` method takes three parameters: the name of the callback, a jQuery event object that initiated the callback, and a hash of data relevant to the event. The callback name is the only required parameter, but the others can be very useful for users who want to implement custom functionality on top of your plugin. For example, if we were building a draggable plugin, we could pass the mousemove event when triggering a drag callback; this would allow users to react to the drag based on the x/y coordinates provided by the event object. Note that the original event passed to `_trigger` must be a jQuery event, not a native browser event.
@@ -153,6 +193,7 @@ $.widget( "custom.progressbar", {
 		value: 0
 	},
 	_create: function() {
+        this.options.value = this._constrain(this.options.value);
 		this.element.addClass( "progressbar" );
 		this.refresh();
 	},
@@ -251,6 +292,7 @@ $.widget( "custom.progressbar", {
 		value: 0
 	},
 	_create: function() {
+        this.options.value = this._constrain(this.options.value);
 		this.element.addClass( "progressbar" );
 		this.refresh();
 	},
