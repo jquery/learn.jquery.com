@@ -42,7 +42,7 @@ var target = document.getElementById( "target" );
 
 var newElement = document.createElement( "div" );
 
-target.parentNode.insertBefore( target.nextSibling, newElement )
+target.parentNode.insertBefore( newElement, target.nextSibling )
 ```
 
 By wrapping the `target` element in a jQuery object, the same task becomes much simpler:
