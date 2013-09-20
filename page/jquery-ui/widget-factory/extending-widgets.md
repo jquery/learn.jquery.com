@@ -9,10 +9,10 @@ jQuery UI's widget factory makes it easy to build widgets that extend the functi
 
 ### Creating Widget Extensions
 
-Creating widgets with the widget factory is done by passing the name of the widget and a prototype object to `$.widget()`. The following creates a "customWidget" widget in the "custom" namespace.
+Creating widgets with the widget factory is done by passing the name of the widget and a prototype object to `$.widget()`. The following creates a "superDialog" widget in the "custom" namespace.
 
 ```
-$.widget( "custom.customWidget", {} );
+$.widget( "custom.superDialog", {} );
 ```
 
 To allow for extension, `$.widget()` optionally accepts the constructor of a widget to use as a parent. When specifying a parent widget, pass it as the second argument - after the widget's name, and before the widget's prototype object.
