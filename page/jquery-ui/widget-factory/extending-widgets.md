@@ -61,11 +61,11 @@ While this runs, there's a problem. Since we overrode the default behavior of `o
 
 When we place methods on the prototype object, we are not actually overriding the original method - rather, we are placing a new method at a higher level in the prototype chain.
 
-To make the parent's methods available, the widget factory provides two methods - `_super()` and `superApply()`.
+To make the parent's methods available, the widget factory provides two methods - `_super()` and `_superApply()`.
 
 ### Using `_super()` and `_superApply()` to Access Parents
 
-The [`_super()`](http://api.jqueryui.com/jquery.widget/#method-_super) and [`_superApply()`](http://api.jqueryui.com/jquery.widget/#method-_superApply) are methods that access methods of the same same in the parent widget. Refer to the following example. Like the previous one, this example also overrides the `open()` method to log `"open"`. However, this time `_super()` is run to invoke dialog's `open()` and open the dialog.
+[`_super()`](http://api.jqueryui.com/jquery.widget/#method-_super) and [`_superApply()`](http://api.jqueryui.com/jquery.widget/#method-_superApply) invoke methods of the same same in the parent widget. Refer to the following example. Like the previous one, this example also overrides the `open()` method to log `"open"`. However, this time `_super()` is run to invoke dialog's `open()` and open the dialog.
 
 ```
 $.widget( "custom.superDialog", $.ui.dialog, {
@@ -80,7 +80,7 @@ $.widget( "custom.superDialog", $.ui.dialog, {
 $( "<div>" ).superDialog();
 ```
 
-`_super()` and `superApply()` were designed to behave like the native `Function.prototype.call()` and `Function.prototype.apply()` methods. Therefore, `_super()` accepts an argument list, and `_superApply()` accepts a single array of arguments. This difference is shown in the example below.
+`_super()` and `_superApply()` were designed to behave like the native `Function.prototype.call()` and `Function.prototype.apply()` methods. Therefore, `_super()` accepts an argument list, and `_superApply()` accepts a single array of arguments. This difference is shown in the example below.
 
 ```
 $.widget( "custom.superDialog", $.ui.dialog, {
@@ -127,15 +127,13 @@ dialog.superDialog( "close" );
 dialog.dialog( "close" );
 ```
 
-Above, the parent widget's plugin, `dialog()`, cannot invoke the `close()` method on an element that is a superDialog. If you need to access the parent's methods, you need to specify a new method on the widget's prototype object and use `_super()` or `_superApply()` to access the parent's method.
-
-For more on the invoking widget methods see [Widget Method Invocation](/jquery-ui/widget-factory/widget-method-invocation/). For more information on the widget plugin bridge see [its documentation](http://api.jqueryui.com/jQuery.widget.bridge/).
+Above, the parent widget's plugin, `dialog()`, cannot invoke the `close()` method on an element that is a superDialog. For more on the invoking widget methods see [Widget Method Invocation](/jquery-ui/widget-factory/widget-method-invocation/).
 
 ### Customizing Individual Instances
 
 All the examples we have looked at so far have extended methods on the widget's prototype. Methods overridden on the prototype affect all instances of the widget.
 
-To show this refer to the example below; both instances of the dialog use the same `open()` method.
+To show this, refer to the example below; both instances of the dialog use the same `open()` method.
 
 ```
 $.widget( "ui.dialog", $.ui.dialog, {
