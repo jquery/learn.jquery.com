@@ -23,7 +23,7 @@ This returns the value of the [dialog's `height` option](http://api.jqueryui.com
 
 ### Instance Invocation
 
-Under the hoods, every instance of every widget is stored on the element using [`jQuery.data()`](http://api.jquery.com/jQuery.data/). To retrieve the instance object, call `jQuery.data()` using the widget's full name as the key. Let's look at each.
+Under the hoods, every instance of every widget is stored on the element using [`jQuery.data()`](http://api.jquery.com/jQuery.data/). To retrieve the instance object, call `jQuery.data()` using the widget's full name as the key. This is shown below.
 
 ```
 var dialog = $( ".selector" ).data( "ui-dialog" );
@@ -44,11 +44,20 @@ $( ".selector" ).dialog( "instance" ).close();
 
 ### Return Types
 
-Most methods invoked through the widget's plugin will return a `jQuery` object so the method call can be chained with additional jQuery methods.
+Most methods invoked through the widget's plugin will return a `jQuery` object so the method call can be chained with additional jQuery methods. This is even true of methods that return `undefined` when invoked on the instance. This is shown in the example below.
 
 ```
-$( ".selector" )
-	.dialog( "close" )
+var dialog = $( ".selector" ).dialog();
+
+// Instance invocation - returns undefined
+dialog.data( "ui-dialog" ).close();
+
+// Plugin invocation - returns a jQuery object
+dialog.dialog( "close" );
+
+// Therefore, plugin method invocation makes it possible to
+// chain method calls with other jQuery functions
+dialog.dialog( "close" )
 	.css( "color", "red" );
 ```
 
