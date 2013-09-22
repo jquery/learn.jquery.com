@@ -252,7 +252,7 @@ var $wrapper = $( "<div />" )
 $wrapper.append( "..." ); // Easy to reference later...
 ```
 
-Notice that we've created a reference to the injected wrapper and we're also calling the ´.attr()` method to add any specified attributes to the element. So, in our settings it might be handled like this:
+Notice that we've created a reference to the injected wrapper and we're also calling the `.attr()` method to add any specified attributes to the element. So, in our settings it might be handled like this:
 
 ```
 var defaults = {
