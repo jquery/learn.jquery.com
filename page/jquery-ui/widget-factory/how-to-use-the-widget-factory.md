@@ -114,6 +114,7 @@ $.widget( "custom.progressbar", {
 		value: 0
 	},
 	_create: function() {
+    this.options.value = this._constrain(this.options.value);
 		this.element.addClass( "progressbar" );
 		this.refresh();
 	},
@@ -141,18 +142,6 @@ $.widget( "custom.progressbar", {
 		return value;
 	}
 });
-```
-
-**Note** that this code doesn't handle passing negative value when initializing the progress bar, so it's your job to insure handling invalid options in the create method also. One way of fixing this is to add `this.options.value = this._constrain(this.options.value);` to either the `_create()` method or the `refresh()` method.
-
-so the `_create()` method code might look like
-
-```
-	_create: function() {
-    this.options.value = this._constrain(this.options.value);
-		this.element.addClass( "progressbar" );
-		this.refresh();
-	},
 ```
 
 ### Adding Callbacks
