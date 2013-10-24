@@ -115,9 +115,9 @@ var stuffToDo = {
 
 };
 
-if ( stuffToDo[ foo ] ) {
+if ( stuffToDo[ "foo" ] ) {
 
-	stuffToDo[ foo ]();
+	stuffToDo[ "foo2" ]();
 
 } else {
 
