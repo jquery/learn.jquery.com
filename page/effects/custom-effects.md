@@ -19,7 +19,7 @@ $( "div.funtimes" ).animate({
 	function() { // Callback when the animation is finished
 		console.log( "done!" );
 	}
-});
+);
 ```
 
 **Note:** Color-related properties cannot be animated with `.animate()` using jQuery
