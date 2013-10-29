@@ -146,7 +146,7 @@ Not to be confused with *:checkbox*, `:checked` targets *checked* checkboxes, bu
 $( "form :checked" );
 ```
 
-The `:checked` pseudo-selector works when used with **checkboxes**, **radio buttons** and **select**.
+The `:checked` pseudo-selector works when used with **checkboxes**, **radio buttons** and **selects**.
 
 #### :disabled
 
