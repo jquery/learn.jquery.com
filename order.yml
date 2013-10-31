@@ -48,6 +48,8 @@
     - how-do-i-replace-text-from-the-3rd-element-of-a-list-of-10-items
     - how-do-i-pull-a-native-dom-element-from-a-jquery-object
 - events:
+  - event-basics
+  - event-helpers
   - introduction-to-events
   - handling-events
   - inside-event-handling-function
