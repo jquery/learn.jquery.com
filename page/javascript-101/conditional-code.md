@@ -115,6 +115,8 @@ var stuffToDo = {
 
 };
 
+var foo;
+
 // Check if the property exists in the object.
 if ( stuffToDo[ foo ] ) {
 	// This code won't run.
