@@ -8,7 +8,7 @@ attribution:
 
 In JavaScript, as in most object-oriented programming languages, `this` is a special keyword that is used in methods to refer to the object on which a method is being invoked. The value of `this` is determined using a simple series of steps:
 
-- If the function is invoked using `Function.call()` or `Function.apply()`, this will be set to the first argument passed to `.call()`/`.apply()`. If the first argument passed to `.call()`/`.apply()` is `null` or `undefined`, `this` will refer to the global object (which is the `window` object in web browsers).
+- If the function is invoked using `Function.call()` or `Function.apply()`, `this` will be set to the first argument passed to `.call()`/`.apply()`. If the first argument passed to `.call()`/`.apply()` is `null` or `undefined`, `this` will refer to the global object (which is the `window` object in web browsers).
 - If the function being invoked was created using `Function.bind()`, `this` will be the first argument that was passed to `.bind()` at the time the function was created.
 - If the function is being invoked as a method of an object, `this` will refer to that object.
 - Otherwise, the function is being invoked as a standalone function not attached to any object, and `this` will refer to the global object.
