@@ -19,7 +19,7 @@ Once you have a basic understanding of what jQuery UI is and what it does, you'r
 
 #### Step 1: Choose Which Components You Need
 
-The main column of the Download Builder lists all of the JavaScript components in jQuery UI categorized into groups: core, interations, widgets, and effects. Some components in jQuery UI depend on other components. Just check the boxes for the widgets you'd like to download and any required dependencies will automatically be checked as well. The components you select will all be combined into a custom jQuery UI JavaScript file.
+The main column of the Download Builder lists all of the JavaScript components in jQuery UI categorized into groups: core, interactions, widgets, and effects. Some components in jQuery UI depend on other components. Just check the boxes for the widgets you'd like to download and any required dependencies will automatically be checked as well. The components you select will all be combined into a custom jQuery UI JavaScript file.
 
 ![Configuring a download](/resources/jquery-ui/configure.png)
 
