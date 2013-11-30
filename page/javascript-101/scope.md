@@ -36,7 +36,7 @@ Since `x` was initialized within `.myFunc()`, it is only accessible within `.myF
 
 ## A Word of Caution
 
-If you declare a variable and forget to use the `var` keyword, that variable is automically made global. So this code would work:
+If you declare a variable and forget to use the `var` keyword, that variable is automatically made global. So this code would work:
 
 ```
 function myFunc() {

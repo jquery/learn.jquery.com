@@ -7,7 +7,7 @@ jQuery UI contains many widgets that maintain [state](http://en.wikipedia.org/wi
 
 ## Initialization
 
-In order to track the state of the widget, we must introduce a full life cycle for the widget. The life cycle starts when the widget is initalized. To initialize a widget, we simply call the plugin on one or more elements.
+In order to track the state of the widget, we must introduce a full life cycle for the widget. The life cycle starts when the widget is initialized. To initialize a widget, we simply call the plugin on one or more elements.
 
 ```
 $( "#elem" ).progressbar();
