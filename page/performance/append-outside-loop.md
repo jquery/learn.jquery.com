@@ -37,16 +37,17 @@ $.each( myArray, function( i, item ) {
 $( "#ballers" )[ 0 ].appendChild( frag );
 ```
 
-Another simple technique is to build up a string during each iteration of the loop. After the loop, just set the HTML of the DOM element to that string.
+Another simple technique is to build up a string during each iteration of the loop. To have better performances, the iteration should use a straight `for` loop with [cached length](http://learn.jquery.com/performance/cache-loop-length/). After the loop, just set the HTML of the DOM element to that string.
 
 ```
 var myHtml = "";
+var myLength = myArray.length;
 
-$.each( myArray, function( i, item ) {
+for ( var i = 0; i < myLength; i++ ) {
 
-	myHtml += "<li>" + item + "</li>";
+	myHtml += "<li>" + myArray[i] + "</li>";
 
-});
+}
 
 $( "#ballers" ).html( myHtml );
 ```
