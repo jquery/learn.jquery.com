@@ -8,7 +8,7 @@ attribution:
 
 Closures are an extension of the concept of scope. With closures, functions have access to variables that were available in the scope where the function was created. If that seems confusing, don’t worry: closures are generally best understood by example.
 
-As shown in the [Functions](/functions/) section, functions have access to changing variable values. The same sort of behavior exists with functions defined within loops – the function "sees" the change in the variable's value even after the function is defined, resulting in each function referencing the last value stored in the variable.
+As shown in the [Scope](/scope/) section, functions have access to changing variable values. The same sort of behavior exists with functions defined within loops – the function "sees" the change in the variable's value even after the function is defined, resulting in each function referencing the last value stored in the variable.
 
 ```
 // Each function executed within the loop will reference
