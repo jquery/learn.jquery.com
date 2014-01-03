@@ -121,6 +121,21 @@ sayHello(); // "hello"
 console.log( foo ); // "world"
 ```
 
+However, in contrast with the previous script, this will actually output twice `hello`, since the function definition overwrites the previous definition:
+
+```
+var foo = "world";
+
+var sayHello = function() {
+	foo = "hello";
+	console.log( foo );
+};
+
+sayHello(); // "hello"
+
+console.log( foo ); // "world"
+```
+
 When you reference a global variable within a function, that function can see changes to the variable value after the function is defined.
 
 ```
