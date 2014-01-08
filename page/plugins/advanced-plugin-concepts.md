@@ -110,7 +110,7 @@ This technique makes it possible for others to define and ship transition defini
 
 The technique of exposing part of your plugin to be overridden can be very powerful. But you need to think carefully about what parts of your implementation to expose. Once it's exposed, you need to keep in mind that any changes to the calling arguments or semantics may break backward compatibility. As a general rule, if you're not sure whether to expose a particular function, then you probably shouldn't.
 
-So how then do we define more functions without cluttering the namespace and without exposing the implementation? This is a job for closures. To demonstrate, we'll add another function to our plugin called "debug". The debug function will log the number of selected elements to the Firebug console. To create a closure, we wrap the entire plugin definition in a function (as detailed in the jQuery Authoring Guidelines).
+So how then do we define more functions without cluttering the namespace and without exposing the implementation? This is a job for closures. To demonstrate, we'll add another function to our plugin called "debug". The debug function will log the number of selected elements to the console. To create a closure, we wrap the entire plugin definition in a function (as detailed in the jQuery Authoring Guidelines).
 
 ```
 // Create closure.
