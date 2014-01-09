@@ -118,6 +118,7 @@ $.widget( "custom.progressbar", {
 		value: 0
 	},
 	_create: function() {
+		this.options.value = this._constrain(this.options.value);
 		this.element.addClass( "progressbar" );
 		this.refresh();
 	},
@@ -157,6 +158,7 @@ $.widget( "custom.progressbar", {
 		value: 0
 	},
 	_create: function() {
+		this.options.value = this._constrain(this.options.value);
 		this.element.addClass( "progressbar" );
 		this.refresh();
 	},
@@ -257,6 +259,7 @@ $.widget( "custom.progressbar", {
 		value: 0
 	},
 	_create: function() {
+		this.options.value = this._constrain(this.options.value);
 		this.element.addClass( "progressbar" );
 		this.refresh();
 	},
