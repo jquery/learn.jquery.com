@@ -143,7 +143,7 @@ Notice that we return the results of `.each()` instead of returning `this`. Sinc
 
 ## Accepting Options
 
-As your plugins get more and more complex, it's a good idea to make your plugin customizable by accepting options. The easiest way do this, especially if there are lots of options, is with an object literal. Let's change our greenify plugin to accept some options.
+As your plugins get more and more complex, it's a good idea to make your plugin customizable by accepting options. The easiest way to do this, especially if there are lots of options, is with an object literal. Let's change our greenify plugin to accept some options.
 
 ```
 (function ( $ ) {
