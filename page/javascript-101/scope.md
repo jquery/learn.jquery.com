@@ -121,7 +121,7 @@ sayHello(); // "hello"
 console.log( foo ); // "world"
 ```
 
-When you reference a global variable within a function, that function can see changes to the variable value after the function is defined.
+When you reference a variable that's outside of a function's scope, that function can see changes to that variable after the function is defined and then executed.
 
 ```
 var myFunction = function() {
