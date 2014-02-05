@@ -18,7 +18,7 @@ trigger the event.
 jQuery offers convenience methods for most native browser events. These methods —
 including `.click()`, `.focus()`, `.blur()`, `.change()`, etc. — are shorthand
 for jQuery's `.on()` method. The on method is useful for binding the same handler
-function to multiple events, when you want to provide data to the event hander,
+function to multiple events, when you want to provide data to the event handler,
 when you are working with custom events, or when you want to pass an object of
 multiple events and handlers.
 
