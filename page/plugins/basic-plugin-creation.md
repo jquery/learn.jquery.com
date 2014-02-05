@@ -187,9 +187,11 @@ Here's an example of a small plugin using some of the techniques we've discussed
 
 	$.fn.showLinkLocation = function() {
 
-		return this.filter( "a" ).each(function() {
+		this.filter( "a" ).each(function() {
 			$( this ).append( " (" + $( this ).attr( "href" ) + ")" );
 		});
+		
+		return this;
 
 	};
 
@@ -216,9 +218,11 @@ Our plugin can be optimized though:
 
 	$.fn.showLinkLocation = function() {
 
-		return this.filter( "a" ).append(function() {
+		this.filter( "a" ).append(function() {
 			return " (" + this.href + ")";
 		});
+		
+		return this;
 
 	};
 
