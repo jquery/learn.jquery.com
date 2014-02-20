@@ -103,6 +103,7 @@
     - how-to-use-the-widget-factory
   - environments:
     - amd
+    - bower
 - jquery-mobile:
   - getting-started
   - theme-roller
