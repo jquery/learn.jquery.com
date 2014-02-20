@@ -11,7 +11,7 @@ In this article we'll walk through the process of using AMD with jQuery UI. Let'
 
 We'll need to download three things to get up and running: jQuery core, jQuery UI, and an AMD loader.
 
-While any AMD loader will work, we'll use RequireJS in this article, which you can download from <http://requirejs.org/docs/download.html>. If you don't have a version of jQuery core handy, you can get it from <http://jquery.com/download/>, and you can download jQuery UI directly from <http://jqueryui.com/>.
+While any AMD loader will work, we'll use RequireJS in this article, which you can download from <http://requirejs.org/docs/download.html>. If you don't have a version of jQuery core handy, you can get it from <http://jquery.com/download/>, and you can download jQuery UI directly from <http://jqueryui.com/>. Alternatively you can [download these libraries using a package manager such as Bower](/jquery-ui/environments/bower/).
 
 ### Directory Structure
 
