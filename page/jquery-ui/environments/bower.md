@@ -12,6 +12,7 @@ As an example, suppose we're starting a new project and we need to use [jQuery U
 <html lang="en">
 <head>
 	<meta charset="utf-8">
+	<title>jQuery Projects</title>
 </head>
 <body>
 
@@ -52,7 +53,7 @@ Libraries are downloaded with Bower using the `bower install` command. To instal
 │       ├── themes
 │       │   ├── base
 │       │   │   ├── jquery-ui.css
-│       │   │   ├── jquery.ui.accordion.css
+│       │   │   ├── accordion.css
 │       │   │   ├── ...
 │       │   │   └── minified
 │       │   │       ├── jquery-ui.min.css
@@ -61,7 +62,7 @@ Libraries are downloaded with Bower using the `bower install` command. To instal
 │       │   └── [The rest of jQuery UI's themes]
 │       └── ui
 │           ├── jquery-ui.js
-│           ├── jquery.ui.accordion.js
+│           ├── accordion.js
 │           ├── ...
 │           └── minified
 │               ├── jquery-ui.min.js
@@ -85,6 +86,7 @@ We have a few different options for using the files downloaded with Bower. The e
 <html lang="en">
 <head>
 	<meta charset="utf-8">
+	<title>jQuery Projects</title>
 	<link rel="stylesheet" href="bower_components/jquery-ui/themes/base/jquery-ui.css">
 </head>
 <body>
@@ -110,13 +112,14 @@ We have a few different options for using the files downloaded with Bower. The e
 
 This code successfully builds our accordion widget, but it also includes the entirety of jQuery UI when we only need the accordion widget. Since there's a lot more than an accordion widget in jQuery UI, this forces the user to download far more than they need.
 
-Because Bower also downloaded jQuery UI's individual source files, we can use alternatively use them to send the user just the accordion widget and its dependencies. The following example builds the same accordion widget taking this approach.
+Because Bower also downloaded jQuery UI's individual source files, we can alternatively use them to send the user just the accordion widget and its dependencies. The following example builds the same accordion widget taking this approach.
 
 ```
 <!doctype html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
+	<title>jQuery Projects</title>
 	<link rel="stylesheet" href="bower_components/jquery-ui/themes/base/core.css">
 	<link rel="stylesheet" href="bower_components/jquery-ui/themes/base/theme.css">
 	<link rel="stylesheet" href="bower_components/jquery-ui/themes/base/accordion.css">
@@ -144,4 +147,4 @@ Because Bower also downloaded jQuery UI's individual source files, we can use al
 </html>
 ```
 
-From here, you can hook jQuery UI's files into your own custom build system to concatenate and minify  your resources for production. If you're a RequireJS user, checkout our [guide on how to use jQuery UI with AMD](/jquery-ui/environments/amd/).
+From here, you can hook jQuery UI's files into your own custom build system to concatenate and minify your resources for production. If you're a RequireJS user, checkout our [guide on how to use jQuery UI with AMD](/jquery-ui/environments/amd/).
