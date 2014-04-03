@@ -10,7 +10,7 @@ One of the most celebrated aspects of jQuery is its extensive plugin ecosystem. 
 
 The quality of jQuery plugins varies widely. Many plugins are extensively tested and well-maintained, but others are hastily created and then ignored. More than a few fail to follow best practices. Some plugins, mainly [jQuery UI](http://jqueryui.com/), are maintained by the jQuery team. The quality of these plugins is as good as jQuery itself.
 
-Google is your best initial resource for locating plugins, though the jQuery team is working on an improved plugin repository. Once you've identified some options via a Google search, you may want to consult the jQuery mailing list or the `#jquery` IRC channel to get input from others.
+The easiest way to find plugins is to search Google or the [jQuery Plugins Registry](http://plugins.jquery.com/). Once you've identified some options, you may want to consult the [jQuery forums](http://forum.jquery.com/) or the `#jquery` IRC channel to get input from others.
 
 When looking for a plugin to fill a need, do your homework. Ensure that the plugin is well-documented, and look for the author to provide lots of examples of its use. Be wary of plugins that do far more than you need; they can end up adding substantial overhead to your page. For more tips on spotting a sub-par plugin, read [Signs of a poorly written jQuery plugin](http://remysharp.com/2010/06/03/signs-of-a-poorly-written-jquery-plugin/) by Remy Sharp.
 
