@@ -119,7 +119,7 @@ ThemeRoller provides a custom interface for designing all of the elements used b
 
 When you click the "Download theme" button in ThemeRoller, you'll be directed to the Download Builder and your custom theme will be auto-selected in the Theme dropdown menu. You can configure your download package further from there. Once you download, you'll see that the `example.html` page is styled using your custom theme.
 
-**Quick Tip:** *If you ever need to edit your theme, simply open the CSS file and find on line 43 where it says "To view and modify this theme, visit ..." That url will open the theme in ThemeRoller for editing.*
+**Quick Tip:** *If you ever need to edit your theme, simply open the CSS file and find where it says "To view and modify this theme, visit ..." That URL will open the theme in ThemeRoller for editing.*
 
 ### Support: Where Can I Get Help?
 
