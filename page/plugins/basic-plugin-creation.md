@@ -188,15 +188,16 @@ Here's an example of a small plugin using some of the techniques we've discussed
 	$.fn.showLinkLocation = function() {
 
 		return this.filter( "a" ).each(function() {
-			$( this ).append( " (" + $( this ).attr( "href" ) + ")" );
+			var link = $( this );
+			link.append( " (" + link.attr( "href" ) + ")" );
 		});
 
 	};
 
 }( jQuery ));
 
- // Usage example:
- $( "a" ).showLinkLocation();
+// Usage example:
+$( "a" ).showLinkLocation();
 ```
 
 This handy plugin goes through all anchors in the collection and appends the `href` attribute in parentheses.
