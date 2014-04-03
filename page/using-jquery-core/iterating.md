@@ -209,7 +209,7 @@ $( "input" ).val(function( index, value ) {
 
 ```
 
-One other thing to keep in mind with this implicit iteration is that traversal methods such as `.children()` or `.parent()` will act on each matched element in a connection, returning a combined collection of all children or parent nodes.
+One other thing to keep in mind with this implicit iteration is that traversal methods such as `.children()` or `.parent()` will act on each matched element in a collection, returning a combined collection of all children or parent nodes.
 
 ### [`.map()`](http://api.jquery.com/map/)
 
