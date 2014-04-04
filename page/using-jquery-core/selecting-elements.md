@@ -255,7 +255,7 @@ In order to get the best performance using `:selected`, first select elements wi
 
 #### :submit
 
-Using the `:submit` pseudo-selector targets any `<button>` or `<input>` elements with a `type="button"`:
+Using the `:submit` pseudo-selector targets any `<button>` or `<input>` elements with a `type="submit"`:
 
 ```
 $( "form :submit" );
