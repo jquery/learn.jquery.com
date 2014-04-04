@@ -59,3 +59,14 @@ $( ".category :radio" ); // Implied universal selection.
 $( ".category *:radio" ); // Same thing, explicit now.
 $( ".category input:radio" ); // Much better.
 ```
+
+## Be Careful the Not Equal Attribute Selector
+
+To improve the performance of the Not Equal attribute selector in browsers that support `querySelectorAll()`, use the `not()` method.
+
+```
+$('.border [placeholder!=Age]')
+
+// Better for older browsers
+$('.border').not('[placeholder=Age]')
+```
