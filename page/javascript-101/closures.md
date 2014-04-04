@@ -44,7 +44,8 @@ Closures can also be used to resolve issues with the `this` keyword, which is un
 var outerObj = {
 	myName: "outer",
 	outerFunction: function() {
-		// provide a reference to outerObj through innerFunction"s closure
+
+		// Provide a reference to outerObj through innerFunction's closure
 		var self = this;
 		var innerObj = {
 			myName: "inner",
