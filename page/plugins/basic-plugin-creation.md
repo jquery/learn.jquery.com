@@ -51,7 +51,7 @@ Note that the notion of chaining is *not* applicable to jQuery utility methods l
 
 ## Protecting the $ Alias and Adding Scope
 
-The `$` variable is very popular among JavaScript libraries, and if you're using another library with jQuery, you will have to make jQuery not use the `$` with `jQuery.noConflict()`. However, this will break our plugin since it is written with the assumption that `$` is an alias to the `jQuery` function. To work well with other plugins, _and_ still use the jQuery `$` alias, we need to put all of our code inside of an [Immediately Invoked Function Expression](http://stage.learn.jquery.com/javascript-101/functions/#immediately-invoked-function-expression), and then pass the function `jQuery`, and name the parameter `$`:
+The `$` variable is very popular among JavaScript libraries, and if you're using another library with jQuery, you will have to make jQuery not use the `$` with `jQuery.noConflict()`. However, this will break our plugin since it is written with the assumption that `$` is an alias to the `jQuery` function. To work well with other plugins, _and_ still use the jQuery `$` alias, we need to put all of our code inside of an [Immediately Invoked Function Expression](http://stage.learn.jquery.com/javascript-101/functions/#immediately-invoked-function-expression-iife), and then pass the function `jQuery`, and name the parameter `$`:
 
 ```
 (function ( $ ) {
