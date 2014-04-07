@@ -42,7 +42,7 @@ The method that makes the most sense will depend on what elements are selected, 
 // Moving elements using different approaches.
 
 // Make the first list item the last list item:
-var $li = $( "#myList li:first" ).appendTo( "#myList" );
+var li = $( "#myList li:first" ).appendTo( "#myList" );
 
 // Another approach to the same problem:
 $( "#myList" ).append( $( "#myList li:first" ) );
@@ -100,13 +100,13 @@ When you create a new element, it is not immediately added to the page. There ar
 ```
 // Getting a new element on to the page.
 
-var $myNewElement = $( "<p>New element</p>" );
+var myNewElement = $( "<p>New element</p>" );
 
-$myNewElement.appendTo( "#content" );
+myNewElement.appendTo( "#content" );
 
-$myNewElement.insertAfter( "ul:last" ); // This will remove the p from #content!
+myNewElement.insertAfter( "ul:last" ); // This will remove the p from #content!
 
-$( "ul" ).last().after( $myNewElement.clone() );  // Clone the p so now we have two.
+$( "ul" ).last().after( myNewElement.clone() ); // Clone the p so now we have two.
 ```
 
 The created element doesn't need to be stored in a variable – you can call the method to add the element to the page directly after the `$()`. However, most of the time you'll want a reference to the element you added so you won't have to select it later.
@@ -122,13 +122,13 @@ The syntax for adding new elements to the page is easy, so it's tempting to forg
 
 ```
 var myItems = [];
-var $myList = $( "#myList" );
+var myList = $( "#myList" );
 
 for ( var i = 0; i < 100; i++ ) {
 	myItems.push( "<li>item " + i + "</li>" );
 }
 
-$myList.append( myItems.join( "" ) );
+myList.append( myItems.join( "" ) );
 ```
 
 ## Manipulating Attributes

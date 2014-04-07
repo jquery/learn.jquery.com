@@ -112,23 +112,23 @@ When these properties are defined, the following behavior occurs in the jQuery e
 So given the special event above, this code shows that a pushy isn't removed by removing clicks. That might be an effective way to defend against an ill-behaved plugin that didn't namespace its removal of click events, for example:
 
 ```
-var $p = $( "p" );
+var elem = $( "p" );
 
-$p.on( "click", function( e ) {
-	$( "body" ).append( "I am a " + e.type + "!" );
+elem.on( "click", function( event ) {
+	$( "body" ).append( "I am a " + event.type + "!" );
 });
 
-$p.on( "pushy", function( e ) {
-	$( "body" ).append( "I am pushy but still a " + e.type + "!" );
+elem.on( "pushy", function( event ) {
+	$( "body" ).append( "I am pushy but still a " + event.type + "!" );
 });
 
-$p.trigger( "click" ); // triggers both handlers
+elem.trigger( "click" ); // triggers both handlers
 
-$p.off( "click" );
+elem.off( "click" );
 
-$p.trigger( "click" ); // still triggers "pushy"
+elem.trigger( "click" ); // still triggers "pushy"
 
-$p.off( "pushy" );
+elem.off( "pushy" );
 ```
 
 These two properties are often used in conjunction with a `handle` hook function; the hook might, for example, change the event name from "click" to "pushy" before calling event handlers. See below for an example.

@@ -134,20 +134,20 @@ testing whether your selection returned any elements; if not, you can just run t
 
 ```
 // Run a callback even if there were no elements to animate
-var $someElement = $( "#nonexistent" );
+var someElement = $( "#nonexistent" );
 
 var cb = function() {
 	console.log( "done!" );
 };
 
-if ( $someElement.length ) {
-	$someElement.fadeIn( 300, cb );
+if ( someElement.length ) {
+	someElement.fadeIn( 300, cb );
 } else {
 	cb();
 }
 ```
 
-##Managing Animation Effects
+## Managing Animation Effects
 
 jQuery provides some additional features for controlling your animations:
 

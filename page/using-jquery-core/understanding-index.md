@@ -20,21 +20,21 @@ attribution:
 ```
 
 ```
-var $foo = $( "#foo1" );
+var foo = $( "#foo1" );
 
-console.log( "Index: " + $foo.index() ); // 1
+console.log( "Index: " + foo.index() ); // 1
 
-var $listItem = $( "li" );
-
-// This implicitly calls .first()
-console.log( "Index: " + $listItem.index() ); // 1
-console.log( "Index: " + $listItem.first().index() ); // 1
-
-var $div = $( "div" );
+var listItem = $( "li" );
 
 // This implicitly calls .first()
-console.log( "Index: " + $div.index() ); // 0
-console.log( "Index: " + $div.first().index() ); // 0
+console.log( "Index: " + listItem.index() ); // 1
+console.log( "Index: " + listItem.first().index() ); // 1
+
+var div = $( "div" );
+
+// This implicitly calls .first()
+console.log( "Index: " + div.index() ); // 0
+console.log( "Index: " + div.first().index() ); // 0
 ```
 
 In the first example, `.index()` gives the zero-based index of `#foo1` within its parent. Since `#foo1` is the second child of its parent, `index()` returns 1.
@@ -55,20 +55,20 @@ When `.index()` is called on a jQuery object that contains more than one element
 ```
 
 ```
-var $foo = $( "li" );
+var foo = $( "li" );
 
 // This implicitly calls .first()
-console.log( "Index: " + $foo.index( "li" ) ); // 0
-console.log( "Index: " + $foo.first().index( "li" ) ); // 0
+console.log( "Index: " + foo.index( "li" ) ); // 0
+console.log( "Index: " + foo.first().index( "li" ) ); // 0
 
-var $baz = $( "#baz1" );
-console.log( "Index: " + $baz.index( "li" )); // 2
+var baz = $( "#baz1" );
+console.log( "Index: " + baz.index( "li" )); // 2
 
-var $listItem = $( "#bar1" );
-console.log( "Index: " + $listItem.index( ".test" ) ); // 1
+var listItem = $( "#bar1" );
+console.log( "Index: " + listItem.index( ".test" ) ); // 1
 
-var $div = $( "#last" );
-console.log( "Index: " + $div.index( "div" ) ); // 2
+var div = $( "#last" );
+console.log( "Index: " + div.index( "div" ) ); // 2
 ```
 
 When `.index()` is called with a string argument, there are two things to consider. First, jQuery will implicitly call `.first()` on the original jQuery object. It will find the index of the first element, not the last element in this case. This is inconsistent, so be careful here.
@@ -89,18 +89,18 @@ The second point to consider is that jQuery is querying the entire DOM using the
 ```
 
 ```
-var $foo = $( "li" );
-var $baz = $( "#baz1" );
+var foo = $( "li" );
+var baz = $( "#baz1" );
 
-console.log( "Index: " + $foo.index( $baz ) ); // 2
+console.log( "Index: " + foo.index( baz ) ); // 2
 
-var $tests = $( ".test" );
-var $bar = $( "#bar1" );
+var tests = $( ".test" );
+var bar = $( "#bar1" );
 
 // Implicitly calls .first() on the argument.
-console.log( "Index: " + $tests.index( $bar ) ); // 1
+console.log( "Index: " + tests.index( bar ) ); // 1
 
-console.log( "Index: " + $tests.index( $bar.first() ) ); // 1
+console.log( "Index: " + tests.index( bar.first() ) ); // 1
 ```
 
 In this case, the first element of the jQuery object that is passed into `.index()` is being checked against all of the elements in the original jQuery object.  The original jQuery object, on the left side of `.index()`, is array-like and is searched from index 0 through `length - 1` for the first element of the argument jQuery object.

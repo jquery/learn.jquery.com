@@ -38,13 +38,13 @@ As a getter, the `.css()` method is valuable. However, it should generally be av
 ```
 // Working with classes.
 
-var $h1 = $( "h1" );
+var h1 = $( "h1" );
 
-$h1.addClass( "big" );
-$h1.removeClass( "big" );
-$h1.toggleClass( "big" );
+h1.addClass( "big" );
+h1.removeClass( "big" );
+h1.toggleClass( "big" );
 
-if ( $h1.hasClass( "big" ) ) {
+if ( h1.hasClass( "big" ) ) {
 	...
 }
 ```

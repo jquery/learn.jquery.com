@@ -92,7 +92,7 @@ if ( $( "div.foo" ).length ) {
 jQuery doesn't cache elements for you. If you've made a selection that you might need to make again, you should save the selection in a variable rather than making the selection repeatedly.
 
 ```
-var $divs = $( "div" );
+var divs = $( "div" );
 ```
 
 In the example above, the variable name begins with a dollar sign. Unlike in other languages, there's nothing special about the dollar sign in JavaScript – it's just another character. Here, it's used to indicate that the variable contains a jQuery object. This practice is merely convention, and is not mandatory.

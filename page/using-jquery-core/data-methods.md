@@ -25,18 +25,18 @@ For example, you may want to establish a relationship between a list item and a 
 
 $( "#myList li" ).each(function() {
 
-	var $li = $( this );
-	var $div = $li.find( "div.content" );
+	var li = $( this );
+	var div = li.find( "div.content" );
 
-	$li.data( "contentDiv", $div );
+	li.data( "contentDiv", div );
 
 });
 
 // Later, we don't have to find the div again;
 // we can just read it from the list item's data
-var $firstLi = $( "#myList li:first" );
+var firstLi = $( "#myList li:first" );
 
-$firstLi.data( "contentDiv" ).html( "new content" );
+firstLi.data( "contentDiv" ).html( "new content" );
 ```
 
 In addition to passing `.data()` a single key-value pair to store data, you can also pass an object containing one or more pairs.
