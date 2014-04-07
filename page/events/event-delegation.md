@@ -80,9 +80,9 @@ What if we wanted to open the link in a new window if that link is an external o
 ```
 // attach a delegated event
 $( "#list" ).on( "click", "a", function( event ) {
-	var $elem = $( this );
-	if ( $elem.is( "[href^='http']" ) ) {
-		$elem.attr( "target", "_blank" );
+	var elem = $( this );
+	if ( elem.is( "[href^='http']" ) ) {
+		elem.attr( "target", "_blank" );
 	}
 });
 ```

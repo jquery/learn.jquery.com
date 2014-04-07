@@ -94,11 +94,11 @@ written in the traditional jQuery style:
 $( document ).ready(function() {
 
 	$( "#myFeature li" ).append( "<div/>" ).click(function() {
-		var $this = $( this );
-		var $div = $this.find( "div" );
-		$div.load( "foo.php?item=" + $this.attr( "id" ), function() {
-			$div.show();
-			$this.siblings().find( "div" ).hide();
+		var item = $( this );
+		var div = item.find( "div" );
+		div.load( "foo.php?item=" + item.attr( "id" ), function() {
+			div.show();
+			item.siblings().find( "div" ).hide();
 		});
 	});
 
@@ -118,8 +118,8 @@ var myFeature = {
 
 	init: function( settings ) {
 		myFeature.config = {
-			$items: $( "#myFeature li" ),
-			$container: $( "<div class='container'></div>" ),
+			items: $( "#myFeature li" ),
+			container: $( "<div class='container'></div>" ),
 			urlBase: "/foo.php?item="
 		};
 
@@ -130,36 +130,40 @@ var myFeature = {
 	},
 
 	setup: function() {
-		myFeature.config.$items.each( myFeature.createContainer ).click( myFeature.showItem );
+		myFeature.config.items
+			.each( myFeature.createContainer )
+			.click( myFeature.showItem );
 	},
 
 	createContainer: function() {
-		var $i = $( this );
-		var $c = myFeature.config.$container.clone().appendTo( $i );
-		$i.data( "container", $c );
+		var item = $( this );
+		var container = myFeature.config.container
+			.clone()
+			.appendTo( item );
+		item.data( "container", container );
 	},
 
 	buildUrl: function() {
-		return myFeature.config.urlBase + myFeature.$currentItem.attr( "id" );
+		return myFeature.config.urlBase + myFeature.currentItem.attr( "id" );
 	},
 
 	showItem: function() {
-		var myFeature.$currentItem = $( this );
+		var myFeature.currentItem = $( this );
 		myFeature.getContent( myFeature.showContent );
 	},
 
 	getContent: function( callback ) {
 		var url = myFeature.buildUrl();
-		myFeature.$currentItem.data( "container" ).load( url, callback );
+		myFeature.currentItem.data( "container" ).load( url, callback );
 	},
 
 	showContent: function() {
-		myFeature.$currentItem.data( "container" ).show();
+		myFeature.currentItem.data( "container" ).show();
 		myFeature.hideContent();
 	},
 
 	hideContent: function() {
-		myFeature.$currentItem.siblings().each(function() {
+		myFeature.currentItem.siblings().each(function() {
 			$( this ).data( "container" ).hide();
 		});
 	}
@@ -249,46 +253,46 @@ $( document ).ready(function() {
 
 	var feature = (function() {
 
-		var $items = $( "#myFeature li" );
-		var $container = $( "<div class='container'></div>" );
-		var $currentItem = null;
+		var items = $( "#myFeature li" );
+		var container = $( "<div class='container'></div>" );
+		var currentItem = null;
 		var urlBase = "/foo.php?item=";
 
 		var createContainer = function() {
-			var $i = $( this );
-			var $c = $container.clone().appendTo( $i );
-			$i.data( "container", $c );
+			var item = $( this );
+			var container = container.clone().appendTo( item );
+			item.data( "container", container );
 		},
 
 		buildUrl = function() {
-			return urlBase + $currentItem.attr( "id" );
+			return urlBase + currentItem.attr( "id" );
 		},
 
 		showItem = function() {
-			$currentItem = $( this );
+			currentItem = $( this );
 			getContent( showContent );
 		},
 
 		showItemByIndex = function( idx ) {
-			$.proxy( showItem, $items.get( idx ) );
+			$.proxy( showItem, items.get( idx ) );
 		},
 
 		getContent = function( callback ) {
-			$currentItem.data( "container" ).load( buildUrl(), callback );
+			currentItem.data( "container" ).load( buildUrl(), callback );
 		},
 
 		showContent = function() {
-			$currentItem.data( "container" ).show();
+			currentItem.data( "container" ).show();
 			hideContent();
 		},
 
 		hideContent = function() {
-			$currentItem.siblings().each(function() {
+			currentItem.siblings().each(function() {
 				$( this ).data( "container" ).hide();
 			});
 		};
 
-		$items.each( createContainer ).click( showItem );
+		items.each( createContainer ).click( showItem );
 
 		return {
 			showItemByIndex: showItemByIndex

@@ -25,8 +25,8 @@ It is possible to use `.bind()` and attach a handler to every element.
 
 ```
 ​$( "#list li" ).bind( "click", function( event ) {
-	var $elem = $( event.target );
-	console.log( $elem.text() );
+	var elem = $( event.target );
+	console.log( elem.text() );
 });​​​​​​​​​​​​​​​​​​​​​
 ```
 As discussed in the [event delegation](/event/event-delegation) article, this is not optimal.
@@ -42,9 +42,9 @@ Generally we don't associate `.bind()` with *event delegation*, however prior to
 
 ```
 ​$( "#list" ).bind( "click", function( event ) {
-	var $elem = $( event.target );
-	if ( $elem.is( "li" ) ) {
-		console.log( $elem.text() );
+	var elem = $( event.target );
+	if ( elem.is( "li" ) ) {
+		console.log( elem.text() );
 	}
 });​​​​​​​​​​​​​​​​​​​​​
 ```
@@ -59,8 +59,8 @@ All `.live()` event handlers are bound to the *document* root by default.
 
 ```
 ​$( "#list li" ).live( "click", function( event ) {
-	var $elem = $( this );
-	console.log( $elem.text() );
+	var elem = $( this );
+	console.log( elem.text() );
 });​​​​​​​​​​​​​​​​​​​​​
 ```
 
@@ -84,8 +84,8 @@ If we were take our previous `.live()` example and provide it the default *conte
 
 ```
 ​$( "#list li", document ).live( "click", function( event ) {
-	var $elem = $( this );
-	console.log( $elem.text() );
+	var elem = $( this );
+	console.log( elem.text() );
 });​​​​​​​​​​​​​​​​​​​​​
 ```
 
@@ -93,8 +93,8 @@ Since we can override the *context* when using the `.live()` method, we can spec
 
 ```
 $( "li", "#list" ).live( "click", function( event ) {
-	var $elem = $( this );
-	console.log( $elem.text() );
+	var elem = $( this );
+	console.log( elem.text() );
 });​​​​​​​​​​​​​​​​​​​​​
 ```
 
@@ -107,8 +107,8 @@ The `.delegate()` method provides a clear difference between the *context* of wh
 
 ```
 $( "#list" ).delegate( "li", "click", function( event ) {
-	var $elem = $( this );
-	console.log( $elem.text() );
+	var elem = $( this );
+	console.log( elem.text() );
 });​​​​​​​​​​​​​​​​​​​​​
 ```
 
@@ -119,8 +119,8 @@ The `on.()` method gives us a semantic approach for creating directly bound even
 
 ```
 $( "#list" ).on( "click", "li", function( event ) {
-	var $elem = $( this );
-	console.log( $elem.text() );
+	var elem = $( this );
+	console.log( elem.text() );
 });​​​​​​​​​​​​​​​​​​​​​
 ```
 

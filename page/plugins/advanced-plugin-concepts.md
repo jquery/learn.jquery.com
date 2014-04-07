@@ -71,16 +71,16 @@ $.fn.hilight = function( options ) {
 	// Iterate and reformat each matched element.
 	return this.each(function() {
 
-		var $this = $( this );
+		var elem = $( this );
 
 		// ...
 
-		var markup = $this.html();
+		var markup = elem.html();
 
 		// Call our format function.
 		markup = $.fn.hilight.format( markup );
 
-		$this.html( markup );
+		elem.html( markup );
 
 	});
 
@@ -123,9 +123,9 @@ So how then do we define more functions without cluttering the namespace and wit
 	};
 
 	// Private function for debugging.
-	function debug( $obj ) {
+	function debug( obj ) {
 		if ( window.console && window.console.log ) {
-			window.console.log( "hilight selection count: " + $obj.size() );
+			window.console.log( "hilight selection count: " + obj.length );
 		}
 	};
 
@@ -245,11 +245,11 @@ $( "<div id=\"the-gallery-wrapper\" />").appendTo( "body" );
 $( "#the-gallery-wrapper" ).append( "..." );
 
 // Retain an internal reference:
-var $wrapper = $( "<div />" )
+var wrapper = $( "<div />" )
 	.attr( settings.wrapperAttrs )
 	.appendTo( settings.container );
 
-$wrapper.append( "..." ); // Easy to reference later...
+wrapper.append( "..." ); // Easy to reference later...
 ```
 
 Notice that we've created a reference to the injected wrapper and we're also calling the `.attr()` method to add any specified attributes to the element. So, in our settings it might be handled like this:
@@ -280,7 +280,7 @@ var defaults = {
 };
 
 // Later on in the plugin where we define the wrapper:
-var $wrapper = $( "<div />" )
+var wrapper = $( "<div />" )
 	.attr( settings.wrapperAttrs )
 	.css( settings.wrapperCSS ) // ** Set CSS!
 	.appendTo( settings.container );
@@ -307,7 +307,7 @@ var defaults = {
 
 // Later on in the plugin:
 
-$nextButton.bind( "click", showNextImage );
+nextButton.bind( "click", showNextImage );
 
 function showNextImage() {
 

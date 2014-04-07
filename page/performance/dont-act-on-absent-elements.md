@@ -14,11 +14,11 @@ jQuery won't tell you if you're trying to run a whole lot of code on an empty se
 $( "#nosuchthing" ).slideUp();
 
 // Better:
-var $mySelection = $( "#nosuchthing" );
+var elem = $( "#nosuchthing" );
 
-if ( $mySelection.length ) {
+if ( elem.length ) {
 
-	$mySelection.slideUp();
+	elem.slideUp();
 
 }
 

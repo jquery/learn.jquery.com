@@ -63,8 +63,8 @@ function.
 ## Quick Examples:
 
 ```
-// Let's assume $elem is a jQuery object that points to some element we are animating.
-var queue = $elem.queue();
+// Let's assume elem is a jQuery object that points to some element we are animating.
+var queue = elem.queue();
 
 // Remove the last function from the animation queue.
 var lastFunc = queue.pop();
@@ -73,7 +73,7 @@ var lastFunc = queue.pop();
 queue.unshift( lastFunc );
 
 // Replace queue with the first three items in the queue.
-$elem.queue( queue.slice( 0, 3 ) );
+elem.queue( queue.slice( 0, 3 ) );
 ```
 
 ### An animation (fx) queue example:
@@ -81,7 +81,7 @@ $elem.queue( queue.slice( 0, 3 ) );
 ```
 $(function() {
 	// Let's do something with Google Maps:
-	var $map = $( "#map_canvas" );
+	var canvas = $( "#map_canvas" );
 
 	var myLatlng = new google.maps.LatLng( -34.397, 150.644 );
 
@@ -93,17 +93,17 @@ $(function() {
 
 	var geocoder = new google.maps.Geocoder();
 
-	var map = new google.maps.Map( $map[0], myOptions );
+	var map = new google.maps.Map( canvas[0], myOptions );
 
 	var resized = function() {
 		// simple animation callback - let maps know we resized
 		google.maps.event.trigger( map, "resize" );
 	};
 
-	$map.delay( 2000 ); // Wait for two seconds.
+	canvas.delay( 2000 ); // Wait for two seconds.
 
 	// resize the div:
-	$map.animate({
+	canvas.animate({
 		width: 250,
 		height: 250,
 		marginLeft: 250,
@@ -111,7 +111,7 @@ $(function() {
 	}, resized );
 
 	// geocode something
-	$map.queue(function( next ) {
+	canvas.queue(function( next ) {
 		// find stackoverflow's whois address:
 		geocoder.geocode( {
 			address: "55 Broadway New York NY 10006"
@@ -134,10 +134,10 @@ $(function() {
 	});
 
 	// after we find stack overflow, wait 3 more seconds
-	$map.delay( 3000 );
+	canvas.delay( 3000 );
 
 	// and resize the map again
-	$map.animate({
+	canvas.animate({
 		width: 500,
 		height: 500,
 		marginLeft:0,
