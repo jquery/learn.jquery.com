@@ -152,13 +152,14 @@ While this is powerful, sometimes you only need to change the behavior for a sin
 
 ```
 var dialogInstance = $( "<div>" )
-    .dialog()
-    // Retrieve the dialog's instance and store it.
-    .data( "ui-dialog" );
+	.dialog()
+
+	// Retrieve the dialog's instance and store it.
+	.data( "ui-dialog" );
 
 // Override the close() method for this dialog
 dialogInstance.close = function() {
-    console.log( "close" );
+	console.log( "close" );
 };
 
 // Create a second dialog
