@@ -10,11 +10,11 @@ Either the `:eq()` selector or the `.eq()` method will allow you to select the p
 $( this ).find( "li a" ).eq( 2 ).text().replace( "foo", "bar" );
 
 // This works:
-var $thirdLink = $( this ).find( "li a" ).eq( 2 );
+var thirdLink = $( this ).find( "li a" ).eq( 2 );
 
-var linkText = $thirdLink.text().replace( "foo", "bar" );
+var linkText = thirdLink.text().replace( "foo", "bar" );
 
-$thirdLink.text( linkText );
+thirdLink.text( linkText );
 ```
 
 The first example just discards the modified text. The second example saves the modified text and then replaces the old text with the new modified text. Remember, `.text()` gets; `.text( "foo" )` sets.

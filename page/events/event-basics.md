@@ -121,7 +121,7 @@ the DOM element into a jQuery object that we can use jQuery methods on, we
 simply do `$( this )`, often following this idiom:
 
 ```
-var $this = $( this );
+var element = $( this );
 ```
 
 A fuller example would be:
@@ -129,10 +129,10 @@ A fuller example would be:
 ```
 // Preventing a link from being followed
 $( "a" ).click(function( eventObject ) {
-	var $this = $( this );
-	if ( $this.attr( "href" ).match( /evil/ ) ) {
+	var elem = $( this );
+	if ( elem.attr( "href" ).match( /evil/ ) ) {
 		eventObject.preventDefault();
-		$this.addClass( "evil" );
+		elem.addClass( "evil" );
 	}
 });
 ```
