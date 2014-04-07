@@ -110,7 +110,7 @@ alert( bar.progressbar( "value" ) );
 
 ### Working with Options
 
-One of the methods that are automatically available to our plugin is the `option()` method. The `option()` method allows you to get and set options after initialization. This method works exactly like jQuery's `.css()` and `.attr()` methods: You can pass just a name to use it as a getter, a name and value to use it as a single setter, or a hash of name/value pairs to set multiple values. When used as a getter, the plugin will return the current value of the option that corresponds to the name that was passed in. When used as a setter, the plugin's `_setOption` method will be called for each option that is being set. We can specify a `_setOption` method in our plugin to react to option changes. For actions to perform independent of the number of options changed, we can override `_setOptions`.
+One of the methods that are automatically available to our plugin is the `option()` method. The `option()` method allows you to get and set options after initialization. This method works exactly like jQuery's `.css()` and `.attr()` methods: You can pass just a name to use it as a getter, a name and value to use it as a single setter, or a hash of name/value pairs to set multiple values. When used as a getter, the plugin will return the current value of the option that corresponds to the name that was passed in. When used as a setter, the plugin's `_setOption` method will be called for each option that is being set. We can specify a `_setOption` method in our plugin to react to option changes. For actions to perform independent of the number of options changed, we can override `_setOptions()`.
 
 ```
 $.widget( "custom.progressbar", {
@@ -219,7 +219,7 @@ Because the plugin instance is directly linked to the DOM element, you can acces
 var bar = $( "<div></div>" )
 	.appendTo( "body" )
 	.progressbar()
-	.data( "progressbar" );
+	.data( "custom-progressbar" );
 
 // Call a method directly on the plugin instance.
 bar.option( "value", 50 );
@@ -251,7 +251,7 @@ For more information on extending widgets, including how to build entirely new w
 
 ### Cleaning Up
 
-In some cases, it will make sense to allow users to apply and then later unapply your plugin. You can accomplish this via the `_destroy()` method. Within the `_destroy()` method, you should undo anything your plugin may have done during initialization or later use. `_destroy()` is called by the `.destroy()` method, which is automatically called if the element that your plugin instance is tied to is removed from the DOM, so this can be used for garbage collection as well. That base `.destroy()` method also handles some general cleanup operations, like removing the instance reference from the widget's DOM element, unbinding all events in the widget's namespace from the element, and unbinding generally all events that were added using `_bind()`.
+In some cases, it will make sense to allow users to apply and then later unapply your plugin. You can accomplish this via the `_destroy()` method. Within the `_destroy()` method, you should undo anything your plugin may have done during initialization or later use. `_destroy()` is called by the `destroy()` method, which is automatically called if the element that your plugin instance is tied to is removed from the DOM, so this can be used for garbage collection as well. That base `destroy()` method also handles some general cleanup operations, like removing the instance reference from the widget's DOM element, unbinding all events in the widget's namespace from the element, and unbinding generally all events that were added using `_bind()`.
 
 ```
 $.widget( "custom.progressbar", {
