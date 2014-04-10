@@ -140,13 +140,13 @@ Much like the `:button` pseudo-selector, it's best to first select elements with
 
 #### :checked
 
-Not to be confused with *:checkbox*, `:checked` targets only the *checked* checkboxes as well as checked radio buttons:
+Not to be confused with *:checkbox*, `:checked` targets *checked* checkboxes, but keep in mind that this selector works also for *checked* radio buttons, and select elements (for select elements only, use the `:selected` selector):
 
 ```
 $( "form :checked" );
 ```
 
-The `:checked` pseudo-selector works when used with **checkboxes** and **radio buttons**.
+The `:checked` pseudo-selector works when used with **checkboxes**, **radio buttons** and **selects**.
 
 #### :disabled
 
