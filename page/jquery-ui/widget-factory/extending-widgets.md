@@ -65,7 +65,7 @@ To make the parent's methods available, the widget factory provides two methods 
 
 ### Using `_super()` and `_superApply()` to Access Parents
 
-[`_super()`](http://api.jqueryui.com/jquery.widget/#method-_super) and [`_superApply()`](http://api.jqueryui.com/jquery.widget/#method-_superApply) invoke methods of the same same in the parent widget. Refer to the following example. Like the previous one, this example also overrides the `open()` method to log `"open"`. However, this time `_super()` is run to invoke dialog's `open()` and open the dialog.
+[`_super()`](http://api.jqueryui.com/jquery.widget/#method-_super) and [`_superApply()`](http://api.jqueryui.com/jquery.widget/#method-_superApply) invoke methods of the same name in the parent widget. Refer to the following example. Like the previous one, this example also overrides the `open()` method to log `"open"`. However, this time `_super()` is run to invoke dialog's `open()` and open the dialog.
 
 ```
 $.widget( "custom.superDialog", $.ui.dialog, {
