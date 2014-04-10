@@ -246,7 +246,7 @@ $( "#newContent" ).load( "/foo.html" );
 
 ```
 // Using $.fn.load to populate an element based on a selector
-$( "#newContent" ).load( "/foo.html #myDiv h1:first:", function( html ) {
+$( "#newContent" ).load( "/foo.html #myDiv h1:first", function( html ) {
 	alert( "Content updated!" );
 });
 ```
