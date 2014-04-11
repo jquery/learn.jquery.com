@@ -9,7 +9,7 @@ jQuery offers two event-related helper functions that save you a few keystrokes.
 
 ### `.hover()`
 
-The `.hover()` method lets you pass one or two functions to be run when the
+The [`.hover()`](http://api.jquery.com/hover/) method lets you pass one or two functions to be run when the
 `mouseenter` and `mouseleave` events occur on an element. If you pass one
 function, it will be run for both events; if you pass two functions, the first
 will run for `mouseenter`, and the second will run for `mouseleave`.
@@ -25,7 +25,9 @@ $( "#menu li" ).hover(function() {
 
 ### `.toggle()`
 
-The `.toggle()` method is triggered by the "click" event and accepts two or
+<div class="warning">Note: This method signature was removed in jQuery 1.9. jQuery also provides an animation method named .toggle() that toggles the visibility of elements.</div>
+
+The [`.toggle()`](http://api.jquery.com/toggle-event/) method is triggered by the "click" event and accepts two or
 more functions. Each time the click event occurs, the next function in the
 list is called. Generally, `.toggle()` is used with just two functions;
 however, it will accept an unlimited number of functions. Be careful, though:
