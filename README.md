@@ -49,7 +49,7 @@ As this site is part of the jQuery network of sites, its presentation is control
 *Windows note: Line endings need to be Unix-style (line-feed only). Make sure your text editor creates new files with Unix-style line endings. In addition, the following setting to your git config will keep the Unix-style line endings when pulling from the repository.*
 
 ```
-$ git config --global core.autocrlf true
+$ git config --global core.autocrlf false
 ```
 
 ## How Can I Help?
