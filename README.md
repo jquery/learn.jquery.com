@@ -47,7 +47,7 @@ As this site is part of the jQuery network of sites, its presentation is control
 4. `grunt`
 
 ```
-$ git config --global core.autocrlf true
+$ git config --global core.autocrlf false
 ```
 
 ## How Can I Help?
