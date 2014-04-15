@@ -26,7 +26,7 @@ The [`order.yml`](https://github.com/jquery/learn.jquery.com/blob/master/order.y
 
 ### YAML Conventions
 
-Each of the articles on the site has some [YAML "Front Matter"](http://jekyllrb.com/docs/frontmatter/) that contains metadata. All articles should include the following:
+Each of the articles on the site has some YAML "Front Matter" that contains metadata. All articles should include the following:
 
 * `title` - The title of the article as it will appear in the site. If it contains special characters, put the string in quotes.
 
