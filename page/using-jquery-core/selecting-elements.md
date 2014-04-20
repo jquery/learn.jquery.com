@@ -95,8 +95,6 @@ jQuery doesn't cache elements for you. If you've made a selection that you might
 var divs = $( "div" );
 ```
 
-In the example above, the variable name begins with a dollar sign. Unlike in other languages, there's nothing special about the dollar sign in JavaScript – it's just another character. Here, it's used to indicate that the variable contains a jQuery object. This practice is merely convention, and is not mandatory.
-
 Once the selection is stored in a variable, you can call jQuery methods on the variable just like you would have called them on the original selection.
 
 A selection only fetches the elements that are on the page at the time the selection is made. If elements are added to the page later, you'll have to repeat the selection or otherwise add them to the selection stored in the variable. Stored selections don't magically update when the DOM changes.
