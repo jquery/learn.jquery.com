@@ -93,7 +93,7 @@ $( "<a/>", {
 });
 ```
 
-Note that the attributes object in the second argument above, the property name class is quoted, although the property names `text` and `href` are not. Property names generally do not need to be quoted unless they are [reserved words](/javascript-101/reserved-words/) (as `class` is in this case).
+Note that the attributes object in the second argument above, the property name class is quoted, although the property names `html` and `href` are not. Property names generally do not need to be quoted unless they are [reserved words](/javascript-101/reserved-words/) (as `class` is in this case).
 
 When you create a new element, it is not immediately added to the page. There are several ways to add an element to the page once it's been created.
 
@@ -144,14 +144,14 @@ $( "#myDiv a:first" ).attr( "href", "newDestination.html" );
 // Manipulating multiple attributes.
 $( "#myDiv a:first" ).attr({
 	href: "newDestination.html",
-	rel: "super-special"
+	rel: "nofollow"
 });
 ```
 
 ```
 // Using a function to determine an attribute's new value.
 $( "#myDiv a:first" ).attr({
-	rel: "super-special",
+	rel: "nofollow",
 	href: function( idx, href ) {
 		return "/new/" + href;
 	}
