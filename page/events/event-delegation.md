@@ -8,7 +8,7 @@ attribution:
 
 ## Introduction
 
-Event delegation allows us to attach a single event listener, to a parent element, that will fire for all children matching a selector, whether those children exist now or are added in the future.
+Event delegation allows us to attach a single event listener, to a parent element, that will fire for all descendants matching a selector, whether those descendants exist now or are added in the future.
 
 ## Example
 
@@ -71,7 +71,7 @@ $( "#list" ).on( "click", "a", function( event ) {
 });
 ```
 
-Notice how we have moved the `a` part from the selector to the second parameter position of the `.on()` method. This second, selector parameter tells the handler to listen for the specified event, and when it hears it, check to see if the triggering element for that event matches the second parameter. In this case, the triggering event is our anchor tag, which matches that parameter. Since it matches, our anonymous function will execute. We have now attached a single *click* event listener to our `<ul>` that will listen for clicks on its children anchors, instead of attaching an unknown number of directly bound events to the existing anchor tags only.
+Notice how we have moved the `a` part from the selector to the second parameter position of the `.on()` method. This second, selector parameter tells the handler to listen for the specified event, and when it hears it, check to see if the triggering element for that event matches the second parameter. In this case, the triggering event is our anchor tag, which matches that parameter. Since it matches, our anonymous function will execute. We have now attached a single *click* event listener to our `<ul>` that will listen for clicks on its descendant anchors, instead of attaching an unknown number of directly bound events to the existing anchor tags only.
 
 ### Using the Triggering Element
 
