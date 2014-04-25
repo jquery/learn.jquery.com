@@ -101,6 +101,9 @@
   - widget-factory:
     - why-use-the-widget-factory
     - how-to-use-the-widget-factory
+  - environments:
+    - amd
+    - bower
 - jquery-mobile:
   - getting-started
   - theme-roller
