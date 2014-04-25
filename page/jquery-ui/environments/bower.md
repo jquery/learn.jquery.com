@@ -3,6 +3,8 @@ title: Using jQuery UI with Bower
 level: intermediate
 ---
 
+<div class="warning">**Note:** This documentation refers to functionality made available in jQuery UI 1.11.</div>
+
 [Bower](http://bower.io/) is a package manager for the Web. You can use Bower to download libraries like jQuery UI from the command line, without having to manually download each project from their respective sites.
 
 As an example, suppose we're starting a new project and we need to use [jQuery UI's accordion widget](http://jqueryui.com/accordion/). We'll create a new directory for our project, and add the boilerplate `index.html` shown below.

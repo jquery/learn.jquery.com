@@ -3,6 +3,8 @@ title: Using jQuery UI with AMD
 level: intermediate
 ---
 
+<div class="warning">**Note:** This documentation refers to functionality made available in jQuery UI 1.11.</div>
+
 As of jQuery UI 1.11, all of the library's source files support using AMD. This means that you can manage your jQuery UI dependencies without using [Download Builder](http://jqueryui.com/download/), and load jQuery UI's source files asynchronously using an AMD loader such as [RequireJS](http://requirejs.org/).
 
 In this article we'll walk through the process of using AMD with jQuery UI. Let's start by discussing the files we'll need.
