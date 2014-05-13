@@ -121,7 +121,7 @@ sayHello(); // "hello"
 console.log( foo ); // "world"
 ```
 
-However, in contrast with the previous script, this will actually output twice `hello`, since the function definition overwrites the previous definition:
+In the following example, the var statement is removed from the foo = "world" assignment. Therefore, instead of declaring a new local variable, the global foo variable is updated. This code outputs "hello" twice:
 
 ```
 var foo = "world";
@@ -133,7 +133,7 @@ var sayHello = function() {
 
 sayHello(); // "hello"
 
-console.log( foo ); // "world"
+console.log( foo ); // "hello"
 ```
 
 When you reference a global variable within a function, that function can see changes to the variable value after the function is defined.
