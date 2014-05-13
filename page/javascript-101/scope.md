@@ -121,7 +121,7 @@ sayHello(); // "hello"
 console.log( foo ); // "world"
 ```
 
-In the following example, the var statement is removed from the foo = "world" assignment. Therefore, instead of declaring a new local variable, the global foo variable is updated. This code outputs "hello" twice:
+In the following example, the `var` statement is removed from the `foo = "world"` assignment. Therefore, instead of declaring a new local variable, the global foo variable is updated. This code outputs "hello" twice:
 
 ```
 var foo = "world";
