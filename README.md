@@ -43,7 +43,7 @@ As this site is part of the jQuery network of sites, its presentation is control
 
 1. `npm install`
 2. `cp config-sample.json config.json`
-3. Edit config.json to use the username and password for your local WordPress network
+3. Edit config.json to use the username and password for your local WordPress network. If you're using Vagrant setup, then the URL is "http://vagrant.learn.jquery.com."
 4. `grunt`
 
 ## How Can I Help?
