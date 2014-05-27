@@ -18,7 +18,7 @@ documentation" to our community and serve the following goals:
 2. Provide our **contributors** a central, open place to collaborate and provide a dependable, highly sharable resource that will improve our users' support experiences.
 3. Foster an environment by which users are encouraged to become contributors and build the skills to help them work on jQuery – or any other open source project!
 
-In order to achieve these goals, all of [this site's content is maintained publicly on GitHub](https://github.com/jquery/learn.jquery.com) and is licensed under the [MIT License](https://github.com/jquery/learn.jquery.com/blob/master/LICENSE-MIT.txt). To learn more about how the site works, take a look at our [contributing guide](/contributing/).
+In order to achieve these goals, all of [this site's content is maintained publicly on GitHub](https://github.com/jquery/learn.jquery.com) and is licensed under the [MIT License](https://github.com/jquery/learn.jquery.com/blob/master/LICENSE.txt). To learn more about how the site works, take a look at our [contributing guide](/contributing/).
 
 ## History
 
