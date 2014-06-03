@@ -39,7 +39,7 @@ This examples fails with a JavaScript error because neither jQuery core nor jQue
 
 ### Downloading jQuery UI With Bower
 
-Libraries are downloaded with Bower using the `bower install` command. To install jQuery UI, run `bower install jquery-ui`. Doing so creates the following (simplified) directory structure.
+Libraries are downloaded with Bower using the `bower install` command. To install jQuery UI, run `bower install https://github.com/jquery/jquery-ui.git#1.11.0-beta.2`. Doing so creates the following (simplified) directory structure.
 
 *Note: If you get an error that the `bower` command is not found, checkout [Bower's installation instructions](http://bower.io/#installing-bower).*
 
