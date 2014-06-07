@@ -307,7 +307,7 @@ var defaults = {
 
 // Later on in the plugin:
 
-nextButton.bind( "click", showNextImage );
+nextButton.on( "click", showNextImage );
 
 function showNextImage() {
 
