@@ -65,7 +65,7 @@ $( document ).ready(function() {
 });
 ```
 
-Save your HTML file and reload the test page in your browser. Clicking the link should now first display an alert pop-up, then continue with the default behavior of navigating to http://jquery.com.
+Copy the above jQuery code into your HTML file where it says '// Your code goes here'. Then, save your HTML file and reload the test page in your browser. Clicking the link should now first display an alert pop-up, then continue with the default behavior of navigating to http://jquery.com.
 
 For `click` and most other [events](http://api.jquery.com/category/events/), you can prevent the default behavior by calling `event.preventDefault()` in the event handler:
 
