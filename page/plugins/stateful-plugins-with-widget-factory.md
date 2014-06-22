@@ -229,7 +229,7 @@ bar.progressbar( "option", "value", 100 );
 
 ### The Widget Factory: Under the Hood
 
-When you call `jQuery.widget`, it creates a constructor function for your plugin and sets the object literal that you pass in as the prototype for your plugin instances. All of the functionality that automatically gets added to your plugin comes from a base widget prototype, which is defined as `jQuery.Widget.prototype`. When a plugin instance is created, it is stored on the original DOM element using `jQuery.data`, with the plugin name as the key.
+When you call `jQuery.widget`, it creates a constructor function for your plugin and sets the object literal that you pass in as the prototype for your plugin instances. All of the functionality that automatically gets added to your plugin comes from a base widget prototype, which is defined as `jQuery.Widget.prototype`. When a plugin instance is created, it is stored on the original DOM element using `jQuery.data`, with the plugin's full name (the plugin's namespace, plus a hyphen, plus the plugin's name) as the key. For example the jQuery UI dialog widget uses a key of `"ui-dialog"`.
 
 Because the plugin instance is directly linked to the DOM element, you can access the plugin instance directly instead of going through the exposed plugin method if you want. This will allow you to call methods directly on the plugin instance instead of passing method names as strings and will also give you direct access to the plugin's properties.
 
@@ -237,7 +237,7 @@ Because the plugin instance is directly linked to the DOM element, you can acces
 var bar = $( "<div />")
 	.appendTo( "body" )
 	.progressbar()
-	.data( "progressbar" );
+	.data( "nmk-progressbar" );
 
 // Call a method directly on the plugin instance.
 bar.option( "value", 50 );
