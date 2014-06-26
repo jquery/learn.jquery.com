@@ -6,7 +6,7 @@ attribution:
   - jQuery Fundamentals
 ---
 
-Until now, we've been dealing entirely with methods that are called on a jQuery object. For example:
+In the jQuery introduction, we dealt entirely with methods that are called on a jQuery object. For example:
 
 ```
 $( "h1" ).remove();
