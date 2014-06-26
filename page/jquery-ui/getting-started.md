@@ -32,10 +32,7 @@ You can either choose from the various themes we provide, or you can design your
 
 #### Step 3: Choose a Version of jQuery UI
 
-The last step in the Download Builder is to select a version number. This is a very important step because jQuery UI versions are designed to work with specific versions of jQuery. The current versions are:
-
-* jQuery UI 1.10.2 – Requires jQuery 1.6 or later.
-* jQuery UI 1.9.2 – Requires jQuery 1.6 or later.
+The last step in the Download Builder is to select a version number. This is a very important step because jQuery UI versions are designed to work with specific versions of jQuery. For more information on what's new in each version of jQuery UI, see the project's [upgrade guides](http://jqueryui.com/upgrade-guide/) and [changelogs](http://jqueryui.com/changelog/).
 
 #### Click Download!
 
