@@ -38,23 +38,14 @@ The last step in the Download Builder is to select a version number. Make sure t
 
 You're finished with the Download Builder! Click the download button and you'll get a customized zip file containing everything you selected.
 
-### After Downloading: Intro to Using jQuery UI
-
-Once you've downloaded jQuery UI, you'll get a zip containing the following files:
-
-* `/css/`
-* `/development-bundle/`
-* `/js/`
-* `index.html`
-
 ### Basic Overview: Using jQuery UI on a Web Page
 
-Open up `index.html` in a text editor and you'll see that it links to a few dependencies: your theme, jQuery, and jQuery UI. Generally, you'll need to include these three files on any page to use jQuery UI widgets and interactions:
+Next, open up `index.html` from the downloaded zip in a text editor. You'll see that it references your theme, jQuery, and jQuery UI. Generally, you'll need to include these three files on any page to use the jQuery UI widgets and interactions:
 
 ```html
-<link rel="stylesheet" href="css/themename/jquery-ui.custom.css" />
-<script src="js/jquery.min.js"></script>
-<script src="js/jquery-ui.custom.min.js"></script>
+<link rel="stylesheet" href="jquery-ui.min.css">
+<script src="external/jquery/jquery.js"></script>
+<script src="jquery-ui.min.js"></script>
 ```
 
 Once you've included the necessary files, you can add some jQuery widgets to your page. For example, to make a datepicker widget, you'll add a text input element to your page and then call `.datepicker()` on it. Like this:
@@ -62,7 +53,7 @@ Once you've included the necessary files, you can add some jQuery widgets to you
 **HTML:**
 
 ```html
-<input type="text" name="date" id="date" />
+<input type="text" name="date" id="date">
 ```
 
 **JavaScript:**
