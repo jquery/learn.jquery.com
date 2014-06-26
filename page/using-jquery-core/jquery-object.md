@@ -74,9 +74,9 @@ var headings = $( "h1" );
 ```
 // Viewing the number of <h1> tags on the page.
 
-var allHeadings = $( "h1" );
+var headings = $( "h1" );
 
-alert( allHeadings.length );
+alert( headings.length );
 ```
 
 If the page has more than one `<h1>` tag, this number will be greater than one. If the page has no `<h1>` tags, the `.length` property will be zero. Checking the `.length` property is a common way to ensure that the selector successfully matched one or more elements.
