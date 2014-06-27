@@ -12,7 +12,7 @@ $( document ).ready(function() {
 });
 ```
 
-Experienced developers sometimes use shorthand for `$( document ).ready()`. If you are writing code that people who aren't experienced with jQuery may see, it's best to use the long form.
+Experienced developers sometimes use the shorthand `$()` for `$( document ).ready()`. If you are writing code that people who aren't experienced with jQuery may see, it's best to use the long form.
 
 ```
 // Shorthand for $( document ).ready()
@@ -35,7 +35,7 @@ $( document ).ready( readyFn );
 $( window ).load( readyFn );
 ```
 
-The below example shows `$( document ).ready()` and `$( window ).load()` in action. The code tries to load a website URL in an `<iframe>` and checks for both events:
+The example below shows `$( document ).ready()` and `$( window ).load()` in action. The code tries to load a website URL in an `<iframe>` and checks for both events:
 
 ```
 <html>
