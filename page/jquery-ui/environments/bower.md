@@ -53,23 +53,16 @@ Libraries are downloaded with Bower using the `bower install` command. To instal
 │   │   └── src
 │   └── jquery-ui
 │       ├── themes
-│       │   ├── base
+│       │   ├── smoothness
 │       │   │   ├── jquery-ui.css
-│       │   │   ├── accordion.css
-│       │   │   ├── ...
-│       │   │   └── minified
-│       │   │       ├── jquery-ui.min.css
-│       │   │       ├── accordion.min.css
-│       │   │       └── ...
+│       │   │   └── jquery-ui.min.css
 │       │   └── [The rest of jQuery UI's themes]
-│       └── ui
-│           ├── jquery-ui.js
-│           ├── accordion.js
-│           ├── ...
-│           └── minified
-│               ├── jquery-ui.min.js
-│               ├── accordion.min.js
-│               └── ...
+│       ├── ui
+│       │   ├── accordion.js
+│       │   ├── autocomplete.js
+│       │   └── ...
+│       ├── jquery-ui.js
+│       └── jquery-ui.min.js
 └── index.html
 </pre>
 
@@ -89,10 +82,10 @@ We have a few different options for using the files downloaded with Bower. The e
 <head>
 	<meta charset="utf-8">
 	<title>jQuery Projects</title>
-	<link rel="stylesheet" href="bower_components/jquery-ui/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="bower_components/jquery-ui/themes/smoothness/jquery-ui.min.css">
 </head>
 <body>
-
+ 
 <div id="projects">
 	<h3>jQuery Core</h3>
 	<p>jQuery is a fast, small, and feature-rich JavaScript library...</p>
@@ -101,13 +94,13 @@ We have a few different options for using the files downloaded with Bower. The e
 	<h3>jQuery Mobile</h3>
 	<p>jQuery Mobile is a HTML5-based user interface system...</p>
 </div>
-
+ 
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script src="bower_components/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+<script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
 <script>
 	$( "#projects" ).accordion();
 </script>
-
+ 
 </body>
 </html>
 ```
@@ -122,9 +115,7 @@ Because Bower also downloaded jQuery UI's individual source files, we can altern
 <head>
 	<meta charset="utf-8">
 	<title>jQuery Projects</title>
-	<link rel="stylesheet" href="bower_components/jquery-ui/themes/base/core.css">
-	<link rel="stylesheet" href="bower_components/jquery-ui/themes/base/theme.css">
-	<link rel="stylesheet" href="bower_components/jquery-ui/themes/base/accordion.css">
+	<link rel="stylesheet" href="bower_components/jquery-ui/themes/smoothness/jquery-ui.min.css">
 </head>
 <body>
 
