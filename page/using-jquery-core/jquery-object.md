@@ -11,6 +11,7 @@ The Document Object Model (DOM for short) is a representation of an HTML documen
 
 Elements have properties like any JavaScript object. Among these properties are attributes like `.tagName` and methods like `.appendChild()`. These properties are the only way to interact with the web page via JavaScript.
 
+
 ## The jQuery Object
 
 It turns out that working directly with DOM elements can be awkward. The jQuery object defines [many](http://api.jquery.com/) methods to smooth out the experience for developers. Some benefits of the jQuery Object include:
