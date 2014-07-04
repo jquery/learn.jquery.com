@@ -312,14 +312,17 @@ nextButton.on( "click", showNextImage );
 
 function showNextImage() {
 
+	// Returns reference to the next image node
+	var image = getNextImage();
+
 	// Stuff to show the image here...
 
 	// Here's the callback:
-	settings.onImageShow.call( this );
+	settings.onImageShow.call( image );
 }
 ```
 
-Instead of initiating the callback via traditional means (adding parenthesis) we're calling it in the context of `this` which will be a reference to the image node. This means that you have access to the actual image node through the `this` keyword within the callback:
+Instead of initiating the callback via traditional means (adding parenthesis) we're calling it in the context of `image` which will be a reference to the image node. This means that you have access to the actual image node through the `this` keyword within the callback:
 
 ```
 $( "ul.imgs li" ).superGallery({
