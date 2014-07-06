@@ -243,7 +243,11 @@ A bad implementation:
 $( "<div id=\"the-gallery-wrapper\" />").appendTo( "body" );
 
 $( "#the-gallery-wrapper" ).append( "..." );
+```
 
+To allow users to access and even manipulate those information, you can store them in the settings of your plugin. The previous code can be rewritten as shown below:
+
+```
 // Retain an internal reference:
 var wrapper = $( "<div />" )
 	.attr( settings.wrapperAttrs )
