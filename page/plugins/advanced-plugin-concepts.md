@@ -249,7 +249,8 @@ var wrapper = $( "<div />" )
 	.attr( settings.wrapperAttrs )
 	.appendTo( settings.container );
 
-wrapper.append( "..." ); // Easy to reference later...
+// Easy to reference later...
+wrapper.append( "..." );
 ```
 
 Notice that we've created a reference to the injected wrapper and we're also calling the `.attr()` method to add any specified attributes to the element. So, in our settings it might be handled like this:
