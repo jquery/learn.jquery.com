@@ -12,7 +12,7 @@ Web pages are all about interaction. Users perform a countless number of actions
 
 ## What's a DOM event?
 
-As mentioned, there are a myriad of event types, but perhaps the ones that are easiest to understand are user events, like when someone clicks on an element or types into a form. These types of events occur on an element, meaning that when a user clicks on a button for example, the button has had an event occur on it. While user interactions aren't the only types of DOM events, they're certainly the easiest to understand when starting out. MDN has a good reference of [available DOM events](https://developer.mozilla.org/en/DOM/DOM_event_reference).
+As mentioned, there are a myriad of event types, but perhaps the ones that are easiest to understand are user events, like when someone clicks on an element or types into a form. These types of events occur on an element, meaning that when a user clicks on a button for example, the button has had an event occur on it. While user interactions aren't the only types of DOM events, they're certainly the easiest to understand when starting out. Mozilla Developer Network has a good reference of [available DOM events](https://developer.mozilla.org/en/DOM/DOM_event_reference).
 
 
 ## Ways to listen for events
