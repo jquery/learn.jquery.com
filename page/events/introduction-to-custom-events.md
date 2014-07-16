@@ -30,11 +30,16 @@ you have a lightbulb in a room in a house. The lightbulb is currently turned
 on, and it's controlled by two three-way switches and a clapper:
 
 ```
+<style>
+  .on { background-color: yellow; }
+  .off { background-color: black; color: white; }
+</style>
+
 <div class="room" id="kitchen">
-	<div class="lightbulb on"></div>
-	<div class="switch"></div>
-	<div class="switch"></div>
-	<div class="clapper"></div>
+	<div class="lightbulb on">My room light</div>
+	<div class="switch">Switch 1</div>
+	<div class="switch">Switch 2</div>
+	<div class="clapper">Clapper switch</div>
 </div>
 ```
 
@@ -55,10 +60,10 @@ $( ".switch, .clapper" ).click(function() {
 });
 ```
 
-With custom events, your code might look more like this:
+With custom events, we can define our own events. Then your code might look more like this:
 
 ```
-$( ".lightbulb" ).on( "changeState", function( e ) {
+$( ".lightbulb" ).on( "changeTheLightState", function( e ) {
 	var light = $( this );
 	if ( light.hasClass( "on" ) ) {
 		light.removeClass( "on" ).addClass( "off" );
@@ -68,11 +73,11 @@ $( ".lightbulb" ).on( "changeState", function( e ) {
 });
 
 $( ".switch, .clapper" ).click(function() {
-	$( this ).parent().find( ".lightbulb" ).trigger( "changeState" );
+	$( this ).parent().find( ".lightbulb" ).trigger( "changeTheLightState" );
 });
 ```
 
-This last bit of code is not that exciting, but something important has happened: we've moved the behavior of the lightbulb away from the switches and the clapper and to the lightbulb itself.
+Here something important has happened: we've moved the behavior of the lightbulb away from the switches and the clapper and to the lightbulb itself.
 
 Let's make our example a little more interesting. We'll add another room to our house, along with a master switch, as shown here:
 
