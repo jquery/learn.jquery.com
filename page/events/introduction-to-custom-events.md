@@ -184,6 +184,8 @@ When we're done, it will look like this:
 
 ![Our finished application](http://gyazo.com/70415e9fffab1c47953f5264ecf722fe.png)
 
+Let's start to build the application basics:
+
 ```
 <h1>Twitter Search</h1>
 <input type="button" id="get_trends" value="Load Trending Terms" />
