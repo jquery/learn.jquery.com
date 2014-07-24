@@ -115,7 +115,7 @@ $( "#list" ).delegate( "li", "click", function( event ) {
 ### [.on()](http://api.jquery.com/on/)
 First introduced in jQuery v1.7
 
-The `on.()` method gives us a semantic approach for creating directly bound events as well as delegated events. It eliminates the need to use the deprecated `.bind()`, `.live()`, and `.delegate()` methods, providing a single API for creating events.
+The `.on()` method gives us a semantic approach for creating directly bound events as well as delegated events. It eliminates the need to use the deprecated `.bind()`, `.live()`, and `.delegate()` methods, providing a single API for creating events.
 
 ```
 $( "#list" ).on( "click", "li", function( event ) {
