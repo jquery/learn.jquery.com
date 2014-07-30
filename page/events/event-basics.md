@@ -148,7 +148,7 @@ as a space-separated list to `.on()`:
 $( "input" ).on(
 	"click change",  // bind listeners for multiple events
 	function() {
-		console.log( "An input was clicked or changed!" )
+		console.log( "An input was clicked or changed!" );
 	}
 );
 ```
