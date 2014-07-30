@@ -127,7 +127,7 @@ Quite often elements in your application will be bound to multiple events. If mu
 $( "input" ).on(
 	"click change", // Bind handlers for multiple events
 	function() {
-		console.log( "An input was clicked or changed!" )
+		console.log( "An input was clicked or changed!" );
 	}
 );
 ```
