@@ -73,15 +73,17 @@ Everything else in JavaScript is considered an object. While there are [numerous
 * Array
 * Function
 
-The simplest way to create an object is either through the `Object` constructor or the shorthand syntax known as object literal. These simple objects are unordered key/value pairs. The key is formally known as a property and the value can be any valid JavaScript type, even another object. To create or access a property on an object, we use what is known as "dot notation" or "bracket notation."
+The simplest way to create an object is the shorthand syntax known as object literal. These simple objects are unordered key and value pairs. The key is formally known as a *property* and the value can be any valid JavaScript type, even another object. To create or access a property on an object, we use what is known as "dot notation" or "bracket notation."
 
 ```
-// Creating an object with the constructor:
-var person1 = new Object;
+// Using an empty object literal
+var person1 = {};
 
+// Assign properties using "dot notation"
 person1.firstName = "John";
 person1.lastName = "Doe";
 
+// Access properties using "dot notation"
 alert( person1.firstName + " " + person1.lastName );
 
 // Creating an object with the object literal syntax:
@@ -91,20 +93,20 @@ var person2 = {
 };
 
 alert( person2.firstName + " " + person2.lastName );
-```
 
-```
-// As mentioned, objects can also have objects as a property.
 var people = {};
 
+// Assign properties using "bracket notation"
+// As mentioned, objects can also have objects as a property value
 people[ "person1" ] = person1;
 people[ "person2" ] = person2;
 
+// Access properties using a mix of both bracket and dot notation
 alert( people[ "person1" ].firstName );
 alert( people[ "person2" ].firstName );
 ```
 
-If a property is accessed that has not been defined, it will return a type of `undefined`.
+If a property is accessed that has not been defined, it will have the value `undefined`.
 
 ```
 // Properties that have not been created are undefined.
