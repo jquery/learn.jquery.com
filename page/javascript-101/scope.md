@@ -29,6 +29,8 @@ function myFunc() {
 	var x = 5;
 }
 
+myFunc();
+
 console.log( x ); // ReferenceError: x is not defined
 ```
 
@@ -42,6 +44,8 @@ If you declare a variable and forget to use the `var` keyword, that variable is 
 function myFunc() {
 	x = 5;
 }
+
+myFunc();
 
 console.log( x ); // 5
 ```
