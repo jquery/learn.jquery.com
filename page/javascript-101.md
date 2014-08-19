@@ -10,14 +10,14 @@ customFields:
     value: "pencil"
 ---
 
-## Introduction
+## Giriş
 
-So you want to unlock the power of jQuery to make the web a better place? Awesome, but there are a few things you should know about JavaScript first.
+jQuery'nin gücüyle web ortamını daha iyi bir yer yapmaya karar verdiniz öyle mi? Harika, fakat ilk olarak JAvaScript hakkında bazı şeyleri bilmek gerekiyor.
 
-Introduced at the dawn of the web, [JavaScript](http://en.wikipedia.org/wiki/JavaScript) is a powerful and expressive language that runs inside the browser in conjunction with HTML and CSS. Based on an open standard called [ECMAScript](http://en.wikipedia.org/wiki/ECMAScript), JavaScript has quickly become the "programming language of the web." All the power of jQuery is accessed via JavaScript, so needless to say, it's an important language to learn. Having a basic knowledge of JavaScript will go a long way in understanding, structuring, and debugging your code.
+Web'in ilk ortaya çıktığı zamanlardan beridir, [JavaScript](http://en.wikipedia.org/wiki/JavaScript) çok güçlü ve tesirli bir dil olarak tarayıcının içinde HTML ve CSS ile birlikte çalışıyor. [ECMAScript](http://en.wikipedia.org/wiki/ECMAScript) denilen standartı temel alıyor, JavaScript çok hızlı bir şekilde "webin programlama dili" haline geldi. jQuery'nin bütün gücü JavaScript'ten geliyor, bu yüzden javascripti iyi bilmeniz gerekiyor. Temelleri öğrenmek bile size kodunuzu anlamanızı, temellendirmenizi, hata ayıklamanızı uzun bir süre sağlayacaktır.
 
-This guide covers the foundational concepts of JavaScript, as well as frequent pitfalls developers fall into during their first foray into the language. When possible, we'll relate the JavaScript you learn here to how it's applied in jQuery.
+Bu kitapçıkta JavaScript'in temelini ve genel olarak geliştiricilerin düştüğü hataları ele alıyor olacağız. Mümkün olduğu kadarıyla buradaki öğrendiğiniz JavaScript'in jQuery'de nasıl uygulandığını göstermeye çalışacağız.
 
-If you have experience with other programming languages, good for you! If not, don't worry. We'll take it slow and teach you everything you need to know to unlock the power of jQuery with JavaScript.
+Eğer başka programlama dilleriyle haşır neşirseniz bu iyi sizin için. Eğer değilseniz korkmayın. jQuery'i tamamen sökmeniz için her şeyi adım adım anlatacağız.
 
-## Table of Contents
+## İçindekiler
