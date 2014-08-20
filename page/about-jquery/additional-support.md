@@ -1,93 +1,93 @@
 ---
-title   : Additional jQuery Support
+title  : Ek jQuery Desteği
 ---
+Biz en çok kullanılan ve bahsi geçen jQuery konularını kapsamasını umut ederken, bazı durumlarda yetersiz kalması veya acil bir çözüm süreci gerektirmesi halinde aşağıda yer alan kaynaklar yararlı olabilir.
 
-While we hope to cover most jQuery-related topics on this site, you may need additional or more immediate support. The following resources can prove useful.
-
-### Official Forums
+### Resmi Forumlar
 
 http://forum.jquery.com/
 
-There are many subforums where you can discuss jQuery, ask questions, talk about JavaScript, or announce your plugins.
+Bu forum altında JQuery ile tartışma ortamı bulabileceğiniz, sorular sorabileceğiniz ve JavaScript hakkında konuşabileceğiniz veya kendi eklentilerinizi duyurabileceğiniz bir çok alt katagori mevcut.
 
-* [Getting Started](http://forum.jquery.com/getting-started)
-  * This is the best place to post if you are brand new to jQuery and JavaScript.
-* [Using jQuery](http://forum.jquery.com/using-jquery)
-  * This is the best place to post if you have general questions or concerns.
-  * If you've built a site that uses jQuery, or would like to announce a new plugin, this is the place to do it.
-* [Using jQuery Plugins](http://forum.jquery.com/using-jquery-plugins)
-  * If you are a plugin author or user and you wish to discuss specific plugins, plugin bugs, new features, or new plugins.
-* [Using jQuery UI](http://forum.jquery.com/using-jquery-ui)
-  * This is the place to discuss use of [jQuery UI](http://jqueryui.com/) Interactions, Widgets, and Effects
-* [jQuery Mobile](http://forum.jquery.com/jquery-mobile)
-  * This is the place to discuss jQuery Mobile.
-* [Developing jQuery Core](http://forum.jquery.com/developing-jquery-core)
-  * This forum centers around development of the jQuery library itself.
-  * Post here if you have questions about certain bugs, development with jQuery, features, or anything in the bug tracker or Git.
-* [Developing jQuery Plugins](http://forum.jquery.com/developing-jquery-plugins)
-  * This forum covers development of jQuery plugins.
-* [Developing jQuery UI](http://forum.jquery.com/developing-jquery-ui)
-  * This is the place to discuss development of [jQuery UI](http://jqueryui.com/) itself – including bugs, new plugins, and how you can help.
-  * All jQuery UI svn commits are posted to this list to facilitate feedback, discussion, and review.
-  * Also note that a lot of the development and planning of jQuery UI takes place on the [jQuery UI Development and Planning Wiki](http://wiki.jqueryui.com/).
-* [Developing jQuery Mobile](http://forum.jquery.com/developing-jquery-mobile)
-  * This forum covers issues related to the development of jQuery Mobile.
-* [QUnit and Testing](http://forum.jquery.com/qunit-and-testing)
-  * This is the place to discuss JavaScript testing in general and QUnit in particular
+* [Başlarken](http://forum.jquery.com/getting-started)
+  * Burası eğer JQuery ve JavaScript konularına yeni başlıyorsanız en iyi başlangıç yeri. 
+* [JQuery Kullanımı](http://forum.jquery.com/using-jquery)
+  * Bu alan genel soruların sorulup tartışıldığı en iyi alanlardan birisi.
+  * Bu alanda jQuery ile tasarlanmış sitenizi veya yazdığınız yeni bir eklentinizi duyurabilirsiniz.
+* [JQuery Eklentileri Kullanımı](http://forum.jquery.com/using-jquery-plugins)
+  * Eğer bir eklenti yazarı iseniz veya eklentilerle çalışan bir kullanıcı iseniz bu alanda özel eklentileri, eklenti buglarını, yeni özellikleri ve yeni eklentiler hakkında tartışma ortamı bulabilirsiniz.
+* [JQuery Kullanıcı Arabirimi Kullanımı](http://forum.jquery.com/using-jquery-ui)
+  * Bu alan kullanıcı arabirimi ile ilgili tartışmaların yer aldığı kısımdır. [jQuery Arabirimi](http://jqueryui.com/) Etkileşimler, Küçük araçları ve Etkileri
+* [Mobil jQuery](http://forum.jquery.com/jquery-mobile)
+  * Bu alan mobil için JQuery kullanımı ile ilgili konuların tartışıldığı kısımdır..
+* [JQuery Çekirdek Geliştirme](http://forum.jquery.com/developing-jquery-core)
+  * Bu forum alanı JQuery Kütüphanesinin gelişimi için ayrılmış alandır..
+  * Burada yer alan gönderiler, bazı hatalar ile ilgili sorular, JQuery ile geliştirme, özellikler, hata takip veya Git hakkındadır.
+* [JQuery Eklentileri Geliştirme](http://forum.jquery.com/developing-jquery-plugins)
+  * Bu forum alanı JQuery eklentileri geliştirme konusu için ayrılmış alandır.
+* [JQuery Kullanıcı Arabirimi Geliştirme](http://forum.jquery.com/developing-jquery-ui)
+  * Bu alan kullanıcı arabirimi geliştirme konusunda yer alan tartışmaların bulunduğu forum alanıdır. [jQuery Arabirimi](http://jqueryui.com/)  arabirim içerisinde yer alan buglar, yeni eklentiler ve nasıl yardımcı olunabileceği konusu.
+  * Tüm JQuery arabirimleri üzerinde geliştirme sırasında meydana gelecek çakışmaları önlemek için yayınlanan bu forum alanında tartışma ve yorumlar yer almaktadır.
+  * JQuery kullanıcı arabirimi geliştirme ve planlama konusu hakkında çok sayıda başlık mevcuttur. [jQuery Kullanıcı Arabirimi Geliştirme ve Planlama Wiki](http://wiki.jqueryui.com/).
+* [JQuery Mobil Geliştirme](http://forum.jquery.com/developing-jquery-mobile)
+  * Bu alan mobil JQuery geliştirme ile ilgili konuları kapsamaktadır.
+* [QUnit and Test](http://forum.jquery.com/qunit-and-testing)
+  * Bu alan genellikle JavaScript testlerinin bulunduğu özellikle QUnit konusu hakkındadır.
 
-At the bottom of each of the forums is an RSS feed you can subscribe to.
+Forumların alt kısımlarında bir abone olabileceğiniz bir RSS mevcuttur.
 
-To ensure that you'll get a useful answer in no time, please consider the following advice:
+Yararlı bir çözüm ve ya cevap alabilmek için aşağıda yer alan konular kontrol edilmelidir:
 
-* Ensure your markup is valid.
-* Use Firebug/Developer Tools to see if you have an exception.
-* Use Firebug/Developer Tools to inspect the HTML classes, CSS, etc.
-* Try expected resulting HTML and CSS without JavaScript/jQuery and see if the problem could be isolated to those two.
-* Reduce to a minimal test case (keep removing things until the problem goes away, etc.)
-* Provide that test case as part of your mail. Either upload it somewhere or post it on [jsbin.com](http://jsbin.com/).
+* Markup(biçimlendirme) geçerli olduğundan emin olun.
+* Bir istisna olup olmadığını görmek için Firebug/Developer Tools kullanın.
+* HTML sınıfları, CSS vb. inceemek için Firebug/Developer Tools kullanın.
+* HTML ve CSS çıktılarını JavaScript/JQuery olmadan test edin, sorunun bu ikisi yüzünden olmadığını kontrol edin.
+* Testi küçültme yoluna gidin.(Sorunu çözene kadar bazı kısımları kaldırın)
+* Başka bir ortamda test edin. JSBin platformunu kullanabilirsiniz. [jsbin.com](http://jsbin.com/).
 
-In general, keep your question short and focused and provide only essential details – others can be added when required.
+Genel olarak, sorular kısa tutulmalı, gerekli kısım ile bilgi verilmelidir. Diğer bilgiler ihtiyaç duyulduğu zaman kullanılmalıdır.
 
-### Mailing List Archives
+### Mail Listeleri Arşivi
 
-The mailing lists existed before the forums were created, and were closed in early 2010.
+Mail listeleri forum oluşturulmadan önce oluşturulmuştu ve 2010 yılında bu mail listeleri kapatıldı.
 
-There are two different ways of browsing the mailing list archives.
+İki farklı yol ile mail listelerine ait arşive ulaşmak için:
 
-1. The official mailing list archives can be found here:
-	* [jQuery General Discussion Archives](http://groups.google.com/group/jquery-en)
-		* [jQuery Dev List Archives](http://groups.google.com/group/jquery-dev)
-		* [jQuery UI General Discussion Archives](http://groups.google.com/group/jquery-ui)
-	* [jQuery UI Dev List Archives](http://groups.google.com/group/jquery-ui-dev)
-	* [jQuery Plugins List Archives](http://groups.google.com/group/jquery-plugins)
+1. Resmi mail listesi arşivi:
+	* [jQuery Genel Tartışma Arşivi](http://groups.google.com/group/jquery-en)
+		* [jQuery Geliştirici Listesi Arşiv](http://groups.google.com/group/jquery-dev)
+		* [jQuery Kullanıcı Arabirimi Genel Tartışma Arşivi](http://groups.google.com/group/jquery-ui)
+	* [jQuery Kullanıcı Arabirimi Geliştirici Listesi Arşivi](http://groups.google.com/group/jquery-ui-dev)
+	* [jQuery Eklenti Listesi Arşivi](http://groups.google.com/group/jquery-plugins)
 
-2. Also, an interactive, browsable version of the General Discussion mailing list can be found on [Nabble](http://jquery.10927.n7.nabble.com/jQuery-General-Discussion-f3.html) (a forum-like mailing list mirror).
+2. Ayrıca interaktif genel tartışma mail listesine ait göz atılabilir versiyonu: [Nabble](http://jquery.10927.n7.nabble.com/jQuery-General-Discussion-f3.html) (Bir forum tarzında).
 
-### Chat / IRC Channel
+### Sohbet / IRC Kanalı
 
-jQuery also has a very active IRC channel, `#jquery`, hosted by [freenode](http://freenode.net/).
+jQuery oldukça aktif bir IRC Kanalına sahip, `#jquery`, hosted by [freenode](http://freenode.net/).
 
-The IRC Channel is best if you need quick help with any of the following:
+Aşağıda yer alan konular ile ilgili acil bir çözüme ihtiyacınız var ise IRC Kanalı en iyi çözüm:
 
 * JavaScript
-* jQuery syntax
-* Problem solving
-* Strange bugs
+* jQuery söz dizimi
+* Problem çözümü
+* Garip hatalar
 
-If your problem is more in-depth, we may ask you to post to the mailing list, or the bug tracker, so that we can help you in a more-suitable environment.
+Eğer problem daha derinlemesine ise, biz soruyu mail listelerinde yayınlayabilir, daha uygun bir ortamda yardımcı olabiliriz.
 
-####Connect info:
+
+####Bağlantı Bilgileri:
 
 **Server:** irc.freenode.net
 
 **Room:** `#jquery`
 
-You can also connect at http://webchat.freenode.net/?channels=#jquery.
+Ayrıca bu linkten bağlanabilirsiniz: http://webchat.freenode.net/?channels=#jquery.
 
-Additionally we have `#jquery-es` and `#jquery-de` if you want to speak your native language.
+Eğer anadilinizde konuşmak istiyorsanız bizim `#jquery-es` ve `#jquery-de` dil seçeneklerimizde mevcut.
 
-If you wish to post code snippets to the channel, you should use a paste site, like [jsfiddle.net](http://jsfiddle.net/) or [jsbin.com](http://jsbin.com/)
+Eğer bir kod parçası paylaşmak istiyorsanız bu siteleri kullanıp linkini paylaşabilirsiniz. [jsfiddle.net](http://jsfiddle.net/) or [jsbin.com](http://jsbin.com/)
 
 ### StackOverflow
 
-There is an active and well-informed support community at [StackOverflow](http://stackoverflow.com/questions/tagged/jquery). You can likely find an answer for whatever issue you're experiencing. If your question isn't addressed, you can ask a new question and often receive a quick response.
+Aktif ve bilinçli bir topluluğa ulaşmak için [StackOverflow](http://stackoverflow.com/questions/tagged/jquery). Karşılaştığınız herhangi bir sorun karşısında cevabı bulabilirsiniz. Eğer aradığınız cevap mevcut değilse yeni bir soru açabilirsiniz. Cevap çok geçmeden gelecektir.

@@ -54,7 +54,7 @@ grunt.registerHelper( "read-order", function( orderFile ) {
 		index = 0;
 
 	try {
-		order = yaml.load( grunt.file.read( orderFile ) );
+		order = yaml.safeLoad( grunt.file.read( orderFile ) );
 	} catch( error ) {
 		grunt.warn( "Invalid order file: " + orderFile );
 		return null;
