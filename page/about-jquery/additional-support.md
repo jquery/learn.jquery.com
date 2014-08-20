@@ -1,5 +1,5 @@
 ---
-Başlık  : Ek jQuery Desteği
+title  : Ek jQuery Desteği
 ---
 Biz en çok kullanılan ve bahsi geçen jQuery konularını kapsamasını umut ederken, bazı durumlarda yetersiz kalması veya acil bir çözüm süreci gerektirmesi halinde aşağıda yer alan kaynaklar yararlı olabilir.
 
