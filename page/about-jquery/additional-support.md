@@ -75,6 +75,7 @@ Aşağıda yer alan konular ile ilgili acil bir çözüme ihtiyacınız var ise 
 
 Eğer problem daha derinlemesine ise, biz soruyu mail listelerinde yayınlayabilir, daha uygun bir ortamda yardımcı olabiliriz.
 
+
 ####Bağlantı Bilgileri:
 
 **Server:** irc.freenode.net
