@@ -1,28 +1,25 @@
 ---
-title   : Triggering Event Handlers
-level: intermediate
+title   : Olay işleyicileri tetikleme
+level: orta
 source: http://jqfundamentals.com/legacy
 attribution:
-  - jQuery Fundamentals
+  - jQuery Temelleri
 ---
 
-jQuery provides a way to trigger the event handlers bound to an element without any user interaction via the
-`.trigger()` method.
+jQuery kullanıcıyla bir etkileşim sağlamadan bir öğeye bağlı olay işleyicileri tetiklemek için bir yol sağlar.
+`.trigger()` yöntemi.
 
-## What handlers can be .trigger()'d?
+## Hangi işleyiciler .trigger() olabilir?
 
-jQuery's event handling system is a layer on top of native browser events. When an event handler is added using
-`.on( "click", function() {...} )`, it can be triggered using jQuery's `.trigger( "click" )` because jQuery stores a
-reference to that handler when it is originally added. Additionally, it will trigger the JavaScript inside the
-`onclick` attribute. The `.trigger()` function cannot be used to mimic native browser events, such as
-clicking on a file input box or an anchor tag. This is because, there is no event handler attached using jQuery's
-event system that corresponds to these events.
+JQuery olay işleme sistemi yerli tarayıcı olayları için üst bir tabakadır. Bir olay işleyicisi kullanılarak `.on( "click", function() {...} )` eklendiğinde, bu jQuery'e ait `.trigger( "click" )` ile tetiklenebilir çünkü orjinal olarak ilave edildiği zaman, jQuery işleyicisi bu referansı depolar.
+
+Ayrıca, bu JavaScript içinde yer alan `onclick` elementini de tetikleyecektir. `.trigger()` fonksiyonu yerel tarayıcıyı taklit etmek için kullanılamaz, bir dosya giriş kutusunu veya bir tutturucu etiketi tıklamak gibi. Bunun nedeni, burada bu olaylara karşılık jQuery olay sistemini kullanacak bağlı bir olay işleyicisi yoktur.
 
 ```
 <a href="http://learn.jquery.com">Learn jQuery</a>
 ```
 ```
-// This will not change the current page
+// Bu işlem geçerli sayfanızı değiştirmeyecektir.
 $( "a" ).trigger( "click" );
 ```
 
