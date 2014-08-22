@@ -25,7 +25,7 @@ Sitenin bütün içeriği [Markdown](http://daringfireball.net/projects/markdown
 
 ### Site Organizasyonu
 
-All of the content lives inside of the subdirectories of the `page` directory. Each of these subdirectories is considered a **chapter**, and contains one or more **articles**, and there is also a top level file that corresponds to each chapter, which contains the chapter's human-readable title and an overview, which will appear on the chapter's landing page.
+Tüm içerikler `page` dizini altında yer almaktadır. Each of these subdirectories is considered a **chapter**, and contains one or more **articles**, and there is also a top level file that corresponds to each chapter, which contains the chapter's human-readable title and an overview, which will appear on the chapter's landing page.
 
 The [`order.yml`](https://github.com/okulbilisim/learn.jquery.com/blob/master/order.yml) file controls the order that chapters and articles appear in the site.
 
