@@ -25,33 +25,33 @@ Sitenin bütün içeriği [Markdown](http://daringfireball.net/projects/markdown
 
 ### Site Organizasyonu
 
-All of the content lives inside of the subdirectories of the `page` directory. Each of these subdirectories is considered a **chapter**, and contains one or more **articles**, and there is also a top level file that corresponds to each chapter, which contains the chapter's human-readable title and an overview, which will appear on the chapter's landing page.
+Tüm içerikler `page` dizini altında yer almaktadır. `page` dizini altında yer alan dosyaların her biri bir **konu** olarak kabul edilir ve bir çok **makaleyi** içinde bulundurur. Ayrıca bu durum üst düzey dosyalar içinde geçerlidir. Her konu dizininde insanlar tarafından okunabilir konu başlıkları ve kısa bir özeti mevcuttur. Bu konu başlıkları açılış sayfasında görünecek başlıkları oluşturmuş olur.
 
-The [`order.yml`](https://github.com/okulbilisim/learn.jquery.com/blob/master/order.yml) file controls the order that chapters and articles appear in the site.
-
-
-### YAML Conventions
-
-Each of the articles on the site has some YAML "Front Matter" that contains metadata. All articles should include the following:
-
-* `title` - The title of the article as it will appear in the site. If it contains special characters, put the string in quotes.
-
-`title: "jQuery Event Extensions"`
-
-* `level` - The approximate level of jQuery experience required to find the article useful. Options: `beginner`, `intermediate`, or `advanced`.
-
-`level: advanced`
+[`order.yml`](https://github.com/okulbilisim/learn.jquery.com/blob/master/order.yml) dosyası bölümleri ve makaleleri sitede görünen dosya sırasını kontrol eder.
 
 
-## Building & Working Locally
+### YAML Kuralları
 
-As this site is part of the jQuery network of sites, its presentation is controlled by [jquery-wp-content](https://github.com/jquery/jquery-wp-content). To preview the site locally, first follow the [instructions there](https://github.com/jquery/jquery-wp-content) to set up a local version of the jQuery WordPress network. Then, clone this repo and run the following steps (node.js required).
+Makalelerde bir karmaşa olamaması için belli standartlar getirilmiştir. Bir makalede olması gereken şartlar şunlardır.
+
+* `title` - Sayfada makale başlığı olarak çıkacak olan kısımdır. Özel karakter içeriyor ise tırnak işareti kullanılmalıdır.
+
+`title: "jQuery Olay Uzantıları"`
+
+* `level` - Makalelerin anlaşılabilmesi için gerekli olan bilgi seviyelerini belirterek okuyucunun faydalı makaleye yönelmesini sağlamak için kullanılır. Örnek olarak: `başlangıç`, `orta`, or `ileri`.
+
+`level: ileri`
+
+
+## Kurulum ve Yerel Ağ Üzerinde Çalışma
+
+Bu site jQuery ağının bir sitesidir ve [jquery-wp-content](https://github.com/jquery/jquery-wp-content) tarafından kontrol edilir. Yerel ağ üzerinde çalışmak için ilk olarak jQuery Wordpress ağı kurulur. [başlangıç](https://github.com/jquery/jquery-wp-content) Sonra, repo klonlanır ve aşağıda yer alan adımlar takip edilir. (node.js gereklidir.).
 
 1. `npm install`
 2. `cp config-sample.json config.json`
-3. Edit config.json to use the username and password for your local WordPress network
+3. config.json dosyası yerel ağ üzerinde çalışacak wordpress ağı için kullanıcı adı ve şifre düzeltilir. 
 4. `grunt`
 
-## How Can I Help?
+## Nasıl yardımcı olabilirim?
 
-We encourage contribution from anyone. For more comprehensive documentation on how to get involved, please read our [contributing guide](http://learn.jquery.com/contributing).
+Herkes learn.jquery.com'a yardımcı olabilir. Daha kapsamlı belgelerle katkı sağlamak için lütfen [katkıda bulunma rehberini](http://learn.jquery.com/contributing) okuyunuz.
