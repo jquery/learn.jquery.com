@@ -43,7 +43,7 @@ Makalelerde bir karmaşa olamaması için belli standartlar getirilmiştir. Bir 
 `level: ileri`
 
 
-## Building & Yerel Ağ Üzerinde Çalışma
+## Kurulum ve Yerel Ağ Üzerinde Çalışma
 
 Bu site jQuery ağının bir sitesidir ve [jquery-wp-content](https://github.com/jquery/jquery-wp-content) tarafından kontrol edilir. Yerel ağ üzerinde çalışmak için ilk olarak jQuery Wordpress ağı kurulur. [başlangıç](https://github.com/jquery/jquery-wp-content) Sonra, repo klonlanır ve aşağıda yer alan adımlar takip edilir. (node.js gereklidir.).
 
