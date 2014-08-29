@@ -1,11 +1,11 @@
 ---
-title   : How jQuery Works
-level: beginner
+title   : jQuery Nasıl Çalışır?
+level: başlangıç
 ---
 
-### jQuery: The Basics
+### jQuery Temelleri
 
-This is a basic tutorial, designed to help you get started using jQuery. If you don't have a test page setup yet, start by creating the following HTML page:
+Bu basit bir giriş seviyesi dökümanı olup size başlangıç için yardımcı olması için tasarlanmıştır. Eğer henüz sayfa yükleyiciyi test etmediyseniz, HTML sayfayı oluşturarak başlayabilirsiniz:
 
 ```
 <!doctype html>
@@ -19,46 +19,46 @@ This is a basic tutorial, designed to help you get started using jQuery. If you 
 	<script src="jquery.js"></script>
 	<script>
 
-	// Your code goes here.
+	// Yazılacak kodlar bu alanda yer alacaklar.
 
 	</script>
 </body>
 </html>
 ```
 
-The `src` attribute in the `<script>` element must point to a copy of jQuery. Download a copy of jQuery from the [Downloading jQuery](http://jquery.com/download/) page and store the `jquery.js` file in the same directory as your HTML file.
+`src` yapısı `<script>` elementinin jQuery kopyasını oluşturmasını sağlar. jQuery kopyasını [buradan](http://jquery.com/download/) indirebilirsiniz.
 
-### Launching Code on Document Ready
+### Hazır Döküman Üzerinde Kod Çalıştırma
 
-To ensure that their code runs after the browser finishes loading the document, many JavaScript programmers wrap their code in an `onload` function:
+Tarayıcının yüklemesi bittikten sonra bir çok JavaScript programcısı kodlarını `onload` fonksiyonu ile sarmalar:
 
 ```
 window.onload = function() {
 
-	alert( "welcome" );
+	alert( "Hoş Geldiniz!" );
 
 }
 ```
 
-Unfortunately, the code doesn't run until all images are finished downloading, including banner ads. To run code as soon as the document is ready to be manipulated, jQuery has a statement known as the [ready event](http://api.jquery.com/ready/):
+Ne yazık ki kod tüm resimleri ve reklamları indirme işlemini bitirmeden çalışmayacaktır. Dökümantasyon işlenir işlenmez kod çalışır. Bunun için jQuery [ready event](http://api.jquery.com/ready/) olarak bilinen bir yapıya sahiptir:
 
 ```
 
 $( document ).ready(function() {
 
-	// Your code here.
+	// Kodlar buraya yazılacak.
 
 });
 ```
 
-For example, inside the `ready` event, you can add a click handler to the link:
+Örnek olarak, `ready` olayında, linke bir handler(işleyici) verilebilir:
 
 ```
 $( document ).ready(function() {
 
 	$( "a" ).click(function( event ) {
 
-		alert( "Thanks for visiting!" );
+		alert( "Sitemizi ziyaret ettiğiniz için teşekkür ederiz!" );
 
 	});
 
