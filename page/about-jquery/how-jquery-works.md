@@ -4,7 +4,6 @@ level: başlangıç
 ---
 
 ### jQuery Temelleri
-
 Bu basit bir giriş seviyesi dökümanı olup size başlangıç için yardımcı olması için tasarlanmıştır. Eğer henüz sayfa yükleyiciyi test etmediyseniz, HTML sayfayı oluşturarak başlayabilirsiniz:
 
 ```
