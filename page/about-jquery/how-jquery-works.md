@@ -191,7 +191,7 @@ Bu hatanın nedeni kod `$.get()` için ikinci parametre olarak `myCallBack( para
 
 #### Doğru
 
-`myCallBack()`fonksiyonunu parametrelerle ertelenir ve sarmalayıcı olarak bir anonim fonksiyon kullanılabilir. Note the use of `function() {`. The anonymous function does exactly one thing: calls `myCallBack()`, with the values of `param1` and `param2`.
+`myCallBack()`fonksiyonunu parametrelerle ertelenir ve sarmalayıcı olarak bir anonim fonksiyon kullanılabilir.`function() {` kullanımına dikkat edilmelidir. Anonim fonksiyon tam olarak bir şey yapar: `param1` ve `param2` ile `myCallBack()` fonksiyonunu çağırır.
 
 ```
 $.get( "myhtmlpage.html", function() {
@@ -201,4 +201,4 @@ $.get( "myhtmlpage.html", function() {
 });
 ```
 
-When `$.get()` finishes getting the page `myhtmlpage.html`, it executes the anonymous function, which executes `myCallBack( param1, param2 )`.
+`$.get()` `myhtmlpage.html` işlemini bitirdiği zaman, o `myCallBack( param1, param2 )` çalıştıran anonim fonksiyonu çalıştırır.
