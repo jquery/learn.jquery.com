@@ -172,26 +172,26 @@ EĞer callback hiç bir argümana sahip değilse, aşağıdaki gibi geçilebilir
 $.get( "myhtmlpage.html", myCallBack );
 ```
 
-When [$.get()](http://api.jquery.com/jQuery.get/) finishes getting the page `myhtmlpage.html`, it executes the `myCallBack()` function.
+[$.get()](http://api.jquery.com/jQuery.get/) `myhtmlpage.html`'i getirmeyi bitirdiği zaman, o `myCallBack()` fonksiyonunu çalıştırır.
 
-* **Note:** The second parameter here is simply the function name (but *not* as a string, and without parentheses).
+* **NOT:** İkinci parametre sadece fonksiyon ismidir.(String ve parantezsiz değildir.).
 
-### Callback *with* Arguments
+### Bağımsız Değişkenler ile Callback(Geri Bildirim)
 
-Executing callbacks with arguments can be tricky.
+Argümanlar ile callback çalıştırılması yanıltıcı olabilir.
 
-#### Wrong
-This code example will ***not*** work:
+#### Yanlış
+Bu kod ***çalışmayacaktır***:
 
 ```
 $.get( "myhtmlpage.html", myCallBack( param1, param2 ) );
 ```
 
-The reason this fails is that the code executes `myCallBack( param1, param2 )` immediately and then passes `myCallBack()`'s *return value* as the second parameter to `$.get()`. We actually want to pass the function `myCallBack()`, not `myCallBack( param1, param2 )`'s return value (which might or might not be a function). So, how to pass in `myCallBack()` *and* include its arguments?
+Bu hatanın nedeni kod `$.get()` için ikinci parametre olarak `myCallBack( param1, param2 )` hemen ardından `myCallBack()`'e ait *değer dönderir* . Bizim aslında istediğimiz `myCallBack()` fonksiyonunu geçmek,`myCallBack( param1, param2 )`'e ait dönüş değerine değil. (ki fonksiyon olabilirde olamayabilirde). Peki nasıl `myCallBack()`e geçilir *ve* onun argümanlarını içerir?
 
-#### Right
+#### Doğru
 
-To defer executing `myCallBack()` with its parameters, you can use an anonymous function as a wrapper. Note the use of `function() {`. The anonymous function does exactly one thing: calls `myCallBack()`, with the values of `param1` and `param2`.
+`myCallBack()`fonksiyonunu parametrelerle ertelenir ve sarmalayıcı olarak bir anonim fonksiyon kullanılabilir. Note the use of `function() {`. The anonymous function does exactly one thing: calls `myCallBack()`, with the values of `param1` and `param2`.
 
 ```
 $.get( "myhtmlpage.html", function() {
