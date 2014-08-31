@@ -64,16 +64,16 @@ $( document ).ready(function() {
 });
 ```
 
-Save your HTML file and reload the test page in your browser. Clicking the link should now first display an alert pop-up, then continue with the default behavior of navigating to http://jquery.com.
+HTML sayfanızı kaydedip tarayıcınızda test sayfasını tekrar yükleyiniz. Linke tıkladıktan sonra ilk olarak bir uyarı penceresi görüntülenecek daha sonra ise varsayılan görünüm ile http://jquery.com için devam edebilirsiniz.
 
-For `click` and most other [events](http://api.jquery.com/category/events/), you can prevent the default behavior by calling `event.preventDefault()` in the event handler:
+`click` ve daha bir çok olay için [buraya](http://api.jquery.com/category/events/) göz atabilirsiniz. Ayrıca eğer istenirse varsayılan davranış olay işletici içinde `event.preventDefault()` ile önlenebilir.
 
 ```
 $( document ).ready(function() {
 
 	$( "a" ).click(function( event ) {
 
-		alert( "As you can see, the link no longer took you to jquery.com" );
+		alert( "Göründüğü gibi link artık jquery.com görünümünü aldı." );
 
 		event.preventDefault();
 
@@ -82,16 +82,16 @@ $( document ).ready(function() {
 });
 ```
 
-### Complete Example
+### Örneği Tamamlama
 
-The following example illustrates the click handling code discussed above, embedded directly in the HTML `<body>`. Note that in practice, it is usually better to place your code in a separate JS file and load it on the page with a `<script>` element's `src` attribute.
+Aşağıda yer alan örnek yukarıda tartışılan HTML `<body>` içinde yer alan click olayını göstermektedir. Unutulmaması gerek önemli bir nokta ise JavaScript kodunu ayrı bir sayfaya yazıp daha sonra `<script>` elementine ait `src` özelliğiyle yazmak daha iyi bir yöntemdir.
 
 ```
 <!doctype html>
 <html>
 <head>
 	<meta charset="utf-8" />
-	<title>Demo</title>
+	<title>Deneme</title>
 </head>
 <body>
 	<a href="http://jquery.com/">jQuery</a>
@@ -100,7 +100,7 @@ The following example illustrates the click handling code discussed above, embed
 
 	$( document ).ready(function() {
 		$( "a" ).click(function( event ) {
-			alert( "The link will no longer take you to jquery.com" );
+			alert( "Bağlantı artık jquery.com üzerinde görüntülenecektir." );
 			event.preventDefault();
 		});
 	});
@@ -110,13 +110,13 @@ The following example illustrates the click handling code discussed above, embed
 </html>
 ```
 
-### Adding and Removing an HTML Class
+### Bir HTML Sınıfı Ekleme ve Çıkarma İşlemi
 
-**Important:** *You must place the remaining jQuery examples inside the `ready` event so that your code executes when the document is ready to be worked on.*
+**Önemli:** *`ready` olayı içinde yer alan JQuery örnekleri yerleştirilmelidir. Bu sayede  döküman üzerinde çalışmaya hazır olduğunda yazılan kod yürütülmüş olacaktır.*
 
-Another common task is adding or removing a class.
+Başka bir ortak görev sınıf ekleme veya çıkarmaktır.
 
-First, add some style information into the `<head>` of the document, like this:
+Öncelikle, `<head>` dökümanı içine stil dosyaları ekleyin:
 
 ```
 <style>
@@ -126,23 +126,23 @@ a.test {
 </style>
 ```
 
-Next, add the [.addClass()](http://api.jquery.com/addClass/) call to the script:
+Daha sonra, scripti [.addClass()](http://api.jquery.com/addClass/) ile çağırın:
 
 ```
 $( "a" ).addClass( "test" );
 ```
 
-All `<a>` elements are now bold.
+Tüm `<a>` elementleri kalın puntolu olacaktır.
 
-To remove an existing class, use [.removeClass()](http://api.jquery.com/removeClass/):
+Var olan bir sınıfı kaldırmak için [.removeClass()](http://api.jquery.com/removeClass/) kullanılır:
 
 ```
 $( "a" ).removeClass( "test" );
 ```
 
-### Special Effects
+### Özel Efektler
 
-jQuery also provides some handy [effects](http://api.jquery.com/category/effects/) to help you make your web sites stand out. For example, if you create a click handler of:
+jQuery sayfaların göze çarpması için bazı kullanışlı [efektler](http://api.jquery.com/category/effects/) sunmaktadır. Örnek olarak, bir tıklama işleyicisi oluşturmak için aşağıda yer alan kod kullanılabilir:
 
 ```
 $( "a" ).click(function( event ) {
@@ -154,42 +154,44 @@ $( "a" ).click(function( event ) {
 });
 ```
 
-Then the link slowly disappears when clicked.
+Link tıklandığı zaman yavaş yavaş kaybolacaktır.
 
-## Callbacks and Functions
+## Callback(Geri Bildirimler) ve Fonksiyonlar
 
-Unlike many other programming languages, JavaScript enables you to freely pass functions around to be executed at a later time. A *callback* is a function that is passed as an argument to another function and is executed after its parent function has completed. Callbacks are special because they patiently wait to execute until their parent finishes. Meanwhile, the browser can be executing other functions or doing all sorts of other work.
+Diğer bir çok programlama dilinden farklı olarak JavaScript fonksiyonların serbestçe hareket etmesini ve daha sonraki bir zamanda çalıştırılmasına olanak sağlar.
 
-To use callbacks, it is important to know how to pass them into their parent function.
+Bir *callbacks(geri bildirimler)* fonksiyon olarak başka bir yere argüman olarak gönderilir. Ana fonksiyon tamamlandıktan sonra yürütülür. Callbacks(geri bildirimler) özeldir çünkü onlar ana fonksiyonların görevlerini bitirmelerini sabırla beklerler. Bu arada tarayıcı geri kalan işleri yapabilir potansiyele sahiptir.
 
-### Callback *without* Arguments
+Callbacks(Geri bildirimleri) kullanmak için, nasıl ana fonksiyona geçileceğini bilmek önemlidir.
 
-If a callback has no arguments, you can pass it in like this:
+### Callback(Geri Bildirim)  *olmadan* Bağımsız Değişkenler
+
+EĞer callback hiç bir argümana sahip değilse, aşağıdaki gibi geçilebilir:
 
 ```
 $.get( "myhtmlpage.html", myCallBack );
 ```
 
-When [$.get()](http://api.jquery.com/jQuery.get/) finishes getting the page `myhtmlpage.html`, it executes the `myCallBack()` function.
+[$.get()](http://api.jquery.com/jQuery.get/) `myhtmlpage.html`'i getirmeyi bitirdiği zaman, o `myCallBack()` fonksiyonunu çalıştırır.
 
-* **Note:** The second parameter here is simply the function name (but *not* as a string, and without parentheses).
+* **NOT:** İkinci parametre sadece fonksiyon ismidir.(String ve parantezsiz değildir.).
 
-### Callback *with* Arguments
+### Bağımsız Değişkenler ile Callback(Geri Bildirim)
 
-Executing callbacks with arguments can be tricky.
+Argümanlar ile callback çalıştırılması yanıltıcı olabilir.
 
-#### Wrong
-This code example will ***not*** work:
+#### Yanlış
+Bu kod ***çalışmayacaktır***:
 
 ```
 $.get( "myhtmlpage.html", myCallBack( param1, param2 ) );
 ```
 
-The reason this fails is that the code executes `myCallBack( param1, param2 )` immediately and then passes `myCallBack()`'s *return value* as the second parameter to `$.get()`. We actually want to pass the function `myCallBack()`, not `myCallBack( param1, param2 )`'s return value (which might or might not be a function). So, how to pass in `myCallBack()` *and* include its arguments?
+Bu hatanın nedeni kod `$.get()` için ikinci parametre olarak `myCallBack( param1, param2 )` hemen ardından `myCallBack()`'e ait *değer dönderir* . Bizim aslında istediğimiz `myCallBack()` fonksiyonunu geçmek,`myCallBack( param1, param2 )`'e ait dönüş değerine değil. (ki fonksiyon olabilirde olamayabilirde). Peki nasıl `myCallBack()`e geçilir *ve* onun argümanlarını içerir?
 
-#### Right
+#### Doğru
 
-To defer executing `myCallBack()` with its parameters, you can use an anonymous function as a wrapper. Note the use of `function() {`. The anonymous function does exactly one thing: calls `myCallBack()`, with the values of `param1` and `param2`.
+`myCallBack()`fonksiyonunu parametrelerle ertelenir ve sarmalayıcı olarak bir anonim fonksiyon kullanılabilir.`function() {` kullanımına dikkat edilmelidir. Anonim fonksiyon tam olarak bir şey yapar: `param1` ve `param2` ile `myCallBack()` fonksiyonunu çağırır.
 
 ```
 $.get( "myhtmlpage.html", function() {
@@ -199,4 +201,4 @@ $.get( "myhtmlpage.html", function() {
 });
 ```
 
-When `$.get()` finishes getting the page `myhtmlpage.html`, it executes the anonymous function, which executes `myCallBack( param1, param2 )`.
+`$.get()` `myhtmlpage.html` işlemini bitirdiği zaman, o `myCallBack( param1, param2 )` çalıştıran anonim fonksiyonu çalıştırır.
