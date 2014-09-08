@@ -83,7 +83,7 @@ bar || foo;
 foo && bar;
 
 // returns 2, which is true
-foo && baz;
+bar && baz;
 
 // returns 1, which is true
 baz && foo;
