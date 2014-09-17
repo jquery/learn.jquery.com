@@ -104,7 +104,7 @@ That's it. Easy.
 
 So, while the Modernizr syntax is great, it can end up being quite cumbersome to have several conditionals. Secondly, we're sending the code for both conditions to every browser, regardless if we'll need it or not.
 
-The `Modernizr` object exposes a `load()` method that many prefer over the syntax mentioned previously. This is due to the another library that Modernizr now uses internally: [yepnope](http://yepnopejs.com/). Testing for canvas can now become something like this:
+The `Modernizr` object exposes a `load()` method that many prefer over the syntax mentioned previously. This is due to another library that Modernizr now uses internally: [yepnope](http://yepnopejs.com/). Testing for canvas can now become something like this:
 
 ```
 Modernizr.load({
