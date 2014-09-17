@@ -107,6 +107,17 @@ do {
 
 These types of loops are quite rare since only few situations require a loop that blindly executes at least once. Regardless, it's good to be aware of it.
 
+## `for...in` loop
+
+A `for...in` loop iterates over the properties of an object. For each property, statements can be executed.
+
+```
+for ( prop in obj ) {
+	// in this scope, 'prop' is set to the property name.
+	console.log( prop + ': ' + obj[ prop ] ); 
+}
+```
+
 ## Breaking and Continuing
 
 Usually, a loop's termination will result from the conditional statement not evaluating to a truthy value, but it is possible to stop a loop in its tracks from within the loop's body with the `break` statement:
