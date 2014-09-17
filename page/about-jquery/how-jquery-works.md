@@ -9,24 +9,35 @@ This is a basic tutorial, designed to help you get started using jQuery. If you 
 
 ```
 <!doctype html>
-<html>
-<head>
-	<meta charset="utf-8" />
-	<title>Demo</title>
-</head>
-<body>
-	<a href="http://jquery.com/">jQuery</a>
-	<script src="jquery.js"></script>
-	<script>
-
-	// Your code goes here.
-
-	</script>
-</body>
+	<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Demo</title>
+	</head>
+	<body>
+		<a href="http://jquery.com/">jQuery</a>
+		
+		<!--Keep in mind, this text in here is all commented code.
+			It will be ignored -->
+				
+		<!--This is where more html code could be written. -->
+		
+		<!--Below you will see the script tage with an attribute src. Setting
+			src to a file gives access to everything in that file.	-->
+		
+		<script src="jquery.js"></script>
+		<script>
+			/*You are now looking at a comment in Javascript. Being inside
+			of a <script> means you are in Js. You can now use jQuery.*/
+		
+			// Your code goes here.
+			
+		</script>
+	</body>
 </html>
 ```
 
-The `src` attribute in the `<script>` element must point to a copy of jQuery. Download a copy of jQuery from the [Downloading jQuery](http://jquery.com/download/) page and store the `jquery.js` file in the same directory as your HTML file.
+The `src` attribute in the `<script>` element must point to a copy of jQuery. Download a copy of jQuery from the [Downloading jQuery](http://jquery.com/download/) page and store the `jquery.js` file in the same directory as your HTML file. To make things easier, rename the downloaded jQuery file to 'jquery.js'. For example, if you downloaded 'jquery-2.1.1.min.js' rename it to 'jquery.js'.
 
 ### Launching Code on Document Ready
 
@@ -90,24 +101,47 @@ The following example illustrates the click handling code discussed above, embed
 ```
 <!doctype html>
 <html>
-<head>
-	<meta charset="utf-8" />
-	<title>Demo</title>
-</head>
-<body>
-	<a href="http://jquery.com/">jQuery</a>
-	<script src="jquery.js"></script>
-	<script>
+	<head>
+		<meta charset="utf-8" />
+		<title>Demo</title>
+	</head>
+	<body>
+		<a href="http://jquery.com/">jQuery</a>
+		
+		<!--Keep in mind, this text is all commented code.
+			It will be ignored -->
+				
+		<!--This is where more html code could be written. -->
+		
+		<!--We need all of the elements to load completely so the jQuery
+			is put at the end of the body -->
+			
+		<!--Depending on the jQuery that you downloaded, rename it to
+			jQuery.js and put it in the same folder/directory as the html
+			file -->
+				
+		<!--Below you will see the script tage with an attribute src. Setting
+			src to a file gives access to everything in that file.	-->
+		
+		<script src="jquery.js"></script>
+		<script>
+			/*You are now looking at a comment in Javascript. Being inside
+			of a <script> means you are in Js. You can now use jQuery.*/
+			
+			//The money sign is a call to an object - It will be explained
+			//later in the documentation. 
+		
+			$( document ).ready(function() 
+			{
+				$( "a" ).click(function( event ) 
+				{
+					alert( "The link will no longer take you to jquery.com" );
+					event.preventDefault();
+				});
+			});
 
-	$( document ).ready(function() {
-		$( "a" ).click(function( event ) {
-			alert( "The link will no longer take you to jquery.com" );
-			event.preventDefault();
-		});
-	});
-
-	</script>
-</body>
+		</script>
+	</body>
 </html>
 ```
 
