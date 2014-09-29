@@ -1,51 +1,57 @@
-# The jQuery Learning Site
+# jQuery Öğren
 
-* Primary Domain: [http://learn.jquery.com](http://learn.jquery.com)
-* Staging Domain: [http://stage.learn.jquery.com](http://stage.learn.jquery.com)
+_İnglizce_
+* Stabil   : [http://learn.jquery.com](http://learn.jquery.com)
+* Gelişirme: [http://stage.learn.jquery.com](http://stage.learn.jquery.com)
 
-## About
-
-The goal of this site is twofold:
-
-1. To serve as a central, trustworthy, narrative compendium of information about how to use jQuery and JavaScript.
-2. To remain a timely, vibrant, and community-driven reference with a relatively low barrier to contribution.
-
-Much of the initial content - and spirit - comes from [jQuery Fundamentals](http://jqfundamentals.com/legacy), an open-source book about jQuery, originally written by [Rebecca Murphey](http://www.rmurphey.com/) and released in 2010. In 2011, Rebecca [bequeathed the book](http://rmurphey.com/blog/2011/03/17/the-future-of-jquery-fundamentals-and-a-confession/) unto the jQuery Foundation to serve as the basis for this site.
+_Türkçe_
+* Stabil   : [http://learn.jquery.com](http://learn.jquery.com)
+* Gelişirme: [http://stage.learn.jquery.com](http://stage.learn.jquery.com)
 
 
-## How This Site Works
+## Hakkında
 
-This site's core content consists of [Markdown](http://daringfireball.net/projects/markdown/) files. The template that controls the site's appearance is a [child theme](https://github.com/jquery/jquery-wp-content/tree/master/themes/learn.jquery.com) of [jquery-wp-content](https://github.com/jquery/jquery-wp-content), and any issues with the presentation should be directed to [that repository](https://github.com/jquery/jquery-wp-content).
+Bu sitenin iki amacı var:
 
-### Site Organization
+1. jQuery ve JavaScript'in nasıl kullanıldığı hakkında merkezi, güvenilir, doyurucu bilgiler vermek.
+2. Güncel, enerjik ve topluluk tarafından sürdürülen referans kaynak olmak.
 
-All of the content lives inside of the subdirectories of the `page` directory. Each of these subdirectories is considered a **chapter**, and contains one or more **articles**, and there is also a top level file that corresponds to each chapter, which contains the chapter's human-readable title and an overview, which will appear on the chapter's landing page.
-
-The [`order.yml`](https://github.com/jquery/learn.jquery.com/blob/master/order.yml) file controls the order that chapters and articles appear in the site.
-
-
-### YAML Conventions
-
-Each of the articles on the site has some YAML "Front Matter" that contains metadata. All articles should include the following:
-
-* `title` - The title of the article as it will appear in the site. If it contains special characters, put the string in quotes.
-
-`title: "jQuery Event Extensions"`
-
-* `level` - The approximate level of jQuery experience required to find the article useful. Options: `beginner`, `intermediate`, or `advanced`.
-
-`level: advanced`
+İçeriğin çoğu - ve ruhu - [jQuery Fundamentals](http://jqfundamentals.com/legacy) üzerinden gelmekte, bir açık kaynak kitap olan, [Rebecca Murphey](http://www.rmurphey.com/) tarafından yazılıp and 2010 yılında yayınlanmıştır. 2011'de, Rebecca [bequeathed the book](http://rmurphey.com/blog/2011/03/17/the-future-of-jquery-fundamentals-and-a-confession/) jQuery Derneğine bu sitenin temellerini ve eğitim içerikleri olması için bağışlamıştır.
 
 
-## Building & Working Locally
+## Bu site nasıl çalışıyor
 
-As this site is part of the jQuery network of sites, its presentation is controlled by [jquery-wp-content](https://github.com/jquery/jquery-wp-content). To preview the site locally, first follow the [instructions there](https://github.com/jquery/jquery-wp-content) to set up a local version of the jQuery WordPress network. Then, clone this repo and run the following steps (node.js required).
+Sitenin bütün içeriği [Markdown](http://daringfireball.net/projects/markdown/) dosyalarından oluşuyor. Siteyi bir wordpress türevi olan [jquery-wp-content](https://github.com/jquery/jquery-wp-content)'nin [alt teması](https://github.com/jquery/jquery-wp-content/tree/master/themes/learn.jquery.com) sunuyor. Eğer bu konuda bir öneriniz olursa lütfen çekinmeyin [that repository](https://github.com/jquery/jquery-wp-content).
+
+### Site Organizasyonu
+
+Tüm içerikler `page` dizini altında yer almaktadır. `page` dizini altında yer alan dosyaların her biri bir **konu** olarak kabul edilir ve bir çok **makaleyi** içinde bulundurur. Ayrıca bu durum üst düzey dosyalar içinde geçerlidir. Her konu dizininde insanlar tarafından okunabilir konu başlıkları ve kısa bir özeti mevcuttur. Bu konu başlıkları açılış sayfasında görünecek başlıkları oluşturmuş olur.
+
+[`order.yml`](https://github.com/okulbilisim/learn.jquery.com/blob/master/order.yml) dosyası bölümleri ve makaleleri sitede görünen dosya sırasını kontrol eder.
+
+
+### YAML Kuralları
+
+Makalelerde bir karmaşa olamaması için belli standartlar getirilmiştir. Bir makalede olması gereken şartlar şunlardır.
+
+* `title` - Sayfada makale başlığı olarak çıkacak olan kısımdır. Özel karakter içeriyor ise tırnak işareti kullanılmalıdır.
+
+`title: "jQuery Olay Uzantıları"`
+
+* `level` - Makalelerin anlaşılabilmesi için gerekli olan bilgi seviyelerini belirterek okuyucunun faydalı makaleye yönelmesini sağlamak için kullanılır. Örnek olarak: `başlangıç`, `orta`, or `ileri`.
+
+`level: ileri`
+
+
+## Kurulum ve Yerel Ağ Üzerinde Çalışma
+
+Bu site jQuery ağının bir sitesidir ve [jquery-wp-content](https://github.com/jquery/jquery-wp-content) tarafından kontrol edilir. Yerel ağ üzerinde çalışmak için ilk olarak jQuery Wordpress ağı kurulur. [başlangıç](https://github.com/jquery/jquery-wp-content) Sonra, repo klonlanır ve aşağıda yer alan adımlar takip edilir. (node.js gereklidir.).
 
 1. `npm install`
 2. `cp config-sample.json config.json`
-3. Edit config.json to use the username and password for your local WordPress network
+3. config.json dosyası yerel ağ üzerinde çalışacak wordpress ağı için kullanıcı adı ve şifre düzeltilir. 
 4. `grunt`
 
-## How Can I Help?
+## Nasıl yardımcı olabilirim?
 
-We encourage contribution from anyone. For more comprehensive documentation on how to get involved, please read our [contributing guide](http://learn.jquery.com/contributing).
+Herkes learn.jquery.com'a yardımcı olabilir. Daha kapsamlı belgelerle katkı sağlamak için lütfen [katkıda bulunma rehberini](http://learn.jquery.com/contributing) okuyunuz.
