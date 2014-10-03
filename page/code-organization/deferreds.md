@@ -32,7 +32,7 @@ your application may be blocked from running until a result from it is
 returned. Deferreds provide a better solution to this problem, one which
 is void of "blocking" effects and completely decoupled.
 
-The [Promise/A](http://wiki.commonjs.org/wiki/Promises/A) proposal
+The [Promises/A](http://wiki.commonjs.org/wiki/Promises/A) proposal
 defines a method called "then" that can be used to register callbacks to
 a promise and, thus, get the future result when it is available. The
 pseudo-code for dealing with a third party API that returns a promise
