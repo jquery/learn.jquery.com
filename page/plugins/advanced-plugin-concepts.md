@@ -244,6 +244,10 @@ $( "<div id=\"the-gallery-wrapper\" />").appendTo( "body" );
 
 $( "#the-gallery-wrapper" ).append( "..." );
 
+```
+
+Instead, a better implementation would be:
+```
 // Retain an internal reference:
 var wrapper = $( "<div />" )
 	.attr( settings.wrapperAttrs )
