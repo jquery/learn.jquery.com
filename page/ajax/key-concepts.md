@@ -63,9 +63,8 @@ For transporting JSON data from another domain.
 
 For transporting data in a custom XML schema.
 
-I am a strong proponent of using the JSON format in most cases, as it provides
-the most flexibility. It is especially useful for sending both HTML and data at
-the same time.
+Consider using the JSON format in most cases, as it provides
+the most flexibility. It is especially useful for sending both HTML and data at the same time.
 
 ### A is for Asynchronous
 
