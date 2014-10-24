@@ -84,6 +84,7 @@ $( document ).ready(function() {
 
 });
 ```
+Try replacing your first snippet of jQuery code, which you put earlier in your HTML file, with the one above, save the HTML file again and reload to try this out.
 
 Try replacing your first snippet of jQuery code, which you previously copied in to your HTML file, with the one above. Save the HTML file again and reload to try it out.
 
