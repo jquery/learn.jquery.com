@@ -26,7 +26,7 @@ This is a basic tutorial, designed to help you get started using jQuery. If you 
 </html>
 ```
 
-The `src` attribute in the `<script>` element must point to a copy of jQuery. Download a copy of jQuery from the [Downloading jQuery](http://jquery.com/download/) page and store the `jquery.js` file in the same directory as your HTML file.
+The `src` attribute in the `<script>` element must point to a copy of jQuery. Download a copy of jQuery from the [Downloading jQuery](http://jquery.com/download/) page and store the `jquery.js` file in the same directory as your HTML file. Make sure that if the file you download has a name like 'jquery-2.1.1.js' that you rename it to be 'jquery.js' or it will not be found, and you will see none of the jQuery effects happen.
 
 *Note: When you download jQuery, the file name may contain a version number, e.g., `jquery-x.y.z.js`. Make sure to either rename this file to `jquery.js` or update the `src` attribute of the `<script>` element to match the file name.*
 
