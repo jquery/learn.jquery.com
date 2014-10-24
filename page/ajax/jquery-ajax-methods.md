@@ -10,9 +10,7 @@ While jQuery does offer many Ajax-related convenience methods, the core
 imperative. We'll review it first, and then touch briefly on the convenience
 methods.
 
-I generally use the `$.ajax()` method and do not use convenience methods. As
-you'll see, it offers features that the convenience methods do not, and its
-syntax is more easily understandable, in my opinion.
+It's often considered good practice to use the `$.ajax()` method over the jQuery provided [convenience methods](#convenience-methods). As you'll see, it offers features that the convenience methods do not, and its syntax allows for the ease of readability.
 
 ### `$.ajax()`
 
