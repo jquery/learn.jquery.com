@@ -170,6 +170,8 @@ $( document ).trigger( "myCustomEvent", [ "bim", "baz" ] );
 
 ### A Sample Application
 
+Note: The following sample application no longer currently works, as the Twitter REST API v1 is no longer active.
+
 To demonstrate the power of custom events, we're going to create a simple tool
 for searching Twitter. The tool will offer several ways for a user to add
 search terms to the display: by entering a search term in a text box, by
