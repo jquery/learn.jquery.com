@@ -22,22 +22,3 @@ $( "#menu li" ).hover(function() {
 	$( this ).toggleClass( "hover" );
 });
 ```
-
-### `.toggle()`
-
-<div class="warning">Note: This method signature was removed in jQuery 1.9. jQuery also provides an animation method named .toggle() that toggles the visibility of elements.</div>
-
-The [`.toggle()`](http://api.jquery.com/toggle-event/) method is triggered by the "click" event and accepts two or
-more functions. Each time the click event occurs, the next function in the
-list is called. Generally, `.toggle()` is used with just two functions;
-however, it will accept an unlimited number of functions. Be careful, though:
-providing a long list of functions can be difficult to debug.
-
-```
-// The toggle helper function
-$( "p.expander" ).toggle( function() {
-	$( this ).prev().addClass( "open" );
-}, function() {
-	$( this ).prev().removeClass( "open" );
-});
-```
