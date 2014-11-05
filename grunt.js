@@ -1,5 +1,4 @@
-var yaml = require( "js-yaml" ),
-	config = require("./config.json");
+var config = require( "./config" );
 
 module.exports = function( grunt ) {
 
@@ -41,20 +40,20 @@ grunt.initConfig({
 	},
 	wordpress: grunt.utils._.extend({
 		dir: "dist/wordpress",
-		order: "order.yml"
+		order: "order.json"
 	}, grunt.file.readJSON( "config.json" ) )
 });
 
 
 
-// Process a YAML order file and return an object of page slugs and their ordinal indices
+// Process a JSON order file and return an object of page slugs and their ordinal indices
 grunt.registerHelper( "read-order", function( orderFile ) {
 	var order,
 		map = {},
 		index = 0;
 
 	try {
-		order = yaml.safeLoad( grunt.file.read( orderFile ) );
+		order = JSON.parse( grunt.file.read( orderFile ) );
 	} catch( error ) {
 		grunt.warn( "Invalid order file: " + orderFile );
 		return null;
@@ -175,7 +174,7 @@ grunt.registerHelper( "contributor-attribution", function( post, fileName, fn ) 
 });
 
 grunt.registerHelper( "build-pages-preprocess", (function() {
-	var orderMap = grunt.helper( "read-order", "order.yml" );
+	var orderMap = grunt.helper( "read-order", "order.json" );
 
 	return function( post, fileName, done ) {
 		grunt.utils.async.series([
