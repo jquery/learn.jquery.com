@@ -5,18 +5,24 @@ source: http://jqfundamentals.com/legacy
 attribution:
     - jQuery Fundamentals
 ---
+
 jQuery makes it possible to animate arbitrary CSS properties via the
 `.animate()` method. The `.animate()` method lets you animate to a set
 value, or to a value relative to the current value.
 
 ```
 // Custom effects with .animate()
-$( "div.funtimes" ).animate({
+$( "div.funtimes" ).animate(
+	{
 		left: "+=50",
 		opacity: 0.25
 	},
-	300, // Duration
-	function() { // Callback when the animation is finished
+
+	// Duration
+	300,
+
+	// Callback to invoke when the animation is finished
+	function() {
 		console.log( "done!" );
 	}
 );
