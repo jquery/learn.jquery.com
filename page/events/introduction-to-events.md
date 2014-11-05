@@ -143,7 +143,6 @@ $( "form" ).on( "submit", function( event ) {
 	event.stopPropagation();
 
 	// Make an AJAX request to submit the form data
-
 });
 ```
 
@@ -164,6 +163,5 @@ $( "form" ).on( "submit", function( event ) {
 	console.log( event );
 
 	// Make an AJAX request to submit the form data
-
 });
 ```
