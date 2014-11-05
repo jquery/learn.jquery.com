@@ -11,7 +11,7 @@ This is a basic tutorial, designed to help you get started using jQuery. If you 
 <!doctype html>
 <html>
 <head>
-	<meta charset="utf-8" />
+	<meta charset="utf-8">
 	<title>Demo</title>
 </head>
 <body>
@@ -39,7 +39,7 @@ window.onload = function() {
 
 	alert( "welcome" );
 
-}
+};
 ```
 
 Unfortunately, the code doesn't run until all images are finished downloading, including banner ads. To run code as soon as the document is ready to be manipulated, jQuery has a statement known as the [ready event](http://api.jquery.com/ready/):
@@ -95,7 +95,7 @@ The following example illustrates the click handling code discussed above, embed
 <!doctype html>
 <html>
 <head>
-	<meta charset="utf-8" />
+	<meta charset="utf-8">
 	<title>Demo</title>
 </head>
 <body>
@@ -184,6 +184,7 @@ When [$.get()](http://api.jquery.com/jQuery.get/) finishes getting the page `myh
 Executing callbacks with arguments can be tricky.
 
 #### Wrong
+
 This code example will ***not*** work:
 
 ```
