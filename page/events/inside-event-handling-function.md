@@ -5,15 +5,12 @@ source: http://jqfundamentals.com/legacy
 attribution:
   - jQuery Fundamentals
 ---
-Every event handling function receives an event object, which contains many
-properties and methods. The event object is most commonly used to prevent the
-default action of the event via the `.preventDefault()` method. However, the event
-object contains a number of other useful properties and methods, including:
+
+Every event handling function receives an event object, which contains many properties and methods. The event object is most commonly used to prevent the default action of the event via the `.preventDefault()` method. However, the event object contains a number of other useful properties and methods, including:
 
 #### pageX, pageY
 
-The mouse position at the time the event occurred, relative to the top left of
-the page.
+The mouse position at the time the event occurred, relative to the top left of the page.
 
 #### type
 
@@ -39,10 +36,7 @@ Prevent the default action of the event (e.g. following a link).
 
 Stop the event from bubbling up to other elements.
 
-In addition to the event object, the event handling function also has access to
-the DOM element that the handler was bound to via the keyword `this`. To turn
-the DOM element into a jQuery object that we can use jQuery methods on, we
-simply do `$( this )`, often following this idiom:
+In addition to the event object, the event handling function also has access to the DOM element that the handler was bound to via the keyword `this`. To turn the DOM element into a jQuery object that we can use jQuery methods on, we simply do `$( this )`, often following this idiom:
 
 ```
 var elem = $( this );
