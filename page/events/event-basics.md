@@ -45,11 +45,13 @@ you've set up previously. For example:
 
 ```
 $( document ).ready(function(){
+
 	// Sets up click behavior on all button elements with the alert class
 	// that exist in the DOM when the instruction was executed
 	$( "button.alert" ).on( "click", function() {
 		console.log( "A button with the alert class was clicked!" );
 	});
+
 	// Now create a new button element with the alert class. This button
 	// was created after the click listeners were applied above, so it
 	// will not have the same click behavior as its peers
@@ -74,7 +76,7 @@ the page display area (not the entire browser window).
 
 #### type
 
-The type of the event (e.g. "click").
+The type of the event (e.g., "click").
 
 #### which
 
@@ -88,7 +90,7 @@ Any data that was passed in when the event was bound. For example:
 // Event setup using the `.on()` method with data
 $( "input" ).on(
 	"change",
-	{ foo: "bar" }, // associate data with event binding
+	{ foo: "bar" }, // Associate data with event binding
 	function( eventObject ) {
 		console.log("An input value has changed! ", eventObject.data.foo);
 	}
@@ -146,7 +148,7 @@ as a space-separated list to `.on()`:
 ```
 // Multiple events, same handler
 $( "input" ).on(
-	"click change",  // bind listeners for multiple events
+	"click change", // Bind handlers for multiple events
 	function() {
 		console.log( "An input was clicked or changed!" )
 	}
@@ -175,7 +177,7 @@ that you didn't or couldn't know about.
 // Namespacing events
 $( "p" ).on( "click.myNamespace", function() { /* ... */ } );
 $( "p" ).off( "click.myNamespace" );
-$( "p" ).off( ".myNamespace" ); // unbind all events in the namespace
+$( "p" ).off( ".myNamespace" ); // Unbind all events in the namespace
 ```
 
 ### Tearing Down Event Listeners
@@ -206,11 +208,12 @@ want no handler to run, or you may want a different handler to run. jQuery
 provides the `.one()` method for this purpose.
 
 ```
-// Switching handlers using the `$.fn.one` method
+// Switching handlers using the `.one()` method
 $( "p" ).one( "click", firstClick );
 
 function firstClick() {
 	console.log( "You just clicked this for the first time!" );
+
 	// Now set up the new handler for subsequent clicks;
 	// omit this step if no further click responses are needed
 	$( this ).click( function() { console.log( "You have clicked this before!" ); } );
