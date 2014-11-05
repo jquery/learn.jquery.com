@@ -44,7 +44,7 @@ $( "div.hidden" ).show( 1250 );
 Most developers pass in a number of milliseconds to have more precise control
 over the duration.
 
-##Fade and Slide Animations
+## Fade and Slide Animations
 
 You may have noticed that `.show()` and `.hide()` use a combination of slide and fade effects
 when showing and hiding content in an animated way. If you would rather show or hide content with
@@ -71,7 +71,7 @@ $( "p" ).fadeOut( 1500 );
 $( "div.hidden" ).fadeIn( 750 );
 ```
 
-##Changing Display Based on Current Visibility State
+## Changing Display Based on Current Visibility State
 
 jQuery can also let you change a content's visibility based on its current visibility state. `.toggle()`
 will show content that is currently hidden and hide content that is currently visible. You can pass the
@@ -99,7 +99,7 @@ $( "ol" ).slideToggle( 1000 );
 $( "blockquote" ).fadeToggle( 400 );
 ```
 
-##Doing Something After an Animation Completes
+## Doing Something After an Animation Completes
 
 A common mistake when implementing jQuery effects is assuming that the execution of the next method in your
 chain will wait until the animation runs to completion.
