@@ -18,7 +18,7 @@ The `.serialize()` method serializes a form's data into a query string. For the 
 // Turning form data into a query string
 $( "#myForm" ).serialize();
 
-// creates a query string like this:
+// Creates a query string like this:
 // field_1=something&field2=somethingElse
 ```
 
@@ -28,7 +28,7 @@ While plain old serialization is great, sometimes your application would work be
 // Creating an array of objects containing form data
 $( "#myForm" ).serializeArray();
 
-// creates a structure like this:
+// Creates a structure like this:
 // [
 //   {
 //     name : "field_1",
@@ -42,6 +42,7 @@ $( "#myForm" ).serializeArray();
 ```
 
 ### Client-side validation
+
 Client-side validation is, much like many other things, extremely easy using jQuery. While there are several cases developers can test for, some of the most common ones are: presence of a required input, valid usernames/emails/phone numbers/etc&hellip;, or checking an "I agree&hellip;" box.
 
 Please note that it is advisable that you also perform server-side validation for your inputs. However, it typically makes for a better user experience to be able to validate some things without submitting the form.
@@ -51,14 +52,17 @@ With that being said, let's jump on in to some examples! First, we'll see how ea
 ```
 // Using validation to check for the presence of an input
 $( "#form" ).submit(function( event ) {
-	// if .required's value's length is zero
-	if ( $( ".required" ).val().length === 0 ) {
-		// usually show some kind of error message here
 
-		// this prevents the form from submitting
-		return false;
+	// If .required's value's length is zero
+	if ( $( ".required" ).val().length === 0 ) {
+
+		// Usually show some kind of error message here
+
+		// Prevent the form from submitting
+		event.preventDefault();
 	} else {
-		// run $.ajax here
+
+		// Run $.ajax() here
 	}
 });
 ```
@@ -70,22 +74,25 @@ Let's see how easy it is to check for invalid characters in a phone number:
 $( "#form" ).submit(function( event ) {
 	var inputtedPhoneNumber = $( "#phone" ).val();
 
-	// match only numbers
+	// Match only numbers
 	var phoneNumberRegex = /^\d*$/;
 
-	// if the phone number doesn't match the regex
+	// If the phone number doesn't match the regex
 	if ( !phoneNumberRegex.test( inputtedPhoneNumber ) ) {
-		// usually show some kind of error message here
 
-		// prevent the form from submitting
-		return false;
+		// Usually show some kind of error message here
+
+		// Prevent the form from submitting
+		event.preventDefault();
 	} else {
-		// run $.ajax here
+
+		// Run $.ajax() here
 	}
 });
 ```
 
 ### Prefiltering
+
 A prefilter is a way to modify the ajax options before each request is sent (hence, the name `prefilter`).
 
 For example, say we would like to modify all cross-domain requests through a proxy. To do so with a prefilter is quite simple:
@@ -105,7 +112,8 @@ You can pass in an optional argument before the callback function that specifies
 ```
 // Using the optional dataTypes argument
 $.ajaxPrefilter( "json script", function( options, originalOptions, jqXHR ) {
-	// do all of the prefiltering here, but only for
+
+	// Do all of the prefiltering here, but only for
 	// requests that indicate a dataType of "JSON" or "script"
 });
 ```
