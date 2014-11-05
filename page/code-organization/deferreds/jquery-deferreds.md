@@ -8,7 +8,7 @@ attribution:
   - Andree Hansson <peolanha@gmail.com>
 ---
 
-##jQuery Deferreds
+## jQuery Deferreds
 
 Deferreds were added as a part of a large rewrite of the ajax module,
 led by Julian Aubourg following the CommonJS Promises/A design. Whilst 1.5 and
@@ -45,11 +45,11 @@ An example of `$.when()` accepting multiple arguments can be seen below in
 conjunction with `.then()`:
 
 ```
-function successFunc(){
+function successFunc() {
 	console.log( "success!" );
 }
 
-function failureFunc(){
+function failureFunc() {
 	console.log( "failure!" );
 }
 
@@ -103,9 +103,9 @@ $.when(
 	getLatestNews(),
 	getLatestReactions(),
 	prepareInterface()
-).then(function(){
+).then(function() {
 	console.log( "fire after requests succeed" );
-}).fail(function(){
+}).fail(function() {
 	console.log( "something went wrong!" );
 });
 ```
