@@ -51,7 +51,6 @@ options, and easing the path to reuse and refactoring.
 ```
 // An object literal
 var myFeature = {
-
 	myProperty: "hello",
 
 	myMethod: function() {
@@ -65,7 +64,6 @@ var myFeature = {
 	readSettings: function() {
 		console.log( myFeature.settings );
 	}
-
 };
 
 myFeature.myProperty === "hello"; // true
@@ -89,11 +87,10 @@ How would we apply this pattern to jQuery code? Let's say that we had this code
 written in the traditional jQuery style:
 
 ```
-// clicking on a list item loads some content using the
+// Clicking on a list item loads some content using the
 // list item's ID, and hides content in sibling list items
 $( document ).ready(function() {
-
-	$( "#myFeature li" ).append( "<div/>" ).click(function() {
+	$( "#myFeature li" ).append( "<div>" ).click(function() {
 		var item = $( this );
 		var div = item.find( "div" );
 		div.load( "foo.php?item=" + item.attr( "id" ), function() {
@@ -101,7 +98,6 @@ $( document ).ready(function() {
 			item.siblings().find( "div" ).hide();
 		});
 	});
-
 });
 ```
 
@@ -115,7 +111,6 @@ functionality later.
 ```
 // Using an object literal for a jQuery feature
 var myFeature = {
-
 	init: function( settings ) {
 		myFeature.config = {
 			items: $( "#myFeature li" ),
@@ -123,7 +118,7 @@ var myFeature = {
 			urlBase: "/foo.php?item="
 		};
 
-		// allow overriding the default config
+		// Allow overriding the default config
 		$.extend( myFeature.config, settings );
 
 		myFeature.setup();
@@ -167,7 +162,6 @@ var myFeature = {
 			$( this ).data( "container" ).hide();
 		});
 	}
-
 };
 
 $( document ).ready( myFeature.init );
@@ -203,7 +197,7 @@ desired.
 // The module pattern
 var feature = (function() {
 
-	// private variables and functions
+	// Private variables and functions
 	var privateThing = "secret";
 	var publicThing = "not secret";
 
@@ -216,17 +210,16 @@ var feature = (function() {
 		changePrivateThing();
 	};
 
-	// public API
+	// Public API
 	return {
 		publicThing: publicThing,
 		sayPrivateThing: sayPrivateThing
 	};
-
 })();
 
 feature.publicThing; // "not secret"
 
-// logs "secret" and changes the value of privateThing
+// Logs "secret" and changes the value of privateThing
 feature.sayPrivateThing();
 ```
 
@@ -250,9 +243,7 @@ of the module, `showItemByIndex()`.
 ```
 // Using the module pattern for a jQuery feature
 $( document ).ready(function() {
-
 	var feature = (function() {
-
 		var items = $( "#myFeature li" );
 		var container = $( "<div class='container'></div>" );
 		var currentItem = null;
@@ -262,31 +253,31 @@ $( document ).ready(function() {
 			var item = $( this );
 			var container = container.clone().appendTo( item );
 			item.data( "container", container );
-		},
+		};
 
-		buildUrl = function() {
+		var buildUrl = function() {
 			return urlBase + currentItem.attr( "id" );
-		},
+		};
 
-		showItem = function() {
+		var showItem = function() {
 			currentItem = $( this );
 			getContent( showContent );
-		},
+		};
 
-		showItemByIndex = function( idx ) {
+		var showItemByIndex = function( idx ) {
 			$.proxy( showItem, items.get( idx ) );
-		},
+		};
 
-		getContent = function( callback ) {
+		var getContent = function( callback ) {
 			currentItem.data( "container" ).load( buildUrl(), callback );
-		},
+		};
 
-		showContent = function() {
+		var showContent = function() {
 			currentItem.data( "container" ).show();
 			hideContent();
-		},
+		};
 
-		hideContent = function() {
+		var hideContent = function() {
 			currentItem.siblings().each(function() {
 				$( this ).data( "container" ).hide();
 			});
@@ -297,10 +288,8 @@ $( document ).ready(function() {
 		return {
 			showItemByIndex: showItemByIndex
 		};
-
 	})();
 
 	feature.showItemByIndex( 0 );
-
 });
 ```
