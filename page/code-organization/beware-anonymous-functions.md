@@ -6,9 +6,8 @@ attribution:
   - jQuery Fundamentals
 ---
 
-Anonymous functions bound everywhere are a pain. They're difficult to debug,
-maintain, test, or reuse. Instead, use an object literal to organize and name
-your handlers and callbacks.
+Anonymous functions bound everywhere are a pain. They're difficult to debug, maintain, test, or reuse. Instead, use an object literal to organize and name your handlers and callbacks.
+
 ```
 // BAD
 $( document ).ready(function() {
