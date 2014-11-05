@@ -5,6 +5,7 @@ source: http://jqfundamentals.com/legacy
 attribution:
   - jQuery Fundamentals
 ---
+
 jQuery provides a method `.on()` to
 respond to any event on the selected elements. This is called an _event binding_.
 Although `.on()` isn't the only method provided for event binding, it is a best
@@ -14,15 +15,16 @@ the evolution of event binding in jQuery](/events/history-of-events).
 The `.on()` method provides several useful features:
 
 - [Bind any event triggered on the selected elements to an event handler](#simple-event-binding)
-- [Bind multiple events to one event handler](#multiple-events-one-handler)
-- [Bind multiple events and multiple handlers to the selected elements](#multiple-events-multiple-handlers)
-- [Use details about the event in the event handler](#event-object)
-- [Pass data to the event handler for custom events](#passing-data)
-- [Bind events to elements that will be rendered in the future](#event-delegation)
+- [Bind multiple events to one event handler](#many-events-but-only-one-event-handler)
+- [Bind multiple events and multiple handlers to the selected elements](#many-events-and-handlers)
+- [Use details about the event in the event handler](#the-event-object)
+- [Pass data to the event handler for custom events](#passing-data-to-the-event-handler)
+- [Bind events to elements that will be rendered in the future](#binding-events-to-elements-that-don-39-t-exist-yet)
 
 ### Examples
 
-#### <a name="simple-event-binding">Simple event binding</a>
+#### Simple event binding
+
 ```
 // When any <p> tag is clicked, we expect to see '<p> was clicked' in the console.
 $( "p" ).on( "click", function() {
@@ -30,21 +32,21 @@ $( "p" ).on( "click", function() {
 });
 ```
 
-#### <a name="multiple-events-one-handler">Many events, but only one event handler</a>
+#### Many events, but only one event handler
 
 Suppose you want to trigger the same event whenever the mouse hovers over or leaves
 the selected elements. The best practice for this is to use "mouseenter mouseleave".
 Note the difference between this and the next example.
 
 ```
-// When a user focuses on or changes any input element, we expect a console message
-// bind to multiple events
+// When a user focuses on or changes any input element,
+// we expect a console message bind to multiple events
 $( "div" ).on( "mouseenter mouseleave", function() {
 	console.log( "mouse hovered over or left a div" );
 });
 ```
 
-#### <a name="multiple-events-multiple-handlers">Many events and handlers</a>
+#### Many events and handlers
 
 Suppose that instead you want different event handlers for when the mouse enters and
 leaves an element. This is more common than the previous example. For example, if you
@@ -66,7 +68,7 @@ $( "div" ).on({
 });
 ```
 
-#### <a name="event-object">The event object</a>
+#### The event object
 
 Handling events can be tricky. It's often helpful to use the extra information contained
 in the event object passed to the event handler for more control. To become familiar with
@@ -80,7 +82,7 @@ $( "div" ).on( "click", function( event ) {
 });
 ```
 
-#### <a name="passing-data">Passing data to the event handler</a>
+#### Passing data to the event handler
 
 You can pass your own data to the event object.
 
@@ -93,7 +95,7 @@ $( "p" ).on( "click", {
 ```
 
 
-#### <a name="event-delegation">Binding events to elements that don't exist yet</a>
+#### Binding events to elements that don't exist yet
 
 This is called _event delegation_. Here's an example just for completeness, but see the
 page on [Event Delegation](/events/event-delegation/) for a full explanation.
