@@ -5,6 +5,7 @@ source: http://jqfundamentals.com/legacy
 attribution:
     - jQuery Fundamentals
 ---
+
 While jQuery does offer many Ajax-related convenience methods, the core
 `$.ajax()` method is at the heart of all of them, and understanding it is
 imperative. We'll review it first, and then touch briefly on the convenience
@@ -21,34 +22,34 @@ particularly valuable because it offers the ability to specify both success and
 failure callbacks. Also, its ability to take a configuration object that can
 be defined separately makes it easier to write reusable code. For complete
 documentation of the configuration options, visit
-[http://api.jquery.com/jQuery.ajax/](http://api.jquery.com/jQuery.ajax/ "$.ajax
-documentation on api.jquery.com").
+[http://api.jquery.com/jQuery.ajax/](http://api.jquery.com/jQuery.ajax/).
 
 ```
 // Using the core $.ajax() method
 $.ajax({
-	// the URL for the request
+
+	// The URL for the request
 	url: "post.php",
 
-	// the data to send (will be converted to a query string)
+	// The data to send (will be converted to a query string)
 	data: {
 		id: 123
 	},
 
-	// whether this is a POST or GET request
+	// Whether this is a POST or GET request
 	type: "GET",
 
-	// the type of data we expect back
+	// The type of data we expect back
 	dataType : "json",
 
-	// code to run if the request succeeds;
+	// Code to run if the request succeeds;
 	// the response is passed to the function
 	success: function( json ) {
-		$( "<h1/>" ).text( json.title ).appendTo( "body" );
-		$( "<div class=\"content\"/>").html( json.html ).appendTo( "body" );
+		$( "<h1>" ).text( json.title ).appendTo( "body" );
+		$( "<div class=\"content\">").html( json.html ).appendTo( "body" );
 	},
 
-	// code to run if the request fails; the raw request and
+	// Code to run if the request fails; the raw request and
 	// status codes are passed to the function
 	error: function( xhr, status, errorThrown ) {
 		alert( "Sorry, there was a problem!" );
@@ -57,7 +58,7 @@ $.ajax({
 		console.dir( xhr );
 	},
 
-	// code to run regardless of success or failure
+	// Code to run regardless of success or failure
 	complete: function( xhr, status ) {
 		alert( "The request is complete!" );
 	}
@@ -76,8 +77,7 @@ data type. For example, for JSON data, the `Content-type` header should be
 
 There are many, many options for the `$.ajax()` method, which is part of its
 power. For a complete list of options, visit
-[http://api.jquery.com/jQuery.ajax/](http://api.jquery.com/jQuery.ajax/ "$.ajax
-documentation on api.jquery.com"); here are several that you will use
+[http://api.jquery.com/jQuery.ajax/](http://api.jquery.com/jQuery.ajax/); here are several that you will use
 frequently:
 
 #### async
@@ -138,8 +138,7 @@ The time in milliseconds to wait before considering the request a failure.
 
 Set to `true` to use the param serialization style in use prior to jQuery 1.4.
 For details, see
-[http://api.jquery.com/jQuery.param/](http://api.jquery.com/jQuery.param/
-"$.param documentation on api.jquery.com").
+[http://api.jquery.com/jQuery.param/](http://api.jquery.com/jQuery.param/).
 
 #### type
 
@@ -211,21 +210,22 @@ type in their name.
 ```
 // Using jQuery's Ajax convenience methods
 
-// get plain text or HTML
+// Get plain text or HTML
 $.get( "/users.php", {
 	userId: 1234
 }, function( resp ) {
 	console.log( resp ); // server response
 });
 
-// add a script to the page, then run a function defined in it
+// Add a script to the page, then run a function defined in it
 $.getScript( "/static/js/myScript.js", function() {
 	functionFromMyScript();
 });
 
-// get JSON-formatted data from the server
+// Get JSON-formatted data from the server
 $.getJSON( "/details.php", function( resp ) {
-	// log each key in the response data
+
+	// Log each key in the response data
 	$.each( resp, function( key, value ) {
 		console.log( key + " : " + value );
 	});
@@ -241,12 +241,12 @@ providing a URL to the method, you can optionally provide a selector; jQuery
 will fetch only the matching content from the returned HTML.
 
 ```
-// Using $.fn.load to populate an element
+// Using .load() to populate an element
 $( "#newContent" ).load( "/foo.html" );
 ```
 
 ```
-// Using $.fn.load to populate an element based on a selector
+// Using .load() to populate an element based on a selector
 $( "#newContent" ).load( "/foo.html #myDiv h1:first", function( html ) {
 	alert( "Content updated!" );
 });
