@@ -2,6 +2,7 @@
 title: History of jQuery Events
 level: intermediate
 ---
+
 Throughout the evolution of jQuery the means of event binding has changed for various reasons ranging from performance to semantics. As of jQuery v1.7 the `.on()` method is the accepted means of both directly binding events and creating delegated events. This article aims to explore the history of *event delegation* from jQuery v1.0 to the present and how each version leverages it.
 
 Given the following HTML, for our example we want to log the text of the each `<li>` to console whenever it is clicked.
@@ -19,6 +20,7 @@ Given the following HTML, for our example we want to log the text of the each `<
 ```
 
 ### [.bind()](http://api.jquery.com/bind/) (Deprecated)
+
 Introduced in jQuery v1.0
 
 It is possible to use `.bind()` and attach a handler to every element.
@@ -29,6 +31,7 @@ It is possible to use `.bind()` and attach a handler to every element.
 	console.log( elem.text() );
 });​​​​​​​​​​​​​​​​​​​​​
 ```
+
 As discussed in the [event delegation](/event/event-delegation) article, this is not optimal.
 
 ### liveQuery
@@ -36,6 +39,7 @@ As discussed in the [event delegation](/event/event-delegation) article, this is
 
 
 ### [.bind()](http://api.jquery.com/bind/) delegation (Deprecated)
+
 Introduced in jQuery v1.0
 
 Generally we don't associate `.bind()` with *event delegation*, however prior to jQuery v1.3 it was the only means of delegation available to us.
@@ -53,6 +57,7 @@ We are able to take advantage of *event bubbling* here by attaching a *click* ev
 
 
 ### [.live()](http://api.jquery.com/live/) (Deprecated)
+
 Introduced in jQuery v1.3
 
 All `.live()` event handlers are bound to the *document* root by default.
@@ -76,6 +81,7 @@ The last element to receive the *click* event is *document*, this is where our `
 
 
 ### [.live()](http://api.jquery.com/live/) w/ context (Deprecated)
+
 Introduced in jQuery v1.4
 
 Passing the *context* as a second optional argument to the `$()` function has been supported since v1.0. However support for using this *context* with the `$.live()` method was not added until v1.4.
@@ -101,6 +107,7 @@ $( "li", "#list" ).live( "click", function( event ) {
 In this instance when an `<li>` is clicked the event still bubbles all the way up the *document tree* as it did before. However, our event handler is now bound to the parent `<ul>` tag, so we do not have to wait for the event to bubble all the way up to the *document* root.
 
 ### [.delegate()](http://api.jquery.com/delegate/) (Deprecated)
+
 First introduced in jQuery v1.4.2
 
 The `.delegate()` method provides a clear difference between the *context* of where to attach delegated event handler, and the *selector* to match when the event bubbles up to the delegated element.
@@ -113,6 +120,7 @@ $( "#list" ).delegate( "li", "click", function( event ) {
 ```
 
 ### [.on()](http://api.jquery.com/on/)
+
 First introduced in jQuery v1.7
 
 The `.on()` method gives us a semantic approach for creating directly bound events as well as delegated events. It eliminates the need to use the deprecated `.bind()`, `.live()`, and `.delegate()` methods, providing a single API for creating events.
@@ -125,4 +133,5 @@ $( "#list" ).on( "click", "li", function( event ) {
 ```
 
 ### Summary
+
 All of these ways of *event delegation* were innovative and considered a best practice at the time of their release. Depending on what version of jQuery you have implemented use the appropriate means of *event delegation*.
