@@ -8,7 +8,7 @@ attribution:
   - Andree Hansson <peolanha@gmail.com>
 ---
 
-##Further Deferreds examples
+## Further Deferreds examples
 
 Deferreds are used behind the hood in Ajax but it doesn't mean they can't also
 be used elsewhere. This section describes situations where deferreds will help
@@ -75,10 +75,10 @@ $.createCache = function( requestFunction ) {
 		}
 		return cache[ key ].done( callback );
 	};
-}
+};
 ```
 
-Now that the request logic is abstracted away, `cachedGetScript` can be rewritten
+Now that the request logic is abstracted away, `$.cachedGetScript()` can be rewritten
 as follows:
 
 ```
@@ -87,7 +87,7 @@ $.cachedGetScript = $.createCache(function( defer, url ) {
 });
 ```
 
-This will work because every call to `createCache` will create a new cache
+This will work because every call to `$.createCache()` will create a new cache
 repository and return a new cache-retrieval function.
 
 #### Image loading
@@ -154,7 +154,7 @@ also be used for timing purposes.
 For instance, you may need to perform an action on the page after a
 given amount of time so as to attract the user's attention to a specific
 feature they may not be aware of or deal with a timeout (for a quiz
-question for instance). While `setTimeout` is good for most use-cases it
+question for instance). While `setTimeout()` is good for most use-cases it
 doesn't handle the situation when the timer is asked for later, even
 after it has theoretically expired. We can handle that with the
 following caching system:
@@ -179,7 +179,7 @@ $.afterDOMReady = $.createCache(function( defer, delay ) {
 });
 ```
 
-The new `afterDOMReady` helper method provides proper timing after the DOM
+The new `$.afterDOMReady()` helper method provides proper timing after the DOM
 is ready while ensuring the bare minimum of timers will be used. If the
 delay is already expired, any callback will be called right away.
 
@@ -211,14 +211,16 @@ opened:
 
 ```
 if ( buttonClicked ) {
-	/* perform specific action */
+
+	// Perform specific action
+
 }
 ```
 
 This is a very coupled solution. If you want to add some other action,
 you have to edit the bind code or just duplicate it all. If you don't,
 your only option is to test for `buttonClicked` and you may lose that new
-action because the `buttonClicked` variable may be false and your new code
+action because the `buttonClicked` variable may be `false` and your new code
 may never be executed.
 
 We can do much better using deferreds (for simplification sake, the
@@ -230,6 +232,7 @@ multiple event types):
 $.fn.bindOnce = function( event, callback ) {
 	var element = $( this[ 0 ] ),
 		defer = element.data( "bind_once_defer_" + event );
+
 	if ( !defer ) {
 		defer = $.Deferred();
 		function deferCallback() {
@@ -239,18 +242,16 @@ $.fn.bindOnce = function( event, callback ) {
 		element.bind( event, deferCallback )
 		element.data( "bind_once_defer_" + event , defer );
 	}
+
 	return defer.done( callback ).promise();
 };
 ```
 
 The code works as follows:
 
--   Check if the element already has a deferred attached for the given
-    event
--   if not, create it and make it so it is resolved when the event is
-    fired the first time around
--   then attach the given callback to the deferred and return the
-    promise
+* Check if the element already has a deferred attached for the given event
+* if not, create it and make it so it is resolved when the event is fired the first time around
+* then attach the given callback to the deferred and return the promise
 
 While the code is definitely more verbose, it makes dealing with the
 problem at hand much simpler in a compartmentalized and decoupled way.
@@ -275,7 +276,9 @@ If an action should be performed only when a panel is opened later on:
 
 ```
 openPanel.done(function() {
-	/* perform specific action */
+
+	// Perform specific action
+
 });
 ```
 
@@ -315,10 +318,10 @@ The HTML code for this would look something like:
 
 ```
 <div id="myPanel">
-	<img data-src="image1.png" />
-	<img data-src="image2.png" />
-	<img data-src="image3.png" />
-	<img data-src="image4.png" />
+	<img data-src="image1.png" alt="">
+	<img data-src="image2.png" alt="">
+	<img data-src="image3.png" alt="">
+	<img data-src="image4.png" alt="">
 </div>
 ```
 
@@ -330,7 +333,7 @@ $( "#myButton" ).firstClick(function() {
 	var panel = $( "#myPanel" ),
 		promises = [];
 
-	$( "img", panel ).each(function() {
+	panel.find( "img" ).each(function() {
 		var image = $( this ),
 			src = element.attr( "data-src" );
 		if ( src ) {
@@ -344,9 +347,7 @@ $( "#myButton" ).firstClick(function() {
 		}
 	});
 
-	promises.push(
-		panel.slideDownPromise()
-	);
+	promises.push( panel.slideDownPromise() );
 
 	$.when.apply( null, promises ).done(function() {
 		panel.fadeIn();
@@ -354,8 +355,8 @@ $( "#myButton" ).firstClick(function() {
 });
 ```
 
-The trick here is to keep track of all the `loadImage` promises. We later
-join them with the panel `slideDown` animation using `$.when`. So when the
+The trick here is to keep track of all the `$.loadImage()` promises. We later
+join them with the panel `.slideDown()` animation using `$.when()`. So when the
 button is first clicked, the panel will slide down and the images will
 start loading. Once the panel has finished sliding down and all the
 images have been loaded, then, and only then, will the panel fade in.
@@ -366,18 +367,16 @@ In order to implement deferred image display on the entire page,
 the following format in HTML can be used.
 
 ```
-<img data-src="image1.png" data-after="1000" src="placeholder.png" />
-<img data-src="image2.png" data-after="1000" src="placeholder.png" />
-<img data-src="image1.png" src="placeholder.png" />
-<img data-src="image2.png" data-after="2000" src="placeholder.png" />
+<img data-src="image1.png" data-after="1000" src="placeholder.png" alt="">
+<img data-src="image2.png" data-after="1000" src="placeholder.png" alt="">
+<img data-src="image1.png" src="placeholder.png" alt="">
+<img data-src="image2.png" data-after="2000" src="placeholder.png" alt="">
 ```
 
 What it says is pretty straight-forward:
 
--   Load `image1.png` and show it immediately for the third image and
-    after one second for the first one
--   Load `image2.png` and show it after one second for the second image
-    and after two seconds for the fourth image
+* Load `image1.png` and show it immediately for the third image and after one second for the first one
+* Load `image2.png` and show it after one second for the second image and after two seconds for the fourth image
 
 ```
 $( "img" ).each(function() {
