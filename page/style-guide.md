@@ -10,28 +10,29 @@ customFields:
 
 ## Formatting Conventions
 
-Articles in the learn site are authored with [GitHub Flavored Markdown](http://github.github.com/github-flavored-markdown/), and the beginning of each article contains some [YAML](http://www.yaml.org/) "front matter" that contains metadata used when the article is published.
+Articles in the learn site are authored with [GitHub Flavored Markdown](http://github.github.com/github-flavored-markdown/), and the beginning of each article contains some JSON "front matter" that contains metadata used when the article is published.
 
 ### Article Header Metadata
 
 Each article should have the following header (see below as some metatags are optional):
 
 ```
----
-title:  <article title>
-level:  [beginner|intermediate|advance]
-source:  <url of source of the material derived>
-attribution:
-  - Ralph Whitbeck <ralph@email.com>
-  - John Paul <john@email.com>
----
+<script>{
+	"title": <article title>,
+	"level": [beginner|intermediate|advance],
+	"source": <url of source of the material derived>,
+	"attribution": [
+		"Ralph Whitbeck <ralph@email.com>",
+		"John Paul <john@email.com>"
+	]
+}</script>
 ```
 
 The `source` and `attribution` properties are optional, and should be used primarily if you are importing an article from an outside source where it was published before being donated for inclusion in the learn site. You should **not** include these properties if you are adding a new article or editing an existing one, as your contribution will be acknowledged via the git commit logs.
 
 ### Code Blocks
 
-Code blocks should be set off with triple backticks and should **not** be indented. (That is to say, the site prefers the use of "fenced blocks"notation supported by [gfm](http://github.github.com/github-flavored-markdown/).)
+Code blocks should be set off with triple backticks and should **not** be indented. (That is to say, the site prefers the use of "fenced blocks" notation supported by [gfm](http://github.github.com/github-flavored-markdown/).)
 
 ## Writing Style
 
