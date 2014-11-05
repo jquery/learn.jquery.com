@@ -254,10 +254,11 @@ $.fn.twitterResult = function( settings ) {
 			}, $.fn.twitterResult.events[ ev ] );
 		});
 
-		// use the class of each action to figure out
+		// Use the class of each action to figure out
 		// which event it will trigger on the results panel
 		a.find( "li" ).click(function() {
-			// pass the li that was clicked to the function
+
+			// Pass the li that was clicked to the function
 			// so it can be manipulated if needed
 			results.trigger( $( this ).attr( "class" ), [ $( this ) ] );
 		});
@@ -265,7 +266,7 @@ $.fn.twitterResult = function( settings ) {
 };
 
 $.fn.twitterResult.createActions = function() {
-	return $( "<ul class='actions' />" ).append(
+	return $( "<ul class='actions'>" ).append(
 		"<li class='refresh'>Refresh</li>" +
 		"<li class='remove'>Remove</li>" +
 		"<li class='collapse'>Collapse</li>"
@@ -273,15 +274,15 @@ $.fn.twitterResult.createActions = function() {
 };
 
 $.fn.twitterResult.events = {
-
 	refresh: function( e ) {
-		// indicate that the results are refreshing
+
+		// Indicate that the results are refreshing
 		var elem = $( this ).addClass( "refreshing" );
 
 		elem.find( "p.tweet" ).remove();
 		results.append( "<p class='loading'>Loading...</p>" );
 
-		// get the twitter data using jsonp
+		// Get the twitter data using jsonp
 		$.getJSON( "http://search.twitter.com/search.json?q=" + escape( e.data.term ) + "&rpp=5&callback=?", function( json ) {
 			elem.trigger( "populate", [ json ] );
 		});
@@ -308,7 +309,7 @@ $.fn.twitterResult.events = {
 			elem.append( tweet );
 		});
 
-		// indicate that the results are done refreshing
+		// Indicate that the results are done refreshing
 		elem.removeClass("refreshing");
 	},
 
@@ -318,28 +319,27 @@ $.fn.twitterResult.events = {
 		}
 		$( this ).remove();
 
-		// indicate that we no longer have a panel for the term
+		// Indicate that we no longer have a panel for the term
 		search_terms[ e.data.term ] = 0;
 	},
 
 	collapse: function( e ) {
 		$( this ).find( "li.collapse" )
-		.removeClass( "collapse" )
-		.addClass( "expand" )
-		.text( "Expand" );
+			.removeClass( "collapse" )
+			.addClass( "expand" )
+			.text( "Expand" );
 
 		$( this ).addClass( "collapsed" );
 	},
 
 	expand: function( e ) {
 		$( this ).find( "li.expand" )
-		.removeClass( "expand" )
-		.addClass( "collapse" )
-		.text( "Collapse" );
+			.removeClass( "expand" )
+			.addClass( "collapse" )
+			.text( "Collapse" );
 
 		$( this ).removeClass( "collapsed" );
 	}
-
 };
 ```
 
@@ -361,21 +361,22 @@ Here's how the Twitter container bindings look:
 
 ```
 $( "#twitter" ).on( "getResults", function( e, term ) {
-	// make sure we don't have a box for this term already
+
+	// Make sure we don't have a box for this term already
 	if ( !search_terms[ term ] ) {
 		var elem = $( this );
 		var template = elem.find( "div.template" );
 
-		// make a copy of the template div
+		// Make a copy of the template div
 		// and insert it as the first results box
 		results = template.clone()
-		.removeClass( "template" )
-		.insertBefore( elem.find( "div:first" ) )
-		.twitterResult({
-			"term": term
-		});
+			.removeClass( "template" )
+			.insertBefore( elem.find( "div:first" ) )
+			.twitterResult({
+				"term": term
+			});
 
-		// load the content using the "refresh"
+		// Load the content using the "refresh"
 		// custom event that we bound to the results container
 		results.trigger( "refresh" );
 
