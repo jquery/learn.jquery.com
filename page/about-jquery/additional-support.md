@@ -76,7 +76,7 @@ The IRC Channel is best if you need quick help with any of the following:
 
 If your problem is more in-depth, we may ask you to post to the mailing list, or the bug tracker, so that we can help you in a more-suitable environment.
 
-####Connect info:
+#### Connect info:
 
 **Server:** irc.freenode.net
 
@@ -86,7 +86,7 @@ You can also connect at http://webchat.freenode.net/?channels=#jquery.
 
 Additionally we have `#jquery-es` and `#jquery-de` if you want to speak your native language.
 
-If you wish to post code snippets to the channel, you should use a paste site, like [jsfiddle.net](http://jsfiddle.net/) or [jsbin.com](http://jsbin.com/)
+If you wish to post code snippets to the channel, you should use a paste site, like [jsfiddle.net](http://jsfiddle.net/) or [jsbin.com](http://jsbin.com/).
 
 ### StackOverflow
 
