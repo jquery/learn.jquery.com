@@ -25,7 +25,7 @@ $( "a" ).trigger( "click" );
 
 In order to trigger a native browser event, you have to use [document.createEventObject](http://msdn.microsoft.com/en-us/library/ie/ms536390%28v=vs.85%29.aspx) for < IE9 and  [document.createEvent](https://developer.mozilla.org/en/DOM/document.createEvent) for all other browsers. Using these two APIs, you can programmatically create an event that behaves exactly as if someone has actually clicked on a file input box. The default action will happen, and the browse file dialog will display.
 
-The jQuery UI Team created [jquery.simulate.js](https://github.com/eduardolundgren/jquery-simulate/blob/master/jquery.simulate.js) in order to simplify triggering a native browser event for use in their automated testing. Its usage is modeled after jQuery's trigger.
+The jQuery UI Team created [jquery.simulate.js](https://github.com/jquery/jquery-simulate/) in order to simplify triggering a native browser event for use in their automated testing. Its usage is modeled after jQuery's trigger.
 
 ```
 // Triggering a native browser event using the simulate plugin
