@@ -1,7 +1,7 @@
----
-title: Using jQuery UI with Bower
-level: intermediate
----
+<script>{
+	"title": "Using jQuery UI with Bower",
+	"level": "intermediate"
+}</script>
 
 <div class="warning">**Note:** This documentation refers to functionality made available in jQuery UI 1.11.</div>
 

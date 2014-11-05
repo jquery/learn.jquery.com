@@ -1,8 +1,8 @@
----
-title:        Queue & Dequeue Explained
-level:        advanced
-source:       http://jqueryfordesigners.com/api-queue-dequeue/
----
+<script>{
+	"title": "Queue & Dequeue Explained",
+	"level": "advanced",
+	"source": "http://jqueryfordesigners.com/api-queue-dequeue/"
+}</script>
 
 When you use the `.animate()`, `.show()`, `.hide()`, `.slideUp()`, etc. effect methods, you're adding a job to the effects queue. By default, using `.queue()` and passing a function, will add it to the effects queue. So we're creating our own bespoke animation step:
 

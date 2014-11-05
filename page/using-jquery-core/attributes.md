@@ -1,7 +1,7 @@
----
-title   : Attributes
-level   : beginner
----
+<script>{
+	"title": "Attributes",
+	"level": "beginner"
+}</script>
 
 An element's attributes can contain useful information for your application, so it's important to be able to get and set them.
 

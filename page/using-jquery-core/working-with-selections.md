@@ -1,7 +1,7 @@
----
-title   : Working with Selections
-level: beginner
----
+<script>{
+	"title": "Working with Selections",
+	"level": "beginner"
+}</script>
 
 ### Getters & Setters
 

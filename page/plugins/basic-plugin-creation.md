@@ -1,10 +1,9 @@
----
-title   : How to Create a Basic Plugin
-level:        intermediate
-source: http://jqfundamentals.com/legacy
-attribution:
-  - jQuery Fundamentals
----
+<script>{
+	"title": "How to Create a Basic Plugin",
+	"level": "intermediate",
+	"source": "http://jqfundamentals.com/legacy",
+	"attribution": [ "jQuery Fundamentals" ]
+}</script>
 
 Sometimes you want to make a piece of functionality available throughout your code. For example, perhaps you want a single method you can call on a jQuery selection that performs a series of operations on the selection. Maybe you wrote a really useful utility function that you want to be able to move easily to other projects. In this case, you may want to write a plugin.
 

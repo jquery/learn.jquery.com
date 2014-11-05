@@ -1,10 +1,9 @@
----
-title:        Loops
-level:        beginner
-source: http://jqfundamentals.com/legacy
-attribution:
-  - jQuery Fundamentals
----
+<script>{
+	"title": "Loops",
+	"level": "beginner",
+	"source": "http://jqfundamentals.com/legacy",
+	"attribution": [ "jQuery Fundamentals" ]
+}</script>
 
 Loops let a block of code run a certain number of times:
 

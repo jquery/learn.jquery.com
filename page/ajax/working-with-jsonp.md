@@ -1,10 +1,9 @@
----
-title   : Working with JSONP
-level: beginner
-source: http://jqfundamentals.com/legacy
-attribution:
-  - jQuery Fundamentals
----
+<script>{
+	"title": "Working with JSONP",
+	"level": "beginner",
+	"source": "http://jqfundamentals.com/legacy",
+	"attribution": [ "jQuery Fundamentals" ]
+}</script>
 
 The advent of JSONP — essentially a consensual cross-site scripting hack — has opened the door to powerful mashups of content. Many prominent sites provide JSONP services, allowing you access to their content via a predefined API. A particularly great source of JSONP-formatted data is the [Yahoo! Query Language](http://developer.yahoo.com/yql/console/), which we'll use in the following example to fetch news about cats.
 

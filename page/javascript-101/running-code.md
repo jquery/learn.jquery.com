@@ -1,10 +1,9 @@
----
-title:        Running Code
-level:        beginner
-source: http://jqfundamentals.com/legacy
-attribution:
-  - jQuery Fundamentals
----
+<script>{
+	"title": "Running Code",
+	"level": "beginner",
+	"source": "http://jqfundamentals.com/legacy",
+	"attribution": [ "jQuery Fundamentals" ]
+}</script>
 
 ### External
 

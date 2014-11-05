@@ -1,7 +1,7 @@
----
-title:        How do I select elements when I already have a DOM element?
-source:       http://docs.jquery.com/Frequently_Asked_Questions
----
+<script>{
+	"title": "How do I select elements when I already have a DOM element?",
+	"source": "http://docs.jquery.com/Frequently_Asked_Questions"
+}</script>
 
 If you have a variable containing a DOM element, and want to select elements related to that DOM element, simply wrap it in a jQuery object.
 

@@ -1,7 +1,8 @@
----
-title: Using jQuery UI ThemeRoller
-level: beginner
----
+<script>{
+	"title": "Using jQuery UI ThemeRoller",
+	"level": "beginner"
+}</script>
+
 ![ThemeRoller logo](/resources/jquery-ui/themeroller-logo.png)
 
 ### About ThemeRoller

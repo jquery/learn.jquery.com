@@ -1,10 +1,9 @@
----
-title:        Introducing Custom Events
-level: intermediate
-source: http://jqfundamentals.com/legacy
-attribution:
-  - jQuery Fundamentals
----
+<script>{
+	"title": "Introducing Custom Events",
+	"level": "intermediate",
+	"source": "http://jqfundamentals.com/legacy",
+	"attribution": [ "jQuery Fundamentals" ]
+}</script>
 
 ## Custom Events
 

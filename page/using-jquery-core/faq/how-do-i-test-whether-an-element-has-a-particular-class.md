@@ -1,7 +1,7 @@
----
-title:        How do I test whether an element has a particular class?
-source:       http://docs.jquery.com/Frequently_Asked_Questions
----
+<script>{
+	"title": "How do I test whether an element has a particular class?",
+	"source": "http://docs.jquery.com/Frequently_Asked_Questions"
+}</script>
 
 [.hasClass()](http://api.jquery.com/hasClass/) (added in version 1.2) handles this common use case:
 

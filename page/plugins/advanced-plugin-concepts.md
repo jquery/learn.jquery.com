@@ -1,7 +1,7 @@
----
-title: Advanced Plugin Concepts
-level: intermediate
----
+<script>{
+	"title": "Advanced Plugin Concepts",
+	"level": "intermediate"
+}</script>
 
 ### Provide Public Access to Default Plugin Settings
 

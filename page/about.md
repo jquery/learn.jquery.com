@@ -1,10 +1,12 @@
----
-title: About This Site
-customFields:
-  -
-    key: "is_chapter"
-    value: 0
----
+<script>{
+	"title": "About This Site",
+	"customFields": [
+		{
+			"key": "is_chapter",
+			"value": 0
+		}
+	]
+}</script>
 
 Learning how and when to use jQuery is a different process for each and every web developer, depending largely on experience with the primary tools for front-end development (HTML, CSS, and JavaScript) and knowledge of general programming principles. Over the years developers of all stripes have come to rely on our [API documentation](http://api.jquery.com) for help figuring out how to do exactly what they need to do.
 

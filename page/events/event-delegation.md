@@ -1,10 +1,9 @@
----
-title   : Understanding Event Delegation
-level: intermediate
-source: http://jqfundamentals.com/legacy
-attribution:
-  - jQuery Fundamentals
----
+<script>{
+	"title": "Understanding Event Delegation",
+	"level": "intermediate",
+	"source": "http://jqfundamentals.com/legacy",
+	"attribution": [ "jQuery Fundamentals" ]
+}</script>
 
 ## Introduction
 

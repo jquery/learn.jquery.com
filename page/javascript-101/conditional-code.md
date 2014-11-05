@@ -1,10 +1,9 @@
----
-title:        Conditional Code
-level:        beginner
-source: http://jqfundamentals.com/legacy
-attribution:
-  - jQuery Fundamentals
----
+<script>{
+	"title": "Conditional Code",
+	"level": "beginner",
+	"source": "http://jqfundamentals.com/legacy",
+	"attribution": [ "jQuery Fundamentals" ]
+}</script>
 
 Sometimes a block of code should only be run under certain conditions. Flow control – via `if` and `else` blocks – lets you run code if certain conditions have been met.
 

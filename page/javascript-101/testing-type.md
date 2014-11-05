@@ -1,10 +1,9 @@
----
-title:        Testing Type
-level:        beginner
-source: http://jqfundamentals.com/legacy
-attribution:
-  - jQuery Fundamentals
----
+<script>{
+	"title": "Testing Type",
+	"level": "beginner",
+	"source": "http://jqfundamentals.com/legacy",
+	"attribution": [ "jQuery Fundamentals" ]
+}</script>
 
 JavaScript offers a way to test the type of a variable. However, the result can be confusing – for example, the type of an array is "Object."
 

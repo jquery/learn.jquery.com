@@ -1,10 +1,9 @@
----
-title: Getting Started
-level: Beginner
-source: http://jqfundamentals.com/legacy
-attribution:
-  - jQuery Fundamentals
----
+<script>{
+	"title": "Getting Started",
+	"level": "Beginner",
+	"source": "http://jqfundamentals.com/legacy",
+	"attribution": [ "jQuery Fundamentals" ]
+}</script>
 
 ## Anatomy of a Web Page
 

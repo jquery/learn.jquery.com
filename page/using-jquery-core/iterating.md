@@ -1,6 +1,6 @@
----
-title   : Iterating over jQuery and non-jQuery Objects
----
+<script>{
+	"title": "Iterating over jQuery and non-jQuery Objects"
+}</script>
 
 jQuery provides an object iterator utility called `$.each()` as well as a jQuery collection iterator: `.each()`. These are not interchangeable. In addition, there are a couple of helpful methods called `$.map()` and `.map()` that can shortcut one of our common iteration use cases.
 

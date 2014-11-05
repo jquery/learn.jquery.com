@@ -1,6 +1,6 @@
----
-title   : Additional jQuery Support
----
+<script>{
+	"title": "Additional jQuery Support"
+}</script>
 
 While we hope to cover most jQuery-related topics on this site, you may need additional or more immediate support. The following resources can prove useful.
 

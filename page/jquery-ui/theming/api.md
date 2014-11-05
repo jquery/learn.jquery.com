@@ -1,7 +1,7 @@
----
-title: jQuery UI CSS Framework API
-level: intermediate
----
+<script>{
+	"title": "jQuery UI CSS Framework API",
+	"level": "intermediate"
+}</script>
 
 [Back to jQuery UI Theming](/jquery-ui/theming/)
 

@@ -1,9 +1,8 @@
----
-title: jQuery Event Basics
-attribution:
-  - jQuery Fundamentals
-level: beginner
----
+<script>{
+	"title": "jQuery Event Basics",
+	"level": "beginner",
+	"attribution": [ "jQuery Fundamentals" ]
+}</script>
 
 ## jQuery Event Basics
 

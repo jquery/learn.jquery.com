@@ -1,11 +1,13 @@
----
-title: Events
-level: beginner
-customFields:
- -
-    key: "icon"
-    value: "tasks"
----
+<script>{
+	"title": "Events",
+	"level": "beginner",
+	"customFields": [
+		{
+			"key": "icon",
+			"value": "tasks"
+		}
+	]
+}</script>
 
 jQuery provides simple methods for attaching event handlers to selections. When an event occurs, the provided function is executed. Inside the function, `this` refers to the element that was clicked.
 

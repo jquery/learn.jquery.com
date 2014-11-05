@@ -1,12 +1,13 @@
----
-title: jQuery Deferreds
-level: advanced
-source: http://msdn.microsoft.com/en-us/magazine/gg723713.aspx
-attribution:
-  - Julian Aubourg <j@ubourg.net>
-  - Addy Osmani <addyosmani@gmail.com>
-  - Andree Hansson <peolanha@gmail.com>
----
+<script>{
+	"title": "jQuery Deferreds",
+	"level": "advanced",
+	"source": "http://msdn.microsoft.com/en-us/magazine/gg723713.aspx",
+	"attribution": [
+		"Julian Aubourg <j@ubourg.net>",
+		"Addy Osmani <addyosmani@gmail.com>",
+		"Andree Hansson <peolanha@gmail.com>"
+	]
+}</script>
 
 ## jQuery Deferreds
 

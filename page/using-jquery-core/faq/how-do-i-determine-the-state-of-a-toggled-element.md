@@ -1,7 +1,7 @@
----
-title:        How do I determine the state of a toggled element?
-source:       http://docs.jquery.com/Frequently_Asked_Questions
----
+<script>{
+	"title": "How do I determine the state of a toggled element?",
+	"source": "http://docs.jquery.com/Frequently_Asked_Questions"
+}</script>
 
 You can determine whether an element is collapsed or not by using the `:visible` and `:hidden` selectors.
 

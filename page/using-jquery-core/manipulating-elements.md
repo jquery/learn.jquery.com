@@ -1,10 +1,9 @@
----
-title   : Manipulating Elements
-level: beginner
-source: http://jqfundamentals.com/legacy
-attribution:
-  - jQuery Fundamentals
----
+<script>{
+	"title": "Manipulating Elements",
+	"level": "beginner",
+	"source": "http://jqfundamentals.com/legacy",
+	"attribution": [ "jQuery Fundamentals" ]
+}</script>
 
 For complete documentation of jQuery manipulation methods, visit the [Manipulation documentation on api.jquery.com](http://api.jquery.com/category/manipulation/).
 

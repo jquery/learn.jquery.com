@@ -1,10 +1,9 @@
----
-title:        Types
-level:        beginner
-source: http://jqfundamentals.com/legacy
-attribution:
-  - jQuery Fundamentals
----
+<script>{
+	"title": "Types",
+	"level": "beginner",
+	"source": "http://jqfundamentals.com/legacy",
+	"attribution": [ "jQuery Fundamentals" ]
+}</script>
 
 Types in JavaScript fall into two categories: primitives and objects. Primitive types include:
 

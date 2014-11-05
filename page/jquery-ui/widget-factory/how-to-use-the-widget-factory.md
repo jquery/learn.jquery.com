@@ -1,7 +1,7 @@
----
-title: How To Use the Widget Factory
-level: Beginner
----
+<script>{
+	"title": "How To Use the Widget Factory",
+	"level": "beginner"
+}</script>
 
 To start, we'll create a progress bar that just lets us set the progress once. As we can see below, this is done by calling `jQuery.widget()` with two parameters: the name of the plugin to create, and an object literal containing functions to support our plugin. When our plugin gets called, it will create a new plugin instance and all functions will be executed within the context of that instance. This is different from a standard jQuery plugin in two important ways. First, the context is an object, not a DOM element. Second, the context is always a single object, never a collection.
 

@@ -1,7 +1,7 @@
----
-title   : How jQuery Works
-level: beginner
----
+<script>{
+	"title": "How jQuery Works",
+	"level": "beginner"
+}</script>
 
 ### jQuery: The Basics
 

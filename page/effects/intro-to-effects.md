@@ -1,7 +1,7 @@
----
-title: Introduction to Effects
-level: beginner
----
+<script>{
+	"title": "Introduction to Effects",
+	"level": "beginner"
+}</script>
 
 ## Showing and Hiding Content
 

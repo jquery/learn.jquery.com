@@ -1,7 +1,7 @@
----
-title: Widget Method Invocation
-level: intermediate
----
+<script>{
+	"title": "Widget Method Invocation",
+	"level": "intermediate"
+}</script>
 
 Widgets created with [the widget factory](/jquery-ui/widget-factory/) use methods to change their state and perform actions after initialization. There are two ways widget methods can be invoked - through the plugin created by the widget factory, or by invoking the method on the element's instance object.
 

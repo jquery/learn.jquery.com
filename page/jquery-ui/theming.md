@@ -1,7 +1,7 @@
----
-title: Theming jQuery UI
-level: intermediate
----
+<script>{
+	"title": "Theming jQuery UI",
+	"level": "intermediate"
+}</script>
 
 All jQuery UI plugins are designed to allow a developer to seamlessly integrate UI widgets into the look and feel of their site or application. Each plugin is styled with CSS and contains two layers of style information: standard [jQuery UI CSS Framework](/jquery-ui/theming/api/) styles and plugin-specific styles.
 

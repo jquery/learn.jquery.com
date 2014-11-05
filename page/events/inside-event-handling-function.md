@@ -1,10 +1,9 @@
----
-title   : Inside the Event Handling Function
-level: beginner
-source: http://jqfundamentals.com/legacy
-attribution:
-  - jQuery Fundamentals
----
+<script>{
+	"title": "Inside the Event Handling Function",
+	"level": "beginner",
+	"source": "http://jqfundamentals.com/legacy",
+	"attribution": [ "jQuery Fundamentals" ]
+}</script>
 
 Every event handling function receives an event object, which contains many properties and methods. The event object is most commonly used to prevent the default action of the event via the `.preventDefault()` method. However, the event object contains a number of other useful properties and methods, including:
 

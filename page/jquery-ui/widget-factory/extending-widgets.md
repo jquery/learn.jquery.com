@@ -1,7 +1,7 @@
----
-title: Extending Widgets with the Widget Factory
-level: advanced
----
+<script>{
+	"title": "Extending Widgets with the Widget Factory",
+	"level": "advanced"
+}</script>
 
 jQuery UI's widget factory makes it easy to build widgets that extend the functionality of existing widgets. Doing so allows you to build powerful widgets on top of an existing base, as well as make small tweaks to an existing widget's functionality.
 

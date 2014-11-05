@@ -1,7 +1,7 @@
----
-title      : The jQuery Object
-level      : beginner
----
+<script>{
+	"title": "The jQuery Object",
+	"level": "beginner"
+}</script>
 
 When creating new elements (or selecting existing ones), jQuery returns the elements in a collection. Many developers new to jQuery assume that this collection is an array. It has a zero-indexed sequence of DOM elements, some familiar array functions, and a `.length` property, after all. Actually, the jQuery object is more complicated than that.
 

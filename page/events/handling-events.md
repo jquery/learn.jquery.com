@@ -1,10 +1,9 @@
----
-title   : Handling Events
-level: beginner
-source: http://jqfundamentals.com/legacy
-attribution:
-  - jQuery Fundamentals
----
+<script>{
+	"title": "Handling Events",
+	"level": "beginner",
+	"source": "http://jqfundamentals.com/legacy",
+	"attribution": [ "jQuery Fundamentals" ]
+}</script>
 
 jQuery provides a method `.on()` to respond to any event on the selected elements. This is called an _event binding_. Although `.on()` isn't the only method provided for event binding, it is a best practice to use this for jQuery 1.7+. To learn more, [read more about the evolution of event binding in jQuery](/events/history-of-events).
 

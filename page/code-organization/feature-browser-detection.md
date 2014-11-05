@@ -1,7 +1,7 @@
----
-title: Feature & Browser Detection
-level: beginner
----
+<script>{
+	"title": "Feature & Browser Detection",
+	"level": "beginner"
+}</script>
 
 ### Can I Use This Browser Feature?
 

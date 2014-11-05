@@ -1,8 +1,8 @@
----
-title:        The uses of jQuery .queue() and .dequeue()
-level:        advanced
-source:       http://gnarf.net/2010/09/30/the-uses-of-jquery-queue-and-dequeue/
----
+<script>{
+	"title": "The uses of jQuery .queue() and .dequeue()",
+	"level": "advanced",
+	"source": "http://gnarf.net/2010/09/30/the-uses-of-jquery-queue-and-dequeue/"
+}</script>
 
 Queues in jQuery are used for animations. You can use them for any purpose you like. They are an array of functions stored on a per element basis, using `jQuery.data()`. They are First In, First Out (FIFO). You can add a function to the queue by calling `.queue()`, and you remove (by calling) the functions using `.dequeue()`.
 

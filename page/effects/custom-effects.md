@@ -1,10 +1,9 @@
----
-title   : Custom Effects with .animate()
-level: beginner
-source: http://jqfundamentals.com/legacy
-attribution:
-    - jQuery Fundamentals
----
+<script>{
+	"title": "Custom Effects with .animate()",
+	"level": "beginner",
+	"source": "http://jqfundamentals.com/legacy",
+	"attribution": [ "jQuery Fundamentals" ]
+}</script>
 
 jQuery makes it possible to animate arbitrary CSS properties via the `.animate()` method. The `.animate()` method lets you animate to a set value, or to a value relative to the current value.
 

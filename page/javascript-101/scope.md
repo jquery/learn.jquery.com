@@ -1,10 +1,9 @@
----
-title: Scope
-level: beginner
-source: http://jqfundamentals.com/legacy, http://javascriptplayground.com/blog/2012/04/javascript-variable-scope-this
-attribution:
-  - jQuery Fundamentals
----
+<script>{
+	"title": "Scope",
+	"level": "beginner",
+	"source": "http://jqfundamentals.com/legacy, http://javascriptplayground.com/blog/2012/04/javascript-variable-scope-this",
+	"attribution": [ "jQuery Fundamentals" ]
+}</script>
 
 "Scope" refers to the variables that are available to a piece of code at a given time. A lack of understanding of scope can lead to frustrating debugging experiences. The idea of scope is that it's where certain functions or variables are accessible from in our code, and the context in which they exist and are executed in.
 

@@ -1,7 +1,7 @@
----
-title:        How do I pull a native DOM element from a jQuery object?
-source:       http://docs.jquery.com/Frequently_Asked_Questions
----
+<script>{
+	"title": "How do I pull a native DOM element from a jQuery object?",
+	"source": "http://docs.jquery.com/Frequently_Asked_Questions"
+}</script>
 
 A jQuery object is an array-like wrapper around one or more DOM elements. To get a reference to the actual DOM elements (instead of the jQuery object), you have two options. The first (and fastest) method is to use array notation:
 

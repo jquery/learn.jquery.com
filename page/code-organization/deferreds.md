@@ -1,12 +1,13 @@
----
-title: Deferreds
-level: advanced
-source: http://msdn.microsoft.com/en-us/magazine/gg723713.aspx
-attribution:
-  - Julian Aubourg <j@ubourg.net>
-  - Addy Osmani <addyosmani@gmail.com>
-  - Andree Hansson <peolanha@gmail.com>
----
+<script>{
+	"title": "Deferreds",
+	"level": "advanced",
+	"source": "http://msdn.microsoft.com/en-us/magazine/gg723713.aspx",
+	"attribution": [
+		"Julian Aubourg <j@ubourg.net>",
+		"Addy Osmani <addyosmani@gmail.com>",
+		"Andree Hansson <peolanha@gmail.com>"
+	]
+}</script>
 
 At a high-level, deferreds can be thought of as a way to represent asynchronous operations which can take a long time to complete. They're the asynchronous alternative to blocking functions and the general idea is that rather than your application blocking while it awaits some request to complete before returning a result, a deferred object can instead be returned immediately. You can then attach callbacks to the deferred object: they will be called once the request has actually completed.
 

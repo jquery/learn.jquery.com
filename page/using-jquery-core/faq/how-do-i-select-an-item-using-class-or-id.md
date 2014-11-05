@@ -1,7 +1,7 @@
----
-title:        How do I select an item using class or ID?
-source:       http://docs.jquery.com/Frequently_Asked_Questions
----
+<script>{
+	"title": "How do I select an item using class or ID?",
+	"source": "http://docs.jquery.com/Frequently_Asked_Questions"
+}</script>
 
 This code selects an element with an ID of "myDivId". Since IDs are unique, this expression always selects either zero or one elements depending upon whether or not an element with the specified ID exists.
 

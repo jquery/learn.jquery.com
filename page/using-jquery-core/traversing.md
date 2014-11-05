@@ -1,7 +1,7 @@
----
-title   : Traversing
-level: beginner
----
+<script>{
+	"title": "Traversing",
+	"level": "beginner"
+}</script>
 
 Once you've made an initial selection with jQuery, you can traverse deeper into what was just selected. Traversing can be broken down into three basic parts: parents, children, and siblings. jQuery has an abundance of easy-to-use methods for all these parts. Notice that each of these methods can optionally be passed string selectors, and some can also take another jQuery object in order to filter your selection down. Pay attention and refer to the [API documentation on traversing](http://api.jquery.com/category/traversing/) to know what variation of arguments you have available.
 

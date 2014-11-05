@@ -1,10 +1,9 @@
----
-title   : jQuery's Ajax-Related Methods
-level: beginner
-source: http://jqfundamentals.com/legacy
-attribution:
-    - jQuery Fundamentals
----
+<script>{
+	"title": "jQuery's Ajax-Related Methods",
+	"level": "beginner",
+	"source": "http://jqfundamentals.com/legacy",
+	"attribution": [ "jQuery Fundamentals" ]
+}</script>
 
 While jQuery does offer many Ajax-related convenience methods, the core `$.ajax()` method is at the heart of all of them, and understanding it is imperative. We'll review it first, and then touch briefly on the convenience methods.
 

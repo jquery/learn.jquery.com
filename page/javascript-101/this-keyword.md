@@ -1,10 +1,9 @@
----
-title:        The "this" Keyword
-level:        beginner
-source: http://jqfundamentals.com/legacy
-attribution:
-  - jQuery Fundamentals
----
+<script>{
+	"title": "The \"this\" Keyword",
+	"level": "beginner",
+	"source": "http://jqfundamentals.com/legacy",
+	"attribution": [ "jQuery Fundamentals" ]
+}</script>
 
 In JavaScript, as in most object-oriented programming languages, `this` is a special keyword that is used in methods to refer to the object on which a method is being invoked. The value of `this` is determined using a simple series of steps:
 

@@ -1,7 +1,7 @@
----
-title: Getting Started with jQuery UI
-level: beginner
----
+<script>{
+	"title": "Getting Started with jQuery UI",
+	"level": "beginner"
+}</script>
 
 ### What is jQuery UI?
 

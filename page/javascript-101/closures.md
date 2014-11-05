@@ -1,10 +1,9 @@
----
-title:        Closures
-level:        beginner
-source: http://jqfundamentals.com/legacy
-attribution:
-  - jQuery Fundamentals
----
+<script>{
+	"title": "Closures",
+	"level": "beginner",
+	"source": "http://jqfundamentals.com/legacy",
+	"attribution": [ "jQuery Fundamentals" ]
+}</script>
 
 Closures are an extension of the concept of scope. With closures, functions have access to variables that were available in the scope where the function was created. If that seems confusing, don’t worry: closures are generally best understood by example.
 

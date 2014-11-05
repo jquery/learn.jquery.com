@@ -1,7 +1,7 @@
----
-title: History of jQuery Events
-level: intermediate
----
+<script>{
+	"title": "History of jQuery Events",
+	"level": "intermediate"
+}</script>
 
 Throughout the evolution of jQuery the means of event binding has changed for various reasons ranging from performance to semantics. As of jQuery v1.7 the `.on()` method is the accepted means of both directly binding events and creating delegated events. This article aims to explore the history of *event delegation* from jQuery v1.0 to the present and how each version leverages it.
 

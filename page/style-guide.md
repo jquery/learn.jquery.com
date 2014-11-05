@@ -1,12 +1,13 @@
----
-title: Style Guide
-attribution:
-  - jorydotcom <jory@bocoup.com>
-customFields:
-  -
-    key: "is_chapter"
-    value: 0
----
+<script>{
+	"title": "Style Guide",
+	"attribution": [ "jorydotcom <jory@bocoup.com>" ],
+	"customFields": [
+		{
+			"key": "is_chapter",
+			"value": 0
+		}
+	]
+}</script>
 
 ## Formatting Conventions
 

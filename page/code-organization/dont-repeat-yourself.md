@@ -1,10 +1,9 @@
----
-title: Keep Things DRY
-level: beginner
-attribution:
-source: http://jqfundamentals.com/legacy
-  - jQuery Fundamentals
----
+<script>{
+	"title": "Keep Things DRY",
+	"level": "beginner",
+	"source": "http://jqfundamentals.com/legacy",
+	"attribution": [ "jQuery Fundamentals" ]
+}</script>
 
 Don't repeat yourself; if you're repeating yourself, you're doing it wrong.
 
