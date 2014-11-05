@@ -16,7 +16,7 @@ to complete before returning a result, a deferred object can instead be
 returned immediately. You can then attach callbacks to the deferred
 object: they will be called once the request has actually completed.
 
-##Promises
+## Promises
 
 In its most basic form, a "promise" is a model that provides a solution
 for the concept of deferred (or future) results in software engineering.
@@ -39,14 +39,18 @@ pseudo-code for dealing with a third party API that returns a promise
 may look like:
 
 ```
-promise = callToAPI( arg1, arg2, ...);
+var promise = callToAPI( arg1, arg2, ...);
 
 promise.then(function( futureValue ) {
-	/* handle futureValue */
+
+	// Handle futureValue
+
 });
 
 promise.then(function( futureValue ) {
-	/* do something else */
+
+	// Do something else
+
 });
 ```
 
@@ -63,9 +67,13 @@ get back to pseudo-code, we may do things like:
 
 ```
 promise.then(function( futureValue ) {
-	/* we got a value */
+
+	// We got a value
+
 }, function() {
-	/* something went wrong */
+
+	// Something went wrong
+
 });
 ```
 
@@ -82,7 +90,9 @@ when(
 	promise2,
 	...
 ).then(function( futureValue1, futureValue2, ... ) {
-	/* all promises have completed and are resolved */
+
+	// All promises have completed and are resolved
+
 });
 ```
 
@@ -102,8 +112,10 @@ when(
 	promise1,
 	promise2
 ).then(function() {
-	/* once both animations have completed
-	we can then run our additional logic  */
+
+	// Once both animations have completed
+	// we can then run our additional logic
+
 });
 ```
 
