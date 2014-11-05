@@ -10,9 +10,7 @@ Learning how and when to use jQuery is a different process for each and every we
 
 However, API documentation alone cannot serve as a guide to solving problems and fostering a true understanding of web development. Over the years, an ecosystem of blog posts, books, support forums, and channels has grown to help cover the **hows** and **whys** of developing with jQuery, as well as explaining best practices, techniques, and workarounds for common problems. This type of documentation has been invaluable resource for millions of people, but the experience of navigating these waters can be frustrating as often as it is fulfilling, as developers struggle to identify trustworthy resources, determine whether what they're reading is actually up to date, and figure out those magical search keywords that are _just right_!
 
-This site represents the jQuery Foundation's ongoing effort to consolidate and
-curate this information in order to provide this crucial "narrative
-documentation" to our community and serve the following goals:
+This site represents the jQuery Foundation's ongoing effort to consolidate and curate this information in order to provide this crucial "narrative documentation" to our community and serve the following goals:
 
 1. Provide our **users** with a digestible reference on all aspects of using jQuery, from the basics of getting started and performing common tasks to more advanced topics like approaches to structuring code and where jQuery fits into modern web application development.
 2. Provide our **contributors** a central, open place to collaborate and provide a dependable, highly sharable resource that will improve our users' support experiences.
