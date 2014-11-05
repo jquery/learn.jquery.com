@@ -122,15 +122,15 @@ Additionally, Modernizr has a [production build configurator](http://modernizr.c
 
 #### Feature Detection Tools
 
-- [modernizr](http://modernizr.com/) — Conditionally check to see if a specific feature is available in a browser.
-- [html5please](http://html5please.com/) — Use the new and shiny responsibly.
-- [html5please api](http://api.html5please.com/) — An API you can query to see how good (or bad) support for a specific feature is.
-- [caniuse](http://caniuse.com/) — Browser compatibility tables for HTML5, CSS3, SVG, etc.
-- [yepnope](http://yepnopejs.com/) — Conditional polyfill loader.
+* [modernizr](http://modernizr.com/) — Conditionally check to see if a specific feature is available in a browser.
+* [html5please](http://html5please.com/) — Use the new and shiny responsibly.
+* [html5please api](http://api.html5please.com/) — An API you can query to see how good (or bad) support for a specific feature is.
+* [caniuse](http://caniuse.com/) — Browser compatibility tables for HTML5, CSS3, SVG, etc.
+* [yepnope](http://yepnopejs.com/) — Conditional polyfill loader.
 
 #### Helpful Articles
 
-- [Browser Feature Detection](https://developer.mozilla.org/en-US/docs/Browser_Feature_Detection)
-- [Using Modernizr to detect HTML5 and CSS3 browser support](http://www.adobe.com/devnet/dreamweaver/articles/using-modernizr.html)
-- [polyfilling the html5 gap](http://addyosmani.com/polyfillthehtml5gaps/slides/#1) by Addy Osmani
-- [Feature, Browser, and Form Factor Detection: It's Good for the Environment](http://www.html5rocks.com/en/tutorials/detection/index.html) by Michael Mahemoff
+* [Browser Feature Detection](https://developer.mozilla.org/en-US/docs/Browser_Feature_Detection)
+* [Using Modernizr to detect HTML5 and CSS3 browser support](http://www.adobe.com/devnet/dreamweaver/articles/using-modernizr.html)
+* [Polyfilling the html5 gap](http://addyosmani.com/polyfillthehtml5gaps/slides/#1) by Addy Osmani
+* [Feature, Browser, and Form Factor Detection: It's Good for the Environment](http://www.html5rocks.com/en/tutorials/detection/index.html) by Michael Mahemoff
