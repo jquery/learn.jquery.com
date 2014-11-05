@@ -4,15 +4,9 @@ level:        advanced
 source:       http://gnarf.net/2010/09/30/the-uses-of-jquery-queue-and-dequeue/
 ---
 
-Queues in jQuery are used for animations. You can use them for any purpose you
-like. They are an array of functions stored on a per element basis, using
-`jQuery.data()`. They are First In, First Out (FIFO). You can add a function to the
-queue by calling `.queue()`, and you remove (by calling) the functions using
-`.dequeue()`.
+Queues in jQuery are used for animations. You can use them for any purpose you like. They are an array of functions stored on a per element basis, using `jQuery.data()`. They are First In, First Out (FIFO). You can add a function to the queue by calling `.queue()`, and you remove (by calling) the functions using `.dequeue()`.
 
-To understand the internal jQuery queue functions, reading the source and
-looking at examples helps me out tremendously. One of the best examples of a
-queue function I've seen is `.delay()`:
+To understand the internal jQuery queue functions, reading the source and looking at examples helps me out tremendously. One of the best examples of a queue function I've seen is `.delay()`:
 
 ```
 $.fn.delay = function( time, type ) {
@@ -29,27 +23,17 @@ $.fn.delay = function( time, type ) {
 
 ## The default queue – fx
 
-The default queue in jQuery is `fx`. The default queue has some special
-properties that are not shared with other queues.
+The default queue in jQuery is `fx`. The default queue has some special properties that are not shared with other queues.
 
-- Auto Start: When calling `$(elem).queue( function() {} );` the fx queue will
-  automatically dequeue the next function and run it if the queue hasn't
-  started.
-- &ldquo;inprogress&rdquo; sentinel: Whenever you `dequeue()` a function from the fx queue,
-  it will `unshift()` (push into the first location of the array) the string
-  &ldquo;inprogress&rdquo; — which flags that the queue is currently being run.
-- It's the default! The fx queue is used by `.animate()` and all functions that
-  call it by default.
+* Auto Start: When calling `$(elem).queue( function() {} );` the fx queue will automatically dequeue the next function and run it if the queue hasn't started.
+* "inprogress" sentinel: Whenever you `dequeue()` a function from the fx queue, it will `unshift()` (push into the first location of the array) the string "inprogress" — which flags that the queue is currently being run.
+* It's the default! The fx queue is used by `.animate()` and all functions that call it by default.
 
 **Note:** If you are using a custom queue, you must manually `.dequeue()` the functions, they will not auto start!
 
 ## Retrieving/Setting the queue
 
-You can retrieve a reference to a jQuery queue by calling `.queue()` without a
-function argument. You can use the method if you want to see how many items are
-in the queue. You can use `push`, `pop`, `unshift`, and `shift` to manipulate the queue in
-place. You can replace the entire queue by passing an array to the `.queue()`
-function.
+You can retrieve a reference to a jQuery queue by calling `.queue()` without a function argument. You can use the method if you want to see how many items are in the queue. You can use `push`, `pop`, `unshift`, and `shift` to manipulate the queue in place. You can replace the entire queue by passing an array to the `.queue()` function.
 
 ## Quick Examples:
 
