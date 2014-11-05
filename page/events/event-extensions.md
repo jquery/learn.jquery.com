@@ -2,6 +2,7 @@
 title: jQuery Event Extensions
 level: advanced
 ---
+
 jQuery offers several ways to extend its event system to provide custom functionality when events are attached to elements. Internally in jQuery, these extensions are primarily used to ensure that standard events such as `submit` and `change` behave consistently across browsers. However, they can also be used to define new events with custom behavior.
 
 This document covers the extensions available starting with jQuery 1.7; a sparsely documented subset of this functionality has been available since jQuery 1.3 but the differences in functionality are extensive. For an overview of special events in earlier versions, see [Ben Alman's jQuery Special Events](http://benalman.com/news/2010/03/jquery-special-events/) article.
@@ -10,7 +11,7 @@ This document covers the extensions available starting with jQuery 1.7; a sparse
 
 ### Events overview and general advice
 
-When writing an event extension, it is essential to understand the flow of events through jQuery's internal event system. For a description of the event system from the API level, including a discussion of event delegation, see the [`.on()`](http://api.jquery.com/on) method.
+When writing an event extension, it is essential to understand the flow of events through jQuery's internal event system. For a description of the event system from the API level, including a discussion of event delegation, see the [`.on()`](http://api.jquery.com/on/) method.
 
 To simplify event management, jQuery only attaches a single event handler per element per event type (using `addEventListener` on W3C-compliant browsers or `attachEvent` on older IE) and then dispatches to event handlers that are attached via jQuery's APIs. For example, if three "click" event handlers are attached to an element, jQuery attaches its own handler when the first handler is attached and adds the user's event handler to a list to be executed when the event occurs. For subsequent event handlers, jQuery only adds them to its own internal list since it has already called the browser to attach its solitary handler. Conversely, jQuery removes its own event handler from the browser when the final event of a particular type is removed from the element.
 
@@ -122,11 +123,11 @@ elem.on( "pushy", function( event ) {
 	$( "body" ).append( "I am pushy but still a " + event.type + "!" );
 });
 
-elem.trigger( "click" ); // triggers both handlers
+elem.trigger( "click" ); // Triggers both handlers
 
 elem.off( "click" );
 
-elem.trigger( "click" ); // still triggers "pushy"
+elem.trigger( "click" ); // Still triggers "pushy"
 
 elem.off( "pushy" );
 ```
