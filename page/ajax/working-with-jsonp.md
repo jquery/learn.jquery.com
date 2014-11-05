@@ -5,6 +5,7 @@ source: http://jqfundamentals.com/legacy
 attribution:
   - jQuery Fundamentals
 ---
+
 The advent of JSONP — essentially a consensual cross-site scripting hack — has
 opened the door to powerful mashups of content. Many prominent sites provide
 JSONP services, allowing you access to their content via a predefined API. A
@@ -17,19 +18,19 @@ following example to fetch news about cats.
 $.ajax({
 	url: "http://query.yahooapis.com/v1/public/yql",
 
-	// the name of the callback parameter, as specified by the YQL service
+	// The name of the callback parameter, as specified by the YQL service
 	jsonp: "callback",
 
-	// tell jQuery we're expecting JSONP
+	// Tell jQuery we're expecting JSONP
 	dataType: "jsonp",
 
-	// tell YQL what we want and that we want JSON
+	// Tell YQL what we want and that we want JSON
 	data: {
 		q: "select title,abstract,url from search.news where query=\"cat\"",
-    	format: "json"
+		format: "json"
 	},
 
-	// work with the response
+	// Work with the response
 	success: function( response ) {
 		console.log( response ); // server response
 	}
