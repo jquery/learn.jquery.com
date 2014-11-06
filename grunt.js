@@ -87,7 +87,7 @@ grunt.registerHelper( "read-order", function( orderFile ) {
 grunt.registerHelper( "contributor-attribution", function( post, fileName, fn ) {
 	var contribs = [],
 		_ = grunt.utils._,
-		parseRE = /^(.*)<(.*)>$/; // could certainly be better. 
+		parseRE = /^(.*)<(.*)>$/; // could certainly be better.
 
 	// Read contributors from git file information
 	grunt.utils.spawn({
@@ -107,7 +107,7 @@ grunt.registerHelper( "contributor-attribution", function( post, fileName, fn ) 
 		}
 		// make unique.
 		contribs = _.uniq( result.stdout.split( /\r?\n/g ) );
-		
+
 		// make object { name: 'name', email: 'email@address.com' }
 		contribs.forEach(function(str, idx) {
 			var m = parseRE.exec(str);
@@ -125,7 +125,7 @@ grunt.registerHelper( "contributor-attribution", function( post, fileName, fn ) 
 		});
 
 		// Handle "legacy" content - content authored outside of the learn site
-		// and attributed with metadata in the file, 
+		// and attributed with metadata in the file,
 		// push those contributors to the front of the list
 		if ( post.attribution ) {
 			post.attribution.forEach(function(str, idx) {
@@ -160,7 +160,6 @@ grunt.registerHelper( "contributor-attribution", function( post, fileName, fn ) 
 				key: "contributors",
 				value: JSON.stringify( contribs )
 			});
-		
 		} else {
 			post.customFields = [{
 				key: "contributors",
