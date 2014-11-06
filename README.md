@@ -21,20 +21,20 @@ This site's core content consists of [Markdown](http://daringfireball.net/projec
 
 All of the content lives inside of the subdirectories of the `page` directory. Each of these subdirectories is considered a **chapter**, and contains one or more **articles**, and there is also a top level file that corresponds to each chapter, which contains the chapter's human-readable title and an overview, which will appear on the chapter's landing page.
 
-The [`order.yml`](https://github.com/jquery/learn.jquery.com/blob/master/order.yml) file controls the order that chapters and articles appear in the site.
+The [`order.json`](https://github.com/jquery/learn.jquery.com/blob/master/order.json) file controls the order that chapters and articles appear in the site.
 
 
-### YAML Conventions
+### Front Matter
 
-Each of the articles on the site has some YAML "Front Matter" that contains metadata. All articles should include the following:
+Each of the articles on the site has some JSON "Front Matter" that contains metadata. All articles should include the following:
 
-* `title` - The title of the article as it will appear in the site. If it contains special characters, put the string in quotes.
+* `title` - The title of the article as it will appear in the site.
 
-`title: "jQuery Event Extensions"`
+`"title": "jQuery Event Extensions"`
 
 * `level` - The approximate level of jQuery experience required to find the article useful. Options: `beginner`, `intermediate`, or `advanced`.
 
-`level: advanced`
+`"level": "advanced"`
 
 
 ## Building & Working Locally

@@ -24,7 +24,7 @@ Of course, we'll also give you credit for your work! The **Contributors** sectio
 
 ### Content
 
-The content in this site is maintained in [this GitHub repository](https://github.com/jquery/learn.jquery.com) as a collection of [Markdown](http://daringfireball.net/projects/markdown/) files in the `page` directory. The order in which chapters and articles are presented is controlled by the [order.yml](https://github.com/jquery/learn.jquery.com/blob/master/order.yml) file.
+The content in this site is maintained in [this GitHub repository](https://github.com/jquery/learn.jquery.com) as a collection of [Markdown](http://daringfireball.net/projects/markdown/) files in the `page` directory. The order in which chapters and articles are presented is controlled by the [order.json](https://github.com/jquery/learn.jquery.com/blob/master/order.json) file.
 
 ### Design
 
@@ -75,7 +75,7 @@ For more advice on managing your fork and submitting pull requests to the jQuery
 ### Adding a New Article
 
 1. Add the file to the right folder in the `page` folder.
-2. Add the slug name (the filename without the extension) to the desired location in `order.yml`
+2. Add the slug name (the filename without the extension) to the desired location in `order.json`
 3. Run `grunt`
 4. You should now be able to navigate to the file.
 
