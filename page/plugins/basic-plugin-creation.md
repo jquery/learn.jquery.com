@@ -21,29 +21,29 @@ Additionally the jQuery utility method `$.trim()` is used above to remove any le
 
 ## Basic Plugin Authoring
 
-Let's say we want to create a plugin that makes text within a set of retrieved elements green. All we have to do is add a function called `greenify` to `$.fn` and it will be available just like any other jQuery object method.
+Let's say we want to create a plugin that makes text within a set of retrieved elements green. All we have to do is add a function called `paint` to `$.fn` and it will be available just like any other jQuery object method.
 
 ```
-$.fn.greenify = function() {
+$.fn.paint = function() {
 	this.css( "color", "green" );
 };
 
-$( "a" ).greenify(); // Makes all the links green.
+$( "a" ).paint(); // Makes all the links green.
 ```
 
-Notice that to use `.css()`, another method, we use `this`, not `$( this )`. This is because our `greenify` function is a part of the same object as `.css()`.
+Notice that to use `.css()`, another method, we use `this`, not `$( this )`. This is because our `paint` function is a part of the same object as `.css()`.
 
 ## Chaining
 
 This works, but there's a couple of things we need to do for our plugin to survive in the real world. One of jQuery's features is chaining, when you link five or six actions onto one selector. This is accomplished by having all jQuery object methods return the original jQuery object again (there are a few exceptions: `.width()` called without parameters returns the width of the selected element, and is not chainable). Making our plugin method chainable takes one line of code:
 
 ```
-$.fn.greenify = function() {
+$.fn.paint = function() {
 	this.css( "color", "green" );
 	return this;
 }
 
-$( "a" ).greenify().addClass( "greenified" );
+$( "a" ).paint().addClass( "greenified" );
 ```
 
 Note that the notion of chaining is *not* applicable to jQuery utility methods like `$.trim()`.
@@ -55,7 +55,7 @@ The `$` variable is very popular among JavaScript libraries, and if you're using
 ```
 (function ( $ ) {
 
-	$.fn.greenify = function() {
+	$.fn.paint = function() {
 		this.css( "color", "green" );
 		return this;
 	};
@@ -78,7 +78,7 @@ In addition, the primary purpose of an Immediately Invoked Function is to allow 
 
 	var shade = "#556b2f";
 
-	$.fn.greenify = function() {
+	$.fn.paint = function() {
 		this.css( "color", shade );
 		return this;
 	};
@@ -142,12 +142,12 @@ Notice that we return the results of `.each()` instead of returning `this`. Sinc
 
 ## Accepting Options
 
-As your plugins get more and more complex, it's a good idea to make your plugin customizable by accepting options. The easiest way to do this, especially if there are lots of options, is with an object literal. Let's change our greenify plugin to accept some options.
+As your plugins get more and more complex, it's a good idea to make your plugin customizable by accepting options. The easiest way to do this, especially if there are lots of options, is with an object literal. Let's change our paint plugin to accept some options.
 
 ```
 (function ( $ ) {
 
-	$.fn.greenify = function( options ) {
+	$.fn.paint = function( options ) {
 
 		// This is the easiest way to have default options.
 		var settings = $.extend({
@@ -156,7 +156,7 @@ As your plugins get more and more complex, it's a good idea to make your plugin 
 			backgroundColor: "white"
 		}, options );
 
-		// Greenify the collection based on the settings variable.
+		// paint the collection based on the settings variable.
 		return this.css({
 			color: settings.color,
 			backgroundColor: settings.backgroundColor
@@ -170,7 +170,7 @@ As your plugins get more and more complex, it's a good idea to make your plugin 
 Example usage:
 
 ```
-$( "div" ).greenify({
+$( "div" ).paint({
 	color: "orange"
 });
 ```
