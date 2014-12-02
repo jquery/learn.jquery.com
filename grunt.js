@@ -1,18 +1,15 @@
-var config = require( "./config" );
+var rimraf = require( "rimraf" ),
+	config = require( "./config" );
 
 module.exports = function( grunt ) {
 
 "use strict";
 
-grunt.loadNpmTasks( "grunt-clean" );
 grunt.loadNpmTasks( "grunt-wordpress" );
 grunt.loadNpmTasks( "grunt-jquery-content" );
 grunt.loadNpmTasks( "grunt-check-modules" );
 
 grunt.initConfig({
-	clean: {
-		wordpress: "dist/"
-	},
 	jshint: {
 		options: {
 			undef: true,
@@ -39,7 +36,9 @@ grunt.initConfig({
 	}, grunt.file.readJSON( "config.json" ) )
 });
 
-
+grunt.registerTask( "clean", function() {
+	rimraf.sync( "dist" );
+});
 
 // Process a JSON order file and return an object of page slugs and their ordinal indices
 grunt.registerHelper( "read-order", function( orderFile ) {
