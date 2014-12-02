@@ -1,8 +1,5 @@
 # The jQuery Learning Site
 
-* Primary Domain: [http://learn.jquery.com](http://learn.jquery.com)
-* Staging Domain: [http://stage.learn.jquery.com](http://stage.learn.jquery.com)
-
 ## About
 
 The goal of this site is twofold:
@@ -16,6 +13,7 @@ Much of the initial content - and spirit - comes from [jQuery Fundamentals](http
 ## How This Site Works
 
 This site's core content consists of [Markdown](http://daringfireball.net/projects/markdown/) files. The template that controls the site's appearance is a [child theme](https://github.com/jquery/jquery-wp-content/tree/master/themes/learn.jquery.com) of [jquery-wp-content](https://github.com/jquery/jquery-wp-content), and any issues with the presentation should be directed to [that repository](https://github.com/jquery/jquery-wp-content).
+
 
 ### Site Organization
 
@@ -37,14 +35,10 @@ Each of the articles on the site has some JSON "Front Matter" that contains meta
 `"level": "advanced"`
 
 
-## Building & Working Locally
+## Building and Deploying
 
-As this site is part of the jQuery network of sites, its presentation is controlled by [jquery-wp-content](https://github.com/jquery/jquery-wp-content). To preview the site locally, first follow the [instructions there](https://github.com/jquery/jquery-wp-content) to set up a local version of the jQuery WordPress network. Then, clone this repo and run the following steps (node.js required).
+To build and deploy your changes for previewing in a [`jquery-wp-content`](https://github.com/jquery/jquery-wp-content) instance, follow the [workflow instructions](http://contribute.jquery.org/web-sites/#workflow) from our documentation on [contributing to jQuery Foundation web sites](http://contribute.jquery.org/web-sites/).
 
-1. `npm install`
-2. `cp config-sample.json config.json`
-3. Edit config.json to use the username and password for your local WordPress network
-4. `grunt`
 
 ## How Can I Help?
 
