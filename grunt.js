@@ -5,7 +5,6 @@ module.exports = function( grunt ) {
 "use strict";
 
 grunt.loadNpmTasks( "grunt-clean" );
-grunt.loadNpmTasks( "grunt-html" );
 grunt.loadNpmTasks( "grunt-wordpress" );
 grunt.loadNpmTasks( "grunt-jquery-content" );
 grunt.loadNpmTasks( "grunt-check-modules" );
@@ -13,9 +12,6 @@ grunt.loadNpmTasks( "grunt-check-modules" );
 grunt.initConfig({
 	clean: {
 		wordpress: "dist/"
-	},
-	htmllint: {
-		resources: "resources/*.html"
 	},
 	jshint: {
 		options: {
