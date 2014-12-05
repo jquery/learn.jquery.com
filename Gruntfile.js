@@ -1,22 +1,24 @@
 var rimraf = require( "rimraf" ),
-	spawnback = require( "spawnback" );
+	spawnback = require( "spawnback" ),
+	jqueryContent = require( "grunt-jquery-content" );
 
 module.exports = function( grunt ) {
 
 grunt.loadNpmTasks( "grunt-check-modules" );
 grunt.loadNpmTasks( "grunt-jquery-content" );
-grunt.loadNpmTasks( "grunt-wordpress" );
 
 grunt.initConfig({
 	"build-pages": {
-		all: grunt.file.expandFiles( "page/**" )
+		all: "page/**"
 	},
 	"build-resources": {
-		all: grunt.file.expandFiles( "resources/**/*" )
+		all: "resources/**"
 	},
-	wordpress: grunt.utils._.extend({
-		dir: "dist/wordpress"
-	}, grunt.file.readJSON( "config.json" ) )
+	wordpress: (function() {
+		var config = require( "./config" );
+		config.dir = "dist/wordpress";
+		return config;
+	})()
 });
 
 grunt.registerTask( "clean", function() {
@@ -117,26 +119,26 @@ function contributorAttribution( post, fileName, callback ) {
 			value: JSON.stringify( contribs )
 		});
 
-		callback( null );
+		callback( null, post );
 	});
 }
 
-grunt.registerHelper( "build-pages-preprocess", (function() {
+jqueryContent.preprocessPost = (function() {
 	var orderMap = getOrderMap();
 
-	return function( post, fileName, done ) {
-		var slug = fileName.replace( /^.+?\/(.+)\.\w+$/, "$1" ),
+	return function( post, postPath, callback ) {
+		var slug = postPath.replace( /^.+?\/(.+)\.\w+$/, "$1" ),
 			menuOrder = orderMap[ slug ];
 
 		if ( menuOrder ) {
 			post.menuOrder = menuOrder;
 		}
 
-		contributorAttribution( post, fileName, done );
+		contributorAttribution( post, postPath, callback );
 	};
-})());
+})();
 
-grunt.registerTask( "build", "build-pages build-resources" );
-grunt.registerTask( "build-wordpress", "check-modules clean build" );
+grunt.registerTask( "build", [ "build-pages", "build-resources" ] );
+grunt.registerTask( "build-wordpress", [ "check-modules", "clean", "build" ] );
 
 };
