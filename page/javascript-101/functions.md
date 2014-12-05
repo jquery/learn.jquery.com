@@ -18,7 +18,7 @@ function foo() {
 ```
 
 ```
-// Named function expression.
+// Function expression.
 
 var foo = function() {
 	// Do something.
