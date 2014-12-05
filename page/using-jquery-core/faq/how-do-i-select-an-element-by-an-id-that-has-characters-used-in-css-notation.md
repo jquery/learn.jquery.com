@@ -1,6 +1,5 @@
 <script>{
-	"title": "How do I select an element by an ID that has characters used in CSS notation?",
-	"source": "http://docs.jquery.com/Frequently_Asked_Questions"
+	"title": "How do I select an element by an ID that has characters used in CSS notation?"
 }</script>
 
 Because jQuery uses CSS syntax for selecting elements, some characters are interpreted as CSS notation. For example, ID attributes, after an initial letter (a-z or A-Z), may also use periods and colons, in addition to letters, numbers, hyphens, and underscores (see [W3C Basic HTML Data Types](http://www.w3.org/TR/html4/types.html#type-id)). The colon (":") and period (".") are problematic within the context of a jQuery selector because they indicate a pseudo-class and class, respectively.

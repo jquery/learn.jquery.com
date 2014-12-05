@@ -1,6 +1,5 @@
 <script>{
-	"title": "How do I disable/enable a form element?",
-	"source": "http://docs.jquery.com/Frequently_Asked_Questions"
+	"title": "How do I disable/enable a form element?"
 }</script>
 
 You can enable or disable a form element using the `.prop()` method:
