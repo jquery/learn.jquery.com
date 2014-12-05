@@ -5,7 +5,7 @@
   "version": "0.3.28",
   "homepage": "http://learn.jquery.com",
   "author": {
-    "name": "jQuery Foundation (http://jquery.org/)"
+    "name": "jQuery Foundation and other contributors"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,7 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "http://www.opensource.org/licenses/MIT"
+      "url": "https://github.com/jquery/api.jquery.com/blob/master/LICENSE.txt"
     }
   ],
   "dependencies": {
