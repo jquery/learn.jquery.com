@@ -5,9 +5,9 @@
 	"attribution": [ "jQuery Fundamentals" ]
 }</script>
 
-Sometimes you want to make a piece of functionality available throughout your code. For example, perhaps you want a single method you can call on a jQuery selection that performs a series of operations on the selection. Maybe you wrote a really useful utility function that you want to be able to move easily to other projects. In this case, you may want to write a plugin.
+Sometimes you want to make a piece of functionality available throughout your code. For example, perhaps you want a single method you can call on a jQuery selection that performs a series of operations on the selection. In this case, you may want to write a plugin.
 
-## How jQuery Works 101: jQuery Object Methods and Utility Methods
+## How jQuery Works 101: jQuery Object Methods
 
 Before we write our own plugins, we must first understand a little about how jQuery works. Take a look at this code:
 
@@ -16,8 +16,6 @@ $( "a" ).css( "color", "red" );
 ```
 
 This is some pretty basic jQuery code, but do you know what's happening behind the scenes? Whenever you use the `$` function to select elements, it returns a jQuery object. This object contains all of the methods you've been using (`.css()`, `.click()`, etc.) and all of the elements that fit your selector. The jQuery object gets these methods from the `$.fn` object. This object contains all of the jQuery object methods, and if we want to write our own methods, it will need to contain those as well.
-
-Additionally the jQuery utility method `$.trim()` is used above to remove any leading or trailing empty space characters from the user input. Utility methods are functions that reside directly in the `$` function itself. You may occasionally want to write a utility method plugin when your extension to the jQuery API does not have to do something to a set of DOM elements you've retrieved.
 
 ## Basic Plugin Authoring
 
@@ -46,8 +44,6 @@ $.fn.greenify = function() {
 $( "a" ).greenify().addClass( "greenified" );
 ```
 
-Note that the notion of chaining is *not* applicable to jQuery utility methods like `$.trim()`.
-
 ## Protecting the $ Alias and Adding Scope
 
 The `$` variable is very popular among JavaScript libraries, and if you're using another library with jQuery, you will have to make jQuery not use the `$` with `jQuery.noConflict()`. However, this will break our plugin since it is written with the assumption that `$` is an alias to the `jQuery` function. To work well with other plugins, _and_ still use the jQuery `$` alias, we need to put all of our code inside of an [Immediately Invoked Function Expression](http://stage.learn.jquery.com/javascript-101/functions/#immediately-invoked-function-expression-iife), and then pass the function `jQuery`, and name the parameter `$`:
@@ -58,14 +54,6 @@ The `$` variable is very popular among JavaScript libraries, and if you're using
 	$.fn.greenify = function() {
 		this.css( "color", "green" );
 		return this;
-	};
-
-	$.ltrim = function( str ) {
-		return str.replace( /^\s+/, "" );
-	};
-
-	$.rtrim = function( str ) {
-		return str.replace( /\s+$/, "" );
 	};
 
 }( jQuery ));
