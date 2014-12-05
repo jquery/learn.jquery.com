@@ -111,7 +111,7 @@ var myFeature = {
 	},
 
 	showItem: function() {
-		var myFeature.currentItem = $( this );
+		myFeature.currentItem = $( this );
 		myFeature.getContent( myFeature.showContent );
 	},
 
