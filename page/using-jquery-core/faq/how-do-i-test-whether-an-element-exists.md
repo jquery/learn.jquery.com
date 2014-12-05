@@ -1,6 +1,5 @@
 <script>{
-	"title": "How do I test whether an element exists?",
-	"source": "http://docs.jquery.com/Frequently_Asked_Questions"
+	"title": "How do I test whether an element exists?"
 }</script>
 
 Use the [.length](http://api.jquery.com/length/) property of the jQuery collection returned by your selector:

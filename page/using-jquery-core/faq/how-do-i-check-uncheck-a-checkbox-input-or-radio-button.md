@@ -1,6 +1,5 @@
 <script>{
-	"title": "How do I check/uncheck a checkbox input or radio button?",
-	"source": "http://docs.jquery.com/Frequently_Asked_Questions"
+	"title": "How do I check/uncheck a checkbox input or radio button?"
 }</script>
 
 You can check or uncheck a checkbox element or a radio button using the `.prop()` method:

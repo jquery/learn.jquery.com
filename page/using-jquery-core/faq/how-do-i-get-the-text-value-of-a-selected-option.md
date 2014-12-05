@@ -1,6 +1,5 @@
 <script>{
-	"title": "How do I get the text value of a selected option?",
-	"source": "http://docs.jquery.com/Frequently_Asked_Questions"
+	"title": "How do I get the text value of a selected option?"
 }</script>
 
 Select elements typically have two values that you want to access. First there's the value to be sent to the server, which is easy:
