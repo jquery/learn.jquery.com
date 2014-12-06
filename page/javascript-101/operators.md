@@ -43,7 +43,7 @@ In JavaScript, numbers and strings will occasionally behave in unexpected ways.
 var foo = 1;
 var bar = "2";
 
-console.log( foo + bar ); // 12
+console.log( foo + bar ); // "12"
 ```
 
 ```
