@@ -38,7 +38,8 @@ console.log( "Index: " + div.first().index() ); // 0
 
 In the first example, `.index()` gives the zero-based index of `#foo1` within its parent. Since `#foo1` is the second child of its parent, `index()` returns 1.
 
-When `.index()` is called on a jQuery object that contains more than one element, it calculates the index of the first element.
+
+__Note__: Before jQuery 1.9, `.index()` only worked reliably on a single element, which is why we've used `.first()` on each of our examples. In jQuery 1.9+ this can be ignored, as the API was updated to define that it operates on the first element only.
 
 ## `.index()` with a String Argument
 
