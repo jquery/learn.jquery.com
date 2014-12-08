@@ -22,9 +22,7 @@
   ],
   "dependencies": {
     "grunt": "0.4.5",
-    "grunt-check-modules": "0.2.0",
-    "grunt-jquery-content": "1.0.0",
-    "rimraf": "2.2.8",
+    "grunt-jquery-content": "2.0.0",
     "spawnback": "1.0.0"
   }
 }

@@ -1,15 +1,13 @@
-var rimraf = require( "rimraf" ),
-	spawnback = require( "spawnback" ),
+var spawnback = require( "spawnback" ),
 	jqueryContent = require( "grunt-jquery-content" );
 
 module.exports = function( grunt ) {
 
-grunt.loadNpmTasks( "grunt-check-modules" );
 grunt.loadNpmTasks( "grunt-jquery-content" );
 
 grunt.initConfig({
-	"build-pages": {
-		all: "page/**"
+	"build-posts": {
+		page: "page/**"
 	},
 	"build-resources": {
 		all: "resources/**"
@@ -19,10 +17,6 @@ grunt.initConfig({
 		config.dir = "dist/wordpress";
 		return config;
 	})()
-});
-
-grunt.registerTask( "clean", function() {
-	rimraf.sync( "dist" );
 });
 
 function getOrderMap() {
@@ -123,7 +117,7 @@ function contributorAttribution( post, fileName, callback ) {
 	});
 }
 
-jqueryContent.preprocessPost = (function() {
+jqueryContent.postPreprocessors.page = (function() {
 	var orderMap = getOrderMap();
 
 	return function( post, postPath, callback ) {
@@ -138,7 +132,6 @@ jqueryContent.preprocessPost = (function() {
 	};
 })();
 
-grunt.registerTask( "build", [ "build-pages", "build-resources" ] );
-grunt.registerTask( "build-wordpress", [ "check-modules", "clean", "build" ] );
+grunt.registerTask( "build", [ "build-posts", "build-resources" ] );
 
 };
