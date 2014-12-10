@@ -17,7 +17,7 @@ $( "a" ).css( "color", "red" );
 
 This is some pretty basic jQuery code, but do you know what's happening behind the scenes? Whenever you use the `$` function to select elements, it returns a jQuery object. This object contains all of the methods you've been using (`.css()`, `.click()`, etc.) and all of the elements that fit your selector. The jQuery object gets these methods from the `$.fn` object. This object contains all of the jQuery object methods, and if we want to write our own methods, it will need to contain those as well.
 
-Additionally the jQuery utility method `$.trim()` is used above to remove any leading or trailing empty space characters from the user input. Utility methods are functions that reside directly in the `$` function itself. You may occasionally want to write a utility method plugin when your extension to the jQuery API does not have to do something to a set of DOM elements you've retrieved.
+In addition to methods, jQuery provides utility methods. Utility methods are functions that reside directly in the `$` function itself. You may occasionally want to write a utility method plugin when your extension to the jQuery API does not have to do something to a set of DOM elements you've retrieved.
 
 ## Basic Plugin Authoring
 
