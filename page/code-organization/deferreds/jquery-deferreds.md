@@ -11,7 +11,7 @@
 
 ## jQuery Deferreds
 
-Deferreds were added as a part of a large rewrite of the ajax module, led by Julian Aubourg following the CommonJS Promises/A design. Whilst 1.5 and above include deferred capabilities, former versions of jQuery had `jQuery.ajax()` accept callbacks that would be invoked upon completion or error of the request, but suffered from heavy coupling — the same principle that would drive developers using other languages or toolkits to opt for deferred execution.
+Deferreds were added as a part of a large rewrite of the Ajax module, led by Julian Aubourg following the CommonJS Promises/A design. Whilst 1.5 and above include deferred capabilities, former versions of jQuery had `jQuery.ajax()` accept callbacks that would be invoked upon completion or error of the request, but suffered from heavy coupling — the same principle that would drive developers using other languages or toolkits to opt for deferred execution.
 
 In practice what jQuery's version provides you with are several enhancements to the way callbacks are managed, giving you significantly more flexible ways to provide callbacks that can be invoked whether the original callback dispatch has already fired or not. It is also worth noting that jQuery's Deferred object supports having multiple callbacks bound to the outcome of particular tasks (and not just one) where the task itself can either be synchronous or asynchronous.
 

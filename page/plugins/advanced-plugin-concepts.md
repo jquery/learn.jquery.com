@@ -249,7 +249,8 @@ var wrapper = $( "<div />" )
 	.attr( settings.wrapperAttrs )
 	.appendTo( settings.container );
 
-wrapper.append( "..." ); // Easy to reference later...
+// Easy to reference later...
+wrapper.append( "..." );
 ```
 
 Notice that we've created a reference to the injected wrapper and we're also calling the `.attr()` method to add any specified attributes to the element. So, in our settings it might be handled like this:
@@ -311,14 +312,17 @@ nextButton.on( "click", showNextImage );
 
 function showNextImage() {
 
+	// Returns reference to the next image node
+	var image = getNextImage();
+
 	// Stuff to show the image here...
 
 	// Here's the callback:
-	settings.onImageShow.call( this );
+	settings.onImageShow.call( image );
 }
 ```
 
-Instead of initiating the callback via traditional means (adding parenthesis) we're calling it in the context of `this` which will be a reference to the image node. This means that you have access to the actual image node through the `this` keyword within the callback:
+Instead of initiating the callback via traditional means (adding parenthesis) we're calling it in the context of `image` which will be a reference to the image node. This means that you have access to the actual image node through the `this` keyword within the callback:
 
 ```
 $( "ul.imgs li" ).superGallery({
