@@ -1,6 +1,6 @@
----
-title   : Iterating over jQuery and non-jQuery Objects
----
+<script>{
+	"title": "Iterating over jQuery and non-jQuery Objects"
+}</script>
 
 jQuery provides an object iterator utility called `$.each()` as well as a jQuery collection iterator: `.each()`. These are not interchangeable. In addition, there are a couple of helpful methods called `$.map()` and `.map()` that can shortcut one of our common iteration use cases.
 
@@ -209,7 +209,7 @@ $( "input" ).val(function( index, value ) {
 
 ```
 
-One other thing to keep in mind with this implicit iteration is that traversal methods such as `.children()` or `.parent()` will act on each matched element in a connection, returning a combined collection of all children or parent nodes.
+One other thing to keep in mind with this implicit iteration is that traversal methods such as `.children()` or `.parent()` will act on each matched element in a collection, returning a combined collection of all children or parent nodes.
 
 ### [`.map()`](http://api.jquery.com/map/)
 

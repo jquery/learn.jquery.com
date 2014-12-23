@@ -1,0 +1,159 @@
+[
+  "index",
+  "about",
+  "contributing",
+  {
+    "about-jquery": [
+      "how-jquery-works",
+      "additional-support"
+    ]
+  },
+  {
+    "javascript-101": [
+      "getting-started",
+      "running-code",
+      "syntax-basics",
+      "types",
+      "operators",
+      "conditional-code",
+      "loops",
+      "reserved-words",
+      "arrays",
+      "objects",
+      "functions",
+      "testing-type",
+      "this-keyword",
+      "scope",
+      "closures"
+    ]
+  },
+  {
+    "using-jquery-core": [
+      "dollar-object-vs-function",
+      "document-ready",
+      "avoid-conflicts-other-libraries",
+      "attributes",
+      "selecting-elements",
+      "working-with-selections",
+      "manipulating-elements",
+      "jquery-object",
+      "traversing",
+      "css-styling-dimensions",
+      "data-methods",
+      "utility-methods",
+      "iterating",
+      "understanding-index",
+      {
+        "faq": [
+          "how-do-i-select-an-item-using-class-or-id",
+          "how-do-i-select-elements-when-i-already-have-a-dom-element",
+          "how-do-i-test-whether-an-element-has-a-particular-class",
+          "how-do-i-test-whether-an-element-exists",
+          "how-do-i-determine-the-state-of-a-toggled-element",
+          "how-do-i-select-an-element-by-an-id-that-has-characters-used-in-css-notation",
+          "how-do-i-disable-enable-a-form-element",
+          "how-do-i-check-uncheck-a-checkbox-input-or-radio-button",
+          "how-do-i-get-the-text-value-of-a-selected-option",
+          "how-do-i-replace-text-from-the-3rd-element-of-a-list-of-10-items",
+          "how-do-i-pull-a-native-dom-element-from-a-jquery-object"
+        ]
+      }
+    ]
+  },
+  {
+    "events": [
+      "event-basics",
+      "event-helpers",
+      "introduction-to-events",
+      "handling-events",
+      "inside-event-handling-function",
+      "event-delegation",
+      "triggering-event-handlers",
+      "history-of-events",
+      "introduction-to-custom-events",
+      "event-extensions"
+    ]
+  },
+  {
+    "effects": [
+      "intro-to-effects",
+      "custom-effects",
+      "queue-and-dequeue-explained",
+      "uses-of-queue-and-dequeue"
+    ]
+  },
+  {
+    "ajax": [
+      "key-concepts",
+      "jquery-ajax-methods",
+      "ajax-and-forms",
+      "working-with-jsonp",
+      "ajax-events"
+    ]
+  },
+  {
+    "plugins": [
+      "finding-evaluating-plugins",
+      "basic-plugin-creation",
+      "advanced-plugin-concepts",
+      "stateful-plugins-with-widget-factory"
+    ]
+  },
+  {
+    "performance": [
+      "append-outside-loop",
+      "cache-loop-length",
+      "detach-elements-before-work-with-them",
+      "dont-act-on-absent-elements",
+      "optimize-selectors",
+      "use-stylesheets-for-changing-css",
+      "read-the-source"
+    ]
+  },
+  {
+    "code-organization": [
+      "concepts",
+      "beware-anonymous-functions",
+      "dont-repeat-yourself",
+      "feature-browser-detection",
+      {
+        "deferreds": [
+          "about-deferreds",
+          "jquery-deferreds",
+          "examples"
+        ]
+      }
+    ]
+  },
+  {
+    "jquery-ui": [
+      "getting-started",
+      "how-jquery-ui-works",
+      {
+        "theming": [
+          "themeroller",
+          "api",
+          "write-a-theme"
+        ]
+      },
+      {
+        "widget-factory": [
+          "why-use-the-widget-factory",
+          "how-to-use-the-widget-factory"
+        ]
+      },
+      {
+        "environments": [
+          "amd",
+          "bower"
+        ]
+      }
+    ]
+  },
+  {
+    "jquery-mobile": [
+      "getting-started",
+      "theme-roller"
+    ]
+  }
+]

@@ -1,10 +1,9 @@
----
-title   : Manipulating Elements
-level: beginner
-source: http://jqfundamentals.com/legacy
-attribution:
-  - jQuery Fundamentals
----
+<script>{
+	"title": "Manipulating Elements",
+	"level": "beginner",
+	"source": "http://jqfundamentals.com/legacy",
+	"attribution": [ "jQuery Fundamentals" ]
+}</script>
 
 For complete documentation of jQuery manipulation methods, visit the [Manipulation documentation on api.jquery.com](http://api.jquery.com/category/manipulation/).
 
@@ -34,7 +33,7 @@ While there are a variety of ways to move elements around the DOM, there are gen
 *	Place the selected element(s) relative to another element.
 *	Place an element relative to the selected element(s).
 
-For example, jQuery provides `.insertAfter()` and `.after()`. The `.insertAfter()` method places the selected element(s) after the element that provided as an argument. The `.after()` method places the element provided as an argument after the selected element. Several other methods follow this pattern: `.insertBefore()` and `.before()`, `.appendTo()` and `.append()`, and `.prependTo()` and `.prepend()`.
+For example, jQuery provides `.insertAfter()` and `.after()`. The `.insertAfter()` method places the selected element(s) after the element provided as an argument. The `.after()` method places the element provided as an argument after the selected element. Several other methods follow this pattern: `.insertBefore()` and `.before()`, `.appendTo()` and `.append()`, and `.prependTo()` and `.prepend()`.
 
 The method that makes the most sense will depend on what elements are selected, and whether you need to store a reference to the elements you're adding to the page. If you need to store a reference, you will always want to take the first approach – placing the selected elements relative to another element – as it returns the element(s) you're placing. In this case, `.insertAfter()`, `.insertBefore()`, `.appendTo()`, and `.prependTo()` should be the tools of choice.
 
@@ -42,7 +41,7 @@ The method that makes the most sense will depend on what elements are selected, 
 // Moving elements using different approaches.
 
 // Make the first list item the last list item:
-var $li = $( "#myList li:first" ).appendTo( "#myList" );
+var li = $( "#myList li:first" ).appendTo( "#myList" );
 
 // Another approach to the same problem:
 $( "#myList" ).append( $( "#myList li:first" ) );
@@ -93,20 +92,20 @@ $( "<a/>", {
 });
 ```
 
-Note that the attributes object in the second argument above, the property name class is quoted, although the property names `text` and `href` are not. Property names generally do not need to be quoted unless they are [reserved words](/javascript-101/reserved-words/) (as `class` is in this case).
+Note that the attributes object in the second argument above, the property name class is quoted, although the property names `html` and `href` are not. Property names generally do not need to be quoted unless they are [reserved words](/javascript-101/reserved-words/) (as `class` is in this case).
 
 When you create a new element, it is not immediately added to the page. There are several ways to add an element to the page once it's been created.
 
 ```
 // Getting a new element on to the page.
 
-var $myNewElement = $( "<p>New element</p>" );
+var myNewElement = $( "<p>New element</p>" );
 
-$myNewElement.appendTo( "#content" );
+myNewElement.appendTo( "#content" );
 
-$myNewElement.insertAfter( "ul:last" ); // This will remove the p from #content!
+myNewElement.insertAfter( "ul:last" ); // This will remove the p from #content!
 
-$( "ul" ).last().after( $myNewElement.clone() );  // Clone the p so now we have two.
+$( "ul" ).last().after( myNewElement.clone() ); // Clone the p so now we have two.
 ```
 
 The created element doesn't need to be stored in a variable – you can call the method to add the element to the page directly after the `$()`. However, most of the time you'll want a reference to the element you added so you won't have to select it later.
@@ -122,13 +121,13 @@ The syntax for adding new elements to the page is easy, so it's tempting to forg
 
 ```
 var myItems = [];
-var $myList = $( "#myList" );
+var myList = $( "#myList" );
 
 for ( var i = 0; i < 100; i++ ) {
 	myItems.push( "<li>item " + i + "</li>" );
 }
 
-$myList.append( myItems.join( "" ) );
+myList.append( myItems.join( "" ) );
 ```
 
 ## Manipulating Attributes
@@ -144,14 +143,14 @@ $( "#myDiv a:first" ).attr( "href", "newDestination.html" );
 // Manipulating multiple attributes.
 $( "#myDiv a:first" ).attr({
 	href: "newDestination.html",
-	rel: "super-special"
+	rel: "nofollow"
 });
 ```
 
 ```
 // Using a function to determine an attribute's new value.
 $( "#myDiv a:first" ).attr({
-	rel: "super-special",
+	rel: "nofollow",
 	href: function( idx, href ) {
 		return "/new/" + href;
 	}

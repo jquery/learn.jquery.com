@@ -1,7 +1,7 @@
----
-title      : The jQuery Object
-level      : beginner
----
+<script>{
+	"title": "The jQuery Object",
+	"level": "beginner"
+}</script>
 
 When creating new elements (or selecting existing ones), jQuery returns the elements in a collection. Many developers new to jQuery assume that this collection is an array. It has a zero-indexed sequence of DOM elements, some familiar array functions, and a `.length` property, after all. Actually, the jQuery object is more complicated than that.
 
@@ -42,7 +42,7 @@ var target = document.getElementById( "target" );
 
 var newElement = document.createElement( "div" );
 
-target.parentNode.insertBefore( target.nextSibling, newElement )
+target.parentNode.insertBefore( newElement, target.nextSibling );
 ```
 
 By wrapping the `target` element in a jQuery object, the same task becomes much simpler:
@@ -74,9 +74,9 @@ var headings = $( "h1" );
 ```
 // Viewing the number of <h1> tags on the page.
 
-var allHeadings = $( "h1" );
+var headings = $( "h1" );
 
-alert( allHeadings.length );
+alert( headings.length );
 ```
 
 If the page has more than one `<h1>` tag, this number will be greater than one. If the page has no `<h1>` tags, the `.length` property will be zero. Checking the `.length` property is a common way to ensure that the selector successfully matched one or more elements.
@@ -133,7 +133,7 @@ However, both objects contain the same DOM element. The `.get()` method is usefu
 ```
 // Comparing DOM elements.
 
-var logo1 = $( "$logo" );
+var logo1 = $( "#logo" );
 var logo1Elem = logo1.get( 0 );
 
 var logo2 = $( "#logo" );

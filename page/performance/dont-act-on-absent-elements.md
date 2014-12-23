@@ -1,10 +1,9 @@
----
-title:        Don't Act on Absent Elements
-level:        intermediate
-source: http://jqfundamentals.com/legacy
-attribution:
-  - jQuery Fundamentals
----
+<script>{
+	"title": "Don't Act on Absent Elements",
+	"level": "intermediate",
+	"source": "http://jqfundamentals.com/legacy",
+	"attribution": [ "jQuery Fundamentals" ]
+}</script>
 
 jQuery won't tell you if you're trying to run a whole lot of code on an empty selection – it will proceed as though nothing's wrong. It's up to you to verify that your selection contains some elements.
 
@@ -14,11 +13,11 @@ jQuery won't tell you if you're trying to run a whole lot of code on an empty se
 $( "#nosuchthing" ).slideUp();
 
 // Better:
-var $mySelection = $( "#nosuchthing" );
+var elem = $( "#nosuchthing" );
 
-if ( $mySelection.length ) {
+if ( elem.length ) {
 
-	$mySelection.slideUp();
+	elem.slideUp();
 
 }
 

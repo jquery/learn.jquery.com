@@ -1,7 +1,7 @@
----
-title   : Selecting Elements
-level: beginner
----
+<script>{
+	"title": "Selecting Elements",
+	"level": "beginner"
+}</script>
 
 The most basic concept of jQuery is to "select some elements and do something with them." jQuery supports most CSS3 selectors, as well as some non-standard selectors. For a complete selector reference, visit the [Selectors documentation on api.jquery.com](http://api.jquery.com/category/selectors/).
 
@@ -92,10 +92,8 @@ if ( $( "div.foo" ).length ) {
 jQuery doesn't cache elements for you. If you've made a selection that you might need to make again, you should save the selection in a variable rather than making the selection repeatedly.
 
 ```
-var $divs = $( "div" );
+var divs = $( "div" );
 ```
-
-In the example above, the variable name begins with a dollar sign. Unlike in other languages, there's nothing special about the dollar sign in JavaScript – it's just another character. Here, it's used to indicate that the variable contains a jQuery object. This practice is merely convention, and is not mandatory.
 
 Once the selection is stored in a variable, you can call jQuery methods on the variable just like you would have called them on the original selection.
 
@@ -140,13 +138,13 @@ Much like the `:button` pseudo-selector, it's best to first select elements with
 
 #### :checked
 
-Not to be confused with *:checkbox*, `:checked` targets only the *checked* checkboxes as well as checked radio buttons:
+Not to be confused with *:checkbox*, `:checked` targets *checked* checkboxes, but keep in mind that this selector works also for *checked* radio buttons, and select elements (for select elements only, use the `:selected` selector):
 
 ```
 $( "form :checked" );
 ```
 
-The `:checked` pseudo-selector works when used with **checkboxes** and **radio buttons**.
+The `:checked` pseudo-selector works when used with **checkboxes**, **radio buttons** and **selects**.
 
 #### :disabled
 
@@ -255,7 +253,7 @@ In order to get the best performance using `:selected`, first select elements wi
 
 #### :submit
 
-Using the `:submit` pseudo-selector targets any `<button>` or `<input>` elements with a `type="button"`:
+Using the `:submit` pseudo-selector targets any `<button>` or `<input>` elements with a `type="submit"`:
 
 ```
 $( "form :submit" );

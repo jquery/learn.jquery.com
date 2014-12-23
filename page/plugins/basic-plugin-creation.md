@@ -1,10 +1,9 @@
----
-title   : How to Create a Basic Plugin
-level:        intermediate
-source: http://jqfundamentals.com/legacy
-attribution:
-  - jQuery Fundamentals
----
+<script>{
+	"title": "How to Create a Basic Plugin",
+	"level": "intermediate",
+	"source": "http://jqfundamentals.com/legacy",
+	"attribution": [ "jQuery Fundamentals" ]
+}</script>
 
 Sometimes you want to make a piece of functionality available throughout your code. For example, perhaps you want a single method you can call on a jQuery selection that performs a series of operations on the selection. Maybe you wrote a really useful utility function that you want to be able to move easily to other projects. In this case, you may want to write a plugin.
 
@@ -51,7 +50,7 @@ Note that the notion of chaining is *not* applicable to jQuery utility methods l
 
 ## Protecting the $ Alias and Adding Scope
 
-The `$` variable is very popular among JavaScript libraries, and if you're using another library with jQuery, you will have to make jQuery not use the `$` with `jQuery.noConflict()`. However, this will break our plugin since it is written with the assumption that `$` is an alias to the `jQuery` function. To work well with other plugins, _and_ still use the jQuery `$` alias, we need to put all of our code inside of an [Immediately Invoked Function Expression](http://stage.learn.jquery.com/javascript-101/functions/#immediately-invoked-function-expression), and then pass the function `jQuery`, and name the parameter `$`:
+The `$` variable is very popular among JavaScript libraries, and if you're using another library with jQuery, you will have to make jQuery not use the `$` with `jQuery.noConflict()`. However, this will break our plugin since it is written with the assumption that `$` is an alias to the `jQuery` function. To work well with other plugins, _and_ still use the jQuery `$` alias, we need to put all of our code inside of an [Immediately Invoked Function Expression](http://stage.learn.jquery.com/javascript-101/functions/#immediately-invoked-function-expression-iife), and then pass the function `jQuery`, and name the parameter `$`:
 
 ```
 (function ( $ ) {
@@ -143,7 +142,7 @@ Notice that we return the results of `.each()` instead of returning `this`. Sinc
 
 ## Accepting Options
 
-As your plugins get more and more complex, it's a good idea to make your plugin customizable by accepting options. The easiest way do this, especially if there are lots of options, is with an object literal. Let's change our greenify plugin to accept some options.
+As your plugins get more and more complex, it's a good idea to make your plugin customizable by accepting options. The easiest way to do this, especially if there are lots of options, is with an object literal. Let's change our greenify plugin to accept some options.
 
 ```
 (function ( $ ) {
@@ -187,19 +186,22 @@ Here's an example of a small plugin using some of the techniques we've discussed
 
 	$.fn.showLinkLocation = function() {
 
-		return this.filter( "a" ).each(function() {
-			$( this ).append( " (" + $( this ).attr( "href" ) + ")" );
+		this.filter( "a" ).each(function() {
+			var link = $( this );
+			link.append( " (" + link.attr( "href" ) + ")" );
 		});
+
+		return this;
 
 	};
 
 }( jQuery ));
 
- // Usage example:
- $( "a" ).showLinkLocation();
+// Usage example:
+$( "a" ).showLinkLocation();
 ```
 
-This handy plugin goes through all anchors in the collection and appends the `href` attribute in brackets.
+This handy plugin goes through all anchors in the collection and appends the `href` attribute in parentheses.
 
 ```
 <!-- Before plugin is called: -->
@@ -216,9 +218,11 @@ Our plugin can be optimized though:
 
 	$.fn.showLinkLocation = function() {
 
-		return this.filter( "a" ).append(function() {
+		this.filter( "a" ).append(function() {
 			return " (" + this.href + ")";
 		});
+
+		return this;
 
 	};
 

@@ -1,10 +1,9 @@
----
-title: Getting Started
-level: Beginner
-source: http://jqfundamentals.com/legacy
-attribution:
-  - jQuery Fundamentals
----
+<script>{
+	"title": "Getting Started",
+	"level": "Beginner",
+	"source": "http://jqfundamentals.com/legacy",
+	"attribution": [ "jQuery Fundamentals" ]
+}</script>
 
 ## Anatomy of a Web Page
 
@@ -80,5 +79,5 @@ Commonly referred to as "developer tools," many browsers ship with built-in feat
 - [Apple Safari](https://developer.apple.com/technologies/safari/developer-tools.html)
 - [Google Chrome Developer Tools](https://developers.google.com/chrome-developer-tools/)
 - [Microsoft Internet Explorer](http://msdn.microsoft.com/en-us/library/ie/gg589507.aspx)
-- [Mozilla Firefox Web Development Tools](https://developer.mozilla.org/en-US/docs/Tools)
+- [Mozilla Firefox Developer Tools](https://developer.mozilla.org/en-US/docs/Tools)
 - [Opera Dragonfly](http://www.opera.com/dragonfly/)

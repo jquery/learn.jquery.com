@@ -1,7 +1,7 @@
----
-title: Getting Started with jQuery Mobile
-level: Beginner
----
+<script>{
+	"title": "Getting Started with jQuery Mobile",
+	"level": "Beginner"
+}</script>
 
 jQuery Mobile provides a set of touch-friendly UI widgets and an AJAX-powered navigation system to support animated page transitions. This guide will show you how you can build your first jQuery Mobile application.
 

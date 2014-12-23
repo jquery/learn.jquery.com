@@ -1,6 +1,6 @@
----
-title   : Additional jQuery Support
----
+<script>{
+	"title": "Additional jQuery Support"
+}</script>
 
 While we hope to cover most jQuery-related topics on this site, you may need additional or more immediate support. The following resources can prove useful.
 
@@ -11,29 +11,29 @@ http://forum.jquery.com/
 There are many subforums where you can discuss jQuery, ask questions, talk about JavaScript, or announce your plugins.
 
 * [Getting Started](http://forum.jquery.com/getting-started)
-  * This is the best place to post if you are brand new to jQuery and JavaScript.
+	* This is the best place to post if you are brand new to jQuery and JavaScript.
 * [Using jQuery](http://forum.jquery.com/using-jquery)
-  * This is the best place to post if you have general questions or concerns.
-  * If you've built a site that uses jQuery, or would like to announce a new plugin, this is the place to do it.
+	* This is the best place to post if you have general questions or concerns.
+	* If you've built a site that uses jQuery, or would like to announce a new plugin, this is the place to do it.
 * [Using jQuery Plugins](http://forum.jquery.com/using-jquery-plugins)
-  * If you are a plugin author or user and you wish to discuss specific plugins, plugin bugs, new features, or new plugins.
+	* If you are a plugin author or user and you wish to discuss specific plugins, plugin bugs, new features, or new plugins.
 * [Using jQuery UI](http://forum.jquery.com/using-jquery-ui)
-  * This is the place to discuss use of [jQuery UI](http://jqueryui.com/) Interactions, Widgets, and Effects
+	* This is the place to discuss use of [jQuery UI](http://jqueryui.com/) Interactions, Widgets, and Effects
 * [jQuery Mobile](http://forum.jquery.com/jquery-mobile)
-  * This is the place to discuss jQuery Mobile.
+	* This is the place to discuss jQuery Mobile.
 * [Developing jQuery Core](http://forum.jquery.com/developing-jquery-core)
-  * This forum centers around development of the jQuery library itself.
-  * Post here if you have questions about certain bugs, development with jQuery, features, or anything in the bug tracker or Git.
+	* This forum centers around development of the jQuery library itself.
+	* Post here if you have questions about certain bugs, development with jQuery, features, or anything in the bug tracker or Git.
 * [Developing jQuery Plugins](http://forum.jquery.com/developing-jquery-plugins)
-  * This forum covers development of jQuery plugins.
+	* This forum covers development of jQuery plugins.
 * [Developing jQuery UI](http://forum.jquery.com/developing-jquery-ui)
-  * This is the place to discuss development of [jQuery UI](http://jqueryui.com/) itself – including bugs, new plugins, and how you can help.
-  * All jQuery UI svn commits are posted to this list to facilitate feedback, discussion, and review.
-  * Also note that a lot of the development and planning of jQuery UI takes place on the [jQuery UI Development and Planning Wiki](http://wiki.jqueryui.com/).
+	* This is the place to discuss development of [jQuery UI](http://jqueryui.com/) itself – including bugs, new plugins, and how you can help.
+	* All jQuery UI svn commits are posted to this list to facilitate feedback, discussion, and review.
+	* Also note that a lot of the development and planning of jQuery UI takes place on the [jQuery UI Development and Planning Wiki](http://wiki.jqueryui.com/).
 * [Developing jQuery Mobile](http://forum.jquery.com/developing-jquery-mobile)
-  * This forum covers issues related to the development of jQuery Mobile.
+	* This forum covers issues related to the development of jQuery Mobile.
 * [QUnit and Testing](http://forum.jquery.com/qunit-and-testing)
-  * This is the place to discuss JavaScript testing in general and QUnit in particular
+	* This is the place to discuss JavaScript testing in general and QUnit in particular
 
 At the bottom of each of the forums is an RSS feed you can subscribe to.
 
@@ -76,7 +76,7 @@ The IRC Channel is best if you need quick help with any of the following:
 
 If your problem is more in-depth, we may ask you to post to the mailing list, or the bug tracker, so that we can help you in a more-suitable environment.
 
-####Connect info:
+#### Connect info:
 
 **Server:** irc.freenode.net
 
@@ -86,7 +86,7 @@ You can also connect at http://webchat.freenode.net/?channels=#jquery.
 
 Additionally we have `#jquery-es` and `#jquery-de` if you want to speak your native language.
 
-If you wish to post code snippets to the channel, you should use a paste site, like [jsfiddle.net](http://jsfiddle.net/) or [jsbin.com](http://jsbin.com/)
+If you wish to post code snippets to the channel, you should use a paste site, like [jsfiddle.net](http://jsfiddle.net/) or [jsbin.com](http://jsbin.com/).
 
 ### StackOverflow
 

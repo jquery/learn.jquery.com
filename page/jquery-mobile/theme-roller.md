@@ -1,7 +1,7 @@
----
-title: Creating a Custom Theme with ThemeRoller
-level: Beginner
----
+<script>{
+	"title": "Creating a Custom Theme with ThemeRoller",
+	"level": "beginner"
+}</script>
 
 ## Theming Overview
 

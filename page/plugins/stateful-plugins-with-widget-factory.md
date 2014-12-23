@@ -1,11 +1,12 @@
----
-title: Writing Stateful Plugins with the jQuery UI Widget Factory
-level: intermediate
-source: http://jqfundamentals.com/legacy
-attribution:
-  - jQuery Fundamentals
-  - Scott González <scott.gonzalez@gmail.com>
----
+<script>{
+	"title": "Writing Stateful Plugins with the jQuery UI Widget Factory",
+	"level": "intermediate",
+	"source": "http://jqfundamentals.com/legacy",
+	"attribution": [
+		"jQuery Fundamentals",
+		"Scott González <scott.gonzalez@gmail.com>"
+	]
+}</script>
 
 ## Writing Stateful Plugins with the jQuery UI Widget Factory
 
@@ -140,7 +141,7 @@ alert( bar.progressbar( "value" ) );
 
 ### Working with Widget Options
 
-One of the methods that is automatically available to our plugin is the option method. The option method allows you to get and set options after initialization. This method works exactly like jQuery's `.css()` and `.attr()` methods: you can pass just a name to use it as a setter, a name and value to use it as a single setter, or a hash of name/value pairs to set multiple values. When used as a getter, the plugin will return the current value of the option that corresponds to the name that was passed in. When used as a setter, the plugin's `_setOption` method will be called for each option that is being set. We can specify a `_setOption` method in our plugin to react to option changes.
+One of the methods that is automatically available to our plugin is the option method. The option method allows you to get and set options after initialization. This method works exactly like jQuery's `.css()` and `.attr()` methods: you can pass just a name to use it as a getter, a name and value to use it as a single setter, or a hash of name/value pairs to set multiple values. When used as a getter, the plugin will return the current value of the option that corresponds to the name that was passed in. When used as a setter, the plugin's `_setOption` method will be called for each option that is being set. We can specify a `_setOption` method in our plugin to react to option changes.
 
 Responding when an option is set:
 
@@ -229,7 +230,7 @@ bar.progressbar( "option", "value", 100 );
 
 ### The Widget Factory: Under the Hood
 
-When you call `jQuery.widget`, it creates a constructor function for your plugin and sets the object literal that you pass in as the prototype for your plugin instances. All of the functionality that automatically gets added to your plugin comes from a base widget prototype, which is defined as `jQuery.Widget.prototype`. When a plugin instance is created, it is stored on the original DOM element using `jQuery.data`, with the plugin name as the key.
+When you call `jQuery.widget`, it creates a constructor function for your plugin and sets the object literal that you pass in as the prototype for your plugin instances. All of the functionality that automatically gets added to your plugin comes from a base widget prototype, which is defined as `jQuery.Widget.prototype`. When a plugin instance is created, it is stored on the original DOM element using `jQuery.data`, with the plugin's full name (the plugin's namespace, plus a hyphen, plus the plugin's name) as the key. For example the jQuery UI dialog widget uses a key of `"ui-dialog"`.
 
 Because the plugin instance is directly linked to the DOM element, you can access the plugin instance directly instead of going through the exposed plugin method if you want. This will allow you to call methods directly on the plugin instance instead of passing method names as strings and will also give you direct access to the plugin's properties.
 
@@ -237,7 +238,7 @@ Because the plugin instance is directly linked to the DOM element, you can acces
 var bar = $( "<div />")
 	.appendTo( "body" )
 	.progressbar()
-	.data( "progressbar" );
+	.data( "nmk-progressbar" );
 
 // Call a method directly on the plugin instance.
 bar.option( "value", 50 );

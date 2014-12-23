@@ -1,7 +1,7 @@
----
-title: How To Write a Theme
-level: advanced
----
+<script>{
+	"title": "How To Write a Theme",
+	"level": "advanced"
+}</script>
 
 ### File Structure
 

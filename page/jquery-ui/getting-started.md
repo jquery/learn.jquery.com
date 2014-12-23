@@ -1,7 +1,7 @@
----
-title: Getting Started with jQuery UI
-level: beginner
----
+<script>{
+	"title": "Getting Started with jQuery UI",
+	"level": "beginner"
+}</script>
 
 ### What is jQuery UI?
 
@@ -19,7 +19,7 @@ Once you have a basic understanding of what jQuery UI is and what it does, you'r
 
 #### Step 1: Choose Which Components You Need
 
-The main column of the Download Builder lists all of the JavaScript components in jQuery UI categorized into groups: core, interations, widgets, and effects. Some components in jQuery UI depend on other components. Just check the boxes for the widgets you'd like to download and any required dependencies will automatically be checked as well. The components you select will all be combined into a custom jQuery UI JavaScript file.
+The main column of the Download Builder lists all of the JavaScript components in jQuery UI categorized into groups: core, interactions, widgets, and effects. Some components in jQuery UI depend on other components. Just check the boxes for the widgets you'd like to download and any required dependencies will automatically be checked as well. The components you select will all be combined into a custom jQuery UI JavaScript file.
 
 ![Configuring a download](/resources/jquery-ui/configure.png)
 
@@ -32,32 +32,20 @@ You can either choose from the various themes we provide, or you can design your
 
 #### Step 3: Choose a Version of jQuery UI
 
-The last step in the Download Builder is to select a version number. This is a very important step because jQuery UI versions are designed to work with specific versions of jQuery. The current versions are:
-
-* jQuery UI 1.10.2 – Requires jQuery 1.6 or later.
-* jQuery UI 1.9.2 – Requires jQuery 1.6 or later.
+The last step in the Download Builder is to select a version number. Make sure to check not only what version of jQuery UI you pick, but also the version of jQuery Core that version supports, as different versions of the library support different versions of jQuery. For more information on what's new in each version of jQuery UI, see the project's [upgrade guides](http://jqueryui.com/upgrade-guide/) and [changelogs](http://jqueryui.com/changelog/).
 
 #### Click Download!
 
 You're finished with the Download Builder! Click the download button and you'll get a customized zip file containing everything you selected.
 
-### After Downloading: Intro to Using jQuery UI
-
-Once you've downloaded jQuery UI, you'll get a zip containing the following files:
-
-* `/css/`
-* `/development-bundle/`
-* `/js/`
-* `index.html`
-
 ### Basic Overview: Using jQuery UI on a Web Page
 
-Open up `index.html` in a text editor and you'll see that it links to a few dependencies: your theme, jQuery, and jQuery UI. Generally, you'll need to include these three files on any page to use jQuery UI widgets and interactions:
+Next, open up `index.html` from the downloaded zip in a text editor. You'll see that it references your theme, jQuery, and jQuery UI. Generally, you'll need to include these three files on any page to use the jQuery UI widgets and interactions:
 
 ```html
-<link rel="stylesheet" href="css/themename/jquery-ui.custom.css" />
-<script src="js/jquery.min.js"></script>
-<script src="js/jquery-ui.custom.min.js"></script>
+<link rel="stylesheet" href="jquery-ui.min.css">
+<script src="external/jquery/jquery.js"></script>
+<script src="jquery-ui.min.js"></script>
 ```
 
 Once you've included the necessary files, you can add some jQuery widgets to your page. For example, to make a datepicker widget, you'll add a text input element to your page and then call `.datepicker()` on it. Like this:
@@ -65,7 +53,7 @@ Once you've included the necessary files, you can add some jQuery widgets to you
 **HTML:**
 
 ```html
-<input type="text" name="date" id="date" />
+<input type="text" name="date" id="date">
 ```
 
 **JavaScript:**
@@ -119,7 +107,7 @@ ThemeRoller provides a custom interface for designing all of the elements used b
 
 When you click the "Download theme" button in ThemeRoller, you'll be directed to the Download Builder and your custom theme will be auto-selected in the Theme dropdown menu. You can configure your download package further from there. Once you download, you'll see that the `example.html` page is styled using your custom theme.
 
-**Quick Tip:** *If you ever need to edit your theme, simply open the CSS file and find on line 43 where it says "To view and modify this theme, visit ..." That url will open the theme in ThemeRoller for editing.*
+**Quick Tip:** *If you ever need to edit your theme, simply open the CSS file and find where it says "To view and modify this theme, visit ..." That URL will open the theme in ThemeRoller for editing.*
 
 ### Support: Where Can I Get Help?
 

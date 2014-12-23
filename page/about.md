@@ -1,24 +1,24 @@
----
-title: About This Site
-customFields:
-  -
-    key: "is_chapter"
-    value: 0
----
+<script>{
+	"title": "About This Site",
+	"customFields": [
+		{
+			"key": "is_chapter",
+			"value": 0
+		}
+	]
+}</script>
 
 Learning how and when to use jQuery is a different process for each and every web developer, depending largely on experience with the primary tools for front-end development (HTML, CSS, and JavaScript) and knowledge of general programming principles. Over the years developers of all stripes have come to rely on our [API documentation](http://api.jquery.com) for help figuring out how to do exactly what they need to do.
 
 However, API documentation alone cannot serve as a guide to solving problems and fostering a true understanding of web development. Over the years, an ecosystem of blog posts, books, support forums, and channels has grown to help cover the **hows** and **whys** of developing with jQuery, as well as explaining best practices, techniques, and workarounds for common problems. This type of documentation has been invaluable resource for millions of people, but the experience of navigating these waters can be frustrating as often as it is fulfilling, as developers struggle to identify trustworthy resources, determine whether what they're reading is actually up to date, and figure out those magical search keywords that are _just right_!
 
-This site represents the jQuery Foundation's ongoing effort to consolidate and
-curate this information in order to provide this crucial "narrative
-documentation" to our community and serve the following goals:
+This site represents the jQuery Foundation's ongoing effort to consolidate and curate this information in order to provide this crucial "narrative documentation" to our community and serve the following goals:
 
 1. Provide our **users** with a digestible reference on all aspects of using jQuery, from the basics of getting started and performing common tasks to more advanced topics like approaches to structuring code and where jQuery fits into modern web application development.
 2. Provide our **contributors** a central, open place to collaborate and provide a dependable, highly sharable resource that will improve our users' support experiences.
 3. Foster an environment by which users are encouraged to become contributors and build the skills to help them work on jQuery – or any other open source project!
 
-In order to achieve these goals, all of [this site's content is maintained publicly on GitHub](https://github.com/jquery/learn.jquery.com) and is licensed under the [MIT License](https://github.com/jquery/learn.jquery.com/blob/master/LICENSE-MIT.txt). To learn more about how the site works, take a look at our [contributing guide](/contributing/).
+In order to achieve these goals, all of [this site's content is maintained publicly on GitHub](https://github.com/jquery/learn.jquery.com) and is licensed under the [MIT License](https://github.com/jquery/learn.jquery.com/blob/master/LICENSE.txt). To learn more about how the site works, take a look at our [contributing guide](/contributing/).
 
 ## History
 

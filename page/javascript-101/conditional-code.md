@@ -1,10 +1,9 @@
----
-title:        Conditional Code
-level:        beginner
-source: http://jqfundamentals.com/legacy
-attribution:
-  - jQuery Fundamentals
----
+<script>{
+	"title": "Conditional Code",
+	"level": "beginner",
+	"source": "http://jqfundamentals.com/legacy",
+	"attribution": [ "jQuery Fundamentals" ]
+}</script>
 
 Sometimes a block of code should only be run under certain conditions. Flow control – via `if` and `else` blocks – lets you run code if certain conditions have been met.
 
@@ -43,21 +42,22 @@ Be mindful not to define functions with the same name multiple times within sepa
 In order to use flow control successfully, it's important to understand which kinds of values are "truthy" and which kinds of values are "falsy." Sometimes, values that seem like they should evaluate one way actually evaluate another.
 
 ```
-// Values that evaluate to true:
-"0";
-"any string";
-[]; // An empty array.
-{}; // An empty object.
-1; // Any non-zero number.
+// Values that evaluate to false:
+false
+"" // An empty string.
+NaN // JavaScript's "not-a-number" variable.
+null
+undefined // Be careful -- undefined can be redefined!
+0 // The number zero.
 ```
 
 ```
-// Values that evaluate to false:
-""; // An empty string.
-NaN; // JavaScript's "not-a-number" variable.
-null;
-undefined; // Be careful -- undefined can be redefined!
-0; // The number zero.
+// Everything else evaluates to true, some examples:
+"0"
+"any string"
+[] // An empty array.
+{} // An empty object.
+1 // Any non-zero number.
 ```
 
 ## Conditional Variable Assignment with the Ternary Operator
@@ -115,12 +115,13 @@ var stuffToDo = {
 
 };
 
+// Check if the property exists in the object.
 if ( stuffToDo[ foo ] ) {
-
+	// This code won't run.
 	stuffToDo[ foo ]();
 
 } else {
-
+	// This code will run.
 	stuffToDo[ "default" ]();
 
 }

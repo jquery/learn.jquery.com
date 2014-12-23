@@ -1,10 +1,9 @@
----
-title   : Data Methods
-level: intermediate
-source: http://jqfundamentals.com/legacy
-attribution:
-  - jQuery Fundamentals
----
+<script>{
+	"title": "Data Methods",
+	"level": "intermediate",
+	"source": "http://jqfundamentals.com/legacy",
+	"attribution": [ "jQuery Fundamentals" ]
+}</script>
 
 There's often data about an element you want to store with the element. In plain JavaScript, you might do this by adding a property to the DOM element, but you'd have to deal with memory leaks in some browsers. jQuery offers a straightforward way to store data related to an element, and it manages the memory issues for you.
 
@@ -25,18 +24,18 @@ For example, you may want to establish a relationship between a list item and a 
 
 $( "#myList li" ).each(function() {
 
-	var $li = $( this );
-	var $div = $li.find( "div.content" );
+	var li = $( this );
+	var div = li.find( "div.content" );
 
-	$li.data( "contentDiv", $div );
+	li.data( "contentDiv", div );
 
 });
 
 // Later, we don't have to find the div again;
 // we can just read it from the list item's data
-var $firstLi = $( "#myList li:first" );
+var firstLi = $( "#myList li:first" );
 
-$firstLi.data( "contentDiv" ).html( "new content" );
+firstLi.data( "contentDiv" ).html( "new content" );
 ```
 
 In addition to passing `.data()` a single key-value pair to store data, you can also pass an object containing one or more pairs.

@@ -1,10 +1,9 @@
----
-title: Scope
-level: beginner
-source: http://jqfundamentals.com/legacy, http://javascriptplayground.com/blog/2012/04/javascript-variable-scope-this
-attribution:
-  - jQuery Fundamentals
----
+<script>{
+	"title": "Scope",
+	"level": "beginner",
+	"source": "http://jqfundamentals.com/legacy, http://javascriptplayground.com/blog/2012/04/javascript-variable-scope-this",
+	"attribution": [ "jQuery Fundamentals" ]
+}</script>
 
 "Scope" refers to the variables that are available to a piece of code at a given time. A lack of understanding of scope can lead to frustrating debugging experiences. The idea of scope is that it's where certain functions or variables are accessible from in our code, and the context in which they exist and are executed in.
 
@@ -27,7 +26,7 @@ JavaScript also creates a __Local Scope__ inside each function body. For example
 ```
 function myFunc() {
 	var x = 5;
-};
+}
 
 console.log( x ); // ReferenceError: x is not defined
 ```
@@ -36,12 +35,12 @@ Since `x` was initialized within `.myFunc()`, it is only accessible within `.myF
 
 ## A Word of Caution
 
-If you declare a variable and forget to use the `var` keyword, that variable is automically made global. So this code would work:
+If you declare a variable and forget to use the `var` keyword, that variable is automatically made global. So this code would work:
 
 ```
 function myFunc() {
 	x = 5;
-};
+}
 
 console.log( x ); // 5
 ```
@@ -121,7 +120,7 @@ sayHello(); // "hello"
 console.log( foo ); // "world"
 ```
 
-When you reference a global variable within a function, that function can see changes to the variable value after the function is defined.
+When, within a function, you reference a variable defined in an outer scope, that function can see changes to the variable's value after the function is defined.
 
 ```
 var myFunction = function() {

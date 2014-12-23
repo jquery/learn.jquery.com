@@ -1,7 +1,7 @@
----
-title: Why Use the Widget Factory?
-level: Beginner
----
+<script>{
+	"title": "Why Use the Widget Factory?",
+	"level": "beginner"
+}</script>
 
 Writing jQuery plugins is as simple as adding a method to `jQuery.prototype` (more commonly seen as `$.fn`) and following some simple conventions like returning `this` for chainability. So why does the widget factory exist? And why is it hundreds of lines of code?
 

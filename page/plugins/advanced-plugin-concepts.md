@@ -1,7 +1,7 @@
----
-title: Advanced Plugin Concepts
-level: intermediate
----
+<script>{
+	"title": "Advanced Plugin Concepts",
+	"level": "intermediate"
+}</script>
 
 ### Provide Public Access to Default Plugin Settings
 
@@ -71,16 +71,16 @@ $.fn.hilight = function( options ) {
 	// Iterate and reformat each matched element.
 	return this.each(function() {
 
-		var $this = $( this );
+		var elem = $( this );
 
 		// ...
 
-		var markup = $this.html();
+		var markup = elem.html();
 
 		// Call our format function.
 		markup = $.fn.hilight.format( markup );
 
-		$this.html( markup );
+		elem.html( markup );
 
 	});
 
@@ -110,7 +110,7 @@ This technique makes it possible for others to define and ship transition defini
 
 The technique of exposing part of your plugin to be overridden can be very powerful. But you need to think carefully about what parts of your implementation to expose. Once it's exposed, you need to keep in mind that any changes to the calling arguments or semantics may break backward compatibility. As a general rule, if you're not sure whether to expose a particular function, then you probably shouldn't.
 
-So how then do we define more functions without cluttering the namespace and without exposing the implementation? This is a job for closures. To demonstrate, we'll add another function to our plugin called "debug". The debug function will log the number of selected elements to the Firebug console. To create a closure, we wrap the entire plugin definition in a function (as detailed in the jQuery Authoring Guidelines).
+So how then do we define more functions without cluttering the namespace and without exposing the implementation? This is a job for closures. To demonstrate, we'll add another function to our plugin called "debug". The debug function will log the number of selected elements to the console. To create a closure, we wrap the entire plugin definition in a function (as detailed in the jQuery Authoring Guidelines).
 
 ```
 // Create closure.
@@ -123,9 +123,9 @@ So how then do we define more functions without cluttering the namespace and wit
 	};
 
 	// Private function for debugging.
-	function debug( $obj ) {
+	function debug( obj ) {
 		if ( window.console && window.console.log ) {
-			window.console.log( "hilight selection count: " + $obj.size() );
+			window.console.log( "hilight selection count: " + obj.length );
 		}
 	};
 
@@ -137,53 +137,6 @@ So how then do we define more functions without cluttering the namespace and wit
 ```
 
 Our "debug" method cannot be accessed from outside of the closure and thus is private to our implementation.
-
-### Support the Metadata Plugin
-
-Depending on the type of plugin you're writing, adding support for the [Metadata Plugin](http://docs.jquery.com/Plugins/Metadata/metadata) can make it even more powerful. Personally, I love the Metadata Plugin because it lets you use unobtrusive markup to override plugin options (which is particularly useful when creating demos and examples). And supporting it is very simple!
-
-```
-// Plugin definition.
-$.fn.hilight = function( options ) {
-
-	// Build main options before element iteration.
-	var opts = $.extend( {}, $.fn.hilight.defaults, options );
-
-	return this.each(function() {
-		var $this = $( this );
-
-		// Build element specific options.
-		// This changed line tests to see if the Metadata Plugin is installed,
-		// And if it is, it extends our options object with the extracted metadata.
-		var o = $.meta ? $.extend( {}, opts, $this.data() ) : opts;
-
-		//...
-
-	});
-
-};
-```
-
-*Note:* This line is added as the last argument to *jQuery.extend* so it will override any other option settings. Now we can drive behavior from the markup if we choose:
-
-```
-<!--  markup  -->
-<div class="hilight { background: 'red', foreground: 'white' }">
-	Have a nice day!
-</div>
-<div class="hilight { foreground: 'orange' }">
-	Have a nice day!
-</div>
-<div class="hilight { background: 'green' }">
-	Have a nice day!
-</div>
-```
-
-And now we can hilight each of these `<div>`s uniquely using a single line of script:
-
-```
-$( ".hilight" ).hilight();
-```
 
 ###Bob and Sue
 
@@ -292,14 +245,14 @@ $( "<div id=\"the-gallery-wrapper\" />").appendTo( "body" );
 $( "#the-gallery-wrapper" ).append( "..." );
 
 // Retain an internal reference:
-var $wrapper = $( "<div />" )
+var wrapper = $( "<div />" )
 	.attr( settings.wrapperAttrs )
 	.appendTo( settings.container );
 
-$wrapper.append( "..." ); // Easy to reference later...
+wrapper.append( "..." ); // Easy to reference later...
 ```
 
-Notice that we've created a reference to the injected wrapper and we're also calling the ´.attr()` method to add any specified attributes to the element. So, in our settings it might be handled like this:
+Notice that we've created a reference to the injected wrapper and we're also calling the `.attr()` method to add any specified attributes to the element. So, in our settings it might be handled like this:
 
 ```
 var defaults = {
@@ -327,7 +280,7 @@ var defaults = {
 };
 
 // Later on in the plugin where we define the wrapper:
-var $wrapper = $( "<div />" )
+var wrapper = $( "<div />" )
 	.attr( settings.wrapperAttrs )
 	.css( settings.wrapperCSS ) // ** Set CSS!
 	.appendTo( settings.container );
@@ -354,7 +307,7 @@ var defaults = {
 
 // Later on in the plugin:
 
-$nextButton.bind( "click", showNextImage );
+nextButton.on( "click", showNextImage );
 
 function showNextImage() {
 

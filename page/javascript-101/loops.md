@@ -1,10 +1,9 @@
----
-title:        Loops
-level:        beginner
-source: http://jqfundamentals.com/legacy
-attribution:
-  - jQuery Fundamentals
----
+<script>{
+	"title": "Loops",
+	"level": "beginner",
+	"source": "http://jqfundamentals.com/legacy",
+	"attribution": [ "jQuery Fundamentals" ]
+}</script>
 
 Loops let a block of code run a certain number of times:
 
@@ -22,14 +21,14 @@ Note that in loops, the variable `i` is not "scoped" to the loop block even thou
 A `for` loop is made up of four statements and has the following structure:
 
 ```
-for ( [initialisation]; [conditional]; [iteration] ) {
+for ( [initialization]; [conditional]; [iteration] ) {
 
 	[loopBody]
 
 }
 ```
 
-The _initialisation_ statement is executed only once, before the loop starts. It gives you an opportunity to prepare or declare any variables.
+The _initialization_ statement is executed only once, before the loop starts. It gives you an opportunity to prepare or declare any variables.
 
 The _conditional_ statement is executed before each iteration, and its return value decides whether the loop is to continue. If the conditional statement evaluates to a falsy value, then the loop stops.
 
