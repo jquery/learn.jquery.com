@@ -33,3 +33,26 @@ var myObject = {
 	99999: 789
 };
 ```
+## Iterating Over the Enumerable Properties of an Object:
+
+```
+var myObject = {
+	validIdentifier: 123,
+	"some string": 456,
+	99999: 789
+};
+
+for ( var prop in myObject ) {
+	// Determine if the property is on the object itself.
+	// (not on the prototype)
+	if ( myObject.hasOwnProperty( prop ) ) {
+		console.log( "Property : " + prop + " ; value : " + myObject[ prop ] );
+	}
+}
+
+// Would log the following:
+// Please that the order is not guaranteed and may differ.
+
+// Property : 99999 ; value : 789
+// Property : validIdentifier ; value : 123
+// Property : some string ; value : 456
