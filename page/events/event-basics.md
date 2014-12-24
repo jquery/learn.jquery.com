@@ -42,7 +42,7 @@ $( document ).ready(function(){
 	// Now create a new button element with the alert class. This button
 	// was created after the click listeners were applied above, so it
 	// will not have the same click behavior as its peers
-	$( "button" ).addClass( "alert" ).appendTo( document.body );
+	$( "<button class='alert'>Alert!</button>" ).appendTo( document.body );
 });
 ```
 
