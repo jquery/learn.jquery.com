@@ -195,8 +195,8 @@ $( document ).ready(function() {
 
 		var createContainer = function() {
 			var item = $( this );
-			var container = container.clone().appendTo( item );
-			item.data( "container", container );
+			var _container = container.clone().appendTo( item );
+			item.data( "container", _container );
 		};
 
 		var buildUrl = function() {
