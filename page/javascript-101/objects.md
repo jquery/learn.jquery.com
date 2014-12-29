@@ -56,3 +56,4 @@ for ( var prop in myObject ) {
 // Property : 99999 ; value : 789
 // Property : validIdentifier ; value : 123
 // Property : some string ; value : 456
+```
