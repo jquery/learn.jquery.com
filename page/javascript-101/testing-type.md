@@ -44,4 +44,4 @@ if ( Object.prototype.toString.call( myArray ) === "[object Array]" ) {
 }
 ```
 
-jQuery also offers utility methods to help determine the type of an arbitrary value.
+jQuery also offers [utility methods](/using-jquery-core/utility-methods#testing-type) to help determine the type of an arbitrary value.
