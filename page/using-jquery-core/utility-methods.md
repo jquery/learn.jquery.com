@@ -103,3 +103,36 @@ var myObject = {
 $( "#foo" ).click( myObject.myFn ); // HTMLElement #foo
 $( "#foo" ).click( $.proxy( myObject, "myFn" ) ); // myObject
 ```
+
+## Testing Type
+
+As seen in [the JavaScript 101 section](http://learn.jquery.com/javascript-101/testing-type/) the `typeof` operator can be inconsistent or confusing. So instead of using `typeof`, jQuery offers utility methods to help determine the type of a value.
+
+First of all, you have methods to test if a specific value is of a specific type.
+
+```
+$.isArray([]); // true
+$.isFunction(function() {}); // true
+$.isNumeric(3.14); // true
+```
+
+Additionally, there is `$.type()` which checks for the internal class used to create a value. You can see the method as a better alternative for the `typeof` operator.
+
+```
+$.type( true ); // "boolean"
+$.type( 3 ); // "number"
+$.type( "test" ); // "string"
+$.type( function() {} ); // "function"
+
+$.type( new Boolean() ); // "boolean"
+$.type( new Number(3) ); // "number"
+$.type( new String('test') ); // "string"
+$.type( new Function() ); // "function"
+
+$.type( [] ); // "array"
+$.type( null ); // "null"
+$.type( /test/ ); // "regexp"
+$.type( new Date() ); // "date"
+```
+
+As always, you can check the [API docs](http://api.jquery.com/jQuery.type/) for a more in-depth explanation.
