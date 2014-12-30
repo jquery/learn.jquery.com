@@ -51,7 +51,7 @@ for ( var prop in myObject ) {
 }
 
 // Would log the following:
-// Please that the order is not guaranteed and may differ.
+// Please note that the order is not guaranteed and may differ.
 
 // Property : 99999 ; value : 789
 // Property : validIdentifier ; value : 123
