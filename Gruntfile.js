@@ -61,7 +61,7 @@ function contributorAttribution( post, fileName, callback ) {
 			// Reduce to a unique list of contributors
 			.filter(function( value, index, array ) {
 
-				// Check for a value in case this is a new file and there is git log
+				// Check for a value in case this is a new file and there is no git log
 				return value && array.indexOf( value ) === index;
 			})
 
