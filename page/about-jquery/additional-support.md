@@ -86,6 +86,8 @@ You can also connect at http://webchat.freenode.net/?channels=#jquery.
 
 If you wish to post code snippets to the channel, you should use a paste site, like [jsfiddle.net](http://jsfiddle.net/) or [jsbin.com](http://jsbin.com/).
 
+Additional info regarding jQuery's use of IRC can be found on [irc.jquery.org](http://irc.jquery.org).
+
 ### StackOverflow
 
 There is an active and well-informed support community at [StackOverflow](http://stackoverflow.com/questions/tagged/jquery). You can likely find an answer for whatever issue you're experiencing. If your question isn't addressed, you can ask a new question and often receive a quick response.
