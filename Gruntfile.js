@@ -60,7 +60,9 @@ function contributorAttribution( post, fileName, callback ) {
 
 			// Reduce to a unique list of contributors
 			.filter(function( value, index, array ) {
-				return array.indexOf( value ) === index;
+
+				// Check for a value in case this is a new file and there is git log
+				return value && array.indexOf( value ) === index;
 			})
 
 			// Convert to structured objects
