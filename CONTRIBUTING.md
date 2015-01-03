@@ -83,10 +83,6 @@ For more advice on managing your fork and submitting pull requests to the jQuery
 
 Yes! Take a look at our [style guide](http://learn.jquery.com/style-guide) for more information on authoring and formatting conventions.
 
-## How Will My Contribution Be Acknowledged?
-
-We will build the attribution of an article based on the git commit logs and present this information on the site.
-
 <h2 id="getting-help">Getting Help</h2>
 
 If you're struggling to get any part of the site working properly, or have any questions, we're here to help.
