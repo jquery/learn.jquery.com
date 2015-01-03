@@ -29,7 +29,7 @@ Each article should have the following header (see below as some metatags are op
 }</script>
 ```
 
-The `source` and `attribution` properties are optional, and should be used primarily if you are importing an article from an outside source where it was published before being donated for inclusion in the learn site. You should **not** include these properties if you are adding a new article or editing an existing one, as your contribution will be acknowledged via the git commit logs.
+The `source` and `attribution` properties are optional, and should be used primarily if you are importing an article from an outside source where it was published before being donated for inclusion in the learn site. You should **not** include these properties if you are writing a new article or editing an existing one.
 
 ### Code Blocks
 

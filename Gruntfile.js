@@ -40,83 +40,6 @@ function getOrderMap() {
 	return map;
 }
 
-function contributorAttribution( post, fileName, callback ) {
-	var contribs,
-		parseRE = /^(.*)<(.*)>$/;
-
-	// Read contributors from git file information
-	spawnback( "git", [
-		"log",
-		"--follow", // Trace history through file rename operations
-		"--diff-filter=AM", // Only consider "Add" and "Modify" operations
-		"--format=%aN <%aE>",
-		fileName
-	], function( error, result ) {
-		if ( error ) {
-			return callback( error );
-		}
-
-		contribs = result.trimRight().split( /\r?\n/g )
-
-			// Reduce to a unique list of contributors
-			.filter(function( value, index, array ) {
-				return array.indexOf( value ) === index;
-			})
-
-			// Convert to structured objects
-			.map(function( contributor ) {
-				var matches = parseRE.exec( contributor );
-				return {
-					name: matches[ 1 ].trim(),
-					email: matches[ 2 ]
-				};
-			})
-
-			// Alphabetize by 'last name' (relatively crude)
-			.sort(function( a, b ) {
-				return a.name.split( " " ).pop().toLowerCase() <
-					b.name.split( " " ).pop().toLowerCase() ?
-					-1 : 1;
-			});
-
-		// Handle "legacy" content - content authored outside of the learn site
-		// and attributed with metadata in the file,
-		// push those contributors to the front of the list
-		if ( post.attribution ) {
-			post.attribution.forEach(function( contributor ) {
-				var contrib, matches;
-
-				if ( contributor === "jQuery Fundamentals" ) {
-					contrib = {
-						name: "jQuery Fundamentals",
-						email: "github@jquery.com"
-					};
-				} else {
-					matches = parseRE.exec( contributor );
-					contrib = {
-						name: matches[ 1 ].trim(),
-						email: matches[ 2 ]
-					};
-				}
-
-				if ( post.source ) {
-					contrib.source = post.source;
-				}
-
-				contribs.unshift( contrib );
-			});
-		}
-
-		post.customFields = post.customFields || [];
-		post.customFields.push({
-			key: "contributors",
-			value: JSON.stringify( contribs )
-		});
-
-		callback( null, post );
-	});
-}
-
 jqueryContent.postPreprocessors.page = (function() {
 	var orderMap = getOrderMap();
 
@@ -128,7 +51,7 @@ jqueryContent.postPreprocessors.page = (function() {
 			post.menuOrder = menuOrder;
 		}
 
-		contributorAttribution( post, postPath, callback );
+		callback( null, post );
 	};
 })();
 
