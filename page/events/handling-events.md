@@ -138,6 +138,4 @@ $( "p" ).off( "click", bar );
 
 ### Namespacing Events
 
-For complex applications and for plugins you share with others, it can be useful to namespace your events so you don't unintentionally disconnect events that you didn't or couldn't know about. For details, see Event Namespacing.
-
-<!-- TODO: Link to namespacing -->
+For complex applications and for plugins you share with others, it can be useful to namespace your events so you don't unintentionally disconnect events that you didn't or couldn't know about. For details, see [Event Namespacing](/event-basics#namespacing-events).
