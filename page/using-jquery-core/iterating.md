@@ -266,7 +266,7 @@ $( "li" ).map( function( index, element ) {
 	return element.id;
 }).get();
 
-// Also returns ["a", "b", "c"]
+// Also returns [ "a", "b", "c" ]
 // Note that the value comes first with $.map
 $.map( arr, function( value, index ) {
 	return value.id;
