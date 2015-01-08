@@ -5,7 +5,7 @@
 	"attribution": [ "jQuery Fundamentals" ]
 }</script>
 
-jQuery offers two event-related helper functions that save you a few keystrokes.
+jQuery offers a few event-related helper functions that save you a few keystrokes.  Here is an example of one, the `.hover()` function.
 
 ### `.hover()`
 
@@ -19,3 +19,5 @@ $( "#menu li" ).hover(function() {
 	$( this ).toggleClass( "hover" );
 });
 ```
+
+You can find more helper functions on the [API site for Events](https://api.jquery.com/category/events/).
