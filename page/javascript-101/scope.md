@@ -49,7 +49,7 @@ myFunc();
 console.log( x ); // 5
 ```
 
-This is a bad idea. Any variable that is global can have its value changed by any other parts of a program or any other script. This is undesirable, as it could lead to unforseen side effects.
+This is a bad idea. Any variable that is global can have its value changed by any other parts of a program or any other script. This is undesirable, as it could lead to unforeseen side effects.
 
 Secondly, Immediately-Invoked Function Expressions provide a way to avoid global variables. You'll see many libraries such as  jQuery often use these:
 
