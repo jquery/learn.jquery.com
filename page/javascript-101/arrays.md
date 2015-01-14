@@ -172,6 +172,12 @@ console.log( myArray );  // [ 1, 2, 3, 4, 5, 6, 7, 8 ]
 console.log( newArray ); // [ 4, 5, 6, 7, 8 ]
 ```
 
+The `.slice()` method takes an optional second parameter, the end index.
+
+```
+console.log( [ 1, 2, 3, 4, 5, 6, 7, 8 ].slice( 2, 5 ) ); // [ 3, 4, 5 ]
+```
+
 ### .splice()
 
 Removes a certain amount of elements and adds new ones at the given index. It takes at least three parameters:
