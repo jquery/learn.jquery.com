@@ -66,7 +66,7 @@ var bar2;
 
 ## Objects
 
-Everything else in JavaScript is considered an object. While there are [numerous built-in objects](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects), this chapter will cover:
+Everything else in JavaScript is considered an object. While there are [numerous built-in objects](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects "MDN - Standard built-in objects"), this chapter will cover:
 
 * Object
 * Array
