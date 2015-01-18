@@ -48,14 +48,14 @@ for (var i = 0, limit = 100; i < limit; i++) {
 
 ## The `for...in` loop
 
-+A `for...in` loop iterates over the properties of an object. For each property, statements can be executed.
-+
-+```
-+for ( prop in obj ) {
+A `for...in` loop iterates over the properties of an object. For each property, statements can be executed.
+
+```
+for ( prop in obj ) {
 	// statements here will be executed for every key in the object
 	console.log( prop + ': ' + obj[ prop ] );
 }
-``
+```
 
 
 ## The `while` loop
