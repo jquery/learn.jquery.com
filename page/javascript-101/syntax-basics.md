@@ -7,7 +7,7 @@
 
 ### Comments
 
-JavaScript has support for single- and multi-line comments. Comments are ignored by the JavaScript engine and therefore have no side-effects on the outcome of the program. Use comments to document the code for other developers. Libraries like [JSDoc](https://code.google.com/p/jsdoc-toolkit/ "JSDoc Toolkit") are available to help generate project documentation pages based on commenting conventions.
+JavaScript has support for single- and multi-line comments. Comments are ignored by the JavaScript engine and therefore have no side-effects on the outcome of the program. Use comments to document the code for other developers. Libraries like [JSDoc](http://usejsdoc.org/ "JSDoc") are available to help generate project documentation pages based on commenting conventions.
 
 ```
 // Single- and multi-line comments.
