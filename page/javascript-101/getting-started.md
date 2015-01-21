@@ -76,8 +76,15 @@ One of JavaScript's greatest strengths is its simplicity. It can be written and 
 
 Commonly referred to as "developer tools," many browsers ship with built-in features that provide better insight into JavaScript and jQuery while they run in the browser. Although they aren't required, you may find developer tools helpful when it comes to debugging errors in your code. Check out these browsers' developer tools:
 
-- [Apple Safari](https://developer.apple.com/safari/tools/)
-- [Google Chrome Developer Tools](https://developer.chrome.com/devtools)
-- [Microsoft Internet Explorer](http://msdn.microsoft.com/library/ie/bg182326(v=vs.85))
-- [Mozilla Firefox Developer Tools](https://developer.mozilla.org/docs/Tools)
-- [Opera Dragonfly](http://www.opera.com/dragonfly/)
+ - [Apple Safari][1]
+ - [Google Chrome Developer Tools][2]
+ - [Microsoft Internet Explorer][3]
+ - [Mozilla Firefox Developer Tools][4]
+ - [Opera Dragonfly][5]
+
+
+  [1]: https://developer.apple.com/safari/tools/
+  [2]: https://developer.chrome.com/devtools
+  [3]: http://msdn.microsoft.com/library/ie/bg182326(v=vs.85)
+  [4]: https://developer.mozilla.org/docs/Tools
+  [5]: http://www.opera.com/dragonfly/
