@@ -92,7 +92,7 @@ $( "<a/>", {
 });
 ```
 
-Note that the attributes object in the second argument above, the property name class is quoted, although the property names `html` and `href` are not. Property names generally do not need to be quoted unless they are [reserved words](/javascript-101/reserved-words/) (as `class` is in this case).
+Note that the attributes object in the second argument above, the property name class is quoted, although the property names `html` and `href` are not. Property names generally do not need to be quoted unless they are [reserved words](https://mathiasbynens.be/notes/reserved-keywords) (as `class` is in this case).
 
 When you create a new element, it is not immediately added to the page. There are several ways to add an element to the page once it's been created.
 

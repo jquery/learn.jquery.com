@@ -106,7 +106,7 @@ $( "#foo" ).click( $.proxy( myObject, "myFn" ) ); // myObject
 
 ## Testing Type
 
-As seen in [the JavaScript 101 section](http://learn.jquery.com/javascript-101/testing-type/) the `typeof` operator can be inconsistent or confusing. So instead of using `typeof`, jQuery offers utility methods to help determine the type of a value.
+Sometimes the `typeof` operator [can be confusing or incosistent](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof). So instead of using `typeof`, jQuery offers utility methods to help determine the type of a value.
 
 First of all, you have methods to test if a specific value is of a specific type.
 
