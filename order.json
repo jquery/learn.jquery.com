@@ -9,25 +9,6 @@
     ]
   },
   {
-    "javascript-101": [
-      "getting-started",
-      "running-code",
-      "syntax-basics",
-      "types",
-      "conditional-code",
-      "operators",
-      "loops",
-      "reserved-words",
-      "arrays",
-      "objects",
-      "functions",
-      "testing-type",
-      "this-keyword",
-      "scope",
-      "closures"
-    ]
-  },
-  {
     "using-jquery-core": [
       "dollar-object-vs-function",
       "document-ready",
