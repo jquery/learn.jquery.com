@@ -240,12 +240,12 @@ A bad implementation:
 
 ```
 // Plugin code
-$( "<div id=\"the-gallery-wrapper\" />").appendTo( "body" );
+$( "<div class=\"gallery-wrapper\" />").appendTo( "body" );
 
-$( "#the-gallery-wrapper" ).append( "..." );
+$( ".gallery-wrapper" ).append( "..." );
 ```
 
-To allow users to access and even manipulate those information, you can store them in the settings of your plugin. The previous code can be rewritten as shown below:
+To allow users to access and even manipulate those information, you can store them in a variable containing the settings of your plugin. A better implementation of the previous code is shown below:
 
 ```
 // Retain an internal reference:
@@ -261,7 +261,7 @@ Notice that we've created a reference to the injected wrapper and we're also cal
 ```
 var defaults = {
 	wrapperAttrs : {
-		id: "gallery-wrapper"
+		class: "gallery-wrapper"
 	},
 	// ... rest of settings ...
 };
