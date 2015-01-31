@@ -123,7 +123,7 @@ jQuery.noConflict();
 </script>
 ```
 
-Note that if you use this technique, you will not be able to use prototype.js methods inside the immediately invoked function that expect `$` to be prototype.js's `$`.
+Note that if you use this technique, you will not be able to use prototype.js methods inside the immediately invoked function. `$` will be a reference to jQuery, not prototype.js.
 
 ### Use the Argument That's Passed to the `jQuery( document ).ready()` Function
 
