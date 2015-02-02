@@ -5,4 +5,4 @@
 	"attribution": [ "jQuery Fundamentals" ]
 }</script>
 
-Use the source as your documentation. Bookmark [the source code](http://code.jquery.com/jquery/) and refer to it often.
+Use the source as your documentation. Bookmark [the source code](https://code.jquery.com/jquery/) and refer to it often.

@@ -40,7 +40,7 @@ The example below shows `$( document ).ready()` and `$( window ).load()` in acti
 ```
 <html>
 <head>
-	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script>
 	$( document ).ready(function() {
 		console.log( "document loaded" );
