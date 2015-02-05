@@ -1,4 +1,4 @@
-3<script>{
+<script>{
 	"title": "Creating a Custom Theme with ThemeRoller",
 	"level": "beginner"
 }</script>
