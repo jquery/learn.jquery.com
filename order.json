@@ -59,8 +59,7 @@
     "effects": [
       "intro-to-effects",
       "custom-effects",
-      "queue-and-dequeue-explained",
-      "uses-of-queue-and-dequeue"
+      "queue-and-dequeue-explained"
     ]
   },
   {
