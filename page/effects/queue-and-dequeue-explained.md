@@ -28,44 +28,24 @@ $( ".box" )
 	}, "slow")
 	.queue( function() {
 		$( "#title" ).html( "We're in the animation, baby!" );
+
+		// This tells jQuery to continue to the next item in the queue
+		$( this ).dequeue();
 	} );
 
 ```
 
-To add multiple functions to the queue, you can call `.queue()` multiple times.
+In this example, the queued function will execute right after the animation.
 
-```
-$( ".box" )
-	.animate( {
-		height: 20
-	}, "slow" )
-	.queue( function() {
-		console.log('I fired!');
-	} )
-	.animate( {
-		height: 50
-	}, "fast" )
-	.queue( function() {
-		console.log('I fired too!');
-	} );
-```
-
-If you ran this example, you will have seen that the last animation never runs and the last callback doesn't fire. This is because we basically never told jQuery to continue. Inside of the first queued function, you will need to call `.dequeue()` to move forward to the next function in the queue.
-
-```
-.queue( function() {
-	console.log('I fired!');
-	$( this ).dequeue();
-} )
-```
+jQuery does not have any insight into how the queue items function, so we need to call `.dequeue()`, which tells jQuery when to move to the next item in the queue.
 
 Another way of *dequeuing* is by calling the function that is passed to your callback. That function will automatically call `.dequeue()` for you.
 
 ```
-.queue( function(next) {
-	console.log('I fired!');
+.queue( function( next ) {
+	console.log( "I fired!" );
 	next();
-} )
+} );
 ```
 
 ## Custom Queues
@@ -94,16 +74,16 @@ Since queues are just a set of ordered operations, our application may have some
 ```
 $( ".box" )
 	.queue( "steps", function( next ) {
-		console.log( "I fired" );
+		console.log( "Will never log because we clear the queue" );
 		next();
 	} )
-  	.clearQueue( "steps" )
+	.clearQueue( "steps" )
 	.dequeue( "steps" );
 ```
 
 In this example, nothing will happen as we removed everything from the `steps` queue.
 
-Another way of clearing the queue is to call `.stop( true )`. That will stop the currently running animations and will clear the queue. 
+Another way of clearing the queue is to call `.stop( true )`. That will stop the currently running animations and will clear the queue.
 
 ## Replacing The Queue
 
@@ -112,7 +92,7 @@ When you pass an array of functions as second argument to `.queue()`, that array
 ```
 $( ".box" )
 	.queue( "steps", function( next ) {
-		console.log( "I won't fire" );
+		console.log( "I will never fire as we totally replace the queue" );
 		next();
 	} )
 	.queue( "steps", [
@@ -120,8 +100,8 @@ $( ".box" )
 			console.log( "I fired!" );
 			next();
 		}
-  	] )
-  	.dequeue( "steps" );
+	] )
+	.dequeue( "steps" );
 ```
 
 You can also call `.queue()` without passing it functions, which will return the queue of that element as an array.
@@ -134,5 +114,5 @@ $( ".box" ).queue( "steps", function( next ) {
 
 console.log( $( ".box" ).queue( "steps" ) );
 
-$('.box').dequeue( "steps" );
+$( ".box" ).dequeue( "steps" );
 ```
