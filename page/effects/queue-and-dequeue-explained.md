@@ -13,7 +13,7 @@ $( ".box" )
 	.animate( {
 		height: 20
 	}, "slow", function() {
-		$( "#title" ).html( "We're in the animation, baby!" );
+		$( "#title" ).html( "We're in the callback, baby!" );
 	} );
 ```
 
