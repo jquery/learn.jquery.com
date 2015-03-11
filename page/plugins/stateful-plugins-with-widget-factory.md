@@ -257,7 +257,7 @@ $.nmk.progressbar.prototype.reset = function() {
 
 ### Cleaning Up
 
-In some cases, it will make sense to allow users to apply and then later unapply your plugin. You can accomplish this via the `destroy` method. Within the `destroy` method, you should undo anything your plugin may have done during initialization or later use. The `destroy` method is automatically called if the element that your plugin instance is tied to is removed from the DOM, so this can be used for garbage collection as well. The default `destroy` method removes the link between the DOM element and the plugin instance, so it's important to call the base function from your plugin's `destroy` method.
+In some cases, it will make sense to allow users to apply and then later unapply your plugin. You can accomplish this via the `_destroy` method. Within the `_destroy` method, you should undo anything your plugin may have done during initialization or later use. The `_destroy` method is automatically called if the element that your plugin instance is tied to is removed from the DOM, so this can be used for garbage collection as well. The base `destroy` method calls `_destroy` on the plugin instance.
 
 Adding a destroy method to a widget:
 
