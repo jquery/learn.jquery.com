@@ -286,12 +286,12 @@ $.widget( "nmk.progressbar", {
 		}
 	},
 
-	destroy: function() {
+	_destroy: function() {
 		this.element
 			.removeClass( "progressbar" )
 			.text( "" );
 
-		// Call the base destroy function.
+		// In jQuery UI 1.8, you must invoke the destroy method from the base widget
 		$.Widget.prototype.destroy.call( this );
 	}
 
