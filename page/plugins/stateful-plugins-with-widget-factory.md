@@ -290,9 +290,6 @@ $.widget( "nmk.progressbar", {
 		this.element
 			.removeClass( "progressbar" )
 			.text( "" );
-
-		// In jQuery UI 1.8, you must invoke the destroy method from the base widget
-		$.Widget.prototype.destroy.call( this );
 	}
 
 });
