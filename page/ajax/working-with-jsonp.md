@@ -20,7 +20,7 @@ $.ajax({
 
 	// Tell YQL what we want and that we want JSON
 	data: {
-		q: "select title,abstract,url from search.news where query=\"cat\"",
+		q: "select * from search.ec (1, 10) WHERE keyword='New York'",
 		format: "json"
 	},
 
@@ -30,5 +30,7 @@ $.ajax({
 	}
 });
 ```
+
+If you'd like to access community tables you have to add `env: "http://datatables.org/alltables.env"` to the data object otherwise you would get an error message with `No definition found for Table`.
 
 jQuery handles all the complex aspects of JSONP behind-the-scenes — all we have to do is tell jQuery the name of the JSONP callback parameter specified by YQL ("callback" in this case), and otherwise the whole process looks and feels like a normal Ajax request.
