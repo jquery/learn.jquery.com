@@ -9,7 +9,7 @@ For complete documentation of jQuery manipulation methods, visit the [Manipulati
 
 ## Getting and Setting Information About Elements
 
-There are many ways to change an existing element. Among the most common tasks is changing the inner HTML or attribute of an element. jQuery offers simple, cross-browser methods for these sorts of manipulations. You can also get information about elements using many of the same methods in their getter incarnations. For more information on getters and setters, see the [Working with Selections](/working-with-selections/) section. Here are a few methods you can use to get and set information about elements:
+There are many ways to change an existing element. Among the most common tasks is changing the inner HTML or attribute of an element. jQuery offers simple, cross-browser methods for these sorts of manipulations. You can also get information about elements using many of the same methods in their getter incarnations. For more information on getters and setters, see the [Working with Selections](/using-jquery-core/working-with-selections/) section. Here are a few methods you can use to get and set information about elements:
 
 * **`.html()`** – Get or set the HTML contents.
 * **`.text()`** – Get or set the text contents; HTML will be stripped.

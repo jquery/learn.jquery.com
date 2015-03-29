@@ -111,8 +111,8 @@ When you click the "Download theme" button in ThemeRoller, you'll be directed to
 
 ### Support: Where Can I Get Help?
 
-JQuery UI user and developer resources are kept up-to-date at the [Support Center](http://jqueryui.com/support).
+JQuery UI user and developer resources are kept up-to-date at the [Support Center](http://jqueryui.com/support/).
 
 ### Developers Wanted!
 
-Want to join the jQuery UI team? We'd love your help! Visit the UI [Development Center](http://jqueryui.com/development) for details on how to get involved.
+Want to join the jQuery UI team? We'd love your help! Visit the UI [Development Center](http://jqueryui.com/development/) for details on how to get involved.
