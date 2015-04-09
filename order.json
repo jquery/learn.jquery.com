@@ -1,7 +1,6 @@
 [
   "index",
   "about",
-  "contributing",
   {
     "about-jquery": [
       "how-jquery-works",
