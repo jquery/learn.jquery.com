@@ -58,3 +58,13 @@ $( ".category :radio" ); // Implied universal selection.
 $( ".category *:radio" ); // Same thing, explicit now.
 $( ".category input:radio" ); // Much better.
 ```
+
+## Avoid using direct attribute Selectors
+
+Attribute selectors could be very slow.
+
+```
+$("[attributeKey=value]"); // Extremely expensive.
+$("input[attributeKey=value]");; // Better.
+$(".formEle").find("input[attributeKey=value]"); //  Much better.
+```
