@@ -33,7 +33,7 @@ The `source` and `attribution` properties are optional, and should be used prima
 
 ### Code Blocks
 
-Code blocks should be set off with triple backticks and should **not** be indented. (That is to say, the site prefers the use of "fenced blocks" notation supported by [gfm](http://github.github.com/github-flavored-markdown/).)
+Code blocks should be set off with triple backticks and should **not** be indented. (That is to say, the site prefers the use of "fenced blocks" notation supported by [gfm](https://help.github.com/articles/github-flavored-markdown/).)
 
 ## Writing Style
 
@@ -118,4 +118,4 @@ Content should be educational and accessible to a broad audience of developers. 
 - Favor "Right Way" examples over "Wrong Way" examples – there is more than one wrong way to do something, after all.
 - Use good comments so that explanation within prose isn't necessary.
 - Test your code examples before submitting.
-- Use the [jQuery Core Code Style Guide](http://docs.jquery.com/JQuery_Core_Style_Guidelines) for your code examples.
+- Use the [jQuery Core Code Style Guide](http://contribute.jquery.org/style-guide/js/) for your code examples.

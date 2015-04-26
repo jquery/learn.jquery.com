@@ -50,7 +50,7 @@ $( "div:animated" );
 
 However, this test doesn't work with `<tr>` elements. In the case of `<tr>` jQuery does check the CSS `display` property, and considers an element hidden if its `display` property is set to `none`.
 
-Elements that have not been added to the DOM will always be considered hidden, even if the CSS that would affect them would render them visible. See the [Manipulating Elements](/manipulating-elements) section to learn how to create and add elements to the DOM.
+Elements that have not been added to the DOM will always be considered hidden, even if the CSS that would affect them would render them visible. See the [Manipulating Elements](/using-jquery-core/manipulating-elements/) section to learn how to create and add elements to the DOM.
 
 ## Choosing Selectors
 
