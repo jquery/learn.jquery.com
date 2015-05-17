@@ -43,7 +43,7 @@ The static content in the `page` directory is deployed to a [`jquery-wp-content`
 
 The simplest and least complicated way to help is to [file issues](https://github.com/jquery/learn.jquery.com/issues) if you notice mistakes that should be fixed, improvements that can be made, or if you have ideas for new articles. We'll use the issues to continue discussion and track progress on anything you point out.
 
-If you'd like to go a step further and contribute new articles, make edits to existing ones, or work on the site itself, the first thing you'll need is a [fork](https://help.github.com/articles/fork-a-repo). When you have changes you'd like to have reviewed for integration into the site, submit a [pull request](https://help.github.com/articles/using-pull-requests).
+If you'd like to go a step further and contribute new articles, make edits to existing ones, or work on the site itself, the first thing you'll need is a [fork](https://help.github.com/articles/fork-a-repo/). When you have changes you'd like to have reviewed for integration into the site, submit a [pull request](https://help.github.com/articles/using-pull-requests/).
 
 *(If you're unfamiliar with Git, you can still contribute by using features in GitHub's web interface. You can edit files directly via [GitHub's in-browser editor](https://github.com/blog/905-edit-like-an-ace). You can [create and delete branches directly from your fork](https://github.com/blog/1377-create-and-delete-branches), so you can also submit new articles as well. Either way, we still encourage you to [learn how to use Git and GitHub](https://help.github.com/) as soon as you can.)*
 
@@ -68,7 +68,7 @@ Once you've gotten your environment working, here are the general steps you shou
 5. When you're done, stage the new/modified preparation for commit: `git add page/faq/how-do-i-add-a-new-article-to-the-learn-site.md`
 6. Commit the files to your local repo: `git commit -m "add a relevant message describing the change"`
 7. Push the files to your GitHub remote: `git push origin <feature/issue name/number>`
-8. Go to your fork on GitHub and submit a new [pull request](https://help.github.com/articles/using-pull-requests).
+8. Go to your fork on GitHub and submit a new [pull request](https://help.github.com/articles/using-pull-requests/).
 
 For more advice on managing your fork and submitting pull requests to the jQuery Foundation, read our [Commits and Pull Requests](http://contribute.jquery.org/commits-and-pull-requests/) guide.
 
