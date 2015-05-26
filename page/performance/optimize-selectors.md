@@ -59,12 +59,16 @@ $( ".category *:radio" ); // Same thing, explicit now.
 $( ".category input:radio" ); // Much better.
 ```
 
-## Avoid using direct attribute Selectors
+## Avoid using direct attribute selectors
 
 Attribute selectors could be very slow.
-
+While jQuery can use native `.getElementsByClassName` in class selectors, and `.getElementByTagName` it can't for the attribute selectors. This could lead to a slowdown in modern browsers.
 ```
-$("[attributeKey=value]"); // Extremely expensive.
-$("input[attributeKey=value]");; // Better.
-$(".formEle").find("input[attributeKey=value]"); //  Much better.
+$("[key*=value]"); // Extremely expensive.
+
+$("[key=value]"); // Extremely expensive.
+
+$("input[attributeKey=value]"); // Better.
+
+$(".form").find("input[key=value]"); //  Much better.
 ```
