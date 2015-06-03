@@ -5,7 +5,7 @@
 	"attribution": [ "jQuery Fundamentals" ]
 }</script>
 
-jQuery provides a method `.on()` to respond to any event on the selected elements. This is called an _event binding_. Although `.on()` isn't the only method provided for event binding, it is a best practice to use this for jQuery 1.7+. To learn more, [read more about the evolution of event binding in jQuery](/events/history-of-events).
+jQuery provides a method `.on()` to respond to any event on the selected elements. This is called an _event binding_. Although `.on()` isn't the only method provided for event binding, it is a best practice to use this for jQuery 1.7+. To learn more, [read more about the evolution of event binding in jQuery](/events/history-of-events/).
 
 The `.on()` method provides several useful features:
 
@@ -138,4 +138,4 @@ $( "p" ).off( "click", bar );
 
 ### Namespacing Events
 
-For complex applications and for plugins you share with others, it can be useful to namespace your events so you don't unintentionally disconnect events that you didn't or couldn't know about. For details, see [Event Namespacing](/event-basics#namespacing-events).
+For complex applications and for plugins you share with others, it can be useful to namespace your events so you don't unintentionally disconnect events that you didn't or couldn't know about. For details, see [Event Namespacing](/events/event-basics/#namespacing-events).

@@ -81,7 +81,7 @@ For more advice on managing your fork and submitting pull requests to the jQuery
 
 ### Formatting Articles
 
-Yes! Take a look at our [style guide](http://learn.jquery.com/style-guide) for more information on authoring and formatting conventions.
+Yes! Take a look at our [style guide](http://learn.jquery.com/style-guide/) for more information on authoring and formatting conventions.
 
 <h2 id="getting-help">Getting Help</h2>
 

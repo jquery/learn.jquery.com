@@ -25,7 +25,7 @@ $( "div.funtimes" ).animate(
 );
 ```
 
-**Note:** Color-related properties cannot be animated with `.animate()` using jQuery out of the box. Color animations can easily be accomplished by including the [color plugin](http://github.com/jquery/jquery-color). We'll discuss using plugins later in the book.
+**Note:** Color-related properties cannot be animated with `.animate()` using jQuery out of the box. Color animations can easily be accomplished by including the [color plugin](https://github.com/jquery/jquery-color). We'll discuss using plugins later in the book.
 
 ### Easing
 

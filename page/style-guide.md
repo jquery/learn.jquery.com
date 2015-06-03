@@ -11,7 +11,7 @@
 
 ## Formatting Conventions
 
-Articles in the learn site are authored with [GitHub Flavored Markdown](http://github.github.com/github-flavored-markdown/), and the beginning of each article contains some JSON "front matter" that contains metadata used when the article is published.
+Articles in the learn site are authored with [GitHub Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/), and the beginning of each article contains some JSON "front matter" that contains metadata used when the article is published.
 
 ### Article Header Metadata
 
@@ -106,7 +106,7 @@ Content should be educational and accessible to a broad audience of developers. 
 - Link to the jQuery blog or API documentation when necessary.
 - Use inline hyperlinks to reference relevant content.
 - Acceptable external resources:
-	- [Mozilla Developer Network](https://developer.mozilla.org/)
+	- [Mozilla Developer Network](https://developer.mozilla.org/en-US/)
 	- [Webplatform.org](http://www.webplatform.org/)
 	- [htmldog.com](http://www.htmldog.com/)
 

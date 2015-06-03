@@ -27,7 +27,7 @@ Although jQuery's event system is oriented towards delivering DOM events to DOM 
 
 ### jQuery.event.props: Array
 
-jQuery defines an [Event object](http://api.jquery.com/jQuery.Event/) that represents a cross-browser subset of the information available when an event occurs. The `jQuery.event.props` property is an array of string names for properties that are always copied when jQuery processes a *native* browser event. (Events fired in code by `.trigger()` do not use this list, since the code can construct a `jQuery.Event` object with the needed values and trigger using that object.)
+jQuery defines an [Event object](https://api.jquery.com/category/events/event-object/) that represents a cross-browser subset of the information available when an event occurs. The `jQuery.event.props` property is an array of string names for properties that are always copied when jQuery processes a *native* browser event. (Events fired in code by `.trigger()` do not use this list, since the code can construct a `jQuery.Event` object with the needed values and trigger using that object.)
 
 To add a property name to this list, use `jQuery.event.props.push( "newPropertyName" )`. However, be aware that every event processed by jQuery will now attempt to copy this property name from the native browser event to jQuery's constructed event. If the property does not exist for that event type, it will get an undefined value. Adding many properties to this list can significantly reduce event delivery performance, so for infrequently-needed properties it is more efficient to use the value directly from `event.originalEvent` instead. If properties must be copied, you are strongly advised to use `jQuery.event.fixHooks` as of version 1.7.
 

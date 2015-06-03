@@ -7,7 +7,7 @@
 
 ### About ThemeRoller
 
-ThemeRoller is a web app that offers a fun and intuitive interface for designing and downloading custom themes for jQuery UI. You can find ThemeRoller in the "Themes" section of the jQuery UI site, or by following this link: [jQuery UI ThemeRoller](http://jqueryui.com/themeroller)
+ThemeRoller is a web app that offers a fun and intuitive interface for designing and downloading custom themes for jQuery UI. You can find ThemeRoller in the "Themes" section of the jQuery UI site, or by following this link: [jQuery UI ThemeRoller](http://jqueryui.com/themeroller/)
 
 ![ThemeRoller Sidebar](/resources/jquery-ui/themeroller-interface-new.png)
 ![ThemeRoller Sidebar](/resources/jquery-ui/themeroller-gallery-new.png)
