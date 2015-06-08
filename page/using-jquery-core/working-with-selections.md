@@ -5,16 +5,18 @@
 
 ### Getters & Setters
 
-jQuery "overloads" its methods, so the method used to set a value generally has the same name as the method used to get a value. When a method is used to set a value, it's called a setter. When a method is used to get (or read) a value, it's called a getter. Setters affect all elements in a selection. Getters get the requested value only for the first element in the selection.
+Some jQuery methods can be used to either assign or read some value on a selection. When the method is called with a value as an argument, it's referred to as a setter because it sets (or assigns) that value. When the method is called with no argument, it gets (or reads) the value of the element. Setters affect all elements in a selection, whereas getters return the requested value only for the first element in the selection, with the exception of [`.text()`](http://api.jquery.com/text/), which retrieves the values of all the elements.
 
 ```
-// The .html() method used as a setter:
+// The .html() method sets all the h1 elements' html to be "hello world":
 $( "h1" ).html( "hello world" );
 ```
 
 ```
-// The .html() method used as a getter:
+// The .html() method returns the html of the first h1 element:
 $( "h1" ).html();
+// > "hello world"
+
 ```
 
 Setters return a jQuery object, allowing you to continue calling jQuery methods on your selection. Getters return whatever they were asked to get, so you can't continue to call jQuery methods on the value returned by the getter.
