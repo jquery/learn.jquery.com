@@ -71,9 +71,9 @@ $.get( "foo.php", function( response ) {
 
 ### Same-Origin Policy and JSONP
 
-In general, Ajax requests are limited to the same protocol (http or https), the same port, and the same domain as the page making the request. This limitation does not apply to scripts that are loaded via jQuery's Ajax methods, except for Internet Explorer 8 and 9. 
+In general, Ajax requests are limited to the same protocol (http or https), the same port, and the same domain as the page making the request. This limitation does not apply to scripts that are loaded via jQuery's Ajax methods. 
 
-Since Internet Explorer versions 8 and 9 uses [XDomainRequest](http://msdn.microsoft.com/en-us/library/ie/cc288060(v=vs.85).aspx), which has only limited support to XHR2 implementation. Further reading of [this ticket](http://bugs.jquery.com/ticket/8283) would help understand the relationship between XDomainRequest and jQuery.
+Note: Versions of Internet Explorer less than 10 do not support cross-domain AJAX requests. 
 
 The other exception is requests targeted at a JSONP service on another domain. In the case of JSONP, the provider of the service has agreed to respond to your request with a script that can be loaded into the page using a `<script>` tag, thus avoiding the same-origin limitation; that script will include the data you requested, wrapped in a callback function you provide.
 
