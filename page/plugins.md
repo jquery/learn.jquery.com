@@ -19,4 +19,4 @@ While most existing jQuery plugins are stateless – that is, we call them on an
 
 In order to fill this gap, jQuery UI has implemented a more advanced plugin system. The new system manages state, allows multiple functions to be exposed via a single plugin, and provides various extension points. This system is called the Widget Factory and is exposed as `jQuery.widget` as part of jQuery UI 1.8; however, it can be used independently of jQuery UI.
 
-To demonstrate the capabilities of the Widget Factory, we'll build a simple progress bar plugin. For details on writing this plugin, see [How To Use the Widget Factory](/jquery-ui/widget-factory/how-to-use-the-widget-factory/).
+For details on the capabilities of the Widget Factory, see this [How To Use the Widget Factory](/jquery-ui/widget-factory/how-to-use-the-widget-factory/).
