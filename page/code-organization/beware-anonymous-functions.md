@@ -26,18 +26,18 @@ $( document ).ready(function() {
 // BETTER
 var PI = {
 
-	onReady: function() {
+	onReady: function onReady() {
 		$( "#magic" ).click( PI.candyMtn );
 		$( "#happiness" ).load( PI.url + " #unicorns", PI.unicornCb );
 	},
 
-	candyMtn: function( event ) {
+	candyMtn: function candyMtn( event ) {
 		$( "#yayeffects" ).slideUp( PI.slideCb );
 	},
 
-	slideCb: function() { ... },
+	slideCb: function slideCb() { ... },
 
-	unicornCb: function() { ... }
+	unicornCb: function unicornCb() { ... }
 
 };
 
