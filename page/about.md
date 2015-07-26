@@ -26,7 +26,7 @@ The jQuery Learning site has its roots in two primary places.
 
 The first is Rebecca Murphey's [jQuery Fundamentals](http://jqfundamentals.com/legacy), a free, open source book on jQuery basics she originally released in 2010. Seeking a better home where the information could be both maintained going forward, and consumed in a more piecemeal fashion, Rebecca donated the content to the jQuery Foundation to form the basis of what was then an abstract idea for some sort of "learning center."
 
-The second is [docs.jquery.com](http://docs.jquery.com), which was shut down in early 2013. Since we've moved the API documentation for jQuery Core off that domain, we needed a place that could serve a similar need – documentation (that anyone can contribute to) that gets into the "how-to" and FAQs – without clumsy barriers to entry like finding the right person to set you up with a special wiki account and forcing all authoring into a `<textarea>`.
+The second is [docs.jquery.com](http://docs.jquery.com), that erstwhile chestnut still living out its final days before it will be shut down in early 2013. Since we've moved the API documentation for jQuery Core off that domain, we needed a place that could serve a similar need – documentation (that anyone can contribute to) that gets into the "how-to" and FAQs – without clumsy barriers to entry like finding the right person to set you up with a special wiki account and forcing all authoring into a `<textarea>`.
 
 ## Contributing
 
