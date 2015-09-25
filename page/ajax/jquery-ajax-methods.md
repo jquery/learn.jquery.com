@@ -30,31 +30,31 @@ $.ajax({
 
 	// The type of data we expect back
 	dataType : "json",
+})
+  // Code to run if the request succeeds (is done);
+  // The response is passed to the function
+  .done(function( json ) {
+     $( "<h1>" ).text( json.title ).appendTo( "body" );
+     $( "<div class=\"content\">").html( json.html ).appendTo( "body" );
+  })
+  // Code to run if the request fails; the raw request and
+  // status codes are passed to the function
+  .fail(function( xhr, status, errorThrown ) {
+    alert( "Sorry, there was a problem!" );
+    console.log( "Error: " + errorThrown );
+    console.log( "Status: " + status );
+    console.dir( xhr );
+  })
+  // Code to run regardless of success or failure;
+  .always(function( xhr, status ) {
+    alert( "The request is complete!" );
+  });
 
-	// Code to run if the request succeeds;
-	// the response is passed to the function
-	success: function( json ) {
-		$( "<h1>" ).text( json.title ).appendTo( "body" );
-		$( "<div class=\"content\">").html( json.html ).appendTo( "body" );
-	},
-
-	// Code to run if the request fails; the raw request and
-	// status codes are passed to the function
-	error: function( xhr, status, errorThrown ) {
-		alert( "Sorry, there was a problem!" );
-		console.log( "Error: " + errorThrown );
-		console.log( "Status: " + status );
-		console.dir( xhr );
-	},
-
-	// Code to run regardless of success or failure
-	complete: function( xhr, status ) {
-		alert( "The request is complete!" );
-	}
-});
 ```
 
 **Note:** A note about the `dataType` setting: if the server sends back data that is in a different format than you specify, your code may fail, and the reason will not always be clear, because the HTTP response code will not show an error. When working with Ajax requests, make sure your server is sending back the data type you're asking for, and verify that the `Content-type` header is accurate for the data type. For example, for JSON data, the `Content-type` header should be `application/json`.
+
+**Deprecation:** Deprecation Notice: The jqXHR.done(), jqXHR.fail(), and jqXHR.always() callbacks are used above, but you may see the older jqXHR.success(), jqXHR.error(), and jqXHR.complete() callbacks, and should update the code accordingly: As of jQuery 1.8 these are deprecated and will eventually be removed. 
 
 ### `$.ajax()` Options
 
@@ -68,7 +68,7 @@ Set to `false` if the request should be sent synchronously. Defaults to `true`. 
 
 Whether to use a cached response if available. Defaults to `true` for all `dataType`s except "script" and "jsonp". When set to `false`, the URL will simply have a cachebusting parameter appended to it.
 
-#### complete
+#### always 
 
 A callback function to run when the request is complete, regardless of success or failure. The function receives the raw request object and the text status of the request.
 
@@ -84,7 +84,7 @@ The data to be sent to the server. This can either be an object or a query strin
 
 The type of data you expect back from the server. By default, jQuery will look at the MIME type of the response if no `dataType` is specified.
 
-#### error
+#### fail
 
 A callback function to run if the request results in an error. The function receives the raw request object and the text status of the request.
 
@@ -92,7 +92,7 @@ A callback function to run if the request results in an error. The function rece
 
 The callback name to send in a query string when making a JSONP request. Defaults to "callback".
 
-#### success
+#### done
 
 A callback function to run if the request succeeds. The function receives the response data (converted to a JavaScript object if the `dataType` was JSON), as well as the text status of the request and the raw request object.
 
