@@ -199,7 +199,7 @@ Here are a few tips which should help you create a better set of customizable op
 
 Developers who use your plugin shouldn't have to learn a new language or terminology just to get the job done.
 
-Bob thought he was offering maximum customization with his *delay* option (look above). He made it so that with his plugin you can specify four different delays, "quite short," "very short," "quite long," or "very long":
+Bob thought he was offering maximum customization with his *delay* option (look below). He made it so that with his plugin you can specify four different delays, "quite short," "very short," "quite long," or "very long":
 
 ```
 var delayDuration = 0;
