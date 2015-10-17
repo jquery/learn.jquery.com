@@ -28,7 +28,7 @@ This is a basic tutorial, designed to help you get started using jQuery. If you 
 
 The `src` attribute in the `<script>` element must point to a copy of jQuery. Download a copy of jQuery from the [Downloading jQuery](http://jquery.com/download/) page and store the `jquery.js` file in the same directory as your HTML file.
 
-*Note: When you download jQuery, the file name may contain a version number, e.g., `jquery-x.y.z.js`. Make sure to either rename this file to `jquery.js` or update the `src` attribute of the `<script>` element to match the file name.*
+<div class="warning">**Note**: When you download jQuery, the file name may contain a version number, e.g., `jquery-x.y.z.js`. Make sure to either rename this file to `jquery.js` or update the `src` attribute of the `<script>` element to match the file name.</div>
 
 ### Launching Code on Document Ready
 
@@ -117,7 +117,7 @@ The following example illustrates the click handling code discussed above, embed
 
 ### Adding and Removing an HTML Class
 
-**Important:** *You must place the remaining jQuery examples inside the `ready` event so that your code executes when the document is ready to be worked on.*
+<div class="warning">**Important:** You must place the remaining jQuery examples inside the `ready` event so that your code executes when the document is ready to be worked on.</div>
 
 Another common task is adding or removing a class.
 
