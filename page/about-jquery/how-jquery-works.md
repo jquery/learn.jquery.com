@@ -53,6 +53,8 @@ $( document ).ready(function() {
 });
 ```
 
+<div class="warning">**Note**: The jQuery library exposes its methods and properties via two properties of the <code>window</code> object called <code>jQuery</code> and <code>$</code>. <code>$</code> is simply an alias for <code>jQuery</code> and it's often employed because it's shorter and faster to write.</div>
+
 For example, inside the `ready` event, you can add a click handler to the link:
 
 ```
