@@ -11,7 +11,7 @@ To get started, you can simply paste the template below in your favorite text ed
 
 In the `<head>` of this template, a meta `viewport` tag sets the screen width to the pixel width of the device. References to jQuery, jQuery Mobile, and the mobile theme stylesheet from the CDN add all the styles and scripts. jQuery Mobile 1.4 works with versions of jQuery core 1.8 and newer.
 
-In the `<body>`, a div with a `data-role` of `page` is the wrapper used to delineate a page. A header bar (`data-role="header"`), a content region (`data-role="content"`) and a footer bar (`data-role="footer"`) are added inside to create a basic page (all three are optional). These `data-` attributes are HTML5 attributes used throughout jQuery Mobile to transform basic markup into an enhanced and styled widget.
+In the `<body>`, a div with a `data-role` of `page` is the wrapper used to delineate a page. A header bar (`data-role="header"`), a content region (`class="ui-content"`) and a footer bar (`data-role="footer"`) are added inside to create a basic page (all three are optional). These `data-` attributes are HTML5 attributes used throughout jQuery Mobile to transform basic markup into an enhanced and styled widget.
 
 ```
 <!doctype html>
@@ -30,7 +30,7 @@ In the `<body>`, a div with a `data-role` of `page` is the wrapper used to delin
 			<h1>My Title</h1>
 		</div><!-- /header -->
 
-		<div data-role="content">
+		<div class="ui-content">
 			<p>Hello world</p>
 		</div><!-- /content -->
 
