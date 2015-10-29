@@ -30,7 +30,7 @@ In the `<body>`, a div with a `data-role` of `page` is the wrapper used to delin
 			<h1>My Title</h1>
 		</div><!-- /header -->
 
-		<div data-role="content">
+		<div class="ui-content">
 			<p>Hello world</p>
 		</div><!-- /content -->
 
