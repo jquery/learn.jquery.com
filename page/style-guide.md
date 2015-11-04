@@ -60,7 +60,7 @@ Content should be educational and accessible to a broad audience of developers. 
 #### Article & Sentence Structure
 
 - Use headings to break up content into easier-to-read sections. Begin headings within an article with `<h2>`.
-- Keep sentences short and to the point. A good rule-of-thumb is to break up any sentence longer than 21 words into two or more seperate thoughts.
+- Keep sentences short and to the point. A good rule-of-thumb is to break up any sentence longer than 21 words into two or more separate thoughts.
 - Lists:
 	- Use bulleted lists when necessary to share a series of five or more points.
 	- Use numbered lists only when providing step-by-step instruction – note that this should be avoided.

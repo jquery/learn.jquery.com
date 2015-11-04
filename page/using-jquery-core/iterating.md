@@ -115,7 +115,7 @@ $( "li" ).each( function( index, element ){
 
 The question is often raised, "If `this` is the element, why is there a second DOM element argument passed to the callback?"
 
-Whether intentional or inadvert, the execution context may change. When consistently using the keyword `this`, it's easy to end up confusing ourselves or other developers reading the code. Even if the execution context remains the same, it may be more readable to use the second parameter as a named parameter. For example:
+Whether intentional or inadvertent, the execution context may change. When consistently using the keyword `this`, it's easy to end up confusing ourselves or other developers reading the code. Even if the execution context remains the same, it may be more readable to use the second parameter as a named parameter. For example:
 
 ```
 $( "li" ).each( function( index, listItem ) {
