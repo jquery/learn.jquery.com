@@ -11,7 +11,7 @@
 
 ## Further Deferreds examples
 
-Deferreds are used behind the hood in Ajax but it doesn't mean they can't also be used elsewhere. This section describes situations where deferreds will help abstract away asynchronous behaviour and decouple our code.
+Deferreds are used behind the hood in Ajax but it doesn't mean they can't also be used elsewhere. This section describes situations where deferreds will help abstract away asynchronous behavior and decouple our code.
 
 ### Caching
 
