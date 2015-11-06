@@ -35,13 +35,13 @@ As an example, suppose we're starting a new project and we need to use [jQuery U
 </html>
 ```
 
-This examples fails with a JavaScript error because neither jQuery core nor jQuery UI are loaded. Let's load them with Bower.
+This example fails with a JavaScript error because neither jQuery core nor jQuery UI are loaded. Let's load them with Bower.
 
 ### Downloading jQuery UI With Bower
 
 Libraries are downloaded with Bower using the `bower install` command. To install jQuery UI, run `bower install jquery-ui`. Doing so creates the following (simplified) directory structure.
 
-*Note: If you get an error that the `bower` command is not found, checkout [Bower's installation instructions](http://bower.io/#installing-bower).*
+*Note: If you get an error that the `bower` command is not found, check out [Bower's installation instructions](http://bower.io/#installing-bower).*
 
 <pre>
 .
@@ -85,7 +85,7 @@ We have a few different options for using the files downloaded with Bower. The e
 	<link rel="stylesheet" href="bower_components/jquery-ui/themes/smoothness/jquery-ui.min.css">
 </head>
 <body>
- 
+
 <div id="projects">
 	<h3>jQuery Core</h3>
 	<p>jQuery is a fast, small, and feature-rich JavaScript library...</p>
@@ -94,13 +94,13 @@ We have a few different options for using the files downloaded with Bower. The e
 	<h3>jQuery Mobile</h3>
 	<p>jQuery Mobile is a HTML5-based user interface system...</p>
 </div>
- 
+
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
 <script>
 	$( "#projects" ).accordion();
 </script>
- 
+
 </body>
 </html>
 ```
@@ -140,4 +140,4 @@ Because Bower also downloaded jQuery UI's individual source files, we can altern
 </html>
 ```
 
-From here, you can hook jQuery UI's files into your own custom build system to concatenate and minify your resources for production. If you're a RequireJS user, checkout our [guide on how to use jQuery UI with AMD](/jquery-ui/environments/amd/).
+From here, you can hook jQuery UI's files into your own custom build system to concatenate and minify your resources for production. If you're a RequireJS user, check out our [guide on how to use jQuery UI with AMD](/jquery-ui/environments/amd/).

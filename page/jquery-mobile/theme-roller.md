@@ -35,11 +35,11 @@ The easiest way to create custom themes is with the ThemeRoller tool. It allows 
 
 ### Creating the Theme Swatches
 
-The [ThemeRoller](http://jquerymobile.com/themeroller/) allows users to create their own theme through an easy to use drag and drop interface. By default, ThemeRoller offers three swatches (a, b and c). You can use the offered default colors, the Adobe kuler colors, or create your own. You will create your theme by dragging the chosen color onto the chosen element in the swatch of your choice. You can add more swatches by pressing the "+" sign near the "A", "B", and "C" tabs, in the left-hand side menu.
+The [ThemeRoller](http://jquerymobile.com/themeroller/) allows users to create their own theme through an easy to use drag and drop interface. By default, ThemeRoller offers three swatches (a, b and c). You can use the offered default colors, the Adobe Kuler colors, or create your own. You will create your theme by dragging the chosen color onto the chosen element in the swatch of your choice. You can add more swatches by pressing the "+" sign near the "A", "B", and "C" tabs, in the left-hand side menu.
 
 You can further edit your swatch from the menu. For example, you can expand the various element parts and carry out detailed editing. This will allow you to change text color, text shadow size, position and color, etc. You can also edit the gradient used on each element.
 
-Here are two examples of theme swatches created, one with the default colors, and one with the kuler colors:
+Here are two examples of theme swatches created, one with the default colors, and one with the Kuler colors:
 
 ![picture Default colors theme example](/resources/jquery-mobile/Theme.png "Default colors theme example") ![picture Kuler theme example](/resources/jquery-mobile/Kuler.png "Kuler theme example")
 

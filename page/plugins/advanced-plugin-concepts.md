@@ -245,7 +245,7 @@ $( "<div class='gallery-wrapper' />" ).appendTo( "body" );
 $( ".gallery-wrapper" ).append( "..." );
 ```
 
-To allow users to access and even manipulate those information, you can store them in a variable containing the settings of your plugin. A better implementation of the previous code is shown below:
+To allow users to access and even manipulate that information, you can store it in a variable containing the settings of your plugin. A better implementation of the previous code is shown below:
 
 ```
 // Retain an internal reference:
