@@ -299,6 +299,6 @@ $.widget( "custom.progressbar", {
 
 ## Closing Comments
 
-The widget factory is only one way of creating stateful plugins. There are a few different models that can be used and each have their own advantages and disadvantages. The widget factory solves lots of common problems for you and can greatly improve productivity, it also greatly improves code reuse, making it a great fit for jQuery UI as well as many other stateful plugins.
+The widget factory is only one way of creating stateful plugins. There are a few different models that can be used and each has their own advantages and disadvantages. The widget factory solves lots of common problems for you and can greatly improve productivity, it also greatly improves code reuse, making it a great fit for jQuery UI as well as many other stateful plugins.
 
 You may have noticed that in this article we used the `custom` namespace. The `ui` namespace is reserved for official jQuery UI plugins. When building your own plugins, you should create your own namespace. This makes it clear where the plugin came from and if it is part of a larger collection.
