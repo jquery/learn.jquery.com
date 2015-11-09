@@ -54,8 +54,6 @@ $.ajax({
 
 **Note:** Regarding the `dataType` setting, if the server sends back data that is in a different format than you specify, your code may fail, and the reason will not always be clear, because the HTTP response code will not show an error. When working with Ajax requests, make sure your server is sending back the data type you're asking for, and verify that the `Content-type` header is accurate for the data type. For example, for JSON data, the `Content-type` header should be `application/json`.
 
-**Deprecation:** Deprecation Notice: The jqXHR.done(), jqXHR.fail(), and jqXHR.always() callbacks are used above, but you may see the older jqXHR.success(), jqXHR.error(), and jqXHR.complete() callbacks, and should update the code accordingly: As of jQuery 1.8 these are deprecated and will eventually be removed. 
-
 ### `$.ajax()` Options
 
 There are many, many options for the `$.ajax()` method, which is part of its power. For a complete list of options, visit [http://api.jquery.com/jQuery.ajax/](http://api.jquery.com/jQuery.ajax/); here are several that you will use frequently:
@@ -67,6 +65,14 @@ Set to `false` if the request should be sent synchronously. Defaults to `true`. 
 #### cache
 
 Whether to use a cached response if available. Defaults to `true` for all `dataType`s except "script" and "jsonp". When set to `false`, the URL will simply have a cachebusting parameter appended to it.
+
+#### done
+
+A callback function to run if the request succeeds. The function receives the response data (converted to a JavaScript object if the `dataType` was JSON), as well as the text status of the request and the raw request object.
+
+#### fail
+
+A callback function to run if the request results in an error. The function receives the raw request object and the text status of the request.
 
 #### always 
 
@@ -84,17 +90,10 @@ The data to be sent to the server. This can either be an object or a query strin
 
 The type of data you expect back from the server. By default, jQuery will look at the MIME type of the response if no `dataType` is specified.
 
-#### fail
-
-A callback function to run if the request results in an error. The function receives the raw request object and the text status of the request.
-
 #### jsonp
 
 The callback name to send in a query string when making a JSONP request. Defaults to "callback".
 
-#### done
-
-A callback function to run if the request succeeds. The function receives the response data (converted to a JavaScript object if the `dataType` was JSON), as well as the text status of the request and the raw request object.
 
 #### timeout
 
