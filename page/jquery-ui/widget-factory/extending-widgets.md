@@ -23,7 +23,7 @@ Like the previous example, the following also creates a "superDialog" widget in 
 $.widget( "custom.superDialog", $.ui.dialog, {} );
 ```
 
-Here superDialog and dialog are essentially equivalent widgets with different names and namepaces. To make our new widget more interesting we can add methods to its prototype object.
+Here superDialog and dialog are essentially equivalent widgets with different names and namespaces. To make our new widget more interesting we can add methods to its prototype object.
 
 A widget's prototype object is the final argument passed to `$.widget()`. So far, our examples have been using an empty object. Let's add a method to this object:
 

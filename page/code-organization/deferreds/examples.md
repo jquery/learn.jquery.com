@@ -11,7 +11,7 @@
 
 ## Further Deferreds examples
 
-Deferreds are used behind the hood in Ajax but it doesn't mean they can't also be used elsewhere. This section describes situations where deferreds will help abstract away asynchronous behaviour and decouple our code.
+Deferreds are used behind the hood in Ajax but it doesn't mean they can't also be used elsewhere. This section describes situations where deferreds will help abstract away asynchronous behavior and decouple our code.
 
 ### Caching
 
@@ -158,7 +158,7 @@ The new `$.afterDOMReady()` helper method provides proper timing after the DOM i
 
 While jQuery offers all the event binding one may need, it can become a bit cumbersome to handle events that are only supposed to be dealt with once.
 
-For instance, you may wish to have a button that will open a panel the first time it is clicked and leave it open afterwards or take special initialization actions the first time said button is clicked. When dealing with such a situation, one usually end up with code like this:
+For instance, you may wish to have a button that will open a panel the first time it is clicked and leave it open afterward or take special initialization actions the first time said button is clicked. When dealing with such a situation, one usually ends up with code like this:
 
 ```
 var buttonClicked = false;

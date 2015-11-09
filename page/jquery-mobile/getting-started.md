@@ -9,9 +9,9 @@ jQuery Mobile provides a set of touch-friendly UI widgets and an Ajax-powered na
 
 To get started, you can simply paste the template below in your favorite text editor, save, and open the document in a browser.
 
-In the `<head>` of this template, a meta `viewport` tag sets the screen width to the pixel width of the device. References to jQuery, jQuery Mobile, and the mobile theme stylesheet from the CDN add all the styles and scripts. jQuery Mobile 1.2 (1.2.0) works with versions of jQuery core from 1.7.0 to 1.8.2.
+In the `<head>` of this template, a meta `viewport` tag sets the screen width to the pixel width of the device. References to jQuery, jQuery Mobile, and the mobile theme stylesheet from the CDN add all the styles and scripts. jQuery Mobile 1.4 works with versions of jQuery core 1.8 and newer.
 
-In the `<body>`, a div with a `data-role` of `page` is the wrapper used to delineate a page. A header bar (`data-role="header"`), a content region (`data-role="content"`) and a footer bar (`data-role="footer"`) are added inside to create a basic page (all three are optional). These `data-` attributes are HTML5 attributes used throughout jQuery Mobile to transform basic markup into an enhanced and styled widget.
+In the `<body>`, a div with a `data-role` of `page` is the wrapper used to delineate a page. A header bar (`data-role="header"`), a content region (`class="ui-content"`) and a footer bar (`data-role="footer"`) are added inside to create a basic page (all three are optional). These `data-` attributes are HTML5 attributes used throughout jQuery Mobile to transform basic markup into an enhanced and styled widget.
 
 ```
 <!doctype html>
@@ -19,9 +19,9 @@ In the `<body>`, a div with a `data-role` of `page` is the wrapper used to delin
 <head>
 	<title>My Page</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css">
-	<script src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
-	<script src="https://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+	<link rel="stylesheet" href="https://code.jquery.com/mobile/[version]/jquery.mobile-[version].min.css">
+	<script src="https://code.jquery.com/jquery-[version].min.js"></script>
+	<script src="https://code.jquery.com/mobile/[version]/jquery.mobile-[version].min.js"></script>
 </head>
 <body>
 	<div data-role="page">
@@ -30,7 +30,7 @@ In the `<body>`, a div with a `data-role` of `page` is the wrapper used to delin
 			<h1>My Title</h1>
 		</div><!-- /header -->
 
-		<div data-role="content">
+		<div class="ui-content">
 			<p>Hello world</p>
 		</div><!-- /content -->
 

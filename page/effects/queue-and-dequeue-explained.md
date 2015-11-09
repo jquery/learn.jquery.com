@@ -87,7 +87,7 @@ Another way of clearing the queue is to call `.stop( true )`. That will stop the
 
 ## Replacing The Queue
 
-When you pass an array of functions as second argument to `.queue()`, that array will replace the queue.
+When you pass an array of functions as the second argument to `.queue()`, that array will replace the queue.
 
 ```
 $( ".box" )
