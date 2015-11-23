@@ -11,7 +11,7 @@ To get started, you can simply paste the template below in your favorite text ed
 
 In the `<head>` of this template, a meta `viewport` tag sets the screen width to the pixel width of the device. References to jQuery, jQuery Mobile, and the mobile theme stylesheet from the CDN add all the styles and scripts. jQuery Mobile 1.4 works with versions of jQuery core 1.8 and newer.
 
-In the `<body>`, a div with a `data-role` of `page` is the wrapper used to delineate a page. A header bar (`data-role="header"`), a content region (`class="ui-content"`) and a footer bar (`data-role="footer"`) are added inside to create a basic page (all three are optional). These `data-` attributes are HTML5 attributes used throughout jQuery Mobile to transform basic markup into an enhanced and styled widget.
+In the `<body>`, a div with a `data-role` of `page` is the wrapper used to delineate a page. A header bar (`data-role="header"`), a content region (`role="main" class="ui-content"`) and a footer bar (`data-role="footer"`) are added inside to create a basic page (all three are optional). These `data-` attributes are HTML5 attributes used throughout jQuery Mobile to transform basic markup into an enhanced and styled widget.
 
 ```
 <!doctype html>
@@ -30,7 +30,7 @@ In the `<body>`, a div with a `data-role` of `page` is the wrapper used to delin
 			<h1>My Title</h1>
 		</div><!-- /header -->
 
-		<div class="ui-content">
+		<div role="main" class="ui-content">
 			<p>Hello world</p>
 		</div><!-- /content -->
 
@@ -82,19 +82,19 @@ There are a few ways to make buttons. A common one is to turn a link into a butt
 
 ### Choose a Theme Swatch
 
-jQuery Mobile has a robust theme framework that supports up to 26 sets of toolbar, content, and button colors, called a "swatch". You can add a `data-theme="e"` attribute to any of the widgets on this page: page, header, list, input for the slider, or button to turn it yellow. Different swatch letters from a-e in the default theme can be used to mix and match swatches.
+jQuery Mobile has a robust theme framework that supports up to 26 sets of toolbar, content, and button colors, called a "swatch". You can add a `data-theme="b"` attribute to any of the widgets on this page: page, header, list, input for the slider, or button to turn it a dark shade of grey. Different swatch letters from a-b in the default theme can be used to mix and match swatches.
 
-If you add the theme swatch to the page, all the widgets inside the content will automatically inherit the theme (headers and footers don't inherit and default to swatch "a").
+If you add the theme swatch to the page, all the widgets inside the content will automatically inherit the theme.
 
 ```
 <a href="#" data-role="button" data-icon="star" data-theme="a">Button</a>
 ```
 
-If you would like to create a custom theme, you can use [ThemeRoller](http://jquerymobile.com/themeroller/) that allows users to create their own theme through an easy to use drag and drop interface. You will then be able to download and use your newly created theme.
+If you would like to create a custom theme, you can use [ThemeRoller](https://themeroller.jquerymobile.com/) that allows users to create their own theme through an easy to use drag and drop interface. You will then be able to download and use your newly created theme.
 
 ### Go Forth and Build Something
 
-This guide has provided you with a basic structure for a jQuery Mobile page and a few enhanced elements. You can explore the full [jQuery Mobile documentation](http://jquerymobile.com/demos/1.2.0/) to learn about linking pages, adding animated page transitions, and creating dialogs and popups.
+This guide has provided you with a basic structure for a jQuery Mobile page and a few enhanced elements. You can explore the full [jQuery Mobile API Documentation](http://api.jquerymobile.com) and [jQuery Mobile Demo Center](http://demos.jquerymobile.com/1.4.5/) to learn about linking pages, adding animated page transitions, and creating dialogs and popups.
 
 If you're more of the type who prefers actually writing JavaScript to build your apps, and you don't want to use the `data-` attribute configuration system, you can take full control of everything and call plugins directly as these are all standard jQuery plugins built with the UI widget factory. Particularly useful information for such cases can be found in the global configuration, events, and methods sections.
 
