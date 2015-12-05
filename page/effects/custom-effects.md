@@ -41,4 +41,4 @@ $( "div.funtimes" ).animate({
 }, 300 );
 ```
 
-For more details on easing options, see [Animation documentation on api.jquery.com](http://api.jquery.com/animate/).
+For more details on easing options, see [Animation documentation on api.jquery.com](https://api.jquery.com/animate/).

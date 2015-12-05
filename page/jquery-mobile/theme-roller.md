@@ -1,6 +1,6 @@
 <script>{
-	"title": "Creating a Custom Theme with ThemeRoller",
-	"level": "beginner"
+    "title": "Creating a Custom Theme with ThemeRoller",
+    "level": "beginner"
 }</script>
 
 ## Theming Overview
@@ -35,7 +35,7 @@ The easiest way to create custom themes is with the ThemeRoller tool. It allows 
 
 ### Creating the Theme Swatches
 
-The [ThemeRoller](http://jquerymobile.com/themeroller/) allows users to create their own theme through an easy to use drag and drop interface. By default, ThemeRoller offers three swatches (a, b and c). You can use the offered default colors, the Adobe Kuler colors, or create your own. You will create your theme by dragging the chosen color onto the chosen element in the swatch of your choice. You can add more swatches by pressing the "+" sign near the "A", "B", and "C" tabs, in the left-hand side menu.
+The [ThemeRoller](https://themeroller.jquerymobile.com/) allows users to create their own theme through an easy to use drag and drop interface. By default, ThemeRoller offers three swatches (a, b and c). You can use the offered default colors, the Adobe Kuler colors, or create your own. You will create your theme by dragging the chosen color onto the chosen element in the swatch of your choice. You can add more swatches by pressing the "+" sign near the "A", "B", and "C" tabs, in the left-hand side menu.
 
 You can further edit your swatch from the menu. For example, you can expand the various element parts and carry out detailed editing. This will allow you to change text color, text shadow size, position and color, etc. You can also edit the gradient used on each element.
 
@@ -59,13 +59,13 @@ To start using your theme, you can either start from the provided `index.html`, 
 <!doctype html>
 <html>
 <head>
-	<title>jQuery Mobile page</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="css/themes/my-custom-theme.css">
-	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.2.0/jquery.mobile.structure-1.2.0.min.css">
-	<script src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
-	<script src="https://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+    <title>jQuery Mobile page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/themes/my-custom-theme.css">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.2.0/jquery.mobile.structure-1.2.0.min.css">
+    <script src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
 </head>
 ```
 

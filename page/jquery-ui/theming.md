@@ -1,9 +1,9 @@
 <script>{
-	"title": "Theming jQuery UI",
-	"level": "intermediate"
+    "title": "Theming jQuery UI",
+    "level": "intermediate"
 }</script>
 
-All jQuery UI plugins are designed to allow a developer to seamlessly integrate UI widgets into the look and feel of their site or application. Each plugin is styled with CSS and contains two layers of style information: standard [jQuery UI CSS Framework](http://api.jqueryui.com/theming/css-framework/) styles and plugin-specific styles.
+All jQuery UI plugins are designed to allow a developer to seamlessly integrate UI widgets into the look and feel of their site or application. Each plugin is styled with CSS and contains two layers of style information: standard [jQuery UI CSS Framework](https://api.jqueryui.com/theming/css-framework/) styles and plugin-specific styles.
 
 The jQuery UI CSS Framework provides semantic presentation classes to indicate the role of an element within a widget such as a header, content area, or clickable region. These are applied consistently across all widgets so a clickable tab, accordion, or button will all have the same `ui-state-default` class applied to indicate that it is clickable. When a user mouses over one of these elements, this class is changed to `ui-state-hover`, then `ui-state-active` when selected. This level of class consistency makes it easy to ensure that all elements with a similar role or interaction state will look the same across all widgets.
 

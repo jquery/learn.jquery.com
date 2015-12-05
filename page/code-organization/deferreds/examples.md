@@ -1,12 +1,12 @@
 <script>{
-	"title": "Deferred examples",
-	"level": "advanced",
-	"source": "http://msdn.microsoft.com/en-us/magazine/gg723713.aspx",
-	"attribution": [
-		"Julian Aubourg <j@ubourg.net>",
-		"Addy Osmani <addyosmani@gmail.com>",
-		"Andree Hansson <peolanha@gmail.com>"
-	]
+    "title": "Deferred examples",
+    "level": "advanced",
+    "source": "https://msdn.microsoft.com/en-us/magazine/gg723713.aspx",
+    "attribution": [
+        "Julian Aubourg <j@ubourg.net>",
+        "Addy Osmani <addyosmani@gmail.com>",
+        "Andree Hansson <peolanha@gmail.com>"
+    ]
 }</script>
 
 ## Further Deferreds examples
@@ -30,12 +30,12 @@ The caching mechanism has to make sure the URL is only requested once even if th
 var cachedScriptPromises = {};
 
 $.cachedGetScript = function( url, callback ) {
-	if ( !cachedScriptPromises[ url ] ) {
-		cachedScriptPromises[ url ] = $.Deferred(function( defer ) {
-			$.getScript( url ).then( defer.resolve, defer.reject );
-		}).promise();
-	}
-	return cachedScriptPromises[ url ].done( callback );
+    if ( !cachedScriptPromises[ url ] ) {
+        cachedScriptPromises[ url ] = $.Deferred(function( defer ) {
+            $.getScript( url ).then( defer.resolve, defer.reject );
+        }).promise();
+    }
+    return cachedScriptPromises[ url ].done( callback );
 };
 ```
 
@@ -51,15 +51,15 @@ It is also possible to make the code completely generic and build a cache factor
 
 ```
 $.createCache = function( requestFunction ) {
-	var cache = {};
-	return function( key, callback ) {
-		if ( !cache[ key ] ) {
-			cache[ key ] = $.Deferred(function( defer ) {
-				requestFunction( defer, key );
-			}).promise();
-		}
-		return cache[ key ].done( callback );
-	};
+    var cache = {};
+    return function( key, callback ) {
+        if ( !cache[ key ] ) {
+            cache[ key ] = $.Deferred(function( defer ) {
+                requestFunction( defer, key );
+            }).promise();
+        }
+        return cache[ key ].done( callback );
+    };
 };
 ```
 
@@ -67,7 +67,7 @@ Now that the request logic is abstracted away, `$.cachedGetScript()` can be rewr
 
 ```
 $.cachedGetScript = $.createCache(function( defer, url ) {
-	$.getScript( url ).then( defer.resolve, defer.reject );
+    $.getScript( url ).then( defer.resolve, defer.reject );
 });
 ```
 
@@ -79,16 +79,16 @@ A cache can be used to ensure that the same image is not loaded multiple times.
 
 ```
 $.loadImage = $.createCache(function( defer, url ) {
-	var image = new Image();
-	function cleanUp() {
-		image.onload = image.onerror = null;
-	}
-	defer.then( cleanUp, cleanUp );
-	image.onload = function() {
-		defer.resolve( url );
-	};
-	image.onerror = defer.reject;
-	image.src = url;
+    var image = new Image();
+    function cleanUp() {
+        image.onload = image.onerror = null;
+    }
+    defer.then( cleanUp, cleanUp );
+    image.onload = function() {
+        defer.resolve( url );
+    };
+    image.onerror = defer.reject;
+    image.src = url;
 });
 ```
 
@@ -107,15 +107,15 @@ API requests that are considered immutable during the lifetime of your page are 
 
 ```
 $.searchTwitter = $.createCache(function( defer, query ) {
-	$.ajax({
-		url: "http://search.twitter.com/search.json",
-		data: {
-			q: query
-		},
-		dataType: "jsonp",
-		success: defer.resolve,
-		error: defer.reject
-	});
+    $.ajax({
+        url: "https://search.twitter.com/search.json",
+        data: {
+            q: query
+        },
+        dataType: "jsonp",
+        success: defer.resolve,
+        error: defer.reject
+    });
 });
 ```
 
@@ -136,19 +136,19 @@ For instance, you may need to perform an action on the page after a given amount
 var readyTime;
 
 $(function() {
-	readyTime = jQuery.now();
+    readyTime = jQuery.now();
 });
 
 $.afterDOMReady = $.createCache(function( defer, delay ) {
-	delay = delay || 0;
-	$(function() {
-		var delta = $.now() - readyTime;
-		if ( delta >= delay ) {
-			defer.resolve();
-		} else {
-			setTimeout( defer.resolve, delay - delta );
-		}
-	});
+    delay = delay || 0;
+    $(function() {
+        var delta = $.now() - readyTime;
+        if ( delta >= delay ) {
+            defer.resolve();
+        } else {
+            setTimeout( defer.resolve, delay - delta );
+        }
+    });
 });
 ```
 
@@ -164,11 +164,11 @@ For instance, you may wish to have a button that will open a panel the first tim
 var buttonClicked = false;
 
 $( "#myButton" ).click(function() {
-	if ( !buttonClicked ) {
-		buttonClicked = true;
-		initializeData();
-		showPanel();
-	}
+    if ( !buttonClicked ) {
+        buttonClicked = true;
+        initializeData();
+        showPanel();
+    }
 });
 ```
 
@@ -177,7 +177,7 @@ then, later on, you may wish to take actions, but only if the panel is opened:
 ```
 if ( buttonClicked ) {
 
-	// Perform specific action
+    // Perform specific action
 
 }
 ```
@@ -188,20 +188,20 @@ We can do much better using deferreds (for simplification sake, the following co
 
 ```
 $.fn.bindOnce = function( event, callback ) {
-	var element = $( this[ 0 ] ),
-		defer = element.data( "bind_once_defer_" + event );
+    var element = $( this[ 0 ] ),
+        defer = element.data( "bind_once_defer_" + event );
 
-	if ( !defer ) {
-		defer = $.Deferred();
-		function deferCallback() {
-			element.unbind( event, deferCallback );
-			defer.resolveWith( this, arguments );
-		}
-		element.bind( event, deferCallback )
-		element.data( "bind_once_defer_" + event , defer );
-	}
+    if ( !defer ) {
+        defer = $.Deferred();
+        function deferCallback() {
+            element.unbind( event, deferCallback );
+            defer.resolveWith( this, arguments );
+        }
+        element.bind( event, deferCallback )
+        element.data( "bind_once_defer_" + event , defer );
+    }
 
-	return defer.done( callback ).promise();
+    return defer.done( callback ).promise();
 };
 ```
 
@@ -215,7 +215,7 @@ While the code is definitely more verbose, it makes dealing with the problem at 
 
 ```
 $.fn.firstClick = function( callback ) {
-	return this.bindOnce( "click", callback );
+    return this.bindOnce( "click", callback );
 };
 ```
 
@@ -233,7 +233,7 @@ If an action should be performed only when a panel is opened later on:
 ```
 openPanel.done(function() {
 
-	// Perform specific action
+    // Perform specific action
 
 });
 ```
@@ -250,13 +250,13 @@ Following is the code for a button that, when clicked, opens a panel. It request
 
 ```
 $( "#myButton" ).firstClick(function() {
-	var panel = $( "#myPanel" );
-	$.when(
-		$.get( "panel.html" ),
-		panel.slideDownPromise()
-	).done(function( ajaxResponse ) {
-		panel.html( ajaxResponse[ 0 ] ).fadeIn();
-	});
+    var panel = $( "#myPanel" );
+    $.when(
+        $.get( "panel.html" ),
+        panel.slideDownPromise()
+    ).done(function( ajaxResponse ) {
+        panel.html( ajaxResponse[ 0 ] ).fadeIn();
+    });
 });
 ```
 
@@ -268,10 +268,10 @@ The HTML code for this would look something like:
 
 ```
 <div id="myPanel">
-	<img data-src="image1.png" alt="">
-	<img data-src="image2.png" alt="">
-	<img data-src="image3.png" alt="">
-	<img data-src="image4.png" alt="">
+    <img data-src="image1.png" alt="">
+    <img data-src="image2.png" alt="">
+    <img data-src="image3.png" alt="">
+    <img data-src="image4.png" alt="">
 </div>
 ```
 
@@ -279,28 +279,28 @@ We use the `data-src` attribute to keep track of the real image location. The co
 
 ```
 $( "#myButton" ).firstClick(function() {
-	var panel = $( "#myPanel" ),
-		promises = [];
+    var panel = $( "#myPanel" ),
+        promises = [];
 
-	panel.find( "img" ).each(function() {
-		var image = $( this ),
-			src = element.attr( "data-src" );
-		if ( src ) {
-			promises.push(
-				$.loadImage( src ).then(function() {
-					image.attr( "src", src );
-				}, function() {
-					image.attr( "src", "error.png" );
-				})
-			);
-		}
-	});
+    panel.find( "img" ).each(function() {
+        var image = $( this ),
+            src = element.attr( "data-src" );
+        if ( src ) {
+            promises.push(
+                $.loadImage( src ).then(function() {
+                    image.attr( "src", src );
+                }, function() {
+                    image.attr( "src", "error.png" );
+                })
+            );
+        }
+    });
 
-	promises.push( panel.slideDownPromise() );
+    promises.push( panel.slideDownPromise() );
 
-	$.when.apply( null, promises ).done(function() {
-		panel.fadeIn();
-	});
+    $.when.apply( null, promises ).done(function() {
+        panel.fadeIn();
+    });
 });
 ```
 
@@ -324,21 +324,21 @@ What it says is pretty straight-forward:
 
 ```
 $( "img" ).each(function() {
-	var element = $( this ),
-		src = element.attr( "data-src" ),
-		after = element.attr( "data-after" );
-	if ( src ) {
-		$.when(
-			$.loadImage( src ),
-			$.afterDOMReady( after )
-		).then(function() {
-			element.attr( "src", src );
-		}, function() {
-			element.attr( "src", "error.png" );
-		}).done(function() {
-			element.fadeIn();
-		});
-	}
+    var element = $( this ),
+        src = element.attr( "data-src" ),
+        after = element.attr( "data-after" );
+    if ( src ) {
+        $.when(
+            $.loadImage( src ),
+            $.afterDOMReady( after )
+        ).then(function() {
+            element.attr( "src", src );
+        }, function() {
+            element.attr( "src", "error.png" );
+        }).done(function() {
+            element.fadeIn();
+        });
+    }
 });
 ```
 
@@ -346,20 +346,20 @@ In order to delay the loading of the images themselves:
 
 ```
 $( "img" ).each(function() {
-	var element = $( this ),
-		src = element.attr( "data-src" ),
-		after = element.attr( "data-after" );
-	if ( src ) {
-		$.afterDOMReady( after, function() {
-			$.loadImage( src ).then(function() {
-				element.attr( "src", src );
-			}, function() {
-				element.attr( "src", "error.png" );
-			}).done(function() {
-				element.fadeIn();
-			});
-		});
-	}
+    var element = $( this ),
+        src = element.attr( "data-src" ),
+        after = element.attr( "data-after" );
+    if ( src ) {
+        $.afterDOMReady( after, function() {
+            $.loadImage( src ).then(function() {
+                element.attr( "src", src );
+            }, function() {
+                element.attr( "src", "error.png" );
+            }).done(function() {
+                element.fadeIn();
+            });
+        });
+    }
 });
 ```
 

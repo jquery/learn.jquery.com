@@ -9,13 +9,13 @@ jQuery UI is a widget and interaction library built on top of the jQuery JavaScr
 
 ### Start by Checking Out the Demos
 
-To get a feel for what jQuery UI is capable of, check out the [UI Demos](http://jqueryui.com/demos/).
+To get a feel for what jQuery UI is capable of, check out the [UI Demos](https://jqueryui.com/demos/).
 
-In the demos section, the navigation lists all of the interactions and widgets that jQuery UI offers. Choose an interaction or widget and you'll be presented with several demo configurations for that particular plugin. Each demo allows you to view source code, change themes, and the URL can always be bookmarked. For example, check out the [accordion widget's fill space demo page](http://jqueryui.com/accordion/#fillspace).
+In the demos section, the navigation lists all of the interactions and widgets that jQuery UI offers. Choose an interaction or widget and you'll be presented with several demo configurations for that particular plugin. Each demo allows you to view source code, change themes, and the URL can always be bookmarked. For example, check out the [accordion widget's fill space demo page](https://jqueryui.com/accordion/#fillspace).
 
 ### Build Your Custom jQuery UI Download
 
-Once you have a basic understanding of what jQuery UI is and what it does, you're ready to try it out! It's time to head over to the [Download Builder](http://jqueryui.com/download/) on the jQuery UI website to download a copy of jQuery UI. jQuery UI's Download Builder allows you to choose the components you would like to download and get a custom version of the library for your project. There are three easy steps to building your custom jQuery UI download:
+Once you have a basic understanding of what jQuery UI is and what it does, you're ready to try it out! It's time to head over to the [Download Builder](https://jqueryui.com/download/) on the jQuery UI website to download a copy of jQuery UI. jQuery UI's Download Builder allows you to choose the components you would like to download and get a custom version of the library for your project. There are three easy steps to building your custom jQuery UI download:
 
 #### Step 1: Choose Which Components You Need
 
@@ -32,7 +32,7 @@ You can either choose from the various themes we provide, or you can design your
 
 #### Step 3: Choose a Version of jQuery UI
 
-The last step in the Download Builder is to select a version number. Make sure to check not only what version of jQuery UI you pick, but also the version of jQuery Core that version supports, as different versions of the library support different versions of jQuery. For more information on what's new in each version of jQuery UI, see the project's [upgrade guides](http://jqueryui.com/upgrade-guide/) and [changelogs](http://jqueryui.com/changelog/).
+The last step in the Download Builder is to select a version number. Make sure to check not only what version of jQuery UI you pick, but also the version of jQuery Core that version supports, as different versions of the library support different versions of jQuery. For more information on what's new in each version of jQuery UI, see the project's [upgrade guides](https://jqueryui.com/upgrade-guide/) and [changelogs](https://jqueryui.com/changelog/).
 
 #### Click Download!
 
@@ -93,11 +93,11 @@ $( "#mySliderDiv" ).slider({
 });
 ```
 
-Just remember to surround your options with curly brackets `{ }`, and you're well on your way. Of course, the example above barely touches on what you can do with jQuery UI. To get detailed information on the entire set of jQuery UI widgets, visit the [jQuery UI documentation](http://jqueryui.com/demos/).
+Just remember to surround your options with curly brackets `{ }`, and you're well on your way. Of course, the example above barely touches on what you can do with jQuery UI. To get detailed information on the entire set of jQuery UI widgets, visit the [jQuery UI documentation](https://jqueryui.com/demos/).
 
 ### Visual Customization: Designing a jQuery UI Theme
 
-If you want to design your own theme, jQuery UI has a very slick application for just that purpose. It's called ThemeRoller, and you can always get to it by either clicking the "Themes" link in the jQuery UI navigation, or simply going to [jQuery UI ThemeRoller](http://jqueryui.com/themeroller/).
+If you want to design your own theme, jQuery UI has a very slick application for just that purpose. It's called ThemeRoller, and you can always get to it by either clicking the "Themes" link in the jQuery UI navigation, or simply going to [jQuery UI ThemeRoller](https://jqueryui.com/themeroller/).
 
 ThemeRoller provides a custom interface for designing all of the elements used by jQuery UI widgets. As you tweak the "levers" in the left column, the widgets on the right will reflect your design. The Gallery tab of ThemeRoller offers a number of pre-designed themes (the same ones offered by the Download Builder) that you can tweak or download as they are.
 
@@ -111,8 +111,8 @@ When you click the "Download theme" button in ThemeRoller, you'll be directed to
 
 ### Support: Where Can I Get Help?
 
-JQuery UI user and developer resources are kept up-to-date at the [Support Center](http://jqueryui.com/support/).
+JQuery UI user and developer resources are kept up-to-date at the [Support Center](https://jqueryui.com/support/).
 
 ### Developers Wanted!
 
-Want to join the jQuery UI team? We'd love your help! Visit the UI [Development Center](http://jqueryui.com/development/) for details on how to get involved.
+Want to join the jQuery UI team? We'd love your help! Visit the UI [Development Center](https://jqueryui.com/development/) for details on how to get involved.

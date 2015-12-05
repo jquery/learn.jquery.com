@@ -3,7 +3,7 @@
 	"level": "beginner"
 }</script>
 
-The most basic concept of jQuery is to "select some elements and do something with them." jQuery supports most CSS3 selectors, as well as some non-standard selectors. For a complete selector reference, visit the [Selectors documentation on api.jquery.com](http://api.jquery.com/category/selectors/).
+The most basic concept of jQuery is to "select some elements and do something with them." jQuery supports most CSS3 selectors, as well as some non-standard selectors. For a complete selector reference, visit the [Selectors documentation on api.jquery.com](https://api.jquery.com/category/selectors/).
 
 ## Selecting Elements by ID
 
@@ -168,14 +168,14 @@ In order to get the best performance using `:selected`, first select elements wi
 
 jQuery provides pseudo selectors to select form-specific elements according to their type:
 
-* [`:password`](http://api.jquery.com/password-selector/)
-* [`:reset`](http://api.jquery.com/reset-selector/)
-* [`:radio`](http://api.jquery.com/radio-selector/)
-* [`:text`](http://api.jquery.com/text-selector/)
-* [`:submit`](http://api.jquery.com/submit-selector/)
-* [`:checkbox`](http://api.jquery.com/checkbox-selector/)
-* [`:button`](http://api.jquery.com/button-selector/)
-* [`:image`](http://api.jquery.com/image-selector/)
-* [`:file`](http://api.jquery.com/file-selector/)
+* [`:password`](https://api.jquery.com/password-selector/)
+* [`:reset`](https://api.jquery.com/reset-selector/)
+* [`:radio`](https://api.jquery.com/radio-selector/)
+* [`:text`](https://api.jquery.com/text-selector/)
+* [`:submit`](https://api.jquery.com/submit-selector/)
+* [`:checkbox`](https://api.jquery.com/checkbox-selector/)
+* [`:button`](https://api.jquery.com/button-selector/)
+* [`:image`](https://api.jquery.com/image-selector/)
+* [`:file`](https://api.jquery.com/file-selector/)
 
-For all of these there are side notes about performance, so be sure to check out [the API docs](http://api.jquery.com/category/selectors/form-selectors/) for more in-depth information.
+For all of these there are side notes about performance, so be sure to check out [the API docs](https://api.jquery.com/category/selectors/form-selectors/) for more in-depth information.

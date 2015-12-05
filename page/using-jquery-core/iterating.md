@@ -6,7 +6,7 @@ jQuery provides an object iterator utility called `$.each()` as well as a jQuery
 
 ### `$.each()`
 
-[`$.each()`](http://api.jquery.com/jQuery.each/) is a generic iterator function for looping over object, arrays, and array-like objects. Plain objects are iterated via their named properties while arrays and array-like objects are iterated via their indices.
+[`$.each()`](https://api.jquery.com/jQuery.each/) is a generic iterator function for looping over object, arrays, and array-like objects. Plain objects are iterated via their named properties while arrays and array-like objects are iterated via their indices.
 
 `$.each()` is essentially a drop-in replacement of a traditional `for` or `for-in` loop. Given:
 
@@ -86,7 +86,7 @@ For jQuery collections, use `.each()`.
 
 ### `.each()`
 
-[`.each()`](http://api.jquery.com/each/) is used directly on a jQuery collection. It iterates over each matched element in the collection and performs a callback on that object. The index of the current element within the collection is passed as an argument to the callback. The value (the DOM element in this case) is also passed, but the callback is fired within the context of the current matched element so the `this` keyword points to the current element as expected in other jQuery callbacks.
+[`.each()`](https://api.jquery.com/each/) is used directly on a jQuery collection. It iterates over each matched element in the collection and performs a callback on that object. The index of the current element within the collection is passed as an argument to the callback. The value (the DOM element in this case) is also passed, but the callback is fired within the context of the current matched element so the `this` keyword points to the current element as expected in other jQuery callbacks.
 
 For example, given the following markup:
 
@@ -174,22 +174,22 @@ $( "input" ).each( function( i, el ) {
 
 The following is a list of methods that require `.each()`:
 
-* [`.attr()`](http://api.jquery.com/attr/#attr1) (getter)
-* [`.css()`](http://api.jquery.com/css/#css1) (getter)
-* [`.data()`](http://api.jquery.com/data/#data2) (getter)
-* [`.height()`](http://api.jquery.com/height/#height1) (getter)
-* [`.html()`](http://api.jquery.com/html/#html1) (getter)
-* [`.innerHeight()`](http://api.jquery.com/innerHeight/)
-* [`.innerWidth()`](http://api.jquery.com/innerWidth/)
-* [`.offset()`](http://api.jquery.com/offset/#offset1) (getter)
-* [`.outerHeight()`](http://api.jquery.com/outerHeight/)
-* [`.outerWidth()`](http://api.jquery.com/outerWidth/)
-* [`.position()`](http://api.jquery.com/position/)
-* [`.prop()`](http://api.jquery.com/prop/#prop1) (getter)
-* [`.scrollLeft()`](http://api.jquery.com/scrollLeft/#scrollLeft1) (getter)
-* [`.scrollTop()`](http://api.jquery.com/scrollTop/#scrollTop1) (getter)
-* [`.val()`](http://api.jquery.com/val/#val1) (getter)
-* [`.width()`](http://api.jquery.com/width/#width1) (getter)
+* [`.attr()`](https://api.jquery.com/attr/#attr1) (getter)
+* [`.css()`](https://api.jquery.com/css/#css1) (getter)
+* [`.data()`](https://api.jquery.com/data/#data2) (getter)
+* [`.height()`](https://api.jquery.com/height/#height1) (getter)
+* [`.html()`](https://api.jquery.com/html/#html1) (getter)
+* [`.innerHeight()`](https://api.jquery.com/innerHeight/)
+* [`.innerWidth()`](https://api.jquery.com/innerWidth/)
+* [`.offset()`](https://api.jquery.com/offset/#offset1) (getter)
+* [`.outerHeight()`](https://api.jquery.com/outerHeight/)
+* [`.outerWidth()`](https://api.jquery.com/outerWidth/)
+* [`.position()`](https://api.jquery.com/position/)
+* [`.prop()`](https://api.jquery.com/prop/#prop1) (getter)
+* [`.scrollLeft()`](https://api.jquery.com/scrollLeft/#scrollLeft1) (getter)
+* [`.scrollTop()`](https://api.jquery.com/scrollTop/#scrollTop1) (getter)
+* [`.val()`](https://api.jquery.com/val/#val1) (getter)
+* [`.width()`](https://api.jquery.com/width/#width1) (getter)
 
 Note that in most cases, the "getter" signature returns the result from the first element in a jQuery collection while the setter acts over the entire collection of matched elements. The exception to this is `.text()` where the getter signature will return a concatenated string of text from all matched elements.
 
@@ -211,7 +211,7 @@ $( "input" ).val(function( index, value ) {
 
 One other thing to keep in mind with this implicit iteration is that traversal methods such as `.children()` or `.parent()` will act on each matched element in a collection, returning a combined collection of all children or parent nodes.
 
-### [`.map()`](http://api.jquery.com/map/)
+### [`.map()`](https://api.jquery.com/map/)
 
 There is a common iteration use case that can be better handled by using the `.map()` method. Anytime we want to create an array or concatenated string based on all matched elements in our jQuery selector, we're better served using `.map()`.
 
@@ -235,7 +235,7 @@ $( "li" ).map( function(index, element) {
 
 Notice the `.get()` chained at the end. `.map()` actually returns a jQuery-wrapped collection, even if we return strings out of the callback. We need to use the argument-less version of `.get()` in order to return a basic JavaScript array that we can work with. To concatenate into a string, we can chain the plain JS `.join()` array method after `.get()`.
 
-### [`$.map`](http://api.jquery.com/jQuery.map/)
+### [`$.map`](https://api.jquery.com/jQuery.map/)
 
 Like `$.each()` and `.each()`, there is a `$.map()` as well as `.map()`. The difference is also very similar to both `.each()` methods. `$.map()` works on plain JavaScript arrays while `.map()` works on jQuery element collections. Because it's working on a plain array, `$.map()` returns a plain array and `.get()` does not need to be called – in fact, it will throw an error as it's not a native JavaScript method.
 

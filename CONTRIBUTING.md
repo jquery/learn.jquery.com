@@ -1,11 +1,11 @@
 <script>{
-	"title": "Contributing",
-	"customFields": [
-		{
-			"key": "is_chapter",
-			"value": 0
-		}
-	]
+    "title": "Contributing",
+    "customFields": [
+        {
+            "key": "is_chapter",
+            "value": 0
+        }
+    ]
 }</script>
 
 Depending on your level of experience with some of the workflows common to many open source projects, e.g. git/GitHub, the command line, and setting up a local development environment, contributing to this site may be a breeze or come with a bit of a learning curve. If you fit into the former group, great! Jump ahead to learn how to get started.
@@ -24,11 +24,11 @@ Of course, we'll also give you credit for your work! The **Contributors** sectio
 
 ### Content
 
-The content in this site is maintained in [this GitHub repository](https://github.com/jquery/learn.jquery.com) as a collection of [Markdown](http://daringfireball.net/projects/markdown/) files in the `page` directory. The order in which chapters and articles are presented is controlled by the [order.json](https://github.com/jquery/learn.jquery.com/blob/master/order.json) file.
+The content in this site is maintained in [this GitHub repository](https://github.com/jquery/learn.jquery.com) as a collection of [Markdown](https://daringfireball.net/projects/markdown/) files in the `page` directory. The order in which chapters and articles are presented is controlled by the [order.json](https://github.com/jquery/learn.jquery.com/blob/master/order.json) file.
 
 ### Design
 
-The site's layout and design is controlled by our [`jquery-wp-content`](https://github.com/jquery/jquery-wp-content), a custom [WordPress](http://wordpress.org) configuration that runs (or will run in the near future) all of the sites run by the jQuery Foundation. The [master theme](https://github.com/jquery/jquery-wp-content/tree/master/themes/jquery) controls most of the layout for all of our sites, and there is a [child theme](https://github.com/jquery/jquery-wp-content/tree/master/themes/learn.jquery.com) that controls the templates and styles specific to the learn site.
+The site's layout and design is controlled by our [`jquery-wp-content`](https://github.com/jquery/jquery-wp-content), a custom [WordPress](https://wordpress.org) configuration that runs (or will run in the near future) all of the sites run by the jQuery Foundation. The [master theme](https://github.com/jquery/jquery-wp-content/tree/master/themes/jquery) controls most of the layout for all of our sites, and there is a [child theme](https://github.com/jquery/jquery-wp-content/tree/master/themes/learn.jquery.com) that controls the templates and styles specific to the learn site.
 
 [`jquery-wp-content`](https://github.com/jquery/jquery-wp-content) powers our sites in production and staging environments, and can be set up for local development relatively easily.
 
@@ -37,7 +37,7 @@ The site's layout and design is controlled by our [`jquery-wp-content`](https://
 The static content in the `page` directory is deployed to a [`jquery-wp-content`](https://github.com/jquery/jquery-wp-content) instance using [grunt](http://gruntjs.com), specifically with two grunt plugins we've created:
 
 * [grunt-jquery-content](https://github.com/jquery/grunt-jquery-content) – pre-processes content in a variety of formats (HTML, Markdown, XML) into HTML, applying syntax highlighting and some simple partial support, preparing it for processing by:
-* [grunt-wordpress](https://github.com/scottgonzalez/grunt-wordpress) – syncs static content to WordPress using [XML-RPC](http://codex.wordpress.org/XML-RPC_Support)
+* [grunt-wordpress](https://github.com/scottgonzalez/grunt-wordpress) – syncs static content to WordPress using [XML-RPC](https://codex.wordpress.org/XML-RPC_Support)
 
 ## How Can I Help?
 
@@ -49,7 +49,7 @@ If you'd like to go a step further and contribute new articles, make edits to ex
 
 ## Local Development
 
-In order to preview your changes locally, work on design/layout issues, or work on other jQuery sites' content, and generally contribute most effectively, we recommend that you set up a local development environment. You can learn how to get set up from our [documentation on contributing to jQuery Foundation web sites](http://contribute.jquery.org/web-sites/#local-development).
+In order to preview your changes locally, work on design/layout issues, or work on other jQuery sites' content, and generally contribute most effectively, we recommend that you set up a local development environment. You can learn how to get set up from our [documentation on contributing to jQuery Foundation web sites](https://contribute.jquery.org/web-sites/#local-development).
 
 * **Windows note:** Line endings need to be Unix-style (line-feed only). Make sure your text editor creates new files with Unix-style line endings. In addition, the following setting to your git config will keep the Unix-style line endings when pulling from the repository:
 
@@ -70,7 +70,7 @@ Once you've gotten your environment working, here are the general steps you shou
 7. Push the files to your GitHub remote: `git push origin <feature/issue name/number>`
 8. Go to your fork on GitHub and submit a new [pull request](https://help.github.com/articles/using-pull-requests).
 
-For more advice on managing your fork and submitting pull requests to the jQuery Foundation, read our [Commits and Pull Requests](http://contribute.jquery.org/commits-and-pull-requests/) guide.
+For more advice on managing your fork and submitting pull requests to the jQuery Foundation, read our [Commits and Pull Requests](https://contribute.jquery.org/commits-and-pull-requests/) guide.
 
 ### Adding a New Article
 
@@ -81,14 +81,14 @@ For more advice on managing your fork and submitting pull requests to the jQuery
 
 ### Formatting Articles
 
-Yes! Take a look at our [style guide](http://learn.jquery.com/style-guide/) for more information on authoring and formatting conventions.
+Yes! Take a look at our [style guide](https://learn.jquery.com/style-guide/) for more information on authoring and formatting conventions.
 
 <h2 id="getting-help">Getting Help</h2>
 
 If you're struggling to get any part of the site working properly, or have any questions, we're here to help.
 
-The best place to get help is on [IRC](http://en.wikipedia.org/wiki/Internet_Relay_Chat), in the `#jquery-content` channel on [Freenode](http://freenode.net). If you're unfamiliar with IRC, you can use the [webchat gateway](http://webchat.freenode.net/).
+The best place to get help is on [IRC](https://en.wikipedia.org/wiki/Internet_Relay_Chat), in the `#jquery-content` channel on [Freenode](https://freenode.net). If you're unfamiliar with IRC, you can use the [webchat gateway](https://webchat.freenode.net/).
 
-In addition, the jQuery Content Team holds a [public, biweekly meeting](http://jquery.org/meeting) on Wednesday, at 1PM Eastern time in the `#jquery-meeting` channel on Freenode.
+In addition, the jQuery Content Team holds a [public, biweekly meeting](https://jquery.org/meeting) on Wednesday, at 1PM Eastern time in the `#jquery-meeting` channel on Freenode.
 
 If IRC is not your thing, but you still want or need to get in touch, please use the site's [GitHub repo](https://github.com/jquery/learn.jquery.com) or send us an e-mail to `content at jquery dot org`.

@@ -1,14 +1,14 @@
 <script>{
-	"title": "About This Site",
-	"customFields": [
-		{
-			"key": "is_chapter",
-			"value": 0
-		}
-	]
+    "title": "About This Site",
+    "customFields": [
+        {
+            "key": "is_chapter",
+            "value": 0
+        }
+    ]
 }</script>
 
-Learning how and when to use jQuery is a different process for each and every web developer, depending largely on experience with the primary tools for front-end development (HTML, CSS, and JavaScript) and knowledge of general programming principles. Over the years developers of all stripes have come to rely on our [API documentation](http://api.jquery.com) for help figuring out how to do exactly what they need to do.
+Learning how and when to use jQuery is a different process for each and every web developer, depending largely on experience with the primary tools for front-end development (HTML, CSS, and JavaScript) and knowledge of general programming principles. Over the years developers of all stripes have come to rely on our [API documentation](https://api.jquery.com) for help figuring out how to do exactly what they need to do.
 
 However, API documentation alone cannot serve as a guide to solving problems and fostering a true understanding of web development. Over the years, an ecosystem of blog posts, books, support forums, and channels has grown to help cover the **hows** and **whys** of developing with jQuery, as well as explaining best practices, techniques, and workarounds for common problems. This type of documentation has been invaluable resource for millions of people, but the experience of navigating these waters can be frustrating as often as it is fulfilling, as developers struggle to identify trustworthy resources, determine whether what they're reading is actually up to date, and figure out those magical search keywords that are _just right_!
 
@@ -26,7 +26,7 @@ The jQuery Learning site has its roots in two primary places.
 
 The first is Rebecca Murphey's [jQuery Fundamentals](http://jqfundamentals.com/legacy), a free, open source book on jQuery basics she originally released in 2010. Seeking a better home where the information could be both maintained going forward, and consumed in a more piecemeal fashion, Rebecca donated the content to the jQuery Foundation to form the basis of what was then an abstract idea for some sort of "learning center."
 
-The second is [docs.jquery.com](http://docs.jquery.com), that erstwhile chestnut still living out its final days before it will be shut down in early 2013. Since we've moved the API documentation for jQuery Core off that domain, we needed a place that could serve a similar need – documentation (that anyone can contribute to) that gets into the "how-to" and FAQs – without clumsy barriers to entry like finding the right person to set you up with a special wiki account and forcing all authoring into a `<textarea>`.
+The second is [docs.jquery.com](https://docs.jquery.com), that erstwhile chestnut still living out its final days before it will be shut down in early 2013. Since we've moved the API documentation for jQuery Core off that domain, we needed a place that could serve a similar need – documentation (that anyone can contribute to) that gets into the "how-to" and FAQs – without clumsy barriers to entry like finding the right person to set you up with a special wiki account and forcing all authoring into a `<textarea>`.
 
 ## Contributing
 
