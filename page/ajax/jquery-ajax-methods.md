@@ -11,7 +11,7 @@ It's often considered good practice to use the `$.ajax()` method over the jQuery
 
 ### `$.ajax()`
 
-jQuery’s core `$.ajax()` method is a powerful and straightforward way of creating Ajax requests. It takes a configuration object that contains all the instructions jQuery requires to complete the request. The `$.ajax()` method is particularly valuable because it offers the ability to specify both success and failure callbacks. Also, its ability to take a configuration object that can be defined separately makes it easier to write reusable code. For complete documentation of the configuration options, visit [http://api.jquery.com/jQuery.ajax/](http://api.jquery.com/jQuery.ajax/).
+jQuery’s core `$.ajax()` method is a powerful and straightforward way of creating Ajax requests. It takes a configuration object that contains all the instructions jQuery requires to complete the request. The `$.ajax()` method is particularly valuable because it offers the ability to specify both success and failure callbacks. Also, its ability to take a configuration object that can be defined separately makes it easier to write reusable code. For complete documentation of the configuration options, visit [https://api.jquery.com/jQuery.ajax/](https://api.jquery.com/jQuery.ajax/).
 
 ```
 // Using the core $.ajax() method
@@ -58,7 +58,7 @@ $.ajax({
 
 ### `$.ajax()` Options
 
-There are many, many options for the `$.ajax()` method, which is part of its power. For a complete list of options, visit [http://api.jquery.com/jQuery.ajax/](http://api.jquery.com/jQuery.ajax/); here are several that you will use frequently:
+There are many, many options for the `$.ajax()` method, which is part of its power. For a complete list of options, visit [https://api.jquery.com/jQuery.ajax/](https://api.jquery.com/jQuery.ajax/); here are several that you will use frequently:
 
 #### async
 
@@ -102,7 +102,7 @@ The time in milliseconds to wait before considering the request a failure.
 
 #### traditional
 
-Set to `true` to use the param serialization style in use prior to jQuery 1.4. For details, see [http://api.jquery.com/jQuery.param/](http://api.jquery.com/jQuery.param/).
+Set to `true` to use the param serialization style in use prior to jQuery 1.4. For details, see [https://api.jquery.com/jQuery.param/](https://api.jquery.com/jQuery.param/).
 
 #### type
 

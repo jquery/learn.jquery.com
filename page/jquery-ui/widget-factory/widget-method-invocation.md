@@ -7,23 +7,23 @@ Widgets created with [the widget factory](/jquery-ui/widget-factory/) use method
 
 ### Plugin Invocation
 
-To invoke a method using the widget's plugin, pass the name of the method as a string. For example, here is how you call the [dialog widget's `close()` method](http://api.jqueryui.com/dialog/#method-close).
+To invoke a method using the widget's plugin, pass the name of the method as a string. For example, here is how you call the [dialog widget's `close()` method](https://api.jqueryui.com/dialog/#method-close).
 
 ```
 $( ".selector" ).dialog( "close" );
 ```
 
-If the method requires arguments, pass them as additional parameters to the plugin. Here is how you call [dialog's `option()` method](http://api.jqueryui.com/dialog/#method-option).
+If the method requires arguments, pass them as additional parameters to the plugin. Here is how you call [dialog's `option()` method](https://api.jqueryui.com/dialog/#method-option).
 
 ```
 $( ".selector" ).dialog( "option", "height" );
 ```
 
-This returns the value of the [dialog's `height` option](http://api.jqueryui.com/dialog/#option-height).
+This returns the value of the [dialog's `height` option](https://api.jqueryui.com/dialog/#option-height).
 
 ### Instance Invocation
 
-Under the hoods, every instance of every widget is stored on the element using [`jQuery.data()`](http://api.jquery.com/jQuery.data/). To retrieve the instance object, call `jQuery.data()` using the widget's full name as the key. This is shown below.
+Under the hoods, every instance of every widget is stored on the element using [`jQuery.data()`](https://api.jquery.com/jQuery.data/). To retrieve the instance object, call `jQuery.data()` using the widget's full name as the key. This is shown below.
 
 ```
 var dialog = $( ".selector" ).data( "ui-dialog" );
@@ -61,7 +61,7 @@ dialog.dialog( "close" )
 	.css( "color", "red" );
 ```
 
-The exception to this are methods that return information about the widget. For example [dialog's `isOpen()` method](http://api.jqueryui.com/dialog/#method-isOpen).
+The exception to this are methods that return information about the widget. For example [dialog's `isOpen()` method](https://api.jqueryui.com/dialog/#method-isOpen).
 
 ```
 $( ".selector" )

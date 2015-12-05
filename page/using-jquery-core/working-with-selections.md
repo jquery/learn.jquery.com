@@ -5,7 +5,7 @@
 
 ### Getters & Setters
 
-Some jQuery methods can be used to either assign or read some value on a selection. When the method is called with a value as an argument, it's referred to as a setter because it sets (or assigns) that value. When the method is called with no argument, it gets (or reads) the value of the element. Setters affect all elements in a selection, whereas getters return the requested value only for the first element in the selection, with the exception of [`.text()`](http://api.jquery.com/text/), which retrieves the values of all the elements.
+Some jQuery methods can be used to either assign or read some value on a selection. When the method is called with a value as an argument, it's referred to as a setter because it sets (or assigns) that value. When the method is called with no argument, it gets (or reads) the value of the element. Setters affect all elements in a selection, whereas getters return the requested value only for the first element in the selection, with the exception of [`.text()`](https://api.jquery.com/text/), which retrieves the values of all the elements.
 
 ```
 // The .html() method sets all the h1 elements' html to be "hello world":

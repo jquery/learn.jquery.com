@@ -3,7 +3,7 @@
 	"level": "beginner"
 }</script>
 
-Once you've made an initial selection with jQuery, you can traverse deeper into what was just selected. Traversing can be broken down into three basic parts: parents, children, and siblings. jQuery has an abundance of easy-to-use methods for all these parts. Notice that each of these methods can optionally be passed string selectors, and some can also take another jQuery object in order to filter your selection down. Pay attention and refer to the [API documentation on traversing](http://api.jquery.com/category/traversing/) to know what variation of arguments you have available.
+Once you've made an initial selection with jQuery, you can traverse deeper into what was just selected. Traversing can be broken down into three basic parts: parents, children, and siblings. jQuery has an abundance of easy-to-use methods for all these parts. Notice that each of these methods can optionally be passed string selectors, and some can also take another jQuery object in order to filter your selection down. Pay attention and refer to the [API documentation on traversing](https://api.jquery.com/category/traversing/) to know what variation of arguments you have available.
 
 ## Parents
 
@@ -116,6 +116,6 @@ $( "div.parent" ).siblings();
 $( "div.surrogateParent1" ).siblings();
 ```
 
-See the complete documentation for these methods and more at [Traversal documentation on api.jquery.com](http://api.jquery.com/category/traversing/tree-traversal/).
+See the complete documentation for these methods and more at [Traversal documentation on api.jquery.com](https://api.jquery.com/category/traversing/tree-traversal/).
 
 Be cautious when traversing long distances in documents – complex traversal makes it imperative that the document's structure remain the same, which is difficult to guarantee even if you're the one creating the whole application from server to client. One- or two-step traversal is fine, but it's best to avoid traversals that go from one container to another.

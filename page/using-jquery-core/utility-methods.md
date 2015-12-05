@@ -5,7 +5,7 @@
 	"attribution": [ "jQuery Fundamentals" ]
 }</script>
 
-jQuery offers several utility methods in the `$` namespace. These methods are helpful for accomplishing routine programming tasks. For a complete reference on jQuery utility methods, visit the [utilities documentation on api.jquery.com](http://api.jquery.com/category/utilities/).
+jQuery offers several utility methods in the `$` namespace. These methods are helpful for accomplishing routine programming tasks. For a complete reference on jQuery utility methods, visit the [utilities documentation on api.jquery.com](https://api.jquery.com/category/utilities/).
 
 Below are examples of a few of the utility methods:
 
@@ -135,4 +135,4 @@ $.type( /test/ ); // "regexp"
 $.type( new Date() ); // "date"
 ```
 
-As always, you can check the [API docs](http://api.jquery.com/jQuery.type/) for a more in-depth explanation.
+As always, you can check the [API docs](https://api.jquery.com/jQuery.type/) for a more in-depth explanation.

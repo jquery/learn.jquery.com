@@ -19,7 +19,7 @@ Given the following HTML, for our example we want to log the text of the each `<
 </div>​
 ```
 
-### [.bind()](http://api.jquery.com/bind/) (Deprecated)
+### [.bind()](https://api.jquery.com/bind/) (Deprecated)
 
 Introduced in jQuery v1.0
 
@@ -38,7 +38,7 @@ As discussed in the [event delegation](/event/event-delegation/) article, this i
 *liveQuery* was a popular jQuery plugin that allowed for the creation of events which would be triggered for elements that existed now or in the future. This plugin did not use event delegation and used expensive CPU processing to poll the DOM for changes every 20ms and fire events accordingly.
 
 
-### [.bind()](http://api.jquery.com/bind/) delegation (Deprecated)
+### [.bind()](https://api.jquery.com/bind/) delegation (Deprecated)
 
 Introduced in jQuery v1.0
 
@@ -56,7 +56,7 @@ Generally we don't associate `.bind()` with *event delegation*, however prior to
 We are able to take advantage of *event bubbling* here by attaching a *click* event to the parent `<ul>` element. Whenever the `<li>` is clicked, the event bubbles up to its parent, the `<ul>`, which executes our event handler. Our event handler checks to see if the **event.target** (the element that caused the event to fire) matches our selector.
 
 
-### [.live()](http://api.jquery.com/live/) (Deprecated)
+### [.live()](https://api.jquery.com/live/) (Deprecated)
 
 Introduced in jQuery v1.3
 
@@ -80,7 +80,7 @@ When we use `.live()` our event is bound to `$( document )`. When the `<li>` is 
 The last element to receive the *click* event is *document*, this is where our `.live()` event is bound. `.live()` will then check to see if our selector `#list li` is the element that triggered the event, if so our event handler is executed.
 
 
-### [.live()](http://api.jquery.com/live/) w/ context (Deprecated)
+### [.live()](https://api.jquery.com/live/) w/ context (Deprecated)
 
 Introduced in jQuery v1.4
 
@@ -106,7 +106,7 @@ $( "li", "#list" ).live( "click", function( event ) {
 
 In this instance when an `<li>` is clicked the event still bubbles all the way up the *document tree* as it did before. However, our event handler is now bound to the parent `<ul>` tag, so we do not have to wait for the event to bubble all the way up to the *document* root.
 
-### [.delegate()](http://api.jquery.com/delegate/) (Deprecated)
+### [.delegate()](https://api.jquery.com/delegate/) (Deprecated)
 
 First introduced in jQuery v1.4.2
 
@@ -119,7 +119,7 @@ $( "#list" ).delegate( "li", "click", function( event ) {
 });​​​​​​​​​​​​​​​​​​​​​
 ```
 
-### [.on()](http://api.jquery.com/on/)
+### [.on()](https://api.jquery.com/on/)
 
 First introduced in jQuery v1.7
 

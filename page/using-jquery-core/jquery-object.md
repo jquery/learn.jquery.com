@@ -13,7 +13,7 @@ Elements have properties like any JavaScript object. Among these properties are 
 
 ## The jQuery Object
 
-It turns out that working directly with DOM elements can be awkward. The jQuery object defines [many](http://api.jquery.com/) methods to smooth out the experience for developers. Some benefits of the jQuery Object include:
+It turns out that working directly with DOM elements can be awkward. The jQuery object defines [many](https://api.jquery.com/) methods to smooth out the experience for developers. Some benefits of the jQuery Object include:
 
 *Compatibility* – The implementation of element methods varies across browser vendors and versions. The following snippet attempts to set the inner HTML of a `<tr>` element stored in `target`:
 

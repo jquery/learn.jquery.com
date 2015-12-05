@@ -2,7 +2,7 @@
 	"title": "How do I test whether an element exists?"
 }</script>
 
-Use the [.length](http://api.jquery.com/length/) property of the jQuery collection returned by your selector:
+Use the [.length](https://api.jquery.com/length/) property of the jQuery collection returned by your selector:
 
 ```
 if ( $( "#myDiv" ).length ) {

@@ -1,11 +1,11 @@
 <script>{
-	"title": "Using jQuery UI with AMD",
-	"level": "intermediate"
+    "title": "Using jQuery UI with AMD",
+    "level": "intermediate"
 }</script>
 
 <div class="warning">**Note:** This documentation refers to functionality made available in jQuery UI 1.11.</div>
 
-As of jQuery UI 1.11, all of the library's source files support using AMD. This means that you can manage your jQuery UI dependencies without using [Download Builder](http://jqueryui.com/download/), and load jQuery UI's source files asynchronously using an AMD loader such as [RequireJS](http://requirejs.org/).
+As of jQuery UI 1.11, all of the library's source files support using AMD. This means that you can manage your jQuery UI dependencies without using [Download Builder](https://jqueryui.com/download/), and load jQuery UI's source files asynchronously using an AMD loader such as [RequireJS](http://requirejs.org/).
 
 In this article we'll walk through the process of using AMD with jQuery UI. Let's start by discussing the files we'll need.
 
@@ -13,7 +13,7 @@ In this article we'll walk through the process of using AMD with jQuery UI. Let'
 
 We'll need to download three things to get up and running: jQuery core, jQuery UI, and an AMD loader.
 
-While any AMD loader will work, we'll use RequireJS in this article, which you can download from <http://requirejs.org/docs/download.html>. If you don't have a version of jQuery core handy, you can get it from <http://jquery.com/download/>, and you can download the jQuery UI source files from <https://github.com/jquery/jquery-ui/releases> (use the files in the `ui` directory). You can alternatively [download these libraries using a package manager such as Bower](/jquery-ui/environments/bower/).
+While any AMD loader will work, we'll use RequireJS in this article, which you can download from <http://requirejs.org/docs/download.html>. If you don't have a version of jQuery core handy, you can get it from <https://jquery.com/download/>, and you can download the jQuery UI source files from <https://github.com/jquery/jquery-ui/releases> (use the files in the `ui` directory). You can alternatively [download these libraries using a package manager such as Bower](/jquery-ui/environments/bower/).
 
 ### Directory Structure
 
@@ -47,7 +47,7 @@ Now that we have the files in place, let's use them. Here are the contents of ou
 <!doctype html>
 <html lang="en">
 <head>
-	...
+    ...
 </head>
 <body>
 
@@ -72,7 +72,7 @@ The `require()` function is AMD's mechanism for specifying and loading dependenc
 
 ```
 require([ "jquery-ui/autocomplete" ], function( autocomplete ) {
-	...
+    ...
 });
 ```
 
@@ -86,9 +86,9 @@ All widgets built with the widget factory expose their constructor function when
 
 ```
 require([ "jquery-ui/autocomplete" ], function( autocomplete ) {
-	autocomplete({ source: [ "One", "Two", "Three" ] }, "<input>" )
-		.element
-		.appendTo( "body" );
+    autocomplete({ source: [ "One", "Two", "Three" ] }, "<input>" )
+        .element
+        .appendTo( "body" );
 });
 ```
 
@@ -96,9 +96,9 @@ Each widget's constructor function takes two arguments: the widget's options, an
 
 ```
 require([ "jquery-ui/autocomplete" ], function( autocomplete ) {
-	autocomplete({ source: [ "One", "Two", "Three" ] })
-		.element
-		.appendTo( "body" );
+    autocomplete({ source: [ "One", "Two", "Three" ] })
+        .element
+        .appendTo( "body" );
 });
 ```
 
@@ -106,9 +106,9 @@ Even though we're loading jQuery UI's files with AMD, the files' plugins are sti
 
 ```
 require([ "jquery", "jquery-ui/autocomplete" ], function( $ ) {
-	$( "<input>" )
-		.autocomplete({ source: [ "One", "Two", "Three" ]})
-		.appendTo( "body" );
+    $( "<input>" )
+        .autocomplete({ source: [ "One", "Two", "Three" ]})
+        .appendTo( "body" );
 });
 ```
 
@@ -118,8 +118,8 @@ Since jQuery UI's datepicker widget is the only jQuery UI widget not built with 
 
 ```
 require([ "jquery", "jquery-ui/datepicker" ], function( $ ) {
-	$( "<input>" )
-		.appendTo( "body" )
-		.datepicker();
+    $( "<input>" )
+        .appendTo( "body" )
+        .datepicker();
 });
 ```

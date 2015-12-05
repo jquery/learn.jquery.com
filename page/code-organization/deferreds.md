@@ -1,12 +1,12 @@
 <script>{
-	"title": "Deferreds",
-	"level": "advanced",
-	"source": "http://msdn.microsoft.com/en-us/magazine/gg723713.aspx",
-	"attribution": [
-		"Julian Aubourg <j@ubourg.net>",
-		"Addy Osmani <addyosmani@gmail.com>",
-		"Andree Hansson <peolanha@gmail.com>"
-	]
+    "title": "Deferreds",
+    "level": "advanced",
+    "source": "https://msdn.microsoft.com/en-us/magazine/gg723713.aspx",
+    "attribution": [
+        "Julian Aubourg <j@ubourg.net>",
+        "Addy Osmani <addyosmani@gmail.com>",
+        "Andree Hansson <peolanha@gmail.com>"
+    ]
 }</script>
 
 At a high-level, deferreds can be thought of as a way to represent asynchronous operations which can take a long time to complete. They're the asynchronous alternative to blocking functions and the general idea is that rather than your application blocking while it awaits some request to complete before returning a result, a deferred object can instead be returned immediately. You can then attach callbacks to the deferred object: they will be called once the request has actually completed.
@@ -24,13 +24,13 @@ var promise = callToAPI( arg1, arg2, ...);
 
 promise.then(function( futureValue ) {
 
-	// Handle futureValue
+    // Handle futureValue
 
 });
 
 promise.then(function( futureValue ) {
 
-	// Do something else
+    // Do something else
 
 });
 ```
@@ -45,11 +45,11 @@ Thankfully, the "then" method accepts two parameters: one for when the promise w
 ```
 promise.then(function( futureValue ) {
 
-	// We got a value
+    // We got a value
 
 }, function() {
 
-	// Something went wrong
+    // Something went wrong
 
 });
 ```
@@ -58,12 +58,12 @@ In the case of certain applications, it is necessary to have several results ret
 
 ```
 when(
-	promise1,
-	promise2,
-	...
+    promise1,
+    promise2,
+    ...
 ).then(function( futureValue1, futureValue2, ... ) {
 
-	// All promises have completed and are resolved
+    // All promises have completed and are resolved
 
 });
 ```
@@ -74,12 +74,12 @@ A good example is a scenario where you may have multiple concurrent animations t
 var promise1 = $( "#id1" ).animate().promise();
 var promise2 = $( "#id2" ).animate().promise();
 when(
-	promise1,
-	promise2
+    promise1,
+    promise2
 ).then(function() {
 
-	// Once both animations have completed
-	// we can then run our additional logic
+    // Once both animations have completed
+    // we can then run our additional logic
 
 });
 ```

@@ -5,7 +5,7 @@
 	"attribution": [ "jQuery Fundamentals" ]
 }</script>
 
-For complete documentation of jQuery manipulation methods, visit the [Manipulation documentation on api.jquery.com](http://api.jquery.com/category/manipulation/).
+For complete documentation of jQuery manipulation methods, visit the [Manipulation documentation on api.jquery.com](https://api.jquery.com/category/manipulation/).
 
 ## Getting and Setting Information About Elements
 

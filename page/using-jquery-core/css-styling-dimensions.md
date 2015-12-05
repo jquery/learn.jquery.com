@@ -55,7 +55,7 @@ Classes can also be useful for storing state information about an element, such 
 
 jQuery offers a variety of methods for obtaining and modifying dimension and position information about an element.
 
-The code below shows a brief overview of the dimensions functionality in jQuery. For complete details about jQuery dimension methods, visit the [dimensions documentation on api.jquery.com](http://api.jquery.com/category/dimensions/).
+The code below shows a brief overview of the dimensions functionality in jQuery. For complete details about jQuery dimension methods, visit the [dimensions documentation on api.jquery.com](https://api.jquery.com/category/dimensions/).
 
 ```
 // Basic dimensions methods.

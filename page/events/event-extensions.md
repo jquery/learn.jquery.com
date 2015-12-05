@@ -11,7 +11,7 @@ This document covers the extensions available starting with jQuery 1.7; a sparse
 
 ### Events overview and general advice
 
-When writing an event extension, it is essential to understand the flow of events through jQuery's internal event system. For a description of the event system from the API level, including a discussion of event delegation, see the [`.on()`](http://api.jquery.com/on/) method.
+When writing an event extension, it is essential to understand the flow of events through jQuery's internal event system. For a description of the event system from the API level, including a discussion of event delegation, see the [`.on()`](https://api.jquery.com/on/) method.
 
 To simplify event management, jQuery only attaches a single event handler per element per event type (using `addEventListener` on W3C-compliant browsers or `attachEvent` on older IE) and then dispatches to event handlers that are attached via jQuery's APIs. For example, if three "click" event handlers are attached to an element, jQuery attaches its own handler when the first handler is attached and adds the user's event handler to a list to be executed when the event occurs. For subsequent event handlers, jQuery only adds them to its own internal list since it has already called the browser to attach its solitary handler. Conversely, jQuery removes its own event handler from the browser when the final event of a particular type is removed from the element.
 

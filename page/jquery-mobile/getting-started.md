@@ -1,6 +1,6 @@
 <script>{
-	"title": "Getting Started with jQuery Mobile",
-	"level": "Beginner"
+    "title": "Getting Started with jQuery Mobile",
+    "level": "Beginner"
 }</script>
 
 jQuery Mobile provides a set of touch-friendly UI widgets and an Ajax-powered navigation system to support animated page transitions. This guide will show you how you can build your first jQuery Mobile application.
@@ -17,28 +17,28 @@ In the `<body>`, a div with a `data-role` of `page` is the wrapper used to delin
 <!doctype html>
 <html>
 <head>
-	<title>My Page</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://code.jquery.com/mobile/[version]/jquery.mobile-[version].min.css">
-	<script src="https://code.jquery.com/jquery-[version].min.js"></script>
-	<script src="https://code.jquery.com/mobile/[version]/jquery.mobile-[version].min.js"></script>
+    <title>My Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/[version]/jquery.mobile-[version].min.css">
+    <script src="https://code.jquery.com/jquery-[version].min.js"></script>
+    <script src="https://code.jquery.com/mobile/[version]/jquery.mobile-[version].min.js"></script>
 </head>
 <body>
-	<div data-role="page">
+    <div data-role="page">
 
-		<div data-role="header">
-			<h1>My Title</h1>
-		</div><!-- /header -->
+        <div data-role="header">
+            <h1>My Title</h1>
+        </div><!-- /header -->
 
-		<div role="main" class="ui-content">
-			<p>Hello world</p>
-		</div><!-- /content -->
+        <div role="main" class="ui-content">
+            <p>Hello world</p>
+        </div><!-- /content -->
 
-		<div data-role="footer">
-			<h4>My Footer</h4>
-		</div><!-- /footer -->
+        <div data-role="footer">
+            <h4>My Footer</h4>
+        </div><!-- /footer -->
 
-	</div><!-- /page -->
+    </div><!-- /page -->
 </body>
 </html>
 ```
@@ -53,11 +53,11 @@ jQuery Mobile includes a diverse set of common listviews that are coded as lists
 
 ```
 <ul data-role="listview" data-inset="true" data-filter="true">
-	<li><a href="#">Acura</a></li>
-	<li><a href="#">Audi</a></li>
-	<li><a href="#">BMW</a></li>
-	<li><a href="#">Cadillac</a></li>
-	<li><a href="#">Ferrari</a></li>
+    <li><a href="#">Acura</a></li>
+    <li><a href="#">Audi</a></li>
+    <li><a href="#">BMW</a></li>
+    <li><a href="#">Cadillac</a></li>
+    <li><a href="#">Ferrari</a></li>
 </ul>
 ```
 
@@ -67,8 +67,8 @@ The framework contains a full set of form elements that are automatically enhanc
 
 ```
 <form>
-	<label for="slider-0">Input slider:</label>
-	<input type="range" name="slider" id="slider-0" value="25" min="0" max="100" />
+    <label for="slider-0">Input slider:</label>
+    <input type="range" name="slider" id="slider-0" value="25" min="0" max="100" />
 </form>
 ```
 
@@ -94,7 +94,7 @@ If you would like to create a custom theme, you can use [ThemeRoller](https://th
 
 ### Go Forth and Build Something
 
-This guide has provided you with a basic structure for a jQuery Mobile page and a few enhanced elements. You can explore the full [jQuery Mobile API Documentation](http://api.jquerymobile.com) and [jQuery Mobile Demo Center](http://demos.jquerymobile.com/1.4.5/) to learn about linking pages, adding animated page transitions, and creating dialogs and popups.
+This guide has provided you with a basic structure for a jQuery Mobile page and a few enhanced elements. You can explore the full [jQuery Mobile API Documentation](https://api.jquerymobile.com) and [jQuery Mobile Demo Center](https://demos.jquerymobile.com/1.4.5/) to learn about linking pages, adding animated page transitions, and creating dialogs and popups.
 
 If you're more of the type who prefers actually writing JavaScript to build your apps, and you don't want to use the `data-` attribute configuration system, you can take full control of everything and call plugins directly as these are all standard jQuery plugins built with the UI widget factory. Particularly useful information for such cases can be found in the global configuration, events, and methods sections.
 

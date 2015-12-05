@@ -1,6 +1,6 @@
 <script>{
-	"title": "How jQuery Works",
-	"level": "beginner"
+    "title": "How jQuery Works",
+    "level": "beginner"
 }</script>
 
 ### jQuery: The Basics
@@ -11,22 +11,22 @@ This is a basic tutorial, designed to help you get started using jQuery. If you 
 <!doctype html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>Demo</title>
+    <meta charset="utf-8">
+    <title>Demo</title>
 </head>
 <body>
-	<a href="http://jquery.com/">jQuery</a>
-	<script src="jquery.js"></script>
-	<script>
+    <a href="https://jquery.com/">jQuery</a>
+    <script src="jquery.js"></script>
+    <script>
 
-	// Your code goes here.
+    // Your code goes here.
 
-	</script>
+    </script>
 </body>
 </html>
 ```
 
-The `src` attribute in the `<script>` element must point to a copy of jQuery. Download a copy of jQuery from the [Downloading jQuery](http://jquery.com/download/) page and store the `jquery.js` file in the same directory as your HTML file.
+The `src` attribute in the `<script>` element must point to a copy of jQuery. Download a copy of jQuery from the [Downloading jQuery](https://jquery.com/download/) page and store the `jquery.js` file in the same directory as your HTML file.
 
 <div class="warning">**Note**: When you download jQuery, the file name may contain a version number, e.g., `jquery-x.y.z.js`. Make sure to either rename this file to `jquery.js` or update the `src` attribute of the `<script>` element to match the file name.</div>
 
@@ -37,18 +37,18 @@ To ensure that their code runs after the browser finishes loading the document, 
 ```
 window.onload = function() {
 
-	alert( "welcome" );
+    alert( "welcome" );
 
 };
 ```
 
-Unfortunately, the code doesn't run until all images are finished downloading, including banner ads. To run code as soon as the document is ready to be manipulated, jQuery has a statement known as the [ready event](http://api.jquery.com/ready/):
+Unfortunately, the code doesn't run until all images are finished downloading, including banner ads. To run code as soon as the document is ready to be manipulated, jQuery has a statement known as the [ready event](https://api.jquery.com/ready/):
 
 ```
 
 $( document ).ready(function() {
 
-	// Your code here.
+    // Your code here.
 
 });
 ```
@@ -58,29 +58,29 @@ For example, inside the `ready` event, you can add a click handler to the link:
 ```
 $( document ).ready(function() {
 
-	$( "a" ).click(function( event ) {
+    $( "a" ).click(function( event ) {
 
-		alert( "Thanks for visiting!" );
+        alert( "Thanks for visiting!" );
 
-	});
+    });
 
 });
 ```
 
-Copy the above jQuery code into your HTML file where it says `// Your code goes here`. Then, save your HTML file and reload the test page in your browser. Clicking the link should now first display an alert pop-up, then continue with the default behavior of navigating to http://jquery.com.
+Copy the above jQuery code into your HTML file where it says `// Your code goes here`. Then, save your HTML file and reload the test page in your browser. Clicking the link should now first display an alert pop-up, then continue with the default behavior of navigating to https://jquery.com.
 
-For `click` and most other [events](http://api.jquery.com/category/events/), you can prevent the default behavior by calling `event.preventDefault()` in the event handler:
+For `click` and most other [events](https://api.jquery.com/category/events/), you can prevent the default behavior by calling `event.preventDefault()` in the event handler:
 
 ```
 $( document ).ready(function() {
 
-	$( "a" ).click(function( event ) {
+    $( "a" ).click(function( event ) {
 
-		alert( "As you can see, the link no longer took you to jquery.com" );
+        alert( "As you can see, the link no longer took you to jquery.com" );
 
-		event.preventDefault();
+        event.preventDefault();
 
-	});
+    });
 
 });
 ```
@@ -95,22 +95,22 @@ The following example illustrates the click handling code discussed above, embed
 <!doctype html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>Demo</title>
+    <meta charset="utf-8">
+    <title>Demo</title>
 </head>
 <body>
-	<a href="http://jquery.com/">jQuery</a>
-	<script src="jquery.js"></script>
-	<script>
+    <a href="https://jquery.com/">jQuery</a>
+    <script src="jquery.js"></script>
+    <script>
 
-	$( document ).ready(function() {
-		$( "a" ).click(function( event ) {
-			alert( "The link will no longer take you to jquery.com" );
-			event.preventDefault();
-		});
-	});
+    $( document ).ready(function() {
+        $( "a" ).click(function( event ) {
+            alert( "The link will no longer take you to jquery.com" );
+            event.preventDefault();
+        });
+    });
 
-	</script>
+    </script>
 </body>
 </html>
 ```
@@ -126,12 +126,12 @@ First, add some style information into the `<head>` of the document, like this:
 ```
 <style>
 a.test {
-	font-weight: bold;
+    font-weight: bold;
 }
 </style>
 ```
 
-Next, add the [.addClass()](http://api.jquery.com/addClass/) call to the script:
+Next, add the [.addClass()](https://api.jquery.com/addClass/) call to the script:
 
 ```
 $( "a" ).addClass( "test" );
@@ -139,7 +139,7 @@ $( "a" ).addClass( "test" );
 
 All `<a>` elements are now bold.
 
-To remove an existing class, use [.removeClass()](http://api.jquery.com/removeClass/):
+To remove an existing class, use [.removeClass()](https://api.jquery.com/removeClass/):
 
 ```
 $( "a" ).removeClass( "test" );
@@ -147,14 +147,14 @@ $( "a" ).removeClass( "test" );
 
 ### Special Effects
 
-jQuery also provides some handy [effects](http://api.jquery.com/category/effects/) to help you make your web sites stand out. For example, if you create a click handler of:
+jQuery also provides some handy [effects](https://api.jquery.com/category/effects/) to help you make your web sites stand out. For example, if you create a click handler of:
 
 ```
 $( "a" ).click(function( event ) {
 
-	event.preventDefault();
+    event.preventDefault();
 
-	$( this ).hide( "slow" );
+    $( this ).hide( "slow" );
 
 });
 ```
@@ -175,7 +175,7 @@ If a callback has no arguments, you can pass it in like this:
 $.get( "myhtmlpage.html", myCallBack );
 ```
 
-When [$.get()](http://api.jquery.com/jQuery.get/) finishes getting the page `myhtmlpage.html`, it executes the `myCallBack()` function.
+When [$.get()](https://api.jquery.com/jQuery.get/) finishes getting the page `myhtmlpage.html`, it executes the `myCallBack()` function.
 
 * **Note:** The second parameter here is simply the function name (but *not* as a string, and without parentheses).
 
@@ -200,7 +200,7 @@ To defer executing `myCallBack()` with its parameters, you can use an anonymous 
 ```
 $.get( "myhtmlpage.html", function() {
 
-	myCallBack( param1, param2 );
+    myCallBack( param1, param2 );
 
 });
 ```
