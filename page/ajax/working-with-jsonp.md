@@ -11,7 +11,7 @@ The advent of JSONP — essentially a consensual cross-site scripting hack — h
 // Using YQL and JSONP
 $.ajax({
 	// If not specified, GET method is the default
-	method: "GET",
+	method: "GET", 
 	
 	url: "http://query.yahooapis.com/v1/public/yql",
 
