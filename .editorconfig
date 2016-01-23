@@ -14,14 +14,5 @@ insert_final_newline = true
 [**.js]
 indent_style = tab
 
-[test/**.xml]
-indent_style = tab
-
-[test/**.php]
-indent_style = tab
-
-[test/**.html]
-indent_style = tab
-
-[test/**.css]
+[page/**.html]
 indent_style = tab
