@@ -113,7 +113,7 @@ The `.one()` method is especially useful if you need to do some complicated setu
 
 ### Disconnecting Events
 
-Although all the fun of jQuery occurs in the `.on()` method, it's counterpart is just as important if you want to be a responsible developer. `.off()` cleans up that event binding when you don't need it anymore. Complex user interfaces with lots of event bindings can bog down browser performance, so using the `.off()` method diligently is a best practice to ensure that you only have the event bindings that you need, when you need them.
+Although all the fun of jQuery occurs in the `.on()` method, its counterpart is just as important if you want to be a responsible developer. `.off()` cleans up that event binding when you don't need it anymore. Complex user interfaces with lots of event bindings can bog down browser performance, so using the `.off()` method diligently is a best practice to ensure that you only have the event bindings that you need, when you need them.
 
 ```
 // Unbinding all click handlers on a selection
