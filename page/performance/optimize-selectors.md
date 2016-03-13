@@ -5,35 +5,21 @@
 	"attribution": [ "jQuery Fundamentals" ]
 }</script>
 
-Selector optimization is less important than it used to be, as more browsers implement `document.querySelectorAll()` and the burden of selection shifts from jQuery to the browser. However, there are still some tips to keep in mind.
+Selector optimization is less important than it used to be, as more browsers implement `document.querySelectorAll()` and the burden of selection shifts from jQuery to the browser. However, there are still some tips to keep in mind when selector performance becomes a bottleneck.
 
-## ID-Based Selectors
+## jQuery Extensions
 
-Beginning your selector with an ID is always best.
-
-```
-// Fast:
-$( "#container div.robotarm" );
-
-// Super-fast:
-$( "#container" ).find( "div.robotarm" );
-```
-
-The `.find()` approach is faster because the first selection is handled without going through the Sizzle selector engine – ID-only selections are handled using `document.getElementById()`, which is extremely fast because it is native to the browser.
-
-## Specificity
-
-Be specific on the right-hand side of your selector, and less specific on the left.
+When possible, avoid selectors that include	[jQuery extensions](https://api.jquery.com/category/selectors/jquery-selector-extensions/). These extensions cannot take advantage of the performance boost provided by the native `querySelectorAll()` DOM method and, therefore, require the use of the Sizzle selector engine provided by jQuery.
 
 ```
-// Unoptimized:
-$( "div.data .gonzalez" );
+// Slower (the zero-based :even selector is a jQuery extension)
+$( "#my-table tr:even" );
 
-// Optimized:
-$( ".data td.gonzalez" );
+// Better, though not exactly equivalent
+$( "#my-table tr:nth-child(odd)" );
 ```
 
-Use `tag.class` if possible on your right-most selector, and just tag or just `.class` on the left.
+Keep in mind that many jQuery extensions, including `:even` in the above example, do not have exact equivalents in the CSS specification. In some situations the convenience of these extensions could outweigh their performance cost.
 
 ## Avoid Excessive Specificity
 
@@ -46,7 +32,49 @@ $( ".data td.gonzalez" );
 
 A "flatter" DOM also helps improve selector performance, as the selector engine has fewer layers to traverse when looking for an element.
 
-## Avoid the Universal Selector
+## ID-Based Selectors
+
+Beginning your selector with an ID is a safe bet.
+
+```
+// Fast:
+$( "#container div.robotarm" );
+
+// Super-fast:
+$( "#container" ).find( "div.robotarm" );
+```
+
+With the first approach, jQuery queries the DOM using `document.querySelectorAll()`. With the second, jQuery uses `document.getElementById()`, which is faster, although the speed improvement may be diminished by the subsequent call to `.find()`.
+
+## Tips for Older Browsers
+
+When support for older browsers, such as Internet Explorer 8 and below, is necessary, consider the following tips:
+
+### Specificity
+Be specific on the right-hand side of your selector, and less specific on the left.
+
+```
+// Unoptimized:
+$( "div.data .gonzalez" );
+
+// Optimized:
+$( ".data td.gonzalez" );
+```
+
+Use `tag.class` if possible on your right-most selector, and just tag or just `.class` on the left.
+
+### Avoid Excessive Specificity
+
+```
+$( ".data table.attendees td.gonzalez" );
+
+// Better: Drop the middle if possible.
+$( ".data td.gonzalez" );
+```
+
+A "flatter" DOM also helps improve selector performance, as the selector engine has fewer layers to traverse when looking for an element.
+
+### Avoid the Universal Selector
 
 Selections that specify or imply that a match could be found anywhere can be very slow.
 
@@ -54,7 +82,7 @@ Selections that specify or imply that a match could be found anywhere can be ver
 $( ".buttons > *" ); // Extremely expensive.
 $( ".buttons" ).children(); // Much better.
 
-$( ".category :radio" ); // Implied universal selection.
-$( ".category *:radio" ); // Same thing, explicit now.
-$( ".category input:radio" ); // Much better.
+$( ":radio" ); // Implied universal selection.
+$( "*:radio" ); // Same thing, explicit now.
+$( "input:radio" ); // Much better.
 ```
