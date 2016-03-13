@@ -9,7 +9,7 @@ Selector optimization is less important than it used to be, as more browsers imp
 
 ## jQuery Extensions
 
-When possible, avoid selectors that include	[jQuery extensions](https://api.jquery.com/category/selectors/jquery-selector-extensions/). These extensions cannot take advantage of the performance boost provided by the native `querySelectorAll()` DOM method and, therefore, require the use of the Sizzle selector engine provided by jQuery.
+When possible, avoid selectors that include [jQuery extensions](https://api.jquery.com/category/selectors/jquery-selector-extensions/). These extensions cannot take advantage of the performance boost provided by the native `querySelectorAll()` DOM method and, therefore, require the use of the Sizzle selector engine provided by jQuery.
 
 ```
 // Slower (the zero-based :even selector is a jQuery extension)
