@@ -37,9 +37,9 @@ $.when(
 ).then( successFunc, failureFunc );
 ```
 
-The `$.when()` implementation offered in jQuery is quite interesting as it not only interprets deferred objects, but when passed arguments that are not deferreds, it treats these as if they were resolved deferreds and executes any callbacks (doneCallbacks) right away. It is also worth noting that jQuery's deferred implementation, in addition to exposing deferred.then(), a jQuery promise also supports the deferred.done() and deferred.fail() methods which can also be used to add callbacks to the deferred's queues.
+The `$.when()` implementation offered in jQuery is quite interesting as it not only interprets deferred objects, but when passed arguments that are not deferreds, it treats these as if they were resolved deferreds and executes any callbacks (doneCallbacks) right away. It is also worth noting that jQuery's deferred implementation, in addition to exposing deferred.then(), also supports the deferred.done() and deferred.fail() methods which can also be used to add callbacks to the deferred's queues.
 
-We will now take a look at a code example that utilizes many of the deferred features mentioned in the table presented earlier. Here is a very basic application that consumes (1) an external news feed and (2) a reactions feed for pulling in the latest comments via `$.get()` (which will return a promise). The application also has a function (`prepareInterface()`) which returns a promise to complete animating our containers for both the news and reactions.
+We will now take a look at a code example that utilizes many of the deferred features mentioned in the table presented earlier. Here is a very basic application that consumes (1) an external news feed and (2) a reactions feed for pulling in the latest comments via `$.get()` (which will return a promise). When both requests are received, the `showAjaxedContent()` function that is called. The `showAjaxedContent()` function returns a promise that is resolved when animating both containers has completed. When the `showAjaxedContent()` promise is resolved, `removeActiveClass()` is called. The `removeActiveClass()` returns a promise that is resolved inside a `setTimeout()` after 4 seconds have elapsed. Finally, after the `removeActiveClass()` promise is resolved, the last `.then()` callback is called, provided no errors occurred along the way.
 
 ```
 function getLatestNews() {
@@ -56,20 +56,31 @@ function getLatestReactions() {
 	});
 }
 
-function prepareInterface() {
+function showAjaxedContent() {
+	// The .promise() is resolved *once*, after all animations complete
+	return $( ".news, .reactions" ).slideDown( 500, function() {
+		// Called once *for each element* when animation completes
+		$(this).addClass( "active" );
+	}).promise();
+}
+
+function removeActiveClass() {
 	return $.Deferred(function( dfd ) {
-		var latest = $( ".news, .reactions" );
-			latest.slideDown( 500, dfd.resolve );
-			latest.addClass( "active" );
+		setTimeout(function () {
+			$( ".news, .reactions" ).removeClass( "active" );
+			dfd.resolve();
+		}, 4000);
 	}).promise();
 }
 
 $.when(
 	getLatestNews(),
-	getLatestReactions(),
-	prepareInterface()
-).then(function() {
-	console.log( "fire after requests succeed" );
+	getLatestReactions()
+)
+.then(showAjaxedContent)
+.then(removeActiveClass)
+.then(function() {
+	console.log( "Requests succeeded and animations completed" );
 }).fail(function() {
 	console.log( "something went wrong!" );
 });
