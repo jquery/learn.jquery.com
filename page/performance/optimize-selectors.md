@@ -63,17 +63,6 @@ $( ".data td.gonzalez" );
 
 Use `tag.class` if possible on your right-most selector, and just tag or just `.class` on the left.
 
-### Avoid Excessive Specificity
-
-```
-$( ".data table.attendees td.gonzalez" );
-
-// Better: Drop the middle if possible.
-$( ".data td.gonzalez" );
-```
-
-A "flatter" DOM also helps improve selector performance, as the selector engine has fewer layers to traverse when looking for an element.
-
 ### Avoid the Universal Selector
 
 Selections that specify or imply that a match could be found anywhere can be very slow.
