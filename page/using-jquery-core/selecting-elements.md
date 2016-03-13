@@ -20,13 +20,19 @@ $( ".myClass" );
 ## Selecting Elements by Attribute
 
 ```
-$( "input[name='first_name']" ); // Beware, this can be very slow in older browsers
+$( "input[name='first_name']" );
 ```
 
 ## Selecting Elements by Compound CSS Selector
 
 ```
 $( "#contents ul.people li" );
+```
+
+## Selecting Elements with a Comma-separated List of Selectors
+
+```
+$( "div.myClass, ul.people" );
 ```
 
 ## Pseudo-Selectors
@@ -54,16 +60,8 @@ Elements that have not been added to the DOM will always be considered hidden, e
 
 ## Choosing Selectors
 
-Choosing good selectors is one way to improve JavaScript's performance. A little specificity – for example, including an element type when selecting elements by class name – can go a long way. On the other hand, too much specificity can be a bad thing. A selector such as `#myTable thead tr th.special` is overkill if a selector such as `#myTable th.special` will get the job done.
+Choosing good selectors is one way to improve JavaScript's performance. Too much specificity can be a bad thing. A selector such as `#myTable thead tr th.special` is overkill if a selector such as `#myTable th.special` will get the job done.
 
-jQuery offers many attribute-based selectors, allowing selections based on the content of arbitrary attributes using simplified regular expressions.
-
-```
-// Find all <a> elements whose rel attribute ends with "thinger".
-$( "a[rel$='thinger']" );
-```
-
-While these can be useful in a pinch, they can also be extremely slow in older browsers. Wherever possible, make selections using IDs, class names, and tag names.
 
 ### Does My Selection Contain Any Elements?
 
