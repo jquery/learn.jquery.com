@@ -39,7 +39,7 @@ $.cachedGetScript = function( url, callback ) {
 };
 ```
 
-One promise is cached per URL. If there is no promise for the given URL yet, then a deferred is created and the request is issued. When the request is complete, the deferred is resolved (with `defer.resolve`); if an error occurs, the deferred is rejected (with `defer.reject`). If the promise already exists, however, the callback is attached to the existing deferred. The big advantage of this solution is that it will handle both complete and inbound requests transparently. Another advantage is that a deferred-based cache will deal with failure gracefully. The promise will end up rejected which can be tested for by providing an error callback:
+One promise is cached per URL. If there is no promise for the given URL yet, then a deferred is created and the request is issued. When the request is complete, the deferred is resolved (with `defer.resolve`); if an error occurs, the deferred is rejected (with `defer.reject`). If the promise already exists, the callback is attached to the existing deferred; otherwise, the promise is first created and then the callback is attached. The big advantage of this solution is that it will handle both complete and inbound requests transparently. Another advantage is that a deferred-based cache will deal with failure gracefully. The promise will end up rejected which can be tested for by providing an error callback:
 
 ```
 $.cachedGetScript( url ).then( successCallback, errorCallback );
