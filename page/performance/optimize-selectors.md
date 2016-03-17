@@ -55,8 +55,6 @@ $( ".container" ).children( "div" ).find( ".robotarm" );
 $( ".container div .robotarm" );
 ```
 
-With the first approach, jQuery queries the DOM using `document.querySelectorAll()`. With the second, jQuery uses `document.getElementById()`, which is faster, although the speed improvement may be diminished by the subsequent call to `.find()`.
-
 ## Tips for Older Browsers
 
 When support for older browsers, such as Internet Explorer 8 and below, is necessary, consider the following tips:
