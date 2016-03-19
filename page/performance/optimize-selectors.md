@@ -29,7 +29,7 @@ When you select elements, jQuery will call `querySelectorAll` with your selectio
 // A long selection with nonstandard pseudo-classes inside
 $( "#global.ready .part .list li a:contains('qwerty'):first" );
 
-// A long standard selection with a filter outside (faster):
+// A long standard selection with a filter outside (faster)
 $( "#global.ready .part .list li a").filter( ":contains('qwerty'):first" );
 ```
 
@@ -45,6 +45,8 @@ $( ".data td.gonzalez" );
 A "flatter" DOM also helps improve selector performance, as the selector engine has fewer layers to traverse when looking for an element.
 
 ## Save calls to `querySelectorAll`
+
+`querySelectorAll` is already really fast, if you want maintain this speed try to call it the least possible.
 
 ```
 // If in your HTML there are 2 .container with 5 div in each,
