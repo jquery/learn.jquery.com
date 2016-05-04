@@ -140,12 +140,17 @@ The `.attr()` method acts as both a getter and a setter. As a setter, `.attr()` 
 When the function syntax is used, the function receives two arguments: the zero-based index of the element whose attribute is being changed, and the current value of the attribute being changed.
 
 ```
-// Manipulating a single attribute.
+// Setting a single attribute.
 $( "#myDiv a:first" ).attr( "href", "newDestination.html" );
 ```
 
 ```
-// Manipulating multiple attributes.
+// Getting a single attribute.
+$( "a" ).attr( "href" ); // Returns the href for the first a element in the document
+```
+
+```
+// Setting multiple attributes.
 $( "#myDiv a:first" ).attr({
 	href: "newDestination.html",
 	rel: "nofollow"
@@ -153,7 +158,7 @@ $( "#myDiv a:first" ).attr({
 ```
 
 ```
-// Using a function to determine an attribute's new value.
+// Using a function to set an attribute's new value.
 $( "#myDiv a:first" ).attr({
 	rel: "nofollow",
 	href: function( idx, href ) {
