@@ -132,9 +132,7 @@ myList.append( myItems.join( "" ) );
 
 ## Manipulating Attributes
 
-jQuery's attribute manipulation capabilities are extensive.
-Basic changes are simple, but the `.attr()` method also allows for more complex manipulations.
-
+jQuery's attribute manipulation capabilities are extensive. Basic changes are simple, but the [.attr()](https://api.jquery.com/attr/) method also allows for more complex manipulations.
 The `.attr()` method acts as both a getter and a setter. As a setter, `.attr()` can accept either a key and a value, or an object containing one or more key/value pairs.
 
 ```
