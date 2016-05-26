@@ -2,9 +2,9 @@
 	"title": "How do I select an element by an ID that has characters used in CSS notation?"
 }</script>
 
-Because jQuery uses CSS syntax for selecting elements, some characters are interpreted as CSS notation. For example, ID attributes, after an initial letter (a-z or A-Z), may also use periods and colons, in addition to letters, numbers, hyphens, and underscores (see [W3C Basic HTML Data Types](http://www.w3.org/TR/html4/types.html#type-id)). The colon (":") and period (".") are problematic within the context of a jQuery selector because they indicate a pseudo-class and class, respectively.
+Because jQuery uses CSS syntax for selecting elements, some characters are interpreted as CSS notation. In order to tell jQuery to treat these characters literally rather than as CSS notation, they must be escaped by placing two backslashes in front of them.
 
-In order to tell jQuery to treat these characters literally rather than as CSS notation, they must be "escaped" by placing two backslashes in front of them.
+See the [Selector documentation](http://api.jquery.com/category/selectors/) for further details.
 
 ```
 // Does not work:
@@ -25,7 +25,7 @@ The following function takes care of escaping these characters and places a "#" 
 ```
 function jq( myid ) {
 
-	return "#" + myid.replace( /(:|\.|\[|\]|,)/g, "\\$1" );
+	return "#" + myid.replace( /(:|\.|\[|\]|,|=)/g, "\\$1" );
 
 }
 ```
