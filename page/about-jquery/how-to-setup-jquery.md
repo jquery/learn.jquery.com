@@ -15,7 +15,7 @@ This is a basic tutorial, designed to help you get started using jQuery. Start b
   <title>Demo</title>
 </head>
 <body>
-<a href="http://jquery.com/">jQuery</a>
+<a href="https://jquery.com/">jQuery</a>
 <script src="jquery.js"></script>
 <script src="demo.js"></script>
 </body>
