@@ -9,7 +9,7 @@ This is a basic tutorial, designed to help you get started using jQuery. Start b
 
 ```
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <title>Demo</title>
