@@ -145,7 +145,7 @@ $.get( "myhtmlpage.html", myCallBack( param1, param2 ) );
 
 The reason this fails is that the code executes `myCallBack( param1, param2 )` immediately and then passes `myCallBack()`'s *return value* as the second parameter to `$.get()`. We actually want to pass the function `myCallBack()`, not `myCallBack( param1, param2 )`'s return value (which may or may not be a function). So, how to pass in `myCallBack()` *and* include its arguments?
 
-#### Right
+#### Correct
 
 To defer executing `myCallBack()` with its parameters, you can use an anonymous function as a wrapper. Note the use of `function() {`. The anonymous function does exactly one thing: calls `myCallBack()`, with the values of `param1` and `param2`.
 
