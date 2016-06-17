@@ -7,7 +7,7 @@
 
 This tutorial will help you try out some common uses of jQuery.
 
-If you haven't setup a demo HTML page that includes a copy of jQuery, see [How To Setup jQuery](http://learn.jquery.com/about-jquery/how-to-setup-jQuery/) for the complete tutorial on how to get started, or simply follow along with the examples below.
+If you haven't setup a demo HTML page that includes a copy of jQuery, see [How To Setup jQuery](https://learn.jquery.com/about-jquery/how-to-setup-jQuery/) for the complete tutorial on how to get started, or simply follow along with the examples below.
 
 ### Adding and Removing an HTML Class
 
