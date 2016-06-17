@@ -69,7 +69,7 @@ $( document ).ready( function() {
 } );
 ```
 
-Try replacing the first snippet of code, which you previously copied into `demo.js`, with the one above. Save `index.html` and reload the page to try it out.
+Try replacing the first snippet of code, which you previously copied into `demo.js`, with the one above. Save the `demo.js` file  and reload `index.html` to try it out.
 
 ### Alternative Setups
 
