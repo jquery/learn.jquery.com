@@ -24,6 +24,8 @@ This is a basic tutorial, designed to help you get started using jQuery. Start b
 
 The `src` attribute in the first `<script>` element must point to a copy of jQuery. Download a copy of jQuery from the [Downloading jQuery](http://jquery.com/download/) page and store the `jquery.js` file in the same directory as `index.html`.
 
+Alternatively you could use a [Content Delivery Network](https://code.jquery.com/) (CDN).
+
 *Note: When you download jQuery, the file name may contain a version number, e.g., `jquery-x.y.z.js`. Make sure to either rename this file to `jquery.js` or update the `src` attribute of the `<script>` element to match the file name.*
 
 Create another file in the same directory called `demo.js`. The `src` attribute in the second `<script>` element must point to the location of this JavaScript file, which will contain the code that will run on the page.
