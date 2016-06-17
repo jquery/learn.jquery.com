@@ -49,7 +49,7 @@ For example, inside the `ready` event, you can add a click handler to the link:
 
 ```
 $( document ).ready( function() {
-  $( "a" ).on( "click", function popUp( event ) {
+  $( "a" ).on( "click", function() {
     alert( "Thanks for visiting!" );
   } );
 } );
