@@ -57,7 +57,7 @@ $( document ).ready( function() {
 
 Copy the above jQuery code into `demo.js`, save it, and reload `index.html`. Clicking the link should now first display an alert pop-up, and then continue with the browser's default behavior of navigating to https://jquery.com.
 
-For `click` and most other [events](http://api.jquery.com/category/events/), you can prevent the default browser behavior by calling `event.preventDefault()` in the event handler:
+For `click` and most other [events](https://api.jquery.com/category/events/), you can prevent the default browser behavior by calling `event.preventDefault()` in the event handler:
 
 ```
 $( document ).ready( function() {
