@@ -22,7 +22,7 @@ This is a basic tutorial, designed to help you get started using jQuery. Start b
 </html>
 ```
 
-The `src` attribute in the first `<script>` element must point to a copy of jQuery. Download a copy of jQuery from the [Downloading jQuery](http://jquery.com/download/) page and store the `jquery.js` file in the same directory as `index.html`.
+The `src` attribute in the first `<script>` element must point to a copy of jQuery. Download a copy of jQuery from the [Downloading jQuery](https://jquery.com/download/) page and store the `jquery.js` file in the same directory as `index.html`.
 
 Alternatively you could use a [Content Delivery Network](https://code.jquery.com/) (CDN).
 
@@ -32,7 +32,7 @@ Create another file in the same directory called `demo.js`. The `src` attribute 
 
 ### Launching Code on Document Ready
 
-To run code as soon as the [DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction) is loaded and ready to be manipulated, you can use the jQuery [ready method](http://api.jquery.com/ready/):
+To run code as soon as the [DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction) is loaded and ready to be manipulated, you can use the jQuery [ready method](https://api.jquery.com/ready/):
 
 ```
 $( document ).ready( function() {
