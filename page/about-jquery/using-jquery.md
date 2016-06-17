@@ -22,6 +22,7 @@ First, copy or create the `index.html` file below:
 <head>
   <meta charset="utf-8">
   <title>Demo</title>
+  <link rel="stylesheet" href="main.css">
 </head>
 <body>
   <nav>
@@ -33,7 +34,6 @@ First, copy or create the `index.html` file below:
   </nav>
   <script src="jquery.js"></script>
   <script src="demo.js"></script>
-  <link rel="stylesheet" href="main.css">
 </body>
 </html>
 ```
