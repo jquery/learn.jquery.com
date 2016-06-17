@@ -32,7 +32,7 @@ Create another file in the same directory called `demo.js`. The `src` attribute 
 
 ### Launching Code on Document Ready
 
-To run code as soon as the [DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction) is loaded and ready to be manipulated, jQuery has a statement known as the [ready method](http://api.jquery.com/ready/):
+To run code as soon as the [DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction) is loaded and ready to be manipulated, you can use the jQuery [ready method](http://api.jquery.com/ready/):
 
 ```
 $( document ).ready( function() {
