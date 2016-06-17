@@ -68,7 +68,7 @@ Add the [.addClass()](https://api.jquery.com/addClass/) call inside the `ready` 
 $( "a" ).addClass( "active" );
 ```
 
-All `<a>` elements are now bold. If you right click on a link and select "Inspect Element" you'll see that the class of "active" has been added to all `<a>` elements.
+All `<a>` elements are now bold. If you use your browsers web inspector (often through right clicking and selecting 'Inspect' or 'Inspect Element') you'll see that the class of "active" has been added to all `<a>` elements.
 
 To remove an existing class, use [.removeClass()](https://api.jquery.com/removeClass/):
 
