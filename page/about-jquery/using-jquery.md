@@ -33,7 +33,7 @@ First, copy or create the `index.html` file below:
   </nav>
   <script src="jquery.js"></script>
   <script src="demo.js"></script>
-  <script src="main.css"></script>
+  <link rel="stylesheet" href="main.css">
 </body>
 </html>
 ```
