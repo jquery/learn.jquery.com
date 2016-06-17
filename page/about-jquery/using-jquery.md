@@ -27,9 +27,9 @@ First, copy or create the `index.html` file below:
 <body>
   <nav>
     <ul>
-      <li><a href="http://jquery.com">Home</a></li>
-      <li><a href="http://google.com">About</a></li>
-      <li><a href="http://github.com">Products</a></li>
+      <li><a href="https://jquery.com">Home</a></li>
+      <li><a href="https://google.com">About</a></li>
+      <li><a href="https://github.com">Products</a></li>
     </ul>
   </nav>
   <script src="jquery.js"></script>
@@ -40,7 +40,7 @@ First, copy or create the `index.html` file below:
 
 The <link> tag references the `main.css` file. The `<script>` tags reference the jQuery library, which you should have downloaded and copied into your directory, as well as the `demo.js` file. If you don't already have them, create these two files in the same directory and copy their content as shown below.
 
-* **Note:** Normally, these different types of files are sorted into folders that represent the overall structure of the webpage, reflecting the separation between content, action, and style, or, in parallel terms, model, controller, and view. Though you could alter the CSS of an element directly in the JavaScript by using jQuery's [`.css()`](http://api.jquery.com/css/) method, that piece of information about the style won't be included with the rest of the CSS, making it hard to find in the future, or for other developers. Similarly, you could construct HTML and text in a JavaScript file to be appended to the DOM, but again, that content won't be included with the rest of the HTML, where it belongs. Instead, organize and label your content in HTML, use JavaScript and jQuery to assign events to the elements, and let the CSS take care of the styling.
+* **Note:** Normally, these different types of files are sorted into folders that represent the overall structure of the webpage, reflecting the separation between content, action, and style, or, in parallel terms, model, controller, and view. Though you could alter the CSS of an element directly in the JavaScript by using jQuery's [`.css()`](https://api.jquery.com/css/) method, that piece of information about the style won't be included with the rest of the CSS, making it hard to find in the future, or for other developers. Similarly, you could construct HTML and text in a JavaScript file to be appended to the DOM, but again, that content won't be included with the rest of the HTML, where it belongs. Instead, organize and label your content in HTML, use JavaScript and jQuery to assign events to the elements, and let the CSS take care of the styling.
 
 ```
 // demo.js
@@ -60,9 +60,9 @@ a.active {
 }
 ```
 
-**Important:** *You must place the remaining jQuery examples inside the `ready` event so that your code executes when the document is ready to be worked on, as explained in the [previous setup tutorial](http://learn.jquery.com/about-jquery/how-to-setup-jQuery/).*
+**Important:** *You must place the remaining jQuery examples inside the `ready` event so that your code executes when the document is ready to be worked on, as explained in the [previous setup tutorial](https://learn.jquery.com/about-jquery/how-to-setup-jQuery/).*
 
-Add the [.addClass()](http://api.jquery.com/addClass/) call inside the `ready` event:
+Add the [.addClass()](https://api.jquery.com/addClass/) call inside the `ready` event:
 
 ```
 $( "a" ).addClass( "active" );
@@ -70,7 +70,7 @@ $( "a" ).addClass( "active" );
 
 All `<a>` elements are now bold. If you right click on a link and select "Inspect Element" you'll see that the class of "active" has been added to all `<a>` elements.
 
-To remove an existing class, use [.removeClass()](http://api.jquery.com/removeClass/):
+To remove an existing class, use [.removeClass()](https://api.jquery.com/removeClass/):
 
 ```
 $( "a" ).removeClass( "active" );
@@ -99,7 +99,7 @@ This strategy of altering an HTML class is used all the time to alter an element
 
 ### Special Effects
 
-jQuery also provides some handy visual [effects](http://api.jquery.com/category/effects/) to help you make your websites stand out. For example, if you create a click handler of:
+jQuery also provides some handy visual [effects](https://api.jquery.com/category/effects/) to help you make your websites stand out. For example, if you create a click handler of:
 
 ```
 $( "a" ).on("click", function fadeAway( event ) {
@@ -127,7 +127,7 @@ If a callback has no arguments, you can pass it in like this:
 $.get( "myhtmlpage.html", myCallBack );
 ```
 
-When [$.get()](http://api.jquery.com/jQuery.get/) finishes getting the page `myhtmlpage.html`, it executes the `myCallBack()` function.
+When [$.get()](https://api.jquery.com/jQuery.get/) finishes getting the page `myhtmlpage.html`, it executes the `myCallBack()` function.
 
 * **Note:** The second parameter here is simply the function name (but *not* as a string, and without parentheses because you don't want to call the function at this point).
 
