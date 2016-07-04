@@ -28,7 +28,7 @@ The `src` attribute in the first `<script>` element must point to a copy of jQue
 
 Alternatively you could use a [Content Delivery Network](https://code.jquery.com/) (CDN) where the file is hosted for you.
 
-Create another file in the same directory called `demo.js`. The `src` attribute in the second `<script>` element must point to the location of this JavaScript file, which will contain the code that will run on the page.
+After setting up the jQuery file you will need to add another JavaScript file, `demo.js`, in the same directory as `index.html`. The `src` attribute in the second `<script>` element must point to the location of `demo.js`, which will contain the code that will run on the page.
 
 ### Launching Code on Document Ready
 
