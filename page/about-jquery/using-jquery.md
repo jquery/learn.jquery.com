@@ -38,7 +38,7 @@ First, copy or create the `index.html` file below:
 </html>
 ```
 
-The <link> tag references the `main.css` file. The `<script>` tags reference the jQuery library, which you should have downloaded and copied into your directory, as well as the `demo.js` file. If you don't already have them, create these two files in the same directory and copy their content as shown below.
+The `<link>` tag references the `main.css` file. The `<script>` tags reference the jQuery library, which you should have downloaded and copied into your directory, as well as the `demo.js` file. If you don't already have them, create these two files in the same directory and copy their content as shown below.
 
 * **Note:** Normally, these different types of files are sorted into folders that represent the overall structure of the webpage, reflecting the separation between content, action, and style, or, in parallel terms, model, controller, and view. Though you could alter the CSS of an element directly in the JavaScript by using jQuery's [`.css()`](https://api.jquery.com/css/) method, that piece of information about the style won't be included with the rest of the CSS, making it hard to find in the future, or for other developers. Similarly, you could construct HTML and text in a JavaScript file to be appended to the DOM, but again, that content won't be included with the rest of the HTML, where it belongs. Instead, organize and label your content in HTML, use JavaScript and jQuery to assign events to the elements, and let the CSS take care of the styling.
 
