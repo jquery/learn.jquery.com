@@ -95,7 +95,7 @@ Next, we remove the "active" class from all `<a>` elements, guaranteeing that th
 
 `$(this)` then refers to the specific link that was clicked on, and so applies the HTML class only to that link, resulting in the desired effect of the "active" class moving from link to link as the user changes the focus.
 
-This strategy of altering an HTML class is used all the time to alter an element based on user actions and events, like hiding content until a user clicks to expand it, or showing a different menu to a user based on whether or not they're signed in.
+This strategy of manipulating HTML classes is used all the time to alter elements based on user actions and events, like hiding content until a user clicks to expand it, or showing a different menu to a user based on whether or not they're signed in.
 
 ### Special Effects
 
