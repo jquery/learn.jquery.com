@@ -56,3 +56,5 @@ The example below shows `$( document ).ready()` and `$( window ).load()` in acti
 </body>
 </html>
 ```
+
+To learn more about `.ready()` method, you can read [the relevant documenation page](https://api.jquery.com/ready/).
