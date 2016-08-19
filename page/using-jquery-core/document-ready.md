@@ -46,8 +46,8 @@ The example below shows `$( document ).ready()` and `$( window ).load()` in acti
 		console.log( "document loaded" );
 	});
 
-        $(window).on('load', function () {
-            console.log(" window loaded ");
+        $( window ).on( 'load', function () {
+            console.log( "window loaded" );
         });
 	</script>
 </head>
