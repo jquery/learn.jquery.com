@@ -35,3 +35,9 @@ The function can be used like so:
 ```
 $( jq( "some.id" ) )
 ```
+
+Note that you can also use the following syntax which only requires escaping double quotes:
+
+```
+$( '[id="some.id"]' )
+```
