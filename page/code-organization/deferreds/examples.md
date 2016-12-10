@@ -83,7 +83,7 @@ $.loadImage = $.createCache(function( defer, url ) {
 	function cleanUp() {
 		image.onload = image.onerror = null;
 	}
-	defer.then( cleanUp, cleanUp );
+	defer.always( cleanUp );
 	image.onload = function() {
 		defer.resolve( url );
 	};
