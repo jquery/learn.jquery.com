@@ -9,7 +9,7 @@
 	]
 }</script>
 
-jQuery provides simple methods for attaching event handlers to selections. When an event occurs, the provided function is executed. Inside the function, `this` refers to the element that was clicked.
+jQuery provides simple methods for attaching event handlers to selections. When an event occurs, the provided function is executed. Inside the function, `this` refers to the DOM element that initiated the event.
 
 For details on jQuery events, visit the [Events documentation on api.jquery.com](http://api.jquery.com/category/events/).
 
