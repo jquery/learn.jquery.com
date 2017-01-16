@@ -170,7 +170,7 @@ Given a jQuery object with all the paragraph elements on the page:
 var allParagraphs = $( "p" );
 ```
 
-…one might expect that the contents will grow and shrink over time as `<p>` elements are added and removed from the document. jQuery objects do **not** behave in this manner. The set of elements contained within a jQuery object will not change unless explicitly modified. This means that the collection is not "live" – it does not automatically update as the document changes. If the document may have changed since the creation the jQuery object, the collection should be updated by creating a new one. It can be as easy as re-running the same selector:
+…one might expect that the contents will grow and shrink over time as `<p>` elements are added and removed from the document. jQuery objects do **not** behave in this manner. The set of elements contained within a jQuery object will not change unless explicitly modified. This means that the collection is not "live" – it does not automatically update as the document changes. If the document may have changed since the creation of the jQuery object, the collection should be updated by creating a new one. It can be as easy as re-running the same selector:
 
 ```
 // Updating the selection.
