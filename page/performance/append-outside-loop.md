@@ -36,16 +36,18 @@ $.each( myArray, function( i, item ) {
 $( "#ballers" )[ 0 ].appendChild( frag );
 ```
 
-Another simple technique is to build up a string during each iteration of the loop. After the loop, just set the HTML of the DOM element to that string.
+Another simple technique is to build up a string during each iteration of the loop. After the loop, just set the HTML of the DOM element to that string. Because Javascript strings are immutable, it is most performant to build the buffer in an array first. 
 
 ```
-var myHtml = "";
+var myHtml = [];
 
 $.each( myArray, function( i, item ) {
 
-	myHtml += "<li>" + item + "</li>";
+	myHtml[i] = "<li>" + item + "</li>";
 
 });
+
+myHtml.join('');
 
 $( "#ballers" ).html( myHtml );
 ```
