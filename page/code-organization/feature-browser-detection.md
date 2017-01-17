@@ -42,7 +42,7 @@ Specific feature detection checks if a specific feature is available, instead of
 
 Developing against specific features, instead of developing against a specific browser, not only clears up the peripheral logic of your application, but also makes your job easier as a developer.
 
-We recommend specific feature detection over UA string detection.
+We recommend specific feature detection over different manner than UA string detection.
 
 Now how would you go about doing that?
 
