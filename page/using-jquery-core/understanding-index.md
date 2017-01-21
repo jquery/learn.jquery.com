@@ -11,15 +11,15 @@
 ```
 <ul>
 	<div></div>
-	<li id="foo1">foo</li>
-	<li id="bar1">bar</li>
-	<li id="baz1">baz</li>
+	<li id="foo">foo</li>
+	<li id="bar">bar</li>
+	<li id="baz">baz</li>
 	<div></div>
 </ul>
 ```
 
 ```
-var foo = $( "#foo1" );
+var foo = $( "#foo" );
 
 console.log( "Index: " + foo.index() ); // 1
 
@@ -36,7 +36,7 @@ console.log( "Index: " + div.index() ); // 0
 console.log( "Index: " + div.first().index() ); // 0
 ```
 
-In the first example, `.index()` gives the zero-based index of `#foo1` within its parent. Since `#foo1` is the second child of its parent, `index()` returns 1.
+In the first example, `.index()` gives the zero-based index of `#foo` within its parent. Since `#foo` is the second child of its parent (`<div></div>` being the first child), `index()` returns 1.
 
 
 __Note__: Before jQuery 1.9, `.index()` only worked reliably on a single element, which is why we've used `.first()` on each of our examples. In jQuery 1.9+ this can be ignored, as the API was updated to define that it operates on the first element only.
