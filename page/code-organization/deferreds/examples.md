@@ -284,7 +284,7 @@ $( "#myButton" ).firstClick(function() {
 
 	panel.find( "img" ).each(function() {
 		var image = $( this ),
-			src = element.attr( "data-src" );
+			src = image.attr( "data-src" );
 		if ( src ) {
 			promises.push(
 				$.loadImage( src ).then(function() {
