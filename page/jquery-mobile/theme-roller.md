@@ -5,17 +5,15 @@
 
 ## Theming Overview
 
-jQuery Mobile has a robust theme framework that supports up to 26 sets of toolbar, content, and button colors, called a "swatch". The framework comes with five defined themes (swatches "a" to "e") which can be used readily, removed, or overwritten.
+jQuery Mobile has a robust theme framework that supports up to 26 sets of toolbar, content, and button colors, called a "swatch". The framework comes with two defined themes A and B (light and dark) which can be used readily, removed, or overwritten.
 
 ### Default Theme Swatch Mapping for Components
 
-If no theme swatch letter is set at all, the framework uses the "a" swatch (black in the default theme) for headers and footers and the "c" swatch (light gray in the default theme) for the page content to maximize contrast between the both.
-
-All items in containers inherit the swatch from their parent. Exceptions to this rule are the listdivider in listviews, the header of nested list pages, and the button of split button lists, which all default to "b" (blue in the default theme). Count bubbles default to "c" (silver in the default theme).
+If no theme swatch letter is set at all, the framework uses the "a" swatch (light color in the default theme) for headers and footers. All items in containers inherit the swatch from their parent.
 
 Note that there is also a swatch named "active" (bright blue in the default theme) which is used to indicate an active selected item. See the global "Active" state further down this page for more information on the active swatch.
 
-The page loading dialog and error message don't inherit a swatch theme. The loading dialog defaults to swatch "a" (black in the default theme) and the error message to swatch "e" (yellow in the default theme). You can configure those defaults globally.
+The page loading dialog and error message don't inherit a swatch theme. The loading dialog's overlay defaults to swatch "a" (white in the default theme). You can configure those defaults globally.
 
 ### Themes and Swatches
 
@@ -23,7 +21,7 @@ The theme system separates color and texture from structural styles that define 
 
 Each theme includes several global settings, including font family, drop shadows for overlays, and corner radius values for buttons and boxes. In addition, the theme can include multiple color swatches, each with color values for bars, content blocks, buttons and list items, and font text-shadow.
 
-The default theme includes five swatches that are given letters (a, b, c, d, e) for quick reference. To make mapping of color swatches consistent across our widgets, we have followed the convention that swatch "a" is the highest level of visual priority (black in our default theme), "b" is secondary level (blue), "c" is the baseline level (gray) that we use by default in many situations, "d" for an alternate secondary level, and "e" as an accent swatch. Themes may have additional swatches for accent colors or specific situations. For example, you could add a new theme swatch "f" that has a red bar and button for use in error situations.
+The default theme includes two swatches that are given letters (a, b) for quick reference. Themes may have additional swatches for accent colors or specific situations. For example, you could add a new theme swatch "c" that has a red bar and button for use in error situations.
 
 Most theme changes can be done using ThemeRoller, but it is also fairly simple to manually edit the base swatches in the default theme and/or add additional swatches by editing the theme CSS file. Just copy a block of swatch styles, rename the classes with the new swatch letter name, and tweak colors as you see fit.
 
