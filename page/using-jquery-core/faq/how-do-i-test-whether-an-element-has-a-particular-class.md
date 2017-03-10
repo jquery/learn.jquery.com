@@ -40,3 +40,9 @@ if ( $( "#myDiv" ).is( ":hidden" ) ) {
 
 }
 ```
+
+When you work with collection, instead of checking each element, you can use the [.filter()](http://api.jquery.com/filter/) method to precise the initial set:
+
+```
+$( "#myDiv" ).filter( ".pretty" ).show();
+```
