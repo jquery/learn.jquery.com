@@ -29,7 +29,7 @@ $.ajax({
 	type: "GET",
 
 	// The type of data we expect back
-	dataType : "json",
+	dataType: "json",
 })
   // Code to run if the request succeeds (is done);
   // The response is passed to the function
