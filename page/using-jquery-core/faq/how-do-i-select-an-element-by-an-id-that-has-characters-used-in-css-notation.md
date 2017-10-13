@@ -20,7 +20,9 @@ $( "#some.id" )
 $( "#some\\.id" )
 ```
 
-The following function takes care of escaping these characters and places a "#" at the beginning of the ID string:
+In case the jQuery library in use is sufficiently recent, the function [jQuery.escapeSelector()](https://api.jquery.com/jQuery.escapeSelector/) should be used to treat such selectors.
+
+Otherwise, the following function takes care of escaping these characters and places a "#" at the beginning of the ID string for convenience:
 
 ```
 function jq( myid ) {
