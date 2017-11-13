@@ -67,7 +67,7 @@ If you need to copy related data and events, be sure to pass `true` as an argume
 
 There are two ways to remove elements from the page: `.remove()` and `.detach()`. Use `.remove()` when you want to permanently remove the selection from the page. While `.remove()` does return the removed element(s), those elements will not have their associated data and events attached to them if you return them to the page.
 
-Use `.detach()` if you need the data and events to persist. Like `.remove()`, it returns the selection, but it also maintains the data and events associated with the selection, so you can restore the selection to the page at a later time.
+Use `.detach()` if you need the data and events to persist. Like `.detach()`, it returns the selection, but it also maintains the data and events associated with the selection, so you can restore the selection to the page at a later time.
 
 The `.detach()` method is extremely valuable if you are doing heavy manipulation on an element. In that case, it's beneficial to `.detach()` the element from the page, work on it in your code, then restore it to the page when you're done. This limits expensive "DOM touches" while maintaining the element's data and events.
 
