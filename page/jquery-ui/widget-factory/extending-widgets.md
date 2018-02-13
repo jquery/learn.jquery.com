@@ -44,7 +44,7 @@ Now the `superDialog` has a `red()` method that will change the color of its tex
 
 ### Extending Existing Methods
 
-Sometimes you need to tweak or add to the behavior of existing widget methods. The do this, specify a method with the same name as the method you want to override on the prototype object. The following example overrides dialog's [`open()` method](http://api.jqueryui.com/dialog/#method-open). Since dialogs automatically open by default, `"open"` will be logged when this code runs.
+Sometimes you need to tweak or add to the behavior of existing widget methods. To do this, specify a method with the same name as the method you want to override on the prototype object. The following example overrides dialog's [`open()` method](http://api.jqueryui.com/dialog/#method-open). Since dialogs automatically open by default, `"open"` will be logged when this code runs.
 
 ```
 $.widget( "custom.superDialog", $.ui.dialog, {
