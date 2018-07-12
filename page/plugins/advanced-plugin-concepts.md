@@ -9,19 +9,19 @@ An improvement we can, and should, make to the code above is to expose the defau
 
 ```
 // Plugin definition.
-$.fn.hilight = function( options ) {
+$.fn.highlight = function( options ) {
 
 	// Extend our default options with those provided.
 	// Note that the first argument to extend is an empty
 	// object – this is to keep from overriding our "defaults" object.
-	var opts = $.extend( {}, $.fn.hilight.defaults, options );
+	var opts = $.extend( {}, $.fn.highlight.defaults, options );
 
 	// Our plugin implementation code goes here.
 
 };
 
 // Plugin defaults – added as a property on our plugin function.
-$.fn.hilight.defaults = {
+$.fn.highlight.defaults = {
 	foreground: "red",
 	background: "yellow"
 };
@@ -32,30 +32,30 @@ Now users can include a line like this in their scripts:
 ```
 // This needs only be called once and does not
 // have to be called from within a "ready" block
-$.fn.hilight.defaults.foreground = "blue";
+$.fn.highlight.defaults.foreground = "blue";
 ```
 
 And now we can call the plugin method like this and it will use a blue foreground color:
 
 ```
-$( "#myDiv" ).hilight();
+$( "#myDiv" ).highlight();
 ```
 
 As you can see, we've allowed the user to write a single line of code to alter the default foreground color of the plugin. And users can still selectively override this new default value when they want:
 
 ```
 // Override plugin default foreground color.
-$.fn.hilight.defaults.foreground = "blue";
+$.fn.highlight.defaults.foreground = "blue";
 
 // ...
 
 // Invoke plugin using new defaults.
-$( ".hilightDiv" ).hilight();
+$( ".hilightDiv" ).highlight();
 
 // ...
 
 // Override default by passing options to plugin method.
-$( "#green" ).hilight({
+$( "#green" ).highlight({
 	foreground: "green"
 });
 ```
@@ -66,7 +66,7 @@ This item goes hand-in-hand with the previous item and is an interesting way to 
 
 ```
 // Plugin definition.
-$.fn.hilight = function( options ) {
+$.fn.highlight = function( options ) {
 
 	// Iterate and reformat each matched element.
 	return this.each(function() {
@@ -78,7 +78,7 @@ $.fn.hilight = function( options ) {
 		var markup = elem.html();
 
 		// Call our format function.
-		markup = $.fn.hilight.format( markup );
+		markup = $.fn.highlight.format( markup );
 
 		elem.html( markup );
 
@@ -87,7 +87,7 @@ $.fn.hilight = function( options ) {
 };
 
 // Define our format function.
-$.fn.hilight.format = function( txt ) {
+$.fn.highlight.format = function( txt ) {
 	return "<strong>" + txt + "</strong>";
 };
 ```
@@ -117,7 +117,7 @@ So how then do we define more functions without cluttering the namespace and wit
 (function( $ ) {
 
 	// Plugin definition.
-	$.fn.hilight = function( options ) {
+	$.fn.highlight = function( options ) {
 		debug( this );
 		// ...
 	};
@@ -125,7 +125,7 @@ So how then do we define more functions without cluttering the namespace and wit
 	// Private function for debugging.
 	function debug( obj ) {
 		if ( window.console && window.console.log ) {
-			window.console.log( "hilight selection count: " + obj.length );
+			window.console.log( "highlight selection count: " + obj.length );
 		}
 	};
 
