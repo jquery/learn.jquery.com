@@ -4,7 +4,8 @@
   "contributing",
   {
     "about-jquery": [
-      "how-jquery-works",
+      "how-to-setup-jquery",
+      "using-jquery",
       "additional-support"
     ]
   },
