@@ -10,7 +10,7 @@ The goal of this site is twofold:
 Much of the initial content - and spirit - comes from [jQuery Fundamentals](http://jqfundamentals.com/legacy), an open-source book about jQuery, originally written by [Rebecca Murphey](http://www.rmurphey.com/) and released in 2010. In 2011, Rebecca [bequeathed the book](http://rmurphey.com/blog/2011/03/17/the-future-of-jquery-fundamentals-and-a-confession/) unto the jQuery Foundation to serve as the basis for this site.
 
 
-## How This Site Works
+## How This Site Works:
 
 This site's core content consists of [Markdown](http://daringfireball.net/projects/markdown/) files. The template that controls the site's appearance is a [child theme](https://github.com/jquery/jquery-wp-content/tree/master/themes/learn.jquery.com) of [jquery-wp-content](https://github.com/jquery/jquery-wp-content), and any issues with the presentation should be directed to [that repository](https://github.com/jquery/jquery-wp-content).
 
