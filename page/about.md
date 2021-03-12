@@ -31,7 +31,3 @@ The second is [docs.jquery.com](http://docs.jquery.com), that erstwhile chestnut
 ## Contributing
 
 This project wouldn't have been possible without all our [awesome contributors](https://github.com/jquery/learn.jquery.com/graphs/contributors?type=a). If you feel like something on the site is open for improvements, you can contribute [on GitHub](https://github.com/jquery/learn.jquery.com). Feel free to check out [the contributing guide](contributing/) for more in-depth information.
-
-<h2 id="beta">About the Beta</h2>
-
-Though this resource will never truly be "done," the current version of this site should still be considered something of a preview. We still have a number of improvements we want to make to the content, user experience, and site build before we're ready to call it a "final release." At the same time, however, it's important for us to open the doors now so we can begin providing better docs to people who need them right away and spread the word about this effort. If you're interested in helping us reach the finish line, we invite you to please read more about how [you can get involved with contributing](/contributing/)!
