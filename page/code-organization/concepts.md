@@ -209,7 +209,7 @@ $( document ).ready(function() {
 		};
 
 		var showItemByIndex = function( idx ) {
-			$.proxy( showItem, items.get( idx ) );
+			$.proxy( showItem, items.get( idx ) )();
 		};
 
 		var getContent = function( callback ) {
