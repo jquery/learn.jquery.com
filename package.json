@@ -21,7 +21,7 @@
     }
   ],
   "dependencies": {
-    "grunt": "1.4.0",
+    "grunt": "1.5.3",
     "grunt-cli": "1.4.2",
     "grunt-jquery-content": "3.1.0",
     "spawnback": "1.0.0"
