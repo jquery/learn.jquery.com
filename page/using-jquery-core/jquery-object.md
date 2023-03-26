@@ -15,7 +15,7 @@ Elements have properties like any JavaScript object. Among these properties are 
 
 It turns out that working directly with DOM elements can be awkward. The jQuery object defines [many](http://api.jquery.com/) methods to smooth out the experience for developers. Some benefits of the jQuery Object include:
 
-*Compatibility* – The implementation of element methods varies across browser vendors and versions. The following snippet attempts to set the inner HTML of a `<tr>` element stored in `target`:
+*Compatibility* – The implementation of DOM methods varies across browser vendors and versions. The following snippet attempts to set the inner HTML of a `<tr>` element stored in `target`:
 
 ```
 var target = document.getElementById( "target" );
@@ -69,7 +69,7 @@ When the jQuery function is invoked with a CSS selector, it will return a jQuery
 var headings = $( "h1" );
 ```
 
-`headings` is now a jQuery element containing *all* the `<h1>` tags already on the page. This can be verified by inspecting the `.length` property of `headings`:
+`headings` is now a jQuery object containing *all* the `<h1>` tags already on the page. This can be verified by inspecting the `.length` property of `headings`:
 
 ```
 // Viewing the number of <h1> tags on the page.
