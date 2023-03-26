@@ -21,6 +21,18 @@ $( "#my-table tr:nth-child(odd)" );
 
 Keep in mind that many jQuery extensions, including `:even` in the above example, do not have exact equivalents in the CSS specification. In some situations the convenience of these extensions could outweigh their performance cost.
 
+## Try to segregate the nonstandard parts of your selection
+
+When you select elements, jQuery will call `querySelectorAll` with your selection. If `querySelectorAll` throws an error, jQuery will refer to its Sizzle engine. So, if you are using at least one of the nonstandard pseudo-classes such as `:contains()`, `:has`, `:even`, `:submit`, etc. You will not take advantage of the native `querySelectorAll`.
+
+```
+// A long selection with nonstandard pseudo-classes inside
+$( "#global.ready .part .list li a:contains('qwerty'):first" );
+
+// A long standard selection with a filter outside (faster)
+$( "#global.ready .part .list li a").filter( ":contains('qwerty'):first" );
+```
+
 ## Avoid Excessive Specificity
 
 ```
@@ -32,25 +44,25 @@ $( ".data td.gonzalez" );
 
 A "flatter" DOM also helps improve selector performance, as the selector engine has fewer layers to traverse when looking for an element.
 
-## ID-Based Selectors
+## Save calls to `querySelectorAll`
 
-Beginning your selector with an ID is a safe bet.
+`querySelectorAll` is already really fast, if you want maintain this speed try to call it the least possible.
 
 ```
-// Fast:
-$( "#container div.robotarm" );
+// If in your HTML there are 2 .container with 5 div in each,
+// this line will call querySelectorAll 13 times (1 + 2 + 2*5).
+$( ".container" ).children( "div" ).find( ".robotarm" );
 
-// Super-fast:
-$( "#container" ).find( "div.robotarm" );
+// Against only 1 call with this:
+$( ".container div .robotarm" );
 ```
-
-With the first approach, jQuery queries the DOM using `document.querySelectorAll()`. With the second, jQuery uses `document.getElementById()`, which is faster, although the speed improvement may be diminished by the subsequent call to `.find()`.
 
 ## Tips for Older Browsers
 
 When support for older browsers, such as Internet Explorer 8 and below, is necessary, consider the following tips:
 
 ### Specificity
+
 Be specific on the right-hand side of your selector, and less specific on the left.
 
 ```
@@ -68,9 +80,6 @@ Use `tag.class` if possible on your right-most selector, and just tag or just `.
 Selections that specify or imply that a match could be found anywhere can be very slow.
 
 ```
-$( ".buttons > *" ); // Extremely expensive.
-$( ".buttons" ).children(); // Much better.
-
 $( ":radio" ); // Implied universal selection.
 $( "*:radio" ); // Same thing, explicit now.
 $( "input:radio" ); // Much better.
