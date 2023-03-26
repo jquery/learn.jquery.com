@@ -20,7 +20,7 @@ The concept of loose coupling can be especially troublesome to developers making
 
 ## Encapsulation
 
-The first step to code organization is separating pieces of your application into distinct pieces; sometimes, even just this effort is sufficient to lend
+The first step to code organization is separating pieces of your application into distinct pieces; sometimes, even just this effort is sufficient to improve the structure of your code and its maintainability.
 
 ### The Object Literal
 
