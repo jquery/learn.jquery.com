@@ -1,5 +1,7 @@
 # The jQuery Learning Site
 
+This site aims to be an authoritative educational resource for those wishing to learn how to use jQuery. From beginners, to more advanced users. It's being driven by the jQuery community.
+
 ## About
 
 The goal of this site is twofold:
@@ -7,7 +9,7 @@ The goal of this site is twofold:
 1. To serve as a central, trustworthy, narrative compendium of information about how to use jQuery and JavaScript.
 2. To remain a timely, vibrant, and community-driven reference with a relatively low barrier to contribution.
 
-Much of the initial content - and spirit - comes from [jQuery Fundamentals](http://jqfundamentals.com/legacy), an open-source book about jQuery, originally written by [Rebecca Murphey](http://www.rmurphey.com/) and released in 2010. In 2011, Rebecca [bequeathed the book](http://rmurphey.com/blog/2011/03/17/the-future-of-jquery-fundamentals-and-a-confession/) unto the jQuery Foundation to serve as the basis for this site.
+Much of the initial content - and spirit - comes from [jQuery Fundamentals](http://jqfundamentals.com/legacy), an open-source book about jQuery, originally written by [Rebecca Murphey](http://www.rmurphey.com/) and released in 2010. In 2011, Rebecca [bequeathed the book](http://rmurphey.com/blog/2011/03/17/the-future-of-jquery-fundamentals-and-a-confession/) unto the jQuery Foundation to serve as the basis for this site. The book was split up into individual sections, whch we iterated on and improved over several months. Early on we wanted to ensure we covered as many relevant topics as possible and reached out to writers in the community to give us permission to integrate some of their blog posts as well.
 
 
 ## How This Site Works
