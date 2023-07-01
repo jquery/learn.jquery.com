@@ -1,5 +1,4 @@
-var spawnback = require( "spawnback" ),
-	jqueryContent = require( "grunt-jquery-content" );
+var jqueryContent = require( "grunt-jquery-content" );
 
 module.exports = function( grunt ) {
 
