@@ -1,7 +1,7 @@
 {
   "name": "learn.jquery.com",
   "private": true,
-  "version": "0.6.29",
+  "version": "0.6.30",
   "dependencies": {
     "grunt": "1.5.3",
     "grunt-jquery-content": "3.1.0"
