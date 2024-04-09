@@ -19,10 +19,10 @@ Why should you care? An example is probably the best way to explain. Suppose you
 
 ```
 <div class="room" id="kitchen">
-	<div class="lightbulb on"></div>
-	<div class="switch"></div>
-	<div class="switch"></div>
-	<div class="clapper"></div>
+	<div class="lightbulb on">Kitchen light</div>
+	<div class="switch">Kitchen switch 1</div>
+	<div class="switch">Kitchen switch 2</div>
+	<div class="clapper">Kitchen clapper switch</div>
 </div>
 ```
 
@@ -67,7 +67,7 @@ Let's make our example a little more interesting. We'll add another room to our 
 <div class="room" id="kitchen">
 	<div class="lightbulb on">Kitchen light</div>
 	<div class="switch">Kitchen switch 1</div>
-	<div class="switch">Kitchen switch 1</div>
+	<div class="switch">Kitchen switch 2</div>
 	<div class="clapper">Kitchen clapper switch</div>
 </div>
 <div class="room" id="bedroom">
