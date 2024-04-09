@@ -56,4 +56,6 @@ jqueryContent.postPreprocessors.page = (function() {
 
 grunt.registerTask( "build", [ "build-posts", "build-resources" ] );
 
+grunt.registerTask( "deploy", [ "wordpress-deploy", "deploy-redirects" ] );
+
 };
