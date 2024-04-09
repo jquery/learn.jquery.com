@@ -1,13 +1,3 @@
-<script>{
-	"title": "Contributing",
-	"customFields": [
-		{
-			"key": "is_chapter",
-			"value": 0
-		}
-	]
-}</script>
-
 Depending on your level of experience with some of the workflows common to many open source projects, e.g. git/GitHub, the command line, and setting up a local development environment, contributing to this site may be a breeze or come with a bit of a learning curve. If you fit into the former group, great! Jump ahead to learn how to get started.
 
 But if you think you're part of the second group, and have had trouble participating in open source because of a lack of comfort with the tools, **you're still welcome**! Beyond providing a resource for learning jQuery, a major goal of this site is to provide an encouraging environment for you to develop these skills, while still making a contribution that matters. Many people think that the only way to get involved with a programming project like jQuery is to solve intricate bugs that require a nuanced understanding of the codebase, or to propose enhancements that may or may not be in scope with the development team's plans. The fact is that there's way more: improving documentation, working on web properties, and supporting other users are crucial aspects where more help is always needed. If you're willing to share your time and expertise to help other developers, we're willing to [help you get up to speed with the tools](#getting-help) you'll need.
