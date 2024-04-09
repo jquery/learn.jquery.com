@@ -75,6 +75,7 @@
     "plugins": [
       "finding-evaluating-plugins",
       "basic-plugin-creation",
+      "publishing-plugins",
       "advanced-plugin-concepts"
     ]
   },
