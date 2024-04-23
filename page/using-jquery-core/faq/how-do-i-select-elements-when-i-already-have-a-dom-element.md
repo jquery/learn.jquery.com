@@ -21,3 +21,13 @@ Unfortunately, you cannot concatenate strings to objects.
 ### Related Articles
 
 * [The jQuery Object](/using-jquery-core/jquery-object/)
+
+so first pass in the obj then use find.
+
+```
+  var jMyDomElement =  $( myDomElement);
+  
+  jMyDomElement.find(".bar")
+  
+  jMyDomElement.find("a")
+``
