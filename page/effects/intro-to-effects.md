@@ -92,7 +92,7 @@ A common mistake when implementing jQuery effects is assuming that the execution
 
 ```
 // Fade in all hidden paragraphs; then add a style class to them (not quite right)
-$( "p.hidden" ).fadeIn( 750 ).addClass( "lookAtMe" );
+$( "p:hidden" ).fadeIn( 750 ).addClass( "lookAtMe" );
 ```
 
 It is important to realize that `.fadeIn()` above only *kicks off* the animation. Once started, the animation is implemented by rapidly changing CSS properties in a JavaScript `setInterval()` loop. When you call `.fadeIn()`, it starts the animation loop and then returns the jQuery object, passing it along to `.addClass()` which will then add the `lookAtMe` style class while the animation loop is just getting started.
@@ -101,7 +101,7 @@ To defer an action until after an animation has run to completion, you need to u
 
 ```
 // Fade in all hidden paragraphs; then add a style class to them (correct with animation callback)
-$( "p.hidden" ).fadeIn( 750, function() {
+$( "p:hidden" ).fadeIn( 750, function() {
 	// this = DOM element which has just finished being animated
 	$( this ).addClass( "lookAtMe" );
 });
