@@ -190,7 +190,7 @@ The trigger hook is called early in the process of triggering an event, just aft
 
 #### _default: function( event: jQuery.Event, data: Object )
 
-When the `.trigger()` method finishes running all the event handlers for an event, it also looks for and runs any method on the target object by the same name unless of the handlers called `event.preventDefault()`. So, `.trigger( "submit" )` will execute the `submit()` method on the element if one exists. When a `_default` hook is specified, the hook is called just prior to checking for and executing the element's default method. If this hook returns the value `false` the element's default method will be called; otherwise it is not.
+When the `.trigger()` method finishes running all the event handlers for an event, it also looks for and runs any method on the target object by the same name unless one of the handlers called `event.preventDefault()`. So, `.trigger( "submit" )` will execute the `submit()` method on the element if one exists. When a `_default` hook is specified, the hook is called just prior to checking for and executing the element's default method. If this hook returns the value `false` the element's default method will be called; otherwise it is not.
 
 #### handle: function( event: jQuery.Event, data: Object )
 
