@@ -8,4 +8,4 @@
     ]
 }</script>
 
-@partial(CONTRIBUTING.md)
+@include(CONTRIBUTING.md)
