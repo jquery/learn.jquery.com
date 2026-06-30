@@ -12,17 +12,17 @@ Of course, we'll also give you credit for your work! The **Contributors** sectio
 
 ## How Does It Work?
 
-### Content
+### Maintaining Content
 
 The content in this site is maintained in [this GitHub repository](https://github.com/jquery/learn.jquery.com) as a collection of [Markdown](http://daringfireball.net/projects/markdown/) files in the `page` directory. The order in which chapters and articles are presented is controlled by the [order.json](https://github.com/jquery/learn.jquery.com/blob/master/order.json) file.
 
-### Design
+### Updating styles
 
-The site's layout and design is controlled by our [`jquery-wp-content`](https://github.com/jquery/jquery-wp-content), a custom [WordPress](http://wordpress.org) configuration that runs (or will run in the near future) all of the sites run by the jQuery Foundation. The [master theme](https://github.com/jquery/jquery-wp-content/tree/master/themes/jquery) controls most of the layout for all of our sites, and there is a [child theme](https://github.com/jquery/jquery-wp-content/tree/master/themes/learn.jquery.com) that controls the templates and styles specific to the learn site.
+The site's layout and design is controlled by our [`jquery-wp-content`](https://github.com/jquery/jquery-wp-content), a custom [WordPress](http://wordpress.org) configuration that runs (or will run in the near future) all of the sites run by the jQuery Foundation. The [jquery theme](https://github.com/jquery/jquery-wp-content/tree/main/themes/jquery) controls most of the layout for all of our sites, and there is a [child theme](https://github.com/jquery/jquery-wp-content/tree/main/themes/learn.jquery.com) that controls the templates and styles specific to the learn site.
 
 [`jquery-wp-content`](https://github.com/jquery/jquery-wp-content) powers our sites in production and staging environments, and can be set up for local development relatively easily.
 
-### Build
+### Building
 
 The static content in the `page` directory is deployed to a [`jquery-wp-content`](https://github.com/jquery/jquery-wp-content) instance using [grunt](http://gruntjs.com), specifically with two grunt plugins we've created:
 
