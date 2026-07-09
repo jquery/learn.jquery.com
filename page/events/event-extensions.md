@@ -25,62 +25,6 @@ jQuery event extension developers should avoid using event names that have speci
 
 Although jQuery's event system is oriented towards delivering DOM events to DOM elements, jQuery methods can be used to attach and trigger events on plain objects. For example, it can be used as a simple publish/subscribe mechanism. Developers of event extensions should attempt to avoid unwanted behavior if their extensions are used in a mixed scenario with DOM and plain objects. The canonical way that jQuery detects a DOM element is to check for `elem.nodeType === 1` on the object.
 
-### jQuery.event.props: Array
-
-jQuery defines an [Event object](https://api.jquery.com/category/events/event-object/) that represents a cross-browser subset of the information available when an event occurs. The `jQuery.event.props` property is an array of string names for properties that are always copied when jQuery processes a *native* browser event. (Events fired in code by `.trigger()` do not use this list, since the code can construct a `jQuery.Event` object with the needed values and trigger using that object.)
-
-To add a property name to this list, use `jQuery.event.props.push( "newPropertyName" )`. However, be aware that every event processed by jQuery will now attempt to copy this property name from the native browser event to jQuery's constructed event. If the property does not exist for that event type, it will get an undefined value. Adding many properties to this list can significantly reduce event delivery performance, so for infrequently-needed properties it is more efficient to use the value directly from `event.originalEvent` instead. If properties must be copied, you are strongly advised to use `jQuery.event.fixHooks` as of version 1.7.
-
-### jQuery.event.fixHooks: Object
-
-The `fixHooks` interface provides a per-event-type way to extend or normalize the event object that jQuery creates when it processes a *native* browser event. A `fixHooks` entry is an object that has two properties, each being optional:
-
-`props`: Array:
-Strings representing properties that should be copied from the browser's event object to the jQuery event object. If omitted, no additional properties are copied beyond the standard ones that jQuery copies and normalizes (e.g. `event.target` and `event.relatedTarget`).
-
-`filter`: Function( event, originalEvent ):
-jQuery calls this function after it constructs the `jQuery.Event` object, copies standard properties from `jQuery.event.props`, and copies the `fixHooks`-specific props (if any) specified above. The function can create new properties on the event object or modify existing ones. The second argument is the browser's native event object, which is also available in `event.originalEvent`.
-
-Note that for all events, the browser's native event object is available in `event.originalEvent`; if the jQuery event handler examines the properties there instead of jQuery's normalized `event` object, there is no need to create a `fixHooks` entry to copy or modify the properties.
-
-For example, to set a hook for the "drop" event that copies the `dataTransfer` property, assign an object to `jQuery.event.fixHooks.drop`:
-
-```
-jQuery.event.fixHooks.drop = {
-	props: [ "dataTransfer" ]
-};
-```
-
-Since `fixHooks` is an advanced feature and rarely used externally, jQuery does not include code or interfaces to deal with conflict resolution. If there is a chance that some other code may be assigning `fixHooks` to the same events, the code should check for an existing hook and take appropriate measures. A simple solution might look like this:
-
-```
-if ( jQuery.event.fixHooks.drop ) {
-	throw new Error( "Someone else took the jQuery.event.fixHooks.drop hook!" );
-}
-
-jQuery.event.fixHooks.drop = {
-	props: [ "dataTransfer" ]
-};
-```
-
-When there are known cases of different plugins wanting to attach to the drop hook, this solution might be more appropriate:
-
-```
-var existingHook = jQuery.event.fixHooks.drop;
-
-if ( !existingHook ) {
-	jQuery.event.fixHooks.drop = {
-		props: [ "dataTransfer" ]
-	};
-} else {
-	if ( existingHook.props ) {
-		existingHook.props.push( "dataTransfer" );
-	} else {
-		existingHook.props = [ "dataTransfer" ];
-	}
-}
-```
-
 ### Special event hooks
 
 The jQuery special event hooks are a set of per-event-name functions and properties that allow code to control the behavior of event processing within jQuery. The mechanism is similar to `fixHooks` in that the special event information is stored in `jQuery.event.special.NAME`, where `NAME` is the  name of the special event. Event names are case sensitive.
