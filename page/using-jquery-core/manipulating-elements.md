@@ -132,23 +132,31 @@ myList.append( myItems.join( "" ) );
 
 ## Manipulating Attributes
 
-jQuery's attribute manipulation capabilities are extensive. Basic changes are simple, but the `.attr()` method also allows for more complex manipulations. It can either set an explicit value, or set a value using the return value of a function. When the function syntax is used, the function receives two arguments: the zero-based index of the element whose attribute is being changed, and the current value of the attribute being changed.
+jQuery's attribute manipulation capabilities are extensive. Basic changes are simple, but the [.attr()](https://api.jquery.com/attr/) method also allows for more complex manipulations.
+The `.attr()` method acts as both a getter and a setter. As a setter, `.attr()` can accept either a key and a value, or an object containing one or more key/value pairs.
 
 ```
-// Manipulating a single attribute.
+// Setting a single attribute.
 $( "#myDiv a:first" ).attr( "href", "newDestination.html" );
 ```
 
 ```
-// Manipulating multiple attributes.
+// Getting a single attribute.
+$( "a" ).attr( "href" ); // Returns the href for the first a element in the document
+```
+
+```
+// Setting multiple attributes.
 $( "#myDiv a:first" ).attr({
 	href: "newDestination.html",
 	rel: "nofollow"
 });
 ```
 
+When the function syntax is used, the function receives two arguments: the zero-based index of the element whose attribute is being changed, and the current value of the attribute being changed:
+
 ```
-// Using a function to determine an attribute's new value.
+// Using a function to set an attribute's new value.
 $( "#myDiv a:first" ).attr({
 	rel: "nofollow",
 	href: function( idx, href ) {
